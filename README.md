@@ -79,7 +79,7 @@ bool isValidationResponse = response.IsValidationResponse;
 - **Dependencies**: None (pure .NET implementation)
 > ### 💡 Need a different version?
 > While we target .NET 10 for maximum performance, we provide **custom builds and integration support** for organizations running on **any other Framework**.
-> [Contact evebury for custom builds or professional services](www.evebury.com)
+> [Contact evebury for custom builds or professional services](https://www.evebury.com)
 
 ## 🐛 Error Handling
 
