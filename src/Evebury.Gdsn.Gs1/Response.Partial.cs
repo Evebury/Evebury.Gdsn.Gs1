@@ -356,22 +356,25 @@ namespace Evebury.Gdsn.Gs1
         internal static Response GetResponse(XmlSchemaValidatorResult result)
         {
             Response response = GetResponse();
-            if (!result.IsValid) response.Status = StatusType.ERROR;
-
-            List<Event> events = [];
-            foreach (XmlSchemaValidatorMessage message in result.Messages)
+            if (!result.IsValid)
             {
-                List<EventData> data = [];
-                if (message.XPath != null)
-                {
-                    data.Add(new EventData() { Key = EventDataKey.XPATH, Value = message.XPath });
-                }
-                EventLevel level = message.Severity == XmlSchemaValidatorSeverity.Error ? EventLevel.ERROR : EventLevel.WARN;
-                events.Add(GetEvent(EventId.SCHEMA, message.Message, level, data));
+                response.Status = StatusType.ERROR;
 
+                List<Event> events = [];
+                foreach (XmlSchemaValidatorMessage message in result.Messages)
+                {
+                    List<EventData> data = [];
+                    if (message.XPath != null)
+                    {
+                        data.Add(new EventData() { Key = EventDataKey.XPATH, Value = message.XPath });
+                    }
+                    EventLevel level = message.Severity == XmlSchemaValidatorSeverity.Error ? EventLevel.ERROR : EventLevel.WARN;
+                    events.Add(GetEvent(EventId.SCHEMA, message.Message, level, data));
+
+                }
+                Transaction transaction = GetTransaction(VALIDATION_RESPONSE, events);
+                response.Transactions = [transaction];
             }
-            Transaction transaction = GetTransaction(VALIDATION_RESPONSE, events);
-            response.Transactions = [transaction];
             return response;
         }
 

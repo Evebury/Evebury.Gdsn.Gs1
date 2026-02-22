@@ -55,11 +55,11 @@ namespace Evebury.Gdsn.Gs1
 
             if (previous != null)
             {
-                response = Equals(message, previous, cultureInfo);
+                Response compare = Equals(message, previous, cultureInfo);
                 //return if Ok this indicates both messages are equal
-                if (response.Status == StatusType.OK)
+                if (compare.Status == StatusType.OK)
                 {
-                    return response;
+                    return compare;
                 }
             }
 
@@ -67,11 +67,9 @@ namespace Evebury.Gdsn.Gs1
             if (IsDefinedRuleSet(key))
             {
                 response = await ApplyRules(key, message, previous, cultureInfo);
-                if (response.Status == StatusType.ERROR)
-                {
-                    return response;
-                }
+                return response;
             }
+
             return response;
         }
 
@@ -93,9 +91,9 @@ namespace Evebury.Gdsn.Gs1
 
             if (previous != null)
             {
-                response = Equals(message, previous, cultureInfo);
+                Response compare = Equals(message, previous, cultureInfo);
                 //return if Ok this indicates both messages are equal
-                if (response.Status == StatusType.OK) return response;
+                if (compare.Status == StatusType.OK) return compare;
             }
 
             //do not throw message exception rules do not apply to all message types
@@ -103,6 +101,7 @@ namespace Evebury.Gdsn.Gs1
             {
                 response = await ApplyRules(key, message, previous, cultureInfo);
             }
+
             return response;
         }
 
