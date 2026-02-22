@@ -79,7 +79,7 @@ bool isValidationResponse = response.IsValidationResponse;
 - **Dependencies**: None (pure .NET implementation)
 > ### 💡 Need a different version?
 > While we target .NET 10 for maximum performance, we provide **custom builds and integration support** for organizations running on **any other Framework**.
-> [Contact evebury for custom builds or professional services](www.evebury.com)
+> [Contact evebury for custom builds or professional services](https://www.evebury.com)
 
 ## 🐛 Error Handling
 
@@ -89,7 +89,7 @@ The library provides specific exceptions for common scenarios:
 - `ArgumentNullException`: Message can not be null
 
 ## ℹ️ Help
-> Want to learn more about **GDSN GS1** or syndicating your data to **GS1**? Or anything else? We would love to hear from you! Reach out to us at: [Evebury](www.evebury.com).
+> Want to learn more about **GDSN GS1** or syndicating your data to **GS1**? Or anything else? We would love to hear from you! Reach out to us at: [Evebury](https://www.evebury.com).
 
 
 ## 📄 License
