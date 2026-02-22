@@ -1,0 +1,4 @@
+<Output>
+  <Error Count="498">Provided xml is not valid for this ruleset stylesheet xmlns=http://www.w3.org/1999/XSL/Transform</Error>
+  <Response Id="document" TimeStamp="2026-02-19T15:42:05.1353004Z" Status="OK" xmlns="urn:xdf:gs1:response:1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+</Output>
