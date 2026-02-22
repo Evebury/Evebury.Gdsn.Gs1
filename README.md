@@ -89,7 +89,7 @@ The library provides specific exceptions for common scenarios:
 - `ArgumentNullException`: Message can not be null
 
 ## ℹ️ Help
-> Want to learn more about **GDSN GS1** or syndicating your data to **GS1**? Or anything else? We would love to hear from you! Reach out to us at: [Evebury](www.evebury.com).
+> Want to learn more about **GDSN GS1** or syndicating your data to **GS1**? Or anything else? We would love to hear from you! Reach out to us at: [Evebury](https://www.evebury.com).
 
 
 ## 📄 License
