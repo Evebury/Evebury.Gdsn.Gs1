@@ -28,9 +28,9 @@
 
 	<ItemGroup>
 		<Compile Update="R3\Resource\Brick.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Brick.resx</DependentUpon>
+		  <DesignTime>True</DesignTime>
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Brick.resx</DependentUpon>
 		</Compile>
 		<Compile Update="R3\Resource\Gpc.Designer.cs">
 			<DesignTime>True</DesignTime>
@@ -71,8 +71,8 @@
 
 	<ItemGroup>
 		<EmbeddedResource Update="R3\Resource\Brick.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>Brick.Designer.cs</LastGenOutput>
+		  <Generator>ResXFileCodeGenerator</Generator>
+		  <LastGenOutput>Brick.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 		<EmbeddedResource Update="R3\Resource\Gpc.resx">
 			<Generator>ResXFileCodeGenerator</Generator>
