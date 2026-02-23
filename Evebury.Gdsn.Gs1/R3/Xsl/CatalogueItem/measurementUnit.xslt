@@ -28,11 +28,20 @@
 			<xsl:when test="$unit = 'EA'">
 				<xsl:value-of select="$value"/>
 			</xsl:when>
+			<xsl:when test="$unit = 'MTR'">
+				<xsl:value-of select="$value * 1000"/>
+			</xsl:when>
 			<xsl:when test="$unit = 'CMT'">
-				<xsl:value-of select="$value"/>
+				<xsl:value-of select="$value * 10"/>
 			</xsl:when>
 			<xsl:when test="$unit = 'MMT'">
-				<xsl:value-of select="$value * 0.1"/>
+				<xsl:value-of select="$value"/>
+			</xsl:when>
+			<xsl:when test="$unit = 'CLT'">
+				<xsl:value-of select="$value * 0.01"/>
+			</xsl:when>
+			<xsl:when test="$unit = 'LTR'">
+				<xsl:value-of select="$value"/>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:apply-templates select="gs1:AddExceptionEvent('measurementUnitCode', concat('Provided unit is not implemented ', local-name(), ' ', $unit))"/>
@@ -64,8 +73,17 @@
 			<xsl:when test="$unit = 'CMT'">
 				<xsl:value-of select="'Length'"/>
 			</xsl:when>
+			<xsl:when test="$unit = 'MTR'">
+				<xsl:value-of select="'Length'"/>
+			</xsl:when>
 			<xsl:when test="$unit = 'MMT'">
 				<xsl:value-of select="'Length'"/>
+			</xsl:when>
+			<xsl:when test="$unit = 'CLT'">
+				<xsl:value-of select="'Volume'"/>
+			</xsl:when>
+			<xsl:when test="$unit = 'LTR'">
+				<xsl:value-of select="'Volume'"/>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:apply-templates select="gs1:AddExceptionEvent('measurementUnitCode', concat('Provided unit is not implemented ', local-name(), ' ', $unit))"/>

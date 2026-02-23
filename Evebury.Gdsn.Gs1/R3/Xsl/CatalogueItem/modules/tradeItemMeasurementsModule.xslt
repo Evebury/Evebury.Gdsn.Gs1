@@ -10,6 +10,7 @@
 		<xsl:param name="tradeItem"/>
 
 		<xsl:apply-templates select="tradeItemMeasurements" mode="tradeItemMeasurementsModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
@@ -17,6 +18,7 @@
 	</xsl:template>
 
 	<xsl:template match="tradeItemMeasurements" mode="tradeItemMeasurementsModule">
+		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 		<xsl:variable name="netWeightValue" select="tradeItemWeight/netWeight"/>
 		<xsl:variable name="grossWeightValue" select="tradeItemWeight/grossWeight"/>
@@ -181,10 +183,132 @@
 			</xsl:if>
 		</xsl:if>
 
+		<!--Rule 1108: If (netWeight or drainedWeight or grossWeight ) is not empty, then the associated measurementUnitCode shall be from the Unit Of Measure Classification 'MASS'-->
+		<xsl:if test="$netWeightValue != ''">
+			<xsl:variable name="type">
+				<xsl:apply-templates select="$netWeightValue" mode="measurementUnitType"/>
+			</xsl:variable>
+			<xsl:if test="$type != 'Weight'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1108" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		<xsl:if test="$grossWeightValue != ''">
+			<xsl:variable name="type">
+				<xsl:apply-templates select="$grossWeightValue" mode="measurementUnitType"/>
+			</xsl:variable>
+			<xsl:if test="$type != 'Weight'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1108" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		<xsl:if test="tradeItemWeight/drainedWeight != ''">
+			<xsl:variable name="type">
+				<xsl:apply-templates select="tradeItemWeight/drainedWeight" mode="measurementUnitType"/>
+			</xsl:variable>
+			<xsl:if test="$type != 'Weight'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1108" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1109: If (tradeItemMeasurements/height or tradeItemMeasurements/depth or tradeItemMeasurements/width ) is used, then the associated measurementUnitCode shall be from the Unit Of Measure Classification 'DIMENSIONS'-->
+		<xsl:if test="depth != ''">
+			<xsl:variable name="type">
+				<xsl:apply-templates select="depth" mode="measurementUnitType"/>
+			</xsl:variable>
+			<xsl:if test="$type != 'Length'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1109" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		<xsl:if test="width != ''">
+			<xsl:variable name="type">
+				<xsl:apply-templates select="width" mode="measurementUnitType"/>
+			</xsl:variable>
+			<xsl:if test="$type != 'Length'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1109" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1112: If targetMarketCountryCode equals '250' (France) and tradeItemUnitDescriptorCode equals'PALLET', then TradeItemMeasurements/height shall be less than or equal to '3 MTR'.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode  = 'PALLET' and height != ''">
+				<xsl:variable name="height">
+					<xsl:apply-templates select="height" mode="measurementUnit"/>
+				</xsl:variable>
+				<xsl:if test="$height &gt; 300">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1112" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+
+		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
+			<!--Rule 1113: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals 'MTR', then its associated value shall not have more than 3 decimal positions.-->
+			<xsl:apply-templates select="." mode="tradeItemMeasurementsModule_decimals">
+				<xsl:with-param name="decimals" select="3"/>
+				<xsl:with-param name="unit" select="'MTR'"/>
+				<xsl:with-param name="error" select="1113"/>
+			</xsl:apply-templates>
+			<!--Rule 1114: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals ''CMT', then its associated value shall not have more than 1 decimal position.-->
+			<xsl:apply-templates select="." mode="tradeItemMeasurementsModule_decimals">
+				<xsl:with-param name="decimals" select="1"/>
+				<xsl:with-param name="unit" select="'CMT'"/>
+				<xsl:with-param name="error" select="1114"/>
+			</xsl:apply-templates>
+			<!--Rule 1115: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals ''MMT'', then its associated value shall not have a decimal position.-->
+			<xsl:apply-templates select="." mode="tradeItemMeasurementsModule_decimals">
+				<xsl:with-param name="decimals" select="0"/>
+				<xsl:with-param name="unit" select="'MMT'"/>
+				<xsl:with-param name="error" select="1115"/>
+			</xsl:apply-templates>
+		</xsl:if>
 
 	</xsl:template>
 
 
+	<xsl:template match="tradeItemMeasurements" mode="tradeItemMeasurementsModule_decimals">
+		<xsl:param name="unit"/>
+		<xsl:param name="decimals"/>
+		<xsl:param name="error"/>
+		<xsl:if test="height[@measurementUnitCode = $unit] != ''">
+			<xsl:if test="contains(height[@measurementUnitCode = $unit], '.')">
+				<xsl:if test="string-length(substring-after(height[@measurementUnitCode = $unit], '.')) &gt; $decimals">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="$error" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+		<xsl:if test="width[@measurementUnitCode = $unit] != ''">
+			<xsl:if test="contains(width[@measurementUnitCode = $unit], '.')">
+				<xsl:if test="string-length(substring-after(width[@measurementUnitCode = $unit], '.')) &gt; $decimals">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="$error" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+		<xsl:if test="depth[@measurementUnitCode = $unit] != ''">
+			<xsl:if test="contains(depth[@measurementUnitCode = $unit], '.')">
+				<xsl:if test="string-length(substring-after(depth[@measurementUnitCode = $unit], '.')) &gt; $decimals">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="$error" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+		
+	</xsl:template>
 
 
 	<xsl:template name="r98">

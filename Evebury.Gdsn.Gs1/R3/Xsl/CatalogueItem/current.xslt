@@ -40,6 +40,7 @@
 		<tradeItemSynchronisationDates>
 			<xsl:apply-templates select="lastChangeDateTime" mode="node"/>
 			<xsl:apply-templates select="discontinuedDateTime" mode="node"/>
+			<xsl:apply-templates select="udidFirstPublicationDateTime" mode="node"/>
 		</tradeItemSynchronisationDates>
 	</xsl:template>
 

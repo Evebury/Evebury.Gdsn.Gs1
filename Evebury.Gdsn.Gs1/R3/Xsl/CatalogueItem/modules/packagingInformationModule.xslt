@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl gs1"
+    xmlns:gs1="urn:xsl:extension:gdsn:gs1:response"
+	>
+	<xsl:output method="xml" indent="yes"/>
+
+	<xsl:template match="*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']" mode="module">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+
+		<xsl:apply-templates select="packaging" mode="packagingInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
+
+	</xsl:template>
+
+	<xsl:template match="packaging" mode="packagingInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+
+		<!--Rule 506: If targetMarketCountryCode equals <Geographic> and packagingMaterialCompositionQuantity is used then in at least one iteration of packagingMaterialCompositionQuantity the related packagingMaterialCompositionQuantity/@measurementUnitCode SHALL equal 'KGM' or 'GRM'.-->
+		<xsl:if test="contains('056, 203, 246, 442, 528, 752', $targetMarket)">
+			<xsl:if test="packagingMaterial/packagingMaterialCompositionQuantity[text() != '']">
+				<xsl:choose>
+					<xsl:when test="packagingMaterial/packagingMaterialCompositionQuantity[text() != '' and @measurementUnitCode = 'KGM']"/>
+					<xsl:when test="packagingMaterialCompositionQuantity[text() != '' and @measurementUnitCode = 'GRM']"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="506" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 507: If packagingMaterialCompositionQuantity and packagingWeight are not empty then the sum of all instances of  packagingMaterialCompositionQuantity for the trade item must be less than or equal to packagingWeight.-->
+		<xsl:if test="packagingWeight != '' and packagingMaterial/packagingMaterialCompositionQuantity[text() != '']">
+			<xsl:variable name="packagingWeight">
+				<xsl:apply-templates select="packagingWeight" mode="measurementUnit"/>
+			</xsl:variable>
+			<xsl:variable name="itemWeight">
+				<xsl:call-template name="r507">
+					<xsl:with-param name="items" select="packagingMaterial/packagingMaterialCompositionQuantity"/>
+				</xsl:call-template>
+			</xsl:variable>
+			<xsl:if test="$itemWeight &gt; $packagingWeight">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="507" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 540: If parent item platformTypeCode is equal to '11', and the child platformTypeCode is equal to '10' then quantityOfNextLowerLevelTradeItem of the parent item must not be greater than 2.-->
+		<xsl:if test="platformTypeCode = '11'">
+			<xsl:variable name="quantity" select="sum(nextLowerLevelTradeItemInformation/childTradeItem/quantityOfNextLowerLevelTradeItem)"/>
+			<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode = '10'">
+					<xsl:if test="$quantity &gt; 2">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="540" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+
+	
+		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode = 'PALLET'">
+				<xsl:variable name="module" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements"/>
+				<xsl:choose>
+					<xsl:when test="platformTypeCode = '10'">
+						<!--Rule 1107: If targetMarketCountryCode equals ('249' (France) or '250' (France))  and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals '10', then depth shall be between and including  ('800 MMT' or '31.50 IN')  and ('1600 MMT' or '63 IN') and width shall be between and including (' '600 MMT' or '23.62 IN') and ('1200 MMT' or '47.24 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1107"/>
+							<xsl:with-param name="minDepth" select="800"/>
+							<xsl:with-param name="maxDepth" select="1600"/>
+							<xsl:with-param name="minWidth" select="600"/>
+							<xsl:with-param name="maxWidth" select="1200"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '49'">
+						<!--Rule 1124: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '49', then TradeItemMeasurements/depth shall be between and including ('610 MMT' or '24.02 IN') and ('1220 MMT' or '48.04 IN') and TradeItemMeasurements/width shall be between and including ('508 MMT' or '20 IN') and ('1016 MMT' or '40 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1124"/>
+							<xsl:with-param name="minDepth" select="610"/>
+							<xsl:with-param name="maxDepth" select="1220"/>
+							<xsl:with-param name="minWidth" select="508"/>
+							<xsl:with-param name="maxWidth" select="1016"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '48'">
+						<!--Rule 1125: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '48', then TradeItemMeasurements/depth shall be between and including ('610 MMT' or '24.02 IN') and ('1220 MMT' or '48.04 IN') and TradeItemMeasurements/width shall be between and including ('1016 MMT' or '40 IN') and ('2032 MMT' or '80 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1125"/>
+							<xsl:with-param name="minDepth" select="610"/>
+							<xsl:with-param name="maxDepth" select="1220"/>
+							<xsl:with-param name="minWidth" select="1016"/>
+							<xsl:with-param name="maxWidth" select="2032"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '47'">
+						<!--Rule 1126: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '47', then TradeItemMeasurements/depth shall be between and including ('400 MMT' or '15.75 IN') and ('800 MMT' or '31.5 IN'), and TradeItemMeasurements/width shall be between and including ( '800 MMT' or '31.50 IN) and ('1600 MMT' or '63 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1126"/>
+							<xsl:with-param name="minDepth" select="400"/>
+							<xsl:with-param name="maxDepth" select="800"/>
+							<xsl:with-param name="minWidth" select="800"/>
+							<xsl:with-param name="maxWidth" select="1600"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '43'">
+						<!--Rule 1127: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '43', then TradeItemMeasurements/depth shall be between and including ('1140 MMT' or '43.31 IN') and  ('2280 MMT' or '86.62 IN') and TradeItemMeasurements/width shall be between and including ('1140 MMT' or '43.31 IN') and ('2280 MMT' or '86.62 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1127"/>
+							<xsl:with-param name="minDepth" select="1140"/>
+							<xsl:with-param name="maxDepth" select="2280"/>
+							<xsl:with-param name="minWidth" select="1140"/>
+							<xsl:with-param name="maxWidth" select="2280"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '42'">
+						<!--Rule 1128: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '42', then TradeItemMeasurements/depth shall bebetween and including ('1100 MMT' or '43.31 IN') and ('2200 MMT' or '86.62 IN') and TradeItemMeasurements/width shall be between and including ('1100 MMT' or '43.31 IN') and ('2200 MMT' or '86.62 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1128"/>
+							<xsl:with-param name="minDepth" select="1100"/>
+							<xsl:with-param name="maxDepth" select="2200"/>
+							<xsl:with-param name="minWidth" select="1100"/>
+							<xsl:with-param name="maxWidth" select="2200"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '41'">
+						<!--Rule 1129: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '41', then TradeItemMeasurements/depth shall be between and including ('1067 MMT' or '42.01 IN') and ('2134 MMT' or '84.02 IN') and TradeItemMeasurements/width shall be between and including ('1067 MMT' or '42.01 IN') and ('2134 MMT' or '84.02 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1129"/>
+							<xsl:with-param name="minDepth" select="1067"/>
+							<xsl:with-param name="maxDepth" select="2134"/>
+							<xsl:with-param name="minWidth" select="1067"/>
+							<xsl:with-param name="maxWidth" select="2134"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '40'">
+						<!--Rule 1130: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '40', then TradeItemMeasurements/depth shall be between and including ('1016 MMT' or '40 IN') and ('2032 MMT' or '80 IN') and TradeItemMeasurements/width shall be between and including ('1219 MMT' or '47.99 IN') and ('2438 MMT' or '95.98 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1130"/>
+							<xsl:with-param name="minDepth" select="1016"/>
+							<xsl:with-param name="maxDepth" select="2032"/>
+							<xsl:with-param name="minWidth" select="1219"/>
+							<xsl:with-param name="maxWidth" select="2438"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '35'">
+						<!--Rule 1133: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '35', then TradeItemMeasurements/depth shall be between and including ('1200 MMT' or '47.24 IN') and ('2400 MMT' or '94.5 IN'), and TradeItemMeasurements/width shall be between and including ('1000 MMT' or '39.37 IN') and ('2000 MMT' or '78.74 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1133"/>
+							<xsl:with-param name="minDepth" select="1200"/>
+							<xsl:with-param name="maxDepth" select="2400"/>
+							<xsl:with-param name="minWidth" select="1000"/>
+							<xsl:with-param name="maxWidth" select="2000"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '31'">
+						<!--Rule 1135: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '31', then TradeItemMeasurements/depth shall be between and including  ('1000 MMT' or '39.37 IN') and ('2000 MMT' or '78.74 IN') and TradeItemMeasurements/width shall be between and including ('600 MMT' or '23.62 IN') and ('1200 MMT' or '47.34 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1135"/>
+							<xsl:with-param name="minDepth" select="1000"/>
+							<xsl:with-param name="maxDepth" select="2000"/>
+							<xsl:with-param name="minWidth" select="600"/>
+							<xsl:with-param name="maxWidth" select="1200"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '31'">
+						<!--Rule 1137: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '25', then TradeItemMeasurements/depth shall be between and including ('1165 MMT' or '45.87 IN') and ('2330 MMT' or '91.74 IN'), and TradeItemMeasurements/width shall be between and including ('1165 MMT' or '45.87 IN') and ('2330 MMT' or '91.74 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1137"/>
+							<xsl:with-param name="minDepth" select="1165"/>
+							<xsl:with-param name="maxDepth" select="2330"/>
+							<xsl:with-param name="minWidth" select="1165"/>
+							<xsl:with-param name="maxWidth" select="2330"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '14'">
+						<!--Rule 1138: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '14', then TradeItemMeasurements/depth shall be between and including ('400 MMT' or '15.75 IN') and ('800 MMT' or '31.5 IN'), and TradeItemMeasurements/width shall be between and including ('300 MMT' or '11.81 IN') and ('600 MMT' or '23.62 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1138"/>
+							<xsl:with-param name="minDepth" select="400"/>
+							<xsl:with-param name="maxDepth" select="800"/>
+							<xsl:with-param name="minWidth" select="300"/>
+							<xsl:with-param name="maxWidth" select="600"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '13'">
+						<!--Rule 1139: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '13', then TradeItemMeasurements/depth shall be between and including ('600 MMT' or '23.62 IN') and ('1200 MMT' or '47.24 IN'), and TradeItemMeasurements/width shall be between and including ('400 MMT' or '15.75 IN') and ('800 MMT' or '31.5 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1139"/>
+							<xsl:with-param name="minDepth" select="600"/>
+							<xsl:with-param name="maxDepth" select="1200"/>
+							<xsl:with-param name="minWidth" select="400"/>
+							<xsl:with-param name="maxWidth" select="800"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '12'">
+						<!--Rule 1140: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '12', then TradeItemMeasurements/depth shall be between and including ('1200 MMT' or '47.24 IN') and ('2400 MMT' or '94.48 IN'), and TradeItemMeasurements/width shall be between and including ('1000 MMT' or '39.37 IN') and ('2000 MMT' or '78.74 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="1140"/>
+							<xsl:with-param name="minDepth" select="1200"/>
+							<xsl:with-param name="maxDepth" select="2400"/>
+							<xsl:with-param name="minWidth" select="1000"/>
+							<xsl:with-param name="maxWidth" select="2000"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:when test="platformTypeCode = '11'">
+						<!--Rule 1141: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '11', then TradeItemMeasurements/depth shall be between and including ('1200 MMT' or '47.24 IN') and ('2400 MMT' or '94.48 IN'), and TradeItemMeasurements/width shall be between and including ('800 MMT' or '31.50 IN') and ('1600 MMT' or '63 IN').-->
+						<xsl:call-template name="packagingInformationModule_france_pallet">
+							<xsl:with-param name="module" select="$module"/>
+							<xsl:with-param name="error" select="11401"/>
+							<xsl:with-param name="minDepth" select="1200"/>
+							<xsl:with-param name="maxDepth" select="2400"/>
+							<xsl:with-param name="minWidth" select="800"/>
+							<xsl:with-param name="maxWidth" select="1600"/>
+						</xsl:call-template>
+					</xsl:when>
+				</xsl:choose>
+				
+				
+			</xsl:if>
+		</xsl:if>
+
+		<xsl:apply-templates select="packagingMaterial" mode="packagingInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="packageDeposit" mode="packagingInformationModule"/>
+		<xsl:apply-templates select="returnableAsset" mode="packagingInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<xsl:template name="packagingInformationModule_france_pallet">
+		<xsl:param name="module"/>
+		<xsl:param name="minDepth"/>
+		<xsl:param name="maxDepth"/>
+		<xsl:param name="minWidth"/>
+		<xsl:param name="maxWidth"/>
+		<xsl:param name="error"/>
+		<xsl:choose>
+			<xsl:when test="$module/depth = '' or $module/width = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="$error" />
+				</xsl:apply-templates>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:variable name="depth">
+					<xsl:apply-templates select="$module/depth" mode="measurementUnit"/>
+				</xsl:variable>
+				<xsl:variable name="width">
+					<xsl:apply-templates select="$module/width" mode="measurementUnit"/>
+				</xsl:variable>
+				<xsl:if test="$depth &lt; $minDepth or $depth &gt; $maxDepth or $width &lt; $minWidth or $width &gt; $maxWidth">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="$error" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="packagingMaterial" mode="packagingInformationModule">
+		<xsl:param name="targetMarket"/>
+		<!--Rule 466: If packagingMaterialCompositionQuantity is not empty then value must be greater than 0.-->
+		<xsl:if test="packagingMaterialCompositionQuantity != '' and packagingMaterialCompositionQuantity &lt;= 0">
+			<xsl:apply-templates select="packagingMaterialCompositionQuantity" mode="error">
+				<xsl:with-param name="id" select="466"/>
+			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1025: If targetMarketCountryCode equals <Geographic> and packagingMaterial/packagingMaterialTypeCode is used then packagingMaterial/packagingMaterialCompositionQuantity SHALL be used.-->
+		<xsl:if test="contains('752, 203, 246, 703', $targetMarket)">
+			<xsl:if test="packagingMaterialTypeCode != '' and packagingMaterialCompositionQuantity =''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1025" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1057: If packagingMaterial/packagingMaterialTypeCode does not equal ('COMPOSITE', 'METAL_COMPOSITE', 'LAMINATED_CARTON', 'PAPER_PAPERBOARD' or 'OTHER') then CompositeMaterialDetail class SHALL NOT be used..-->
+		<xsl:choose>
+			<xsl:when test="packagingMaterialTypeCode = 'COMPOSITE'"/>
+			<xsl:when test="packagingMaterialTypeCode = 'METAL_COMPOSITE'"/>
+			<xsl:when test="packagingMaterialTypeCode = 'LAMINATED_CARTON'"/>
+			<xsl:when test="packagingMaterialTypeCode = 'PAPER_PAPERBOARD'"/>
+			<xsl:when test="packagingMaterialTypeCode = 'OTHER'"/>
+			<xsl:otherwise>
+				<xsl:if test="compositeMaterialDetail != ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1057" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="packageDeposit" mode="packagingInformationModule">
+		<!--Rule 632: If depositValueEffectiveDateTime is not empty then returnablePackageDepositIdentification or returnablePackageDepositAmount must not be empty.-->
+		<xsl:if test="depositValueEffectiveDateTime != ''">
+			<xsl:if test="returnablePackageDepositAmount = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="632" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="returnableAsset" mode="packagingInformationModule">
+		<xsl:param name="targetMarket"/>
+		<!--Rule 634: If targetMarketCountryCode is equal to  ('040' (Austria) or '276' (Germany)) and isReturnableAssetEmpty = 'true' then returnableAssetCapacityContent shall not be empty.-->
+		<xsl:if test="$targetMarket = '040' or $targetMarket = '276'">
+			<xsl:if test="isReturnableAssetEmpty = 'true'">
+				<xsl:if test="returnableAssetCapacityContent  = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="634" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template name="r507">
+		<xsl:param name="items"/>
+		<xsl:param name="index" select="1"/>
+		<xsl:param name="count" select="count(msxsl:node-set($items))"/>
+		<xsl:param name="weight" select="0"/>
+		<xsl:choose>
+			<xsl:when test="$index &lt;= $count">
+				<xsl:variable name="value" select="msxsl:node-set($items)[$index]"/>
+				<xsl:variable name="itemWeight">
+					<xsl:choose>
+						<xsl:when test="$value = number($value)">
+							<xsl:variable name="weightValue">
+								<xsl:apply-templates select="$value" mode="measurementUnit"/>
+							</xsl:variable>
+							<xsl:value-of select="$weightValue"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="0"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+
+				<xsl:call-template name="r507">
+					<xsl:with-param name="items" select="$items"/>
+					<xsl:with-param name="index" select="$index + 1"/>
+					<xsl:with-param name="count" select="$count"/>
+					<xsl:with-param name="weight" select="$weight + $itemWeight"/>
+				</xsl:call-template>
+
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$weight"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+</xsl:stylesheet>

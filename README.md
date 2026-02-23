@@ -24,7 +24,7 @@ A comprehensive .NET library for validating GDSN GS1 messages. This engine acts 
 *\* if not indicated rules do not apply for this message type*
 
 ## 🔧 Current status catalogueItemNotificationMessage
-- **Rules to be implemented**:  493 out of 1079.
+- **Rules to be implemented**:  467 out of 1079.
 - **Rules that should be a schema validation**:  541, 542, 1061
 - **Rules that are not specified correctly by GS1**: 550, 633, 1013
 

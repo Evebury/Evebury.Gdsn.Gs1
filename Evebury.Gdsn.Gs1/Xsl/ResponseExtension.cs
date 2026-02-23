@@ -232,6 +232,42 @@ namespace Evebury.Gdsn.Gs1.Xsl
             return false;
         }
 
+        public static bool OverlappingDateTimeRange(object node) 
+        {
+            XPathNavigator navigator = GetXPathNavigator(node);
+            if (navigator == null) return false;
+           
+            List<DateTimeSpan> ranges = [];
+            XPathNodeIterator iterator = navigator.Select("*");
+            while (iterator.MoveNext()) 
+            {
+                string start = iterator.Current.GetAttribute("Start", "");
+                string end = iterator.Current.GetAttribute("End", "");
+                if (DateTime.TryParse(start, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime startDate))
+                {
+                    if (DateTime.TryParse(end, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime endDate))
+                    {
+                        DateTimeSpan span = new(startDate, endDate);
+                        if (ranges.Exists(e => e.Overlaps(span))) return true;
+                        ranges.Add(span);
+                    }
+                }
+            }
+            return false;
+        }
+
+        private struct DateTimeSpan(DateTime start, DateTime end)
+        {
+            public DateTime Start { get; set; } = start;
+
+            public DateTime End { get; set; } = end;
+
+            public readonly bool Overlaps(DateTimeSpan other) 
+            {
+                return other.Start >= Start && other.End <= End;
+            }
+        }
+
         public bool IsInClass(string brick, string @class) 
         {
             BrickPath path = GetBrickPath(brick);
@@ -403,5 +439,15 @@ namespace Evebury.Gdsn.Gs1.Xsl
         #endregion
 
 
+
+        private static XPathNavigator GetXPathNavigator(object node)
+        {
+            if (node == null) return null;
+            if (node is XPathNavigator navigator) return navigator;
+            if (node is not XPathNodeIterator iterator) return null;
+            if (iterator.Count == 0) return null;
+            iterator.MoveNext();
+            return iterator.Current;
+        }
     }
 }

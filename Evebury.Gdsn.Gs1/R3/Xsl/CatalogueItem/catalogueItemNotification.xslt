@@ -539,6 +539,22 @@
 				</xsl:if>
 			</xsl:if>
 
+			<!--Rule 1122: udidFirstPublicationDateTime when first populated or changed shall be today's date or in the future.-->
+			<xsl:if test="gs1:InvalidDateTimeSpan(gs1:Today(), tradeItemSynchronisationDates/udidFirstPublicationDateTime)">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1122" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+			<!--Rule 1123: udidFirstPublicationDateTime shall not be changed once the current populated date has been reached.-->
+			<xsl:if test="gs1:InvalidDateTimeSpan(gs1:Today(), $tradeItem/tradeItemSynchronisationDates/udidFirstPublicationDateTime)">
+				<xsl:if test="tradeItemSynchronisationDates/udidFirstPublicationDateTime != $tradeItem/tradeItemSynchronisationDates/udidFirstPublicationDateTime">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1123" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
 			<xsl:if test="$command != 'CORRECT'">
 				<xsl:if test="tradeItemSynchronisationDates/discontinuedDateTime != $tradeItem/tradeItemSynchronisationDates/discontinuedDateTime">
 					<xsl:apply-templates select="." mode="error">

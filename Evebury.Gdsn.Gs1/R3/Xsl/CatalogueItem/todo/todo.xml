@@ -5,459 +5,8 @@
 	xmlns:catalogue_item_notification="urn:gs1:gdsn:catalogue_item_notification:xsd:3"
 	>
 	<xsl:output method="xml" indent="yes"/>
+	<xsl:variable name="xpath"/>
 
-  <xsl:template match="*" mode="r1093">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1093: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and for the same dutyFeeTaxTypeCode, then the range of dutyFeeTaxEffectiveStartDateTime if used and dutyFeeTaxEffectiveEndDateTime if used, SHALL NOT overlap date range with another instance of the same dutyFeeTaxTypeCode.
-
--->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTaxTypeCode" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1093" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1102">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1102: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and gpcCategoryCode equals '10000424' and isTradeItemAConsumerUnit equals 'TRUE' then at least one iteration of priceComparisonContentTypeCode shall equal 'PER_KILOGRAM' or 'PER_LITRE'-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/isTradeItemAConsumerUnit" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/gDSNTradeItemClassification/gpcCategoryCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonContentTypeCode" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1102" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1104">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1104: If targetMarketCountryCode equals '250' (France) and isTradeItemAConsumerUnit equals 'true' and if priceComparisonContentTypeCode equals 'PER_PIECE' then priceComparisonMeasurement shall be an Integer-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/isTradeItemAConsumerUnit" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonContentTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonMeasurement" />
-    <xsl:variable name="isTargetMarket" select="contains('250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1104" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1105">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1105: If targetMarketCountryCode equals  ('250' (France) or '246' (Finland)) and priceComparisonMeasurement is used, then priceComparisonMeasurement SHALL be greater than 0.
-
-If targetMarketCountryCode equals ('249' (France) or '250' (France)) and if priceComparisonMeasurement is not empty, then priceComparisonMeasurement shall be greater than 0-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonMeasurement" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250, 246', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1105" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1107">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1107: If targetMarketCountryCode equals ('249' (France) or '250' (France))  and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals '10', then depth shall be between and including  ('800 MMT' or '31.50 IN')  and ('1600 MMT' or '63 IN') and width shall be between and including (' '600 MMT' or '23.62 IN') and ('1200 MMT' or '47.24 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1107" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1108">
-    <!--Rule 1108: If (netWeight or drainedWeight or grossWeight ) is not empty, then the associated measurementUnitCode shall be from the Unit Of Measure Classification 'MASS'-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/drainedWeight" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/drainedWeight/@measurementUnitCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/grossWeight" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/grossWeight/@measurementUnitCode" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/netWeight" />
-    <xsl:variable name="xpath5" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/netWeight/@measurementUnitCode" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1108" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1109">
-    <!--Rule 1109: If (tradeItemMeasurements/height or tradeItemMeasurements/depth or tradeItemMeasurements/width ) is used, then the associated measurementUnitCode shall be from the Unit Of Measure Classification 'DIMENSIONS'-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth/@measurementUnitCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height/@measurementUnitCode" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="xpath5" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width/@measurementUnitCode" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1109" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1110">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1110: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and gpcCategoryCode is not equal to ('10000050' or '10000262') 
-and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measurementUnitCode of priceComparisonMeasurement and of one iteration of netContent shall be from the Unit Of Measure Classification 'VOLUME'-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonContentTypeCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonMeasurement" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonMeasurement/@measurementUnitCode" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/netContent" />
-    <xsl:variable name="xpath5" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/netContent/@measurementUnitCode" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1110" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1111">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1111: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and dutyFeeTaxTypeCode equals '3001000002282' then dutyFeeTaxRate shall be empty and dutyFeeTaxAmount shall be used.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTaxTypeCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax/dutyFeeTaxAmount" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax/dutyFeeTaxRate" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1111" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1112">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1112: If targetMarketCountryCode equals '250' (France) and tradeItemUnitDescriptorCode equals'PALLET', then TradeItemMeasurements/height shall be less than or equal to '3 MTR'.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height" />
-    <xsl:variable name="isTargetMarket" select="contains('250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1112" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1113">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1113: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals 'MTR', then its associated value shall not have more than 3 decimal positions.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth/@measurementUnitCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height/@measurementUnitCode" />
-    <xsl:variable name="xpath5" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="xpath6" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width/@measurementUnitCode" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1113" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1114">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1114: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals ''CMT', then its associated value shall not have more than 1 decimal position.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth/@measurementUnitCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height/@measurementUnitCode" />
-    <xsl:variable name="xpath5" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="xpath6" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width/@measurementUnitCode" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1114" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1115">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1115: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals ''MMT'', then its associated value shall not have a decimal position.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth/@measurementUnitCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/height/@measurementUnitCode" />
-    <xsl:variable name="xpath5" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="xpath6" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width/@measurementUnitCode" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1115" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1116">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1116: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and priceComparisonContentTypeCode equals 'PER_KILOGRAM' and netWeight is populated, then priceComparisonMeasurement and netWeight shall be equivalent.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonContentTypeCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonMeasurement" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/netWeight" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1116" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1117">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1117: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and priceComparisonContentTypeCode equals 'DRAINED_WEIGHT' and drainedWeight is populated, then priceComparisonMeasurement and drainedWeight shall be equivalent.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonContentTypeCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/priceComparisonMeasurement" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/drainedWeight" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1117" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1122">
-    <!--Rule 1122: udidFirstPublicationDateTime when first populated or changed shall be today's date or in the future.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemSynchronisationDates/udidFirstPublicationDateTime" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1122" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1123">
-    <!--Rule 1123: udidFirstPublicationDateTime shall not be changed once the current populated date has been reached.-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemSynchronisationDates/udidFirstPublicationDateTime" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1123" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1124">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1124: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '49', then TradeItemMeasurements/depth shall be between and including ('610 MMT' or '24.02 IN') and ('1220 MMT' or '48.04 IN') and TradeItemMeasurements/width shall be between and including ('508 MMT' or '20 IN') and ('1016 MMT' or '40 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1124" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1125">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1125: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '48', then TradeItemMeasurements/depth shall be between and including ('610 MMT' or '24.02 IN') and ('1220 MMT' or '48.04 IN') and TradeItemMeasurements/width shall be between and including ('1016 MMT' or '40 IN') and ('2032 MMT' or '80 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1125" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1126">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1126: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '47', then TradeItemMeasurements/depth shall be between and including ('400 MMT' or '15.75 IN') and ('800 MMT' or '31.5 IN'), and TradeItemMeasurements/width shall be between and including ( '800 MMT' or '31.50 IN) and ('1600 MMT' or '63 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1126" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1127">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1127: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '43', then TradeItemMeasurements/depth shall be between and including ('1140 MMT' or '43.31 IN') and  ('2280 MMT' or '86.62 IN') and TradeItemMeasurements/width shall be between and including ('1140 MMT' or '43.31 IN') and ('2280 MMT' or '86.62 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1127" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1128">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1128: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '42', then TradeItemMeasurements/depth shall bebetween and including ('1100 MMT' or '43.31 IN') and ('2200 MMT' or '86.62 IN') and TradeItemMeasurements/width shall be between and including ('1100 MMT' or '43.31 IN') and ('2200 MMT' or '86.62 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1128" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1129">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1129: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '41', then TradeItemMeasurements/depth shall be between and including ('1067 MMT' or '42.01 IN') and ('2134 MMT' or '84.02 IN') and TradeItemMeasurements/width shall be between and including ('1067 MMT' or '42.01 IN') and ('2134 MMT' or '84.02 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1129" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1130">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1130: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '40', then TradeItemMeasurements/depth shall be between and including ('1016 MMT' or '40 IN') and ('2032 MMT' or '80 IN') and TradeItemMeasurements/width shall be between and including ('1219 MMT' or '47.99 IN') and ('2438 MMT' or '95.98 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1130" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1133">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1133: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '35', then TradeItemMeasurements/depth shall be between and including ('1200 MMT' or '47.24 IN') and ('2400 MMT' or '94.5 IN'), and TradeItemMeasurements/width shall be between and including ('1000 MMT' or '39.37 IN') and ('2000 MMT' or '78.74 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1133" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1135">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1135: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '31', then TradeItemMeasurements/depth shall be between and including  ('1000 MMT' or '39.37 IN') and ('2000 MMT' or '78.74 IN') and TradeItemMeasurements/width shall be between and including ('600 MMT' or '23.62 IN') and ('1200 MMT' or '47.34 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1135" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1137">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1137: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '25', then TradeItemMeasurements/depth shall be between and including ('1165 MMT' or '45.87 IN') and ('2330 MMT' or '91.74 IN'), and TradeItemMeasurements/width shall be between and including ('1165 MMT' or '45.87 IN') and ('2330 MMT' or '91.74 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1137" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1138">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1138: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '14', then TradeItemMeasurements/depth shall be between and including ('400 MMT' or '15.75 IN') and ('800 MMT' or '31.5 IN'), and TradeItemMeasurements/width shall be between and including ('300 MMT' or '11.81 IN') and ('600 MMT' or '23.62 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1138" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1139">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1139: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '13', then TradeItemMeasurements/depth shall be between and including ('600 MMT' or '23.62 IN') and ('1200 MMT' or '47.24 IN'), and TradeItemMeasurements/width shall be between and including ('400 MMT' or '15.75 IN') and ('800 MMT' or '31.5 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1139" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1140">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1140: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '12', then TradeItemMeasurements/depth shall be between and including ('1200 MMT' or '47.24 IN') and ('2400 MMT' or '94.48 IN'), and TradeItemMeasurements/width shall be between and including ('1000 MMT' or '39.37 IN') and ('2000 MMT' or '78.74 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1140" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
-  <xsl:template match="*" mode="r1141">
-    <xsl:param name="targetMarket" />
-    <!--Rule 1141: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and  tradeItemUnitDescriptorCode equals 'PALLET' and platformTypeCode equals  '11',
-then TradeItemMeasurements/depth shall be between and including ('1200 MMT' or '47.24 IN') and ('2400 MMT' or '94.48 IN'), 
-and TradeItemMeasurements/width shall be between and including ('800 MMT' or '31.50 IN') and ('1600 MMT' or '63 IN').-->
-    <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemUnitDescriptorCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTypeCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/depth" />
-    <xsl:variable name="xpath4" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/width" />
-    <xsl:variable name="isTargetMarket" select="contains('249, 250', $targetMarket)" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1141" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
   <xsl:template match="*" mode="r1160">
     <xsl:param name="targetMarket" />
     <!--Rule 1160: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and isTradeItemAConsumerUnit equals 'TRUE' then descriptionShort shall be used.-->
@@ -1213,7 +762,6 @@ creditableIngredientDescription shall be used.-->
     <xsl:variable name="xpath18" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/tradeItemPriceInformation/cataloguePrice/tradeItemPrice" />
     <xsl:variable name="xpath19" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/tradeItemPriceInformation/suggestedRetailPrice/tradeItemPrice" />
     <xsl:variable name="xpath20" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_disposal_information:xsd:3' and local-name()='tradeItemDisposalInformationModule']/tradeItemDisposalInformation/manufacturerTakeBackProgram/manufacturerTakeBackProgramFee" />
-    <xsl:variable name="xpath21" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/suggestedUnitRetailPrice" />
     <xsl:if test="$xpath = 'TODO'">
       <xsl:apply-templates select="." mode="error">
         <xsl:with-param name="id" select="1380" />
@@ -1765,23 +1313,6 @@ creditableIngredientDescription shall be used.-->
     <xsl:variable name="xpath527" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:warranty_information:xsd:3' and local-name()='warrantyInformationModule']/warrantyInformation/referencedFileInformation/contentDescription/@languageCode" />
     <xsl:variable name="xpath528" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:warranty_information:xsd:3' and local-name()='warrantyInformationModule']/warrantyInformation/referencedFileInformation/fileFormatDescription" />
     <xsl:variable name="xpath529" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:warranty_information:xsd:3' and local-name()='warrantyInformationModule']/warrantyInformation/referencedFileInformation/fileFormatDescription/@languageCode" />
-    <xsl:variable name="xpath530" select="/catalogue_item_confirmation:catalogueItemConfirmationMessage/transaction/documentCommand/catalogue_item_confirmation:catalogueItemConfirmation/catalogueItemConfirmationStatusDetail/catalogueItemConfirmationStatus/confirmationStatusCodeDescription" />
-    <xsl:variable name="xpath531" select="/catalogue_item_confirmation:catalogueItemConfirmationMessage/transaction/documentCommand/catalogue_item_confirmation:catalogueItemConfirmation/catalogueItemConfirmationStatusDetail/catalogueItemConfirmationStatus/confirmationStatusCodeDescription/@languageCode" />
-    <xsl:variable name="xpath532" select="/catalogue_item_confirmation:catalogueItemConfirmationMessage/transaction/documentCommand/catalogue_item_confirmation:catalogueItemConfirmation/catalogueItemConfirmationStatusDetail/catalogueItemConfirmationStatus/additionalConfirmationStatusLongDescription" />
-    <xsl:variable name="xpath533" select="/catalogue_item_confirmation:catalogueItemConfirmationMessage/transaction/documentCommand/catalogue_item_confirmation:catalogueItemConfirmation/catalogueItemConfirmationStatusDetail/catalogueItemConfirmationStatus/additionalConfirmationStatusLongDescription/@languageCode" />
-    <xsl:variable name="xpath534" select="/catalogue_item_confirmation:catalogueItemConfirmationMessage/transaction/documentCommand/catalogue_item_confirmation:catalogueItemConfirmation/catalogueItemConfirmationStatusDetail/catalogueItemConfirmationStatus/correctiveAction/expectedCorrectiveInformation" />
-    <xsl:variable name="xpath535" select="/catalogue_item_confirmation:catalogueItemConfirmationMessage/transaction/documentCommand/catalogue_item_confirmation:catalogueItemConfirmation/catalogueItemConfirmationStatusDetail/catalogueItemConfirmationStatus/correctiveAction/expectedCorrectiveInformation/@languageCode" />
-    <xsl:variable name="xpath536" select="/catalogue_item_hierarchical_withdrawal:catalogueItemHierarchicalWithdrawalMessage/transaction/documentCommand/catalogue_item_hierarchical_withdrawal:catalogueItemHierarchicalWithdrawal/hierarchyDeletionAdditionalReasonDescription" />
-    <xsl:variable name="xpath537" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/pricePerformanceRequirementInformation/performanceRequirementDescription" />
-    <xsl:variable name="xpath538" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/pricePerformanceRequirementInformation/performanceRequirementDescription/@languageCode" />
-    <xsl:variable name="xpath539" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/referenceDocumentInformation/referenceDocumentDescription" />
-    <xsl:variable name="xpath540" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/referenceDocumentInformation/referenceDocumentDescription/@languageCode" />
-    <xsl:variable name="xpath541" select="/registry_party_data_dump:registryPartyDataDumpMessage/transaction/documentCommand/registry_party_data_dump:registryPartyDataDump/party/partyContact/responsibility" />
-    <xsl:variable name="xpath542" select="/registry_party_data_dump:registryPartyDataDumpMessage/transaction/documentCommand/registry_party_data_dump:registryPartyDataDump/party/partyContact/responsibility/@languageCode" />
-    <xsl:variable name="xpath543" select="/search_result:searchResultMessage/transaction/documentCommand/search_result:searchResult/party/partyContact/responsibility" />
-    <xsl:variable name="xpath544" select="/search_result:searchResultMessage/transaction/documentCommand/search_result:searchResult/party/partyContact/responsibility/@languageCode" />
-    <xsl:variable name="xpath545" select="/basic_party_registration:basicPartyRegistrationMessage/transaction/documentCommand/basic_party_registration:basicPartyRegistration/party/partyContact/responsibility" />
-    <xsl:variable name="xpath546" select="/basic_party_registration:basicPartyRegistrationMessage/transaction/documentCommand/basic_party_registration:basicPartyRegistration/party/partyContact/responsibility/@languageCode" />
     <xsl:variable name="xpath547" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/productInformationLegalDisclaimer" />
     <xsl:variable name="xpath548" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/productInformationLegalDisclaimer/@languageCode" />
     <xsl:variable name="xpath549" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:product_formulation_statement:xsd:3' and local-name()='productFormulationStatementModule']/productFormulationStatement/creditableIngredient/creditableIngredientDetails/creditableGrainsInformation/noncreditableGrain/noncreditableGrainDescription" />
@@ -3156,10 +2687,6 @@ If targetMarketCountryCode equals (056 (Belgium), 442 (Luxembourg), 528 (Netherl
   <xsl:template match="*" mode="r1697">
     <!--Rule 1697: Code value 'NON_EU' (Non European Union) shall not be used with /catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode, /catalogue_item_publication:catalogueItemPublicationMessage/transaction/documentCommand/catalogue_item_publication:catalogueItemPublication/publishToTargetMarket/targetMarketcountryCode, /catalogue_item_publication:catalogueItemPublicationMessage/transaction/documentCommand/catalogue_item_publication:catalogueItemPublication/catalogueItemReference/targetMarketCountryCode, /request_for_catalogue_item_notification:requestForCatalogueItemNotificationMessage/transaction/documentCommand/request_for_catalogue_item_notification:requestForCatalogueItemNotification/targetMarket/targetMarketCountryCode, /catalogue_item_subscription:catalogueItemSubscriptionMessage/transaction/documentCommand/catalogue_item_subscription:catalogueItemSubscription/targetMarket/targetMarketCountryCode-->
     <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_publication:catalogueItemPublicationMessage/transaction/documentCommand/catalogue_item_publication:catalogueItemPublication/publishToTargetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/catalogue_item_publication:catalogueItemPublicationMessage/transaction/documentCommand/catalogue_item_publication:catalogueItemPublication/catalogueItemReference/targetMarketCountryCode" />
-    <xsl:variable name="xpath3" select="/catalogue_item_subscription:catalogueItemSubscriptionMessage/transaction/documentCommand/catalogue_item_subscription:catalogueItemSubscription/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath4" select="/request_for_catalogue_item_notification:requestForCatalogueItemNotificationMessage/transaction/documentCommand/request_for_catalogue_item_notification:requestForCatalogueItemNotification/targetMarket/targetMarketCountryCode" />
     <xsl:if test="$xpath = 'TODO'">
       <xsl:apply-templates select="." mode="error">
         <xsl:with-param name="id" select="1697" />
@@ -4409,16 +3936,6 @@ If targetMarketCountryCode equals '246' (Finland) and isTradeItemAConsumerUnit e
 		</xsl:if>
 	</xsl:template>
   
-  <xsl:template match="*" mode="r1854">
-    <!--Rule 1854: If confirmationStatusCode equals 'CIC999' then additionalConfirmationStatusLongDescription SHALL be used.-->
-    <xsl:variable name="xpath" select="/catalogue_item_confirmation:catalogueItemConfirmationMessage/transaction/documentCommand/catalogue_item_confirmation:catalogueItemConfirmation/catalogueItemConfirmationStatusDetail/catalogueItemConfirmationStatus/confirmationStatusCode" />
-    <xsl:variable name="xpath1" select="/catalogue_item_confirmation:catalogueItemConfirmationMessage/transaction/documentCommand/catalogue_item_confirmation:catalogueItemConfirmation/catalogueItemConfirmationStatusDetail/catalogueItemConfirmationStatus/additionalConfirmationStatusLongDescription" />
-    <xsl:if test="$xpath = 'TODO'">
-      <xsl:apply-templates select="." mode="error">
-        <xsl:with-param name="id" select="1854" />
-      </xsl:apply-templates>
-    </xsl:if>
-  </xsl:template>
   <xsl:template match="*" mode="r1855">
     <xsl:param name="targetMarket" />
     <!--Rule 1855: If targetMarketCountryCode equals <Geographic> then isTradeItemAConsumerUnit SHALL be used.-->
@@ -4658,7 +4175,6 @@ If targetMarketCountryCode equals <Geographic> and preparationInstructions is us
     <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/isTradeItemAConsumerUnit" />
     <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
     <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume" />
-    <xsl:variable name="xpath3" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/dutyFeeTaxTypeInformation/dutyFeeTaxTypeCode" />
     <xsl:variable name="isTargetMarket" select="contains('250', $targetMarket)" />
     <xsl:if test="$xpath = 'TODO'">
       <xsl:apply-templates select="." mode="error">
@@ -4766,7 +4282,6 @@ If targetMarketCountryCode equals <Geographic> and preparationInstructions is us
     <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/isTradeItemAConsumerUnit" />
     <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
     <xsl:variable name="xpath2" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume" />
-    <xsl:variable name="xpath3" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/dutyFeeTaxTypeInformation/dutyFeeTaxTypeCode" />
     <xsl:variable name="isTargetMarket" select="contains('250', $targetMarket)" />
     <xsl:if test="$xpath = 'TODO'">
       <xsl:apply-templates select="." mode="error">
@@ -4834,7 +4349,6 @@ If targetMarketCountryCode equals <Geographic> and preparationInstructions is us
     <!--Rule 1889: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true', then at least one iteration of dutyFeeTaxTypeCode SHALL equal ('S' , '1G' , '2G' , '3G' , 'H' or 'E').-->
     <xsl:variable name="xpath" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/isTradeItemAConsumerUnit" />
     <xsl:variable name="xpath1" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/targetMarket/targetMarketCountryCode" />
-    <xsl:variable name="xpath2" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/dutyFeeTaxTypeInformation/dutyFeeTaxTypeCode" />
     <xsl:variable name="isTargetMarket" select="contains('250', $targetMarket)" />
     <xsl:if test="$xpath = 'TODO'">
       <xsl:apply-templates select="." mode="error">
@@ -6757,7 +6271,6 @@ If targetMarketCountryCode equals <Geographic> and preparationInstructions is us
     <xsl:variable name="xpath19" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/tradeItemPriceInformation/cataloguePrice/tradeItemPrice/@currencyCode" />
     <xsl:variable name="xpath20" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/tradeItemPriceInformation/suggestedRetailPrice/tradeItemPrice/@currencyCode" />
     <xsl:variable name="xpath21" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_disposal_information:xsd:3' and local-name()='tradeItemDisposalInformationModule']/tradeItemDisposalInformation/manufacturerTakeBackProgram/manufacturerTakeBackProgramFee/@currencyCode" />
-    <xsl:variable name="xpath22" select="/price_synchronisation_document:priceSynchronisationDocumentMessage/transaction/documentCommand/price_synchronisation_document:priceSynchronisationDocument/itemDepictionQualifier/itemPriceType/suggestedUnitRetailPrice/@currencyCode" />
     <xsl:variable name="xpath23" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:food_and_beverage_ingredient:xsd:3' and local-name()='foodAndBeverageIngredientModule']/endProductIngredientSchedule/foodValueBasis/@currencyCode" />
     <xsl:variable name="xpath24" select="/catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:food_and_beverage_ingredient:xsd:3' and local-name()='foodAndBeverageIngredientModule']/endProductIngredientSchedule/foodValuePerTradeItem/@currencyCode" />
     <xsl:variable name="isTargetMarket" select="contains('250', $targetMarket)" />
