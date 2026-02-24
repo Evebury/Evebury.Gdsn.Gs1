@@ -1501,218 +1501,11 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to regulatedProductName cannot be used more than once with the same @languageCode for the same trade item..
-        /// </summary>
-        internal static string _1411 {
-            get {
-                return ResourceManager.GetString("1411", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For componentDescription one of the values must be in Swedish. You are not allowed to populate componentDescription more than once in the same language..
-        /// </summary>
-        internal static string _1412 {
-            get {
-                return ResourceManager.GetString("1412", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exactly one instance of Consumer storage instructions shall  be in Swedish..
-        /// </summary>
-        internal static string _1413 {
-            get {
-                return ResourceManager.GetString("1413", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For servingSuggestion one of the values must be in Swedish. You are not allowed to populate servingSuggestion more than once in the same language..
-        /// </summary>
-        internal static string _1414 {
-            get {
-                return ResourceManager.GetString("1414", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For compulsoryAdditiveLabelInformation one of the values must be in Swedish. You are not allowed to populate compulsoryAdditiveLabelInformation more than once in the same language..
-        /// </summary>
-        internal static string _1415 {
-            get {
-                return ResourceManager.GetString("1415", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For nonfoodIngredientStatement one of the values must be in Swedish. You are not allowed to populate nonfoodIngredientStatement more than once in the same language..
-        /// </summary>
-        internal static string _1416 {
-            get {
-                return ResourceManager.GetString("1416", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For contentDescription one of the values must be in Swedish. You are not allowed to populate contentDescription more than once in the same language..
+        ///   Looks up a localized string similar to There must be one iteration for language &apos;Swedish&apos;..
         /// </summary>
         internal static string _1419 {
             get {
                 return ResourceManager.GetString("1419", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For hazardStatementsDescription one of the values must be in Swedish. You are not allowed to populate hazardStatementsDescription more than once in the same language..
-        /// </summary>
-        internal static string _1420 {
-            get {
-                return ResourceManager.GetString("1420", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For precautionaryStatementsDescription one of the values must be in Swedish. You are not allowed to populate precautionaryStatementsDescription more than once in the same language..
-        /// </summary>
-        internal static string _1421 {
-            get {
-                return ResourceManager.GetString("1421", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to One instance of tradeItemDescription shall be in Swedish..
-        /// </summary>
-        internal static string _1422 {
-            get {
-                return ResourceManager.GetString("1422", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For colourDescription one of the values must be in Swedish. You are not allowed to populate colourDescription more than once in the same language..
-        /// </summary>
-        internal static string _1423 {
-            get {
-                return ResourceManager.GetString("1423", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For hazardousMaterialAdditionalInformation one of the values must be in Swedish. You are not allowed to populate hazardousMaterialAdditionalInformation more than once in the same language..
-        /// </summary>
-        internal static string _1424 {
-            get {
-                return ResourceManager.GetString("1424", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For dangerousGoodsTechnicalName one of the values must be in Swedish. You are not allowed to populate dangerousGoodsTechnicalName more than once in the same language..
-        /// </summary>
-        internal static string _1425 {
-            get {
-                return ResourceManager.GetString("1425", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For recommendedFrequencyOfFeeding one of the values must be in Swedish. You are not allowed to populate recommendedFrequencyOfFeeding more than once in the same language..
-        /// </summary>
-        internal static string _1426 {
-            get {
-                return ResourceManager.GetString("1426", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For feedingAmountBasisDescription one of the values must be in Swedish. You are not allowed to populate feedingAmountBasisDescription more than once in the same language..
-        /// </summary>
-        internal static string _1427 {
-            get {
-                return ResourceManager.GetString("1427", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to One instance of tradeItemKeyWords shall be in Swedish. You are not allowed to populate tradeItemKeyWords more than once in the same language..
-        /// </summary>
-        internal static string _1429 {
-            get {
-                return ResourceManager.GetString("1429", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to One instance of provenanceStatement shall be in Swedish..
-        /// </summary>
-        internal static string _1430 {
-            get {
-                return ResourceManager.GetString("1430", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For descriptiveSizeDimension one of the values must be in Swedish. You are not allowed to populate descriptiveSizeDimension more than once in the same language..
-        /// </summary>
-        internal static string _1431 {
-            get {
-                return ResourceManager.GetString("1431", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to One instance of claimDescription shall be in Swedish..
-        /// </summary>
-        internal static string _1432 {
-            get {
-                return ResourceManager.GetString("1432", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For ingredientStatement one of the values must be in Swedish. You are not allowed to populate ingredientStatement more than once in the same language..
-        /// </summary>
-        internal static string _1433 {
-            get {
-                return ResourceManager.GetString("1433", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For dailyValueIntakeReference one of the values must be in Swedish. You are not allowed to populate dailyValueIntakeReference more than once in the same language..
-        /// </summary>
-        internal static string _1434 {
-            get {
-                return ResourceManager.GetString("1434", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For servingSizeDescription one of the values must be in Swedish. You are not allowed to populate servingSizeDescription more than once in the same language..
-        /// </summary>
-        internal static string _1435 {
-            get {
-                return ResourceManager.GetString("1435", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For allergenStatement one of the values must be in Swedish. You are not allowed to populate allergenStatement more than once in the same language..
-        /// </summary>
-        internal static string _1436 {
-            get {
-                return ResourceManager.GetString("1436", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For preparationInstructions one of the values must be in Swedish. You are not allowed to populate preparationInstructions more than once in the same language..
-        /// </summary>
-        internal static string _1437 {
-            get {
-                return ResourceManager.GetString("1437", resourceCulture);
             }
         }
         
@@ -1740,24 +1533,6 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         internal static string _1446 {
             get {
                 return ResourceManager.GetString("1446", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to descriptionShort is missing in Swedish or has been repeated with the same language code. descriptionShort is mandatory for consumer units. You are not allowed to populate descriptionShort more than once in the same language..
-        /// </summary>
-        internal static string _1449 {
-            get {
-                return ResourceManager.GetString("1449", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to functionalName is missing in Swedish or has been repeated with the same language code. functionalName is mandatory for consumer units. You are not allowed to populate functionalName more than once in the same language..
-        /// </summary>
-        internal static string _1450 {
-            get {
-                return ResourceManager.GetString("1450", resourceCulture);
             }
         }
         
@@ -4957,7 +4732,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, a value of &lt;attribute name(s)&gt; must be provided in French..
+        ///   Looks up a localized string similar to There must be one iteration for language &apos;French&apos;..
         /// </summary>
         internal static string _2069 {
             get {

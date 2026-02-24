@@ -1481,6 +1481,49 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1419">
+		<xsl:param name="targetMarket"/>
+		<xsl:if test="$targetMarket = '752'">
+			<!--Rule 1419: There must be one iteration for language 'Swedish'.-->
+			<xsl:choose>
+				<xsl:when test="@languageCode">
+					<xsl:variable name="name" select="name()"/>
+					<xsl:if test="count(../*[name() = $name and @languageCode = 'sv']) &lt; 1">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1419" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:apply-templates select="*" mode="r1419">
+						<xsl:with-param name="targetMarket" select="$targetMarket"/>
+					</xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r2069">
+		<xsl:param name="targetMarket"/>
+		<xsl:if test="$targetMarket = '250'">
+			<!--Rule 2069: There must be one iteration for language 'French'.-->
+			<xsl:choose>
+				<xsl:when test="@languageCode">
+					<xsl:variable name="name" select="name()"/>
+					<xsl:if test="count(../*[name() = $name and @languageCode = 'fr']) &lt; 1">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="2069" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:apply-templates select="*" mode="r2069">
+						<xsl:with-param name="targetMarket" select="$targetMarket"/>
+					</xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
 	<!-- endregion validation rules -->
 
 	<xsl:template match="catalogueItem" mode="hierarchy_rules">
@@ -1627,6 +1670,15 @@
 		<xsl:apply-templates select="." mode="r1079"/>
 		<xsl:apply-templates select="." mode="r1080"/>
 		<xsl:apply-templates select="." mode="r1089"/>
+
+
+		<xsl:apply-templates select="." mode="r1419">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+
+		<xsl:apply-templates select="." mode="r2069">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 </xsl:stylesheet>
