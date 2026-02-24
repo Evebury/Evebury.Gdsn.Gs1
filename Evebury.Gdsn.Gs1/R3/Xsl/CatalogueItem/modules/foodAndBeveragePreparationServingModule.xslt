@@ -9,31 +9,12 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-
-		<xsl:apply-templates select="foodAndBeverageIngredient" mode="foodAndBeveragePreparationServingModule">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
 		<xsl:apply-templates select="preparationServing" mode="foodAndBeveragePreparationServingModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
 	</xsl:template>
 
-	<xsl:template match="foodAndBeverageIngredient" mode="foodAndBeveragePreparationServingModule">
-		<xsl:param name="targetMarket"/>
-		<!--Rule 586: If targetMarketCountryCode is equal to '840' (US) and growingMethodCode  is equal to 'ORGANIC' then organicClaimAgencyCode and organicTradeItemCode must not  be empty.-->
-		<xsl:if test="$targetMarket = '840'">
-			<xsl:if test="ingredientFarmingProcessing[growingMethodCode = 'ORGANIC']">
-				<xsl:for-each select="ingredientOrganicInformation/organicClaim">
-					<xsl:if test="organicClaimAgencyCode = '' or organicTradeItemCode = ''">
-						<xsl:apply-templates select="." mode="error">
-							<xsl:with-param name="id" select="586" />
-						</xsl:apply-templates>
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:if>
-		</xsl:if>
-	</xsl:template>
 
 	<xsl:template match="preparationServing" mode="foodAndBeveragePreparationServingModule">
 		<xsl:param name="targetMarket"/>
@@ -61,6 +42,8 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
+
+	
 
 	</xsl:template>
 

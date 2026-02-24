@@ -66,7 +66,7 @@
 			</xsl:for-each>
 		</xsl:if>
 
-	
+
 		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
 			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode = 'PALLET'">
 				<xsl:variable name="module" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements"/>
@@ -237,11 +237,80 @@
 						</xsl:call-template>
 					</xsl:when>
 				</xsl:choose>
-				
-				
+
+
 			</xsl:if>
 		</xsl:if>
 
+
+		<!--Rule 1166: If (PackagingDimension/packagingDepth or PackagingDimension/packagingWidth are used) and (platformTypeCode is not used or equal to '98' or packagingTypeCode does not equal to 'PX'('Pallet')) then PackagingDimension/packagingHeight SHALL be used.-->
+		<xsl:if test="packagingDimension/packagingDepth != '' or packagingDimension/packagingWidth != ''">
+			<xsl:if test="platformTypeCode = '' or platformTypeCode = '98' or packagingTypeCode != 'PX'">
+				<xsl:if test="packagingDimension/packagingHeight = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1166" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<xsl:variable name="packaging" select="."/>
+
+		<!--Rule 1209: There must be at most one iteration of packagingRefundObligationName -->
+		<xsl:for-each select="packagingRefundObligationName">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($packaging[packagingRefundObligationName = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1209" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+
+
+		<!--Rule 1210: There must be at most one iteration of packagingRefuseObligationName -->
+		<xsl:for-each select="packagingRefuseObligationName">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($packaging[packagingRefuseObligationName = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1210" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+
+		<!--Rule 1211: If PackagingInformationModule/Packaging/packagingTermsAndConditionsCode is used, then it shall not exceed one iteration.-->
+		<xsl:for-each select="packagingTermsAndConditionsCode">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($packaging[packagingTermsAndConditionsCode = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1211" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+
+		<!--Rule 1293: If Packaging class or sub-classes are not empty then packagingTypeCode or platformTypeCode SHALL be used-->
+		<xsl:if test="packagingTypeCode  = '' and platformTypeCode = ''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1293" />
+			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1310: If packagingFunctioncode is equal to "TAMPER_EVIDENT" then"packagingTypeCode must not be empty.-->
+		<xsl:if test="packagingFunctionCode  = 'TAMPER_EVIDENT'">
+			<xsl:if test="packagingTypeCode = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1310" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1312: If platformTermsAndConditionsCode is used then platformTypeCode SHALL be used and SHALL NOT equal to '98'.-->
+		<xsl:if test="platformTermsAndConditionsCode  != ''">
+			<xsl:if test="platformTypeCode = '' or platformTypeCode  = '98'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1312" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		<xsl:apply-templates select="packagingMaterial" mode="packagingInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>

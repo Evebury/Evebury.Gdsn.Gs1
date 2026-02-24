@@ -11,8 +11,41 @@
 
 
 		<xsl:apply-templates select="dataCarrier" mode="tradeItemDataCarrierAndIdentificationModule">
-			<xsl:with-param name="tradeItem" select="$tradeItem"/>			
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
+
+		<xsl:for-each select="gS1TradeItemIdentificationKey">
+			<xsl:choose>
+				<xsl:when test="gs1TradeItemIdentificationKeyCode  = 'GTIN_13'">
+					<xsl:if test="gs1:InvalidGTIN(gs1TradeItemIdentificationKeyValue,13)">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1294" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+				<xsl:when test="gs1TradeItemIdentificationKeyCode  = 'GTIN_8'">
+					<xsl:if test="gs1:InvalidGTIN(gs1TradeItemIdentificationKeyValue,8)">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1295" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+				<xsl:when test="gs1TradeItemIdentificationKeyCode  = 'GTIN_14'">
+					<xsl:if test="gs1:InvalidGTIN(gs1TradeItemIdentificationKeyValue,14)">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1296" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+				<xsl:when test="gs1TradeItemIdentificationKeyCode  = 'GTIN_12'">
+					<xsl:if test="gs1:InvalidGTIN(gs1TradeItemIdentificationKeyValue,12)">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1297" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:for-each>
 
 	</xsl:template>
 

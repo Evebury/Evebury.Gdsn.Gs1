@@ -268,6 +268,26 @@ namespace Evebury.Gdsn.Gs1.Xsl
             }
         }
 
+        public static bool InvalidSequence(string sequence) 
+        { 
+            if(string.IsNullOrWhiteSpace(sequence)) return false;
+            if (sequence.Contains('.')) 
+            {
+                string[] parts = sequence.Split('.');
+                foreach (string part in parts)
+                {
+                    if (!int.TryParse(sequence, out int value)) return true;
+                    if (value == 0) return true;
+                }
+            }
+            else
+            {
+                if (!int.TryParse(sequence, out int value)) return true;
+                if (value == 0) return true;
+            }
+            return false;
+        }
+
         public bool IsInClass(string brick, string @class) 
         {
             BrickPath path = GetBrickPath(brick);

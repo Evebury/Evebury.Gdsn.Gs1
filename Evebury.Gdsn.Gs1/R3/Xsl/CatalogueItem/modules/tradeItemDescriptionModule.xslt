@@ -55,6 +55,18 @@
 				<xsl:with-param name="id" select="1065" />
 			</xsl:apply-templates>
 		</xsl:if>
+
+		<!--Rule 1232: There must be at most one iteration of tradeItemGroupIdentificationCodeReference-->
+		<xsl:variable name="info" select="."/>
+		<xsl:for-each select="tradeItemGroupIdentificationCodeReference">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($info[tradeItemGroupIdentificationCodeReference = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1232" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+		
 	
 	</xsl:template>
 

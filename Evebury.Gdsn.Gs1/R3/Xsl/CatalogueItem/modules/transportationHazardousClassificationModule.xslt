@@ -13,6 +13,24 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
+		<xsl:apply-templates select="transportationClassification" mode="transportationHazardousClassificationModule"/>
+
+	</xsl:template>
+
+	<xsl:template match="transportationClassification" mode="transportationHazardousClassificationModule">
+
+		<xsl:variable name="class" select="."/>
+
+		<!--Rule 1233: There must be at most one iteration of transportationModeRegulatoryAgency-->
+		<xsl:for-each select="transportationModeRegulatoryAgency">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($class[transportationModeRegulatoryAgency = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1233" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+		
 	</xsl:template>
 
 	<xsl:template match="hazardousInformationHeader" mode="transportationHazardousClassificationModule">

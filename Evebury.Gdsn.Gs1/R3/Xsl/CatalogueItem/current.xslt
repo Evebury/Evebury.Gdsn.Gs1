@@ -12,6 +12,7 @@
 
 	<xsl:template match="tradeItem">
 		<tradeItem informationProvider="{informationProviderOfTradeItem/gln}" market="{targetMarket/targetMarketCountryCode}" gtin="{gtin}">
+			<xsl:apply-templates select="preliminaryItemStatusCode" mode="node"/>
 			<xsl:apply-templates select="tradeItemSynchronisationDates"/>
 			<xsl:apply-templates select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation"/>
 			<xsl:apply-templates select="tradeItemInformation/extension/*[namespace-uri() = 'urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name() = 'tradeItemMeasurementsModule']/tradeItemMeasurements"/>

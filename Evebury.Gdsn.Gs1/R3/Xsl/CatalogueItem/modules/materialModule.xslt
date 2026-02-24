@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl gs1"
+    xmlns:gs1="urn:xsl:extension:gdsn:gs1:response"
+	>
+	<xsl:output method="xml" indent="yes"/>
+
+	<xsl:template match="*[namespace-uri()='urn:gs1:gdsn:material:xsd:3' and local-name()='materialModule']" mode="module">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+
+		<xsl:apply-templates select="material" mode="materialModule"/>
+
+	</xsl:template>
+
+	<xsl:template match="material" mode="materialModule">
+		<!--Rule 1308: If Material/materialAgencyCode is used then Material/MaterialComposition/materialCode SHALL be used.-->
+		<xsl:if test="materialAgencyCode != ''">
+			<xsl:if test="materialComposition[materialCode = '']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1308" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1309: if Material/materialAgencyCode and Material/MaterialComposition/materialCode are used then Material/MaterialComposition/materialPercentage shall be used.-->
+		<xsl:if test="materialAgencyCode != '' and materialComposition[materialCode != '']">
+			<xsl:if test="materialComposition[materialPercentage = '']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1308" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		
+	</xsl:template>
+
+</xsl:stylesheet>

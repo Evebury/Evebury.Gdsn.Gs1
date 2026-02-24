@@ -127,6 +127,9 @@
   <data name="audienceOrPlayerInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\audienceOrPlayerInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="audioVisualMediaContentInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\audioVisualMediaContentInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="audioVisualMediaProductDescriptionInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\audioVisualMediaProductDescriptionInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -157,14 +160,23 @@
   <data name="farmingAndProcessingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\farmingAndProcessingInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="foodAndBeverageIngredientModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\foodAndBeverageIngredientModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="foodAndBeveragePreparationServingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\foodAndBeveragePreparationServingModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="marketingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\marketingInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="materialModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\materialModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="measurementUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>measurementUnit.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nonfoodIngredientModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\nonfoodIngredientModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="nonGTINLogisticsUnitInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\nonGTINLogisticsUnitInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -175,6 +187,9 @@
   <data name="packagingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\packagingInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="packagingMarkingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\packagingMarkingModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="placeOfItemActivityModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\placeOfItemActivityModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -183,6 +198,9 @@
   </data>
   <data name="productFormulationStatementModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\productFormulationStatementModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="productInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\productInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="promotionalItemInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\promotionalItemInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

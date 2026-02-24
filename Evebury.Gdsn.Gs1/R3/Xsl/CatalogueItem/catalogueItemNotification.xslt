@@ -12,6 +12,7 @@
 	<xsl:include href="modules/alcoholInformationModule.xslt"/>
 	<xsl:include href="modules/animalFeedingModule.xslt"/>
 	<xsl:include href="modules/audienceOrPlayerInformationModule.xslt"/>
+	<xsl:include href="modules/audioVisualMediaContentInformationModule.xslt"/>
 	<xsl:include href="modules/audioVisualMediaProductDescriptionInformationModule.xslt"/>
 	<xsl:include href="modules/certificationInformationModule.xslt"/>
 	<xsl:include href="modules/childNutritionInformationModule.xslt"/>
@@ -21,14 +22,19 @@
 	<xsl:include href="modules/dietInformationModule.xslt"/>
 	<xsl:include href="modules/dutyFeeTaxInformationModule.xslt"/>
 	<xsl:include href="modules/farmingAndProcessingInformationModule.xslt"/>
+	<xsl:include href="modules/foodAndBeverageIngredientModule.xslt"/>
 	<xsl:include href="modules/foodAndBeveragePreparationServingModule.xslt"/>
 	<xsl:include href="modules/marketingInformationModule.xslt"/>
+	<xsl:include href="modules/materialModule.xslt"/>
+	<xsl:include href="modules/nonfoodIngredientModule.xslt"/>
 	<xsl:include href="modules/nonGTINLogisticsUnitInformationModule.xslt"/>
 	<xsl:include href="modules/oNIXPublicationFileInformationModule.xslt"/>
 	<xsl:include href="modules/packagingInformationModule.xslt"/>
+	<xsl:include href="modules/packagingMarkingModule.xslt"/>
 	<xsl:include href="modules/placeOfItemActivityModule.xslt"/>
 	<xsl:include href="modules/plumbingHVACPipeInformationModule.xslt"/>
 	<xsl:include href="modules/productFormulationStatementModule.xslt"/>
+	<xsl:include href="modules/productInformationModule.xslt"/>
 	<xsl:include href="modules/promotionalItemInformationModule.xslt"/>
 	<xsl:include href="modules/referencedFileDetailInformationModule.xslt"/>
 	<xsl:include href="modules/regulatedTradeItemModule.xslt"/>
@@ -552,6 +558,20 @@
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1123" />
 					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+
+			<!--Rule 1290: If targetMarketCountryCode does not equal (036 (Australia), 554 (New Zealand)) and if preliminaryItemStatusCode changes from  'PRELIMINARY' to 'FINAL' and Document Command is equal to CHANGE_BY_REFRESH, then the lastChangeDateTime must be less than or equal to the firstShipDateTime.-->
+			<xsl:if test="$targetMarket != '036' and $targetMarket != '554'">
+				<xsl:if test="$tradeItem/preliminaryItemStatusCode = 'PRELIMINARY' and preliminaryItemStatusCode = 'FINAL'">
+					<xsl:if test="$command = 'CHANGE_BY_REFRESH'">
+						<xsl:if test="gs1:InvalidDateTimeSpan(tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/firstShipDateTime, tradeItemSynchronisationDates/lastChangeDateTime)">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1290" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:if>
 				</xsl:if>
 			</xsl:if>
 
@@ -1481,6 +1501,181 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1160">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1160: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and isTradeItemAConsumerUnit equals 'TRUE' then descriptionShort shall be used.-->
+		<xsl:if test="isTradeItemAConsumerUnit = 'true' and ($targetMarket = '249' or $targetMarket = '250')">
+			<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/descriptionShort = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1160" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1161">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1161: If targetMarketCountryCode equals ('249' (France) or '250' (France)) then tradeItemDescriptionInformation/tradeItemDescription shall be used.-->
+		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
+			<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/tradeItemDescription = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1161" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1167">
+		<!--Rule 1167: If isTradeItemNonPhysical is not equal to 'true' then tradeItemUnitDescriptor must not be empty.-->
+		<xsl:if test="isTradeItemNonphysical != 'true' and tradeItemUnitDescriptorCode = ''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1167" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1168">
+		<!--Rule 1168: There must be at most 1 iteration of referencedTradeItem/GTIN where  referencedTradeItemTypeCode equals 'ITEM_VARIANT_MASTER'-->
+		<xsl:if test="count(referencedTradeItem[referencedTradeItemTypeCode = 'ITEM_VARIANT_MASTER']) &gt; 1">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1168" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1176">
+		<!--Rule 1176: There must be at most 1 iteration of referencedTradeItem/GTIN where  referencedTradeItemTypeCode equals 'PREFERRED'-->
+		<xsl:if test="count(referencedTradeItem[referencedTradeItemTypeCode = 'PREFERRED']) &gt; 1">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1176" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1277">
+		<!--Rule 1277: If tradeItemUnitDescriptorCode is equal to 'MIXED_MODULE' and parent item exists then parent item tradeItemUnitDescriptorCode must equal 'TRANSPORT_LOAD', 'PALLET', or 'MIXED_MODULE'.-->
+		<xsl:if test="tradeItemUnitDescriptorCode = 'MIXED_MODULE'">
+			<xsl:variable name="parent" select="../../../tradeItem"/>
+			<xsl:if test="$parent">
+				<xsl:choose>
+					<xsl:when test="$parent/tradeItemUnitDescriptorCode = 'TRANSPORT_LOAD'"/>
+					<xsl:when test="$parent/tradeItemUnitDescriptorCode = 'PALLET'"/>
+					<xsl:when test="$parent/tradeItemUnitDescriptorCode = 'MIXED_MODULE'"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1277" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1278">
+		<!--Rule 1278: If tradeItemUnitDescriptorCode is equal to 'MIXED_MODULE' then child item tradeItemUnitDescriptorCode must not equal 'TRANSPORT_LOAD' .-->
+		<xsl:if test="tradeItemUnitDescriptorCode = 'MIXED_MODULE'">
+			<xsl:for-each select="catalogueItemChildItemLink/catalogueItem/tradeItem">
+				<xsl:choose>
+					<xsl:when test="tradeItemUnitDescriptorCode = 'TRANSPORT_LOAD'">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1278" />
+						</xsl:apply-templates>
+					</xsl:when>
+				</xsl:choose>
+			</xsl:for-each>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1279">
+		<!--Rule 1279: If tradeItemUnitDescriptorCode equals 'DISPLAY_SHIPPER' then parent item tradeItemUnitDescriptorCode shall not equal 'BASE_UNIT_OR_EACH' or 'PACK_OR_INNER_PACK'.-->
+		<xsl:if test="tradeItemUnitDescriptorCode = 'DISPLAY_SHIPPER'">
+			<xsl:variable name="parent" select="../../../tradeItem"/>
+			<xsl:if test="$parent">
+				<xsl:choose>
+					<xsl:when test="$parent/tradeItemUnitDescriptorCode = 'BASE_UNIT_OR_EACH'">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1279" />
+						</xsl:apply-templates>
+					</xsl:when>
+					<xsl:when test="$parent/tradeItemUnitDescriptorCode = 'PACK_OR_INNER_PACK'">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1279" />
+						</xsl:apply-templates>
+					</xsl:when>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1280">
+		<!--Rule 1280: If tradeItemUnitDescriptorCode is equal to 'DISPLAY_SHIPPER' then child item tradeItemUnitDescriptorCode must not equal 'TRANSPORT_LOAD', 'MIXED_MODULE' or ' PALLET'.-->
+		<xsl:if test="tradeItemUnitDescriptorCode = 'MIXED_MODULE'">
+			<xsl:for-each select="catalogueItemChildItemLink/catalogueItem/tradeItem">
+				<xsl:choose>
+					<xsl:when test="tradeItemUnitDescriptorCode = 'TRANSPORT_LOAD' or tradeItemUnitDescriptorCode = 'MIXED_MODULE' or tradeItemUnitDescriptorCode = 'PALLET'">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1280" />
+						</xsl:apply-templates>
+					</xsl:when>
+				</xsl:choose>
+			</xsl:for-each>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1283">
+		<!--Rule 1283: effectiveDateTime must not be empty-->
+		<xsl:if test="tradeItemSynchronisationDates/effectiveDateTime = ''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1283" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1288">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1288: If targetMarketCountryCode does not equal (036 (Australia), 554 (New Zealand)) and If preliminaryItemStatusCode is equal to 'PRELIMINARY' or 'FINAL' then firstShipDateTime must not be empty. -->
+		<xsl:if test="$targetMarket != '036' and $targetMarket != '554'">
+			<xsl:if test="preliminaryItemStatusCode = 'PRELIMINARY' or preliminaryItemStatusCode = 'FINAL'">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/firstShipDateTime = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1288" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1291">
+		<!--Rule 1291: If preliminaryItemStatusCode is equal to 'PRELIMINARY' then parent trade item preliminaryItemStatusCode must not equal 'FINAL'.-->
+		<xsl:if test="preliminaryItemStatusCode = 'PRELIMINARY'">
+			<xsl:variable name="parent" select="../../../tradeItem"/>
+			<xsl:if test="$parent/preliminaryItemStatusCode = 'FINAL'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1291" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+
+	<xsl:template match="*" mode="r1299">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1299: If targetMarketCountryCode does not equal <Geographic> and any attribute in class brandOwner is used then brandOwner/gln SHALL be used.-->
+		<xsl:choose>
+			<xsl:when test="contains('036, 040, 276', $targetMarket)"/>
+			<xsl:otherwise>
+				<xsl:if test="brandOwner/*[name() != 'gln']">
+					<xsl:if test="brandOwner/gln = ''">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1299" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+
 	<xsl:template match="*" mode="r1419">
 		<xsl:param name="targetMarket"/>
 		<xsl:if test="$targetMarket = '752'">
@@ -1524,6 +1719,7 @@
 			</xsl:choose>
 		</xsl:if>
 	</xsl:template>
+
 	<!-- endregion validation rules -->
 
 	<xsl:template match="catalogueItem" mode="hierarchy_rules">
@@ -1670,8 +1866,28 @@
 		<xsl:apply-templates select="." mode="r1079"/>
 		<xsl:apply-templates select="." mode="r1080"/>
 		<xsl:apply-templates select="." mode="r1089"/>
-
-
+		<xsl:apply-templates select="." mode="r1160">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1161">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1167"/>
+		<xsl:apply-templates select="." mode="r1168"/>
+		<xsl:apply-templates select="." mode="r1176"/>
+		<xsl:apply-templates select="." mode="r1277"/>
+		<xsl:apply-templates select="." mode="r1278"/>
+		<xsl:apply-templates select="." mode="r1279"/>
+		<xsl:apply-templates select="." mode="r1280"/>
+		<xsl:apply-templates select="." mode="r1283"/>
+		<xsl:apply-templates select="." mode="r1288">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1291"/>
+		<xsl:apply-templates select="." mode="r1299">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		
 		<xsl:apply-templates select="." mode="r1419">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>

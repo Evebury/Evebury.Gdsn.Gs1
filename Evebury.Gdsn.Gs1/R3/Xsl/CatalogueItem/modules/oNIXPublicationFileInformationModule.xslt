@@ -10,8 +10,28 @@
 		<xsl:param name="tradeItem"/>
 
 		<xsl:apply-templates select=".//referencedFileInformation" mode="oNIXPublicationFileInformationModule">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>	
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+
+		<xsl:apply-templates select="oNIXPublicationFileInformation" mode="oNIXPublicationFileInformationModule"/>
+
+	</xsl:template>
+
+	<xsl:template match="oNIXPublicationFileInformation" mode="oNIXPublicationFileInformationModule">
+
+		<!--Rule 1217: There must be at most one iteration of publisherName -->
+		<xsl:for-each select="oNIXPublisher">
+			<xsl:variable name="publisher" select="."/>
+			<xsl:for-each select="publisherName">
+				<xsl:variable name="value" select="."/>
+				<xsl:if test="count($publisher[publisherName = $value]) &gt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1217" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:for-each>
+
 
 	</xsl:template>
 

@@ -9,11 +9,17 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="deliveryPurchasingInformation" mode="deliveryPurchasingInformationModule"/>
+		<xsl:apply-templates select="deliveryPurchasingInformation" mode="deliveryPurchasingInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="deliveryPurchasingInformation" mode="deliveryPurchasingInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+		
 		<!--Rule 341: If a start dateTime and its corresponding end dateTime are not empty then the start date SHALL be less than or equal to corresponding end date. -->
 		<xsl:if test="gs1:InvalidDateTimeSpan(consumerFirstAvailabilityDateTime, consumerEndAvailabilityDateTime)">
 			<xsl:apply-templates select="." mode="error">
@@ -73,7 +79,17 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
-	
+
+		<!--Rule 1289: If targetMarketCountryCode does not equal (036 (Australia), 554 (New Zealand)) and If  firstShipDateTime is less than or equal to current date then preliminaryItemStatusCode must not equal 'PRELIMINARY' -->
+		<xsl:if test="$targetMarket != '036' and $targetMarket != '554'">
+			<xsl:if test="gs1:InvalidDateTimeSpan(gs1:Today(), firstShipDateTime)">
+				<xsl:if test="$tradeItem/preliminaryItemStatusCode != 'PRELIMINARY'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1289" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 	
 	</xsl:template>
 

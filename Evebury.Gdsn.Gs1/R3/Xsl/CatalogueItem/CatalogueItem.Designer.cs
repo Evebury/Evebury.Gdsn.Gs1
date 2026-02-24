@@ -93,6 +93,16 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] audioVisualMediaContentInformationModule {
+            get {
+                object obj = ResourceManager.GetObject("audioVisualMediaContentInformationModule", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] audioVisualMediaProductDescriptionInformationModule {
             get {
                 object obj = ResourceManager.GetObject("audioVisualMediaProductDescriptionInformationModule", resourceCulture);
@@ -193,6 +203,16 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] foodAndBeverageIngredientModule {
+            get {
+                object obj = ResourceManager.GetObject("foodAndBeverageIngredientModule", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] foodAndBeveragePreparationServingModule {
             get {
                 object obj = ResourceManager.GetObject("foodAndBeveragePreparationServingModule", resourceCulture);
@@ -213,9 +233,29 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] materialModule {
+            get {
+                object obj = ResourceManager.GetObject("materialModule", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] measurementUnit {
             get {
                 object obj = ResourceManager.GetObject("measurementUnit", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] nonfoodIngredientModule {
+            get {
+                object obj = ResourceManager.GetObject("nonfoodIngredientModule", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -253,6 +293,16 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] packagingMarkingModule {
+            get {
+                object obj = ResourceManager.GetObject("packagingMarkingModule", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] placeOfItemActivityModule {
             get {
                 object obj = ResourceManager.GetObject("placeOfItemActivityModule", resourceCulture);
@@ -276,6 +326,16 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         internal static byte[] productFormulationStatementModule {
             get {
                 object obj = ResourceManager.GetObject("productFormulationStatementModule", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] productInformationModule {
+            get {
+                object obj = ResourceManager.GetObject("productInformationModule", resourceCulture);
                 return ((byte[])(obj));
             }
         }
