@@ -251,7 +251,7 @@ namespace Evebury.Gdsn.Gs1
                                     {
                                         case 3:
                                             {
-                                                string code = R3.Resource.Market.ResourceManager.GetString(eventData.Value);
+                                                string code = R3.Resource.Market.ResourceManager.GetString(eventData.Value, cultureInfo);
                                                 if (code != null) label = code;
                                                 break;
                                             }
@@ -266,7 +266,7 @@ namespace Evebury.Gdsn.Gs1
                                     {
                                         case 3:
                                             {
-                                                string code = R3.Resource.Brick.ResourceManager.GetString(eventData.Value);
+                                                string code = R3.Resource.Brick.ResourceManager.GetString(eventData.Value, cultureInfo);
                                                 if (code != null) label = code;
                                                 break;
                                             }

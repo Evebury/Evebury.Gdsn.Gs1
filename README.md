@@ -31,6 +31,9 @@ A comprehensive .NET library for validating GDSN GS1 messages. This engine acts 
 
 *schema and network messages if applicable default to English*
 
+## 🔧 Current GDSN version
+**Current v3.1.33**
+
 ## 🔧 Current status catalogueItemNotificationMessage
 - **Rules to be implemented**:  345 out of 1079.
 - **Rules that should be a schema validation**:  541, 542, 1061, 1407, 1380
@@ -67,16 +70,17 @@ Console.WriteLine(response.Status == StatusType.OK);
 ```
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
 <Response Id="validation_response" TimeStamp="2026-02-25T11:39:48.1277672Z" Status="ERROR" xmlns="urn:evebury:gdsn:gs1:response:1">
 	<Transactions>
 		<Transaction Id="[id]" Status="REJECTED">
 			<Events>
-				<Event Level="ERROR" Id="1289" Message="If targetMarketCountryCode does not equal (036 (Australia), 554 (New Zealand)) and if  firstShipDateTime is less than or equal to current date then preliminaryItemStatusCode must not equal 'PRELIMINARY' ">
-					<Data Key="information_provider" Value="My Information Provider ([gln])" Label="Informatieprovider" />
-					<Data Key="market" Value="Germany (276)" Label="Markt" />
-					<Data Key="trade_partner" Value="My TradePartner ([gln])" Label="Klant" />
-					<Data Key="catalogue_item" Value="PALLET ([gtin]), CASE ([gtin]), BASE_UNIT_OR_EACH ([gtin])" Label="Catalogusitem" />
-					<Data Key="xpath" Value="/catalogue_item_notification:catalogueItemNotificationMessage/transaction[transactionIdentification/entityIdentification ='[id]']/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem[tradeItem/gtin = '[gtin]']/tradeItem/tradeItemInformation/extension/delivery_purchasing_information:deliveryPurchasingInformationModule/deliveryPurchasingInformation, /catalogue_item_notification:catalogueItemNotificationMessage/transaction[transactionIdentification/entityIdentification ='[id]']/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem[tradeItem/gtin = '[gtin]']/catalogueItemChildItemLink/catalogueItem[tradeItem/gtin = '[gtin]']/tradeItem/tradeItemInformation/extension/delivery_purchasing_information:deliveryPurchasingInformationModule/deliveryPurchasingInformation, /catalogue_item_notification:catalogueItemNotificationMessage/transaction[transactionIdentification/entityIdentification ='[id]']/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem[tradeItem/gtin = '[gtin]']/catalogueItemChildItemLink/catalogueItem[tradeItem/gtin = '[gtin]']/catalogueItemChildItemLink/catalogueItem[tradeItem/gtin = '[gtin]']/tradeItem/tradeItemInformation/extension/delivery_purchasing_information:deliveryPurchasingInformationModule/deliveryPurchasingInformation" />
+				<Event Level="ERROR" Id="1289" Message="Als &lt;targetMarketCountryCode&gt; niet gelijk is aan (036 (Australië), 554 (Nieuw-Zeeland)) en als &lt;firstShipDateTime&gt; kleiner dan of gelijk is aan de huidige datum, dan mag &lt;preliminaryItemStatusCode&gt; niet gelijk zijn aan 'PRELIMINARY'.">
+					<Data Key="information_provider" Value="[information provider] ([gln])" Label="Informatieprovider" />
+					<Data Key="market" Value="Duitsland (276)" Label="Markt" />
+					<Data Key="trade_partner" Value="[tradepartner] ([gln])" Label="Klant" />
+					<Data Key="catalogue_item" Value="BASE_UNIT_OR_EACH ([gtin])" Label="Catalogusitem" />
+					<Data Key="xpath" Value="/catalogue_item_notification:catalogueItemNotificationMessage/transaction[transactionIdentification/entityIdentification ='[id]']/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem[tradeItem/gtin = '[pallet gtin]']/catalogueItemChildItemLink/catalogueItem[tradeItem/gtin = '[case gtin]']/catalogueItemChildItemLink/catalogueItem[tradeItem/gtin = '[base unit gtin]']/tradeItem/tradeItemInformation/extension/delivery_purchasing_information:deliveryPurchasingInformationModule/deliveryPurchasingInformation" />
 				</Event>
 			</Events>
 		</Transaction>
