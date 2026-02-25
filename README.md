@@ -65,6 +65,26 @@ Response response = validator.Validate(message, previous, cultureInfo);
 Console.WriteLine(response.Status == StatusType.OK);
 
 ```
+
+```xml
+<Response Id="validation_response" TimeStamp="2026-02-25T11:39:48.1277672Z" Status="ERROR" xmlns="urn:evebury:gdsn:gs1:response:1">
+	<Transactions>
+		<Transaction Id="[id]" Status="REJECTED">
+			<Events>
+				<Event Level="ERROR" Id="1289" Message="If targetMarketCountryCode does not equal (036 (Australia), 554 (New Zealand)) and if  firstShipDateTime is less than or equal to current date then preliminaryItemStatusCode must not equal 'PRELIMINARY' ">
+					<Data Key="information_provider" Value="My Information Provider ([gln])" Label="Informatieprovider" />
+					<Data Key="market" Value="Germany (276)" Label="Markt" />
+					<Data Key="trade_partner" Value="My TradePartner ([gln])" Label="Klant" />
+					<Data Key="catalogue_item" Value="PALLET ([gtin]), CASE ([gtin]), BASE_UNIT_OR_EACH ([gtin])" Label="Catalogusitem" />
+					<Data Key="xpath" Value="/catalogue_item_notification:catalogueItemNotificationMessage/transaction[transactionIdentification/entityIdentification ='[id]']/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem[tradeItem/gtin = '[gtin]']/tradeItem/tradeItemInformation/extension/delivery_purchasing_information:deliveryPurchasingInformationModule/deliveryPurchasingInformation, /catalogue_item_notification:catalogueItemNotificationMessage/transaction[transactionIdentification/entityIdentification ='[id]']/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem[tradeItem/gtin = '[gtin]']/catalogueItemChildItemLink/catalogueItem[tradeItem/gtin = '[gtin]']/tradeItem/tradeItemInformation/extension/delivery_purchasing_information:deliveryPurchasingInformationModule/deliveryPurchasingInformation, /catalogue_item_notification:catalogueItemNotificationMessage/transaction[transactionIdentification/entityIdentification ='[id]']/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem[tradeItem/gtin = '[gtin]']/catalogueItemChildItemLink/catalogueItem[tradeItem/gtin = '[gtin]']/catalogueItemChildItemLink/catalogueItem[tradeItem/gtin = '[gtin]']/tradeItem/tradeItemInformation/extension/delivery_purchasing_information:deliveryPurchasingInformationModule/deliveryPurchasingInformation" />
+				</Event>
+			</Events>
+		</Transaction>
+	</Transactions>
+</Response>
+```
+
+
 ## 🏗️ Architecture
 
 ### Core Components
@@ -73,6 +93,7 @@ Console.WriteLine(response.Status == StatusType.OK);
 - **`Gs1Validator`** - Validator for all message validations
 
 ### Response
+
 ```csharp
 //if true response was rendered before actual delivery to the GS1 Network.
 bool isValidationResponse = response.IsValidationResponse;
@@ -80,6 +101,7 @@ bool isValidationResponse = response.IsValidationResponse;
 //use ToJson(), ToXmlDocument() or ToXhtml(CultureInfo cultureInfo = null, string iFormat = null) to process the response in your application
 
 ```
+
 
 ## 📋 Requirements & Enterprise support
 
