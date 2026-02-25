@@ -251,7 +251,6 @@
 			</xsl:if>
 		</xsl:if>
 
-
 		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
 			<!--Rule 1113: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals 'MTR', then its associated value shall not have more than 3 decimal positions.-->
 			<xsl:apply-templates select="." mode="tradeItemMeasurementsModule_decimals">
@@ -271,6 +270,24 @@
 				<xsl:with-param name="unit" select="'MMT'"/>
 				<xsl:with-param name="error" select="1115"/>
 			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1601: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode does not equal gpc and isTradeItemAConsumerUnit equals 'true' then netContent SHALL be used.-->
+		<xsl:if test="$targetMarket = '056' or $targetMarket = '442' or $targetMarket = '528'">
+			<xsl:if test="$tradeItem/isTradeItemAConsumerUnit = 'true'">
+				<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
+				<xsl:choose>
+					<xsl:when test="contains('10000458, 10000570, 10000686, 10000915, 10000456, 10000457, 10000681, 10000912, 10000922, 10000448, 10000449, 10000450, 10000451, 10000684, 10000908, 10000909, 10000910, 10000474, 10000488, 10000489, 10000685, 10000907, 10000459, 10000682, 10000690, 10000487, 10000525, 10000526, 10000527, 10000528, 10000529, 10000637, 10000638, 10000639, 10000687, 10000688, 10000689, 10000911, 10000500, 10000504, 10000683, 10000846, 10000847, 10000848, 10000849, 10000850, 10000851, 10000852, 10000923, 10000853, 10000854, 10000855, 10000856, 10000857, 10000858, 10000859, 10000860, 10000861, 10000862, 10000914, 10000863, 10000864, 10000865, 10000866, 10000867, 10000868, 10000869, 10000870, 10000871, 10000872, 10000873, 10000874, 10000919, 10000875, 10000876, 10000877, 10000878, 10000879, 10000880, 10000881, 10000882, 10000883, 10000884, 10000916, 10000920, 10000885, 10000886, 10000887, 10000888, 10000889, 10000890, 10000891, 10000892, 10000893, 10000903, 10000904, 10000905, 10000906, 10000894, 10000895, 10000896, 10000897, 10000898, 10000899, 10000900, 10000901, 10000902, 10000921, 10002423, 10000460, 10000461, 10000462, 10000674, 10000838, 10000463, 10000464, 10000675, 10000455, 10000843, 10000452, 10000453, 10000454, 10000648, 10000844, 10000647, 10000673, 10005844, 10006412, 10005845, 10000514', $brick)"/>
+					<xsl:otherwise>
+						<xsl:if test="netContent = ''">
+							<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1601" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
 		</xsl:if>
 
 	</xsl:template>
@@ -307,9 +324,8 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
-		
-	</xsl:template>
 
+	</xsl:template>
 
 	<xsl:template name="r98">
 		<xsl:param name="items"/>

@@ -9,11 +9,14 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="marketingInformation" mode="marketingInformationModule"/>
+		<xsl:apply-templates select="marketingInformation" mode="marketingInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="marketingInformation" mode="marketingInformationModule">
+		<xsl:param name="targetMarket"/>
 		<!--Rule 341: If a start dateTime and its corresponding end dateTime are not empty then the start date SHALL be less than or equal to corresponding end date. -->
 		<xsl:for-each select="marketingCampaign">
 			<xsl:if test="gs1:InvalidDateTimeSpan(campaignStartDateTime, campaignEndDateTime)">
@@ -28,7 +31,16 @@
 					<xsl:with-param name="id" select="341"/>
 				</xsl:apply-templates>
 			</xsl:if>
-		</xsl:for-each>		
+		</xsl:for-each>
+		<!--Rule 1406: If targetMarketCountryCode is equal to ('840' (United States) and MarketingInformationModule/MarketingInformation/couponFamilyCode is not empty it shall be exactly 3 characters.-->
+		<xsl:if test="$targetMarket = '840'">
+			<xsl:if test="couponFamilyCode != '' and string-length(couponFamilyCode) != 3">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1406" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 

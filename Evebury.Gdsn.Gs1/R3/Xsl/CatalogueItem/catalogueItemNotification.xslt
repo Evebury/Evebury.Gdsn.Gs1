@@ -14,6 +14,7 @@
 	<xsl:include href="modules/audienceOrPlayerInformationModule.xslt"/>
 	<xsl:include href="modules/audioVisualMediaContentInformationModule.xslt"/>
 	<xsl:include href="modules/audioVisualMediaProductDescriptionInformationModule.xslt"/>
+	<xsl:include href="modules/batteryInformationModule.xslt"/>
 	<xsl:include href="modules/certificationInformationModule.xslt"/>
 	<xsl:include href="modules/childNutritionInformationModule.xslt"/>
 	<xsl:include href="modules/dairyFishMeatPoultryItemModule.xslt"/>
@@ -28,6 +29,7 @@
 	<xsl:include href="modules/materialModule.xslt"/>
 	<xsl:include href="modules/nonfoodIngredientModule.xslt"/>
 	<xsl:include href="modules/nonGTINLogisticsUnitInformationModule.xslt"/>
+	<xsl:include href="modules/nutritionalInformationModule.xslt"/>
 	<xsl:include href="modules/oNIXPublicationFileInformationModule.xslt"/>
 	<xsl:include href="modules/packagingInformationModule.xslt"/>
 	<xsl:include href="modules/packagingMarkingModule.xslt"/>
@@ -56,6 +58,7 @@
 
 	<!-- region auxiliary -->
 	<xsl:include href="measurementUnit.xslt"/>
+	<xsl:include href="components.xslt"/>
 
 	<xsl:variable name="quote">
 		<xsl:text>'</xsl:text>
@@ -1657,7 +1660,6 @@
 		</xsl:if>
 	</xsl:template>
 
-
 	<xsl:template match="*" mode="r1299">
 		<xsl:param name="targetMarket" />
 		<!--Rule 1299: If targetMarketCountryCode does not equal <Geographic> and any attribute in class brandOwner is used then brandOwner/gln SHALL be used.-->
@@ -1675,6 +1677,16 @@
 		</xsl:choose>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1338">
+		<!--Rule 1338: If gpcAttributeTypeCode is used then gpcAttributeValueCode shall be used.-->
+		<xsl:for-each select="gDSNTradeItemClassification/gDSNTradeItemClassificationAttribute">
+			<xsl:if test="gpcAttributeTypeCode != '' and gpcAttributeValueCode  =''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1338" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
 
 	<xsl:template match="*" mode="r1419">
 		<xsl:param name="targetMarket"/>
@@ -1695,6 +1707,59 @@
 					</xsl:apply-templates>
 				</xsl:otherwise>
 			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1458">
+		<xsl:param name="command"/>
+		<!--Rule 1458: Catalogue Item Notification message shall not be sent using  transaction/documentCommand/documentCommandHeader/@type equal to 'DELETE'.-->
+		<xsl:if test="$command = 'DELETE'">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1458" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1459">
+
+		<xsl:for-each select="gDSNTradeItemClassification/additionalTradeItemClassification">
+			<!--Rule 1459: if additionalTradeItemClassificationSystemCode is used then there shall be a corresponding additionalTradeItemClassificationCodeValue used-->
+			<xsl:if test="additionalTradeItemClassificationSystemCode != '' and additionalTradeItemClassificationValue[additionalTradeItemClassificationCodeValue = '']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1459" />
+				</xsl:apply-templates>
+			</xsl:if>
+		<!--Rule 1460: if additionalTradeItemClassificationCodeValue is used then there shall be a corresponding additionalTradeItemClassificationSystemCode used-->
+			<xsl:if test="additionalTradeItemClassificationSystemCode = '' and additionalTradeItemClassificationValue[additionalTradeItemClassificationCodeValue != '']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1460" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1613">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1613: If additionalTradeItemClassificationSystemCode equals '76' then additionalTradeItemClassificationCodeValue shall equal ('EU_CLASS_I',  'EU_CLASS_IIA', 'EU_CLASS_IIB', 'EU_CLASS_III', 'EU_CLASS_A', 'EU_CLASS_B', 'EU_CLASS_C', or 'EU_CLASS_D').-->
+		<xsl:variable name="class" select="gDSNTradeItemClassification/additionalTradeItemClassification[additionalTradeItemClassificationSystemCode = '76']"/>
+		<xsl:if test="$class">
+			<xsl:if test="contains('008, 051, 031, 112, 056, 070, 040, 100, 191, 196, 203, 208, 233, 246, 250, 276, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 724, 752, 756, 792, 795, 804, 860, 826', $targetMarket)">
+				<xsl:choose>
+					<xsl:when test="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue = 'EU_CLASS_I'"/>
+					<xsl:when test="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue = 'EU_CLASS_IIA'"/>
+					<xsl:when test="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue = 'EU_CLASS_IIB'"/>
+					<xsl:when test="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue = 'EU_CLASS_III'"/>
+					<xsl:when test="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue = 'EU_CLASS_A'"/>
+					<xsl:when test="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue = 'EU_CLASS_B'"/>
+					<xsl:when test="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue = 'EU_CLASS_C'"/>
+					<xsl:when test="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue = 'EU_CLASS_D'"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1613" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
 		</xsl:if>
 	</xsl:template>
 
@@ -1887,10 +1952,21 @@
 		<xsl:apply-templates select="." mode="r1299">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
-		
+		<xsl:apply-templates select="." mode="r1338"/>
+		<!--Rule 1340: If both gpcCategoryCode and gpcAttributeTypeCode are used, the value of gpcAttributeTypeCode shall be valid for the value of gpcCategoryCode.-->
+		<!--Rule 1341: If both gpcAttributeValueCode and gpcAttributeTypeCode are used, the value of gpcAttributeValueCode shall be valid for the value of gpcAttributeTypeCode.-->
 		<xsl:apply-templates select="." mode="r1419">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1458">
+			<xsl:with-param name="command" select="$command"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1459"/>
+		<xsl:apply-templates select="." mode="components"/>
+		<xsl:apply-templates select="." mode="r1613">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+
 
 		<xsl:apply-templates select="." mode="r2069">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>

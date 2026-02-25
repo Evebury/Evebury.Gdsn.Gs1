@@ -224,7 +224,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 
 				</xsl:when>
 			</xsl:choose>
-		
+
 		</xsl:if>
 
 		<!--Rule 1162: If targetMarketCountryCode equals '250' (France) or '752' (Sweden) and isTradeItemAConsumerUnit equals 'true' and isTradeItemNonphysical does not equal 'true' then both priceComparisonContentTypeCode and priceComparisonMeasurement SHALL be used.-->
@@ -238,6 +238,26 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 			</xsl:if>
 		</xsl:if>
 
+		<!--Rule 1315: If priceComparisonContentTypeCode is used, then priceComparisonMeasurement shall be used.-->
+		<xsl:if test="priceComparisonContentTypeCode != '' and priceComparisonMeasurement = ''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1315" />
+			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1563: if  salesConditionTargetMarketCountry/countryCode is used, then targetMarketConsumerSalesConditionCode shall be used.-->
+		<xsl:for-each select="targetMarketSalesConditions">
+			<xsl:if test="salesConditionTargetMarketCountry">
+				<xsl:choose>
+					<xsl:when test="targetMarketConsumerSalesConditionCode"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1563" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:for-each>
 
 	</xsl:template>
 

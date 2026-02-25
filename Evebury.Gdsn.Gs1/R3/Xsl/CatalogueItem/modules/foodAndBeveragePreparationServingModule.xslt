@@ -34,11 +34,18 @@
 			</xsl:if>
 		</xsl:if>
 
-		<!--Rule 1091: If ProductYieldInformation/productYield is not empty then ProductYieldInformation/productYieldTypeCode must not be empty.-->
+	
 		<xsl:for-each select="productYieldInformation">
+			<!--Rule 1091: If ProductYieldInformation/productYield is not empty then ProductYieldInformation/productYieldTypeCode must not be empty.-->
 			<xsl:if test="productYield != '' and productYieldTypeCode = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1091" />
+				</xsl:apply-templates>
+			</xsl:if>
+			<!--Rule 1410: If productYieldTypeCode  is used then productYield shall be used.-->
+			<xsl:if test="productYield = '' and productYieldTypeCode != ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1410" />
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>

@@ -104,4 +104,10 @@
 		</EmbeddedResource>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="R3\Xsl\CatalogueItem\components.xslt">
+	    <SubType>Designer</SubType>
+	  </None>
+	</ItemGroup>
+
 </Project>

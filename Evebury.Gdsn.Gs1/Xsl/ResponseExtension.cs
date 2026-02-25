@@ -297,8 +297,9 @@ namespace Evebury.Gdsn.Gs1.Xsl
         public bool IsInFamily(string brick, string family)
         {
             BrickPath path = GetBrickPath(brick);
-            return path.Family == family;
+            return family.Contains(path.Family);
         }
+
 
         public bool IsInSegment(string brick, string segment)
         {

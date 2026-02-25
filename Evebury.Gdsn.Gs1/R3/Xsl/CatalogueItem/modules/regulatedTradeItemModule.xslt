@@ -9,11 +9,32 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="regulatoryInformation/permitIdentification" mode="regulatedTradeItemModule">
+		<xsl:apply-templates select="regulatoryInformation" mode="regulatedTradeItemModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
+	</xsl:template>
+
+	<xsl:template match="regulatoryInformation" mode="regulatedTradeItemModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+		<xsl:apply-templates select="permitIdentification" mode="regulatedTradeItemModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
+		<!--Rule 1353: If targetMarketCountrycode equals '752' (Sweden) and regulationTypeCode equals 'TRACEABILITY_REGULATION', then regulatoryAct AND regulatoryAgency shall be used.-->
+		<xsl:if test="$targetMarket = '752'">
+			<xsl:if test="regulationTypeCode = 'TRACEABILITY_REGULATION'">
+				<xsl:if test="regulatoryAct  = '' or regulatoryAgency = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1353" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+		
+		
 	</xsl:template>
 
 	<xsl:template match="permitIdentification" mode="regulatedTradeItemModule">

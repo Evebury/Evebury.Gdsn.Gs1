@@ -17,14 +17,30 @@
 
 	<xsl:template match="tradeItemHandlingInformation" mode="tradeItemHandlingModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="tradeItemStacking" mode="tradeItemHandlingModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<xsl:template match="tradeItemStacking" mode="tradeItemHandlingModule">
+		<xsl:param name="targetMarket"/>
+
 		<!--Rule 479: If targetMarketCountryCode equals <Geographic> then stackingFactor SHALL be less than 100.-->
 		<xsl:if test="contains('056, 442, 528', $targetMarket)">
-			<xsl:if test="tradeItemStacking/stackingFactor != '' and tradeItemStacking/stackingFactor &gt; 100">
-				<xsl:apply-templates select="tradeItemStacking/stackingFactor" mode="error">
+			<xsl:if test="stackingFactor != '' and stackingFactor &gt; 100">
+				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="479"/>
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1324: If stackingFactor is not empty, it must equal or be greater than '1'-->
+		<xsl:if test="stackingFactor != '' and stackingFactor &lt; 1">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1324"/>
+			</xsl:apply-templates>
+		</xsl:if>
+		
 	</xsl:template>
 
 </xsl:stylesheet>

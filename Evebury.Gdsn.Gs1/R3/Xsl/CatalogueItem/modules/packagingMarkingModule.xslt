@@ -17,6 +17,9 @@
 
 	<xsl:template match="packagingMarking" mode="packagingMarkingModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="consumerWarningInformation" mode="packagingMarkingModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 		<!--Rule 1231: There must be at most one iteration of tradeItemDateOnPackagingFormatName  -->
 		
 		<xsl:for-each select="packagingDate">
@@ -30,6 +33,18 @@
 				</xsl:if>			
 			</xsl:for-each>
 		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="consumerWarningInformation" mode="packagingMarkingModule">
+		<xsl:param name="targetMarket"/>
+		<!--Rule 1541: If targetMarketCountryCode equals ('249' (France) or '250' (France) and consumerWarningDescription is used, then consumerWarningTypeCode shall be used.-->
+		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
+			<xsl:if test="consumerWarningDescription != '' and consumerWarningTypeCode = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1541" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 </xsl:stylesheet>

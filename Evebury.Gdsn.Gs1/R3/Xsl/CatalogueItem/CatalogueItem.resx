@@ -133,6 +133,9 @@
   <data name="audioVisualMediaProductDescriptionInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\audioVisualMediaProductDescriptionInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="batteryInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\batteryInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="catalogueItemNotification" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>catalogueItemNotification.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -141,6 +144,9 @@
   </data>
   <data name="childNutritionInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\childNutritionInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="components" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>components.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="dairyFishMeatPoultryItemModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\dairyFishMeatPoultryItemModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -180,6 +186,9 @@
   </data>
   <data name="nonGTINLogisticsUnitInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\nonGTINLogisticsUnitInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nutritionalInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\nutritionalInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="oNIXPublicationFileInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\oNIXPublicationFileInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

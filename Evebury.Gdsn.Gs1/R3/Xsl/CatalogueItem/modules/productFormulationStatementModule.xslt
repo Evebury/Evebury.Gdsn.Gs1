@@ -9,10 +9,108 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="productFormulationStatement/productFormulationStatementDocument" mode="productFormulationStatementModule">
+		<xsl:apply-templates select="productFormulationStatement" mode="productFormulationStatementModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
+	</xsl:template>
+
+	<xsl:template match="productFormulationStatement" mode="productFormulationStatementModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="productFormulationStatementDocument" mode="productFormulationStatementModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="creditableIngredient" mode="productFormulationStatementModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+
+		<xsl:if test="$targetMarket = '840'">
+
+			<!--Rule 1343: If targetMarketCountryCode equals '840' (United States) and productFormulationStatementRegulatoryBodyCode is used, then totalPortionWeightAsPurchased shall be used. -->
+			<xsl:if test="productFormulationStatementRegulatoryBodyCode != '' and productFormulationStatement/totalPortionWeightAsPurchased  = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1343" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+			<!--Rule 1344: If targetMarketCountryCode equals '840' (united States) and productFormulationStatementRegulatoryBodyCode is used, then creditableIngredientTypeCode and totalCreditableIngredientTypeAmount shall be used at least once. -->
+			<xsl:if test="productFormulationStatementRegulatoryBodyCode">
+				<xsl:if test="count(creditableIngredient/creditableIngredientTypeCode) &lt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1344" />
+					</xsl:apply-templates>
+				</xsl:if>
+				<xsl:if test="count(creditableIngredient/totalCreditableIngredientTypeAmount) &lt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1344" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+
+		</xsl:if>
+
+	</xsl:template>
+
+	<xsl:template match="creditableIngredient" mode="productFormulationStatementModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:if test="$targetMarket = '840'">
+			<!--Rule 1345: If targetMarketCountryCode equals '840' (united States) and creditableIngredientTypeCode is used, then creditableIngredientDescription shall be used.-->
+			<xsl:if test="creditableIngredientTypeCode != '' and creditableIngredientDetails/creditableIngredientDescription  = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1345" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+
+			<xsl:for-each select="creditableIngredientDetails">
+				<!--Rule 1346: If targetMarketCountryCode equals '840' (United States) and creditableIngredientDescription is used, then creditableAmount shall be used.-->
+				<xsl:if test="creditableIngredientDescription != '' and creditableAmount = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1346" />
+					</xsl:apply-templates>
+				</xsl:if>
+				<!--Rule 1347: If targetMarketCountryCode equals '840' (United States) and  vegetableSubgroupCode is used, then totalVegetableSubgroupAmount shall be used.-->
+				<xsl:for-each select="creditableVegetable">
+					<xsl:if test="vegetableSubgroupCode != '' and totalVegetableSubgroupAmount = ''">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1347" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:for-each>
+				
+				<xsl:for-each select="creditableGrainsInformation">
+					<!--Rule 1348: If targetMarketCountryCode equals '840' (United States) and doesTradeItemContainNoncreditableGrains is used, then doesTradeItemMeetWholeGrainRichCriteria, and creditableGrainGroupCode shall be used.-->
+					<xsl:if test="doesTradeItemContainNoncreditableGrains != '' and (doesTradeItemMeetWholeGrainRichCriteria = '' or creditableGrain/creditableGrainGroupCode = '')">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1348" />
+						</xsl:apply-templates>
+					</xsl:if>
+					<!--Rule 1349: If targetMarketCountryCode equals '840' (United States) and doesTradeItemMeetWholeGrainRichCriteria is used, then doesTradeItemContainNoncreditableGrains, and creditableGrainGroupCode shall be used.-->
+					<xsl:if test="doesTradeItemMeetWholeGrainRichCriteria != '' and (doesTradeItemContainNoncreditableGrains = '' or creditableGrain/creditableGrainGroupCode = '')">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1349" />
+						</xsl:apply-templates>
+					</xsl:if>
+					<!--Rule 1350: If targetMarketCountryCode equals '840' (United States) and  creditableGrainGroupCode is used, then doesTradeItemContainNoncreditableGrains, and doesTradeItemMeetWholeGrainRichCriteria shall be used.-->
+					<xsl:if test="creditableGrain/creditableGrainGroupCode != '' and (doesTradeItemContainNoncreditableGrains = '' or doesTradeItemMeetWholeGrainRichCriteria = '')">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1350" />
+						</xsl:apply-templates>
+					</xsl:if>
+					<!--Rule 1351: If targetMarketCountryCode equals '840' (United States) and  doesTradeItemContainNoncreditableGrains is TRUE, then nonCreditableGrainAmount shall be used.-->
+					<xsl:if test="doesTradeItemContainNoncreditableGrains  = 'true' and noncreditableGrain/noncreditableGrainAmount = ''">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1351" />
+						</xsl:apply-templates>
+					</xsl:if>
+					
+					
+				</xsl:for-each>
+
+			</xsl:for-each>
+				
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="productFormulationStatementDocument" mode="productFormulationStatementModule">
@@ -47,6 +145,16 @@
 						</xsl:apply-templates>
 					</xsl:otherwise>
 				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+		<!--Rule 1611: If targetMarketCountryCode equals ‘250’ (France)) and uniformResourceIdentifier is used, and referencedFileTypeCode equals (‘VIDEO’ or ‘360_DEGREE_IMAGE’ or ‘MOBILE_DEVICE_IMAGE’ or ‘OUT_OF_PACKAGE_IMAGE’ or ‘PRODUCT_IMAGE’ or ‘PRODUCT_LABEL_IMAGE’ or ‘TRADE_ITEM_IMAGE_WITH_DIMENSIONS’)  then fileEffectiveStartDateTime shall  be used.-->
+		<xsl:if test="$targetMarket ='250' and uniformResourceIdentifier != ''">
+			<xsl:if test="referencedFileTypeCode = 'VIDEO' or referencedFileTypeCode = '360_DEGREE_IMAGE' or referencedFileTypeCode = 'MOBILE_DEVICE_IMAGE' or referencedFileTypeCode = 'OUT_OF_PACKAGE_IMAGE' or referencedFileTypeCode = 'PRODUCT_IMAGE'or referencedFileTypeCode = 'PRODUCT_LABEL_IMAGE' or referencedFileTypeCode = 'TRADE_ITEM_IMAGE_WITH_DIMENSIONS'">
+				<xsl:if test="fileEffectiveStartDateTime = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1611" />
+					</xsl:apply-templates>
+				</xsl:if>
 			</xsl:if>
 		</xsl:if>
 	</xsl:template>

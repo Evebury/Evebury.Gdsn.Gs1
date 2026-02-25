@@ -11,13 +11,57 @@
 
 		<xsl:apply-templates select="promotionalItemInformation" mode="promotionalItemInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="promotionalItemInformation" mode="promotionalItemInformationModule">
 		<xsl:param name="targetMarket"/>
-		<xsl:for-each select="nonPromotionalTradeItem/additionalTradeItemIdentification">
+		<xsl:param name="tradeItem"/>
+
+		<xsl:apply-templates select="nonPromotionalTradeItem" mode="promotionalItemInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
+
+		<!--Rule 1320: If (freeQuantityOfNextLowerLevelTradeItem or  freeQuantityOfProduct) is not empty, then istradeItemAConsumerunit must equal "TRUE"-->
+		<xsl:if test="freeQuantityOfNextLowerLevelTradeItem != '' or freeQuantityOfProduct != ''">
+			<xsl:if test="$tradeItem/isTradeItemAconsumerUnit != 'true'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1320" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1321: If promotionTypeCode is not empty, then isTradeItemAConsumerUnit must equal "TRUE"-->
+		<xsl:if test="promotionTypeCode != '' and $tradeItem/isTradeItemAconsumerUnit != 'true'">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1321" />
+			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1323: The associated UoM of freeQuantityOfNextLowerLevelTradeItem must be one of the associated UoMs of netContent of the child trade item.-->
+		<xsl:for-each select="freeQuantityOfNextLowerLevelTradeItem">
+			<xsl:variable name="unit" select="@measurementUnitCode"/>
+			<xsl:choose>
+				<xsl:when test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/netContent[@measurementUnitCode = $unit]"/>
+				<xsl:otherwise>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1323" />
+					</xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+
+
+	</xsl:template>
+
+	<xsl:template match="nonPromotionalTradeItem" mode="promotionalItemInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+
+		<xsl:for-each select="additionalTradeItemIdentification">
 			<xsl:choose>
 				<xsl:when test="@additionalTradeItemIdentificationTypeCode = 'GTIN_13'">
 					<xsl:if test="gs1:InvalidGTIN(.,13)">
@@ -49,6 +93,13 @@
 				</xsl:when>
 			</xsl:choose>
 		</xsl:for-each>
+
+		<!--Rule 1317: If PromotionalItemInformation/nonPromotionalTradeItem/tradeItemIdentification is not empty,  then isTradeItemAconsumerUnit must equal "TRUE" -->
+		<xsl:if test="gtin != '' and $tradeItem/isTradeItemAconsumerUnit != 'true'">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1317" />
+			</xsl:apply-templates>
+		</xsl:if>
 	</xsl:template>
 
 </xsl:stylesheet>
