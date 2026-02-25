@@ -8,10 +8,11 @@
 	<xsl:template match="*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']" mode="module">
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
-
+		<xsl:param name="component"/>
 		<xsl:apply-templates select="tradeItemMeasurements" mode="tradeItemMeasurementsModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+			<xsl:with-param name="component" select="$component"/>
 		</xsl:apply-templates>
 
 
@@ -20,30 +21,39 @@
 	<xsl:template match="tradeItemMeasurements" mode="tradeItemMeasurementsModule">
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
+		<xsl:param name="component"/>
 		<xsl:variable name="netWeightValue" select="tradeItemWeight/netWeight"/>
 		<xsl:variable name="grossWeightValue" select="tradeItemWeight/grossWeight"/>
 
 		<!--Rule 98: If specialItemCode does not equal 'DYNAMIC_ASSORTMENT' and parent trade item netWeight and child trade item netWeight are used then parent netWeight shall  be greater than or equal to the sum of (netweight multiplied by quantityOfNextLowerLevelTradeItem) of each child item.-->
 		<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:marketing_information:xsd:3' and local-name()='marketingInformationModule']/marketingInformation/specialItemCode != 'DYNAMIC_ASSORTMENT'">
-			<xsl:if test="$netWeightValue = number($netWeightValue)">
+			<xsl:choose>
+				<xsl:when test="$component">
+					<!-- Todo? check tradeitem net weight and all component netweights?-->
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="$netWeightValue = number($netWeightValue)">
 
-				<xsl:variable name="netWeight">
-					<xsl:apply-templates select="$netWeightValue" mode="measurementUnit"/>
-				</xsl:variable>
+						<xsl:variable name="netWeight">
+							<xsl:apply-templates select="$netWeightValue" mode="measurementUnit"/>
+						</xsl:variable>
 
-				<xsl:variable name="childNetWeight">
-					<xsl:call-template name="r98">
-						<xsl:with-param name="items" select="$tradeItem/../catalogueItemChildItemLink" />
-					</xsl:call-template>
-				</xsl:variable>
+						<xsl:variable name="childNetWeight">
+							<xsl:call-template name="r98">
+								<xsl:with-param name="items" select="$tradeItem/../catalogueItemChildItemLink" />
+							</xsl:call-template>
+						</xsl:variable>
 
-				<xsl:if test="$childNetWeight &gt; $netWeight">
-					<xsl:apply-templates select="$netWeightValue" mode="error">
-						<xsl:with-param name="id" select="98"/>
-					</xsl:apply-templates>
-				</xsl:if>
+						<xsl:if test="$childNetWeight &gt; $netWeight">
+							<xsl:apply-templates select="$netWeightValue" mode="error">
+								<xsl:with-param name="id" select="98"/>
+							</xsl:apply-templates>
+						</xsl:if>
 
-			</xsl:if>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+	
 		</xsl:if>
 
 
@@ -287,6 +297,17 @@
 						</xsl:if>
 					</xsl:otherwise>
 				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1637: If  targetMarketCountrycode equals '826' (United Kingdom) and displayTypeCode equals 'SDR' (Shelf Display Ready Packaging), then frontFaceTypeCode shall be used.-->
+		<xsl:if test="$targetMarket = '826'">
+			<xsl:if test="$tradeItem/displayUnitInformation/displayTypeCode = 'SDR'">
+				<xsl:if test="frontFaceTypeCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1637" />
+					</xsl:apply-templates>
+				</xsl:if>
 			</xsl:if>
 		</xsl:if>
 

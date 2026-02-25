@@ -1962,7 +1962,10 @@
 			<xsl:with-param name="command" select="$command"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1459"/>
-		<xsl:apply-templates select="." mode="components"/>
+		<xsl:apply-templates select="." mode="components">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="."/>
+		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1613">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>

@@ -408,16 +408,17 @@
 			</xsl:if>
 		</xsl:if>
 		<!--Rule 1409: If returnableAssetsContainedQuantity is used, it shall only have a measurementUnitCode of Unit Of Measure Classification 'Count'.-->
-		<xsl:if test="returnableAssetsContainedQuantity">
+		<xsl:for-each select="returnableAssetsContainedQuantity">
 			<xsl:variable name="type">
-				<xsl:apply-templates select="returnableAssetsContainedQuantity" mode="measurementUnitType"/>			 
+				<xsl:apply-templates select="." mode="measurementUnitType"/>			 
 			</xsl:variable>
 			<xsl:if test="$type != 'Piece'">
+				<xsl:apply-templates select="gs1:AddEventData('unit', @measurementUnitCode)"/>
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1409" />
 				</xsl:apply-templates>
 			</xsl:if>
-		</xsl:if>
+		</xsl:for-each>
 		<!--Rule 1446: If (returnablePackageDepositRegion/targetMarketCountryCode or returnableAssetsContainedQuantity) is used then returnablePackageDepositIdentification shall be used.-->
 		<xsl:if test="returnableAssetsContainedQuantity != '' or returnableAssetPackageDeposit/returnablePackageDepositRegion/targetMarketCountryCode !=''">
 			<xsl:if test="returnableAssetPackageDeposit/returnablePackageDepositIdentification = ''">

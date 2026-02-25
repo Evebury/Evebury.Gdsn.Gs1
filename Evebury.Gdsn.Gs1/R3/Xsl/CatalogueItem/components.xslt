@@ -6,15 +6,33 @@
 	<xsl:output method="xml" indent="yes"/>
 
 	<xsl:template match="*" mode="components">
-		<xsl:apply-templates select="tradeItemInformation" mode="components"/>
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+		<xsl:apply-templates select="tradeItemInformation" mode="components">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
 	
 	</xsl:template>
 
 	<xsl:template match="tradeItemInformation" mode="components">
-		<xsl:apply-templates select="tradeItemComponents" mode="components"/>
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+		<xsl:apply-templates select="tradeItemComponents" mode="components">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
 	</xsl:template>
 
 	<xsl:template match="tradeItemComponents" mode="components">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+
+		<xsl:apply-templates select="componentInformation" mode="components">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
+		
 		<xsl:variable name="root" select="."/>
 		
 		<!--Rule 1607: All iterations of componentNumber shall be unique within this tradeItem-->
@@ -38,14 +56,6 @@
 			</xsl:if>
 		</xsl:for-each>
 		
-		<xsl:for-each select="componentInformation">
-			<!--Rule 1550: There shall be at most 25 iterations of Class GDSNTradeItemClassificationAttribute per iteration of ComponentInformation/gpcCategoryCode.-->
-			<xsl:if test="count(gDSNTradeItemClassificationAttribute) &gt; 25">
-				<xsl:apply-templates select="." mode="error">
-					<xsl:with-param name="id" select="1550" />
-				</xsl:apply-templates>
-			</xsl:if>
-		</xsl:for-each>
 		
 		<xsl:variable name="specialItemCode" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:marketing_information:xsd:3' and local-name()='marketingInformationModule']/marketingInformation/specialItemCode"/>
 
@@ -88,6 +98,24 @@
 		</xsl:if>
 		
 		
+	</xsl:template>
+
+	<xsl:template match="componentInformation" mode="components">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+
+		<!--Rule 1550: There shall be at most 25 iterations of Class GDSNTradeItemClassificationAttribute per iteration of ComponentInformation/gpcCategoryCode.-->
+		<xsl:if test="count(gDSNTradeItemClassificationAttribute) &gt; 25">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1550" />
+			</xsl:apply-templates>
+		</xsl:if>
+		
+		<xsl:apply-templates select="extension/*" mode="module">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+			<xsl:with-param name="component" select=".."/>
+		</xsl:apply-templates>
 	</xsl:template>
 
 </xsl:stylesheet>

@@ -68,6 +68,22 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 			
 		</xsl:if>
 
+		<!--Rule 1617: If targetMarketCountryCode equals EU, and GPC Brick belongs to the GPC families ('50100000', '50250000', '50260000', '50270000', '50290000', '50310000', '50320000', '50350000', '50360000', '50370000' or '50380000') and growingMethodCode  equals 'ORGANIC' then farmingAndProcessingInformationModule/tradeItemOrganicInformation/organicClaim/organicTradeItemCode SHALL be used.-->
+		<xsl:if test="$isEU">
+			<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="gs1:IsInFamily($brick, '50100000, 50250000, 50260000, 50270000, 50290000, 50310000, 50320000, 50350000, 50360000, 50370000, 50380000')">
+				<xsl:if test="tradeItemFarmingAndProcessing[growingMethodCode = 'ORGANIC']">
+					<xsl:if test="tradeItemOrganicInformation/organicClaim/organicTradeItemCode = ''">
+						<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1617" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:if>
+
+		</xsl:if>
+
 	</xsl:template>
 
 
