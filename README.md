@@ -26,8 +26,7 @@ A comprehensive .NET library for validating GDSN GS1 messages. This engine acts 
 ## 📊 Localized Validation Messages
 |Language | Support|
 |---------|--------|
-| `en` | ✅ |
-| `nl`, `fr`, `de` | ⚠️ |
+| `en`, `nl`, `fr`, `de` | ✅ |
 
 *schema and network messages if applicable default to English*
 
