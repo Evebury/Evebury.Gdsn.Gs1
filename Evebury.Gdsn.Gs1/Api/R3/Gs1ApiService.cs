@@ -1,7 +1,6 @@
 ﻿using Evebury.Gdsn.Gs1.Message;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net.Http;
 using System.Text.Json;
@@ -35,17 +34,15 @@ namespace Evebury.Gdsn.Gs1.Api.R3
         /// </summary>
         /// <param name="message"></param>
         /// <param name="previous"></param>
-        /// <param name="cultureInfo"></param>
         /// <returns></returns>
         /// <exception cref="MessageException"></exception>
-        public async Task<Response> Publish(XmlDocument message, XmlDocument previous = null, CultureInfo cultureInfo = null)
+        public async Task<Response> Publish(XmlDocument message, XmlDocument previous = null)
         {
             ArgumentNullException.ThrowIfNull(message);
-            cultureInfo ??= CultureInfo.InvariantCulture;
             MessageKey key = MessageKey.GetKey(message);
             if (key == MessageKey.CatalogueItemNotification3)
             {
-                Response response = await _validator.Validate(key, message, previous, cultureInfo);
+                Response response = await _validator.Validate(key, message, previous);
                 if (response.Status == StatusType.ERROR) return response;
                 return await Publish(message);
             }

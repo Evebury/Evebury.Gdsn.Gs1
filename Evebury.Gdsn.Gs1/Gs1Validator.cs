@@ -6,7 +6,6 @@ using Evebury.Gdsn.Gs1.Xml.Serialization;
 using Evebury.Gdsn.Gs1.Xml.Xsl;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -31,13 +30,11 @@ namespace Evebury.Gdsn.Gs1
         /// </summary>
         /// <param name="message">The gs1 message</param>
         /// <param name="previous">Optional previously succesfully send message to the gs1 api</param>
-        /// <param name="cultureInfo">Optional cultureInfo for displaying messages in this cultureinfo if available. Default set to invariant</param>
         /// <returns cref="Response"></returns>
         /// <exception cref="MessageException"></exception>
-        public async Task<Response> Validate(XmlDocument message, XmlDocument previous = null, CultureInfo cultureInfo = null)
+        public async Task<Response> Validate(XmlDocument message, XmlDocument previous = null)
         {
             ArgumentNullException.ThrowIfNull(message);
-            cultureInfo ??= CultureInfo.InvariantCulture;
 
             MessageKey key = MessageKey.GetKey(message);
             Response response;
@@ -55,7 +52,7 @@ namespace Evebury.Gdsn.Gs1
 
             if (previous != null)
             {
-                Response compare = Equals(message, previous, cultureInfo);
+                Response compare = Equals(message, previous);
                 //return if Ok this indicates both messages are equal
                 if (compare.Status == StatusType.OK)
                 {
@@ -66,7 +63,7 @@ namespace Evebury.Gdsn.Gs1
             //do not throw message exception rules do not apply to all message types
             if (IsDefinedRuleSet(key))
             {
-                response = await ApplyRules(key, message, previous, cultureInfo);
+                response = await ApplyRules(key, message, previous);
                 return response;
             }
 
@@ -74,7 +71,7 @@ namespace Evebury.Gdsn.Gs1
         }
 
 
-        internal async Task<Response> Validate(MessageKey key, XmlDocument message, XmlDocument previous, CultureInfo cultureInfo)
+        internal async Task<Response> Validate(MessageKey key, XmlDocument message, XmlDocument previous)
         {
             Response response;
 
@@ -91,7 +88,7 @@ namespace Evebury.Gdsn.Gs1
 
             if (previous != null)
             {
-                Response compare = Equals(message, previous, cultureInfo);
+                Response compare = Equals(message, previous);
                 //return if Ok this indicates both messages are equal
                 if (compare.Status == StatusType.OK) return compare;
             }
@@ -99,7 +96,7 @@ namespace Evebury.Gdsn.Gs1
             //do not throw message exception rules do not apply to all message types
             if (IsDefinedRuleSet(key))
             {
-                response = await ApplyRules(key, message, previous, cultureInfo);
+                response = await ApplyRules(key, message, previous);
             }
 
             return response;
@@ -161,14 +158,12 @@ namespace Evebury.Gdsn.Gs1
         /// </summary>
         /// <param name="message">Gs1 message</param>
         /// <param name="previous">Gs1 message if null returns false</param>
-        /// <param name="cultureInfo">The culture for the response message if null invariant will be used</param>
         /// <returns cref="Response">status set OK on equals otherwise ERROR</returns>
         /// <exception cref="ArgumentNullException">if message is null</exception>
-        public static Response Equals(XmlDocument message, XmlDocument previous, CultureInfo cultureInfo = null)
+        public static Response Equals(XmlDocument message, XmlDocument previous)
         {
             ArgumentNullException.ThrowIfNull(message);
-            cultureInfo ??= CultureInfo.InvariantCulture;
-
+    
             if (previous == null) return Response.GetResponse(false);
 
 
@@ -196,7 +191,7 @@ namespace Evebury.Gdsn.Gs1
             string hash1 = XmlCompare.GetHashCode(message, paths);
             string hash2 = XmlCompare.GetHashCode(previous, paths);
             Response response = Response.GetResponse(hash1 == hash2);
-            response.Summarize(cultureInfo, key.Version);
+            response.SetVersion(key.Version);
             return response;
         }
 
@@ -220,17 +215,15 @@ namespace Evebury.Gdsn.Gs1
         /// </summary>
         /// <param name="message">Gs1 message</param>
         /// <param name="previous">Last Gs1 message successfully send to Gs1. Can be set to null</param>
-        /// <param name="cultureInfo">The culture for the response message if null invariant will be used</param>
         /// <returns cref="Response"></returns>
         /// <exception cref="ArgumentNullException">if message is null</exception>
         /// <exception cref="MessageException">if message is not a gs1 message</exception>
-        public Task<Response> ApplyRules(XmlDocument message, XmlDocument previous = null, CultureInfo cultureInfo = null)
+        public Task<Response> ApplyRules(XmlDocument message, XmlDocument previous = null)
         {
             ArgumentNullException.ThrowIfNull(message);
-            cultureInfo ??= CultureInfo.InvariantCulture;
             MessageKey key = MessageKey.GetKey(message);
             if (!IsDefinedRuleSet(key)) throw new MessageException(key);
-            return ApplyRules(key, message, previous, cultureInfo);
+            return ApplyRules(key, message, previous);
 
         }
 
@@ -247,7 +240,7 @@ namespace Evebury.Gdsn.Gs1
             return false;
         }
 
-        private async Task<Response> ApplyRules(MessageKey key, XmlDocument message, XmlDocument previous, CultureInfo cultureInfo)
+        private async Task<Response> ApplyRules(MessageKey key, XmlDocument message, XmlDocument previous)
         {
             XslDocument xsl;
             List<XslParameter> parameters = [];
@@ -265,7 +258,7 @@ namespace Evebury.Gdsn.Gs1
 
             XmlDocument xml = await xsl.Transform(message, parameters, [_extension]);
             Response response = await XmlSerializer.Deserialize<Response>(xml);
-            response.Summarize(cultureInfo, key.Version);
+            response.SetVersion(key.Version);
             return response;
         }
 

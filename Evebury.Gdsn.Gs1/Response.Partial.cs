@@ -15,7 +15,7 @@ namespace Evebury.Gdsn.Gs1
     public partial class Response
     {
         private const string VALIDATION_RESPONSE = "validation_response";
-        
+        private int _version;
 
         /// <summary>
         /// If true the reponse is a validation response rendered before delivery to Gs1
@@ -62,6 +62,7 @@ namespace Evebury.Gdsn.Gs1
         public string ToXhtml(CultureInfo cultureInfo = null, string dateTimeFormat = null)
         {
             cultureInfo = cultureInfo ?? CultureInfo.InvariantCulture;
+            Localize(cultureInfo);
             ResourceManager resource = Resource.Auxiliary.ResourceManager;
             StringBuilder sb = new();
             sb.Append("<div class=\"gs1_reponse\">");
@@ -158,32 +159,42 @@ namespace Evebury.Gdsn.Gs1
             return sb.ToString();
         }
 
-        #region summary
-        internal void Summarize(CultureInfo cultureInfo, int version)
+ 
+        /// <summary>
+        /// Localizes this Response for the specified culture
+        /// </summary>
+        /// <param name="cultureInfo"></param>
+        public void Localize(CultureInfo cultureInfo) 
         {
-            if (version == 0) return;
+            if (_version == 0) return;
 
             if (Transactions != null)
             {
                 foreach (Transaction transaction in Transactions)
                 {
-                    Summarize(transaction, version, cultureInfo);
+                    Summarize(transaction, cultureInfo);
                 }
             }
         }
 
-        private static void Summarize(Transaction transaction, int version, CultureInfo cultureInfo)
+        #region summary
+
+        internal void SetVersion(int version)
+        {
+            _version = version;
+        }
+        private void Summarize(Transaction transaction, CultureInfo cultureInfo)
         {
             if (transaction.Events != null)
             {
                 foreach (Event @event in transaction.Events)
                 {
-                    Summarize(@event, version, cultureInfo);
+                    Summarize(@event, cultureInfo);
                 }
             }
         }
 
-        private static void Summarize(Event @event, int version, CultureInfo cultureInfo)
+        private void Summarize(Event @event, CultureInfo cultureInfo)
         {
             if (@event != null)
             {
@@ -203,7 +214,7 @@ namespace Evebury.Gdsn.Gs1
                             }
                         default:
                             {
-                                switch (version)
+                                switch (_version)
                                 {
                                     case 3:
                                         {
@@ -247,7 +258,7 @@ namespace Evebury.Gdsn.Gs1
                             case EventDataKey.MARKET:
                                 {
                                     string label = eventData.Value;
-                                    switch (version)
+                                    switch (_version)
                                     {
                                         case 3:
                                             {
@@ -262,7 +273,7 @@ namespace Evebury.Gdsn.Gs1
                             case EventDataKey.BRICK:
                                 {
                                     string label = eventData.Value;
-                                    switch (version)
+                                    switch (_version)
                                     {
                                         case 3:
                                             {

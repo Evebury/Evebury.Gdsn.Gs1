@@ -46,9 +46,6 @@ using Evebury.Gdsn.Gs1;
 using System.Globalization;
 using System.Xml;
 
-// set the cultureinfo for localized messages in the reponse
-CultureInfo cultureInfo = new("nl");
-
 // Load the message
 XmlDocument message = new();
 message.Load("catalogueItemNotificationMessage.xml");
@@ -61,7 +58,11 @@ previous.Load("catalogueItemNotificationMessageLastSucceeded.xml");
 Gs1Validator validator = new();
 
 //this call will apply schema, compare and apply business rules
-Response response = validator.Validate(message, previous, cultureInfo);
+Response response = validator.Validate(message, previous);
+
+// set the cultureinfo to localize the reponse
+CultureInfo cultureInfo = new("nl");
+response.Localize(cultureInfo);
 
 // Check if OK or ERROR
 Console.WriteLine(response.Status == StatusType.OK);
