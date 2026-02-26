@@ -1885,6 +1885,57 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1720">
+		<xsl:param name="targetMarket" />
+		<xsl:if test="contains('036, 554, 250, 752', $targetMarket)">
+			<!--Rule 1720: If targetMarketCountryCode equals <Geographic> then isTradeItemAnInvoiceUnit SHALL equal 'true' for at least one trade item in the hierarchy.-->
+			<xsl:if test="count(.//tradeItem[isTradeItemAnInvoiceUnit = 'true']) = 0">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1720" />
+				</xsl:apply-templates>
+			</xsl:if>
+			<!--Rule 1721: If targetMarketCountryCode equals <Geographic> then isTradeItemAnInvoiceUnit SHALL be used.-->
+			<xsl:if test="count(.//tradeItem[isTradeItemAnInvoiceUnit = '']) &gt; 0">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1721" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1722">
+		<!--Rule 1722: If additionalTradeItemClassificationSystemCode equals '85' then additionalTradeItemClassificationCodeValue SHALL equal (‘EU_CLASS_I’, ‘EU_CLASS_IIA’, ‘EU_CLASS_IIB’, ‘EU_CLASS_III’, ‘IVDD_ANNEX_II_LIST_A’, ‘IVDD_ANNEX_II_LIST_B’, ‘IVDD_DEVICES_SELF_TESTING’, ‘IVDD_GENERAL’, or 'AIMDD')-->
+		<xsl:variable name="class" select="gDSNTradeItemClassification/additionalTradeItemClassification[additionalTradeItemClassificationSystemCode = '85']"/>
+		<xsl:if test="$class">
+			<xsl:for-each select="$class/additionalTradeItemClassificationValue/additionalTradeItemClassificationCodeValue">
+				<xsl:choose>
+					<xsl:when test="contains('EU_CLASS_I, EU_CLASS_IIA, EU_CLASS_IIB, EU_CLASS_III, IVDD_ANNEX_II_LIST_A, IVDD_ANNEX_II_LIST_B, IVDD_DEVICES_SELF_TESTING, IVDD_GENERAL, AIMDD', .)"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1722" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:for-each>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1744">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1744: If targetMarketCountryCode equals <Geographic> and (gpcCategoryCode is in GPC Segment '50000000' (Food/Beverage) or gpcCategoryCode equals ('10000467' (Vitamins/Minerals), '10000468' (Nutritional Supplements) or '10000651' (Vitamins/Minerals/Nutritional Supplements Variety Packs))) and isTradeItemAConsumerUnit equals 'true' and (preliminaryItemStatusCode equals 'FINAL' or is not used) then regulatedProductName SHALL be used.-->
+		<xsl:if test="isTradeItemAConsumerUnit  = 'true' and contains('203, 246, 703', $targetMarket) and (preliminaryItemStatusCode = '' or preliminaryItemStatusCode = 'FINAL')">
+			<xsl:variable name="brick" select="gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="gs1:IsInSegment($brick, '50000000') or $brick = '10000467' or $brick = '10000468' or $brick = '10000651'">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/regulatedProductName = ''">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1744" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
 
 	<xsl:template match="*" mode="r2069">
 		<xsl:param name="targetMarket"/>
@@ -1922,6 +1973,9 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1092">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1720">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 	</xsl:template>
@@ -2108,6 +2162,10 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1697">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1722"/>
+		<xsl:apply-templates select="." mode="r1744">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 

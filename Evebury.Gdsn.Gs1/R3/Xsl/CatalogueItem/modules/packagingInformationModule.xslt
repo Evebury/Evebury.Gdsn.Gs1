@@ -318,6 +318,15 @@
 		<xsl:apply-templates select="returnableAsset" mode="packagingInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+		<!--Rule 1742: If targetMarketCountryCode equals <Geographic> and Packaging class or sub-classes are used then packagingTypeCode SHALL be used in each iteration of the Packaging class.-->
+		<xsl:if test="packagingTypeCode  = ''">
+			<xsl:if test="contains('056, 208, 246, 250, 442, 528', $targetMarket)">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1742" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		
 	</xsl:template>
 
 	<xsl:template name="packagingInformationModule_france_pallet">

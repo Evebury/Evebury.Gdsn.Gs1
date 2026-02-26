@@ -44,6 +44,19 @@
 						</xsl:apply-templates>
 					</xsl:if>
 				</xsl:when>
+				<!--Rule 1748: If gs1TradeItemIdentificationKeyCode is equal to 'ZERO_SUPPRESSED_GTIN', then the first digit of gs1TradeItemIdentificationKeyValue SHALL equal '0'.-->
+				<xsl:when test="gs1TradeItemIdentificationKeyCode  = 'ZERO_SUPPRESSED_GTIN'">
+					<xsl:if test="gs1TradeItemIdentificationKeyValue = '' or substring(gs1TradeItemIdentificationKeyValue,1) != '0'">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1748" />
+						</xsl:apply-templates>
+					</xsl:if>
+					<xsl:if test="gs1:InvalidGTIN(gs1TradeItemIdentificationKeyValue,8)">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1749" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
 			</xsl:choose>
 		</xsl:for-each>
 

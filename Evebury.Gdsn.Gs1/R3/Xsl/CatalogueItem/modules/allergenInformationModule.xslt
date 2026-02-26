@@ -9,11 +9,18 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="allergenRelatedInformation" mode="allergenInformationModule"/>
+		<xsl:apply-templates select="allergenRelatedInformation" mode="allergenInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="allergenRelatedInformation" mode="allergenInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="allergen" mode="allergenInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+
 		<!--Rule 1658: If multiple iterations of allergenTypeCode are used, then no two iterations SHALL be equal within the same class allergenRelatedInformation.-->
 		<xsl:variable name="parent" select="."/>
 		<xsl:for-each select="allergen/allergenTypeCode">
@@ -24,8 +31,26 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
-		
-		
+
+
+	</xsl:template>
+
+	<xsl:template match="allergen" mode="allergenInformationModule">
+		<xsl:param name="targetMarket"/>
+
+		<!--Rule 1755: If targetMarketCountryCode equals ('056' (Belgium), '442' (Luxembourg), '528' (Netherlands)) and levelOfContainmentCode is used, then levelOfContainmentCode SHALL equal one of the following values: 'CONTAINS', 'FREE_FROM' or 'MAY_CONTAIN'.-->
+		<xsl:if test="contains('056, 442, 528', $targetMarket)">
+			<xsl:choose>
+				<xsl:when test="levelOfContainmentCode  = 'CONTAINS'"/>
+				<xsl:when test="levelOfContainmentCode  = 'FREE_FROM'"/>
+				<xsl:when test="levelOfContainmentCode  = 'MAY_CONTAIN'"/>
+				<xsl:otherwise>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1755" />
+					</xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
 	</xsl:template>
 
 </xsl:stylesheet>

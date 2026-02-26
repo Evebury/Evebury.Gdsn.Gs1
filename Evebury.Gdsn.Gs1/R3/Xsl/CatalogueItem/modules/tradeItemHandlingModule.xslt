@@ -67,7 +67,18 @@
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1324"/>
 			</xsl:apply-templates>
-		</xsl:if>		
+		</xsl:if>
+
+		<!--Rule 1745: If targetMarketCountryCode equals <Geographic> then for each iteration of TradeItemStacking class if (stackingFactorTypeCode is used or stackingFactor is used) then stackingFactorTypeCode SHALL be used and stackingFactor SHALL be used.-->
+		<xsl:if test="contains('040, 056, 246, 442, 528, 756', $targetMarket)">
+			<xsl:if test="stackingFactor != '' or stackingFactorTypeCode != ''">
+				<xsl:if test="stackingFactor = '' or stackingFactorTypeCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1745" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 </xsl:stylesheet>

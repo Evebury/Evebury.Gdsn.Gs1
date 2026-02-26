@@ -13,6 +13,15 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
+		<!--Rule 1741: If targetMarketCountryCode equals <Geographic> and areBatteriesRequired equals 'true' then areBatteriesIncluded SHALL be used.-->
+		<xsl:if test="contains('040, 056, 208, 246, 250, 276, 442, 528, 756', $targetMarket)" >
+			<xsl:if test="areBatteriesRequired  = 'true' and areBatteriesIncluded = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1741" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="batteryMaterials" mode="batteryInformationModule">

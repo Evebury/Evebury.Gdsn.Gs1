@@ -343,6 +343,19 @@
 			</xsl:for-each>
 		</xsl:if>
 
+		<!--Rule 1756: If targetMarketCountryCode equals Geographic and drainedWeight is used, then the drainedWeight unit of measurement SHALL equal one of the following values: 'KGM' or 'GRM'.-->
+		<xsl:if test="tradeItemWeight/drainedWeight != ''">
+			<xsl:if test="contains('008, 051, 031, 112, 056, 070, 040, 100, 191, 196, 203, 208, 233, 246, 250, 276, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 752, 756, 792, 795, 826, 804, 860', $targetMarket)">
+				<xsl:choose>
+					<xsl:when test="tradeItemWeight/drainedWeight[@measurementUnitCode = 'KGM' or @measurementUnitCode ='GRM']"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1756" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 

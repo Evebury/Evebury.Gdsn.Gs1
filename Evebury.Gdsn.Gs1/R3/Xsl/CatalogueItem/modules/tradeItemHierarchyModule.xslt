@@ -155,6 +155,28 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1740: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals 'PALLET' and (isTradeItemPackedIrregularly equals 'FALSE' or is not used) then quantityOfCompleteLayersContainedInATradeItem SHALL be greater than 0 (zero).-->
+		<xsl:if test="contains('056, 203, 246, 380, 442, 528', $targetMarket)">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode = 'PALLET' and $tradeItem/isTradeItemPackedIrregularly != 'true'">
+				<xsl:if test="quantityOfCompleteLayersContainedInATradeItem = '' or quantityOfCompleteLayersContainedInATradeItem &lt;= 0">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1740" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1743: If targetMarketCountryCode equals <Geographic> and (quantityOfTradeItemsPerPallet is used or quantityOfLayersPerPallet is used or quantityOfTradeItemsPerPalletLayer is used) then at least one iteration of platformTypeCode SHALL be used.-->
+		<xsl:if test="quantityOfTradeItemsPerPallet != '' or quantityOfTradeItemsPerPalletLayer != '' or quantityOfLayersPerPallet != ''">
+			<xsl:if test="contains('056, 246, 442, 528', $targetMarket)">
+				<xsl:if test="count($tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging[platformTypeCode != '']) = 0">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1743" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 </xsl:stylesheet>
