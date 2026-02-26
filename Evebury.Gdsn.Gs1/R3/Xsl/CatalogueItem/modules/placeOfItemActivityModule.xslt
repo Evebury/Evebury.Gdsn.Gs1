@@ -13,6 +13,8 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
+		<xsl:apply-templates select="placeOfProductActivity" mode="placeOfItemActivityModule"/>
+
 	</xsl:template>
 
 	<xsl:template match="importClassification" mode="placeOfItemActivityModule">
@@ -29,6 +31,30 @@
 				<xsl:with-param name="id" select="584" />
 			</xsl:apply-templates>
 		</xsl:if>
+
+		<!--Rule 1693: If targetMarketCountryCode equals <Geographic> and importClassificationTypeCode equals 'INTRASTAT' then corresponding importClassificationValue SHALL have exactly 8 digits.-->
+		<xsl:if test="importClassificationTypeCode  = 'INTRASTAT'">
+			<xsl:if test="contains('056, 528, 442, 756, 380, 752', $targetMarket)">
+				<xsl:if test="importClassificationValue != number(importClassificationValue) or string-length(importClassificationValue) != 8">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1693" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="placeOfProductActivity" mode="placeOfItemActivityModule">
+		<!--Rule 1656: If the class CountryOfOrigin or MaterialCountryOfOrigin is repeated, then no two iterations of countryCode in  this class SHALL be equal.-->
+		<xsl:variable name="parent" select="."/>
+		<xsl:for-each select="countryOfOrigin/countryCode">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($parent/countryOfOrigin[countryCode = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1656" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 
 </xsl:stylesheet>

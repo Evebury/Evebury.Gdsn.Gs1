@@ -116,6 +116,44 @@
 			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 			<xsl:with-param name="component" select=".."/>
 		</xsl:apply-templates>
+
+
+		<xsl:choose>
+			<xsl:when test="@identificationSchemeAgencyCode = 'GTIN_14'">
+				<!--Rule 1669: If  compontentIdentification/identificationSchemeAgencyCode equals 'GTIN_14'  then  componentIdentification shall be exactly 14 digits long and have a valid check digit.-->
+				<xsl:if test="gs1:InvalidGTIN(., 14)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1669" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="@identificationSchemeAgencyCode = 'GTIN_13'">
+				<!--Rule 1671: If  compontentIdentification/identificationSchemeAgencyCode equals 'GTIN_13'  then  componentIdentification shall be exactly 13 digits long and have a valid check digit.-->
+				<xsl:if test="gs1:InvalidGTIN(., 13)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1671" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="@identificationSchemeAgencyCode = 'GTIN_12'">
+				<!--Rule 1673: If  compontentIdentification/identificationSchemeAgencyCode equals 'GTIN_12'  then  componentIdentification shall be exactly 12 digits long and have a valid check digit.-->
+				<xsl:if test="gs1:InvalidGTIN(., 12)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1673" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="@identificationSchemeAgencyCode = 'GTIN_18'">
+				<!--Rule 1675: If  compontentIdentification/identificationSchemeAgencyCode equals 'GTIN_8'  then  componentIdentification shall be exactly 8 digits long and have a valid check digit.-->
+				<xsl:if test="gs1:InvalidGTIN(., 8)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1675" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:when>
+		</xsl:choose>
+		
+		
 	</xsl:template>
 
 </xsl:stylesheet>

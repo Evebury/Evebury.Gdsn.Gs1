@@ -52,13 +52,31 @@
 				</xsl:choose>
 			</xsl:if>
 		</xsl:if>
-		
+
 		<!--Rule 1058: If any attribute of the TradeItemTemperatureInformation class other than temperatureTypeQualifierCode is not empty then temperatureTypeQualifierCode must not be empty.-->
 		<xsl:if test="temperatureTypeQualifierCode = ''">
 			<xsl:if test="*[text() != '' and name() != 'temperatureTypeQualifierCode']">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1058" />
 				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+
+		<xsl:if test="$targetMarket = '208' or $targetMarket = '826'">
+			<xsl:if test="temperatureQualifierCode = 'STORAGE_HANDLING'">
+				<!--Rule 1652: If targetMarketCountryCode equals (208 (Denmark) or 826 (UK)) and contextIdentification does not equal 'DP007' or 'DP008' and temperatureQualifierCode equals 'STORAGE_HANDLING', then maximumTemperature SHALL be used.-->
+				<xsl:if test="maximumTemperature  =''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1652" />
+					</xsl:apply-templates>
+				</xsl:if>
+				<!--Rule 1653: If targetMarketCountryCode equals (208 (Denmark) or 826 (UK)) and contextIdentfication does not equal 'DP007' or 'DP008' and temperatureQualifierCode equals 'STORAGE_HANDLING', then minimumTemperature SHALL be used.-->
+				<xsl:if test="minimumTemperature  =''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1653" />
+					</xsl:apply-templates>
+				</xsl:if>
 			</xsl:if>
 		</xsl:if>
 

@@ -17,6 +17,7 @@
 
 	<xsl:template match="batteryMaterials" mode="batteryInformationModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="tradeItemMaterialComposition" mode="batteryInformationModule"/>
 		<!--Rule 1553: (if TradeItemMaterial/materialAgencyCode is used then TradeItemMaterial/TradeItemMaterialComposition/materialCode shall be used) and (if TradeItemMaterial/TradeItemMaterialComposition/materialCode is used then TradeItemMaterial/materialAgencyCode shall be used).-->
 		<xsl:if test="(materialAgencyCode != '' and materialCode = '') or (materialAgencyCode = '' and materialCode != '')">
 			<xsl:apply-templates select="." mode="error">
@@ -36,6 +37,19 @@
 				</xsl:if>
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="tradeItemMaterialComposition" mode="batteryInformationModule">
+		<!--Rule 1656: If the class CountryOfOrigin or MaterialCountryOfOrigin is repeated, then no two iterations of countryCode in  this class SHALL be equal.-->
+		<xsl:variable name="parent" select="."/>
+		<xsl:for-each select="materialCountryOfOrigin/countryCode">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($parent/materialCountryOfOrigin[countryCode = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1656" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 
 </xsl:stylesheet>

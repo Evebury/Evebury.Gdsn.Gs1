@@ -11,18 +11,30 @@
 
 		<xsl:apply-templates select="nonGTINLogisticsUnitInformation" mode="nonGTINLogisticsUnitInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="nonGTINLogisticsUnitInformation" mode="nonGTINLogisticsUnitInformationModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
 		<!--Rule 480: If targetMarketCountryCode equals <Geographic> then logisticsUnitStackingFactor SHALL be less than 100.-->
 		<xsl:if test="contains('056, 442, 528', $targetMarket)">
 			<xsl:if test="logisticsUnitStackingFactor != '' and logisticsUnitStackingFactor &gt; 100">
 				<xsl:apply-templates select="logisticsUnitStackingFactor" mode="error">
 					<xsl:with-param name="id" select="480"/>
 				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		<!--Rule 1651: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals 'PALLET', then no attributes in class nonGTINLogisticsUnitInformation SHALL be used.-->
+		<xsl:if test="contains('276, 528, 208, 203, 246, 056, 442, 250, 040, 380', $targetMarket)">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode  = 'PALLET'">
+				<xsl:if test="grossWeight != '' or height != '' or depth != '' or width != '' or logisticsUnitStackingFactor != ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1651" />
+					</xsl:apply-templates>
+				</xsl:if>
 			</xsl:if>
 		</xsl:if>
 

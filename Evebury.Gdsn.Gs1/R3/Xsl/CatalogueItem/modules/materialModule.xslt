@@ -14,6 +14,7 @@
 	</xsl:template>
 
 	<xsl:template match="material" mode="materialModule">
+		<xsl:apply-templates select="materialComposition" mode="materialModule"/>
 		<!--Rule 1308: If Material/materialAgencyCode is used then Material/MaterialComposition/materialCode SHALL be used.-->
 		<xsl:if test="materialAgencyCode != ''">
 			<xsl:if test="materialComposition[materialCode = '']">
@@ -32,6 +33,19 @@
 			</xsl:if>
 		</xsl:if>
 		
+	</xsl:template>
+
+	<xsl:template match="materialComposition" mode="materialModule">
+		<!--Rule 1656: If the class CountryOfOrigin or MaterialCountryOfOrigin is repeated, then no two iterations of countryCode in  this class SHALL be equal.-->
+		<xsl:variable name="parent" select="."/>
+		<xsl:for-each select="materialCountryOfOrigin/countryCode">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($parent/materialCountryOfOrigin[countryCode = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1656" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 
 </xsl:stylesheet>

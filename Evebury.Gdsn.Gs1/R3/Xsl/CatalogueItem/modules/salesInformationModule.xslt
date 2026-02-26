@@ -259,6 +259,17 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 			</xsl:if>
 		</xsl:for-each>
 
+		<!--Rule 1691: If targetMarketCountryCode equals 752 (Sweden) and  (priceComparisonContentTypeCode OR priceComparisonMeasurement is used), then priceComparisonContentTypeCode AND priceComparisonMeasurement SHALL be used.-->
+		<xsl:if test="$targetMarket = '752'">
+			<xsl:if test="priceComparisonContentTypeCode != '' or priceComparisonMeasurement != ''">
+				<xsl:if test="priceComparisonContentTypeCode = '' or priceComparisonMeasurement = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1691" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="priceBasisQuantity" mode="r520">

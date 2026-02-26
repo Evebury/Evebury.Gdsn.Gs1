@@ -311,6 +311,38 @@
 			</xsl:if>
 		</xsl:if>
 
+		<!--Rule 1655: If targetMarketCountryCode equals (056 (Belgium), 442 (Luxembourg), 528 (Netherlands), 250 (France), 208 (Denmark), 203 (Czech Republic), 246 (Finland), 826 (UK), or 380 (Italy)) and isTradeItemNonphysical, does not equal 'true' or is not populated and isTradeItemAConsumerUnit equals 'false' and TradeItemMeasurements/depth is used and TradeItemMeasurements/width is used, then TradeItemMeasurements/depth SHALL be greater than or equal to TradeItemMeasurements/width. -->
+		<xsl:if test="contains('056, 442, 528, 208, 203, 250, 246, 380, 826', $targetMarket)">
+			<xsl:if test="$tradeItem/isTradeItemNonphysical != 'true' and $tradeItem/isTradeItemAConsumerUnit = 'false'">
+				<xsl:if test="depth != '' and width != ''">
+					<xsl:variable name="v1">
+						<xsl:apply-templates select="depth" mode="measurementUnit"/>
+					</xsl:variable>
+					<xsl:variable name="v2">
+						<xsl:apply-templates select="width" mode="measurementUnit"/>
+					</xsl:variable>
+					<xsl:if test="$v2 &gt; $v1">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1655" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1657: If multiple iterations of pegHoleNumber are used, then no two iterations SHALL be equal.-->
+		<xsl:if test="pegMeasurements">
+			<xsl:variable name="parent" select="."/>
+			<xsl:for-each select="pegMeasurements/pegHoleNumber">
+				<xsl:variable name="value" select="."/>
+				<xsl:if test="count($parent/pegMeasurements[pegHoleNumber = $value]) &gt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1657" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+
 	</xsl:template>
 
 

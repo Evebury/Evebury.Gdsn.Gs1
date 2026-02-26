@@ -10,6 +10,7 @@
 	<xsl:param name="current"/>
 
 	<xsl:include href="modules/alcoholInformationModule.xslt"/>
+	<xsl:include href="modules/allergenInformationModule.xslt"/>
 	<xsl:include href="modules/animalFeedingModule.xslt"/>
 	<xsl:include href="modules/audienceOrPlayerInformationModule.xslt"/>
 	<xsl:include href="modules/audioVisualMediaContentInformationModule.xslt"/>
@@ -25,6 +26,7 @@
 	<xsl:include href="modules/farmingAndProcessingInformationModule.xslt"/>
 	<xsl:include href="modules/foodAndBeverageIngredientModule.xslt"/>
 	<xsl:include href="modules/foodAndBeveragePreparationServingModule.xslt"/>
+	<xsl:include href="modules/foodAndBeveragePropertiesInformationModule.xslt"/>
 	<xsl:include href="modules/marketingInformationModule.xslt"/>
 	<xsl:include href="modules/materialModule.xslt"/>
 	<xsl:include href="modules/nonfoodIngredientModule.xslt"/>
@@ -1729,7 +1731,7 @@
 					<xsl:with-param name="id" select="1459" />
 				</xsl:apply-templates>
 			</xsl:if>
-		<!--Rule 1460: if additionalTradeItemClassificationCodeValue is used then there shall be a corresponding additionalTradeItemClassificationSystemCode used-->
+			<!--Rule 1460: if additionalTradeItemClassificationCodeValue is used then there shall be a corresponding additionalTradeItemClassificationSystemCode used-->
 			<xsl:if test="additionalTradeItemClassificationSystemCode = '' and additionalTradeItemClassificationValue[additionalTradeItemClassificationCodeValue != '']">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1460" />
@@ -1762,6 +1764,116 @@
 			</xsl:if>
 		</xsl:if>
 	</xsl:template>
+
+	<xsl:template match="*" mode="r1639">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1639: If targetMarketCountryCode equals '250' (France) and  isTradeItemABaseUnit equals 'true' and (gpcCategoryCode equals ('10000273' [- Wine – Fortified] or '10000275' [- Wine – Sparkling] or  '10000276' [- Wine – Still]) then isTradeItemAQualityVintageAlcoholProduct shall be used.-->
+		<xsl:if test="$targetMarket = '250' and isTradeItemABaseUnit = 'true'">
+			<xsl:variable name="brick" select="gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="$brick = '10000276'">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/isTradeItemAQualityVintageAlcoholProduct = ''">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1639" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1662">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1662: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode equals '10000159' and isTradeItemAConsumerUnit = 'true', then degreeOfOriginalWort SHALL be used.-->
+		<xsl:if test="contains('056, 442, 528, 380, 203', $targetMarket) and isTradeItemAConsumerUnit = 'true'">
+			<xsl:variable name="brick" select="gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="$brick = '10000159'">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/degreeOfOriginalWort = ''">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1662" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1684">
+		<xsl:param name="targetMarket" />
+
+		<xsl:if test="$targetMarket = '250' and tradeItemUnitDescriptorCode = 'BASE_UNIT_OR_EACH' and isTradeItemAConsumerUnit = 'true'">
+			<xsl:variable name="brick" select="gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="gs1:IsInFamily($brick, '67010000, 63010000')">
+
+				<!--Rule 1684: If targetMarketCountryCode equals ‘250’ (France) and gpcCategoryCode is in GPC Family ('67010000' (Clothing) or ‘63010000’ (Footwear)) and tradeItemUnitDescriptorCode equals ‘BASE_UNIT_OR_EACH’ and isTradeItemAConsumerUnit equals ‘true’ then at least one iteration of additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode SHALL have the value ‘SUPPLIER_ASSIGNED’ -->
+				<xsl:if test="count(additionalTradeItemIdentification[@additionalTradeItemIdentificationTypeCode ='SUPPLIER_ASSIGNED']) = 0">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1684" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+				<!--Rule 1686: If targetMarketCountryCode equals ‘250’ (France) and gpcCategoryCode is in GPC Family ('67010000' (Clothing) or ‘63010000’ (Footwear)) and isTradeItemAConsumerUnit equals ‘true’ then additionalTradeItemDescription shall not be empty.-->
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/additionalTradeItemDescription = ''">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1686" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+				<!--Rule 1688: If targetMarketCountryCode equals ‘250’ (France) and gpcCategoryCode is in GPC Family ('67010000' (Clothing) or ‘63010000’ (Footwear)) and tradeItemUnitDescriptorCode equals ‘BASE_UNIT_OR_EACH’ and isTradeItemAConsumerUnit equals ‘true’ then one iteration of colourCode shall be provided.-->
+				<xsl:if test="count(tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/colour/colourCode) = 0">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1688" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+				<!--Rule 1689: If targetMarketCountryCode equals ‘250’ (France) and gpcCategoryCode is in GPC Family ('67010000' (Clothing) or ‘63010000’ (Footwear)) and tradeItemUnitDescriptorCode equals ‘BASE_UNIT_OR_EACH’ and isTradeItemAConsumerUnit equals ‘true’ then colourFamilyCode shall be populated.-->
+				<xsl:if test="count(tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/colour/colourFamilyCode) = 0">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1689" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+				<!--Rule 1690: If targetMarketCountryCode equals ‘250’ (France) and gpcCategoryCode is in GPC Family ('67010000' (Clothing) or ‘63010000’ (Footwear)) and tradeItemUnitDescriptorCode equals ‘BASE_UNIT_OR_EACH’ and isTradeItemAConsumerUnit equals ‘true’ then targetConsumerGender shall be provided .-->
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:marketing_information:xsd:3' and local-name()='marketingInformationModule']/marketingInformation/targetConsumer/targetConsumerGender = ''">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1690" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1692">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1692: If (targetMarketCountryCode equals '056' (Belgium) or '528' (the Netherlands) or '442' (Luxembourg) ) and isTradeItemAConsumerUnit equals 'true', then one instance of importClassificationTypeCode SHALL be equal to 'INTRASTAT'.-->
+		<xsl:if test="isTradeItemAConsumerUnit = 'true'">
+			<xsl:if test="$targetMarket  = '056' or $targetMarket = '528' or $targetMarket = '442'">
+				<xsl:if test="count(tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:place_of_item_activity:xsd:3' and local-name()='placeOfItemActivityModule']/importClassification[importClassificationTypeCode = 'INTRASTAT'])  = 0">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1692" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1695">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1695: If targetMarketCountryCode equals ('250' (France)) then codes ('NON_EU' or 'D_A') cannot be used for any countryCode attribute.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test=".//@countryCode = 'NON_EU' or .//@countryCode = 'D_A'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1695" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
 
 	<xsl:template match="*" mode="r2069">
 		<xsl:param name="targetMarket"/>
@@ -1969,7 +2081,21 @@
 		<xsl:apply-templates select="." mode="r1613">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
-
+		<xsl:apply-templates select="." mode="r1639">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1662">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1684">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1692">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1695">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 		<xsl:apply-templates select="." mode="r2069">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>

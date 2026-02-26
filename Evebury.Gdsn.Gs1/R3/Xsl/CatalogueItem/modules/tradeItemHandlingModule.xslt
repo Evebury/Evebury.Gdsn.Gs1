@@ -20,6 +20,17 @@
 		<xsl:apply-templates select="tradeItemStacking" mode="tradeItemHandlingModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+
+		<!--Rule 1659: If contextIdentification does not equal 'DP007' or 'DP008' and multiple iterations of handlingInstructionsCodeReference are used, then no two iterations SHALL be equal.-->
+		<xsl:variable name="parent" select="."/>
+		<xsl:for-each select="handlingInstructionsCodeReference">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($parent[handlingInstructionsCodeReference = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1659" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="tradeItemStacking" mode="tradeItemHandlingModule">

@@ -11,6 +11,18 @@
 
 		<xsl:apply-templates select="animalFeeding" mode="animalFeedingModule"/>
 
+		<!--Rule 1640: If feedType is repeated for one trade item, then maximum one iteration of the same feedType shall exist for the same Trade Item-->
+		<xsl:variable name="feed" select="."/>
+		<xsl:for-each select="feedType">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($feed[feedType = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1640" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+		
+
 	</xsl:template>
 
 	<xsl:template match="animalFeeding" mode="animalFeedingModule">

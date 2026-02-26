@@ -17,6 +17,7 @@
 
 	<xsl:template match="foodAndBeverageIngredient" mode="foodAndBeverageIngredientModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="ingredientPlaceOfActivity" mode="foodAndBeverageIngredientModule"/>
 		<!--Rule 1177:If targetMarketCountryCode does not equal <Geographic> and there is more than one iteration of ingredientSequence, then ingredientSequence and ingredientName must not be empty.-->
 		<xsl:if test="$targetMarket != '562'">
 			<xsl:if test="ingredientSequence = '' or ingredientName = ''">
@@ -45,6 +46,19 @@
 			</xsl:apply-templates>
 		</xsl:if>
 		
+	</xsl:template>
+
+	<xsl:template match="ingredientPlaceOfActivity" mode="foodAndBeverageIngredientModule">
+		<!--Rule 1656: If the class CountryOfOrigin or MaterialCountryOfOrigin is repeated, then no two iterations of countryCode in  this class SHALL be equal.-->
+		<xsl:variable name="parent" select="."/>
+		<xsl:for-each select="countryOfOrigin/countryCode">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($parent/countryOfOrigin[countryCode = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1656" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 
 </xsl:stylesheet>

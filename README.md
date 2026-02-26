@@ -9,7 +9,7 @@ A comprehensive .NET library for validating GDSN GS1 messages. This engine acts 
 - **Data Integrity**: Ensure 100% compliance with GS1 XML schemas and complex business rules. If the message does not comply do not forward to the GS1 Network.
 - **Operational Efficiency**: Use advanced responses with XPaths to pinpoint data errors instantly, reducing manual troubleshooting time.
 
-## 📊 Supported Gdsn GS1 Messages
+## 📊 Supported GDSN GS1 Messages
 
 | Message                                      | Version  | Schema | Equality | Rules* |
 |----------------------------------------------|----------|--------|----------|-------|
@@ -30,14 +30,14 @@ A comprehensive .NET library for validating GDSN GS1 messages. This engine acts 
 
 *\*schema and network messages if applicable default to English*
 
-## 🔧 Current GDSN version
+## 🔧 GDSN version
 - **Current v3.1.33 (November 2025)**
 
-## 🔧 Current implementation status
-- **Rules to be implemented**:  343 out of 1079.
-- **Rules that should be a schema validation**:  541, 542, 1061, 1407, 1380
-- **Rules that are not specified correctly by GS1**: 550, 633, 1013, 1408
-- **Rules that can not be implemented**: 1316: checks if GTIN is in the GS1 datapool.
+## 🔧 Current rule status
+- **Rules to be implemented**:  299 out of 1079.
+- **Rules to be moved to schema**:  541, 542, 1061, 1407, 1380
+- **Rules specified invalid**: 550, 633, 1013, 1408, 1670, 1672, 1674, 1676, 1678
+- **Rules that can not be implemented**: 1316: checks if GTIN exists in the GS1 datapool.
 
 ## 🎯 Quick Start
 

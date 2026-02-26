@@ -21,7 +21,6 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<!--Rule 1231: There must be at most one iteration of tradeItemDateOnPackagingFormatName  -->
-		
 		<xsl:for-each select="packagingDate">
 			<xsl:variable name="date" select="."/>
 			<xsl:for-each select="tradeItemDateOnPackagingFormatName">
@@ -32,6 +31,17 @@
 					</xsl:apply-templates>
 				</xsl:if>			
 			</xsl:for-each>
+		</xsl:for-each>
+
+		<!--Rule 1660: If multiple iterations of packagingMarkedLabelAccreditationCode are used, then no two iterations SHALL be equal.-->
+		<xsl:variable name="parent" select="."/>
+		<xsl:for-each select="packagingMarkedLabelAccreditationCode">
+			<xsl:variable name="value" select="."/>
+			<xsl:if test="count($parent[packagingMarkedLabelAccreditationCode = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1660" />
+				</xsl:apply-templates>
+			</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
 

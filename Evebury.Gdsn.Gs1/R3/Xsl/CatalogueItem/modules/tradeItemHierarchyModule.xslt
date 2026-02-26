@@ -23,7 +23,7 @@
 		<xsl:if test="isTradeItemPackedIrregularly = 'false'">
 
 			<xsl:variable name="total" select="$tradeItem/nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem"/>
-			
+
 			<!--Rule 446: If isTradeItemPackedIrregularly equals ‘FALSE’ and tradeItemCompositionWidth, tradeItemCompositionDepth and quantityOfCompleteLayersContainedInATradeItem are all supplied and tradeItemCompositionWidth/measurementUnitCode and tradeItemCompositionDepth/measurementUnitCode equal ‘EA’ then the product of the three attributes should equal the totalQuantityOfNextLowerLevelTradeItem.-->
 			<xsl:variable name="measurements" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements"/>
 			<xsl:if test="$measurements">
@@ -42,7 +42,7 @@
 					<xsl:with-param name="id" select="473"/>
 				</xsl:apply-templates>
 			</xsl:if>
-			
+
 		</xsl:if>
 
 		<!--Rule 481: If targetMarketCountryCode equals <Geographic> and quantityOfLayersPerPallet is used then quantityOfLayersPerPallet SHALL be less than 999.-->
@@ -55,7 +55,7 @@
 		</xsl:if>
 
 		<!--Rule 519: If  targetMarketCountryCode is equal to '752' (Sweden) and layerHeight is not empty then value must equal child item width, depth or height.-->
-		<xsl:if test="contains('752', $targetMarket)">
+		<xsl:if test="$targetMarket = '752'">
 			<xsl:if test="layerHeight != ''">
 				<xsl:variable name="value">
 					<xsl:apply-templates select="layerHeight" mode="measurementUnit"/>
@@ -100,7 +100,61 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
-	
+
+		<!--Rule 1646: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode does not equal ('PALLET' or 'MIXED_MODULE') then quantityOfCompleteLayersContainedInATradeItem SHALL NOT be used.-->
+		<xsl:if test="contains('056, 442, 528, 276, 208, 203, 246, 826, 380, 250, 040, 756', $targetMarket)">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode != 'PALLET' and $tradeItem/tradeItemUnitDescriptorCode != 'MIXED_MODULE'">
+				<xsl:if test="quantityOfCompleteLayersContainedInATradeItem != ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1646" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1647: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode does not equal ('PALLET' or 'MIXED_MODULE') then quantityOfTradeItemsContainedInACompleteLayer SHALL NOT be used.-->
+		<xsl:if test="contains('056, 442, 528, 208, 203, 380, 756', $targetMarket)">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode != 'PALLET' and $tradeItem/tradeItemUnitDescriptorCode != 'MIXED_MODULE'">
+				<xsl:if test="quantityOfTradeItemsContainedInACompleteLayer != ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1647" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1648: If targetMarketCountryCode equals (056 (Belgium), 442 (Luxembourg), 528 (Netherlands), 208 (Denmark), 203 (Czech Republic), 246 (Finland) or 380 (Italy)) and tradeItemUnitDescriptorCode equals 'PALLET', then quantityOfTradeItemsPerPalletLayer SHALL NOT be used. -->
+		<xsl:if test="contains('056, 442, 528, 208, 203, 246, 380', $targetMarket)">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode = 'PALLET'">
+				<xsl:if test="quantityOfTradeItemsPerPalletLayer != ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1648" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1649: If targetMarketCountryCode equals (056 (Belgium), 442 (Luxembourg), 276 (Germany), 528 (Netherlands), 208 (Denmark), 203 (Czech Republic), 246 (Finland), 380 (Italy), 250 (France) or 040 (Austria)) and tradeItemUnitDescriptorCode equals 'PALLET', then quantityOfTradeItemsPerPallet SHALL NOT be used.-->
+		<xsl:if test="contains('056, 442, 276, 528, 208, 203, 246, 380, 250, 040', $targetMarket)">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode = 'PALLET'">
+				<xsl:if test="quantityOfTradeItemsPerPallet != ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1649" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1650: If targetMarketCountryCode equals (056 (Belgium), 442 (Luxembourg), 276 (Germany), 528 (Netherlands), 208 (Denmark), 203 (Czech Republic), 246 (Finland), 380 (Italy), 250 (France) or 040 (Austria)) and tradeItemUnitDescriptorCode equals 'PALLET', then quantityOfLayersPerPallet SHALL NOT be used.-->
+		<xsl:if test="contains('056, 442, 276, 528, 208, 203, 246, 380, 250, 040', $targetMarket)">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode = 'PALLET'">
+				<xsl:if test="quantityOfLayersPerPallet != ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1650" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 </xsl:stylesheet>

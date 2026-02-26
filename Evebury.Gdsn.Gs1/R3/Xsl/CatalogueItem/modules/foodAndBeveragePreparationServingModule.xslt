@@ -12,9 +12,23 @@
 		<xsl:apply-templates select="preparationServing" mode="foodAndBeveragePreparationServingModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+		<xsl:apply-templates select="servingQuantityInformation" mode="foodAndBeveragePreparationServingModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
+	<xsl:template match="servingQuantityInformation" mode="foodAndBeveragePreparationServingModule">
+		<xsl:param name="targetMarket"/>
+		<!--Rule 1663: If targetMarketCountryCode equals (528 (Netherlands), 276 (Germany), 250 (France), 056 (Belgium), 442 (Luxembourg), 208 (Denmark), 203 (Czech Republic), 246 (Finland), 826 (UK), 380 (Italy) or 040 (Austria)) and numberOfServingsPerPackage is used, then it SHALL be greater than zero.-->
+		<xsl:if test="contains('056, 442, 528, 276, 208, 203, 250, 246, 040, 380', $targetMarket) and numberOfServingsPerPackage != ''">
+			<xsl:if test="numberOfServingsPerPackage &lt;= 0">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1663" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
 
 	<xsl:template match="preparationServing" mode="foodAndBeveragePreparationServingModule">
 		<xsl:param name="targetMarket"/>

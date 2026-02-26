@@ -121,6 +121,9 @@
   <data name="alcoholInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\alcoholInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="allergenInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\allergenInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="animalFeedingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\animalFeedingModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -171,6 +174,9 @@
   </data>
   <data name="foodAndBeveragePreparationServingModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\foodAndBeveragePreparationServingModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="foodAndBeveragePropertiesInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\foodAndBeveragePropertiesInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="marketingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\marketingInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
