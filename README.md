@@ -16,7 +16,7 @@ A comprehensive .NET library for validating GDSN GS1 messages. This engine acts 
 | `catalogueItemNotificationMessage`           | 3.1      | ✅     | ✅      | ⚠️    |
 | `gS1ResponseMessage`                         | 3.1      | ✅     | ✅      |       |
 | `catalogueItemHierarchicalWithdrawalMessage` | 3.1      | ✅     | ✅      |       |
-| `catalogueItemPublicationMessage`            | 3.1      | ✅     | ✅      |       |
+| `catalogueItemPublicationMessage`            | 3.1      | ✅     | ✅      | ✅    |
 | `catalogueItemConfirmationMessage`           | 3.1      | ✅     | ✅      |       |
 | `catalogueItemRegistrationResponseMessage`   | 3.1      | ✅     | ✅      |       |
 | `catalogueItemSubscriptionMessage`           | 3.1      | ✅     | ✅      |       |

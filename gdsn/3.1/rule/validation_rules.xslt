@@ -12,10 +12,11 @@
 
 	<xsl:template match="/">
 		<xsl:element name="xsl:stylesheet">
-			<xsl:for-each select="Rules/Rule[@Name = $type]">
+			<!--<xsl:for-each select="Rules/Rule[@Name = $type]">
 				<xsl:sort select="@Id" data-type="number"/>
 				<xsl:apply-templates select="."/>
-			</xsl:for-each>
+			</xsl:for-each>-->
+			<xsl:apply-templates select="/Rules/Rule[XPath[contains(@Path, 'catalogueItemPublicationMessage')]]"/>
 		</xsl:element>
 	</xsl:template>
 

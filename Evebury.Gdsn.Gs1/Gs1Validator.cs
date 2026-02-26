@@ -236,6 +236,11 @@ namespace Evebury.Gdsn.Gs1
                 _rules.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.CatalogueItem.ResourceManager));
                 return true;
             }
+            else if (key == MessageKey.CatalogueItemPublication3) 
+            {
+                _rules.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.catalogueItemPublication));
+                return true;
+            }
             return false;
         }
 
