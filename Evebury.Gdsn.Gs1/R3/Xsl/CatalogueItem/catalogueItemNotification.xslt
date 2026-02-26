@@ -1936,6 +1936,35 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1759">
+		<xsl:param name="targetMarket" />
+		<xsl:if test="contains('008, 051, 031, 040, 112, 056, 070, 100, 191, 196, 203, 208, 233, 246, 250, 276, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 756, 792, 795, 826, 804, 860', $targetMarket)">
+			<xsl:choose>
+				<xsl:when test=".//tradeItem[isTradeItemABaseUnit != 'true']/nextLowerLevelTradeItemInformation[quantityOfChildren != 1]"/>
+				<xsl:otherwise>
+					<!--Rule 1759: If targetMarketCountryCode  equals <Geographic> and quantityOfChildren equals '1' on every level of the item hierarchy (except for the level where isTradeItemABaseUnit equals 'true’) and percentageOfAlcoholByVolume is used, then percentageOfAlcoholByVolume SHALL equal the same value in all levels of the item hierarchy where percentageOfAlcoholByVolume is used.-->
+					<xsl:variable name="percentageOfAlcoholByVolume" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume"/>
+					<xsl:if test="$percentageOfAlcoholByVolume != ''">
+						<xsl:if test=".//tradeItem[isTradeItemABaseUnit != 'true']/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume != $percentageOfAlcoholByVolume">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1759" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:if>
+					<!--Rule 1760: If targetMarketCountryCode equals <geographic> and quantityOfChildren equals 1 on each level of the item hierarchy (except for the level where isTradeItemABaseUnit equals 'true’) and degreeOfOriginalWort is used, then degreeOfOriginalWort SHALL equal the same value in all levels of the item hierarchy where degreeOfOriginalWort is used.-->
+					<xsl:variable name="degreeOfOriginalWort" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/degreeOfOriginalWort"/>
+					<xsl:if test="$degreeOfOriginalWort != ''">
+						<xsl:if test=".//tradeItem[isTradeItemABaseUnit != 'true']/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/degreeOfOriginalWort != $degreeOfOriginalWort">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1760" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
+
 
 	<xsl:template match="*" mode="r2069">
 		<xsl:param name="targetMarket"/>
@@ -1976,6 +2005,9 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1720">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1759">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 	</xsl:template>

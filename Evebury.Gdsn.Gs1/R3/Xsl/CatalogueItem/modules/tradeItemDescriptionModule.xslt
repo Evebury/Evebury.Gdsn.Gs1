@@ -11,12 +11,14 @@
 
 		<xsl:apply-templates select="tradeItemDescriptionInformation" mode="tradeItemDescriptionModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="tradeItemDescriptionInformation" mode="tradeItemDescriptionModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
 		
 		<!--Rule 464: If TargetMarket/targetMarketCountryCode is equal to ('036' (Australia) or '554' (New Zealand)) then the codeDescription of tradeItemGroupIdentificationCodeReference must be equal for all Items with the the same tradeItemGroupIdentificationCodeReference.-->
 		<xsl:if test="contains('036, 554', $targetMarket)">
@@ -66,7 +68,32 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
-		
+
+
+		<!--Rule 1762: If targetMarketCountryCode equals '528' (the Netherlands) and regulatedProductName is used and gpcCategoryCode equals '10005786, then there SHALL be at least one instance of provenanceStatement with languageCode equal to 'nl'.-->
+		<xsl:if test="$targetMarket = '528'">
+			<xsl:if test="regulatedProductName != ''">
+				<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
+				<xsl:if test="$brick = '10005786'">
+					<xsl:choose>
+						<xsl:when test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:food_and_beverage_ingredient:xsd:3' and local-name()='foodAndBeverageIngredientModule']/foodAndBeverageIngredient/ingredientPlaceOfActivity/provenanceStatement[@languageCode = 'nl']"/>
+						<xsl:otherwise>
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1762" />
+							</xsl:apply-templates>
+						</xsl:otherwise>
+					</xsl:choose>
+					<xsl:choose>
+						<xsl:when test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:place_of_item_activity:xsd:3' and local-name()='placeOfItemActivityModule']/placeOfProductActivity/provenanceStatement[@languageCode = 'nl']"/>
+						<xsl:otherwise>
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1762" />
+							</xsl:apply-templates>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 	
 	</xsl:template>
 
