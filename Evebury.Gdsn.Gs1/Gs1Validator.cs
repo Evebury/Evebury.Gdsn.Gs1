@@ -64,7 +64,6 @@ namespace Evebury.Gdsn.Gs1
             if (IsDefinedRuleSet(key))
             {
                 response = await ApplyRules(key, message, previous);
-                return response;
             }
 
             return response;

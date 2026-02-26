@@ -351,6 +351,8 @@
 
 	<xsl:template match="packagingMaterial" mode="packagingInformationModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select=".//packagingRawMaterialInformation" mode="packagingInformationModule"/>
+		
 		<!--Rule 466: If packagingMaterialCompositionQuantity is not empty then value must be greater than 0.-->
 		<xsl:if test="packagingMaterialCompositionQuantity != '' and packagingMaterialCompositionQuantity &lt;= 0">
 			<xsl:apply-templates select="packagingMaterialCompositionQuantity" mode="error">
@@ -382,6 +384,26 @@
 				</xsl:if>
 			</xsl:otherwise>
 		</xsl:choose>
+		<!--Rule 1714: If packagingLabellingCoveragePercentage is used then the value SHALL be greater than or equal to 0 and less than or equal to 100-->
+		<xsl:if test="packagingLabellingCoveragePercentage != ''">
+			<xsl:if test="packagingLabellingCoveragePercentage &lt; 0 or packagingLabellingCoveragePercentage &gt; 100">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1714" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		
+	</xsl:template>
+
+	<xsl:template match="packagingRawMaterialInformation" mode="packagingInformationModule">
+		<!--Rule 1713: If packagingRawMaterialContentPercentage is used then the value SHALL be greater than or equal to 0 and less than or equal to 100-->
+		<xsl:if test="packagingRawMaterialContentPercentage != ''">
+			<xsl:if test="packagingRawMaterialContentPercentage &lt; 0 or packagingRawMaterialContentPercentage &gt; 100">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1713" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="packageDeposit" mode="packagingInformationModule">

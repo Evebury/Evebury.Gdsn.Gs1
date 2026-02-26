@@ -11,12 +11,14 @@
 
 		<xsl:apply-templates select="tradeItemHandlingInformation" mode="tradeItemHandlingModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="tradeItemHandlingInformation" mode="tradeItemHandlingModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
 		<xsl:apply-templates select="tradeItemStacking" mode="tradeItemHandlingModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
@@ -31,6 +33,21 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
+
+		<!--Rule 1703: IF targetMarketCountryCode equals '752' (Sweden) and HandlingInstructionsCodeReference equals ‘OTC’ (Temperature Control), then temperatureQualifierCode SHALL be used and equal  ('STORAGE_HANDLING' or 'TRANSPORTATION') AND maximumTemperature and minimumTemperature SHALL be used per temperatureQualifierCode.-->
+		<xsl:if test="$targetMarket = '752' and HandlingInstructionsCodeReference = 'OTC'">
+			<xsl:variable name="module" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_temperature_information:xsd:3' and local-name()='tradeItemTemperatureInformationModule']/tradeItemTemperatureInformation"/>
+			<xsl:if test="$module[temperatureQualifierCode = 'STORAGE_HANDLING']/minimumTemperature ='' or $module[temperatureQualifierCode = 'STORAGE_HANDLING']/maximumTemperature =''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1703" />
+				</xsl:apply-templates>
+			</xsl:if>
+			<xsl:if test="$module[temperatureQualifierCode = 'TRANSPORTATION']/minimumTemperature ='' or $module[temperatureQualifierCode = 'TRANSPORTATION']/maximumTemperature =''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1703" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="tradeItemStacking" mode="tradeItemHandlingModule">
@@ -50,8 +67,7 @@
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1324"/>
 			</xsl:apply-templates>
-		</xsl:if>
-		
+		</xsl:if>		
 	</xsl:template>
 
 </xsl:stylesheet>

@@ -33,8 +33,17 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
-		
-		
+
+		<!--Rule 1704: If targetMarketCountryCode equals '250' (France) and regulationTypeCode equals 'BIOCIDE_REGULATION', then regulationLevelCodeReference SHALL be populated.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test="regulationTypeCode = 'BIOCIDE_REGULATION'">
+				<xsl:if test="regulationLevelCodeReference  = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1704" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="permitIdentification" mode="regulatedTradeItemModule">

@@ -176,6 +176,20 @@
 			</xsl:if>
 		</xsl:if>
 
+		<xsl:variable name="parent" select="."/>
+
+		<!--Rule 1717: If targetMarketCountryCode equals <Geographic> and NutrientDetail sub-class is used then all nutrientTypeCode values SHALL be unique within the same NutrientHeader class.-->
+		<xsl:if test="contains('208, 250, 752, 756, 040', $targetMarket)">
+			<xsl:for-each select="nutrientDetail/nutrientTypeCode">
+				<xsl:variable name="value" select="."/>
+				<xsl:if test="count($parent/nutrientDetail[nutrientTypeCode = $value]) &gt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1717" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>		  
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="nutrientDetail" mode="nutritionalInformationModule">

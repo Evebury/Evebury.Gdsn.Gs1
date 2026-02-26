@@ -49,6 +49,15 @@
 				</xsl:choose>
 			</xsl:for-each>
 		</xsl:if>
+
+		<!--Rule 1696: If targetMarket/countryCode in ('276' Germany or '040' Austria) and catchAreaCode is used then catchAreaCode SHALL NOT be in ('27', '37').-->
+		<xsl:if test="$targetMarket = '270' or $targetMarket = '040'">
+			<xsl:if test="fishCatchInformation[catchMethodCode = '27'] or fishCatchInformation[catchMethodCode = '37']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1696" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		
 	</xsl:template>
 

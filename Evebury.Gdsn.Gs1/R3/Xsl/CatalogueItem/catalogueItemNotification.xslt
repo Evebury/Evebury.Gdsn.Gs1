@@ -27,6 +27,7 @@
 	<xsl:include href="modules/foodAndBeverageIngredientModule.xslt"/>
 	<xsl:include href="modules/foodAndBeveragePreparationServingModule.xslt"/>
 	<xsl:include href="modules/foodAndBeveragePropertiesInformationModule.xslt"/>
+	<xsl:include href="modules/healthRelatedInformationModule.xslt"/>
 	<xsl:include href="modules/marketingInformationModule.xslt"/>
 	<xsl:include href="modules/materialModule.xslt"/>
 	<xsl:include href="modules/nonfoodIngredientModule.xslt"/>
@@ -1874,6 +1875,16 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1697">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1697: Code value 'NON_EU' (Non European Union) shall not be used -->
+		<xsl:if test="$targetMarket = 'NON_EU'">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1697" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
 
 	<xsl:template match="*" mode="r2069">
 		<xsl:param name="targetMarket"/>
@@ -2094,6 +2105,9 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1695">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1697">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
