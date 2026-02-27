@@ -60,6 +60,13 @@
 			</xsl:choose>
 		</xsl:for-each>
 
+		<!--Rule 1834: If (gs1TradeItemIdentificationKeyValue is used or gs1TradeItemIdentificationKeyCode is used) then gs1TradeItemIdentificationKeyValue SHALL be used and gs1TradeItemIdentificationKeyCode SHALL be used.-->
+		<xsl:if test="(gs1TradeItemIdentificationKeyValue != '' or gs1TradeItemIdentificationKeyCode != '') and (gs1TradeItemIdentificationKeyValue = '' or gs1TradeItemIdentificationKeyCode = '')">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1834" />
+			</xsl:apply-templates>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="dataCarrier" mode="tradeItemDataCarrierAndIdentificationModule">

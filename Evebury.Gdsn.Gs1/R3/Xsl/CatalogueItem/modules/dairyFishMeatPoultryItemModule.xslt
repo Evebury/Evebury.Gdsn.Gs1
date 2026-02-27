@@ -28,6 +28,8 @@
 
 	<xsl:template match="fishReportingInformation" mode="dairyFishMeatPoultryItemModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="fishCatchInformation" mode="dairyFishMeatPoultryItemModule"/>
+		
 		<xsl:variable name="isEU" select="contains('008, 051, 031, 112, 056, 070, 100, 191, 196, 203, 208, 233, 246, 250, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 724, 752, 792, 795, 826, 804, 860', $targetMarket)"/>
 		<!--Rule 1585: If targetMarketCountryCode equals EU and catchMethodCode is used then at least one iteration of catchMethodCode SHALL equal ('01', '02', '03', '04', '05', '07', '08' or '09').-->
 		<xsl:if test="$isEU">
@@ -59,6 +61,39 @@
 			</xsl:if>
 		</xsl:if>
 		
+	</xsl:template>
+
+	<xsl:template match="fishCatchInformation" mode="dairyFishMeatPoultryItemModule">
+		<!--Rule 1840: If productionMethodForFishAndSeafoodCode equals 'MARINE_FISHERY' then catchCountryCode SHALL NOT be used.-->
+		<xsl:if test="productionMethodForFishAndSeafoodCode = 'MARINE_FISHERY' and catchCountryCode != ''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1840" />
+			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1841: If catchCountryCode and catchAreaCode are used then catchAreaCode SHALL equal (’01’, ‘02’, ’03’, ’04’, ’05’, ’06’, ’07, or ’08’).-->
+		<xsl:if test="catchAreaCode != '' and catchCountryCode != ''">
+			<xsl:choose>
+				<xsl:when test="contains('01, 02, 03, 04, 05, 06, 07, 08', catchAreaCode)"/>
+				<xsl:otherwise>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1841" />
+					</xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+
+		<!--Rule 1842: If productionMethodForFishAndSeafoodCode equals ‘INLAND_FISHERY' and catchAreaCode is used then catchAreaCode SHALL equal (’01’, ‘02’, ’03’, ’04’, ’05’, ’06’, ’07, or ’08’).-->
+		<xsl:if test="productionMethodForFishAndSeafoodCode = 'INLAND_FISHERY'">
+			<xsl:choose>
+				<xsl:when test="contains('01, 02, 03, 04, 05, 06, 07, 08', catchAreaCode)"/>
+				<xsl:otherwise>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1842" />
+					</xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="cheeseInformation" mode="dairyFishMeatPoultryItemModule">

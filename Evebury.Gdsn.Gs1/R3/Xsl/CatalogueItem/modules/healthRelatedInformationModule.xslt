@@ -15,9 +15,19 @@
 
 	<xsl:template match="healthRelatedInformation" mode="healthRelatedInformationModule">
 		<xsl:apply-templates select="nutritionalProgram" mode="healthRelatedInformationModule"/>
-		
+		<xsl:apply-templates select="compulsoryAdditionalInformation" mode="healthRelatedInformationModule"/>
 	</xsl:template>
 
+
+	<xsl:template match="compulsoryAdditionalInformation" mode="healthRelatedInformationModule">
+		<!--Rule 1839: If compulsoryAdditionalLabelInformationTypeCode is used, then compulsoryAdditionalLabelInformation SHALL be used.-->
+		<xsl:if test="compulsoryAdditionalLabelInformationTypeCode != '' and compulsoryAdditionalLabelInformation  = ''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1839" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+	
 	<xsl:template match="nutritionalProgram" mode="healthRelatedInformationModule">
 		<xsl:apply-templates select="nutritionalProgramIngredients" mode="healthRelatedInformationModule"/>
 

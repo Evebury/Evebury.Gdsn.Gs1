@@ -354,6 +354,17 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1823: If targetMarketCountryCode equals '250' (France) and isTradeItemADespatchUnit equals 'true' and (isTradeItemPackedIrregularly equals 'FALSE' or is not used) and platformTypeCode is used, then quantityOfCompleteLayersContainedInATradeItem SHALL be greater than 0.-->
+		<xsl:if test="platformTypeCode != '' and $targetMarket='250' and $tradeItem/isTradeItemADespatchUnit = 'true'">
+			<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy/isTradeItemPackedIrregularly != 'true'">
+				<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy/quantityOfCompleteLayersContainedInATradeItem = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1823" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 		
 	</xsl:template>
 
@@ -433,14 +444,27 @@
 	</xsl:template>
 
 	<xsl:template match="packagingRawMaterialInformation" mode="packagingInformationModule">
-		<!--Rule 1713: If packagingRawMaterialContentPercentage is used then the value SHALL be greater than or equal to 0 and less than or equal to 100-->
+		
 		<xsl:if test="packagingRawMaterialContentPercentage != ''">
+
+			<!--Rule 1713: If packagingRawMaterialContentPercentage is used then the value SHALL be greater than or equal to 0 and less than or equal to 100-->
 			<xsl:if test="packagingRawMaterialContentPercentage &lt; 0 or packagingRawMaterialContentPercentage &gt; 100">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1713" />
 				</xsl:apply-templates>
 			</xsl:if>
+
+			<!--Rule 1808: If packagingRawMaterialContentPercentage is used then packagingRawMaterialCode SHALL be used. -->
+			<xsl:if test="packagingRawMaterialCode  = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1808" />
+				</xsl:apply-templates>
+			</xsl:if>
 		</xsl:if>
+
+	
+		
+		
 	</xsl:template>
 
 	<xsl:template match="packageDeposit" mode="packagingInformationModule">

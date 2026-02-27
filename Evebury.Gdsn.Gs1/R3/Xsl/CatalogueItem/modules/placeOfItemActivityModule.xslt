@@ -45,6 +45,20 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1821: If targetMarketCountryCode equals '250' (France) and importClassificationTypeCode equals 'CUSTOMS_TARIFF_NUMBER', then the corresponding importClassificationValue SHALL have a value between 8 and 13 numeric characters in length.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test="importClassificationTypeCode  = 'CUSTOMS_TARIFF_NUMBER'">
+				<xsl:variable name="length" select="string-length(importClassificationValue)"/>
+				<xsl:if test="importClassificationValue != number(importClassificationValue) or $length &lt; 8 or $length &gt; 13">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1821" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+		
+		
 	</xsl:template>
 
 	<xsl:template match="placeOfProductActivity" mode="placeOfItemActivityModule">

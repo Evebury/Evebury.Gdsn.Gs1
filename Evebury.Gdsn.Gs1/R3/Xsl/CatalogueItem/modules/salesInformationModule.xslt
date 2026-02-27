@@ -270,6 +270,34 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 			</xsl:if>
 		</xsl:if>
 
+
+		<xsl:if test="$targetMarket = '246'">
+
+			<!--Rule 1848: If targetMarketCountryCode equals '246' (Finland) and priceComparisonMeasurement is used then at least one iteration of the related priceComparisonMeasurement/@measurementUnitCode SHALL equal 'KGM',  'LTR'  or 'H87’.-->
+			<xsl:if test="priceComparisonMeasurement != ''">
+				<xsl:choose>
+					<xsl:when test="priceComparisonMeasurement[@measurementUnitCode  = 'KGM' or @measurementUnitCode  = 'LTR' or @measurementUnitCode  = 'H87']"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1848" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+
+			<!--Rule 1849: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode is in GPC Segment '50000000' (Food/Beverage) and isTradeItemAConsumerUnit equals 'true' then priceComparisonMeasurement SHALL be used.-->
+			<xsl:if test="priceComparisonMeasurement = '' and $tradeItem/isTradeItemAConsumerUnit = 'true'">
+				<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
+				<xsl:if test="gs1:IsInSegment($brick, '50000000')">
+					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1849" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="priceBasisQuantity" mode="r520">

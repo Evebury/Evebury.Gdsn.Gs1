@@ -80,6 +80,15 @@
 			</xsl:if>
 		</xsl:if>
 
+		<!--Rule 1837: If temperatureQualifierCode is used, then at least one other attribute in the TradeItemTemperatureInformation class SHALL be used.-->
+		<xsl:if test="temperatureQualifierCode != ''">
+			<xsl:if test="count(*[name() != 'temperatureQualifierCode']) = 0">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1837" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		
 	</xsl:template>
 
 </xsl:stylesheet>

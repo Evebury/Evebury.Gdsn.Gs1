@@ -345,6 +345,17 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
+
+		<!--Rule 1812: If targetMarketCountryCode equals '752' (Sweden) and nutrientTypeCode is used then nutrientBasisQuantity and nutrientBasisQuantityTypeCode SHALL be used within the same NutrientHeader class.-->
+		<xsl:if test="$targetMarket = '752'">
+			<xsl:if test="nutrientDetail[nutrientTypeCode != '']">
+				<xsl:if test="nutrientBasisQuantity = '' or nutrientBasisQuantityTypeCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1812" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 		
 		
 	</xsl:template>

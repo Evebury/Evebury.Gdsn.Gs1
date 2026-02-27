@@ -19,17 +19,13 @@
 		<xsl:param name="targetMarket"/>
 
 		<xsl:apply-templates select="targetConsumer/targetConsumerUsage" mode="marketingInformationModule"/>
+		<xsl:apply-templates select="season" mode="marketingInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 		
 		<!--Rule 341: If a start dateTime and its corresponding end dateTime are not empty then the start date SHALL be less than or equal to corresponding end date. -->
 		<xsl:for-each select="marketingCampaign">
 			<xsl:if test="gs1:InvalidDateTimeSpan(campaignStartDateTime, campaignEndDateTime)">
-				<xsl:apply-templates select="." mode="error">
-					<xsl:with-param name="id" select="341"/>
-				</xsl:apply-templates>
-			</xsl:if>
-		</xsl:for-each>
-		<xsl:for-each select="season">
-			<xsl:if test="gs1:InvalidDateTimeSpan(seasonalAvailabilityStartDateTime, seasonalAvailabilityEndDateTime)">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="341"/>
 				</xsl:apply-templates>
@@ -56,6 +52,25 @@
 	</xsl:template>
 
 
+	<xsl:template match="season" mode="marketingInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:if test="gs1:InvalidDateTimeSpan(seasonalAvailabilityStartDateTime, seasonalAvailabilityEndDateTime)">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="341"/>
+			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1847: If targetMarketCountryCode equals '246' (Finland) and (seasonalAvailabilityEndDateTime or seasonalAvailabilityStartDateTime is used), then seasonalAvailabilityEndDateTime and seasonalAvailabilityStartDateTime SHALL be used.-->
+		<xsl:if test="$targetMarket = '246'">
+			<xsl:if test="(seasonalAvailabilityEndDateTime != '' or seasonalAvailabilityStartDateTime != '') and (seasonalAvailabilityEndDateTime = '' or seasonalAvailabilityStartDateTime = '')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1847" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		
+	</xsl:template>
+	
 	<xsl:template match="targetConsumerUsage" mode="marketingInformationModule">
 		<!--Rule 1803: If  targetConsumerUsageTypeCode is used THEN at least one of targetConsumerMinimumUsage or targetConsumerMaximumUsage SHALL be used.-->
 		<xsl:if test="targetConsumerUsageTypeCode != '' and targetConsumerMinimumUsage = '' and targetConsumerMaximumUsage =''">

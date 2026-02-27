@@ -14,11 +14,36 @@
 		</xsl:apply-templates>
 
 		<!--Rule 1093: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and for the same dutyFeeTaxTypeCode, then the range of dutyFeeTaxEffectiveStartDateTime if used and dutyFeeTaxEffectiveEndDateTime if used, SHALL NOT overlap date range with another instance of the same dutyFeeTaxTypeCode.-->
-		<xsl:if test="$targetMarket = '249' or $targetMarket = '240'">
+		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
 			<xsl:call-template name="r1093">
 				<xsl:with-param name="items" select="dutyFeeTaxInformation"/>
 			</xsl:call-template>
 		</xsl:if>
+
+		
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:variable name="parent" select="."/>
+			<xsl:for-each select="dutyFeeTaxInformation"/>
+			<xsl:variable name="value" select="dutyFeeTaxTypeCode"/>
+			<xsl:if test="count($parent/dutyFeeTaxInformation[dutyFeeTaxTypeCode = $value]) &gt; 1">
+				<!--Rule 1819: If targetMarketCountryCode equals ('250' (France)) and more than one instance of dutyFeeTaxInformation class has the same dutyFeeTaxTypeCode, then dutyFeeTaxEffectiveStartDateTime SHALL be used in all instances of the same dutyFeeTaxTypeCode.-->
+				<xsl:for-each select="$parent/dutyFeeTaxInformation[dutyFeeTaxTypeCode = $value]">
+					<xsl:if test="dutyFeeTaxEffectiveStartDateTime = ''">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1819" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:for-each>
+
+				<!--Rule 1820: If targetMarketCountryCode equals ('250' (France)) and more than one instance of dutyFeeTaxInformation class has the same dutyFeeTaxTypeCode, then there SHALL be only 1 instance for the same dutyFeeTaxTypeCode that may have dutyFeeTaxEffectiveEndDateTime not used and in all other instances dutyFeeTaxEffectiveEndDateTime SHALL be used.-->
+				<xsl:if test="count($parent/dutyFeeTaxInformation[dutyFeeTaxTypeCode = $value and dutyFeeTaxEffectiveEndDateTime  = '']) &gt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1820" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+		
 	</xsl:template>
 
 	<xsl:template match="dutyFeeTaxInformation" mode="dutyFeeTaxInformationModule">

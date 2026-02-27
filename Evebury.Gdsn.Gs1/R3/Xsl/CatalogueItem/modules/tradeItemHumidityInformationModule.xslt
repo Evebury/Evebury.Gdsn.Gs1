@@ -44,7 +44,15 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
-		
+
+		<!--Rule 1838: If humidityQualifierCode is used, then at least one other attribute in the TradeItemHumidityInformation class SHALL be used.-->
+		<xsl:if test="humidityQualifierCode != ''">
+			<xsl:if test="count(*[name() != 'humidityQualifierCode']) = 0">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1838" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		
 	</xsl:template>
 
