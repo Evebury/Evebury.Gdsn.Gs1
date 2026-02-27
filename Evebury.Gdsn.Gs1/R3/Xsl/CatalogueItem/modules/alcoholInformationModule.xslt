@@ -9,16 +9,28 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="alcoholInformation" mode="alcoholInformationModule"/>
+		<xsl:apply-templates select="alcoholInformation" mode="alcoholInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="alcoholInformation" mode="alcoholInformationModule">
+		<xsl:param name="targetMarket"/>
 		<!--Rule 428: If percentageOfAlcoholByVolume is not empty then value must be greater than or equal to 0 and less than or equal to 100.00.-->
 		<xsl:if test="number(percentageOfAlcoholByVolume) = percentageOfAlcoholByVolume">
 			<xsl:if test="percentageOfAlcoholByVolume &lt; 0 or percentageOfAlcoholByVolume &gt; 100">
 				<xsl:apply-templates select="percentageOfAlcoholByVolume" mode="error">
 					<xsl:with-param name="id" select="428"/>
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1800: If targetMarketCountryCode equals '752' (Sweden) and alcoholicBeverageSugarContent is used then associated alcoholicBeverageSugarContent/@measurementUnitCode SHALL equal 'GL' (gram per litre).-->
+		<xsl:if test="alcoholicBeverageSugarContent != '' and $targetMarket = '752'">
+			<xsl:if test="alcoholicBeverageSugarContent/@measurementUnitCode != 'GL'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1800" />
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>

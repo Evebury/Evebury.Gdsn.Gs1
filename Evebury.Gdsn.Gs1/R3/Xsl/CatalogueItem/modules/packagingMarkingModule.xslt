@@ -11,12 +11,14 @@
 
 		<xsl:apply-templates select="packagingMarking" mode="packagingMarkingModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="packagingMarking" mode="packagingMarkingModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
 		<xsl:apply-templates select="consumerWarningInformation" mode="packagingMarkingModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
@@ -43,6 +45,17 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
+
+		<!--Rule 1772: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode is in GPC Segment '92000000' then isPackagingMarkedReturnable SHALL NOT equal 'true'.-->
+		<xsl:if test="isPackagingMarkedReturnable = 'true' and contains('056, 442, 528', $targetMarket)">
+			<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="gs1:IsInSegment($brick, '92000000')">
+				<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1772" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="consumerWarningInformation" mode="packagingMarkingModule">

@@ -2009,6 +2009,64 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1789">
+		<!--Rule 1789: If isTradeItemUDIDILevel=‘true’, then isTradeItemUDIDILevel SHALL equal ‘false’ or not used for all other tradeItem/gtin within the same hierarchy.-->
+		<xsl:if test="count(.//tradeItem[isTradeItemUDIDILevel = 'true']) &gt; 1">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1789" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1790">
+		<!--Rule 1790: If isTradeItemUnitOfUse =‘true’, then isTradeItemUnitOfUse SHALL equal ‘false’ or not used for all other tradeItem/gtin within the same hierarchy.-->
+		<xsl:if test="count(.//tradeItem[isTradeItemUnitOfUse = 'true']) &gt; 1">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1790" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1793">
+	
+		<xsl:variable name="class" select="gDSNTradeItemClassification"/>
+		<xsl:for-each select="$class/additionalTradeItemClassification">
+			<xsl:choose>
+				<!--Rule 1793: If one instance of additionalTradeItemClassificationSystemCode equals '76' then all other instances of additionalTradeItemClassificationSystemCode SHALL NOT equal '76’.-->
+				<xsl:when test="additionalTradeItemClassificationSystemCode  = '76'">
+					<xsl:if test="count($class/additionalTradeItemClassification[additionalTradeItemClassificationSystemCode  = '76']) &gt; 1">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1793" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+				<!--Rule 1794: If one instance of additionalTradeItemClassificationSystemCode equals '85' then all other instances of additionalTradeItemClassificationSystemCode SHALL NOT equal '85’.-->
+				<xsl:when test="additionalTradeItemClassificationSystemCode  = '85'">
+					<xsl:if test="count($class/additionalTradeItemClassification[additionalTradeItemClassificationSystemCode  = '85']) &gt; 1">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1794" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1804">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1804: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode is in GPC Family '12010000' (Tobacco/Cannabis/Smoking Accessories) and gpcCategoryCode is not in GPC Brick ('10000303' (Smoking Accessories) or '10006730' (Electronic Cigarette Accessories)) and isTradeItemAConsumerUnit equals 'true' then consumerSalesConditionCode SHALL be used.-->
+		<xsl:if test="$targetMarket = '752' and isTradeItemAConsumerUnit = 'true'">
+			<xsl:variable name="brick" select="gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="gs1:IsInFamily($brick, '12010000') and $brick != '10000303' and $brick != '10006730'">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/consumerSalesConditionCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1804" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
 	<xsl:template match="*" mode="gtin">
 		<!--Rule 471: If data type is equal to  gtin then attribute value must be a  valid GTIN-8, GTIN-12, GTIN-13 or GTIN-14 number.-->
 		<xsl:variable name="length" select="string-length(gtin)"/>
@@ -2132,6 +2190,8 @@
 		<xsl:apply-templates select="." mode="r1759">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1789"/>
+		<xsl:apply-templates select="." mode="r1790"/>
 		<xsl:apply-templates select="dataRecipient" mode="gln"/>
 		<xsl:apply-templates select="sourceDataPool" mode="gln"/>
 	
@@ -2326,7 +2386,11 @@
 		<xsl:apply-templates select="." mode="r1744">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
-
+		<xsl:apply-templates select="." mode="r1793"/>
+		<xsl:apply-templates select="." mode="r1804">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		
 		<xsl:apply-templates select="." mode="gtin"/>
 		<xsl:apply-templates select="referencedTradeItem" mode="gtin"/>
 		<xsl:apply-templates select="nextLowerLevelTradeItemInformation/childTradeItem" mode="gtin"/>

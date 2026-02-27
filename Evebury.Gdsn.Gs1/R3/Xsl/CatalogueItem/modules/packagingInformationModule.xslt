@@ -328,6 +328,32 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1773: If targetMarketCountryCode equals '528' (Netherlands) and the value of gpcCategoryCode equals one of the bricks in GPC families ('50250000', '50260000' or '50350000') and packagingTypeCode is not equal to 'X11' or 'NE', then isPackagingMarkedReturnable SHALL be used.-->
+		<xsl:if test="$targetMarket  = '528' and isPackagingMarkedReturnable = ''">
+			<xsl:choose>
+				<xsl:when test="packagingTypeCode = 'X11'"/>
+				<xsl:when test="packagingTypeCode = 'NE'"/>
+				<xsl:otherwise>
+					<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
+					<xsl:if test="gs1:IsInFamily($brick, '50250000, 50260000, 50350000')">
+						<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1773" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+
+		<!--Rule 1776: If packagingTypeCode equals 'NE', then drainedWeight SHALL NOT be used.-->
+		<xsl:if test="packagingTypeCode = 'NE'">
+			<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/drainedWeight != ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1776" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		
 	</xsl:template>
 

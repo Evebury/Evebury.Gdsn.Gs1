@@ -17,6 +17,9 @@
 
 	<xsl:template match="marketingInformation" mode="marketingInformationModule">
 		<xsl:param name="targetMarket"/>
+
+		<xsl:apply-templates select="targetConsumer/targetConsumerUsage" mode="marketingInformationModule"/>
+		
 		<!--Rule 341: If a start dateTime and its corresponding end dateTime are not empty then the start date SHALL be less than or equal to corresponding end date. -->
 		<xsl:for-each select="marketingCampaign">
 			<xsl:if test="gs1:InvalidDateTimeSpan(campaignStartDateTime, campaignEndDateTime)">
@@ -41,8 +44,25 @@
 			</xsl:if>
 		</xsl:if>
 
+		<!--Rule 1806: If targetMarketCountryCode equals '752' (Sweden) and shortTradeItemMarketingMessage is used then tradeItemMarketingMessage SHALL be used.-->
+		<xsl:if test="$targetMarket = '752'">
+			<xsl:if test="shortTradeItemMarketingMessage != '' and tradeItemMarketingMessage = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1806" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 
+	<xsl:template match="targetConsumerUsage" mode="marketingInformationModule">
+		<!--Rule 1803: If  targetConsumerUsageTypeCode is used THEN at least one of targetConsumerMinimumUsage or targetConsumerMaximumUsage SHALL be used.-->
+		<xsl:if test="targetConsumerUsageTypeCode != '' and targetConsumerMinimumUsage = '' and targetConsumerMaximumUsage =''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1803" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
 
 </xsl:stylesheet>

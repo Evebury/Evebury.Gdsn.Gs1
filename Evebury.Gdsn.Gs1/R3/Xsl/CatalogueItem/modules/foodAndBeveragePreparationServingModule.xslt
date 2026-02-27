@@ -14,12 +14,15 @@
 		</xsl:apply-templates>
 		<xsl:apply-templates select="servingQuantityInformation" mode="foodAndBeveragePreparationServingModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="servingQuantityInformation" mode="foodAndBeveragePreparationServingModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+		
 		<!--Rule 1663: If targetMarketCountryCode equals (528 (Netherlands), 276 (Germany), 250 (France), 056 (Belgium), 442 (Luxembourg), 208 (Denmark), 203 (Czech Republic), 246 (Finland), 826 (UK), 380 (Italy) or 040 (Austria)) and numberOfServingsPerPackage is used, then it SHALL be greater than zero.-->
 		<xsl:if test="contains('056, 442, 528, 276, 208, 203, 250, 246, 040, 380', $targetMarket) and numberOfServingsPerPackage != ''">
 			<xsl:if test="numberOfServingsPerPackage &lt;= 0">
@@ -28,6 +31,16 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1777: If gpcCategoryCode is a brick from the segment '50000000' and numberOfSmallestUnitsPerPackage is used, then numberOfSmallestUnitsPerPackage SHALL be greater than 0.-->
+		<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
+		<xsl:if test="gs1:IsInSegment($brick, '50000000') and numberOfSmallestUnitsPerPackage != '' and numberOfSmallestUnitsPerPackage &lt;= 0">
+			<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1777" />
+			</xsl:apply-templates>
+		</xsl:if>
+		
 	</xsl:template>
 
 	<xsl:template match="preparationServing" mode="foodAndBeveragePreparationServingModule">

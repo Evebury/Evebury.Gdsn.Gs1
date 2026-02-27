@@ -9,7 +9,7 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="batteryDetail/batteryMaterials" mode="batteryInformationModule">
+		<xsl:apply-templates select="batteryDetail" mode="batteryInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
@@ -22,6 +22,48 @@
 			</xsl:if>
 		</xsl:if>
 
+	</xsl:template>
+
+	<xsl:template match="batteryDetail" mode="batteryInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="batteryMaterials" mode="batteryInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<!--Rule 1781: If quantityOfBatteriesBuiltIn is used, then quantityOfBatteriesBuiltIn SHALL be greater than 0.-->
+		<xsl:if test="quantityOfBatteriesBuiltIn != '' and quantityOfBatteriesBuiltIn &lt;= 0">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1781" />
+			</xsl:apply-templates>
+		</xsl:if>
+		<!--Rule 1782: If quantityOfBatteriesIncluded is used then quantityOfBatteriesIncluded SHALL be greater than 0.-->
+		<xsl:if test="quantityOfBatteriesIncluded != '' and quantityOfBatteriesIncluded &lt;= 0">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1782" />
+			</xsl:apply-templates>
+		</xsl:if>
+		<!--Rule 1783: If quantityOfBatteriesRequired is used, then quantityOfBatteriesRequired SHALL be greater than 0.-->
+		<xsl:if test="quantityOfBatteriesRequired != '' and quantityOfBatteriesRequired &lt;= 0">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1783" />
+			</xsl:apply-templates>
+		</xsl:if>
+		<!--Rule 1784: If batteryWeight is used, then batteryWeight SHALL be greater than 0.-->
+		<xsl:if test="batteryWeight != '' and batteryWeight &lt;= 0">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1784" />
+			</xsl:apply-templates>
+		</xsl:if>
+		<!--Rule 1785: If targetMarketCountryCode not ('203' (Czech Republic), '208' (Denmark), '250' (France), ‘840’ (US), ‘104‘ (Myanmar) or ‘430’ (Liberia)) and batteryWeight is used, then batteryWeight/@measurementUnitCode SHALL equal ('KGM’, 'GRM’ or ‘MGM’).-->
+		<xsl:choose>
+			<xsl:when test="contains('203, 208, 250, 840, 104, 430', $targetMarket)"/>
+			<xsl:otherwise>
+				<xsl:if test="batteryWeight != '' and batteryWeight/@measurementUnitCode != 'KGM' and batteryWeight/@measurementUnitCode != 'GRM' and batteryWeight/@measurementUnitCode != 'MGM'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1785" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template match="batteryMaterials" mode="batteryInformationModule">

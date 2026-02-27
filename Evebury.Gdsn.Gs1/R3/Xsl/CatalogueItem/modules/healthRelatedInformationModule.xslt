@@ -38,6 +38,15 @@
 			</xsl:choose>
 			
 		</xsl:if>
+		
+		<!--Rule 1799: If nutritionalProgramCode equals '8' (Nutri-Score) and nutritionalProgramStatusCode equals ‘NOT_REGISTERED’ then nutritionalScore SHALL NOT be used.-->
+		<xsl:if test="nutritionalProgramCode  = '8' and nutritionalProgramStatusCode = 'NOT_REGISTERED'">
+			<xsl:if test="nutritionalScore != ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1799" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 
 	</xsl:template>
 

@@ -38,6 +38,28 @@
 			</xsl:if>
 		</xsl:if>
 
+		<!--Rule 1792: If specialItemCode does not equal 'DYNAMIC_ASSORTMENT' and (quantityOfTradeItemsPerPallet and NonGTINLogisticsUnitInformation/grossWeight and tradeItemMeasurements/tradeItemWeight/grossWeight are used), then NonGTINLogisticsUnitInformation/grossWeight SHALL be greater than 96 % of quantityOfTradeItemsPerPallet multiplied by tradeItemMeasurements/tradeItemWeight/grossWeight.-->
+		<xsl:if test="grossWeight != ''">
+			<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:marketing_information:xsd:3' and local-name()='marketingInformationModule']/marketingInformation/specialItemCode != 'DYNAMIC_ASSORTMENT'">
+				<xsl:variable name="grossWeightValue" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/grossWeight"/>
+				<xsl:variable name="quantity" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy/quantityOfTradeItemsPerPallet"/>
+				
+				<xsl:if test="$grossWeightValue and $quantity">
+					<xsl:variable name="weight">
+						<xsl:apply-templates select="grossWeight" mode="measurementUnit"/>
+					</xsl:variable>
+					<xsl:variable name="grossWeight">
+						<xsl:apply-templates select="$grossWeightValue" mode="measurementUnit"/>
+					</xsl:variable>
+					<xsl:if test="$weight &lt; 0.96 * $quantity * $grossWeight">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1792" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 </xsl:stylesheet>

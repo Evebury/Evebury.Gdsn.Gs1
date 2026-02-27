@@ -26,6 +26,18 @@
 			</xsl:choose>
 		</xsl:if>
 
+		<!--Rule 1780: If targetMarketCountryCode equals '528' (Netherlands) and if preparationStateCode is used and isTradeItemAConsumerUnit equals 'true', then regulatedProductName (with languageCode 'nl') SHALL be used.-->
+		<xsl:if test="$targetMarket = '528' and $tradeItem/isTradeItemAConsumerUnit = 'true' and nutrientHeader[preparationStateCode != '']">
+			<xsl:choose>
+				<xsl:when test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/regulatedProductName[@languageCode  = 'nl']"/>
+				<xsl:otherwise>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1780" />
+					</xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="nutrientHeader" mode="nutritionalInformationModule">
@@ -289,7 +301,52 @@
 					</xsl:choose>
 				</xsl:if>
 			</xsl:if>
+
+			<!--Rule 1779: If targetMarketCountryCode equals geographic and (nutrientBasisQuantity equals 100 and nutrientBasisQuantity /@measuremenrUnitCode equals 'GRM') and (nutrientTypeCode equals 'FAT' and quantityContained/UoM is used with 'GRM') and (nutrientTypeCode is used with 'PRO-' and quantityContained/@measuremenrUnitCode equals 'GRM') and (nutrientTypeCode equals 'CHOAVL' and quantityContained/@measuremenrUnitCode equals 'GRM'), then the sum of the corresponding quantityContained values SHALL be less than 102 gram per nutrientHeader.-->
+			<xsl:if test="nutrientBasisQuantity = 100 and nutrientBasisQuantity/@measurementUnitCode = 'GRM'">
+				<xsl:variable name="fat" select="nutrientDetail[nutrientTypeCode = 'FAT' and quantityContained/@measurementUnitCode = 'GRM']"/>
+				<xsl:variable name="pro" select="nutrientDetail[nutrientTypeCode = 'PRO-' and quantityContained/@measurementUnitCode = 'GRM']"/>
+				<xsl:variable name="choavl" select="nutrientDetail[nutrientTypeCode = 'CHOAVL' and quantityContained/@measurementUnitCode = 'GRM']"/>
+				<xsl:if test="$fat and $pro and $choavl">
+					<xsl:if test="$fat/quantityContained + $pro/quantityContained + $choavl/quantityContained &gt; 102">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1779" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+
+			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1771: If targetMarketCountryCode equals '528' (the Netherlands) and if isTradeItemAConsumerUnit equals 'true’ and (nutrientTypeCode is used with 'NA' and quantityContained is greater than or equal to 0.1 GRM and if measurementPrecisionCode is NOT equal to 'LESS_THAN') and if (nutrientTypeCode is used with 'SALTEQ' and if measurementPrecisionCode is NOT equal to 'LESS_THAN' and quantityContained is greater than or equal to 0.1 GRM), then quantityContained of nutrientTypeCode 'NA' multiplied by 2.5, SHALL be less than 1.1 times and greater than 0.9 times quantityContained of nutrientTypeCode 'SALTEQ’.-->
+		<xsl:if test="$targetMarket = '528' and $tradeItem/isTradeItemAConsumerUnit = 'true'">
+			<xsl:variable name="na" select="nutrientDetail[nutrientTypeCode = 'NA']"/>
+			<xsl:variable name="salteq" select="nutrientDetail[nutrientTypeCode = 'SALTEQ']"/>
+			<xsl:if test="$na and $salteq">
+				<xsl:if test="$na[quantityContained &gt; 0.1 and measurementPrecisionCode != 'LESS_THAN'] and $salteq[quantityContained &gt; 0.1 and measurementPrecisionCode != 'LESS_THAN']">
+					<xsl:variable name="naValue" select="$na/quantityContained * 2.5"/>
+					<xsl:variable name="salteqValue" select="$salteq/quantityContained"/>
+					<xsl:if test="$naValue &gt; 1.1 * $salteqValue or $naValue &lt; 0.9 * $salteqValue">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1771" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1787: If NutrientDetail class is used, then all combinations of nutrientTypeCode and measurementPrecisionCode values SHALL be unique within the same NutrientHeader class.-->
+		<xsl:for-each select="nutrientDetail">
+			<xsl:variable name="code" select="nutrientTypeCode"/>
+			<xsl:variable name="unit" select="measurementPrecisionCode"/>
+			<xsl:if test="count($parent/nutrientDetail[nutrientTypeCode = $code and measurementPrecisionCode = $unit]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1787" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+		
+		
 	</xsl:template>
 
 	<xsl:template match="nutrientDetail" mode="nutritionalInformationModule">
@@ -392,6 +449,15 @@
 					</xsl:when>
 				</xsl:choose>
 			</xsl:if>
+
+			<!--Rule 1778: If targetMarketCountryCode equals geographic and nutrientTypeCode is used, then nutrientTypeCode SHALL NOT equal to 'ENERA', 'NACL', 'SUGAR', 'CHO-' and 'FIB-'.-->
+			<xsl:if test="nutrientTypeCode  = 'ENERA' or nutrientTypeCode  = 'NACL' or nutrientTypeCode  = 'SUGAR' or nutrientTypeCode  = 'CHO-' or nutrientTypeCode  = 'FIB-'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1778" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+
 			
 			
 		</xsl:if>

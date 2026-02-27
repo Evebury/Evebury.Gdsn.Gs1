@@ -356,6 +356,14 @@
 				</xsl:choose>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1775: If drainedWeight is used, then drainedWeight SHALL be greater than 0.-->
+		<xsl:if test="tradeItemWeight/drainedWeight != '' and tradeItemWeight/drainedWeight &lt;= 0">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1775" />
+			</xsl:apply-templates>
+		</xsl:if>
+		
 	</xsl:template>
 
 
