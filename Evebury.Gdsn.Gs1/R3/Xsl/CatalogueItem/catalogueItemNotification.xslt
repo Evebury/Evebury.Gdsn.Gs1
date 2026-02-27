@@ -32,6 +32,7 @@
 	<xsl:include href="modules/lightingDeviceModule.xslt"/>
 	<xsl:include href="modules/marketingInformationModule.xslt"/>
 	<xsl:include href="modules/materialModule.xslt"/>
+	<xsl:include href="modules/medicalDeviceTradeItemModule.xslt"/>
 	<xsl:include href="modules/nonfoodIngredientModule.xslt"/>
 	<xsl:include href="modules/nonGTINLogisticsUnitInformationModule.xslt"/>
 	<xsl:include href="modules/nutritionalInformationModule.xslt"/>
@@ -2126,6 +2127,70 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1855">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1855: If targetMarketCountryCode equals <Geographic> then isTradeItemAConsumerUnit SHALL be used.-->
+		<xsl:if test="contains('040, 056, 203, 208, 246, 276, 372, 442, 528, 703, 752, 756, 826', $targetMarket) and isTradeItemAConsumerUnit = ''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1855" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1857">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1857: If targetMarketCountryCode equals <Geographic> and isTradeItemAVariableUnit equals 'false' then additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode SHALL NOT equal 'PLU'.-->
+		<xsl:if test="$targetMarket = '250' and isTradeItemAVariableUnit = 'false'">
+			<xsl:if test="additionalTradeItemIdentification[@additionalTradeItemIdentificationTypeCode = 'PLU']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1857" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1858">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1858: If targetMarketCountryCode equals <Geographic> and TradeItem/PartyInRole/partyRoleCode equals ('PURCHASE_ORDER_RECEIVER' or 'SHIP_FROM'), then TradeItem/PartyInRole/gln and TradeItem/PartyInRole/partyName SHALL be used.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test="PartyInRole[partyRoleCode = 'PURCHASE_ORDER_RECEIVER'] and (PartyInRole[partyRoleCode = 'PURCHASE_ORDER_RECEIVER']/gln = '' or PartyInRole[partyRoleCode = 'PURCHASE_ORDER_RECEIVER']/name = '')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1858" />
+				</xsl:apply-templates>
+			</xsl:if>
+			<xsl:if test="PartyInRole[partyRoleCode = 'SHIP_FROM'] and (PartyInRole[partyRoleCode = 'SHIP_FROM']/gln = '' or PartyInRole[partyRoleCode = 'SHIP_FROM']/name = '')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1858" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1861">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1861: If targetMarketCountryCode equals <Geographic> and isTradeItemADespatchUnit equals 'true', then packagingTypeCode SHALL be used.-->
+		<xsl:if test="$targetMarket = '250' and isTradeItemADespatchUnit = 'true'">
+			<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging[packagingTypeCode = '']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1861" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1862">
+		<!--Rule 1862: If referencedTradeItemTypeCode equals 'SUBSTITUTED', then tradeItem/gtin SHALL not equal referencedTradeItem/gtin.-->
+		<xsl:variable name="gtin" select="gtin"/>
+		<xsl:for-each select="referencedTradeItem[referencedTradeItemTypeCode = 'SUBSTITUTED']">
+			<xsl:if test="gtin = $gtin">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1862" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	
+
 	<xsl:template match="*" mode="gtin">
 		<!--Rule 471: If data type is equal to  gtin then attribute value must be a  valid GTIN-8, GTIN-12, GTIN-13 or GTIN-14 number.-->
 		<xsl:variable name="length" select="string-length(gtin)"/>
@@ -2456,6 +2521,19 @@
 		<xsl:apply-templates select="." mode="r1850">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1855">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1857">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1858">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1861">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1862"/>
 
 		<xsl:apply-templates select="." mode="gtin"/>
 		<xsl:apply-templates select="referencedTradeItem" mode="gtin"/>

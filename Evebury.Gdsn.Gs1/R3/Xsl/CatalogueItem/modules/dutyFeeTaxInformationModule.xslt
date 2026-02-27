@@ -11,6 +11,7 @@
 
 		<xsl:apply-templates select="dutyFeeTaxInformation" mode="dutyFeeTaxInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 		<!--Rule 1093: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and for the same dutyFeeTaxTypeCode, then the range of dutyFeeTaxEffectiveStartDateTime if used and dutyFeeTaxEffectiveEndDateTime if used, SHALL NOT overlap date range with another instance of the same dutyFeeTaxTypeCode.-->
@@ -48,6 +49,13 @@
 
 	<xsl:template match="dutyFeeTaxInformation" mode="dutyFeeTaxInformationModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+
+		<xsl:apply-templates select="dutyFeeTax" mode="dutyFeeTaxInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
+		
 		<!--Rule 341: If a start dateTime and its corresponding end dateTime are not empty then the start date SHALL be less than or equal to corresponding end date. -->
 		<xsl:if test="gs1:InvalidDateTimeSpan(dutyFeeTaxEffectiveStartDateTime, dutyFeeTaxEffectiveEndDateTime)">
 			<xsl:apply-templates select="." mode="error">
@@ -64,11 +72,30 @@
 		</xsl:if>
 
 		<!--Rule 1111: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and dutyFeeTaxTypeCode equals '3001000002282' then dutyFeeTaxRate shall be empty and dutyFeeTaxAmount shall be used.-->
-		<xsl:if test="$targetMarket = '249' or $targetMarket = '240'">
+		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
 			<xsl:if test="dutyFeeTaxTypeCode = '3001000002282' and (dutyFeeTaxRate !='' or dutyFeeTax[dutyFeeTaxAmount = ''])">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1111" />
 				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+
+		
+	</xsl:template>
+
+	<xsl:template match="dutyFeeTax" mode="dutyFeeTaxInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+
+		<!--Rule 1860: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and dutyFeeTaxCategoryCode does not equal 'EXEMPT' and dutyFeeTaxAmount is used, then dutyFeeTaxAmount SHALL be greater than 0.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test="dutyFeeTaxCategoryCode != 'EXEMPT' and $tradeItem/isTradeItemAConsumerUnit = 'true'">
+				<xsl:if test="dutyFeeTaxAmount != '' and dutyFeeTaxAmount &lt;= 0">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1860" />
+					</xsl:apply-templates>
+				</xsl:if>
 			</xsl:if>
 		</xsl:if>
 	</xsl:template>

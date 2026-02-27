@@ -196,6 +196,9 @@
   <data name="measurementUnit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>measurementUnit.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="medicalDeviceTradeItemModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\medicalDeviceTradeItemModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="nonfoodIngredientModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\nonfoodIngredientModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

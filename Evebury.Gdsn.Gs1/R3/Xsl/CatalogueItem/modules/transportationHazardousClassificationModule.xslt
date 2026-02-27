@@ -36,6 +36,10 @@
 	<xsl:template match="hazardousInformationHeader" mode="transportationHazardousClassificationModule">
 		<xsl:param name="targetMarket"/>
 
+		<xsl:apply-templates select="hazardousInformationDetail" mode="transportationHazardousClassificationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+
 		<xsl:if test="dangerousGoodsRegulationCode  = 'ADR'">
 
 			<!--Rule 339: If dangerousGoodsRegulationCode is equal to 'ADR' and dangerousGoodsPackingGroup is not empty then dangerousGoodsPackingGroup must equal  ('NA','I', 'II' or 'III').-->
@@ -103,6 +107,24 @@
 			</xsl:if>
 		</xsl:if>
 
+	</xsl:template>
+
+	<xsl:template match="hazardousInformationDetail" mode="transportationHazardousClassificationModule">
+		<xsl:param name="targetMarket"/>
+
+		<!--Rule 1851: If targetMarketCountryCode equals '246' (Finland) and netMassOfExplosives is used, then at least one iteration of netMassOfExplosives/@measurementUnitCode SHALL equal 'KGM'-->
+		<xsl:if test="$targetMarket = '246'">
+			<xsl:if test="netMassOfExplosives != ''">
+				<xsl:choose>
+					<xsl:when test="netMassOfExplosives[@measurementUnitCode = 'KGM']"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1851" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+			</xsl:choose>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 
