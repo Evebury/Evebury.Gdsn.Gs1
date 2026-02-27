@@ -2010,4 +2010,34 @@
   <data name="102078" xml:space="preserve">
     <value>Voor verkooplandcode (&lt;targetMarketCountryCode&gt;) &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en Douane Classificatie Waarde (&lt;importClassificationValue&gt;) &lt;&lt;importClassificationValue&gt; waarde&gt;, moet attribuut Regelgeving Type Code (&lt;regulationTypeCode&gt;) gelijk zijn aan 'DEFORESTATION_REGULATION' en moet Regelgeving Compliance Indicator (&lt;isTradeItemRegulationCompliant&gt;) gelijk zijn aan 'TRUE' of 'NOT_APPLICABLE' in dezelfde iteraties.</value>
   </data>
+  <data name="300" xml:space="preserve">
+    <value>&lt;gln&gt; moet gelijk zijn aan &lt;dataSource&gt;, &lt;contentOwner&gt; en &lt;informationProvider&gt; en moet hetzelfde zijn voor alle niveaus van de handelseenheidshiërarchie.</value>
+  </data>
+  <data name="392" xml:space="preserve">
+    <value>Als &lt;incotermCodeLocation&gt; niet leeg is, dan mag &lt;incotermCode&gt; niet leeg zijn.</value>
+  </data>
+  <data name="398" xml:space="preserve">
+    <value>Als &lt;gpcCategoryCode&gt; wordt gebruikt, dan moet de waarde in de lijst van officiële GPC bricks staan zoals gepubliceerd door GS1 en momenteel in productie aangenomen door GDSN.</value>
+  </data>
+  <data name="447" xml:space="preserve">
+    <value>Als het attribuut datatype gelijk is aan &lt;gtin&gt;, dan moet het een geldig controlecijfer hebben.</value>
+  </data>
+  <data name="448" xml:space="preserve">
+    <value>Als het attribuut datatype gelijk is aan &lt;gln&gt;, dan moet het een 13-cijferig getal zijn en een geldig controlecijfer hebben.</value>
+  </data>
+  <data name="471" xml:space="preserve">
+    <value>Als het gegevenstype gelijk is aan &lt;gtin&gt;, dan moet de attribuutwaarde een geldig GTIN-8, GTIN-12, GTIN-13 of GTIN-14 nummer zijn.</value>
+  </data>
+  <data name="495" xml:space="preserve">
+    <value>Er mogen maximaal 100 documenten per transactie zijn.</value>
+  </data>
+  <data name="1024" xml:space="preserve">
+    <value>GRAI moet een geldig controlecijfer hebben.</value>
+  </data>
+  <data name="1612" xml:space="preserve">
+    <value>Codewaarde 'D_A' (Development Assistance) en '001' (GLOBAL MARKET) mogen alleen worden gebruikt voor &lt;targetMarketCountryCode&gt;.</value>
+  </data>
+  <data name="1723" xml:space="preserve">
+    <value>Er mag maximaal één waarde van &lt;languageSpecificPartyName&gt; zijn per taal.</value>
+  </data>
 </root>

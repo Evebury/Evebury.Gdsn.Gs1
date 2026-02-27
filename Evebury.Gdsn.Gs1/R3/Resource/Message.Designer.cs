@@ -61,7 +61,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GLN for informationProvider is missing..
+        ///   Looks up a localized string similar to GLN for &lt;informationProvider&gt; is missing..
         /// </summary>
         internal static string _1000 {
             get {
@@ -79,7 +79,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The startAvailabilityDateTime must be populated for the trade item..
+        ///   Looks up a localized string similar to The &lt;startAvailabilityDateTime&gt; must be populated for the trade item..
         /// </summary>
         internal static string _1004 {
             get {
@@ -88,7 +88,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consumer Unit Indicator (isTradeItemAConsumerUnit) must not be empty..
+        ///   Looks up a localized string similar to Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; must not be empty..
         /// </summary>
         internal static string _1008 {
             get {
@@ -97,7 +97,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to isTradeItemADespatchUnit must be populated for the trade item..
+        ///   Looks up a localized string similar to &lt;isTradeItemADespatchUnit&gt; must be populated for the trade item..
         /// </summary>
         internal static string _1010 {
             get {
@@ -106,7 +106,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to isTradeItemAnOrderableUnit must be populated for the trade item..
+        ///   Looks up a localized string similar to &lt;isTradeItemAnOrderableUnit&gt; must be populated for the trade item..
         /// </summary>
         internal static string _1012 {
             get {
@@ -115,7 +115,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Variable Measure Indicator (isTradeItemAVariableUnit) must not be empty..
+        ///   Looks up a localized string similar to Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; must not be empty..
         /// </summary>
         internal static string _1013 {
             get {
@@ -124,7 +124,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If the drained weight is populated (drainedWeight) it must be less than or equal to the gross weight (grossWeight)..
+        ///   Looks up a localized string similar to If the drained weight is populated &lt;drainedWeight&gt; it must be less than or equal to the gross weight &lt;grossWeight&gt;..
         /// </summary>
         internal static string _1017 {
             get {
@@ -133,7 +133,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to targetMarket for a child item cannot be more specific than for the parent. Example: If parent item targetmarketCountryCode is equal to &apos;840&apos; then child item cannot have a targetMarketSubdivisonCode..
+        ///   Looks up a localized string similar to &lt;targetMarket&gt; for a child item cannot be more specific than for the parent. Example: If parent item &lt;targetmarketCountryCode&gt; is equal to &apos;840&apos; then child item cannot have a &lt;targetMarketSubdivisonCode&gt;..
         /// </summary>
         internal static string _1018 {
             get {
@@ -142,7 +142,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Tax Type Code (dutyFeeTaxTypeCode) equals (&apos;VAT&apos; or &apos;IVA&apos;) and Tax Percentage (dutyFeeTaxRate) equals 0 (zero), then Tax Category Code (dutyFeeTaxCategoryCode) must be &apos;ZERO&apos; or &apos;EXEMPT&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Tax Type Code &lt;dutyFeeTaxTypeCode&gt; equals (&apos;VAT&apos; or &apos;IVA&apos;) and Tax Percentage &lt;dutyFeeTaxRate&gt; equals 0 (zero), then Tax Category Code &lt;dutyFeeTaxCategoryCode&gt; must be &apos;ZERO&apos; or &apos;EXEMPT&apos;..
         /// </summary>
         internal static string _101923 {
             get {
@@ -151,7 +151,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You are providing information on Non-GTIN Pallet. For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if any of the following attributes is provided, then all must be provided: Non-GTIN Logistic Unit Depth/Length (nonGTINLogisticsUnitInformation/depth), Non-GTIN Logistic Unit Width (nonGTINLogisticsUnitInformation/width), Non-GTIN Logistic Unit Height (nonGTINLogisticsUnitInformation/height), Non-GTIN Logistic Unit Gross Weight (nonGTINLogisticsUnitInformation/grossWei [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to You are providing information on Non-GTIN Pallet. For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if any of the following attributes is provided, then all must be provided: Non-GTIN Logistic Unit &lt;Length&gt; &lt;depth&gt;, Non-GTIN Logistic Unit Width &lt;width&gt;, Non-GTIN Logistic Unit Height &lt;height&gt;, Non-GTIN Logistic Unit Gross Weight &lt;grossWeight&gt;, Number of Layers per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt;, Number of Units per Layer in a Non-GTIN Pallet &lt;quantityOf [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string _101924 {
             get {
@@ -160,7 +160,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if there is one iteration of the Nutritional Class where Nutritional Program Code (nutritionalProgramCode) equals &apos;8&apos; (Nutri-Score) and Nutritional Score (nutritionalScore) equals &apos;EXEMPT&apos;, then no other iteration of Nutritional Program Code (nutritionalProgramCode) equal to &apos;8&apos; (Nutri-Score) is allowed..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if there is one iteration of the Nutritional Class where Nutritional Program Code &lt;nutritionalProgramCode&gt; equals &apos;8&apos; (Nutri-Score) and Nutritional Score &lt;nutritionalScore&gt; equals &apos;EXEMPT&apos;, then no other iteration of Nutritional Program Code &lt;nutritionalProgramCode&gt; equal to &apos;8&apos; (Nutri-Score) is allowed..
         /// </summary>
         internal static string _101940 {
             get {
@@ -169,7 +169,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Minimum Days of Shelf Life at Arrival (minimumTradeItemLifespanFromTimeOfArrival) is used, then it must not be greater than Minimum Days of Shelf Life at Arrival (minimumTradeItemLifespanFromTimeOfArrival) of any of its child items..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Minimum Days of Shelf Life at Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; is used, then it must not be greater than Minimum Days of Shelf Life at Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; of any of its child items..
         /// </summary>
         internal static string _101959 {
             get {
@@ -178,7 +178,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Minimum Days of Shelf Life from Production (minimumTradeItemLifespanFromTimeOfProduction) is used, then it must not be greater than Minimum Days of Shelf Life from Production (minimumTradeItemLifespanFromTimeOfProduction) of any of its child items..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Minimum Days of Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; is used, then it must not be greater than Minimum Days of Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; of any of its child items..
         /// </summary>
         internal static string _101960 {
             get {
@@ -187,7 +187,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Global Product Category Code (gpcCategoryCode) equals &lt;gpcCategoryCode GPC Category Name&gt;, then one of the Fruit And Vegetables Grade Of Goods Codes (&apos;EXTRA&apos;, &apos;I&apos;, &apos;II&apos; or &apos;NONE&apos;) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Global Product Category Code &lt;gpcCategoryCode&gt; equals &lt;&lt;gpcCategoryCode&gt; GPC Category Name&gt;, then one of the Fruit And Vegetables Grade Of Goods Codes (&apos;EXTRA&apos;, &apos;I&apos;, &apos;II&apos; or &apos;NONE&apos;) must be used..
         /// </summary>
         internal static string _101970 {
             get {
@@ -196,7 +196,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Digital Asset Type Code (referencedFileTypeCode) is equal to &apos;SAFETY_DATA_SHEET&apos;, &apos;DOP_SHEET&apos; or &apos;DECLARATION_OF_CONFORMITY&apos;, then File Language Code (fileLanguageCode) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Digital Asset Type Code &lt;referencedFileTypeCode&gt; is equal to &apos;SAFETY_DATA_SHEET&apos;, &apos;DOP_SHEET&apos; or &apos;DECLARATION_OF_CONFORMITY&apos;, then File Language Code &lt;fileLanguageCode&gt; must be used..
         /// </summary>
         internal static string _101972 {
             get {
@@ -205,7 +205,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Digital Asset Type Code (referencedFileTypeCode) equals &apos;PRODUCT_IMAGE&apos;, then Digital Asset Link (uniformResourceIdentifier) must begin with &apos;http://&apos; or &apos;https://&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Digital Asset Type Code &lt;referencedFileTypeCode&gt; equals &apos;PRODUCT_IMAGE&apos;, then Digital Asset Link &lt;uniformResourceIdentifier&gt; must begin with &apos;http://&apos; or &apos;https://&apos;..
         /// </summary>
         internal static string _101973 {
             get {
@@ -214,7 +214,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, then child item&apos;s Pallet Type Code (platformTypeCode) must not be used unless child item Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, then child item&apos;s Pallet Type Code &lt;platformTypeCode&gt; must not be used unless child item Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;..
         /// </summary>
         internal static string _101986 {
             get {
@@ -223,7 +223,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Additional Label Information is used, then Certification Identification (certificationIdentification) must equal a code used for Third Party Accreditation Symbol on Product Package Code (packagingMarkedLabelAccreditationCode) or Local Packaging Marked Label Accreditation Code (localPackagingMarkedLabelAccreditationCodeReference)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Additional Label Information is used, then Certification Identification &lt;certificationIdentification&gt; must equal a code used for Third Party Accreditation Symbol on Product Package Code &lt;packagingMarkedLabelAccreditationCode&gt; or Local Packaging Marked Label Accreditation Code &lt;localPackagingMarkedLabelAccreditationCodeReference&gt;..
         /// </summary>
         internal static string _101993 {
             get {
@@ -232,7 +232,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Global Product Category Code (gpcCategoryCode) equals &lt;gpcCategoryCode GPC Category Name&gt;, then regulationTypeCode must equal &apos;EXPLOSIVES_PRECURSORS_REGISTRATION&apos; and Regulation Compliance Indicator must equal &apos;TRUE&apos; or &apos;NOT_APPLICABLE&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Global Product Category Code &lt;gpcCategoryCode&gt; equals &lt;&lt;gpcCategoryCode&gt; GPC Category Name&gt;, then &lt;regulationTypeCode&gt; must equal &apos;EXPLOSIVES_PRECURSORS_REGISTRATION&apos; and Regulation Compliance Indicator must equal &apos;TRUE&apos; or &apos;NOT_APPLICABLE&apos;..
         /// </summary>
         internal static string _102010 {
             get {
@@ -241,7 +241,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Display Ready Packaging (hasDisplayReadyPackaging) equals &apos;TRUE&apos;, then Despatch Unit Indicator (isTradeItemADespatchUnit) SHALL equal &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Display Ready Packaging &lt;hasDisplayReadyPackaging&gt; equals &apos;TRUE&apos;, then Despatch Unit Indicator &lt;isTradeItemADespatchUnit&gt; SHALL equal &apos;TRUE&apos;..
         /// </summary>
         internal static string _102068 {
             get {
@@ -250,7 +250,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Customs Classification Type Code (importClassificationTypeCode) must equal &apos;INTRASTAT&apos; or &apos;TARIF_INTEGRE_DE_LA_COMMUNAUTE&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Customs Classification Type Code &lt;importClassificationTypeCode&gt; must equal &apos;INTRASTAT&apos; or &apos;TARIF_INTEGRE_DE_LA_COMMUNAUTE&apos;..
         /// </summary>
         internal static string _102071 {
             get {
@@ -259,7 +259,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Customs Classification Value (importClassificationValue) &lt;importClassificationValue value&gt;, attribute Regulation Type Code (regulationTypeCode) must equal &apos;DEFORESTATION_REGULATION&apos; and Regulation Compliance Indicator (isTradeItemRegulationCompliant) must equal &apos;TRUE&apos; in the same iteration..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Customs Classification Value &lt;importClassificationValue&gt; &lt;&lt;importClassificationValue&gt; value&gt;, attribute Regulation Type Code &lt;regulationTypeCode&gt; must equal &apos;DEFORESTATION_REGULATION&apos; and Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; must equal &apos;TRUE&apos; in the same iteration..
         /// </summary>
         internal static string _102077 {
             get {
@@ -268,7 +268,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Customs Classification Value (importClassificationValue) &lt;importClassificationValue value&gt;, attribute Regulation Type Code (regulationTypeCode) must equal &apos;DEFORESTATION_REGULATION&apos; and Regulation Compliance Indicator (isTradeItemRegulationCompliant) must equal &apos;TRUE&apos; or &apos;NOT_APPLICABLE&apos; in the same iteration.​.
+        ///   Looks up a localized string similar to For Country of Sale Code (&lt;targetMarketCountryCode&gt;) &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Customs Classification Value (&lt;importClassificationValue&gt;) &lt;&lt;importClassificationValue&gt; value&gt;, attribute Regulation Type Code (&lt;regulationTypeCode&gt;) must equal &apos;DEFORESTATION_REGULATION&apos; and Regulation Compliance Indicator (&lt;isTradeItemRegulationCompliant&gt;) must equal &apos;TRUE&apos; or &apos;NOT_APPLICABLE&apos; in the same iteration.​.
         /// </summary>
         internal static string _102078 {
             get {
@@ -277,7 +277,16 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; then packagingMaterialTypeCode and packagingMaterialCompositionQuantity are used in pairs. I.e. if one is populated the other one must be populated, also..
+        ///   Looks up a localized string similar to GRAI must have a valid check digit..
+        /// </summary>
+        internal static string _1024 {
+            get {
+                return ResourceManager.GetString("1024", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; then &lt;packagingMaterialTypeCode&gt; and &lt;packagingMaterialCompositionQuantity&gt; are used in pairs. I.e. if one is populated the other one must be populated, also..
         /// </summary>
         internal static string _1025 {
             get {
@@ -286,7 +295,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Unit of Measure used for the trade item height shall be from same measuring system (e.g. metric) across whole hierarchy..
+        ///   Looks up a localized string similar to The Unit of Measure used for the trade item Height &lt;height&gt; shall be from same measuring system (e.g. metric) across whole hierarchy..
         /// </summary>
         internal static string _1026 {
             get {
@@ -295,7 +304,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Unit of Measure used for the trade item width shall be from same measuring system (e.g. metric) across whole hierarchy..
+        ///   Looks up a localized string similar to The Unit of Measure used for the trade item Width &lt;width&gt; shall be from same measuring system (e.g. metric) across whole hierarchy..
         /// </summary>
         internal static string _1027 {
             get {
@@ -304,7 +313,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Unit of Measure used for the trade item depth shall be from same measuring system (e.g. metric) across whole hierarchy..
+        ///   Looks up a localized string similar to The Unit of Measure used for the trade item Depth &lt;depth&gt; shall be from same measuring system (e.g. metric) across whole hierarchy..
         /// </summary>
         internal static string _1028 {
             get {
@@ -313,7 +322,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Unit of Measure used for the trade item netweight shall be from same measuring system (e.g. metric) across whole hierarchy..
+        ///   Looks up a localized string similar to The Unit of Measure used for the trade item Net Weight &lt;netWeight&gt; shall be from same measuring system (e.g. metric) across whole hierarchy..
         /// </summary>
         internal static string _1029 {
             get {
@@ -322,7 +331,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Unit of Measure used for the trade item grossWeight shall be from same measuring system (e.g. metric) across whole hierarchy..
+        ///   Looks up a localized string similar to The Unit of Measure used for the trade item Gross Weight &lt;grossWeight&gt; shall be from same measuring system (e.g. metric) across whole hierarchy..
         /// </summary>
         internal static string _1030 {
             get {
@@ -331,7 +340,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Unit of Measure used for the trade item packagingWeight shall be from same measuring system (e.g. metric) across whole hierarchy..
+        ///   Looks up a localized string similar to The Unit of Measure used for the trade item Packaging Weight &lt;packagingWeight&gt; shall be from same measuring system (e.g. metric) across whole hierarchy..
         /// </summary>
         internal static string _1031 {
             get {
@@ -340,7 +349,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Unit of Measure used for the trade item drainedWeight shall be from same measuring system (e.g. metric) across whole hierarchy..
+        ///   Looks up a localized string similar to The Unit of Measure used for the trade item Drained Weight &lt;drainedWeight&gt; shall be from same measuring system (e.g. metric) across whole hierarchy..
         /// </summary>
         internal static string _1032 {
             get {
@@ -349,7 +358,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If fatPercentageInDryMatter is not empty then value must be greater than or equal to 0 and less than or equal to 100.00..
+        ///   Looks up a localized string similar to If &lt;fatPercentageInDryMatter&gt; is not empty then value must be greater than or equal to 0 and less than or equal to 100.00..
         /// </summary>
         internal static string _1034 {
             get {
@@ -358,7 +367,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to discontinuedDateTime and cancelledDateTime shall not be used simultaneously ..
+        ///   Looks up a localized string similar to &lt;discontinuedDateTime&gt; and &lt;cancelledDateTime&gt; shall not be used simultaneously ..
         /// </summary>
         internal static string _1038 {
             get {
@@ -367,7 +376,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If additionalTradeItemIdentificationTypeCode  equals &apos;GTIN_13&apos; then associated additionalTradeItemIdentification value must have 13 digits and must have a valid check digit..
+        ///   Looks up a localized string similar to If &lt;additionalTradeItemIdentificationTypeCode&gt; equals &apos;GTIN_13&apos; then associated &lt;additionalTradeItemIdentification&gt; value must have 13 digits and must have a valid check digit..
         /// </summary>
         internal static string _1039 {
             get {
@@ -376,7 +385,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If additionalTradeItemIdentificationTypeCode  equals &apos;GTIN_8&apos; then associated additionalTradeItemIdentification value must have 8 digits and must have a valid check digit..
+        ///   Looks up a localized string similar to If &lt;additionalTradeItemIdentificationTypeCode&gt; equals &apos;GTIN_8&apos; then associated &lt;additionalTradeItemIdentification&gt; value must have 8 digits and must have a valid check digit..
         /// </summary>
         internal static string _1040 {
             get {
@@ -385,7 +394,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If additionalTradeItemIdentificationTypeCode  equals &apos;GTIN_14&apos; then associated additionalTradeItemIdentification value must have 14 digits and must have a valid check digit..
+        ///   Looks up a localized string similar to If &lt;additionalTradeItemIdentificationTypeCode&gt; equals &apos;GTIN_14&apos; then associated &lt;additionalTradeItemIdentification&gt; value must have 14 digits and must have a valid check digit..
         /// </summary>
         internal static string _1041 {
             get {
@@ -394,7 +403,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If additionalTradeItemIdentificationTypeCode  equals &apos;GTIN_12&apos; then associated additionalTradeItemIdentification value must have 12 digits and must have a valid check digit..
+        ///   Looks up a localized string similar to If &lt;additionalTradeItemIdentificationTypeCode&gt; equals &apos;GTIN_12&apos; then associated &lt;additionalTradeItemIdentification&gt; value must have 12 digits and must have a valid check digit..
         /// </summary>
         internal static string _1042 {
             get {
@@ -421,7 +430,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If Packaging Material Type Code (packagingMaterial/packagingMaterialTypeCode) does not equal (&apos;COMPOSITE&apos;, &apos;METAL_COMPOSITE&apos;, &apos;LAMINATED_CARTON&apos;, &apos;PAPER_PAPERBOARD&apos; or &apos;OTHER&apos;) then CompositeMaterialDetail class must not be used..
+        ///   Looks up a localized string similar to If Packaging Material Type Code &lt;packagingMaterialTypeCode&gt; does not equal (&apos;COMPOSITE&apos;, &apos;METAL_COMPOSITE&apos;, &apos;LAMINATED_CARTON&apos;, &apos;PAPER_PAPERBOARD&apos; or &apos;OTHER&apos;) then CompositeMaterialDetail class must not be used..
         /// </summary>
         internal static string _1057 {
             get {
@@ -430,7 +439,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use of temperatureTypeQualifierCode is mandatory in case any other attribute of the TradeItemTemperatureInformation class is not empty..
+        ///   Looks up a localized string similar to Use of &lt;temperatureTypeQualifierCode&gt; is mandatory in case any other attribute of the TradeItemTemperatureInformation class is not empty..
         /// </summary>
         internal static string _1058 {
             get {
@@ -439,7 +448,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The maximum length of data type StringAttributeValuePair is 5000 characters..
+        ///   Looks up a localized string similar to The maximum length of data type &lt;StringAttributeValuePair&gt; is 5000 characters..
         /// </summary>
         internal static string _1061 {
             get {
@@ -448,7 +457,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to descriptiveSizeDimension, sizeDimension or sizeCode is missing..
+        ///   Looks up a localized string similar to &lt;descriptiveSizeDimension&gt;, &lt;sizeDimension&gt; or &lt;sizeCode&gt; is missing..
         /// </summary>
         internal static string _1062 {
             get {
@@ -457,7 +466,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The brandName must not be empty unless the context is &apos;Pharmaceuticals&apos; or &apos;Medical Devices&apos;.
+        ///   Looks up a localized string similar to The Brand Name &lt;brandName&gt; must not be empty unless the context is &apos;Pharmaceuticals&apos; or &apos;Medical Devices&apos;..
         /// </summary>
         internal static string _1063 {
             get {
@@ -466,7 +475,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Product Type Description (functionalName) must not be empty..
+        ///   Looks up a localized string similar to Product Type Description &lt;functionalName&gt; must not be empty..
         /// </summary>
         internal static string _1065 {
             get {
@@ -475,7 +484,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Product Type Description (functionalName) must not be empty..
+        ///   Looks up a localized string similar to Product Type Description &lt;functionalName&gt; must not be empty..
         /// </summary>
         internal static string _1066 {
             get {
@@ -484,7 +493,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If maximumHumidityPercentage and/or minimumHumidityPercentage are not empty then humidityQualifierCode must not be empty..
+        ///   Looks up a localized string similar to If &lt;maximumHumidityPercentage&gt; and/or &lt;minimumHumidityPercentage&gt; are not empty then &lt;humidityQualifierCode&gt; must not be empty..
         /// </summary>
         internal static string _1076 {
             get {
@@ -493,7 +502,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If TradeItem/brandOwner/PartyInRole/gln is not empty then brandOwner/PartyRoleCode shall be empty..
+        ///   Looks up a localized string similar to If &lt;gln&gt; is not empty then &lt;brandOwner&gt;/PartyRoleCode shall be empty..
         /// </summary>
         internal static string _1078 {
             get {
@@ -502,7 +511,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If TradeItem/informationProviderOfTradeItem/gln is used then TradeItem/informationProviderOfTradeItem/partyRoleCode shall be empty..
+        ///   Looks up a localized string similar to If &lt;gln&gt; is used then &lt;partyRoleCode&gt; shall be empty..
         /// </summary>
         internal static string _1079 {
             get {
@@ -511,7 +520,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If TradeItem/manufacturerOfTradeItem/gln and/or TradeItem/manufacturerOfTradeItem/partyName is used then manufacturerOfTradeItem/partyRoleCode shall be empty..
+        ///   Looks up a localized string similar to If &lt;gln&gt; and/or &lt;partyName&gt; is used then &lt;partyRoleCode&gt; shall be empty..
         /// </summary>
         internal static string _1080 {
             get {
@@ -520,7 +529,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If cataloguePrice/tradeItemPrice is used then tradeItemPriceTypeCode shall be empty..
+        ///   Looks up a localized string similar to If &lt;tradeItemPrice&gt; is used then &lt;tradeItemPriceTypeCode&gt; shall be empty..
         /// </summary>
         internal static string _1082 {
             get {
@@ -529,7 +538,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If TradeItemPriceInformation/suggestedRetailPrice/tradeItemPrice is used then tradeItemPriceTypeCode shall be empty..
+        ///   Looks up a localized string similar to If &lt;tradeItemPrice&gt; is used then &lt;tradeItemPriceTypeCode&gt; shall be empty..
         /// </summary>
         internal static string _1083 {
             get {
@@ -538,7 +547,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then TradeItemMeasurements/height must not be less than 80 percent of the current version height..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then Height &lt;height&gt; must not be less than 80 percent of the current version height..
         /// </summary>
         internal static string _1085 {
             get {
@@ -547,7 +556,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos;  and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then TradeItemMeasurements/width must not be less than 80 percent of the current version width..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then Width &lt;width&gt; must not be less than 80 percent of the current version width..
         /// </summary>
         internal static string _1086 {
             get {
@@ -556,7 +565,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then  TradeItemMeasurements/depth shall not be less than 80 percent of the current version depth..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then Depth &lt;depth&gt; shall not be less than 80 percent of the current version depth..
         /// </summary>
         internal static string _1087 {
             get {
@@ -565,7 +574,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then TradeItemMeasurements/grossWeight shall not be less than 80 percent of the current version grossWeight..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then Gross Weight &lt;grossWeight&gt; shall not be less than 80 percent of the current version Gross Weight &lt;grossWeight&gt;..
         /// </summary>
         internal static string _1088 {
             get {
@@ -574,7 +583,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to partyRoleCode is mandatory in tradeItem/PartyInRole class..
+        ///   Looks up a localized string similar to &lt;partyRoleCode&gt; is mandatory in &lt;tradeItem&gt;/PartyInRole class..
         /// </summary>
         internal static string _1089 {
             get {
@@ -583,7 +592,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Product Yield (productYield) is used, then Preparation Type Code (preparationTypeCode) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Product Yield &lt;productYield&gt; is used, then Preparation Type Code &lt;preparationTypeCode&gt; shall be used..
         /// </summary>
         internal static string _1090 {
             get {
@@ -592,7 +601,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If ProductYieldInformation/productYield is not empty then ProductYieldInformation/productYieldTypeCode must not be empty..
+        ///   Looks up a localized string similar to If &lt;productYield&gt; is not empty then &lt;productYieldTypeCode&gt; must not be empty..
         /// </summary>
         internal static string _1091 {
             get {
@@ -601,7 +610,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Nonphysical Unit Indicator (isTradeItemNonphysical) equals &apos;false&apos; or is not used, and Service Indicator (isTradeItemAService) equals &apos;false&apos; or is not used, and one iteration of Trade Channel Code (tradeItemTradeChannelCode) equals to (&apos;CASH_AND_CARRY&apos;, &apos;CONSIGNMENT&apos;, &apos;CONVENIENCE&apos;, &apos;DRUG_STORE&apos;, &apos;FOOD_SERVICE&apos;, &apos;GROCERY&apos;,  &apos;ONLINE&apos; or &apos;UNSPECIFIED&apos;) or Trade Channel Code is not used, then Despatch Unit Indicator  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Nonphysical Unit Indicator &lt;isTradeItemNonphysical&gt; equals &apos;FALSE&apos; or is not used, and Service Indicator &lt;isTradeItemAService&gt; equals &apos;FALSE&apos; or is not used, and one iteration of Trade Channel Code &lt;tradeItemTradeChannelCode&gt; equals to (&apos;CASH_AND_CARRY&apos;, &apos;CONSIGNMENT&apos;, &apos;CONVENIENCE&apos;, &apos;DRUG_STORE&apos;, &apos;FOOD_SERVICE&apos;, &apos;GROCERY&apos;, &apos;ONLINE&apos; or &apos;UNSPECIFIED&apos;) or Trade Channel Code is not used, then Despatch Unit Indicator [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string _1092 {
             get {
@@ -610,7 +619,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and for the same Tax Type Code (dutyFeeTaxTypeCode) the range of dutyFeeTaxEffectiveStartDateTime and dutyFeeTaxEffectiveEndDateTime SHALL NOT overlap..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and for the same Tax Type Code &lt;dutyFeeTaxTypeCode&gt; the range of &lt;dutyFeeTaxEffectiveStartDateTime&gt; and &lt;dutyFeeTaxEffectiveEndDateTime&gt; SHALL NOT overlap..
         /// </summary>
         internal static string _1093 {
             get {
@@ -619,7 +628,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and gpcCategoryCode equals &apos;10000424&apos; and isTradeItemAConsumerUnit equals &apos;TRUE&apos; then at least one iteration of priceComparisonContentTypeCode shall equal &apos;PER_KILOGRAM&apos; or &apos;PER_LITRE&apos;.
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;gpcCategoryCode&gt; equals &apos;10000424&apos; and &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos; then at least one iteration of &lt;priceComparisonContentTypeCode&gt; shall equal &apos;PER_KILOGRAM&apos; or &apos;PER_LITRE&apos;..
         /// </summary>
         internal static string _1102 {
             get {
@@ -628,7 +637,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals &apos;250&apos; (France) and isTradeItemAConsumerUnit equals &apos;true&apos; and if priceComparisonContentTypeCode equals &apos;PER_PIECE&apos; then priceComparisonMeasurement shall be an Integer.
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals &apos;250&apos; (France) and &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos; and if &lt;priceComparisonContentTypeCode&gt; equals &apos;PER_PIECE&apos; then &lt;priceComparisonMeasurement&gt; shall be an Integer..
         /// </summary>
         internal static string _1104 {
             get {
@@ -637,7 +646,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if priceComparisonMeasurement is used, then priceComparisonMeasurement shall be greater than 0..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if &lt;priceComparisonMeasurement&gt; is used, then &lt;priceComparisonMeasurement&gt; shall be greater than 0..
         /// </summary>
         internal static string _1105 {
             get {
@@ -646,7 +655,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France))  and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals &apos;10&apos;, then depth shall be between and including  (&apos;800 MMT&apos; or &apos;31.50 IN&apos;)  and (&apos;1600 MMT&apos; or &apos;63 IN&apos;) and width shall be between and including (&apos; &apos;600 MMT&apos; or &apos;23.62 IN&apos;) and (&apos;1200 MMT&apos; or &apos;47.24 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;10&apos;, then depth shall be between and including (&apos;800 MMT&apos; or &apos;31.50 IN&apos;) and (&apos;1600 MMT&apos; or &apos;63 IN&apos;) and width shall be between and including (&apos; &apos;600 MMT&apos; or &apos;23.62 IN&apos;) and (&apos;1200 MMT&apos; or &apos;47.24 IN&apos;)..
         /// </summary>
         internal static string _1107 {
             get {
@@ -655,7 +664,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When populating netWeight, drainedWeight or grossWeight, the associated measurementUnitCode shall be of the Unit Of Measure Classification &apos;MASS&apos;.
+        ///   Looks up a localized string similar to When populating Net Weight &lt;netWeight&gt;, Drained Weight &lt;drainedWeight&gt; or Gross Weight &lt;grossWeight&gt;, the associated &lt;measurementUnitCode&gt; shall be of the Unit Of Measure Classification &apos;MASS&apos;..
         /// </summary>
         internal static string _1108 {
             get {
@@ -664,7 +673,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If (TradeItemDimensions/height or TradeItemDimensions/depth or TradeItemDimensions/width ) is not empty, then the unit of measurement shall be expressed in a UOM from the Unit Of Measure Classification &apos;DIMENSIONS&apos;.
+        ///   Looks up a localized string similar to If Height &lt;height&gt; or Depth &lt;depth&gt; or Width &lt;width&gt; is not empty, then the unit of measurement shall be expressed in a UOM from the Unit Of Measure Classification &apos;DIMENSIONS&apos;..
         /// </summary>
         internal static string _1109 {
             get {
@@ -673,7 +682,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Associated measurementUnitCode of priceComparisonMeasurement and/or of one iteration of netContent is/are not from the Unit Of Measure Classification &apos;VOLUME&apos;..
+        ///   Looks up a localized string similar to Associated &lt;measurementUnitCode&gt; of &lt;priceComparisonMeasurement&gt; and/or of one iteration of &lt;netContent&gt; is/are not from the Unit Of Measure Classification &apos;VOLUME&apos;..
         /// </summary>
         internal static string _1110 {
             get {
@@ -682,7 +691,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and dutyFeeTaxTypeCode equals &apos;3001000002282&apos; then dutyFeeTaxRate shall be empty and dutyFeeTaxAmount shall be used..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;dutyFeeTaxTypeCode&gt; equals &apos;3001000002282&apos; then &lt;dutyFeeTaxRate&gt; shall be empty and &lt;dutyFeeTaxAmount&gt; shall be used..
         /// </summary>
         internal static string _1111 {
             get {
@@ -691,7 +700,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals &apos;250&apos; (France) and tradeItemUnitDescriptorCode equals&apos;PALLET&apos;, then TradeItemMeasurements/height shall be less than or equal to &apos;3 MTR&apos;..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals &apos;250&apos; (France) and &lt;tradeItemUnitDescriptorCode&gt; equals&apos;PALLET&apos;, then &lt;height&gt; shall be less than or equal to &apos;3 MTR&apos;..
         /// </summary>
         internal static string _1112 {
             get {
@@ -700,7 +709,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals &apos;MTR&apos;, then its associated value shall not have more than 3 decimal positions..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;height&gt; or &lt;width&gt; or &lt;depth&gt; is not empty and the associated &lt;measurementUnitCode&gt; equals &apos;MTR&apos;, then its associated value shall not have more than 3 decimal positions..
         /// </summary>
         internal static string _1113 {
             get {
@@ -709,7 +718,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals &apos;&apos;CMT&apos;, then its associated value shall not have more than 1 decimal position..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;height&gt; or &lt;width&gt; or &lt;depth&gt; is not empty and the associated &lt;measurementUnitCode&gt; equals &apos;&apos;CMT&apos;, then its associated value shall not have more than 1 decimal position..
         /// </summary>
         internal static string _1114 {
             get {
@@ -718,7 +727,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and (TradeItemMeasurements/height or TradeItemMeasurements/width or TradeItemMeasurements/depth) is not empty and the associated measurementUnitCode equals &apos;&apos;MMT&apos;&apos;, then its associated value shall not have a decimal position..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;height&gt; or &lt;width&gt; or &lt;depth&gt; is not empty and the associated &lt;measurementUnitCode&gt; equals &apos;&apos;MMT&apos;&apos;, then its associated value shall not have a decimal position..
         /// </summary>
         internal static string _1115 {
             get {
@@ -727,7 +736,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France))  and priceComparisonContentTypeCode equals &apos;PER_KILOGRAM&apos; and netWeight is populated, then priceComparisonMeasurement and netWeight shall be equivalent..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;priceComparisonContentTypeCode&gt; equals &apos;PER_KILOGRAM&apos; and &lt;netWeight&gt; is populated, then &lt;priceComparisonMeasurement&gt; and &lt;netWeight&gt; shall be equivalent..
         /// </summary>
         internal static string _1116 {
             get {
@@ -736,7 +745,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and priceComparisonContentTypeCode equals &apos;DRAINED_WEIGHT&apos; and drainedWeight is populated, then priceComparisonMeasurement and drainedWeight shall be equivalent..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;priceComparisonContentTypeCode&gt; equals &apos;DRAINED_WEIGHT&apos; and &lt;drainedWeight&gt; is populated, then &lt;priceComparisonMeasurement&gt; and &lt;drainedWeight&gt; shall be equivalent..
         /// </summary>
         internal static string _1117 {
             get {
@@ -745,7 +754,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to udidFirstPublicationDateTime shall be today&apos;s date or in the future..
+        ///   Looks up a localized string similar to &lt;udidFirstPublicationDateTime&gt; shall be today&apos;s date or in the future..
         /// </summary>
         internal static string _1122 {
             get {
@@ -754,7 +763,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to udidFirstPublicationDateTime shall not be changed once the current populated date has been reached..
+        ///   Looks up a localized string similar to &lt;udidFirstPublicationDateTime&gt; shall not be changed once the current populated date has been reached..
         /// </summary>
         internal static string _1123 {
             get {
@@ -763,7 +772,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;49&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;610 MMT&apos; or &apos;24.02 IN&apos;) and (&apos;1220 MMT&apos; or &apos;48.04 IN&apos;) and TradeItemMeasurements/width shall be between and including (&apos;508 MMT&apos; or &apos;20 IN&apos;) and (&apos;1016 MMT&apos; or &apos;40 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;49&apos;, then &lt;depth&gt; shall be between and including (&apos;610 MMT&apos; or &apos;24.02 IN&apos;) and (&apos;1220 MMT&apos; or &apos;48.04 IN&apos;) and &lt;width&gt; shall be between and including (&apos;508 MMT&apos; or &apos;20 IN&apos;) and (&apos;1016 MMT&apos; or &apos;40 IN&apos;)..
         /// </summary>
         internal static string _1124 {
             get {
@@ -772,7 +781,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;48&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;610 MMT&apos; or &apos;24.02 IN&apos;) and (&apos;1220 MMT&apos; or &apos;48.04 IN&apos;) and TradeItemMeasurements/width shall be between and including (&apos;1016 MMT&apos; or &apos;40 IN&apos;) and (&apos;2032 MMT&apos; or &apos;80 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;48&apos;, then &lt;depth&gt; shall be between and including (&apos;610 MMT&apos; or &apos;24.02 IN&apos;) and (&apos;1220 MMT&apos; or &apos;48.04 IN&apos;) and &lt;width&gt; shall be between and including (&apos;1016 MMT&apos; or &apos;40 IN&apos;) and (&apos;2032 MMT&apos; or &apos;80 IN&apos;)..
         /// </summary>
         internal static string _1125 {
             get {
@@ -781,7 +790,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and  tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;47&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;400 MMT&apos; or &apos;15.75 IN&apos;) and (&apos;800 MMT&apos; or &apos;31.5 IN&apos;), and TradeItemMeasurements/width shall be between and including ( &apos;800 MMT&apos; or &apos;31.50 IN) and (&apos;1600 MMT&apos; or &apos;63 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;47&apos;, then &lt;depth&gt; shall be between and including (&apos;400 MMT&apos; or &apos;15.75 IN&apos;) and (&apos;800 MMT&apos; or &apos;31.5 IN&apos;), and &lt;width&gt; shall be between and including ( &apos;800 MMT&apos; or &apos;31.50 IN) and (&apos;1600 MMT&apos; or &apos;63 IN&apos;)..
         /// </summary>
         internal static string _1126 {
             get {
@@ -790,7 +799,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and  tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;43&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;1140 MMT&apos; or &apos;43.31 IN&apos;) and  (&apos;2280 MMT&apos; or &apos;86.62 IN&apos;) and TradeItemMeasurements/width shall be between and including (&apos;1140 MMT&apos; or &apos;43.31 IN&apos;) and (&apos;2280 MMT&apos; or &apos;86.62 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;43&apos;, then &lt;depth&gt; shall be between and including (&apos;1140 MMT&apos; or &apos;43.31 IN&apos;) and (&apos;2280 MMT&apos; or &apos;86.62 IN&apos;) and &lt;width&gt; shall be between and including (&apos;1140 MMT&apos; or &apos;43.31 IN&apos;) and (&apos;2280 MMT&apos; or &apos;86.62 IN&apos;)..
         /// </summary>
         internal static string _1127 {
             get {
@@ -799,7 +808,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;42&apos;, then TradeItemMeasurements/depth shall bebetween and including (&apos;1100 MMT&apos; or &apos;43.31 IN&apos;) and (&apos;2200 MMT&apos; or &apos;86.62 IN&apos;) and TradeItemMeasurements/width shall be between and including (&apos;1100 MMT&apos; or &apos;43.31 IN&apos;) and (&apos;2200 MMT&apos; or &apos;86.62 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;42&apos;, then &lt;depth&gt; shall bebetween and including (&apos;1100 MMT&apos; or &apos;43.31 IN&apos;) and (&apos;2200 MMT&apos; or &apos;86.62 IN&apos;) and &lt;width&gt; shall be between and including (&apos;1100 MMT&apos; or &apos;43.31 IN&apos;) and (&apos;2200 MMT&apos; or &apos;86.62 IN&apos;)..
         /// </summary>
         internal static string _1128 {
             get {
@@ -808,7 +817,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and  tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;41&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;1067 MMT&apos; or &apos;42.01 IN&apos;) and (&apos;2134 MMT&apos; or &apos;84.02 IN&apos;) and TradeItemMeasurements/width shall be between and including (&apos;1067 MMT&apos; or &apos;42.01 IN&apos;) and (&apos;2134 MMT&apos; or &apos;84.02 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;41&apos;, then &lt;depth&gt; shall be between and including (&apos;1067 MMT&apos; or &apos;42.01 IN&apos;) and (&apos;2134 MMT&apos; or &apos;84.02 IN&apos;) and &lt;width&gt; shall be between and including (&apos;1067 MMT&apos; or &apos;42.01 IN&apos;) and (&apos;2134 MMT&apos; or &apos;84.02 IN&apos;)..
         /// </summary>
         internal static string _1129 {
             get {
@@ -817,7 +826,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;40&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;1016 MMT&apos; or &apos;40 IN&apos;) and (&apos;2032 MMT&apos; or &apos;80 IN&apos;) and TradeItemMeasurements/width shall be between and including (&apos;1219 MMT&apos; or &apos;47.99 IN&apos;) and (&apos;2438 MMT&apos; or &apos;95.98 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;40&apos;, then &lt;depth&gt; shall be between and including (&apos;1016 MMT&apos; or &apos;40 IN&apos;) and (&apos;2032 MMT&apos; or &apos;80 IN&apos;) and &lt;width&gt; shall be between and including (&apos;1219 MMT&apos; or &apos;47.99 IN&apos;) and (&apos;2438 MMT&apos; or &apos;95.98 IN&apos;)..
         /// </summary>
         internal static string _1130 {
             get {
@@ -826,7 +835,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;35&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;1200 MMT&apos; or &apos;47.24 IN&apos;) and (&apos;2400 MMT&apos; or &apos;94.5 IN&apos;), and TradeItemMeasurements/width shall be between and including (&apos;1000 MMT&apos; or &apos;39.37 IN&apos;) and (&apos;2000 MMT&apos; or &apos;78.74 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;35&apos;, then &lt;depth&gt; shall be between and including (&apos;1200 MMT&apos; or &apos;47.24 IN&apos;) and (&apos;2400 MMT&apos; or &apos;94.5 IN&apos;), and &lt;width&gt; shall be between and including (&apos;1000 MMT&apos; or &apos;39.37 IN&apos;) and (&apos;2000 MMT&apos; or &apos;78.74 IN&apos;)..
         /// </summary>
         internal static string _1133 {
             get {
@@ -835,7 +844,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;31&apos;, then TradeItemMeasurements/depth shall be between and including  (&apos;1000 MMT&apos; or &apos;39.37 IN&apos;) and (&apos;2000 MMT&apos; or &apos;78.74 IN&apos;) and TradeItemMeasurements/width shall be between and including (&apos;600 MMT&apos; or &apos;23.62 IN&apos;) and (&apos;1200 MMT&apos; or &apos;47.34 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;31&apos;, then &lt;depth&gt; shall be between and including (&apos;1000 MMT&apos; or &apos;39.37 IN&apos;) and (&apos;2000 MMT&apos; or &apos;78.74 IN&apos;) and &lt;width&gt; shall be between and including (&apos;600 MMT&apos; or &apos;23.62 IN&apos;) and (&apos;1200 MMT&apos; or &apos;47.34 IN&apos;)..
         /// </summary>
         internal static string _1135 {
             get {
@@ -844,7 +853,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;25&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;1165 MMT&apos; or &apos;45.87 IN&apos;) and (&apos;2330 MMT&apos; or &apos;91.74 IN&apos;), and TradeItemMeasurements/width shall be between and including (&apos;1165 MMT&apos; or &apos;45.87 IN&apos;) and (&apos;2330 MMT&apos; or &apos;91.74 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;25&apos;, then &lt;depth&gt; shall be between and including (&apos;1165 MMT&apos; or &apos;45.87 IN&apos;) and (&apos;2330 MMT&apos; or &apos;91.74 IN&apos;), and &lt;width&gt; shall be between and including (&apos;1165 MMT&apos; or &apos;45.87 IN&apos;) and (&apos;2330 MMT&apos; or &apos;91.74 IN&apos;)..
         /// </summary>
         internal static string _1137 {
             get {
@@ -853,7 +862,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;14&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;400 MMT&apos; or &apos;15.75 IN&apos;) and (&apos;800 MMT&apos; or &apos;31.5 IN&apos;), and TradeItemMeasurements/width shall be between and including (&apos;300 MMT&apos; or &apos;11.81 IN&apos;) and (&apos;600 MMT&apos; or &apos;23.62 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;14&apos;, then &lt;depth&gt; shall be between and including (&apos;400 MMT&apos; or &apos;15.75 IN&apos;) and (&apos;800 MMT&apos; or &apos;31.5 IN&apos;), and &lt;width&gt; shall be between and including (&apos;300 MMT&apos; or &apos;11.81 IN&apos;) and (&apos;600 MMT&apos; or &apos;23.62 IN&apos;)..
         /// </summary>
         internal static string _1138 {
             get {
@@ -862,7 +871,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and  tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;13&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;600 MMT&apos; or &apos;23.62 IN&apos;) and (&apos;1200 MMT&apos; or &apos;47.24 IN&apos;), and TradeItemMeasurements/width shall be between and including (&apos;400 MMT&apos; or &apos;15.75 IN&apos;) and (&apos;800 MMT&apos; or &apos;31.5 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;13&apos;, then &lt;depth&gt; shall be between and including (&apos;600 MMT&apos; or &apos;23.62 IN&apos;) and (&apos;1200 MMT&apos; or &apos;47.24 IN&apos;), and &lt;width&gt; shall be between and including (&apos;400 MMT&apos; or &apos;15.75 IN&apos;) and (&apos;800 MMT&apos; or &apos;31.5 IN&apos;)..
         /// </summary>
         internal static string _1139 {
             get {
@@ -871,7 +880,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;12&apos;, then TradeItemMeasurements/depth shall be between and including (&apos;1200 MMT&apos; or &apos;47.24 IN&apos;) and (&apos;2400 MMT&apos; or &apos;94.48 IN&apos;), and TradeItemMeasurements/width shall be between and including (&apos;1000 MMT&apos; or &apos;39.37 IN&apos;) and (&apos;2000 MMT&apos; or &apos;78.74 IN&apos;)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;12&apos;, then &lt;depth&gt; shall be between and including (&apos;1200 MMT&apos; or &apos;47.24 IN&apos;) and (&apos;2400 MMT&apos; or &apos;94.48 IN&apos;), and &lt;width&gt; shall be between and including (&apos;1000 MMT&apos; or &apos;39.37 IN&apos;) and (&apos;2000 MMT&apos; or &apos;78.74 IN&apos;)..
         /// </summary>
         internal static string _1140 {
             get {
@@ -880,7 +889,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and  tradeItemUnitDescriptorCode equals &apos;PALLET&apos; and platformTypeCode equals  &apos;11&apos;,.
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and &lt;platformTypeCode&gt; equals &apos;11&apos;,.
         /// </summary>
         internal static string _1141 {
             get {
@@ -889,7 +898,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to descriptionShort is missing. If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and isTradeItemAConsumerUnit equals &apos;TRUE&apos; then descriptionShort shall be used..
+        ///   Looks up a localized string similar to &lt;descriptionShort&gt; is missing. If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) and &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos; then &lt;descriptionShort&gt; shall be used..
         /// </summary>
         internal static string _1160 {
             get {
@@ -898,7 +907,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tradeItemDescriptionInformation/tradeItemDescription is missing. If targetMarketCountryCode equals (&apos;249&apos; (France) or &apos;250&apos; (France)) then TradeItemDescriptionInformation/tradeItemDescription is mandatory for all Trade Items.
+        ///   Looks up a localized string similar to &lt;tradeItemDescription&gt; is missing. If &lt;targetMarketCountryCode&gt; equals (&apos;249&apos; (France) or &apos;250&apos; (France)) then &lt;tradeItemDescription&gt; is mandatory for all Trade Items..
         /// </summary>
         internal static string _1161 {
             get {
@@ -907,7 +916,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to priceComparisonContentTypeCode and/or priceComparisonMeasurement is (are) missing. .
+        ///   Looks up a localized string similar to &lt;priceComparisonContentTypeCode&gt; and/or &lt;priceComparisonMeasurement&gt; is (are) missing. .
         /// </summary>
         internal static string _1162 {
             get {
@@ -916,7 +925,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If (PackagingDimension/packagingDepth or PackagingDimension/packagingWidth are not empty) and (platformTypeCode is empty or packagingTypeCode does not equal &apos;PX&apos;(&apos;PALLET&apos;)).
+        ///   Looks up a localized string similar to If (&lt;packagingDepth&gt; or &lt;packagingWidth&gt; are not empty) and (&lt;platformTypeCode&gt; is empty or &lt;packagingTypeCode&gt; does not equal &apos;PX&apos;(&apos;PALLET&apos;)).
         /// </summary>
         internal static string _1166 {
             get {
@@ -925,7 +934,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If isTradeItemNonPhysical is not equal to &apos;true&apos; then tradeItemUnitDescriptor must not be empty..
+        ///   Looks up a localized string similar to If &lt;isTradeItemNonPhysical&gt; is not equal to &apos;TRUE&apos; then &lt;tradeItemUnitDescriptor&gt; must not be empty..
         /// </summary>
         internal static string _1167 {
             get {
@@ -934,7 +943,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most 1 iteration of referencedTradeItem/GTIN where  referencedTradeItemTypeCode equals &apos;ITEM_VARIANT_MASTER&apos;.
+        ///   Looks up a localized string similar to There must be at most 1 iteration of &lt;referencedTradeItem&gt;/GTIN where &lt;referencedTradeItemTypeCode&gt; equals &apos;ITEM_VARIANT_MASTER&apos;..
         /// </summary>
         internal static string _1168 {
             get {
@@ -943,7 +952,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most 1 iteration of referencedTradeItem/GTIN where  referencedTradeItemTypeCode equals &apos;PREFERRED&apos;.
+        ///   Looks up a localized string similar to There must be at most 1 iteration of &lt;referencedTradeItem&gt;/GTIN where &lt;referencedTradeItemTypeCode&gt; equals &apos;PREFERRED&apos;..
         /// </summary>
         internal static string _1176 {
             get {
@@ -952,7 +961,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When there is more than one iteration of class FoodAndBeverageIngredient, then you must enter Ingredient Sequence on Package (ingredientSequence) in each iteration. It does not apply to iterations where ingredientCode/@codeListName is equal to &apos;euSustainabilityReporting&apos;..
+        ///   Looks up a localized string similar to When there is more than one iteration of class FoodAndBeverageIngredient, then you must enter Ingredient Sequence on Package &lt;ingredientSequence&gt; in each iteration. It does not apply to iterations where &lt;ingredientCode&gt;/@&lt;codeListName&gt; is equal to &apos;&lt;euSustainabilityReporting&gt;&apos;..
         /// </summary>
         internal static string _1177 {
             get {
@@ -961,7 +970,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most one iteration of distributionMediaTypeCode .
+        ///   Looks up a localized string similar to There must be at most one iteration of &lt;distributionMediaTypeCode&gt; .
         /// </summary>
         internal static string _1189 {
             get {
@@ -970,7 +979,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most one iteration of packagingRefundObligationName .
+        ///   Looks up a localized string similar to There must be at most one iteration of &lt;packagingRefundObligationName&gt; .
         /// </summary>
         internal static string _1209 {
             get {
@@ -979,7 +988,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most one iteration of packagingRefuseObligationName .
+        ///   Looks up a localized string similar to There must be at most one iteration of &lt;packagingRefuseObligationName&gt; .
         /// </summary>
         internal static string _1210 {
             get {
@@ -988,7 +997,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to packagingTermsAndConditionsCode shall only be used once..
+        ///   Looks up a localized string similar to &lt;packagingTermsAndConditionsCode&gt; shall only be used once..
         /// </summary>
         internal static string _1211 {
             get {
@@ -997,7 +1006,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most one iteration of publisherName .
+        ///   Looks up a localized string similar to There must be at most one iteration of &lt;publisherName&gt; .
         /// </summary>
         internal static string _1217 {
             get {
@@ -1006,7 +1015,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most one iteration of tradeItemDateOnPackagingFormatName  .
+        ///   Looks up a localized string similar to There must be at most one iteration of &lt;tradeItemDateOnPackagingFormatName&gt; .
         /// </summary>
         internal static string _1231 {
             get {
@@ -1015,7 +1024,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most one iteration of tradeItemGroupIdentificationCodeReference.
+        ///   Looks up a localized string similar to There must be at most one iteration of &lt;tradeItemGroupIdentificationCodeReference&gt;.
         /// </summary>
         internal static string _1232 {
             get {
@@ -1024,7 +1033,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There must be at most one iteration of transportationModeRegulatoryAgency.
+        ///   Looks up a localized string similar to There must be at most one iteration of &lt;transportationModeRegulatoryAgency&gt;.
         /// </summary>
         internal static string _1233 {
             get {
@@ -1033,7 +1042,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You shall populate Claim Type Code (claimTypeCode) because you populated Element Claim Code (claimElementCode)..
+        ///   Looks up a localized string similar to You shall populate Claim Type Code &lt;claimTypeCode&gt; because you populated Element Claim Code &lt;claimElementCode&gt;..
         /// </summary>
         internal static string _1236 {
             get {
@@ -1042,7 +1051,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If any attribute in FoodAndBeverageIngredient class is used, then you must provide an Ingredient (ingredientName) or a Grape Variety Code (grapeVarietyCode). It does not apply when ingredientCode/@codeListName is equal to &apos;euSustainabilityReporting&apos;..
+        ///   Looks up a localized string similar to If any attribute in FoodAndBeverageIngredient class is used, then you must provide an Ingredient &lt;ingredientName&gt; or a Grape Variety Code &lt;grapeVarietyCode&gt;. It does not apply when &lt;ingredientCode&gt;/@&lt;codeListName&gt; is equal to &apos;&lt;euSustainabilityReporting&gt;&apos;..
         /// </summary>
         internal static string _1275 {
             get {
@@ -1051,7 +1060,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptorCode is equal to &apos;MIXED_MODULE&apos; and parent item exists then parent item tradeItemUnitDescriptorCode must equal &apos;TRANSPORT_LOAD&apos;, &apos;PALLET&apos;, or &apos;MIXED_MODULE&apos;..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptorCode&gt; is equal to &apos;MIXED_MODULE&apos; and parent item exists then parent item &lt;tradeItemUnitDescriptorCode&gt; must equal &apos;TRANSPORT_LOAD&apos;, &apos;PALLET&apos;, or &apos;MIXED_MODULE&apos;..
         /// </summary>
         internal static string _1277 {
             get {
@@ -1060,7 +1069,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptorCode is equal to &apos;MIXED_MODULE&apos; then child item tradeItemUnitDescriptorCode must not equal &apos;TRANSPORT_LOAD&apos; ..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptorCode&gt; is equal to &apos;MIXED_MODULE&apos; then child item &lt;tradeItemUnitDescriptorCode&gt; must not equal &apos;TRANSPORT_LOAD&apos; ..
         /// </summary>
         internal static string _1278 {
             get {
@@ -1069,7 +1078,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptorCode equals &apos;DISPLAY_SHIPPER&apos; then parent item tradeItemUnitDescriptorCode shall not equal &apos;BASE_UNIT_OR_EACH&apos; or &apos;PACK_OR_INNER_PACK&apos;..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptorCode&gt; equals &apos;DISPLAY_SHIPPER&apos; then parent item &lt;tradeItemUnitDescriptorCode&gt; shall not equal &apos;BASE_UNIT_OR_EACH&apos; or &apos;PACK_OR_INNER_PACK&apos;..
         /// </summary>
         internal static string _1279 {
             get {
@@ -1078,7 +1087,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptorCode is equal to &apos;DISPLAY_SHIPPER&apos; then child item tradeItemUnitDescriptorCode must not equal &apos;TRANSPORT_LOAD&apos;, &apos;MIXED_MODULE&apos; or &apos; PALLET&apos;..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptorCode&gt; is equal to &apos;DISPLAY_SHIPPER&apos; then child item &lt;tradeItemUnitDescriptorCode&gt; must not equal &apos;TRANSPORT_LOAD&apos;, &apos;MIXED_MODULE&apos; or &apos; PALLET&apos;..
         /// </summary>
         internal static string _1280 {
             get {
@@ -1087,7 +1096,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The format of ingredientSequence must be &apos;dd.dd.dd…&apos;. Where &apos;d&apos; must be a digit, always ending in a &apos;dd&apos; and never having a value of &apos;00&apos;..
+        ///   Looks up a localized string similar to The format of &lt;ingredientSequence&gt; must be &apos;dd.dd.dd…&apos;. Where &apos;d&apos; must be a digit, always ending in a &apos;dd&apos; and never having a value of &apos;00&apos;..
         /// </summary>
         internal static string _1281 {
             get {
@@ -1096,7 +1105,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to effectiveDateTime must not be empty.
+        ///   Looks up a localized string similar to &lt;effectiveDateTime&gt; must not be empty..
         /// </summary>
         internal static string _1283 {
             get {
@@ -1105,7 +1114,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode does not equal (036 (Australia), 554 (New Zealand)) and If preliminaryItemStatusCode is equal to &apos;PRELIMINARY&apos; or &apos;FINAL&apos; then firstShipDateTime must not be empty. .
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; does not equal (036 (Australia), 554 (New Zealand)) and If &lt;preliminaryItemStatusCode&gt; is equal to &apos;PRELIMINARY&apos; or &apos;FINAL&apos; then &lt;firstShipDateTime&gt; must not be empty. .
         /// </summary>
         internal static string _1288 {
             get {
@@ -1114,7 +1123,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode does not equal (036 (Australia), 554 (New Zealand)) and if  firstShipDateTime is less than or equal to current date then preliminaryItemStatusCode must not equal &apos;PRELIMINARY&apos; .
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; does not equal (036 (Australia), 554 (New Zealand)) and if &lt;firstShipDateTime&gt; is less than or equal to current date then &lt;preliminaryItemStatusCode&gt; must not equal &apos;PRELIMINARY&apos;..
         /// </summary>
         internal static string _1289 {
             get {
@@ -1123,7 +1132,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode does not equal (036 (Australia), 554 (New Zealand)) and if preliminaryItemStatusCode changes from  &apos;PRELIMINARY&apos; to &apos;FINAL&apos; and Document Command is equal to CHANGE_BY_REFRESH, then the changedate must be less than or equal to the firstShipDateTime..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; does not equal (036 (Australia), 554 (New Zealand)) and if &lt;preliminaryItemStatusCode&gt; changes from &apos;PRELIMINARY&apos; to &apos;FINAL&apos; and Document Command is equal to CHANGE_BY_REFRESH, then the changedate must be less than or equal to the &lt;firstShipDateTime&gt;..
         /// </summary>
         internal static string _1290 {
             get {
@@ -1132,7 +1141,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode is equal to &apos;PRELIMINARY&apos; then parent trade item preliminaryItemStatusCode must not equal &apos;FINAL&apos;..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; is equal to &apos;PRELIMINARY&apos; then parent trade item &lt;preliminaryItemStatusCode&gt; must not equal &apos;FINAL&apos;..
         /// </summary>
         internal static string _1291 {
             get {
@@ -1141,7 +1150,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If the Packaging class is used, then either packagingTypeCode or platformTypeCode must not be empty..
+        ///   Looks up a localized string similar to If the Packaging class is used, then either &lt;packagingTypeCode&gt; or &lt;platformTypeCode&gt; must not be empty..
         /// </summary>
         internal static string _1293 {
             get {
@@ -1150,7 +1159,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If gs1TradeItemIdentificationKeyCode  is equal to &apos;GTIN_13&apos; then associated gs1TradeItemIdentificationKeyValue value must have 13 digits and must have a valid check digit..
+        ///   Looks up a localized string similar to If &lt;gs1TradeItemIdentificationKeyCode&gt; is equal to &apos;GTIN_13&apos; then associated &lt;gs1TradeItemIdentificationKeyValue&gt; value must have 13 digits and must have a valid check digit..
         /// </summary>
         internal static string _1294 {
             get {
@@ -1159,7 +1168,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If gs1TradeItemIdentificationKeyCode  is equal to &apos;GTIN_8&apos; then associated gs1TradeItemIdentificationKeyValue value must have 8 digits and must have a valid check digit..
+        ///   Looks up a localized string similar to If &lt;gs1TradeItemIdentificationKeyCode&gt; is equal to &apos;GTIN_8&apos; then associated &lt;gs1TradeItemIdentificationKeyValue&gt; value must have 8 digits and must have a valid check digit..
         /// </summary>
         internal static string _1295 {
             get {
@@ -1168,7 +1177,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If gs1TradeItemIdentificationKeyCode  is equal to &apos;GTIN_14&apos; then associated gs1TradeItemIdentificationKeyValue value must have 14 digits and must have a valid check digit..
+        ///   Looks up a localized string similar to If &lt;gs1TradeItemIdentificationKeyCode&gt; is equal to &apos;GTIN_14&apos; then associated &lt;gs1TradeItemIdentificationKeyValue&gt; value must have 14 digits and must have a valid check digit..
         /// </summary>
         internal static string _1296 {
             get {
@@ -1177,7 +1186,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If gs1TradeItemIdentificationKeyCode  is equal to &apos;GTIN_12&apos; then associated gs1TradeItemIdentificationKeyValue value must have 12 digits and must have a valid check digit..
+        ///   Looks up a localized string similar to If &lt;gs1TradeItemIdentificationKeyCode&gt; is equal to &apos;GTIN_12&apos; then associated &lt;gs1TradeItemIdentificationKeyValue&gt; value must have 12 digits and must have a valid check digit..
         /// </summary>
         internal static string _1297 {
             get {
@@ -1186,7 +1195,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brand Owner GLN (Global Location Number) (brandOwner/gln) must be used..
+        ///   Looks up a localized string similar to Brand Owner GLN (Global Location Number) &lt;gln&gt; must be used..
         /// </summary>
         internal static string _1299 {
             get {
@@ -1195,7 +1204,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If TargetMarket equals &apos;124&apos; (Canada) and /catalogue_item_notification:catalogueItemNotificationMessage/transaction/documentCommand/catalogue_item_notification:catalogueItemNotification/catalogueItem/tradeItem/tradeItemInformation/extension/*[namespace-uri()=&apos;urn:gs1:gdsn:regulated_trade_item:xsd:3&apos; and local-name()=&apos;regulatedTradeItemModule&apos;]/regulatoryInformation/permitIdentification/regulatoryPermitIdentification is used, then doesSaleOfTradeItemRequireGovernmentalReporting shall be used..
+        ///   Looks up a localized string similar to If TargetMarket equals &apos;124&apos; (Canada) and /catalogue_item_notification:&lt;documentCommand&gt;/catalogue_item_notification:&lt;extension&gt;/*[namespace-uri()=&apos;urn:gs1:gdsn:regulated_trade_item:xsd:3&apos; and local-name()=&apos;&lt;regulatedTradeItemModule&gt;&apos;]/&lt;regulatoryPermitIdentification&gt; is used, then &lt;doesSaleOfTradeItemRequireGovernmentalReporting&gt; shall be used..
         /// </summary>
         internal static string _1300 {
             get {
@@ -1204,7 +1213,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If fileEffectiveStartDateTime and fileEffectiveEndDateTime are not empty, then fileEffectiveEndDateTime must be greater than fileEffectiveStartDateTime.
+        ///   Looks up a localized string similar to If &lt;fileEffectiveStartDateTime&gt; and &lt;fileEffectiveEndDateTime&gt; are not empty, then &lt;fileEffectiveEndDateTime&gt; must be greater than &lt;fileEffectiveStartDateTime&gt;.
         /// </summary>
         internal static string _1301 {
             get {
@@ -1213,7 +1222,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If isIngredientGeneric is not empty, then ingredientStength must not be empty..
+        ///   Looks up a localized string similar to If &lt;isIngredientGeneric&gt; is not empty, then &lt;ingredientStength&gt; must not be empty..
         /// </summary>
         internal static string _1305 {
             get {
@@ -1222,7 +1231,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material code (materialCode) is missing. If a Material Agency (materialAgencyCode) is used, then Material Code (materialCode) SHALL be used..
+        ///   Looks up a localized string similar to Material code &lt;materialCode&gt; is missing. If a Material Agency &lt;materialAgencyCode&gt; is used, then Material Code &lt;materialCode&gt; SHALL be used..
         /// </summary>
         internal static string _1308 {
             get {
@@ -1231,7 +1240,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to if Material/materialAgencyCode and Material/MaterialComposition/materialCode are used then Material/MaterialComposition/materialPercentage shall be used..
+        ///   Looks up a localized string similar to if &lt;materialAgencyCode&gt; and &lt;materialCode&gt; are used then &lt;materialPercentage&gt; shall be used..
         /// </summary>
         internal static string _1309 {
             get {
@@ -1240,7 +1249,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If packagingFunctioncode is equal to &quot;TAMPER_EVIDENT&quot; then&quot;packagingTypeCode must not be empty..
+        ///   Looks up a localized string similar to If &lt;packagingFunctioncode&gt; is equal to &apos;TAMPER_EVIDENT&apos; then&apos;&lt;packagingTypeCode&gt; must not be empty..
         /// </summary>
         internal static string _1310 {
             get {
@@ -1249,7 +1258,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If platformTermsAndConditionsCode is not empty then platformTypeCode must not be empty..
+        ///   Looks up a localized string similar to If &lt;platformTermsAndConditionsCode&gt; is not empty then &lt;platformTypeCode&gt; must not be empty..
         /// </summary>
         internal static string _1312 {
             get {
@@ -1258,7 +1267,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If priceComparisonContentTypeCode is used, then priceComparisonMeasurement shall be used..
+        ///   Looks up a localized string similar to If &lt;priceComparisonContentTypeCode&gt; is used, then &lt;priceComparisonMeasurement&gt; shall be used..
         /// </summary>
         internal static string _1315 {
             get {
@@ -1276,7 +1285,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If PromotionalItemInformation/nonPromotionalTradeItem/tradeItemIdentification is not empty,  then isTradeItemAconsumerUnit must equal &quot;TRUE&quot; .
+        ///   Looks up a localized string similar to If &lt;tradeItemIdentification&gt; is not empty, then &lt;isTradeItemAconsumerUnit&gt; must equal &apos;TRUE&apos; .
         /// </summary>
         internal static string _1317 {
             get {
@@ -1285,7 +1294,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If (freeQuantityOfNextLowerLevelTradeItem or  freeQuantityOfProduct) is not empty, then istradeItemAConsumerunit must equal &quot;TRUE&quot;.
+        ///   Looks up a localized string similar to If (&lt;freeQuantityOfNextLowerLevelTradeItem&gt; or &lt;freeQuantityOfProduct&gt;) is not empty, then &lt;istradeItemAConsumerunit&gt; must equal &apos;TRUE&apos;.
         /// </summary>
         internal static string _1320 {
             get {
@@ -1294,7 +1303,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If promotionTypeCode is not empty, then isTradeItemAConsumerUnit must equal &quot;TRUE&quot;.
+        ///   Looks up a localized string similar to If &lt;promotionTypeCode&gt; is not empty, then &lt;isTradeItemAConsumerUnit&gt; must equal &apos;TRUE&apos;.
         /// </summary>
         internal static string _1321 {
             get {
@@ -1303,7 +1312,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The associated UoM of freeQuantityOfNextLowerLevelTradeItem must be one of the associated UoMs of netContent of the child trade item..
+        ///   Looks up a localized string similar to The associated UoM of &lt;freeQuantityOfNextLowerLevelTradeItem&gt; must be one of the associated UoMs of &lt;netContent&gt; of the child trade item..
         /// </summary>
         internal static string _1323 {
             get {
@@ -1312,7 +1321,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If stackingFactor is not empty, it must equal or be greater than &apos;1&apos;.
+        ///   Looks up a localized string similar to If &lt;stackingFactor&gt; is not empty, it must equal or be greater than &apos;1&apos;..
         /// </summary>
         internal static string _1324 {
             get {
@@ -1321,7 +1330,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to gpcAttributeValueCode is missing. gpcAttributeTypeCode and gpcAttributeValueCode in class gDSNTradeItemClassificationAttribute are used as a pair but only gpcAttributeTypeCode was used. .
+        ///   Looks up a localized string similar to &lt;gpcAttributeValueCode&gt; is missing. &lt;gpcAttributeTypeCode&gt; and &lt;gpcAttributeValueCode&gt; in class &lt;gDSNTradeItemClassificationAttribute&gt; are used as a pair but only &lt;gpcAttributeTypeCode&gt; was used. .
         /// </summary>
         internal static string _1338 {
             get {
@@ -1330,7 +1339,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value provided for gpcAttributeTypecode is not valid for the provided value of gpcCategoryCode.
+        ///   Looks up a localized string similar to The value provided for &lt;gpcAttributeTypecode&gt; is not valid for the provided value of &lt;gpcCategoryCode&gt;.
         /// </summary>
         internal static string _1340 {
             get {
@@ -1339,7 +1348,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value provided for gpcAttributeValueCode is not valid for the provided value of gpcAttributeTypeCode.
+        ///   Looks up a localized string similar to The value provided for &lt;gpcAttributeValueCode&gt; is not valid for the provided value of &lt;gpcAttributeTypeCode&gt;.
         /// </summary>
         internal static string _1341 {
             get {
@@ -1348,7 +1357,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals &apos;840 (United States) and (ChildNutritionQualifier or any sub-class) is used, then ChildNutritionQualifier/childNutritionQualifier, ChildNutritionQualifier/childNutritionQualifiedValue,ChildNutritionQualifier/childNutritionValue,ChildNutritionLabel/ childNutritionLabelStatement,  and  ChildNutritionLabel/childNutritionProductIdentification shall be used..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals &apos;840 (United States) and (ChildNutritionQualifier or any sub-class) is used, then &lt;childNutritionQualifier&gt;, &lt;childNutritionQualifiedValue&gt;,&lt;childNutritionValue&gt;,ChildNutritionLabel/ &lt;childNutritionLabelStatement&gt;, and &lt;childNutritionProductIdentification&gt; shall be used..
         /// </summary>
         internal static string _1342 {
             get {
@@ -1357,7 +1366,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals &apos;840&apos; (United States) and productFormulationStatementRegulatoryBodyCode is used, then.
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals &apos;840&apos; (United States) and &lt;productFormulationStatementRegulatoryBodyCode&gt; is used, then..
         /// </summary>
         internal static string _1343 {
             get {
@@ -1366,7 +1375,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For target market &apos;840&apos; (United States), both creditableIngredientTypeCode and.
+        ///   Looks up a localized string similar to For target market &apos;840&apos; (United States), both &lt;creditableIngredientTypeCode&gt; and..
         /// </summary>
         internal static string _1344 {
             get {
@@ -1384,7 +1393,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to creditableAmount is missing. For target market &apos;840&apos; (United States) creditableAmount shall be used  when  creditableIngredientDescription is used..
+        ///   Looks up a localized string similar to &lt;creditableAmount&gt; is missing. For target market &apos;840&apos; (United States) &lt;creditableAmount&gt; shall be used when &lt;creditableIngredientDescription&gt; is used..
         /// </summary>
         internal static string _1346 {
             get {
@@ -1393,7 +1402,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to totalVegetableSubgroupAmount is missing.  For target market &apos;840&apos; (United States) totalVegetableSubgroupAmount shall be used when vegetableSubgroupcode is used..
+        ///   Looks up a localized string similar to &lt;totalVegetableSubgroupAmount&gt; is missing. For target market &apos;840&apos; (United States) &lt;totalVegetableSubgroupAmount&gt; shall be used when &lt;vegetableSubgroupcode&gt; is used..
         /// </summary>
         internal static string _1347 {
             get {
@@ -1402,7 +1411,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The attributes doesTradeItemMeetWholeGrainRichCriteria, and creditableGrainGroupCode shall be used for Target Market &apos;840&apos; (United States) when doesTradeItemContainNonCreditableGrains is used..
+        ///   Looks up a localized string similar to The attributes &lt;doesTradeItemMeetWholeGrainRichCriteria&gt;, and &lt;creditableGrainGroupCode&gt; shall be used for Target Market &apos;840&apos; (United States) when &lt;doesTradeItemContainNonCreditableGrains&gt; is used..
         /// </summary>
         internal static string _1348 {
             get {
@@ -1411,7 +1420,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The attributes doesTradeItemContainNonCreditableGrains, and creditableGrainGroupCode  shall be used for Target Market &apos;840&apos; (United States) when the attribute doesTradeItemMeetWholeGrainRichCriteria is used..
+        ///   Looks up a localized string similar to The attributes &lt;doesTradeItemContainNonCreditableGrains&gt;, and &lt;creditableGrainGroupCode&gt; shall be used for Target Market &apos;840&apos; (United States) when the attribute &lt;doesTradeItemMeetWholeGrainRichCriteria&gt; is used..
         /// </summary>
         internal static string _1349 {
             get {
@@ -1420,7 +1429,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The attributes doesTradeItemContainNonCreditableGrains, and doesTradeItemMeetWholeGrainRichCriteria  shall be used for Target Market &apos;840&apos; (United States) when the attribute creditableGrainGroupCode is used..
+        ///   Looks up a localized string similar to The attributes &lt;doesTradeItemContainNonCreditableGrains&gt;, and &lt;doesTradeItemMeetWholeGrainRichCriteria&gt; shall be used for Target Market &apos;840&apos; (United States) when the attribute &lt;creditableGrainGroupCode&gt; is used..
         /// </summary>
         internal static string _1350 {
             get {
@@ -1429,7 +1438,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The attribute nonCreditableGrainAmount  shall be used for Target Market &apos;840&apos; (United States) when the attribute doesTradeItemContainNoncreditableGrains is TRUE.
+        ///   Looks up a localized string similar to The attribute &lt;nonCreditableGrainAmount&gt; shall be used for Target Market &apos;840&apos; (United States) when the attribute &lt;doesTradeItemContainNoncreditableGrains&gt; is &apos;TRUE&apos;..
         /// </summary>
         internal static string _1351 {
             get {
@@ -1438,7 +1447,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to regulatoryAct and/or regulatoryAgency missing. If regulationTypeCode equals &apos;TRACEABILITY_REGULATION&apos; and targetMarketCountryCode equals &apos;752&apos; (Sweden), then regulatoryAct AND regulatoryAgency shall be used.
+        ///   Looks up a localized string similar to &lt;regulatoryAct&gt; and/or &lt;regulatoryAgency&gt; missing. If &lt;regulationTypeCode&gt; equals &apos;TRACEABILITY_REGULATION&apos; and &lt;targetMarketCountryCode&gt; equals &apos;752&apos; (Sweden), then &lt;regulatoryAct&gt; AND &lt;regulatoryAgency&gt; shall be used..
         /// </summary>
         internal static string _1353 {
             get {
@@ -1447,7 +1456,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @CurrencyCode must be the 3 character representation found in the ISO 4217 codelist..
+        ///   Looks up a localized string similar to &lt;CurrencyCode&gt; must be the 3 character representation found in the ISO 4217 codelist..
         /// </summary>
         internal static string _1380 {
             get {
@@ -1456,7 +1465,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The length of MarketingInformationModule/MarketingInformation/couponFamilyCode shall exactly be 3 characters for targetMarketCountryCode equal to (&apos;840&apos; (United States)..
+        ///   Looks up a localized string similar to The length of &lt;couponFamilyCode&gt; shall exactly be 3 characters for &lt;targetMarketCountryCode&gt; equal to (&apos;840&apos; (United States)..
         /// </summary>
         internal static string _1406 {
             get {
@@ -1474,7 +1483,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to brandName is mandatory for targetMarket 840 (United States) and context &apos;Medical Devices&apos;.
+        ///   Looks up a localized string similar to &lt;brandName&gt; is mandatory for &lt;targetMarket&gt; 840 (United States) and context &apos;Medical Devices&apos;..
         /// </summary>
         internal static string _1408 {
             get {
@@ -1483,7 +1492,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to returnableAssetsContainedQuantity shall only have a measurementUnitCode of Unit Of Measure Classification &apos;Count&apos;..
+        ///   Looks up a localized string similar to &lt;returnableAssetsContainedQuantity&gt; shall only have a &lt;measurementUnitCode&gt; of Unit Of Measure Classification &apos;Count&apos;..
         /// </summary>
         internal static string _1409 {
             get {
@@ -1492,7 +1501,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to productYieldTypeCode  requires productYield  to be used The code value of productYieldTypeCode in its own right does not provide any business benefit..
+        ///   Looks up a localized string similar to &lt;productYieldTypeCode&gt; requires &lt;productYield&gt; to be used The code value of &lt;productYieldTypeCode&gt; in its own right does not provide any business benefit..
         /// </summary>
         internal static string _1410 {
             get {
@@ -1510,7 +1519,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Nutritional Preparation Code (preparationStateCode) is used, then Nutrient Code (nutrientTypeCode) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Nutritional Preparation Code &lt;preparationStateCode&gt; is used, then Nutrient Code &lt;nutrientTypeCode&gt; must be used..
         /// </summary>
         internal static string _1440 {
             get {
@@ -1519,7 +1528,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nutrient Quantity (quantityContained) or Daily Nutrient Value Percentage (dailyValueIntakePercent) is missing. If Nutrient Code (nutrientTypeCode) is used, then Nutrient Quantity (quantityContained) or Daily Nutrient Value Percentage (dailyValueIntakePercent) shall be used..
+        ///   Looks up a localized string similar to Nutrient Quantity &lt;quantityContained&gt; or Daily Nutrient Value Percentage &lt;dailyValueIntakePercent&gt; is missing. If Nutrient Code &lt;nutrientTypeCode&gt; is used, then Nutrient Quantity &lt;quantityContained&gt; or Daily Nutrient Value Percentage &lt;dailyValueIntakePercent&gt; shall be used..
         /// </summary>
         internal static string _1445 {
             get {
@@ -1528,7 +1537,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to returnablePackageDepositIdentification is missing for this Trade Item..
+        ///   Looks up a localized string similar to &lt;returnablePackageDepositIdentification&gt; is missing for this Trade Item..
         /// </summary>
         internal static string _1446 {
             get {
@@ -1546,7 +1555,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to additionalTradeItemClassificationCodeValue is not used.if additionalTradeItemClassificationSystemCode is used then there shall be a corresponding additionalTradeItemClassificationCodeValue used.
+        ///   Looks up a localized string similar to &lt;additionalTradeItemClassificationCodeValue&gt; is not used.if &lt;additionalTradeItemClassificationSystemCode&gt; is used then there shall be a corresponding &lt;additionalTradeItemClassificationCodeValue&gt; used..
         /// </summary>
         internal static string _1459 {
             get {
@@ -1555,7 +1564,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to additionalTradeItemClassificationSystemCode is not used. If additionalTradeItemClassificationCodeValue is used then there shall be a corresponding additionalTradeItemClassificationSystemCode used.
+        ///   Looks up a localized string similar to &lt;additionalTradeItemClassificationSystemCode&gt; is not used. If &lt;additionalTradeItemClassificationCodeValue&gt; is used then there shall be a corresponding &lt;additionalTradeItemClassificationSystemCode&gt; used..
         /// </summary>
         internal static string _1460 {
             get {
@@ -1564,7 +1573,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to consumerWarningTypeCode is missing. .
+        ///   Looks up a localized string similar to &lt;consumerWarningTypeCode&gt; is missing. .
         /// </summary>
         internal static string _1541 {
             get {
@@ -1573,7 +1582,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to flashPointTemperature , or flashPointTemperatureLowerValue or flashPointTemperatureUpperValue is/are missing..
+        ///   Looks up a localized string similar to &lt;flashPointTemperature&gt; , or &lt;flashPointTemperatureLowerValue&gt; or &lt;flashPointTemperatureUpperValue&gt; is/are missing..
         /// </summary>
         internal static string _1548 {
             get {
@@ -1591,7 +1600,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (if TradeItemMaterial/materialAgencyCode is used then TradeItemMaterial/TradeItemMaterialComposition/materialCode shall be used) and (if TradeItemMaterial/TradeItemMaterialComposition/materialCode is used then TradeItemMaterial/materialAgencyCode shall be used)..
+        ///   Looks up a localized string similar to (if &lt;materialAgencyCode&gt; is used then &lt;materialCode&gt; shall be used) and (if &lt;materialCode&gt; is used then &lt;materialAgencyCode&gt; shall be used)..
         /// </summary>
         internal static string _1553 {
             get {
@@ -1600,7 +1609,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to if TradeItemMaterial/materialAgencyCode and TradeItemMaterial/TradeItemMaterialComposition/materialCode are used then TradeItemMaterial/TradeItemMaterialComposition/materialPercentage shall be used..
+        ///   Looks up a localized string similar to if &lt;materialAgencyCode&gt; and &lt;materialCode&gt; are used then &lt;materialPercentage&gt; shall be used..
         /// </summary>
         internal static string _1554 {
             get {
@@ -1609,7 +1618,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals &apos;840&apos; (United States) then there shall be at most one iteration of totalPortionWeightAsPurchased per @measurementUnitCode..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals &apos;840&apos; (United States) then there shall be at most one iteration of &lt;totalPortionWeightAsPurchased&gt; per @&lt;measurementUnitCode&gt;..
         /// </summary>
         internal static string _1557 {
             get {
@@ -1618,7 +1627,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals &apos;840&apos; (United States) then there shall be at most one iteration of creditableAlternativeProteinPerPortion per @measurementUnitCode..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals &apos;840&apos; (United States) then there shall be at most one iteration of &lt;creditableAlternativeProteinPerPortion&gt; per @&lt;measurementUnitCode&gt;..
         /// </summary>
         internal static string _1558 {
             get {
@@ -1627,7 +1636,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to targetMarketConsumerSalesConditionCode is missing..
+        ///   Looks up a localized string similar to &lt;targetMarketConsumerSalesConditionCode&gt; is missing..
         /// </summary>
         internal static string _1563 {
             get {
@@ -1636,7 +1645,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Organic Claim Agency Code (tradeItemOrganicInformation/organicClaim/organicClaimAgencyCode) is missing..
+        ///   Looks up a localized string similar to Organic Claim Agency Code &lt;organicClaimAgencyCode&gt; is missing..
         /// </summary>
         internal static string _1569 {
             get {
@@ -1645,7 +1654,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, the Growing Method Code (tradeItemFarmingAndProcessing/growingMethodCode) &lt;growingMethodCode&gt; is not applicable to fresh fruits and vegetables for Global Product Category Code (GDSNTradeItemClassification/gpcCategoryCode): &lt; GDSNTradeItemClassification/gpcCategoryCode gpcCategoryName&gt;. .
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, the Growing Method Code &lt;growingMethodCode&gt; &lt;&lt;growingMethodCode&gt;&gt; is not applicable to fresh fruits and vegetables for Global Product Category Code &lt;gpcCategoryCode&gt;: &lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;&gt;. .
         /// </summary>
         internal static string _1570 {
             get {
@@ -1654,7 +1663,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No iteration of catchMethodCode is a numerical code..
+        ///   Looks up a localized string similar to No iteration of &lt;catchMethodCode&gt; is a numerical code..
         /// </summary>
         internal static string _1585 {
             get {
@@ -1663,7 +1672,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Net Content (netContent) is mandatory on consumer units (Consumer Unit Indicator (isTradeItemAConsumerUnit) equals to &apos;true&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Net Content &lt;netContent&gt; is mandatory on consumer units (Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals to &apos;TRUE&apos;)..
         /// </summary>
         internal static string _1601 {
             get {
@@ -1672,7 +1681,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to numberOfPiecesInSet and/or totalNumberOfComponents is/are not used..
+        ///   Looks up a localized string similar to &lt;numberOfPiecesInSet&gt; and/or &lt;totalNumberOfComponents&gt; is/are not used..
         /// </summary>
         internal static string _1604 {
             get {
@@ -1681,7 +1690,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to componentDescription and/or componentQuantity is/are not used..
+        ///   Looks up a localized string similar to &lt;componentDescription&gt; and/or &lt;componentQuantity&gt; is/are not used..
         /// </summary>
         internal static string _1605 {
             get {
@@ -1690,7 +1699,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to totalNumberOfComponents is not greater than &apos;0&apos;..
+        ///   Looks up a localized string similar to &lt;totalNumberOfComponents&gt; is not greater than &apos;0&apos;..
         /// </summary>
         internal static string _1606 {
             get {
@@ -1699,7 +1708,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to componentNumber is not unique within this tradeItem.
+        ///   Looks up a localized string similar to &lt;componentNumber&gt; is not unique within this &lt;tradeItem&gt;.
         /// </summary>
         internal static string _1607 {
             get {
@@ -1708,7 +1717,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to numberOfPiecesInSet does not equal sum of componentQuantity of each child component..
+        ///   Looks up a localized string similar to &lt;numberOfPiecesInSet&gt; does not equal sum of &lt;componentQuantity&gt; of each child component..
         /// </summary>
         internal static string _1608 {
             get {
@@ -1717,7 +1726,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to totalNumberOfComponents does not equal total number of iterations of class componentInformation..
+        ///   Looks up a localized string similar to &lt;totalNumberOfComponents&gt; does not equal total number of iterations of class &lt;componentInformation&gt;..
         /// </summary>
         internal static string _1609 {
             get {
@@ -1726,7 +1735,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to componentIdentification is not used or not unique for each component..
+        ///   Looks up a localized string similar to &lt;componentIdentification&gt; is not used or not unique for each component..
         /// </summary>
         internal static string _1610 {
             get {
@@ -1735,7 +1744,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fileEffectiveStartDateTime is missing..
+        ///   Looks up a localized string similar to &lt;fileEffectiveStartDateTime&gt; is missing..
         /// </summary>
         internal static string _1611 {
             get {
@@ -1744,7 +1753,16 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to additionalTradeItemClassificationCodeValue is incorrect for additionalTradeItemClassificationSystemCode &apos;76&apos; MDR/IVDR. Please use one of the codes &apos;EU_CLASS_I&apos;, &apos;EU_CLASS_IIA&apos;, &apos;EU_CLASS_IIB&apos;, &apos;EU_CLASS_III&apos;, &apos;EU_CLASS_A&apos;, &apos;EU_CLASS_B&apos;, &apos;EU_CLASS_C&apos;, or &apos;EU_CLASS_D’..
+        ///   Looks up a localized string similar to Code value &apos;D_A&apos; (Development Assistance) and &apos;001&apos; (GLOBAL MARKET) shall only be used for &lt;targetMarketCountryCode&gt;..
+        /// </summary>
+        internal static string _1612 {
+            get {
+                return ResourceManager.GetString("1612", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;additionalTradeItemClassificationCodeValue&gt; is incorrect for &lt;additionalTradeItemClassificationSystemCode&gt; &apos;76&apos; MDR/IVDR. Please use one of the codes &apos;EU_CLASS_I&apos;, &apos;EU_CLASS_IIA&apos;, &apos;EU_CLASS_IIB&apos;, &apos;EU_CLASS_III&apos;, &apos;EU_CLASS_A&apos;, &apos;EU_CLASS_B&apos;, &apos;EU_CLASS_C&apos;, or &apos;EU_CLASS_D&apos;..
         /// </summary>
         internal static string _1613 {
             get {
@@ -1753,7 +1771,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to farmingAndProcessingInformationModule/tradeItemOrganicInformation/organicClaim/organicTradeItemCode is missing. .
+        ///   Looks up a localized string similar to &lt;organicTradeItemCode&gt; is missing. .
         /// </summary>
         internal static string _1617 {
             get {
@@ -1762,7 +1780,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frontFaceTypeCode is not used..
+        ///   Looks up a localized string similar to &lt;frontFaceTypeCode&gt; is not used..
         /// </summary>
         internal static string _1637 {
             get {
@@ -1771,7 +1789,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to isTradeItemAQualityVintageAlcoholProduct is not used..
+        ///   Looks up a localized string similar to &lt;isTradeItemAQualityVintageAlcoholProduct&gt; is not used..
         /// </summary>
         internal static string _1639 {
             get {
@@ -1780,7 +1798,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Same feedType exists multiple times for the same Trade Item..
+        ///   Looks up a localized string similar to Same &lt;feedType&gt; exists multiple times for the same Trade Item..
         /// </summary>
         internal static string _1640 {
             get {
@@ -1789,7 +1807,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Nutrient Quantity (quantityContained) of starch (&apos;STARCH&apos;) must be less than or equal to the Nutrient Quantity (quantityContained) of carbohydrates (&apos;CHOAVL&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Nutrient Quantity &lt;quantityContained&gt; of starch (&apos;STARCH&apos;) must be less than or equal to the Nutrient Quantity &lt;quantityContained&gt; of carbohydrates (&apos;CHOAVL&apos;)..
         /// </summary>
         internal static string _1641 {
             get {
@@ -1798,7 +1816,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Nutrient Quantity (quantityContained) of polyols (Carbohydrates of which multiple alcohols) (&apos;POLYL&apos;) must be less than or equal to the Nutrient Quantity (quantityContained) of carbohydrates (&apos;CHOAVL&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Nutrient Quantity &lt;quantityContained&gt; of polyols (Carbohydrates of which multiple alcohols) (&apos;POLYL&apos;) must be less than or equal to the Nutrient Quantity &lt;quantityContained&gt; of carbohydrates (&apos;CHOAVL&apos;)..
         /// </summary>
         internal static string _1642 {
             get {
@@ -1807,7 +1825,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Nutrient Quantity (quantityContained) of total saturated fatty acids (&apos;FASAT&apos;) must be less than or equal to the Nutrient Quantity (quantityContained) of total fat (&apos;FAT&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Nutrient Quantity &lt;quantityContained&gt; of total saturated fatty acids (&apos;FASAT&apos;) must be less than or equal to the Nutrient Quantity &lt;quantityContained&gt; of total fat (&apos;FAT&apos;)..
         /// </summary>
         internal static string _1643 {
             get {
@@ -1816,7 +1834,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Nutrient Quantity (quantityContained) of total monounsaturated-cis fatty acids (&apos;FAMSCIS&apos;) must be smaller than or equal to the Nutrient Quantity (quantityContained) of total fat (&apos;FAT&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Nutrient Quantity &lt;quantityContained&gt; of total monounsaturated-cis fatty acids (&apos;FAMSCIS&apos;) must be smaller than or equal to the Nutrient Quantity &lt;quantityContained&gt; of total fat (&apos;FAT&apos;)..
         /// </summary>
         internal static string _1644 {
             get {
@@ -1825,7 +1843,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Nutrient Quantity (quantityContained) of total polyunsaturated-cis fatty acids (&apos;FAPUCIS&apos;) must be smaller than or equal to the Nutrient Quantity (quantityContained) of total fat (&apos;FAT&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Nutrient Quantity &lt;quantityContained&gt; of total polyunsaturated-cis fatty acids (&apos;FAPUCIS&apos;) must be smaller than or equal to the Nutrient Quantity &lt;quantityContained&gt; of total fat (&apos;FAT&apos;)..
         /// </summary>
         internal static string _1645 {
             get {
@@ -1834,7 +1852,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Number of Layers per GTIN (quantityOfCompleteLayersContainedInATradeItem) shall only be used for GTIN identified pallets..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Number of Layers per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; shall only be used for GTIN identified pallets..
         /// </summary>
         internal static string _1646 {
             get {
@@ -1843,7 +1861,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Number of Units per Layer in a GTIN (quantityOfTradeItemsContainedInACompleteLayer) shall only be used for GTIN identified pallets..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Number of Units per Layer in a GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; shall only be used for GTIN identified pallets..
         /// </summary>
         internal static string _1647 {
             get {
@@ -1852,7 +1870,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Attribute quantityOfTradeItemsPerPalletLayer shall only be used for non-GTIN logistic units..
+        ///   Looks up a localized string similar to Attribute &lt;quantityOfTradeItemsPerPalletLayer&gt; shall only be used for non-GTIN logistic units..
         /// </summary>
         internal static string _1648 {
             get {
@@ -1861,7 +1879,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Attribute quantityOfTradeItemsPerPallet shall only be used for non-GTIN logistic units..
+        ///   Looks up a localized string similar to Attribute &lt;quantityOfTradeItemsPerPallet&gt; shall only be used for non-GTIN logistic units..
         /// </summary>
         internal static string _1649 {
             get {
@@ -1870,7 +1888,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Attribute quantityOfLayersPerPallet shall only be used for non-GTIN logistic units..
+        ///   Looks up a localized string similar to Attribute &lt;quantityOfLayersPerPallet&gt; shall only be used for non-GTIN logistic units..
         /// </summary>
         internal static string _1650 {
             get {
@@ -1879,7 +1897,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos;, then no attributes in nonGTINLogisticsUnitInformation class shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos;, then no attributes in &lt;nonGTINLogisticsUnitInformation&gt; class shall be used..
         /// </summary>
         internal static string _1651 {
             get {
@@ -1888,7 +1906,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If temperatureQualifierCode equals &apos;STORAGE_HANDLING&apos;, then maximumTemperature SHALL be used for any context other than &apos;DP007&apos; or &apos;DP008&apos;..
+        ///   Looks up a localized string similar to If &lt;temperatureQualifierCode&gt; equals &apos;STORAGE_HANDLING&apos;, then &lt;maximumTemperature&gt; SHALL be used for any context other than &apos;DP007&apos; or &apos;DP008&apos;..
         /// </summary>
         internal static string _1652 {
             get {
@@ -1897,7 +1915,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If temperatureQualifierCode equals &apos;STORAGE_HANDLING&apos;, then minimumTemperature SHALL be used  for any context other than &apos;DP007&apos; or &apos;DP008&apos;..
+        ///   Looks up a localized string similar to If &lt;temperatureQualifierCode&gt; equals &apos;STORAGE_HANDLING&apos;, then &lt;minimumTemperature&gt; SHALL be used for any context other than &apos;DP007&apos; or &apos;DP008&apos;..
         /// </summary>
         internal static string _1653 {
             get {
@@ -1906,7 +1924,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Daily Nutrient Value Percentage (dailyValueIntakePercent) is used for any of the 7 main nutrients listed in Article 30 (1) of EU Regulation 1169/2011 (energy (ENER-), fat (FAT), saturates (FASAT), carbohydrate (CHOAVL), sugars (SUGAR-), protein (PRO-), salt (SALTEQ)), then Daily Intake Reference (dailyValueIntakeReference) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Daily Nutrient Value Percentage &lt;dailyValueIntakePercent&gt; is used for any of the 7 main nutrients listed in Article 30 (1) of EU Regulation 1169/2011 (energy (ENER-), fat (FAT), saturates (FASAT), carbohydrate (CHOAVL), sugars (SUGAR-), protein (PRO-), salt (SALTEQ)), then Daily Intake Reference &lt;dailyValueIntakeReference&gt; must be used..
         /// </summary>
         internal static string _1654 {
             get {
@@ -1969,7 +1987,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals = &apos;true&apos; and Global Product Category Code (gpcCategoryCode) = &apos;10000159&apos; (Beer), then Degree Of Original Wort (degreeOfOriginalWort) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals = &apos;TRUE&apos; and Global Product Category Code &lt;gpcCategoryCode&gt; = &apos;10000159&apos; (Beer), then Degree Of Original Wort &lt;degreeOfOriginalWort&gt; shall be used..
         /// </summary>
         internal static string _1662 {
             get {
@@ -1978,7 +1996,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If numberOfServingsPerPackage is used, it SHALL be greater than zero..
+        ///   Looks up a localized string similar to If &lt;numberOfServingsPerPackage&gt; is used, it SHALL be greater than zero..
         /// </summary>
         internal static string _1663 {
             get {
@@ -1987,7 +2005,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Nutrient Quantity (quantityContained) of sugars (&apos;SUGAR-&apos;) must be less than or equal to the Nutrient Quantity (quantityContained) of carbohydrates (&apos;CHOAVL&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Nutrient Quantity &lt;quantityContained&gt; of sugars (&apos;SUGAR-&apos;) must be less than or equal to the Nutrient Quantity &lt;quantityContained&gt; of carbohydrates (&apos;CHOAVL&apos;)..
         /// </summary>
         internal static string _1665 {
             get {
@@ -1996,7 +2014,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to componentIdentification shall be a valid GTIN-14 if the identificationSchemeAgencyCode equals &apos;GTIN_14&apos;. .
+        ///   Looks up a localized string similar to &lt;componentIdentification&gt; shall be a valid GTIN-14 if the &lt;identificationSchemeAgencyCode&gt; equals &apos;GTIN_14&apos;. .
         /// </summary>
         internal static string _1669 {
             get {
@@ -2005,7 +2023,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to directPartMarkingIdentifier shall be a valid GTIN-14 if the identificationSchemeAgencyCode equals &apos;GTIN_14&apos; .
+        ///   Looks up a localized string similar to &lt;directPartMarkingIdentifier&gt; shall be a valid GTIN-14 if the &lt;identificationSchemeAgencyCode&gt; equals &apos;GTIN_14&apos;..
         /// </summary>
         internal static string _1670 {
             get {
@@ -2014,7 +2032,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to componentIdentification shall be a valid GTIN-13 if the identificationSchemeAgencyCode equals &apos;GTIN_13&apos;. .
+        ///   Looks up a localized string similar to &lt;componentIdentification&gt; shall be a valid GTIN-13 if the &lt;identificationSchemeAgencyCode&gt; equals &apos;GTIN_13&apos;. .
         /// </summary>
         internal static string _1671 {
             get {
@@ -2023,7 +2041,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to directPartMarkingIdentifier shall be a valid GTIN-13 if the identificationSchemeAgencyCode equals &apos;GTIN_13&apos; .
+        ///   Looks up a localized string similar to &lt;directPartMarkingIdentifier&gt; shall be a valid GTIN-13 if the &lt;identificationSchemeAgencyCode&gt; equals &apos;GTIN_13&apos;..
         /// </summary>
         internal static string _1672 {
             get {
@@ -2032,7 +2050,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to componentIdentification shall be a valid GTIN-12 if the identificationSchemeAgencyCode equals &apos;GTIN_12&apos;. .
+        ///   Looks up a localized string similar to &lt;componentIdentification&gt; shall be a valid GTIN-12 if the &lt;identificationSchemeAgencyCode&gt; equals &apos;GTIN_12&apos;. .
         /// </summary>
         internal static string _1673 {
             get {
@@ -2041,7 +2059,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to directPartMarkingIdentifier shall be a valid GTIN-12 if the identificationSchemeAgencyCode equals &apos;GTIN_12&apos; .
+        ///   Looks up a localized string similar to &lt;directPartMarkingIdentifier&gt; shall be a valid GTIN-12 if the &lt;identificationSchemeAgencyCode&gt; equals &apos;GTIN_12&apos;..
         /// </summary>
         internal static string _1674 {
             get {
@@ -2050,7 +2068,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to componentIdentification shall be a valid GTIN-8 if the identificationSchemeAgencyCode equals &apos;GTIN_8&apos;. .
+        ///   Looks up a localized string similar to &lt;componentIdentification&gt; shall be a valid GTIN-8 if the &lt;identificationSchemeAgencyCode&gt; equals &apos;GTIN_8&apos;. .
         /// </summary>
         internal static string _1675 {
             get {
@@ -2059,7 +2077,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to directPartMarkingIdentifier shall be a valid GTIN-8 if the identificationSchemeAgencyCode equals &apos;GTIN_8&apos; .
+        ///   Looks up a localized string similar to &lt;directPartMarkingIdentifier&gt; shall be a valid GTIN-8 if the &lt;identificationSchemeAgencyCode&gt; equals &apos;GTIN_8&apos;..
         /// </summary>
         internal static string _1676 {
             get {
@@ -2068,7 +2086,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X_SER&apos; shall only be used as @measurementUnitCode for attribute childNutritionQualifiedValue.
+        ///   Looks up a localized string similar to X_SER&apos; shall only be used as @&lt;measurementUnitCode&gt; for attribute &lt;childNutritionQualifiedValue&gt;.
         /// </summary>
         internal static string _1678 {
             get {
@@ -2122,7 +2140,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both priceComparisonContentTypeCode and priceComparisonMeasurement shall be used for &lt;targetMarketCountryCode Code Name&gt;.
+        ///   Looks up a localized string similar to Both &lt;priceComparisonContentTypeCode&gt; and &lt;priceComparisonMeasurement&gt; shall be used for &lt;&lt;targetMarketCountryCode&gt; Code Name&gt;.
         /// </summary>
         internal static string _1691 {
             get {
@@ -2140,7 +2158,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Customs Classification Type Code (importClassificationTypeCode) equals &apos;INTRASTAT&apos;, then Customs Classification Value (importClassificationValue) must have exactly 8 digits..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Customs Classification Type Code &lt;importClassificationTypeCode&gt; equals &apos;INTRASTAT&apos;, then Customs Classification Value &lt;importClassificationValue&gt; must have exactly 8 digits..
         /// </summary>
         internal static string _1693 {
             get {
@@ -2149,7 +2167,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If attribute XY (any attribute of class microbiologicalInformation) is provided, therefore microbiologicalOrganismCode SHALL be populated.
+        ///   Looks up a localized string similar to If attribute XY (any attribute of class &lt;microbiologicalInformation&gt;) is provided, therefore &lt;microbiologicalOrganismCode&gt; SHALL be populated..
         /// </summary>
         internal static string _1694 {
             get {
@@ -2158,7 +2176,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &quot;NON_EU&apos; and &apos;D_A&apos; country codes are not usable if the target market is &apos;France&apos;..
+        ///   Looks up a localized string similar to The &apos;NON_EU&apos; and &apos;D_A&apos; country codes are not usable if the target market is &apos;France&apos;..
         /// </summary>
         internal static string _1695 {
             get {
@@ -2194,7 +2212,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nutritionalProgramIngredientTypecode is not used..
+        ///   Looks up a localized string similar to &lt;nutritionalProgramIngredientTypecode&gt; is not used..
         /// </summary>
         internal static string _1699 {
             get {
@@ -2203,7 +2221,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If catchAreaCode is used and PlaceOfItemActivityModule/../productActivityTypeCode equals &apos;CATCH_ZONE&apos;, then catchAreaCode shall equal PlaceOfItemActivityModule/../productActivityRegionZoneCodeReference/enumerationValueInformation/enumerationValue for the following countries: &apos;008&apos; (Albania), &apos;051&apos; (Armenia), &apos;031&apos; (Azerbaijan), &apos;040&apos; (Austria), &apos;112&apos; (Belarus), &apos;056&apos; (Belgium), &apos;070&apos; (Bosnia-Herzegovina), &apos;100&apos; (Bulgaria), &apos;191&apos; (Croatia), &apos;196&apos; (Cyprus), &apos;203&apos; (Czech Republic), &apos;208&apos; (Denmark), &apos;233&apos; (Esto [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to If &lt;catchAreaCode&gt; is used and PlaceOfItemActivityModule/../&lt;productActivityTypeCode&gt; equals &apos;CATCH_ZONE&apos;, then &lt;catchAreaCode&gt; shall equal PlaceOfItemActivityModule/../&lt;enumerationValue&gt; for the following countries: &apos;008&apos; (Albania), &apos;051&apos; (Armenia), &apos;031&apos; (Azerbaijan), &apos;040&apos; (Austria), &apos;112&apos; (Belarus), &apos;056&apos; (Belgium), &apos;070&apos; (Bosnia-Herzegovina), &apos;100&apos; (Bulgaria), &apos;191&apos; (Croatia), &apos;196&apos; (Cyprus), &apos;203&apos; (Czech Republic), &apos;208&apos; (Denmark), &apos;233&apos; (Estonia), &apos;246&apos; (Finland), &apos;250&apos; (France), &apos;276&apos; (Germany), &apos;26 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string _1702 {
             get {
@@ -2212,7 +2230,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In Sweden for items both maximumTemperature &amp; minimumTemperature are required..
+        ///   Looks up a localized string similar to In Sweden for items both &lt;maximumTemperature&gt; &amp; &lt;minimumTemperature&gt; are required..
         /// </summary>
         internal static string _1703 {
             get {
@@ -2221,7 +2239,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For biocide regulation, at least one regulationLevelCodeReference shall be provided for the product with the biocide type..
+        ///   Looks up a localized string similar to For biocide regulation, at least one &lt;regulationLevelCodeReference&gt; shall be provided for the product with the biocide type..
         /// </summary>
         internal static string _1704 {
             get {
@@ -2230,7 +2248,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The dietTypeSubcodeCode is not valid for a Pescatarian diet..
+        ///   Looks up a localized string similar to The &lt;dietTypeSubcodeCode&gt; is not valid for a Pescatarian diet..
         /// </summary>
         internal static string _1705 {
             get {
@@ -2239,7 +2257,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The dietTypeSubcodeCode is not valid for a Vegetarian diet..
+        ///   Looks up a localized string similar to The &lt;dietTypeSubcodeCode&gt; is not valid for a Vegetarian diet..
         /// </summary>
         internal static string _1706 {
             get {
@@ -2248,7 +2266,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, the dietTypeSubCode &lt;dietTypeSubCode&gt; is not valid for a Vegetarian diet..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, the &lt;dietTypeSubCode&gt; &lt;&lt;dietTypeSubCode&gt;&gt; is not valid for a Vegetarian diet..
         /// </summary>
         internal static string _1707 {
             get {
@@ -2257,7 +2275,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The dietTypeSubcodeCode is not valid for a Kosher diet..
+        ///   Looks up a localized string similar to The &lt;dietTypeSubcodeCode&gt; is not valid for a Kosher diet..
         /// </summary>
         internal static string _1708 {
             get {
@@ -2266,7 +2284,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If populated, packagingRawMaterialContentPercentage must be greater than or equal to 0 and smaller than or equal to 100..
+        ///   Looks up a localized string similar to If populated, &lt;packagingRawMaterialContentPercentage&gt; must be greater than or equal to 0 and smaller than or equal to 100..
         /// </summary>
         internal static string _1713 {
             get {
@@ -2275,7 +2293,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If populated, packagingLabellingCoveragePercentage must be greater than or equal to 0 and smaller than or equal to 100..
+        ///   Looks up a localized string similar to If populated, &lt;packagingLabellingCoveragePercentage&gt; must be greater than or equal to 0 and smaller than or equal to 100..
         /// </summary>
         internal static string _1714 {
             get {
@@ -2284,7 +2302,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For the French target market, the value &quot;UNSPECIFIED&quot; is not accepted for {specifiy the attribute} using the NonBinaryLogicEnumeration data type..
+        ///   Looks up a localized string similar to For the French target market, the value &apos;UNSPECIFIED&apos; is not accepted for {specifiy the attribute} using the NonBinaryLogicEnumeration data type..
         /// </summary>
         internal static string _1715 {
             get {
@@ -2293,7 +2311,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Nutrient Detail sub-class is used, then Nutrient Code (nutrientTypeCode) must be unique within the same Nutrient Header class..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Nutrient Detail sub-class is used, then Nutrient Code &lt;nutrientTypeCode&gt; must be unique within the same Nutrient Header class..
         /// </summary>
         internal static string _1717 {
             get {
@@ -2302,7 +2320,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, the FAO catch zones 27 (Atlantic, Northeast) and 37 (Mediterranean and Black Sea) are not valid, please use the sub areas or divisions for these zones..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, the FAO catch zones 27 (Atlantic, Northeast) and 37 (Mediterranean and Black Sea) are not valid, please use the sub areas or divisions for these zones..
         /// </summary>
         internal static string _1718 {
             get {
@@ -2311,7 +2329,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, the FAO catch zones 27 (Atlantic, Northeast) and 37 (Mediterranean and Black Sea) are not valid, please use the sub areas or divisions for these zones..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, the FAO catch zones 27 (Atlantic, Northeast) and 37 (Mediterranean and Black Sea) are not valid, please use the sub areas or divisions for these zones..
         /// </summary>
         internal static string _1719 {
             get {
@@ -2320,7 +2338,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to One or more of the GTINs in each hierarchy must be marked as an INVOICE UNIT.
+        ///   Looks up a localized string similar to One or more of the GTINs in each hierarchy must be marked as an INVOICE UNIT..
         /// </summary>
         internal static string _1720 {
             get {
@@ -2329,7 +2347,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to isTradeItemAnInvoiceUnit must be populated for the trade item..
+        ///   Looks up a localized string similar to &lt;isTradeItemAnInvoiceUnit&gt; must be populated for the trade item..
         /// </summary>
         internal static string _1721 {
             get {
@@ -2338,7 +2356,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to additionalTradeItemClassificationCodeValue is incorrect. For additionalTradeItemClassificationSystemCode &apos;85&apos; shall be one of these values (‘EU_CLASS_I’, ‘EU_CLASS_IIA’, ‘EU_CLASS_IIB’, ‘EU_CLASS_III’, ‘IVDD_ANNEX_II_LIST_A’, ‘IVDD_ANNEX_II_LIST_B’, ‘IVDD_DEVICES_SELF_TESTING’, ‘IVDD_GENERAL’, &apos;AIMDD&apos;).
+        ///   Looks up a localized string similar to &lt;additionalTradeItemClassificationCodeValue&gt; is incorrect. For &lt;additionalTradeItemClassificationSystemCode&gt; &apos;85&apos; shall be one of these values (&apos;EU_CLASS_I&apos;, &apos;EU_CLASS_IIA&apos;, &apos;EU_CLASS_IIB&apos;, &apos;EU_CLASS_III&apos;, &apos;IVDD_ANNEX_II_LIST_A&apos;, &apos;IVDD_ANNEX_II_LIST_B&apos;, &apos;IVDD_DEVICES_SELF_TESTING&apos;, &apos;IVDD_GENERAL&apos;, &apos;AIMDD&apos;).
         /// </summary>
         internal static string _1722 {
             get {
@@ -2347,7 +2365,16 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if any of the following attributes is provided, then all three must be provided: Nutrient Code (nutrientTypeCode), Nutrient Quantity (quantityContained), Nutrient Value Precision Code (measurementPrecisionCode)..
+        ///   Looks up a localized string similar to There shall be at most one value of &lt;languageSpecificPartyName&gt; for each language..
+        /// </summary>
+        internal static string _1723 {
+            get {
+                return ResourceManager.GetString("1723", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if any of the following attributes is provided, then all three must be provided: Nutrient Code &lt;nutrientTypeCode&gt;, Nutrient Quantity &lt;quantityContained&gt;, Nutrient Value Precision Code &lt;measurementPrecisionCode&gt;..
         /// </summary>
         internal static string _1739 {
             get {
@@ -2356,7 +2383,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; and Irregularly Configured Pallet Indicator (isTradeItemPackedIrregularly) equals &apos;FALSE&apos; or is not used, then Number of Layers per GTIN (quantityOfCompleteLayersContainedInATradeItem) must be used and greater than zero..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; equals &apos;FALSE&apos; or is not used, then Number of Layers per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; must be used and greater than zero..
         /// </summary>
         internal static string _1740 {
             get {
@@ -2365,7 +2392,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if batteries are required for the trade item (areBatteriesRequired = &apos;true’), then areBatteriesIncluded must be provided..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if batteries are required for the trade item (&lt;areBatteriesRequired&gt; = &apos;TRUE&apos;), then &lt;areBatteriesIncluded&gt; must be provided..
         /// </summary>
         internal static string _1741 {
             get {
@@ -2374,7 +2401,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if any of the attributes from class Packaging is provided, then attribute packagingTypeCode must be provided (in each iteration of the class)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if any of the attributes from class Packaging is provided, then attribute &lt;packagingTypeCode&gt; must be provided (in each iteration of the class)..
         /// </summary>
         internal static string _1742 {
             get {
@@ -2383,7 +2410,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if any of the following attributes is provided, then platformTypeCode must be provided: quantityOfTradeItemsPerPallet, quantityOfLayersPerPallet or quantityOfTradeItemsPerPalletLayer..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if any of the following attributes is provided, then &lt;platformTypeCode&gt; must be provided: &lt;quantityOfTradeItemsPerPallet&gt;, &lt;quantityOfLayersPerPallet&gt; or &lt;quantityOfTradeItemsPerPalletLayer&gt;..
         /// </summary>
         internal static string _1743 {
             get {
@@ -2392,7 +2419,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Global Product Category Code (gpcCategoryCode) equals &lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;, Regulated Product Name (regulatedProductName) must be provided for all consumer units (isTradeItemAConsumerUnit equals to &apos;true&apos;). If the product has a legal exception and does not have a Regulated Product Name, please provide a copy of Product Type Description (functionalName) as the Regulated Product Name..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Global Product Category Code &lt;gpcCategoryCode&gt; equals &lt;&lt;gpcCategoryCode&gt;&gt; &lt;&lt;gpcCategoryName&gt;&gt;, Regulated Product Name &lt;regulatedProductName&gt; must be provided for all consumer units (&lt;isTradeItemAConsumerUnit&gt; equals to &apos;TRUE&apos;). If the product has a legal exception and does not have a Regulated Product Name, please provide a copy of Product Type Description &lt;functionalName&gt; as the Regulated Product Name..
         /// </summary>
         internal static string _1744 {
             get {
@@ -2401,7 +2428,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Stacking Factor Type Code (stackingFactorTypeCode) and Stacking Factor (stackingFactor) must be used together in the same iteration..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Stacking Factor Type Code &lt;stackingFactorTypeCode&gt; and Stacking Factor &lt;stackingFactor&gt; must be used together in the same iteration..
         /// </summary>
         internal static string _1745 {
             get {
@@ -2410,7 +2437,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zero Suppressed GTINs provided as a GS1 Trade Key shall begin with a &quot;0&quot;..
+        ///   Looks up a localized string similar to Zero Suppressed GTINs provided as a GS1 Trade Key shall begin with a &apos;0&apos;..
         /// </summary>
         internal static string _1748 {
             get {
@@ -2428,7 +2455,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Multiple values for bitternessOfBeerMeasurement for each measurement are not allowed..
+        ///   Looks up a localized string similar to Multiple values for &lt;bitternessOfBeerMeasurement&gt; for each measurement are not allowed..
         /// </summary>
         internal static string _1752 {
             get {
@@ -2437,7 +2464,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Nutritional Preparation Code (preparationStateCode) must equal &apos;PREPARED&apos; or &apos;UNPREPARED&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Nutritional Preparation Code &lt;preparationStateCode&gt; must equal &apos;PREPARED&apos; or &apos;UNPREPARED&apos;..
         /// </summary>
         internal static string _1753 {
             get {
@@ -2446,7 +2473,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; Nutrient Value Precision Code (measurementPrecisionCode) shall be &apos;APPROXIMATELY&apos; or &apos;LESS_THAN&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; Nutrient Value Precision Code &lt;measurementPrecisionCode&gt; shall be &apos;APPROXIMATELY&apos; or &apos;LESS_THAN&apos;..
         /// </summary>
         internal static string _1754 {
             get {
@@ -2581,7 +2608,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If nutrient type code is filled out with &apos;POLYL&apos;, then there shall be another nutrient type code with value &apos;CHOAVL’ within the same group, for the target market..
+        ///   Looks up a localized string similar to If nutrient type code is filled out with &apos;POLYL&apos;, then there shall be another nutrient type code with value &apos;CHOAVL&apos; within the same group, for the target market..
         /// </summary>
         internal static string _1769 {
             get {
@@ -2590,7 +2617,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If nutrient type code is filled out with &apos;SUGAR-’, then there shall be another nutrient type code with value &apos;CHOAVL&apos; for the legally required nutritional table within the same group, for the target market..
+        ///   Looks up a localized string similar to If nutrient type code is filled out with &apos;SUGAR-&apos;, then there shall be another nutrient type code with value &apos;CHOAVL&apos; for the legally required nutritional table within the same group, for the target market..
         /// </summary>
         internal static string _1770 {
             get {
@@ -2599,7 +2626,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The amount of nutrient type code &apos;NA&apos; multiplied by 2.5 may not deviate more than 10% from the amount of nutrient type code SALTEQ with identical unit of measure in case of consumer units and a measurementPrecisionCode not equal to &apos;LESS_THAN&apos; for target market Netherlands..
+        ///   Looks up a localized string similar to The amount of nutrient type code &apos;NA&apos; multiplied by 2.5 may not deviate more than 10% from the amount of nutrient type code SALTEQ with identical unit of measure in case of consumer units and a &lt;measurementPrecisionCode&gt; not equal to &apos;LESS_THAN&apos; for target market Netherlands..
         /// </summary>
         internal static string _1771 {
             get {
@@ -2608,7 +2635,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Global Product Category Code (gpcCategoryCode) is in GPC Segment &apos;92000000&apos; (Storage/Haulage Containers), then Packaging Marked Returnable Indicator (isPackagingMarkedReturnable) must not be &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Global Product Category Code &lt;gpcCategoryCode&gt; is in GPC Segment &apos;92000000&apos; (&lt;Haulage&gt; Containers), then Packaging Marked Returnable Indicator &lt;isPackagingMarkedReturnable&gt; must not be &apos;TRUE&apos;..
         /// </summary>
         internal static string _1772 {
             get {
@@ -2653,7 +2680,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &lt;nutrientTypeCode&gt; nutrient type code used is not allowed in the target market..
+        ///   Looks up a localized string similar to The &lt;&lt;nutrientTypeCode&gt;&gt; nutrient type code used is not allowed in the target market..
         /// </summary>
         internal static string _1778 {
             get {
@@ -2725,7 +2752,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For a Nutrient Header class, the Nutrient &lt;nutrientTypeCode&gt; and Measurement Precision Code &lt;measurementPrecisionCode&gt; must be unique. .
+        ///   Looks up a localized string similar to For a Nutrient Header class, the Nutrient &lt;&lt;nutrientTypeCode&gt;&gt; and Measurement Precision Code &lt;&lt;measurementPrecisionCode&gt;&gt; must be unique. .
         /// </summary>
         internal static string _1787 {
             get {
@@ -2734,7 +2761,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only one tradeItem/gtin within a hierarchy can have isTradeItemUDIDILevel set to &apos;true&apos;..
+        ///   Looks up a localized string similar to Only one &lt;gtin&gt; within a hierarchy can have &lt;isTradeItemUDIDILevel&gt; set to &apos;TRUE&apos;..
         /// </summary>
         internal static string _1789 {
             get {
@@ -2743,7 +2770,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only one tradeItem/gtin within a hierarchy can have isTradeItemUnitOfUse set to ‘true’..
+        ///   Looks up a localized string similar to Only one &lt;gtin&gt; within a hierarchy can have &lt;isTradeItemUnitOfUse&gt; set to &apos;TRUE&apos;..
         /// </summary>
         internal static string _1790 {
             get {
@@ -2752,7 +2779,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If all of following three attributes are provided, then gross weight of a Non-GTIN Logistic Unit (NonGTINLogisticsUnitInformation/grossWeight) must be greater than 96 % of Trade Item’s Gross Weight (tradeItemMeasurements/tradeItemWeight/grossWeight) multiplied by the Quantity Of Trade Items Per Pallet (quantityOfTradeItemsPerPallet). .
+        ///   Looks up a localized string similar to If all of following three attributes are provided, then gross weight of a Non-GTIN Logistic Unit &lt;grossWeight&gt; must be greater than 96 % of Trade Item&apos;s Gross Weight &lt;grossWeight&gt; multiplied by the Quantity Of Trade Items Per Pallet &lt;quantityOfTradeItemsPerPallet&gt;. .
         /// </summary>
         internal static string _1792 {
             get {
@@ -2761,7 +2788,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The attribute additionalTradeItemClassificationSystemCode with value ‘76’ EU Regulation (MDR/IVDR) Risk class is not repeatable..
+        ///   Looks up a localized string similar to The attribute &lt;additionalTradeItemClassificationSystemCode&gt; with value &apos;76&apos; EU Regulation &lt;IVDR&gt; Risk class is not repeatable..
         /// </summary>
         internal static string _1793 {
             get {
@@ -2770,7 +2797,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The attribute additionalTradeItemClassificationSystemCode with value ‘85’ EU Directive (MDD/AIMDD/IVDD) Risk class is not repeatable..
+        ///   Looks up a localized string similar to The attribute &lt;additionalTradeItemClassificationSystemCode&gt; with value &apos;85&apos; EU Directive &lt;IVDD&gt; Risk class is not repeatable..
         /// </summary>
         internal static string _1794 {
             get {
@@ -2779,7 +2806,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nutritionalScore shall not be used, if nutritionalProgramCode equals &apos;8&apos; (Nutri-Score) and nutritionalProgramStatusCode equals &apos;NOT_REGISTERED’..
+        ///   Looks up a localized string similar to &lt;nutritionalScore&gt; shall not be used, if &lt;nutritionalProgramCode&gt; equals &apos;8&apos; (Nutri-Score) and &lt;nutritionalProgramStatusCode&gt; equals &apos;NOT_REGISTERED&apos;..
         /// </summary>
         internal static string _1799 {
             get {
@@ -2788,7 +2815,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid measurement unit for alcoholicBeverageSugarContent: &lt;alcoholicBeverageSugarContent/@measurementUnitCode&gt;. For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, alcoholicBeverageSugarContent must have &apos;GL&apos; (gram per litre) as the measurement unit..
+        ///   Looks up a localized string similar to Invalid measurement unit for &lt;alcoholicBeverageSugarContent&gt;: &lt;&lt;alcoholicBeverageSugarContent&gt;/@&lt;measurementUnitCode&gt;&gt;. For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, &lt;alcoholicBeverageSugarContent&gt; must have &apos;GL&apos; (gram per litre) as the measurement unit..
         /// </summary>
         internal static string _1800 {
             get {
@@ -2797,7 +2824,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;&apos;targetMarketCountryCode Country name&gt;, one iteration of Feeding Instructions (feedingInstructions)  must be supplied in Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&apos;&lt;targetMarketCountryCode&gt; Country name&gt;, one iteration of Feeding Instructions &lt;feedingInstructions&gt; must be supplied in Swedish..
         /// </summary>
         internal static string _1801 {
             get {
@@ -2806,7 +2833,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;&apos;targetMarketCountryCode Country name&gt;, invalid use of aDRDangerousGoodsLimitedQuantitiesCode. aDRDangerousGoodsLimitedQuantitiesCode has been deprecated. Use Dangerous Goods Limited Quantities Code (dangerousGoodsLimitedQuantitiesCode) instead..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&apos;&lt;targetMarketCountryCode&gt; Country name&gt;, invalid use of &lt;aDRDangerousGoodsLimitedQuantitiesCode&gt;. &lt;aDRDangerousGoodsLimitedQuantitiesCode&gt; has been deprecated. Use Dangerous Goods Limited Quantities Code &lt;dangerousGoodsLimitedQuantitiesCode&gt; instead..
         /// </summary>
         internal static string _1802 {
             get {
@@ -2815,7 +2842,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to One or both of targetConsumerMinimumUsage or targetConsumerMaximumUsage is missing. You must supply one or both of these attributes if you use targetConsumerUsageTypeCode..
+        ///   Looks up a localized string similar to One or both of &lt;targetConsumerMinimumUsage&gt; or &lt;targetConsumerMaximumUsage&gt; is missing. You must supply one or both of these attributes if you use &lt;targetConsumerUsageTypeCode&gt;..
         /// </summary>
         internal static string _1803 {
             get {
@@ -2824,7 +2851,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing Consumer Sales Condition Code (consumerSalesConditionCode). For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, the Consumer Sales Condition Code is required for tobacco products..
+        ///   Looks up a localized string similar to Missing Consumer Sales Condition Code &lt;consumerSalesConditionCode&gt;. For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, the Consumer Sales Condition Code is required for tobacco products..
         /// </summary>
         internal static string _1804 {
             get {
@@ -2833,7 +2860,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tradeItemMarketingMessage is missing. For Country of Sale Code (targetMarketCountryCode) &lt;&apos;targetMarketCountryCode Country name&gt;, it is not permitted to use shortTradeItemMarketingMessage without also using tradeItemMarketingMessage..
+        ///   Looks up a localized string similar to &lt;tradeItemMarketingMessage&gt; is missing. For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&apos;&lt;targetMarketCountryCode&gt; Country name&gt;, it is not permitted to use &lt;shortTradeItemMarketingMessage&gt; without also using &lt;tradeItemMarketingMessage&gt;..
         /// </summary>
         internal static string _1806 {
             get {
@@ -2842,7 +2869,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, it is not permitted to add or remove values in Allergen Type Code (allergenTypeCode) using a &apos;CHANGE_BY_REFRESH&apos; Document Command. Changes to allergens require a new GTIN..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, it is not permitted to add or remove values in Allergen Type Code &lt;allergenTypeCode&gt; using a &apos;CHANGE_BY_REFRESH&apos; Document Command. Changes to allergens require a new GTIN..
         /// </summary>
         internal static string _1807 {
             get {
@@ -2851,7 +2878,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to packagingRawMaterialCode is missing. When packagingRawMaterialContentPercentage is used, packagingRawMaterialCode must also be used..
+        ///   Looks up a localized string similar to &lt;packagingRawMaterialCode&gt; is missing. When &lt;packagingRawMaterialContentPercentage&gt; is used, &lt;packagingRawMaterialCode&gt; must also be used..
         /// </summary>
         internal static string _1808 {
             get {
@@ -2860,7 +2887,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;&apos;targetMarketCountryCode Country name&gt;, sizeTypeCode or sizeDimension is missing. When one is used, the other must be used. .
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&apos;&lt;targetMarketCountryCode&gt; Country name&gt;, &lt;sizeTypeCode&gt; or &lt;sizeDimension&gt; is missing. When one is used, the other must be used. .
         /// </summary>
         internal static string _1809 {
             get {
@@ -2869,7 +2896,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid meaurement unit for colourTemperature: &lt;colourTemperature/@measurementUnitCode&gt;. colourTemperature must have &apos;KEL&apos; (Kelvin) as the measurement unit..
+        ///   Looks up a localized string similar to Invalid meaurement unit for &lt;colourTemperature&gt;: &lt;&lt;colourTemperature&gt;/@&lt;measurementUnitCode&gt;&gt;. &lt;colourTemperature&gt; must have &apos;KEL&apos; (Kelvin) as the measurement unit..
         /// </summary>
         internal static string _1810 {
             get {
@@ -2878,7 +2905,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid Meaurement unit for lightOutput: &lt;lightOutput/@measurementUnitCode&gt;. For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, lightOutput must have &apos;B60&apos; (Lumens per square metre) or &apos;LUX&apos; (Lux) as the measurement unit..
+        ///   Looks up a localized string similar to Invalid Meaurement unit for &lt;lightOutput&gt;: &lt;&lt;lightOutput&gt;/@&lt;measurementUnitCode&gt;&gt;. For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, &lt;lightOutput&gt; must have &apos;B60&apos; (Lumens per square metre) or &apos;LUX&apos; (Lux) as the measurement unit..
         /// </summary>
         internal static string _1811 {
             get {
@@ -2887,7 +2914,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nutrient Basis (nutrientBasisQuantity) and Nutrient Basis Type Code (nutrientBasisQuantityTypeCode) is missing. For Country of Sale Code (targetMarketCountryCode) &lt;&apos;targetMarketCountryCode Country name&gt;, if Nutrient Code (nutrientTypeCode) is used then both Nutrient Basis (nutrientBasisQuantity) and Nutrient Basis Type Code (nutrientBasisQuantityTypeCode) must also be used..
+        ///   Looks up a localized string similar to Nutrient Basis &lt;nutrientBasisQuantity&gt; and Nutrient Basis Type Code &lt;nutrientBasisQuantityTypeCode&gt; is missing. For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&apos;&lt;targetMarketCountryCode&gt; Country name&gt;, if Nutrient Code &lt;nutrientTypeCode&gt; is used then both Nutrient Basis &lt;nutrientBasisQuantity&gt; and Nutrient Basis Type Code &lt;nutrientBasisQuantityTypeCode&gt; must also be used..
         /// </summary>
         internal static string _1812 {
             get {
@@ -2896,7 +2923,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;&apos;targetMarketCountryCode Country name&gt;, one iteration of Feed Composition Statement (feedCompositionStatement) must be supplied in Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&apos;&lt;targetMarketCountryCode&gt; Country name&gt;, one iteration of Feed Composition Statement &lt;feedCompositionStatement&gt; must be supplied in Swedish..
         /// </summary>
         internal static string _1813 {
             get {
@@ -2905,7 +2932,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;&apos;targetMarketCountryCode Country name&gt;, one iteration of Feed Analytical Constituents Statement (feedAnalyticalConstituentsStatement) must be supplied in Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&apos;&lt;targetMarketCountryCode&gt; Country name&gt;, one iteration of Feed Analytical Constituents Statement &lt;feedAnalyticalConstituentsStatement&gt; must be supplied in Swedish..
         /// </summary>
         internal static string _1814 {
             get {
@@ -2914,7 +2941,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;&apos;targetMarketCountryCode Country name&gt;, one iteration of Feed Additive Statement (feedAdditiveStatement) must be supplied in Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&apos;&lt;targetMarketCountryCode&gt; Country name&gt;, one iteration of Feed Additive Statement &lt;feedAdditiveStatement&gt; must be supplied in Swedish..
         /// </summary>
         internal static string _1815 {
             get {
@@ -2923,7 +2950,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and the same Tax Type Code (dutyFeeTaxTypeCode) cannot be repeated without having a corresponding start date (dutyFeeTaxEffectiveStartDateTime ). .
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and the same Tax Type Code &lt;dutyFeeTaxTypeCode&gt; cannot be repeated without having a corresponding start date (&lt;dutyFeeTaxEffectiveStartDateTime&gt; ). .
         /// </summary>
         internal static string _1819 {
             get {
@@ -2932,7 +2959,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and the same Tax Type Code (dutyFeeTaxTypeCode) cannot be repeated without having a corresponding end date (dutyFeeTaxEffectiveEndDateTime)  except for the last instance..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and the same Tax Type Code &lt;dutyFeeTaxTypeCode&gt; cannot be repeated without having a corresponding end date &lt;dutyFeeTaxEffectiveEndDateTime&gt; except for the last instance..
         /// </summary>
         internal static string _1820 {
             get {
@@ -2941,7 +2968,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Customs Classification Type Code (importClassificationTypeCode) equals &apos;CUSTOMS_TARIFF_NUMBER&apos; then the corresponding Customs Classification Value (importClassificationValue) shall have a value 8 to 13 numeric characters long..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Customs Classification Type Code &lt;importClassificationTypeCode&gt; equals &apos;CUSTOMS_TARIFF_NUMBER&apos; then the corresponding Customs Classification Value &lt;importClassificationValue&gt; shall have a value 8 to 13 numeric characters long..
         /// </summary>
         internal static string _1821 {
             get {
@@ -2950,7 +2977,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Pallet Type Code (platformTypeCode) is used, it is mandatory to provide a valid Number of Layers per GTIN (quantityOfCompleteLayersContainedInATradeItem) for a pallet..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Pallet Type Code &lt;platformTypeCode&gt; is used, it is mandatory to provide a valid Number of Layers per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; for a pallet..
         /// </summary>
         internal static string _1823 {
             get {
@@ -2959,7 +2986,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, invalid use of dutyFeeTaxRate. Values cannot differ across the trade item hierarchy when used. .
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, invalid use of &lt;dutyFeeTaxRate&gt;. Values cannot differ across the trade item hierarchy when used. .
         /// </summary>
         internal static string _1830 {
             get {
@@ -2968,7 +2995,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If GTIN for Point of Sale (gs1TradeItemIdentificationKeyValue) or GTIN for Point of Sale Type Code (gs1TradeItemIdentificationKeyCode) is used, then both shall be used..
+        ///   Looks up a localized string similar to If GTIN for Point of Sale &lt;gs1TradeItemIdentificationKeyValue&gt; or GTIN for Point of Sale Type Code &lt;gs1TradeItemIdentificationKeyCode&gt; is used, then both shall be used..
         /// </summary>
         internal static string _1834 {
             get {
@@ -2977,7 +3004,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When Referenced GTIN Type Code (referencedTradeItemTypeCode) equals &apos;EQUIVALENT&apos;, then each iteration with Referenced GTIN (referencedTradeItem/gtin) SHALL be unique..
+        ///   Looks up a localized string similar to When Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; equals &apos;EQUIVALENT&apos;, then each iteration with Referenced GTIN &lt;gtin&gt; SHALL be unique..
         /// </summary>
         internal static string _1835 {
             get {
@@ -2986,7 +3013,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When Referenced GTIN Type Code (referencedTradeItemTypeCode) equals &apos;DEPENDENT_PROPRIETARY&apos;, then each iteration with Referenced GTIN (referencedTradeItem/gtin) SHALL be unique..
+        ///   Looks up a localized string similar to When Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; equals &apos;DEPENDENT_PROPRIETARY&apos;, then each iteration with Referenced GTIN &lt;gtin&gt; SHALL be unique..
         /// </summary>
         internal static string _1836 {
             get {
@@ -2995,7 +3022,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to At least one other attribute in Trade Item Temperature Information class SHALL be used when Temperature Activity Code (temperatureQualifierCode) is used..
+        ///   Looks up a localized string similar to At least one other attribute in Trade Item Temperature Information class SHALL be used when Temperature Activity Code &lt;temperatureQualifierCode&gt; is used..
         /// </summary>
         internal static string _1837 {
             get {
@@ -3004,7 +3031,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to At least one other attribute in Trade Item Humidity Information class SHALL be used when humidityQualifierCode is used..
+        ///   Looks up a localized string similar to At least one other attribute in Trade Item Humidity Information class SHALL be used when &lt;humidityQualifierCode&gt; is used..
         /// </summary>
         internal static string _1838 {
             get {
@@ -3013,7 +3040,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If Additional Legal Product Information Type Code (compulsoryAdditionalLabelInformationTypeCode) is used, then you SHALL use Additional Legal Product Information (compulsoryAdditionalLabelInformation)..
+        ///   Looks up a localized string similar to If Additional Legal Product Information Type Code &lt;compulsoryAdditionalLabelInformationTypeCode&gt; is used, then you SHALL use Additional Legal Product Information &lt;compulsoryAdditionalLabelInformation&gt;..
         /// </summary>
         internal static string _1839 {
             get {
@@ -3022,7 +3049,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catch Country Code (catchCountryCode) may only be used when Fish Production Method Code (productionMethodForFishAndSeafoodCode) does not equal &apos;MARINE_FISHERY&apos;..
+        ///   Looks up a localized string similar to Catch Country Code &lt;catchCountryCode&gt; may only be used when Fish Production Method Code &lt;productionMethodForFishAndSeafoodCode&gt; does not equal &apos;MARINE_FISHERY&apos;..
         /// </summary>
         internal static string _1840 {
             get {
@@ -3031,7 +3058,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catch Country Code (catchCountryCode) may only be used when Catch Area Code (catchAreaCode) &lt;catchAreaCode&gt; is one of the inland water codes (’01’, ‘02’, ’03’, ’04’, ’05’, ’06’, ’07, or ’08’)..
+        ///   Looks up a localized string similar to Catch Country Code &lt;catchCountryCode&gt; may only be used when Catch Area Code &lt;catchAreaCode&gt; &lt;&lt;catchAreaCode&gt;&gt; is one of the inland water codes (&apos;01&apos;, &apos;02&apos;, &apos;03&apos;, &apos;04&apos;, &apos;05&apos;, &apos;06&apos;, &apos;07, or &apos;08&apos;)..
         /// </summary>
         internal static string _1841 {
             get {
@@ -3040,7 +3067,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If Fish Production Method Code (productionMethodForFishAndSeafoodCode) equals &apos;INLAND_FISHERY&apos;, then Catch Area Code (catchAreaCode) &lt;catchAreaCode&gt; SHALL be one of the inland water codes (’01’, ‘02’, ’03’, ’04’, ’05’, ’06’, ’07, or ’08’)..
+        ///   Looks up a localized string similar to If Fish Production Method Code &lt;productionMethodForFishAndSeafoodCode&gt; equals &apos;INLAND_FISHERY&apos;, then Catch Area Code &lt;catchAreaCode&gt; &lt;&lt;catchAreaCode&gt;&gt; SHALL be one of the inland water codes (&apos;01&apos;, &apos;02&apos;, &apos;03&apos;, &apos;04&apos;, &apos;05&apos;, &apos;06&apos;, &apos;07, or &apos;08&apos;)..
         /// </summary>
         internal static string _1842 {
             get {
@@ -3049,7 +3076,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, priceComparisonMeasurement SHALL be specified with the following units of measures: kilogram, litre or piece..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, &lt;priceComparisonMeasurement&gt; SHALL be specified with the following units of measures: kilogram, litre or piece..
         /// </summary>
         internal static string _1847 {
             get {
@@ -3058,7 +3085,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, both seasonalAvailabilityEndDateTime and seasonalAvailabilityStartDateTime SHALL be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, both &lt;seasonalAvailabilityEndDateTime&gt; and &lt;seasonalAvailabilityStartDateTime&gt; SHALL be used..
         /// </summary>
         internal static string _1848 {
             get {
@@ -3067,7 +3094,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Price Comparison Quantity (priceComparisonMeasurement) is required for food product(s)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Price Comparison Quantity &lt;priceComparisonMeasurement&gt; is required for food product(s)..
         /// </summary>
         internal static string _1849 {
             get {
@@ -3076,7 +3103,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Trade Item Trade Channel Code (tradeItemTradeChannelCode) SHALL be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Trade Item Trade Channel Code &lt;tradeItemTradeChannelCode&gt; SHALL be used..
         /// </summary>
         internal static string _1850 {
             get {
@@ -3085,7 +3112,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Net Mass of Explosives SHALL be specified with the unit of measure of kilogram (KGM)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Net Mass of Explosives SHALL be specified with the unit of measure of kilogram (KGM)..
         /// </summary>
         internal static string _1851 {
             get {
@@ -3094,7 +3121,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For initialSterilisationPriorToUseCode &lt;initialSterilisationPriorToUseCode&gt; and/or manufacturerSpecifiedAcceptableResterilisationCode &lt;manufacturerSpecifiedAcceptableResterilisationCode&gt; shall not equal NOT_STERILISED and is invalidly used..
+        ///   Looks up a localized string similar to For &lt;initialSterilisationPriorToUseCode&gt; &lt;&lt;initialSterilisationPriorToUseCode&gt;&gt; and/or &lt;manufacturerSpecifiedAcceptableResterilisationCode&gt; &lt;&lt;manufacturerSpecifiedAcceptableResterilisationCode&gt;&gt; shall not equal NOT_STERILISED and is invalidly used..
         /// </summary>
         internal static string _1852 {
             get {
@@ -3103,7 +3130,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to additionalConfirmationStatusLongDescription is missing and must be provided containing a descriptive error/warning message when confirmationStatusCode equals &apos;CIC999&apos; (&apos;Free Form Text to be populated by the Data Recipient&apos;)..
+        ///   Looks up a localized string similar to &lt;additionalConfirmationStatusLongDescription&gt; is missing and must be provided containing a descriptive error/warning message when &lt;confirmationStatusCode&gt; equals &apos;CIC999&apos; (&apos;Free Form Text to be populated by the Data Recipient&apos;)..
         /// </summary>
         internal static string _1854 {
             get {
@@ -3112,7 +3139,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consumer Unit Indicator (isTradeItemAConsumerUnit) must not be empty..
+        ///   Looks up a localized string similar to Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; must not be empty..
         /// </summary>
         internal static string _1855 {
             get {
@@ -3121,7 +3148,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, then GTIN (Global Trade Item Number) of the Contained Product &lt;ChildItem..gtin&gt; End Availability Date/Time (endAvailabiltyDateTime) &lt;ChildItem..endAvailabiltyDateTime&gt; SHALL be equal or after the GTIN (Global Trade Item Number) &lt;gtin&gt; End Availability Date/Time (endAvailabiltyDateTime) &lt;endAvailabiltyDateTime&gt;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, then GTIN (Global Trade Item Number) of the Contained Product &lt;ChildItem..gtin&gt; End Availability &lt;Time&gt; &lt;endAvailabiltyDateTime&gt; &lt;ChildItem..&lt;endAvailabiltyDateTime&gt;&gt; SHALL be equal or after the GTIN (Global Trade Item Number) &lt;gtin&gt; End Availability &lt;Time&gt; &lt;endAvailabiltyDateTime&gt; &lt;&lt;endAvailabiltyDateTime&gt;&gt;..
         /// </summary>
         internal static string _1856 {
             get {
@@ -3130,7 +3157,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Variable Unit Indicator (isTradeItemAVariableUnit) equals &apos;false&apos;, then Additional Product Identification Type Code (additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode) SHALL NOT equal &apos;PLU&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Variable Unit Indicator &lt;isTradeItemAVariableUnit&gt; equals &apos;FALSE&apos;, then Additional Product Identification Type Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) SHALL NOT equal &apos;PLU&apos;..
         /// </summary>
         internal static string _1857 {
             get {
@@ -3139,7 +3166,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Party Role Code (partyInRole/partyRoleCode) equals &lt;TradeItem/PartyInRole/partyRoleCode&gt;, then Party In Role GLN (Global Location Number) (TradeItem/PartyInRole/gln) and Party In Role name (TradeItem/PartyInRole/partyName) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Party Role Code &lt;partyRoleCode&gt; equals &lt;partyRoleCode&gt;&gt;, then Party In Role GLN (Global Location Number) &lt;gln&gt; and Party In Role name &lt;partyName&gt; shall be used..
         /// </summary>
         internal static string _1858 {
             get {
@@ -3148,7 +3175,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and GTIN (Global Trade Item Number) of the Contained Product &lt;ChildItem..gtin&gt; Promotional Unit Indicator (isTradeItemAPromotionalUnit) equals &apos;true&apos;, then GTIN (Global Trade Item Number) &lt;gtin&gt; Promotional Unit Indicator (isTradeItemAPromotionalUnit) shall equal &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and GTIN (Global Trade Item Number) of the Contained Product &lt;ChildItem..gtin&gt; Promotional Unit Indicator &lt;isTradeItemAPromotionalUnit&gt; equals &apos;TRUE&apos;, then GTIN (Global Trade Item Number) &lt;gtin&gt; Promotional Unit Indicator &lt;isTradeItemAPromotionalUnit&gt; shall equal &apos;TRUE&apos;..
         /// </summary>
         internal static string _1859 {
             get {
@@ -3157,7 +3184,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, then Tax Amount (dutyFeeTaxAmount) shall be greater than 0 (zero)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, then Tax Amount &lt;dutyFeeTaxAmount&gt; shall be greater than 0 (zero)..
         /// </summary>
         internal static string _1860 {
             get {
@@ -3166,7 +3193,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Despatch Unit Indicator (isTradeItemADespatchUnit) equals &apos;true&apos;, then Packaging Type Code (packagingTypeCode) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Despatch Unit Indicator &lt;isTradeItemADespatchUnit&gt; equals &apos;TRUE&apos;, then Packaging Type Code &lt;packagingTypeCode&gt; shall be used..
         /// </summary>
         internal static string _1861 {
             get {
@@ -3175,7 +3202,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If Referenced GTIN Type Code (referencedTradeItemTypeCode) equals &apos;SUBSTITUTED&apos;, then GTIN (Global Trade Item Number) (tradeItem/gtin) and Referenced GTIN (referencedTradeItem/gtin) shall be different..
+        ///   Looks up a localized string similar to If Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; equals &apos;SUBSTITUTED&apos;, then GTIN (Global Trade Item Number) &lt;gtin&gt; and Referenced GTIN &lt;gtin&gt; shall be different..
         /// </summary>
         internal static string _1862 {
             get {
@@ -3184,7 +3211,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos; and Promotional Unit Indicator (isTradeItemAPromotionalUnit) equals &apos;true&apos;, then Promotion Type Code (promotionTypeCode) and Non Promotional Trade Item GTIN (nonPromotionalTradeItem/gtin) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos; and Promotional Unit Indicator &lt;isTradeItemAPromotionalUnit&gt; equals &apos;TRUE&apos;, then Promotion Type Code &lt;promotionTypeCode&gt; and Non Promotional Trade Item GTIN &lt;gtin&gt; shall be used..
         /// </summary>
         internal static string _1863 {
             get {
@@ -3193,7 +3220,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Promotion Type Code (promotionTypeCode) is used, then Promotional Unit Indicator (isTradeItemAPromotionalUnit) shall equal &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Promotion Type Code &lt;promotionTypeCode&gt; is used, then Promotional Unit Indicator &lt;isTradeItemAPromotionalUnit&gt; shall equal &apos;TRUE&apos;..
         /// </summary>
         internal static string _1864 {
             get {
@@ -3211,7 +3238,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Preparation Instructions (preparationInstructions) is used, then Preparation Type Code (preparationTypeCode) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Preparation Instructions &lt;preparationInstructions&gt; is used, then Preparation Type Code &lt;preparationTypeCode&gt; must be used..
         /// </summary>
         internal static string _1866 {
             get {
@@ -3220,7 +3247,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, and Additional Product Identification Type Code (additionalTradeItemIdentificationTypeCode) equals &apos;SUPPLIER_ASSIGNED&apos;, then the maximum length of Additional Product Identification (additionnalTradeItemIdentification) shall be 35 characters..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, and Additional Product Identification Type Code &lt;additionalTradeItemIdentificationTypeCode&gt; equals &apos;SUPPLIER_ASSIGNED&apos;, then the maximum length of Additional Product Identification &lt;additionnalTradeItemIdentification&gt; shall be 35 characters..
         /// </summary>
         internal static string _1867 {
             get {
@@ -3229,7 +3256,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to packagingClaimTypeCode and packagingClaimElementCode, both should be used if one uses any of them..
+        ///   Looks up a localized string similar to &lt;packagingClaimTypeCode&gt; and &lt;packagingClaimElementCode&gt;, both should be used if one uses any of them..
         /// </summary>
         internal static string _1868 {
             get {
@@ -3238,7 +3265,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to cannabinoidMinimumRangeValue and cannabinoidMaximumRangeValue, both should be used if one uses any of them..
+        ///   Looks up a localized string similar to &lt;cannabinoidMinimumRangeValue&gt; and &lt;cannabinoidMaximumRangeValue&gt;, both should be used if one uses any of them..
         /// </summary>
         internal static string _1869 {
             get {
@@ -3247,7 +3274,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to minimumTerpeneContent and maximumTerpeneContent, both should be used if one uses any of them..
+        ///   Looks up a localized string similar to &lt;minimumTerpeneContent&gt; and &lt;maximumTerpeneContent&gt;, both should be used if one uses any of them..
         /// </summary>
         internal static string _1870 {
             get {
@@ -3256,7 +3283,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code &apos;1&apos; (100% Organic) is not allowed in Organic Level Code (organicTradeItemCode) for Country Of Sale Code &lt;targetMarketCountryCode Code name&gt;. Please use code &apos;2&apos; (Organic) instead..
+        ///   Looks up a localized string similar to Code &apos;1&apos; (100% Organic) is not allowed in Organic Level Code &lt;organicTradeItemCode&gt; for Country of Sale Code &lt;&lt;targetMarketCountryCode&gt; Code name&gt;. Please use code &apos;2&apos; (Organic) instead..
         /// </summary>
         internal static string _1874 {
             get {
@@ -3265,7 +3292,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PACK_OR_INNER_PACK&apos; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, then Total Count of All Products (totalQuantityOfNextLowerLevelTradeItem) shall be greater than 1..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PACK_OR_INNER_PACK&apos; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, then Total Count of All Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; shall be greater than 1..
         /// </summary>
         internal static string _1875 {
             get {
@@ -3274,7 +3301,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, and Tax Type Code (dutyFeeTaxTypeCode) equals &apos;3001000002312&apos; (Droits d&apos;accises sur les alcools/alcohol tax), then Alcohol Percentage (percentageOfAlcoholByVolume) shall be greater than 0 (zero)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, and Tax Type Code &lt;dutyFeeTaxTypeCode&gt; equals &apos;3001000002312&apos; (Droits d&apos;accises sur les alcools/alcohol tax), then Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; shall be greater than 0 (zero)..
         /// </summary>
         internal static string _1876 {
             get {
@@ -3283,7 +3310,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;DISPLAY_SHIPPER&apos; or &apos;MIXED_MODULE&apos; and Number of Different Products (quantityOfChildren) is greater than 1, then GTIN (Global Trade Item Number) (tradeItem/gtin) shall start with &apos;0&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;DISPLAY_SHIPPER&apos; or &apos;MIXED_MODULE&apos; and Number of Different Products &lt;quantityOfChildren&gt; is greater than 1, then GTIN (Global Trade Item Number) &lt;gtin&gt; shall start with &apos;0&apos;..
         /// </summary>
         internal static string _1877 {
             get {
@@ -3292,7 +3319,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Free Quantity Of Product (freeQuantityOfQuantity) is used, then Free Quantity Of Product Unit Of Measure (freeQuantityOfProduct@measurementUnitCode) shall be equal to one instance of Net Content Unit Of Measure (netContent@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Free Quantity Of Product &lt;freeQuantityOfQuantity&gt; is used, then Free Quantity Of Product Unit Of Measure (&lt;freeQuantityOfProduct&gt;@&lt;measurementUnitCode&gt;) shall be equal to one instance of Net Content Unit Of Measure (&lt;netContent&gt;@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _1878 {
             get {
@@ -3301,7 +3328,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Promotion Type Code (promotionTypeCode) equals &apos;MULTI_PACK_AND_COMBINATION_PACK&apos;, then Base Unit Indicator (isTradeItemABaseUnit) shall not equal &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Promotion Type Code &lt;promotionTypeCode&gt; equals &apos;MULTI_PACK_AND_COMBINATION_PACK&apos;, then Base Unit Indicator &lt;isTradeItemABaseUnit&gt; shall not equal &apos;TRUE&apos;..
         /// </summary>
         internal static string _1879 {
             get {
@@ -3310,7 +3337,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Free Quantity Of Next Lower Level Trade Item (freeQuantityOfNextLowerLevelTradeItem) is used, then Product Hierarchy Level Code (tradeItemUnitDescriptorCode) shall equal &apos;PACK_OR_INNER_PACK&apos;, Number of Different Products (quantityOfChildren) shall be greater than 1 and Promotion Type Code (promotionTypeCode) shall equal &apos;MULTI_PACK_AND_COMBINATION_PACK&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Free Quantity Of Next Lower Level Trade Item &lt;freeQuantityOfNextLowerLevelTradeItem&gt; is used, then Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; shall equal &apos;PACK_OR_INNER_PACK&apos;, Number of Different Products &lt;quantityOfChildren&gt; shall be greater than 1 and Promotion Type Code &lt;promotionTypeCode&gt; shall equal &apos;MULTI_PACK_AND_COMBINATION_PACK&apos;..
         /// </summary>
         internal static string _1880 {
             get {
@@ -3319,7 +3346,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, then at least one iteration of Tax Type Code (dutyFeeTaxTypeCode) shall be one of the VAT tax codes (&apos;S&apos;, &apos;1G&apos;, &apos;2G&apos;, &apos;3G&apos;, &apos;H&apos; or &apos;E&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, then at least one iteration of Tax Type Code &lt;dutyFeeTaxTypeCode&gt; shall be one of the VAT tax codes (&apos;S&apos;, &apos;1G&apos;, &apos;2G&apos;, &apos;3G&apos;, &apos;H&apos; or &apos;E&apos;)..
         /// </summary>
         internal static string _1881 {
             get {
@@ -3328,7 +3355,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code &apos;1&apos; (100% Organic) is not allowed in Organic Level Code (organicTradeItemCode) for Country Of Sale Code &lt;targetMarketCountryCode Code name&gt;. Please use code &apos;2&apos; (Organic) instead..
+        ///   Looks up a localized string similar to Code &apos;1&apos; (100% Organic) is not allowed in Organic Level Code &lt;organicTradeItemCode&gt; for Country of Sale Code &lt;&lt;targetMarketCountryCode&gt; Code name&gt;. Please use code &apos;2&apos; (Organic) instead..
         /// </summary>
         internal static string _1882 {
             get {
@@ -3337,7 +3364,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PACK_OR_INNER_PACK&apos; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, then Total Count of All Products (totalQuantityOfNextLowerLevelTradeItem) shall be greater than 1..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PACK_OR_INNER_PACK&apos; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, then Total Count of All Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; shall be greater than 1..
         /// </summary>
         internal static string _1883 {
             get {
@@ -3346,7 +3373,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, and Tax Type Code (dutyFeeTaxTypeCode) equals &apos;3001000002312&apos; (Droits d&apos;accises sur les alcools/alcohol tax), then Alcohol Percentage (percentageOfAlcoholByVolume) shall be greater than 0 (zero)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, and Tax Type Code &lt;dutyFeeTaxTypeCode&gt; equals &apos;3001000002312&apos; (Droits d&apos;accises sur les alcools/alcohol tax), then Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; shall be greater than 0 (zero)..
         /// </summary>
         internal static string _1884 {
             get {
@@ -3355,7 +3382,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;DISPLAY_SHIPPER&apos; or &apos;MIXED_MODULE&apos; and Number of Different Products (quantityOfChildren) is greater than 1, then GTIN (Global Trade Item Number) (tradeItem/gtin) shall start with &apos;0&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;DISPLAY_SHIPPER&apos; or &apos;MIXED_MODULE&apos; and Number of Different Products &lt;quantityOfChildren&gt; is greater than 1, then GTIN (Global Trade Item Number) &lt;gtin&gt; shall start with &apos;0&apos;..
         /// </summary>
         internal static string _1885 {
             get {
@@ -3364,7 +3391,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Free Quantity Of Product (freeQuantityOfQuantity) is used, then Free Quantity Of Product Unit Of Measure (freeQuantityOfProduct@measurementUnitCode) shall be equal to one instance of Net Content Unit Of Measure (netContent@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Free Quantity Of Product &lt;freeQuantityOfQuantity&gt; is used, then Free Quantity Of Product Unit Of Measure (&lt;freeQuantityOfProduct&gt;@&lt;measurementUnitCode&gt;) shall be equal to one instance of Net Content Unit Of Measure (&lt;netContent&gt;@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _1886 {
             get {
@@ -3373,7 +3400,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Promotion Type Code (promotionTypeCode) equals &apos;MULTI_PACK_AND_COMBINATION_PACK&apos;, then Base Unit Indicator (isTradeItemABaseUnit) shall not equal &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Promotion Type Code &lt;promotionTypeCode&gt; equals &apos;MULTI_PACK_AND_COMBINATION_PACK&apos;, then Base Unit Indicator &lt;isTradeItemABaseUnit&gt; shall not equal &apos;TRUE&apos;..
         /// </summary>
         internal static string _1887 {
             get {
@@ -3382,7 +3409,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Free Quantity Of Next Lower Level Trade Item (freeQuantityOfNextLowerLevelTradeItem) is used, then Product Hierarchy Level Code (tradeItemUnitDescriptorCode) shall equal &apos;PACK_OR_INNER_PACK&apos;, Number of Different Products (quantityOfChildren) shall be greater than 1 and Promotion Type Code (promotionTypeCode) shall equal &apos;MULTI_PACK_AND_COMBINATION_PACK&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Free Quantity Of Next Lower Level Trade Item &lt;freeQuantityOfNextLowerLevelTradeItem&gt; is used, then Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; shall equal &apos;PACK_OR_INNER_PACK&apos;, Number of Different Products &lt;quantityOfChildren&gt; shall be greater than 1 and Promotion Type Code &lt;promotionTypeCode&gt; shall equal &apos;MULTI_PACK_AND_COMBINATION_PACK&apos;..
         /// </summary>
         internal static string _1888 {
             get {
@@ -3391,7 +3418,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, then at least one iteration of Tax Type Code (dutyFeeTaxTypeCode) shall be one of the VAT tax codes (&apos;S&apos;, &apos;1G&apos;, &apos;2G&apos;, &apos;3G&apos;, &apos;H&apos; or &apos;E&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, then at least one iteration of Tax Type Code &lt;dutyFeeTaxTypeCode&gt; shall be one of the VAT tax codes (&apos;S&apos;, &apos;1G&apos;, &apos;2G&apos;, &apos;3G&apos;, &apos;H&apos; or &apos;E&apos;)..
         /// </summary>
         internal static string _1889 {
             get {
@@ -3400,7 +3427,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, then Number of Units per Layer in a GTIN (quantityOfTradeItemsContainedInACompleteLayer) shall be greater than 0..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, then Number of Units per Layer in a GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; shall be greater than 0..
         /// </summary>
         internal static string _1890 {
             get {
@@ -3409,7 +3436,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, Pallet Disposition Code (platformTermsAndConditionsCode) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; shall be used..
         /// </summary>
         internal static string _1891 {
             get {
@@ -3418,7 +3445,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Global Product Category Code (gpcCategoryCode) is in GPC Segment &apos;50000000&apos; (Food/Beverage) and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, Net Weight (netWeight) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Global Product Category Code &lt;gpcCategoryCode&gt; is in GPC Segment &apos;50000000&apos; &lt;Beverage&gt; and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, Net Weight &lt;netWeight&gt; shall be used..
         /// </summary>
         internal static string _1892 {
             get {
@@ -3427,7 +3454,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Invoice Unit Indicator (isTradeItemAnInvoiceUnit) equals &apos;true&apos; and Variable Unit indicator (isTradeItemAVariableUnit) equals &apos;true&apos;, Selling Unit Of Measure (sellingUnitOfMeasure) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Invoice Unit Indicator &lt;isTradeItemAnInvoiceUnit&gt; equals &apos;TRUE&apos; and Variable Unit indicator &lt;isTradeItemAVariableUnit&gt; equals &apos;TRUE&apos;, Selling Unit Of Measure &lt;sellingUnitOfMeasure&gt; shall be used..
         /// </summary>
         internal static string _1893 {
             get {
@@ -3436,7 +3463,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, the Start Availability Date/Time (startAvailabiltyDateTime) &lt;ChildItem..startAvailabiltyDateTime&gt; of the contained product &lt;ChildItem..gtin&gt; shall be before or equal to the Start Availability Date/Time &lt;startAvailabiltyDateTime&gt; of the product..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, the Start Availability &lt;Time&gt; &lt;startAvailabiltyDateTime&gt; &lt;ChildItem..&lt;startAvailabiltyDateTime&gt;&gt; of the contained product &lt;ChildItem..gtin&gt; shall be before or equal to the Start Availability &lt;Time&gt; &lt;&lt;startAvailabiltyDateTime&gt;&gt; of the product..
         /// </summary>
         internal static string _1894 {
             get {
@@ -3445,7 +3472,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Referenced GTIN (referencedTradeItem/gtin) &lt;referencedTradeItem/gtin&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code (referencedTradeItemTypeCode) &lt;referencedTradeItemTypeCode #1&gt; and &lt;referencedTradeItemTypeCode #n&gt;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Referenced GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; and &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;..
         /// </summary>
         internal static string _1895 {
             get {
@@ -3454,7 +3481,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Referenced GTIN (referencedTradeItem/gtin) &lt;referencedTradeItem/gtin&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code (referencedTradeItemTypeCode) &lt;referencedTradeItemTypeCode #1&gt; and &lt;referencedTradeItemTypeCode #2&gt;..
+        ///   Looks up a localized string similar to Referenced GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; and &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;..
         /// </summary>
         internal static string _1896 {
             get {
@@ -3463,7 +3490,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Referenced GTIN (referencedTradeItem/gtin) &lt;referencedTradeItem/gtin&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code (referencedTradeItemTypeCode) &lt;referencedTradeItemTypeCode #1&gt; and &lt;referencedTradeItemTypeCode #2&gt;..
+        ///   Looks up a localized string similar to Referenced GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; and &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;..
         /// </summary>
         internal static string _1897 {
             get {
@@ -3472,7 +3499,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Product Description (tradeItemDescription) must be in Finnish, Swedish and English..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Product Description &lt;tradeItemDescription&gt; must be in Finnish, Swedish and English..
         /// </summary>
         internal static string _1898 {
             get {
@@ -3481,7 +3508,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Short Product Name (descriptionShort) must be in Finnish, Swedish and English..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Short Product Name &lt;descriptionShort&gt; must be in Finnish, Swedish and English..
         /// </summary>
         internal static string _1899 {
             get {
@@ -3490,7 +3517,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Ingredient Statement (ingredientStatement) must be in Finnish and Swedish. .
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Ingredient Statement &lt;ingredientStatement&gt; must be in Finnish and Swedish. .
         /// </summary>
         internal static string _1900 {
             get {
@@ -3499,7 +3526,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Short Product Name (descriptionShort) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Short Product Name &lt;descriptionShort&gt; must be used..
         /// </summary>
         internal static string _1901 {
             get {
@@ -3508,7 +3535,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Consumer Storage Instructions (consumerStorageInstructions) must be in Finnish and Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Consumer Storage Instructions &lt;consumerStorageInstructions&gt; must be in Finnish and Swedish..
         /// </summary>
         internal static string _1902 {
             get {
@@ -3517,7 +3544,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Consumer Usage Instructions (consumerUsageInstructions) must be in Finnish and Swedish. .
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Consumer Usage Instructions &lt;consumerUsageInstructions&gt; must be in Finnish and Swedish. .
         /// </summary>
         internal static string _1903 {
             get {
@@ -3526,7 +3553,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Preparation Instructions (preparationInstructions) must be in Finnish and Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Preparation Instructions &lt;preparationInstructions&gt; must be in Finnish and Swedish..
         /// </summary>
         internal static string _1904 {
             get {
@@ -3535,7 +3562,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Serving Suggestion (servingSuggestion) must be in Finnish and Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Serving Suggestion &lt;servingSuggestion&gt; must be in Finnish and Swedish..
         /// </summary>
         internal static string _1905 {
             get {
@@ -3544,7 +3571,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Non-Food Ingredient Statement (nonFoodIngredientStatement) must be in Finnish and Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Non-Food Ingredient Statement &lt;nonFoodIngredientStatement&gt; must be in Finnish and Swedish..
         /// </summary>
         internal static string _1906 {
             get {
@@ -3553,7 +3580,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Short Product Marketing Message (shortTradeItemMarketingMessage) must be in Finnish and Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Short Product Marketing Message &lt;shortTradeItemMarketingMessage&gt; must be in Finnish and Swedish..
         /// </summary>
         internal static string _1907 {
             get {
@@ -3562,7 +3589,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Additional Legal Product Information (compulsoryAdditiveLabelInformation) must be in Finnish and Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Additional Legal Product Information &lt;compulsoryAdditiveLabelInformation&gt; must be in Finnish and Swedish..
         /// </summary>
         internal static string _1908 {
             get {
@@ -3571,7 +3598,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Product Type Description (functionalName) must be in Finnish and Swedish..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Product Type Description &lt;functionalName&gt; must be in Finnish and Swedish..
         /// </summary>
         internal static string _1909 {
             get {
@@ -3580,7 +3607,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Product Description (tradeItemDescription) must be in Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Product Description &lt;tradeItemDescription&gt; must be in Italian..
         /// </summary>
         internal static string _1910 {
             get {
@@ -3589,7 +3616,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When more than one Dangerous Hazardous Label Number (dangerousHazardousLabelNumber) is provided, Dangerous Hazardous Label Sequence Number (dangerousHazardousLabelSequenceNumber) shall be used..
+        ///   Looks up a localized string similar to When more than one Dangerous Hazardous Label Number &lt;dangerousHazardousLabelNumber&gt; is provided, Dangerous Hazardous Label Sequence Number &lt;dangerousHazardousLabelSequenceNumber&gt; shall be used..
         /// </summary>
         internal static string _1911 {
             get {
@@ -3598,7 +3625,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Referenced GTIN (referencedTradeItem/gtin) &lt;referencedTradeItem/gtin&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code (referencedTradeItemTypeCode) &lt;referencedTradeItemTypeCode #1&gt; and &lt;referencedTradeItemTypeCode #n&gt;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Referenced GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; and &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;..
         /// </summary>
         internal static string _1914 {
             get {
@@ -3607,7 +3634,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Referenced GTIN (referencedTradeItem/gtin) &lt;referencedTradeItem/gtin&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code (referencedTradeItemTypeCode) &lt;referencedTradeItemTypeCode #1&gt; and &lt;referencedTradeItemTypeCode #2&gt;..
+        ///   Looks up a localized string similar to Referenced GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; and &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;..
         /// </summary>
         internal static string _1915 {
             get {
@@ -3616,7 +3643,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Referenced GTIN (referencedTradeItem/gtin) &lt;referencedTradeItem/gtin&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code (referencedTradeItemTypeCode) &lt;referencedTradeItemTypeCode #1&gt; and &lt;referencedTradeItemTypeCode #2&gt;..
+        ///   Looks up a localized string similar to Referenced GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; shall be unique. It shall not be repeated for Referenced GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; and &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;..
         /// </summary>
         internal static string _1916 {
             get {
@@ -3625,7 +3652,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Packaging Type Code (packagingTypeCode) SHALL be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Packaging Type Code &lt;packagingTypeCode&gt; SHALL be used..
         /// </summary>
         internal static string _1917 {
             get {
@@ -3634,7 +3661,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Net Content (netContent) is mandatory on base units (Base Unit Indicator (isTradeItemABaseUnit) equals to &apos;true&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Net Content &lt;netContent&gt; is mandatory on base units (Base Unit Indicator &lt;isTradeItemABaseUnit&gt; equals to &apos;TRUE&apos;)..
         /// </summary>
         internal static string _1918 {
             get {
@@ -3643,7 +3670,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid measurement unit for Ordering Lead Time (orderingLeadTime): &lt;orderingLeadTime/@measurementUnitCode&gt;. Ordering Lead Time must have &apos;DAY&apos; as the measurement unit..
+        ///   Looks up a localized string similar to Invalid measurement unit for Ordering Lead Time &lt;orderingLeadTime&gt;: &lt;&lt;orderingLeadTime&gt;/@&lt;measurementUnitCode&gt;&gt;. Ordering Lead Time must have &apos;DAY&apos; as the measurement unit..
         /// </summary>
         internal static string _1919 {
             get {
@@ -3652,7 +3679,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos; and Tax Type Code (dutyFeeTaxTypeCode) equals (&apos;VAT&apos; or &apos;IVA&apos;), then Tax Percentage (dutyFeeTaxRate) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos; and Tax Type Code &lt;dutyFeeTaxTypeCode&gt; equals (&apos;VAT&apos; or &apos;IVA&apos;), then Tax Percentage &lt;dutyFeeTaxRate&gt; must be used..
         /// </summary>
         internal static string _1920 {
             get {
@@ -3661,7 +3688,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Irregularly Configured Pallet Indicator (isTradeItemPackedIrregularly) equals &apos;FALSE&apos; or is not used, then Total Count of All Products (totalQuantityOfNextLowerLevelTradeItem) must be equal to Number of Layers per GTIN (quantityOfCompleteLayersContainedInATradeItem) multiplied by Number of Units per Layer in a GTIN (quantityOfTradeItemsContainedInACompleteLayer)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; equals &apos;FALSE&apos; or is not used, then Total Count of All Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; must be equal to Number of Layers per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; multiplied by Number of Units per Layer in a GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt;..
         /// </summary>
         internal static string _1921 {
             get {
@@ -3670,7 +3697,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, then Tax Type Code (dutyFeeTaxTypeCode) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, then Tax Type Code &lt;dutyFeeTaxTypeCode&gt; must be used..
         /// </summary>
         internal static string _1922 {
             get {
@@ -3679,7 +3706,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Number of Layers per Non-GTIN Pallet (quantityOfLayersPerPallet) is used, then Number of Units per Layer in a Non-GTIN Pallet (quantityOfTradeItemsPerPalletLayer) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Number of Layers per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; is used, then Number of Units per Layer in a Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; must be used..
         /// </summary>
         internal static string _1925 {
             get {
@@ -3688,7 +3715,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; and Irregularly Configured Pallet Indicator (isTradeItemPackedIrregularly) equals &apos;FALSE&apos; or is not used, then Number of Units per Layer in a GTIN (quantityOfTradeItemsContainedInACompleteLayer) must be used and greater than 0 (zero)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; and Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; equals &apos;FALSE&apos; or is not used, then Number of Units per Layer in a GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; must be used and greater than 0 (zero)..
         /// </summary>
         internal static string _1926 {
             get {
@@ -3697,7 +3724,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Non-GTIN Logistic Unit Depth/Length (nonGTINLogisticsUnitInformation/depth) must be greater than or equal to Non-GTIN Logistic Unit Width (nonGTINLogisticsUnitInformation/width)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Non-GTIN Logistic Unit &lt;Length&gt; &lt;depth&gt; must be greater than or equal to Non-GTIN Logistic Unit Width &lt;width&gt;..
         /// </summary>
         internal static string _1927 {
             get {
@@ -3706,7 +3733,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Irregularly Configured Non-GTIN Pallet Indicator (isNonGTINLogisticsUnitPackedIrregularly) equals &apos;FALSE&apos; or is not used, then Count of This Specific Item in a Non-GTIN Pallet (quantityOfTradeItemsPerPallet) must equal Number of Layers per Non-GTIN Pallet (quantityOfLayersPerPallet) multiplied by Number of Units per Layer in a Non-GTIN Pallet (quantityOfTradeItemsPerPalletLayer)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Irregularly Configured Non-GTIN Pallet Indicator &lt;isNonGTINLogisticsUnitPackedIrregularly&gt; equals &apos;FALSE&apos; or is not used, then Count of This Specific Item in a Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt; must equal Number of Layers per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; multiplied by Number of Units per Layer in a Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;..
         /// </summary>
         internal static string _1928 {
             get {
@@ -3715,7 +3742,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Base Unit Indicator (isTradeItemABaseUnit) equals &apos;true&apos;, then at least one iteration of Short Product Name (descriptionShort) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Base Unit Indicator &lt;isTradeItemABaseUnit&gt; equals &apos;TRUE&apos;, then at least one iteration of Short Product Name &lt;descriptionShort&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1929 {
             get {
@@ -3724,7 +3751,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Base Unit Indicator (isTradeItemABaseUnit) equals &apos;true&apos; or Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, then at least one iteration of Product Description (tradeItemDescription) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Base Unit Indicator &lt;isTradeItemABaseUnit&gt; equals &apos;TRUE&apos; or Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, then at least one iteration of Product Description &lt;tradeItemDescription&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1930 {
             get {
@@ -3733,7 +3760,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Product Type Description (functionalName) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Product Type Description &lt;functionalName&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1931 {
             get {
@@ -3742,7 +3769,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Hazardous Statements Description (hazardStatementsDescription) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Hazardous Statements Description &lt;hazardStatementsDescription&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1932 {
             get {
@@ -3751,7 +3778,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Precautionary Statement Description (precautionaryStatementsDescription) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Precautionary Statement Description &lt;precautionaryStatementsDescription&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1933 {
             get {
@@ -3760,7 +3787,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Preparation Instructions (preparationInstructions) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Preparation Instructions &lt;preparationInstructions&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1934 {
             get {
@@ -3769,7 +3796,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Hazardous Material Additional Information (hazardousMaterialAdditionalInformation) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Hazardous Material Additional Information &lt;hazardousMaterialAdditionalInformation&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1935 {
             get {
@@ -3778,7 +3805,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Dangerous Goods Technical Name (dangerousGoodsTechnicalName) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Dangerous Goods Technical Name &lt;dangerousGoodsTechnicalName&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1936 {
             get {
@@ -3787,7 +3814,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Product Characteristic Value as a Description (productCharacteristicValueDescription) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Product Characteristic Value as a Description &lt;productCharacteristicValueDescription&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1937 {
             get {
@@ -3796,7 +3823,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Serving Suggestion (servingSuggestion) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Serving Suggestion &lt;servingSuggestion&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _1938 {
             get {
@@ -3805,7 +3832,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Percent of Fat in Cheese (fatPercentageInDryMatter) and Percent of Milk Fat in Dairy (fatInMilkContent) must not be used at the same time..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Percent of Fat in Cheese &lt;fatPercentageInDryMatter&gt; and Percent of Milk Fat in Dairy &lt;fatInMilkContent&gt; must not be used at the same time..
         /// </summary>
         internal static string _1939 {
             get {
@@ -3814,7 +3841,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if multiple iterations of Nutritional Program Code (nutritionalProgramCode) equal &apos;8&apos; (Nutri-Score), then Nutritional Program Detail (nutritionalProgramDetail) must be used in each corresponding iteration..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if multiple iterations of Nutritional Program Code &lt;nutritionalProgramCode&gt; equal &apos;8&apos; (Nutri-Score), then Nutritional Program Detail &lt;nutritionalProgramDetail&gt; must be used in each corresponding iteration..
         /// </summary>
         internal static string _1941 {
             get {
@@ -3823,7 +3850,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Nutritional Program Code (nutritionalProgramCode) equals &apos;8&apos; (Nutri-Score) and Nutritional Program Detail (nutritionalProgramDetail) is used, then at least one iteration of Nutritional Program Detail must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Nutritional Program Code &lt;nutritionalProgramCode&gt; equals &apos;8&apos; (Nutri-Score) and Nutritional Program Detail &lt;nutritionalProgramDetail&gt; is used, then at least one iteration of Nutritional Program Detail must be provided in German, French or Italian..
         /// </summary>
         internal static string _1942 {
             get {
@@ -3832,7 +3859,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Regulation Type Code (regulationTypeCode) equals &apos;EXPLOSIVES_PRECURSORS_REGISTRATION&apos; and Regulation Compliance Indicator (isTradeItemRegulationCompliant) equals &apos;TRUE&apos;, then Regulation Level Code Reference (regulationLevelCodeReference) and Regulatory Act Compliance Level Code (regulatoryActComplianceLevelCode) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Regulation Type Code &lt;regulationTypeCode&gt; equals &apos;EXPLOSIVES_PRECURSORS_REGISTRATION&apos; and Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; equals &apos;TRUE&apos;, then Regulation Level Code Reference &lt;regulationLevelCodeReference&gt; and Regulatory Act Compliance Level Code &lt;regulatoryActComplianceLevelCode&gt; must be used..
         /// </summary>
         internal static string _1943 {
             get {
@@ -3841,7 +3868,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;H87&apos;, &apos;KGM&apos;, &apos;LTR&apos; or &apos;MTR&apos; are allowed for Price Basis Quantity UoM (priceBasisQuantity/@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;H87&apos;, &apos;KGM&apos;, &apos;LTR&apos; or &apos;MTR&apos; are allowed for Price Basis Quantity UoM (&lt;priceBasisQuantity&gt;/@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _1944 {
             get {
@@ -3850,7 +3877,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the values 1, 10, 100 or 1000 are allowed for Price Basis Quantity (priceBasisQuantity)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the values 1, 10, 100 or 1000 are allowed for Price Basis Quantity &lt;priceBasisQuantity&gt;..
         /// </summary>
         internal static string _1945 {
             get {
@@ -3859,7 +3886,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Diet Type Subcode (dietTypeSubcode) &lt;dietTypeSubcode value&gt; is only allowed if Dietary Regime Code (dietTypeCode) is &apos;VEGETARIAN&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Diet Type Subcode &lt;dietTypeSubcode&gt; &lt;&lt;dietTypeSubcode&gt; value&gt; is only allowed if Dietary Regime Code &lt;dietTypeCode&gt; is &apos;VEGETARIAN&apos;..
         /// </summary>
         internal static string _1946 {
             get {
@@ -3868,7 +3895,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Claim Marked on Package (claimMarkedOnPackage) is only allowed if Claim Type Code (claimTypeCode) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Claim Marked on Package &lt;claimMarkedOnPackage&gt; is only allowed if Claim Type Code &lt;claimTypeCode&gt; is used..
         /// </summary>
         internal static string _1947 {
             get {
@@ -3877,7 +3904,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Fat Percentage in Dry Matter Measurement Precision Code (fatPercentageInDryMatterMeasurementPrecisionCode) is only allowed if Percent of Fat in Cheese (fatPercentageInDryMatter) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt; is only allowed if Percent of Fat in Cheese &lt;fatPercentageInDryMatter&gt; is used..
         /// </summary>
         internal static string _1948 {
             get {
@@ -3886,7 +3913,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Nesting Increment (nestingIncrement) is used, then at least one of the two attributes Nesting Type Code (nestingTypeCode) or Nesting Direction Code (nestingDirectionCode) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Nesting Increment &lt;nestingIncrement&gt; is used, then at least one of the two attributes Nesting Type Code &lt;nestingTypeCode&gt; or Nesting Direction Code &lt;nestingDirectionCode&gt; must be used..
         /// </summary>
         internal static string _1949 {
             get {
@@ -3895,7 +3922,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Nesting Type Code (nestingTypeCode) and Nesting Direction Code (nestingDirectionCode) are only allowed if Nesting Increment (nestingIncrement) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Nesting Type Code &lt;nestingTypeCode&gt; and Nesting Direction Code &lt;nestingDirectionCode&gt; are only allowed if Nesting Increment &lt;nestingIncrement&gt; is used..
         /// </summary>
         internal static string _1950 {
             get {
@@ -3904,7 +3931,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Percentage Of Alcohol By Volume Measurement Precision Code (percentageOfAlcoholByVolumeMeasurementPrecisionCode) is only allowed if Alcohol Percentage (percentageOfAlcoholByVolume) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Percentage Of Alcohol By Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt; is only allowed if Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; is used..
         /// </summary>
         internal static string _1951 {
             get {
@@ -3913,7 +3940,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;ANN&apos; (Year) or &apos;MON&apos; (Month) are allowed for Usage Period After Opening UoM (itemPeriodSafeToUseAfterOpening/@timeMeasurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;ANN&apos; (Year) or &apos;MON&apos; (Month) are allowed for Usage Period After Opening UoM (&lt;itemPeriodSafeToUseAfterOpening&gt;/@&lt;timeMeasurementUnitCode&gt;)..
         /// </summary>
         internal static string _1952 {
             get {
@@ -3922,7 +3949,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Base Unit Indicator (isTradeItemABaseUnit) equals &apos;true&apos; and Brand Distribution Trade Item Type Code (brandDistributionTradeItemTypeCode) equals &apos;CUSTOM_LABEL&apos;, then Brand Distribution Trade Item Type Code must equal &apos;CUSTOM_LABEL&apos; on all levels of the trade item hierarchy..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Base Unit Indicator &lt;isTradeItemABaseUnit&gt; equals &apos;TRUE&apos; and Brand Distribution Trade Item Type Code &lt;brandDistributionTradeItemTypeCode&gt; equals &apos;CUSTOM_LABEL&apos;, then Brand Distribution Trade Item Type Code must equal &apos;CUSTOM_LABEL&apos; on all levels of the trade item hierarchy..
         /// </summary>
         internal static string _1953 {
             get {
@@ -3931,7 +3958,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Servings Per Product Precision Code (numberOfServingsPerPackageMeasurementPrecisionCode) is used, then &apos;APPROXIMATELY&apos; is the only allowed code..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Servings Per Product Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; is used, then &apos;APPROXIMATELY&apos; is the only allowed code..
         /// </summary>
         internal static string _1954 {
             get {
@@ -3940,7 +3967,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Genetically Modified Declaration Code (geneticallyModifiedDeclarationCode) is used, then &apos;CONTAINS&apos;, &apos;FREE_FROM&apos; or &apos;MAY_CONTAIN&apos; are the only allowed codes..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Genetically Modified Declaration Code &lt;geneticallyModifiedDeclarationCode&gt; is used, then &apos;CONTAINS&apos;, &apos;FREE_FROM&apos; or &apos;MAY_CONTAIN&apos; are the only allowed codes..
         /// </summary>
         internal static string _1955 {
             get {
@@ -3949,7 +3976,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Base Unit Indicator (isTradeItemABaseUnit) equals &apos;true&apos; and Brand Distribution Trade Item Type Code (brandDistributionTradeItemTypeCode) equals &apos;PRIVATE_LABEL&apos;, then Brand Distribution Trade Item Type Code must equal &apos;PRIVATE_LABEL&apos; on all levels of the trade item hierarchy..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Base Unit Indicator &lt;isTradeItemABaseUnit&gt; equals &apos;TRUE&apos; and Brand Distribution Trade Item Type Code &lt;brandDistributionTradeItemTypeCode&gt; equals &apos;PRIVATE_LABEL&apos;, then Brand Distribution Trade Item Type Code must equal &apos;PRIVATE_LABEL&apos; on all levels of the trade item hierarchy..
         /// </summary>
         internal static string _1956 {
             get {
@@ -3958,7 +3985,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if the trade item is a complex trade item, i.e., Number of Different Products (quantityOfChildren) is greater than 1, then the complex trade item&apos;s Net Content UOM (netContent/@measurementUnitCode) must equal &apos;H87&apos; (Piece)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if the trade item is a complex trade item, i.e., Number of Different Products &lt;quantityOfChildren&gt; is greater than 1, then the complex trade item&apos;s Net Content UOM (&lt;netContent&gt;/@&lt;measurementUnitCode&gt;) must equal &apos;H87&apos; (Piece)..
         /// </summary>
         internal static string _1957 {
             get {
@@ -3967,7 +3994,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if the trade item is a complex trade item, i.e., Number of Different Products (quantityOfChildren) is greater than 1, then the Net Content (netContent) must equal the Total Count of All Products (totalQuantityOfNextLowerLevelTradeItem)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if the trade item is a complex trade item, i.e., Number of Different Products &lt;quantityOfChildren&gt; is greater than 1, then the Net Content &lt;netContent&gt; must equal the Total Count of All Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt;..
         /// </summary>
         internal static string _1958 {
             get {
@@ -3976,7 +4003,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Hazardous Statements Code (hazardStatementsCode) equals &apos;EUH208&apos;, then Hazardous Statements Description (hazardStatementsDescription) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Hazardous Statements Code &lt;hazardStatementsCode&gt; equals &apos;EUH208&apos;, then Hazardous Statements Description &lt;hazardStatementsDescription&gt; must be used..
         /// </summary>
         internal static string _1961 {
             get {
@@ -3985,7 +4012,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Precautionary Statements Code (precautionaryStatementsCode) equals &lt;precautionaryStatementsCode Code&gt;, then Precautionary Statement Description (precautionaryStatementsDescription) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Precautionary Statements Code &lt;precautionaryStatementsCode&gt; equals &lt;&lt;precautionaryStatementsCode&gt; Code&gt;, then Precautionary Statement Description &lt;precautionaryStatementsDescription&gt; must be used..
         /// </summary>
         internal static string _1962 {
             get {
@@ -3994,7 +4021,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Global Product Category Code (gpcCategoryCode) equals &apos;10000159&apos; (Beer) and Base Unit Indicator (isTradeItemABaseUnit) equals &apos;true&apos;, then Degree Of Original Wort (degreeOfOriginalWort) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Global Product Category Code &lt;gpcCategoryCode&gt; equals &apos;10000159&apos; (Beer) and Base Unit Indicator &lt;isTradeItemABaseUnit&gt; equals &apos;TRUE&apos;, then Degree Of Original Wort &lt;degreeOfOriginalWort&gt; must be used..
         /// </summary>
         internal static string _1963 {
             get {
@@ -4003,7 +4030,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, both Brand Owner GLN (brandOwner/gln) and Brand Owner Name (brandOwner/partyName) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, both Brand Owner GLN &lt;gln&gt; and Brand Owner Name &lt;partyName&gt; must be used..
         /// </summary>
         internal static string _1964 {
             get {
@@ -4012,7 +4039,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Catalogue Price (cataloguePrice/tradeItemPrice) is used, then Catalogue Price Basis Quantity (cataloguePrice/priceBasisQuantity) and Catalogue Price Effective Start Date (cataloguePrice/priceEffectiveStartDate) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Catalogue Price &lt;tradeItemPrice&gt; is used, then Catalogue Price Basis Quantity &lt;priceBasisQuantity&gt; and Catalogue Price Effective Start Date &lt;priceEffectiveStartDate&gt; must be used..
         /// </summary>
         internal static string _1965 {
             get {
@@ -4021,7 +4048,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Minimum Orderable Quantity (orderQuantityMinimum) is only allowed if Orderable Unit Indicator (isTradeItemAnOrderableUnit) equals &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Minimum Orderable Quantity &lt;orderQuantityMinimum&gt; is only allowed if Orderable Unit Indicator &lt;isTradeItemAnOrderableUnit&gt; equals &apos;TRUE&apos;..
         /// </summary>
         internal static string _1966 {
             get {
@@ -4030,7 +4057,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Peg Hole Number (pegHoleNumber) is used, then Peg Hole Type Code (pegHoleTypeCode) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Peg Hole Number &lt;pegHoleNumber&gt; is used, then Peg Hole Type Code &lt;pegHoleTypeCode&gt; must be used..
         /// </summary>
         internal static string _1967 {
             get {
@@ -4039,7 +4066,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Number of Units per Layer in a GTIN (quantityOfTradeItemsContainedInACompleteLayer) is only allowed if Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Number of Units per Layer in a GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; is only allowed if Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;..
         /// </summary>
         internal static string _1968 {
             get {
@@ -4048,7 +4075,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Number of Units per Layer in a non-GTIN Pallet (quantityOfTradeItemsPerPalletLayer) is only allowed if Product Hierarchy Level Code (tradeItemUnitDescriptorCode) is NOT equal to &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, and Shipping Unit Indicator (isTradeItemADespatchUnit) equals &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Number of Units per Layer in a non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; is only allowed if Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; is NOT equal to &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, and Shipping Unit Indicator &lt;isTradeItemADespatchUnit&gt; equals &apos;TRUE&apos;..
         /// </summary>
         internal static string _1969 {
             get {
@@ -4057,7 +4084,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, then Shipping Unit Indicator (isTradeItemADespatchUnit) must equal &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;, then Shipping Unit Indicator &lt;isTradeItemADespatchUnit&gt; must equal &apos;TRUE&apos;..
         /// </summary>
         internal static string _1971 {
             get {
@@ -4066,7 +4093,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, both Variable Weight Range Minimum (variableWeightRangeMinimum) and Variable Weight Range Maximum (variableWeightRangeMaximum) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, both Variable Weight Range Minimum &lt;variableWeightRangeMinimum&gt; and Variable Weight Range Maximum &lt;variableWeightRangeMaximum&gt; must be used..
         /// </summary>
         internal static string _1974 {
             get {
@@ -4075,7 +4102,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Variable Weight Allowable Deviation Percentage (variableWeightAllowableDeviationPercentage), Variable Weight Range Minimum (variableWeightRangeMinimum) and Variable Weight Range Maximum (variableWeightRangeMaximum) are only allowed if Variable Measure Indicator (isTradeItemAVariableUnit) equals &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Variable Weight Allowable Deviation Percentage &lt;variableWeightAllowableDeviationPercentage&gt;, Variable Weight Range Minimum &lt;variableWeightRangeMinimum&gt; and Variable Weight Range Maximum &lt;variableWeightRangeMaximum&gt; are only allowed if Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; equals &apos;TRUE&apos;..
         /// </summary>
         internal static string _1975 {
             get {
@@ -4084,7 +4111,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Retail Price is Marked on the Product Indicator (isPriceOnPack) equals &apos;true&apos; for a base unit, then Suggested Retail Price (suggestedRetailPrice/tradeItemPrice) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Retail Price is Marked on the Product Indicator &lt;isPriceOnPack&gt; equals &apos;TRUE&apos; for a base unit, then Suggested Retail Price &lt;tradeItemPrice&gt; must be used..
         /// </summary>
         internal static string _1976 {
             get {
@@ -4093,7 +4120,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Suggested Retail Price (suggestedRetailPrice/tradeItemPrice) is used, then Suggested Retail Price Effective Start Date (suggestedRetailPrice/priceEffectiveStartDate) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Suggested Retail Price &lt;tradeItemPrice&gt; is used, then Suggested Retail Price Effective Start Date &lt;priceEffectiveStartDate&gt; must be used..
         /// </summary>
         internal static string _1977 {
             get {
@@ -4102,7 +4129,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Statistical Reporting Measurement (statisticalReportingMeasurement) is only allowed if Customs Classification Value (importClassificationValue) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Statistical Reporting Measurement &lt;statisticalReportingMeasurement&gt; is only allowed if Customs Classification Value &lt;importClassificationValue&gt; is used..
         /// </summary>
         internal static string _1978 {
             get {
@@ -4111,7 +4138,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Servings Per Product Precision Code (numberOfServingsPerPackageMeasurementPrecisionCode) is only allowed if Servings Per Product (numberOfServingsPerPackage) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Servings Per Product Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; is only allowed if Servings Per Product &lt;numberOfServingsPerPackage&gt; is used..
         /// </summary>
         internal static string _1979 {
             get {
@@ -4120,7 +4147,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Servings Per Product (numberOfServingsPerPackage) and Range of the Number of Servings (numberOfServingsRangeDescription) must not be used together..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Servings Per Product &lt;numberOfServingsPerPackage&gt; and Range of the Number of Servings &lt;numberOfServingsRangeDescription&gt; must not be used together..
         /// </summary>
         internal static string _1980 {
             get {
@@ -4129,7 +4156,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Microbiological Organism Code (microbiologicalOrganismCode) is used, then Microbiological Organism Maximum Value (microbiologicalOrganismMaximumValue) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Microbiological Organism Code &lt;microbiologicalOrganismCode&gt; is used, then Microbiological Organism Maximum Value &lt;microbiologicalOrganismMaximumValue&gt; must be used..
         /// </summary>
         internal static string _1981 {
             get {
@@ -4138,7 +4165,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if the Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;), then Storage Stacking Factor (stackingFactorTypeCode equal to &apos;STORAGE_UNSPECIFIED&apos;) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if the Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;), then Storage Stacking Factor (&lt;stackingFactorTypeCode&gt; equal to &apos;STORAGE_UNSPECIFIED&apos;) must be used..
         /// </summary>
         internal static string _1982 {
             get {
@@ -4147,7 +4174,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if the Product Hierarchy Level Code (tradeItemUnitDescriptorCode) equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;), then Number of Layers per GTIN (quantityOfCompleteLayersContainedInATradeItem) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if the Product Hierarchy Level Code &lt;tradeItemUnitDescriptorCode&gt; equals &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;), then Number of Layers per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; must be used..
         /// </summary>
         internal static string _1983 {
             get {
@@ -4156,7 +4183,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if the trade item is not a pallet or mixed module, but it is a Despatch Unit and a Pallet Type Code (platformTypeCode) is specified, then the corresponding Pallet Disposition Code (platformTermsAndConditionsCode) and non-GTIN pallet information must be provided. Some non-GTIN pallet information is missing: &lt;Attribute name(s)&gt;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if the trade item is not a pallet or mixed module, but it is a Despatch Unit and a Pallet Type Code &lt;platformTypeCode&gt; is specified, then the corresponding Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; and non-GTIN pallet information must be provided. Some non-GTIN pallet information is missing: &lt;Attribute name(s)&gt;..
         /// </summary>
         internal static string _1984 {
             get {
@@ -4165,7 +4192,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Pallet Type Code (platformTypeCode) is only allowed if Shipping Unit Indicator (isTradeItemADespatchUnit) equals &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Pallet Type Code &lt;platformTypeCode&gt; is only allowed if Shipping Unit Indicator &lt;isTradeItemADespatchUnit&gt; equals &apos;TRUE&apos;..
         /// </summary>
         internal static string _1985 {
             get {
@@ -4174,7 +4201,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Group Identification Code (tradeItemGroupIdentificationCodeReference) is used, then the corresponding code description (tradeItemGroupIdentificationCodeReference/@codeDescription) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Group Identification Code &lt;tradeItemGroupIdentificationCodeReference&gt; is used, then the corresponding code description (&lt;tradeItemGroupIdentificationCodeReference&gt;/@&lt;codeDescription&gt;) must be used..
         /// </summary>
         internal static string _1987 {
             get {
@@ -4183,7 +4210,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Physical Resource Type Code (physicalResourceTypeCode) equals &apos;ELECTRICITY&apos;, then Physical Resource Usage Rating Scale Code (physicalResourceUsageRatingScaleCodeReference) with physicalResourceUsageRatingScaleCodeReference/@codeListName equal &apos;EU_EnergyEfficiencyScale&apos; is only allowed if the corresponding Physical Resource Usage Rating Classification Code (physicalResourceUsageClassificationCodeReference) [= Effici [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Physical Resource Type Code &lt;physicalResourceTypeCode&gt; equals &apos;ELECTRICITY&apos;, then Physical Resource Usage Rating Scale Code &lt;physicalResourceUsageRatingScaleCodeReference&gt; with &lt;physicalResourceUsageRatingScaleCodeReference&gt;/@&lt;codeListName&gt; equal &apos;EU_EnergyEfficiencyScale&apos; is only allowed if the corresponding Physical Resource Usage Rating Classification Code &lt;physicalResourceUsageClassificationCodeReference&gt; [=  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string _1988 {
             get {
@@ -4192,7 +4219,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Digital Asset Type Code (referencedFileTypeCode) is used, then Digital Asset Link (uniformResourceIdentifier) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Digital Asset Type Code &lt;referencedFileTypeCode&gt; is used, then Digital Asset Link &lt;uniformResourceIdentifier&gt; must be used..
         /// </summary>
         internal static string _1989 {
             get {
@@ -4201,7 +4228,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Product Handling Code (handlingInstructionsCodeReference) codes &apos;11&apos; (Refrigeration required) and &apos;12&apos; (Refrigeration not required) must not be used for the same trade item..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Product Handling Code &lt;handlingInstructionsCodeReference&gt; codes &apos;11&apos; (Refrigeration required) and &apos;12&apos; (Refrigeration not required) must not be used for the same trade item..
         /// </summary>
         internal static string _1990 {
             get {
@@ -4210,7 +4237,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Size Code (sizeCode) and Size System Code (sizeSystemCode) must be used together..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Size Code &lt;sizeCode&gt; and Size System Code &lt;sizeSystemCode&gt; must be used together..
         /// </summary>
         internal static string _1991 {
             get {
@@ -4219,7 +4246,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Certification Standard (certificationStandard) is used and Certification Agency (certificationAgency) equals &apos;Additional_Label_Information&apos;, then Certification Value (certificationValue) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Certification Standard &lt;certificationStandard&gt; is used and Certification Agency &lt;certificationAgency&gt; equals &apos;Additional_Label_Information&apos;, then Certification Value &lt;certificationValue&gt; must be used..
         /// </summary>
         internal static string _1992 {
             get {
@@ -4228,7 +4255,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Dangerous Goods Regulation Agency (dangerousGoodsRegulationAgency) and Dangerous Goods Regulation Code (dangerousGoodsRegulationCode) can only be used together and Dangerous Goods Regulation Agency (dangerousGoodsRegulationAgency) must equal &apos;ADR&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Dangerous Goods Regulation Agency &lt;dangerousGoodsRegulationAgency&gt; and Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; can only be used together and Dangerous Goods Regulation Agency &lt;dangerousGoodsRegulationAgency&gt; must equal &apos;ADR&apos;..
         /// </summary>
         internal static string _1994 {
             get {
@@ -4237,7 +4264,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Dangerous Goods Regulation Code (dangerousGoodsRegulationCode) is used, only the codes &apos;ZCG&apos; (Contains Dangerous Goods) or &apos;ZNA&apos; (Item is not a dangerous good nor contains dangerous good(s)) are allowed..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; is used, only the codes &apos;ZCG&apos; (Contains Dangerous Goods) or &apos;ZNA&apos; (Item is not a dangerous good nor contains dangerous good(s)) are allowed..
         /// </summary>
         internal static string _1995 {
             get {
@@ -4246,7 +4273,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if trade item contains dangerous goods (dangerousGoodsRegulationCode equals &apos;ZCG&apos;), other dangerous goods information must be used for base unit: &lt;Attribute name&gt;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if trade item contains dangerous goods (&lt;dangerousGoodsRegulationCode&gt; equals &apos;ZCG&apos;), other dangerous goods information must be used for base unit: &lt;Attribute name&gt;..
         /// </summary>
         internal static string _1996 {
             get {
@@ -4255,7 +4282,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, this/these attribute/s &lt;Attribute name&gt; belong/s to the dangerous goods information and is/are only allowed for the base unit (isTradeItemABaseUnit equals &apos;true&apos;) and if Dangerous Goods Regulation Code (dangerousGoodsRegulationCode) equals &apos;ZCG&apos; (Contains Dangerous Goods)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, this/these attribute/s &lt;Attribute name&gt; belong/s to the dangerous goods information and is/are only allowed for the base unit (&lt;isTradeItemABaseUnit&gt; equals &apos;TRUE&apos;) and if Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; equals &apos;ZCG&apos; (Contains Dangerous Goods)..
         /// </summary>
         internal static string _1997 {
             get {
@@ -4264,7 +4291,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Dangerous Goods Classification (classOfDangerousGoods) equals &apos;1&apos; (Explosive substances and articles), then Net Explosive Mass (netMassOfExplosives) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Dangerous Goods Classification &lt;classOfDangerousGoods&gt; equals &apos;1&apos; (Explosive substances and articles), then Net Explosive Mass &lt;netMassOfExplosives&gt; must be used..
         /// </summary>
         internal static string _1998 {
             get {
@@ -4273,7 +4300,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Net Explosive Mass (netMassOfExplosives) is only allowed if Dangerous Goods Classification (classOfDangerousGoods) equals &apos;1&apos; (Explosive substances and articles)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Net Explosive Mass &lt;netMassOfExplosives&gt; is only allowed if Dangerous Goods Classification &lt;classOfDangerousGoods&gt; equals &apos;1&apos; (Explosive substances and articles)..
         /// </summary>
         internal static string _1999 {
             get {
@@ -4282,7 +4309,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Dangerous Goods Limited Quantities Code (dangerousGoodsLimitedQuantitiesCode) is only allowed if at least one of the contained base items contains dangerous goods (dangerousGoodsRegulationCode equals &apos;ZCG&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Dangerous Goods Limited Quantities Code &lt;dangerousGoodsLimitedQuantitiesCode&gt; is only allowed if at least one of the contained base items contains dangerous goods (&lt;dangerousGoodsRegulationCode&gt; equals &apos;ZCG&apos;)..
         /// </summary>
         internal static string _2000 {
             get {
@@ -4291,7 +4318,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if the base unit trade item contains dangerous goods (dangerousGoodsRegulationCode equals &apos;ZCG&apos;), then Dangerous Goods Limited Quantities Code (dangerousGoodsLimitedQuantitiesCode) must be used on the base unit trade item and on all its parent levels of the trade item hierarchy..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if the base unit trade item contains dangerous goods (&lt;dangerousGoodsRegulationCode&gt; equals &apos;ZCG&apos;), then Dangerous Goods Limited Quantities Code &lt;dangerousGoodsLimitedQuantitiesCode&gt; must be used on the base unit trade item and on all its parent levels of the trade item hierarchy..
         /// </summary>
         internal static string _2001 {
             get {
@@ -4300,7 +4327,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Packaging Date Type Code (tradeItemDateOnPackagingTypeCode) is used and not equal to (&apos;NO_DATE_MARKED&apos;, &apos;DISPLAY_UNTIL_DATE&apos;, &apos;FREEZING_DATE&apos;, &apos;PACKAGING_DATE&apos; or &apos;PRODUCTION_DATE&apos;), then Minimum Days of Shelf Life at Arrival (minimumTradeItemLifespanFromTimeOfArrival) and/or Minimum Days of Shelf Life from Production (minimumTradeItemLifespanFromTimeOfProduction) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Packaging Date Type Code &lt;tradeItemDateOnPackagingTypeCode&gt; is used and not equal to (&apos;NO_DATE_MARKED&apos;, &apos;DISPLAY_UNTIL_DATE&apos;, &apos;FREEZING_DATE&apos;, &apos;PACKAGING_DATE&apos; or &apos;PRODUCTION_DATE&apos;), then Minimum Days of Shelf Life at Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; and/or Minimum Days of Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; must be used..
         /// </summary>
         internal static string _2002 {
             get {
@@ -4309,7 +4336,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Regulatory Act (regulatoryAct) equals &apos;GHS&apos; and Regulatory Permit Identification (regulatoryPermitIdentification) equals &apos;TRUE&apos;, then other GHS information must be used for the base unit: &lt;Attribute name&gt;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Regulatory Act &lt;regulatoryAct&gt; equals &apos;GHS&apos; and Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt; equals &apos;TRUE&apos;, then other GHS information must be used for the base unit: &lt;Attribute name&gt;..
         /// </summary>
         internal static string _2003 {
             get {
@@ -4318,7 +4345,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, attribute/s &lt;Attribute name&gt; belong/s to the GHS information and is/are only allowed if Regulatory Act (regulatoryAct) equals &apos;GHS&apos; and Regulatory Permit Identification (regulatoryPermitIdentification) equals &apos;TRUE&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, attribute/s &lt;Attribute name&gt; belong/s to the GHS information and is/are only allowed if Regulatory Act &lt;regulatoryAct&gt; equals &apos;GHS&apos; and Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt; equals &apos;TRUE&apos;..
         /// </summary>
         internal static string _2004 {
             get {
@@ -4327,7 +4354,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Dangerous Substance Waste Code (dangerousSubstanceWasteCode/enumerationValueInformation/enumerationValue) is only allowed if the corresponding agency (dangerousSubstanceWasteCode/externalAgencyName) equals &apos;EU&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Dangerous Substance Waste Code &lt;enumerationValue&gt; is only allowed if the corresponding agency &lt;externalAgencyName&gt; equals &apos;EU&apos;..
         /// </summary>
         internal static string _2005 {
             get {
@@ -4336,7 +4363,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Chemical Ingredient Identification [Unique Formula Identifier (UFI)] (chemicalIngredientIdentification) must be used together and Chemical Ingredient Scheme (chemicalIngredientScheme) must equal &apos;UFI&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Chemical Ingredient Identification [Unique Formula Identifier (UFI)] &lt;chemicalIngredientIdentification&gt; must be used together and Chemical Ingredient Scheme &lt;chemicalIngredientScheme&gt; must equal &apos;UFI&apos;..
         /// </summary>
         internal static string _2006 {
             get {
@@ -4345,7 +4372,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Hazardous Statements Description (hazardStatementsDescription) is only allowed if Hazardous Statements Code (hazardStatementsCode) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Hazardous Statements Description &lt;hazardStatementsDescription&gt; is only allowed if Hazardous Statements Code &lt;hazardStatementsCode&gt; is used..
         /// </summary>
         internal static string _2007 {
             get {
@@ -4354,7 +4381,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Precautionary Statement Description (precautionaryStatementsDescription) is only allowed if Precautionary Statements Code (precautionaryStatementsCode) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Precautionary Statement Description &lt;precautionaryStatementsDescription&gt; is only allowed if Precautionary Statements Code &lt;precautionaryStatementsCode&gt; is used..
         /// </summary>
         internal static string _2008 {
             get {
@@ -4363,7 +4390,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Dangerous Substance Name (dangerousSubstanceName), Flammable Substance Minimum Percent (flammableSubstanceMinimumPercent) and Flammable Substance Maximum Percent (flammableSubstanceMaximumPercent) can only be used together..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Dangerous Substance Name &lt;dangerousSubstanceName&gt;, Flammable Substance Minimum Percent &lt;flammableSubstanceMinimumPercent&gt; and Flammable Substance Maximum Percent &lt;flammableSubstanceMaximumPercent&gt; can only be used together..
         /// </summary>
         internal static string _2009 {
             get {
@@ -4372,7 +4399,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If grossWeight and netWeight are provided on the same record, grossWeight must be greater than or equal to netWeight.
+        ///   Looks up a localized string similar to If &lt;grossWeight&gt; and &lt;netWeight&gt; are provided on the same record, &lt;grossWeight&gt; must be greater than or equal to &lt;netWeight&gt;.
         /// </summary>
         internal static string _201 {
             get {
@@ -4381,7 +4408,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Regulation Level Code Reference (regulationLevelCodeReference) and Regulatory Act Compliance Level Code (regulatoryActComplianceLevelCode) are only allowed if Regulation Type Code (regulationTypeCode) equals &apos;EXPLOSIVES_PRECURSORS_REGISTRATION&apos; and Regulation Compliance Indicator (isTradeItemRegulationCompliant) equals &apos;TRUE&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Regulation Level Code Reference &lt;regulationLevelCodeReference&gt; and Regulatory Act Compliance Level Code &lt;regulatoryActComplianceLevelCode&gt; are only allowed if Regulation Type Code &lt;regulationTypeCode&gt; equals &apos;EXPLOSIVES_PRECURSORS_REGISTRATION&apos; and Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; equals &apos;TRUE&apos;..
         /// </summary>
         internal static string _2011 {
             get {
@@ -4390,7 +4417,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the code &apos;CONTAINS&apos; is allowed for Additive Containment Code (additiveInformation/levelOfContainmentCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the code &apos;CONTAINS&apos; is allowed for Additive Containment Code &lt;levelOfContainmentCode&gt;..
         /// </summary>
         internal static string _2012 {
             get {
@@ -4399,7 +4426,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the code &apos;GREATER_THAN_OR_EQUAL&apos; is allowed for Fat Percentage in Dry Matter Measurement Precision Code (fatPercentageInDryMatterMeasurementPrecisionCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the code &apos;GREATER_THAN_OR_EQUAL&apos; is allowed for Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt;..
         /// </summary>
         internal static string _2013 {
             get {
@@ -4408,7 +4435,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;2P&apos; (Kilobyte), &apos;4L&apos; (Megabyte), &apos;AD&apos; (Byte), &apos;E34&apos; (Gigabyte) or &apos;E35&apos; (Terabyte) are allowed for File Size UoM (fileSize/@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;2P&apos; (Kilobyte), &apos;4L&apos; (Megabyte), &apos;AD&apos; (Byte), &apos;E34&apos; (Gigabyte) or &apos;E35&apos; (Terabyte) are allowed for File Size UoM (&lt;fileSize&gt;/@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _2014 {
             get {
@@ -4417,7 +4444,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;CMK&apos; (Square centimetre), &apos;DMK&apos; (Square decimetre), &apos;GRM&apos; (Gram), &apos;KGM&apos; (Kilogram), &apos;MGM&apos; (Milligram), &apos;MMK&apos; (Square millimetre), &apos;MTK&apos; (Square metre) or &apos;TNE&apos; (Tonne) are allowed for Packaging Material Quantity UoM (packagingMaterialCompositionQuantity/@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;CMK&apos; (Square centimetre), &apos;DMK&apos; (Square decimetre), &apos;GRM&apos; (Gram), &apos;KGM&apos; (Kilogram), &apos;MGM&apos; (Milligram), &apos;MMK&apos; (Square millimetre), &apos;MTK&apos; (Square metre) or &apos;TNE&apos; (Tonne) are allowed for Packaging Material Quantity UoM (&lt;packagingMaterialCompositionQuantity&gt;/@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _2015 {
             get {
@@ -4426,7 +4453,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;23&apos; (Grams Per Cubic Centimetre) or &apos;GL&apos; (Gram Per Litre) are allowed for Dangerous Substance Gas Density UoM (dangerousSubstanceGasDensity/@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;23&apos; (Grams Per Cubic Centimetre) or &apos;GL&apos; (Gram Per Litre) are allowed for Dangerous Substance Gas Density UoM (&lt;dangerousSubstanceGasDensity&gt;/@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _2016 {
             get {
@@ -4435,7 +4462,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;CONTAINS&apos; or &apos;MAY_CONTAIN&apos; are allowed for Allergen Containment Code (allergen/levelOfContainmentCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;CONTAINS&apos; or &apos;MAY_CONTAIN&apos; are allowed for Allergen Containment Code (allergen/&lt;levelOfContainmentCode&gt;)..
         /// </summary>
         internal static string _2017 {
             get {
@@ -4444,7 +4471,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Product Activity Type Code (productActivityTypeCode) equals &apos;LAST_PROCESSING&apos;, then codes &apos;097&apos; (EUROPEAN UNION) and &apos;NON_EU&apos; are not allowed for the corresponding Country Code (countryOfActivity/countryCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Product Activity Type Code &lt;productActivityTypeCode&gt; equals &apos;LAST_PROCESSING&apos;, then codes &apos;097&apos; (EUROPEAN UNION) and &apos;NON_EU&apos; are not allowed for the corresponding Country Code &lt;countryCode&gt;..
         /// </summary>
         internal static string _2018 {
             get {
@@ -4453,7 +4480,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Is Base Price Declaration Relevant (isBasePriceDeclarationRelevant)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Is Base Price Declaration Relevant &lt;isBasePriceDeclarationRelevant&gt;..
         /// </summary>
         internal static string _2019 {
             get {
@@ -4462,7 +4489,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sum of quantityofNextLowerLevelTradeItem shall equal totalQuantityOfNextLowerLevelTradeItem except when special item code = &apos;dynamic_assortment&apos;..
+        ///   Looks up a localized string similar to Sum of &lt;quantityofNextLowerLevelTradeItem&gt; shall equal &lt;totalQuantityOfNextLowerLevelTradeItem&gt; except when special item code = &apos;DYNAMIC_ASSORTMENT&apos;..
         /// </summary>
         internal static string _202 {
             get {
@@ -4471,7 +4498,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Regulatory Agency (regulatoryAgency) equals &apos;UN&apos; and Regulatory Act (regulatoryAct) equals &apos;GHS&apos; only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Regulatory Permit Identification (regulatoryPermitIdentification)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Regulatory Agency &lt;regulatoryAgency&gt; equals &apos;UN&apos; and Regulatory Act &lt;regulatoryAct&gt; equals &apos;GHS&apos; only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt;..
         /// </summary>
         internal static string _2020 {
             get {
@@ -4480,7 +4507,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Is Diet Type Marked on Package (isDietTypeMarkedOnPackage)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Is Diet Type Marked on Package &lt;isDietTypeMarkedOnPackage&gt;..
         /// </summary>
         internal static string _2021 {
             get {
@@ -4489,7 +4516,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Claim Marked on Package (claimMarkedOnPackage)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Claim Marked on Package &lt;claimMarkedOnPackage&gt;..
         /// </summary>
         internal static string _2022 {
             get {
@@ -4498,7 +4525,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Batteries Built In Indicator (areBatteriesBuiltIn)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;TRUE&apos; or &apos;FALSE&apos; are allowed for Batteries Built In Indicator &lt;areBatteriesBuiltIn&gt;..
         /// </summary>
         internal static string _2023 {
             get {
@@ -4507,7 +4534,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the code &apos;LESS_THAN&apos; is allowed for Percentage of Alcohol by Volume Measurement Precision Code (percentageOfAlcoholByVolumeMeasurementPrecisionCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the code &apos;LESS_THAN&apos; is allowed for Percentage of Alcohol by Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt;..
         /// </summary>
         internal static string _2024 {
             get {
@@ -4516,7 +4543,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Customs Classification Type Code (importClassificationTypeCode) equals &apos;CUSTOMS_TARIFF_NUMBER&apos;, then Customs Classification Value (importClassificationValue) must have exactly 11 digits..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Customs Classification Type Code &lt;importClassificationTypeCode&gt; equals &apos;CUSTOMS_TARIFF_NUMBER&apos;, then Customs Classification Value &lt;importClassificationValue&gt; must have exactly 11 digits..
         /// </summary>
         internal static string _2025 {
             get {
@@ -4525,7 +4552,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Nutrient Code (nutrientTypeCode) is used, then Nutrient Basis (nutrientBasisQuantity) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Nutrient Code &lt;nutrientTypeCode&gt; is used, then Nutrient Basis &lt;nutrientBasisQuantity&gt; must be used..
         /// </summary>
         internal static string _2026 {
             get {
@@ -4534,7 +4561,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Customs Classification Type Code (importClassificationTypeCode) equals &apos;TARIF_INTEGRE_DE_LA_COMMUNAUTE&apos;, then Customs Classification Value (importClassificationValue) must have exactly 10 digits..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Customs Classification Type Code &lt;importClassificationTypeCode&gt; equals &apos;TARIF_INTEGRE_DE_LA_COMMUNAUTE&apos;, then Customs Classification Value &lt;importClassificationValue&gt; must have exactly 10 digits..
         /// </summary>
         internal static string _2027 {
             get {
@@ -4543,7 +4570,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the code &apos;H87&apos; (Piece) is allowed for Statistical Reporting Measurement UoM (statisticalReportingMeasurement/@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the code &apos;H87&apos; (Piece) is allowed for Statistical Reporting Measurement UoM (&lt;statisticalReportingMeasurement&gt;/@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _2028 {
             get {
@@ -4552,7 +4579,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;ANN&apos; (Year), &apos;DAY&apos; (Days), &apos;HUR&apos; (Hour), &apos;MIN&apos; (Minute), &apos;MON&apos; (Month), &apos;SEC&apos; (Second) or &apos;WEE&apos; (Week) are allowed for Ripening Time Period UoM (ripeningTimePeriod/@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;ANN&apos; (Year), &apos;DAY&apos; (Days), &apos;HUR&apos; (Hour), &apos;MIN&apos; (Minute), &apos;MON&apos; (Month), &apos;SEC&apos; (Second) or &apos;WEE&apos; (Week) are allowed for Ripening Time Period UoM (&lt;ripeningTimePeriod&gt;/@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _2029 {
             get {
@@ -4561,7 +4588,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Attribute dataRecipient is required to be populated in a Catalogue Item Notification message..
+        ///   Looks up a localized string similar to Attribute &lt;dataRecipient&gt; is required to be populated in a Catalogue Item Notification (CIN) message..
         /// </summary>
         internal static string _203 {
             get {
@@ -4570,7 +4597,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one iteration of Daily Intake Reference (dailyValueIntakeReference) must be provided in German, French or Italian..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one iteration of Daily Intake Reference &lt;dailyValueIntakeReference&gt; must be provided in German, French or Italian..
         /// </summary>
         internal static string _2031 {
             get {
@@ -4579,7 +4606,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only &apos;100 Gram&apos;, &apos;100 Millilitre&apos;, &apos;1 Litre&apos; or &apos;1 Portion&apos; are allowed for Nutrient Basis (nutrientBasisQuantity) and Nutrient Basis UoM (nutrientBasisQuantity/@measurementUnitCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only &apos;100 Gram&apos;, &apos;100 Millilitre&apos;, &apos;1 Litre&apos; or &apos;1 Portion&apos; are allowed for Nutrient Basis &lt;nutrientBasisQuantity&gt; and Nutrient Basis UoM (&lt;nutrientBasisQuantity&gt;/@&lt;measurementUnitCode&gt;)..
         /// </summary>
         internal static string _2032 {
             get {
@@ -4588,7 +4615,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Preparation Type Code (preparationTypeCode) is not equal to &apos;READY_TO_DRINK&apos; or &apos;READY_TO_EAT&apos;, then Preparation Instructions (preparationInstructions) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Preparation Type Code &lt;preparationTypeCode&gt; is not equal to &apos;READY_TO_DRINK&apos; or &apos;READY_TO_EAT&apos;, then Preparation Instructions &lt;preparationInstructions&gt; must be used..
         /// </summary>
         internal static string _2033 {
             get {
@@ -4597,7 +4624,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Preparation Type Code (preparationTypeCode) must not equal &apos;PREPARED&apos; or &apos;UNPREPARED&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Preparation Type Code &lt;preparationTypeCode&gt; must not equal &apos;PREPARED&apos; or &apos;UNPREPARED&apos;..
         /// </summary>
         internal static string _2034 {
             get {
@@ -4606,7 +4633,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Product Yield Variation Percentage (productYieldVariationPercentage) is only allowed if Product Yield (productYield) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Product Yield Variation Percentage &lt;productYieldVariationPercentage&gt; is only allowed if Product Yield &lt;productYield&gt; is used..
         /// </summary>
         internal static string _2035 {
             get {
@@ -4615,7 +4642,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, only the codes &apos;PREPARED&apos; or &apos;UNPREPARED&apos; are allowed for Nutritional Preparation Code (preparationStateCode)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, only the codes &apos;PREPARED&apos; or &apos;UNPREPARED&apos; are allowed for Nutritional Preparation Code &lt;preparationStateCode&gt;..
         /// </summary>
         internal static string _2036 {
             get {
@@ -4624,7 +4651,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Organic Level Code (organicTradeItemCode) is equal to &apos;2&apos; (Organic) or &apos;6&apos; (In conversion from non-organic to organic), then Organic Certification Identification (organicCertificationIdentification) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Organic Level Code &lt;organicTradeItemCode&gt; is equal to &apos;2&apos; (Organic) or &apos;6&apos; (In conversion from non-organic to organic), then Organic Certification Identification &lt;organicCertificationIdentification&gt; must be used..
         /// </summary>
         internal static string _2037 {
             get {
@@ -4633,7 +4660,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Organic Certification Identification (organicCertificationIdentification) is only allowed if Organic Level Code (organicTradeItemCode) is equal to &apos;2&apos; (Organic) or &apos;6&apos; (In conversion from non-organic to organic)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Organic Certification Identification &lt;organicCertificationIdentification&gt; is only allowed if Organic Level Code &lt;organicTradeItemCode&gt; is equal to &apos;2&apos; (Organic) or &apos;6&apos; (In conversion from non-organic to organic)..
         /// </summary>
         internal static string _2038 {
             get {
@@ -4642,7 +4669,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if packagingRawMaterialCode equals &apos;RECYCLED&apos; then Packaging Raw Material Content Percentage (packagingRawMaterialContentPercentage) is only allowed if Packaging Material Composition Quantity (packagingMaterialCompositionQuantity) is used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if &lt;packagingRawMaterialCode&gt; equals &apos;RECYCLED&apos; then Packaging Raw Material Content Percentage &lt;packagingRawMaterialContentPercentage&gt; is only allowed if Packaging Material Composition Quantity &lt;packagingMaterialCompositionQuantity&gt; is used..
         /// </summary>
         internal static string _2039 {
             get {
@@ -4651,7 +4678,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gross Weight (tradeItemWeight/grossWeight) must not be empty and must have a value greater than zero when Shipping Unit Indicator (isTradeItemADespatchUnit) equals &apos;true&apos;..
+        ///   Looks up a localized string similar to Gross Weight &lt;grossWeight&gt; must not be empty and must have a value greater than zero when Shipping Unit Indicator &lt;isTradeItemADespatchUnit&gt; equals &apos;TRUE&apos;..
         /// </summary>
         internal static string _204 {
             get {
@@ -4660,7 +4687,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Multiple values for foodValueBasis for each attribute are not allowed..
+        ///   Looks up a localized string similar to Multiple values for &lt;foodValueBasis&gt; for each attribute are not allowed..
         /// </summary>
         internal static string _2043 {
             get {
@@ -4669,7 +4696,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Multiple values for foodValuePerTradeItem for each attribute are not allowed..
+        ///   Looks up a localized string similar to Multiple values for &lt;foodValuePerTradeItem&gt; for each attribute are not allowed..
         /// </summary>
         internal static string _2044 {
             get {
@@ -4678,7 +4705,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Additional Product Identification Type Code (additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode) equals &apos;PLU&apos;, then associated Additional Product Identification (additionalTradeItemIdentification) value SHALL begin with (&apos;02&apos; , &apos;22&apos; , &apos;24&apos; , &apos;26&apos; , &apos;28&apos; , &apos;21&apos; , &apos;23&apos; , &apos;25&apos; , &apos;27 or &apos;29&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Additional Product Identification Type Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) equals &apos;PLU&apos;, then associated Additional Product Identification &lt;additionalTradeItemIdentification&gt; value SHALL begin with (&apos;02&apos; , &apos;22&apos; , &apos;24&apos; , &apos;26&apos; , &apos;28&apos; , &apos;21&apos; , &apos;23&apos; , &apos;25&apos; , &apos;27 or &apos;29&apos;)..
         /// </summary>
         internal static string _2062 {
             get {
@@ -4687,7 +4714,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Additional Product Identification Type Code (additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode) equals &apos;PLU&apos;, then Variable Unit Indicator (isTradeItemAVariableUnit) SHALL equal &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Additional Product Identification Type Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) equals &apos;PLU&apos;, then Variable Unit Indicator &lt;isTradeItemAVariableUnit&gt; SHALL equal &apos;TRUE&apos;..
         /// </summary>
         internal static string _2063 {
             get {
@@ -4696,7 +4723,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Variable Unit Indicator (isTradeItemAVariableUnit) equals &apos;true&apos;, then one Additional Product Identification Type Code (additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode) SHALL equal &apos;PLU&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Variable Unit Indicator &lt;isTradeItemAVariableUnit&gt; equals &apos;TRUE&apos;, then one Additional Product Identification Type Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) SHALL equal &apos;PLU&apos;..
         /// </summary>
         internal static string _2064 {
             get {
@@ -4705,7 +4732,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Additional Product Identification Type Code (additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode) equals &apos;PLU&apos;, then associated Additional Product Identification (additionalTradeItemIdentification) value SHALL have exactly 7 digits..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Additional Product Identification Type Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) equals &apos;PLU&apos;, then associated Additional Product Identification &lt;additionalTradeItemIdentification&gt; value SHALL have exactly 7 digits..
         /// </summary>
         internal static string _2065 {
             get {
@@ -4714,7 +4741,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Currency Code (.../@currencycode) is used, then at least one iteration of .../@currencycode SHALL equal &apos;EUR&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Currency Code (.../@currencycode) is used, then at least one iteration of .../@currencycode SHALL equal &apos;EUR&apos;..
         /// </summary>
         internal static string _2066 {
             get {
@@ -4723,7 +4750,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Display Ready Packaging (hasDisplayReadyPackaging) equals &apos;TRUE&apos;, then Consumer Unit Indicator (isTradeItemAConsumerUnit) SHALL equal &apos;false&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Display Ready Packaging &lt;hasDisplayReadyPackaging&gt; equals &apos;TRUE&apos;, then Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; SHALL equal &apos;FALSE&apos;..
         /// </summary>
         internal static string _2067 {
             get {
@@ -4741,7 +4768,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alcohol Percentage (percentageOfAlcoholByVolume) is not used. For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, .
+        ///   Looks up a localized string similar to Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; is not used. For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, .
         /// </summary>
         internal static string _2070 {
             get {
@@ -4750,7 +4777,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Shipping Unit Indicator (isTradeItemADespatchUnit) equals &apos;true&apos; and GTIN (Global Trade Item Number) (tradeItem/gtin) begins with &apos;9&apos;, then Variable Measure Indicator (isTradeItemAVariableUnit) must equal &apos;true&apos; on the lowest level of the hierarchy where Base Unit Indicator (isTradeItemABaseUnit) equals &apos;true&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Shipping Unit Indicator &lt;isTradeItemADespatchUnit&gt; equals &apos;TRUE&apos; and GTIN (Global Trade Item Number) &lt;gtin&gt; begins with &apos;9&apos;, then Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; must equal &apos;TRUE&apos; on the lowest level of the hierarchy where Base Unit Indicator &lt;isTradeItemABaseUnit&gt; equals &apos;TRUE&apos;..
         /// </summary>
         internal static string _2072 {
             get {
@@ -4759,7 +4786,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Initial Manufacturer Sterilisation Code (initialManufacturerSterilisationCode) and/or Manufacturer Specified Acceptable Resterilisation Code (manufacturerSpecifiedAcceptableResterilisationCode) must not equal &apos;NO_STERILISATION_REQUIRED&apos; and is invalidly used..
+        ///   Looks up a localized string similar to Initial Manufacturer Sterilisation Code &lt;initialManufacturerSterilisationCode&gt; and/or Manufacturer Specified Acceptable Resterilisation Code &lt;manufacturerSpecifiedAcceptableResterilisationCode&gt; must not equal &apos;NO_STERILISATION_REQUIRED&apos; and is invalidly used..
         /// </summary>
         internal static string _2075 {
             get {
@@ -4768,7 +4795,16 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to isTradeItemAnOrderableUnit must be true for at least one GTIN within a hierarchical configuration..
+        ///   Looks up a localized string similar to &lt;gln&gt; shall equal &lt;dataSource&gt;, &lt;contentOwner&gt; and &lt;informationProvider&gt; and shall be the same for all levels of trade item hierarchy..
+        /// </summary>
+        internal static string _300 {
+            get {
+                return ResourceManager.GetString("300", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;isTradeItemAnOrderableUnit&gt; must be &apos;TRUE&apos; for at least one GTIN within a hierarchical configuration..
         /// </summary>
         internal static string _312 {
             get {
@@ -4777,7 +4813,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to minimumTradeItemLifespanFromTimeOfProduction must be greater than or equal to minimumTradeItemLifespanFromTimeOfArrival..
+        ///   Looks up a localized string similar to &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; must be greater than or equal to &lt;minimumTradeItemLifespanFromTimeOfArrival&gt;..
         /// </summary>
         internal static string _314 {
             get {
@@ -4786,7 +4822,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alcohol Percentage (percentageOfAlcoholByVolume) is not used. For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, this attribute is required for all items on the lowest level of the hierarchy for Global Product Category Code (gpcCategoryCode) &lt;gpcCategoryCode gpcCategoryName&gt;..
+        ///   Looks up a localized string similar to Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; is not used. For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, this attribute is required for all items on the lowest level of the hierarchy for Global Product Category Code &lt;gpcCategoryCode&gt; &lt;&lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;&gt;..
         /// </summary>
         internal static string _325 {
             get {
@@ -4795,7 +4831,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If dangerousGoodsRegulationCode equals &apos;ADR&apos; and dangerousGoodsPackingGroup is not empty then dangerousGoodsPackingGroup must equal  (&apos;NA&apos;,&apos;I&apos;, &apos;II&apos; or &apos;III&apos;)..
+        ///   Looks up a localized string similar to If &lt;dangerousGoodsRegulationCode&gt; equals &apos;ADR&apos; and &lt;dangerousGoodsPackingGroup&gt; is not empty then &lt;dangerousGoodsPackingGroup&gt; must equal (&apos;NA&apos;,&apos;I&apos;, &apos;II&apos; or &apos;III&apos;)..
         /// </summary>
         internal static string _339 {
             get {
@@ -4822,7 +4858,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If the item does not have a child item, the value of isTradeItemABaseUnit must be true..
+        ///   Looks up a localized string similar to If the item does not have a child item, the value of &lt;isTradeItemABaseUnit&gt; must be &apos;TRUE&apos;..
         /// </summary>
         internal static string _382 {
             get {
@@ -4831,7 +4867,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If the trade item has a child item the value of isTradeItemABaseUnit must be false..
+        ///   Looks up a localized string similar to If the trade item has a child item the value of &lt;isTradeItemABaseUnit&gt; must be &apos;FALSE&apos;..
         /// </summary>
         internal static string _383 {
             get {
@@ -4840,7 +4876,25 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If populated, percentageOfAlcoholByVolume  must be greater than or equal to 0.00 and smaller than or equal to 100.00 by definition..
+        ///   Looks up a localized string similar to If &lt;incotermCodeLocation&gt; is not empty then &lt;incotermCode&gt; must not be empty..
+        /// </summary>
+        internal static string _392 {
+            get {
+                return ResourceManager.GetString("392", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If &lt;gpcCategoryCode&gt; is used, then its value shall be in the list of official GPC bricks as published by GS1 and currently adopted in production by GDSN..
+        /// </summary>
+        internal static string _398 {
+            get {
+                return ResourceManager.GetString("398", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If populated, &lt;percentageOfAlcoholByVolume&gt; must be greater than or equal to 0.00 and smaller than or equal to 100.00 by definition..
         /// </summary>
         internal static string _428 {
             get {
@@ -4849,7 +4903,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If classOfDangerousGoods is populated and dangerousGoodsRegulationCode equals &apos;ADR&apos;, then classOfDangerousGoods must be one of the following values: &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4.1&apos;, &apos;4.2&apos;, &apos;4.3&apos;, &apos;5.1&apos;, &apos;5.2&apos;, &apos;6.1&apos;, &apos;6.2&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;..
+        ///   Looks up a localized string similar to If &lt;classOfDangerousGoods&gt; is populated and &lt;dangerousGoodsRegulationCode&gt; equals &apos;ADR&apos;, then &lt;classOfDangerousGoods&gt; must be one of the following values: &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4.1&apos;, &apos;4.2&apos;, &apos;4.3&apos;, &apos;5.1&apos;, &apos;5.2&apos;, &apos;6.1&apos;, &apos;6.2&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;..
         /// </summary>
         internal static string _437 {
             get {
@@ -4858,7 +4912,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If isTradeItemPackedIrregularly equals ‘FALSE’ and tradeItemCompositionWidth, tradeItemCompositionDepth and quantityOfCompleteLayersContainedInATradeItem are all supplied and tradeItemCompositionWidth/measurementUnitCode and tradeItemCompositionDepth/measurementUnitCode equal ‘EA’ then the product of the three attributes should equal the totalQuantityOfNextLowerLevelTradeItem..
+        ///   Looks up a localized string similar to If &lt;isTradeItemPackedIrregularly&gt; equals &apos;FALSE&apos; and &lt;tradeItemCompositionWidth&gt;, &lt;tradeItemCompositionDepth&gt; and &lt;quantityOfCompleteLayersContainedInATradeItem&gt; are all supplied and &lt;measurementUnitCode&gt; and &lt;measurementUnitCode&gt; equal &apos;EA&apos; then the product of the three attributes should equal the &lt;totalQuantityOfNextLowerLevelTradeItem&gt;..
         /// </summary>
         internal static string _446 {
             get {
@@ -4867,7 +4921,25 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; then if the Document Command is equal to  &apos;CHANGE_BY_REFRESH&apos; then netContent must not be updated..
+        ///   Looks up a localized string similar to If attribute datatype is equal to &lt;gtin&gt; then it must have a valid check digit..
+        /// </summary>
+        internal static string _447 {
+            get {
+                return ResourceManager.GetString("447", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If attribute datatype equals &lt;gln&gt; then it must be a 13 digit number and have a valid check digit..
+        /// </summary>
+        internal static string _448 {
+            get {
+                return ResourceManager.GetString("448", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos;, then &lt;netContent&gt; must not be updated..
         /// </summary>
         internal static string _449 {
             get {
@@ -4876,7 +4948,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; then if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then priceComparisonMeasurement must not be updated..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos;, then &lt;priceComparisonMeasurement&gt; must not be updated..
         /// </summary>
         internal static string _450 {
             get {
@@ -4885,7 +4957,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value for brandName is not allowed to be changed according to GTIN allocation rules..
+        ///   Looks up a localized string similar to The value for &lt;brandName&gt; is not allowed to be changed according to GTIN allocation rules..
         /// </summary>
         internal static string _451 {
             get {
@@ -4894,7 +4966,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; then if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then totalQuantityOfNextLowerLevelTradeItem must not be updated..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos;, then &lt;totalQuantityOfNextLowerLevelTradeItem&gt; must not be updated..
         /// </summary>
         internal static string _452 {
             get {
@@ -4903,7 +4975,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to childTradeItem GTIN is not allowed to be changed according to GTIN allocation rules.
+        ///   Looks up a localized string similar to &lt;childTradeItem&gt; GTIN is not allowed to be changed according to GTIN allocation rules..
         /// </summary>
         internal static string _453 {
             get {
@@ -4912,7 +4984,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The  GTIN cannot be a child of itself..
+        ///   Looks up a localized string similar to The GTIN cannot be a child of itself..
         /// </summary>
         internal static string _454 {
             get {
@@ -4921,7 +4993,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If TargetMarket/targetMarketCountryCode is equal to (&apos;036&apos; (Australia) or &apos;554&apos; (New Zealand)) then the Trade Item Group ID Description must be the same for all GTINs within a Trade Item Group ID.
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; is equal to (&apos;036&apos; (Australia) or &apos;554&apos; (New Zealand)) then the Trade Item Group ID Description must be the same for all GTINs within a Trade Item Group ID..
         /// </summary>
         internal static string _464 {
             get {
@@ -4930,7 +5002,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zero or negative values are not allowed for Packaging Material Composition Quantity where provided.
+        ///   Looks up a localized string similar to Zero or negative values are not allowed for Packaging Material Composition Quantity where provided..
         /// </summary>
         internal static string _466 {
             get {
@@ -4939,7 +5011,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, GTIN (Global Trade Item Number) starting with &apos;002&apos;, &apos;004&apos;, &apos;02&apos; are not allowed. .
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, GTIN (Global Trade Item Number) starting with &apos;002&apos;, &apos;004&apos;, &apos;02&apos; are not allowed. .
         /// </summary>
         internal static string _469 {
             get {
@@ -4948,7 +5020,16 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For each GTIN (Global Trade Item Number) of the Contained Product.
+        ///   Looks up a localized string similar to If data type is equal to &lt;gtin&gt; then attribute value must be a valid GTIN-8, GTIN-12, GTIN-13 or GTIN-14 number..
+        /// </summary>
+        internal static string _471 {
+            get {
+                return ResourceManager.GetString("471", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For each GTIN (Global Trade Item Number) of the Contained Product..
         /// </summary>
         internal static string _472 {
             get {
@@ -4957,7 +5038,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If Irregularly Configured Pallet Indicator (isTradeItemPackedIrregularly) equals &apos;FALSE&apos;, then Total Count of All Products (totalQuantityOfNextLowerLevelTradeItem) must be equal to Number of Layers per GTIN (quantityOfCompleteLayersContainedInATradeItem) multiplied by Number of Units per Layer in a GTIN (quantityOfTradeItemsContainedInACompleteLayer)..
+        ///   Looks up a localized string similar to If Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; equals &apos;FALSE&apos;, then Total Count of All Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; must be equal to Number of Layers per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; multiplied by Number of Units per Layer in a GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt;..
         /// </summary>
         internal static string _473 {
             get {
@@ -4966,7 +5047,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If dataCarrierTypeCode is equal to &apos;EAN_8&apos; then the first six digits of the TradeItem/GTIN shall equal &apos;000000&apos;..
+        ///   Looks up a localized string similar to If &lt;dataCarrierTypeCode&gt; is equal to &apos;EAN_8&apos; then the first six digits of the &lt;GTIN&gt; shall equal &apos;000000&apos;..
         /// </summary>
         internal static string _474 {
             get {
@@ -4975,7 +5056,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Target Market Country Code and targetMarketSubdivisionCode when populated,  will be consistent for all GTINs within a given hierarchy.
+        ///   Looks up a localized string similar to The Target Market Country Code and &lt;targetMarketSubdivisionCode&gt; when populated, will be consistent for all GTINs within a given hierarchy..
         /// </summary>
         internal static string _475 {
             get {
@@ -4984,7 +5065,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, the unit of measure for &lt;attribute&gt; must be specified in degrees Celsius..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, the unit of measure for &lt;attribute&gt; must be specified in degrees Celsius..
         /// </summary>
         internal static string _477 {
             get {
@@ -4993,7 +5074,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If nestingIncrement is populated it must be greater than zero(0)..
+        ///   Looks up a localized string similar to If &lt;nestingIncrement&gt; is populated it must be greater than zero(0)..
         /// </summary>
         internal static string _478 {
             get {
@@ -5002,7 +5083,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Stacking Factor (stackingFactor) must be less than 100..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Stacking Factor &lt;stackingFactor&gt; must be less than 100..
         /// </summary>
         internal static string _479 {
             get {
@@ -5011,7 +5092,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Stacking Factor for non-GTIN Pallet (logisticsUnitStackingFactor) must be less than 100..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Stacking Factor for non-GTIN Pallet &lt;logisticsUnitStackingFactor&gt; must be less than 100..
         /// </summary>
         internal static string _480 {
             get {
@@ -5020,7 +5101,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Number of Layers per non-GTIN Pallet (quantityOfLayersPerPallet) must be less than 999..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Number of Layers per non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; must be less than 999..
         /// </summary>
         internal static string _481 {
             get {
@@ -5029,7 +5110,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to endAvailabilityDateTime shall be later than or equal to today on first population..
+        ///   Looks up a localized string similar to &lt;endAvailabilityDateTime&gt; shall be later than or equal to today on first population..
         /// </summary>
         internal static string _483 {
             get {
@@ -5038,7 +5119,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to discontinuedDateTime must only be updated  with documentCommand of &apos;CORRECT&apos;..
+        ///   Looks up a localized string similar to &lt;discontinuedDateTime&gt; must only be updated with &lt;documentCommand&gt; of &apos;CORRECT&apos;..
         /// </summary>
         internal static string _485 {
             get {
@@ -5047,7 +5128,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to lastChangeDateTime for a trade item must be the same or later than previously sent value.
+        ///   Looks up a localized string similar to &lt;lastChangeDateTime&gt; for a trade item must be the same or later than previously sent value..
         /// </summary>
         internal static string _488 {
             get {
@@ -5065,7 +5146,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There is a limit of 1000 Transactions within 1 Message.
+        ///   Looks up a localized string similar to There is a limit of 1000 Transactions within 1 Message..
         /// </summary>
         internal static string _493 {
             get {
@@ -5074,7 +5155,16 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then TradeItemMeasurements/height shall not be 20 percent greater than current version height..
+        ///   Looks up a localized string similar to There must be at most 100 Documents per transaction..
+        /// </summary>
+        internal static string _495 {
+            get {
+                return ResourceManager.GetString("495", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then &lt;height&gt; shall not be 20 percent greater than current version height..
         /// </summary>
         internal static string _500 {
             get {
@@ -5083,7 +5173,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then TradeItemMeasurements/width shall not be 20 percent greater than current version width..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then &lt;width&gt; shall not be 20 percent greater than current version width..
         /// </summary>
         internal static string _501 {
             get {
@@ -5092,7 +5182,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then TradeItemMeasurements/depth shall not be 20 percent greater than current version depth..
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then &lt;depth&gt; shall not be 20 percent greater than current version depth..
         /// </summary>
         internal static string _502 {
             get {
@@ -5101,7 +5191,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If preliminaryItemStatusCode does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then TradeItemMeasurements/grossWeight shall not be 20 percent greater than current version grossWeight. .
+        ///   Looks up a localized string similar to If &lt;preliminaryItemStatusCode&gt; does not equal &apos;PRELIMINARY&apos; and if the Document Command is equal to &apos;CHANGE_BY_REFRESH&apos; then &lt;grossWeight&gt; shall not be 20 percent greater than current version &lt;grossWeight&gt;. .
         /// </summary>
         internal static string _503 {
             get {
@@ -5110,7 +5200,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maximum number of iterations of GDSNTradeItemClassificationAttributeType  is  25.
+        ///   Looks up a localized string similar to Maximum number of iterations of GDSNTradeItemClassificationAttributeType is 25..
         /// </summary>
         internal static string _504 {
             get {
@@ -5119,7 +5209,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, at least one value of Packaging Material Quantity (packagingMaterialCompositionQuantity) must have gram (GRM) or kilogram (KGM) defined as the unit of measure..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, at least one value of Packaging Material Quantity &lt;packagingMaterialCompositionQuantity&gt; must have gram (GRM) or kilogram (KGM) defined as the unit of measure..
         /// </summary>
         internal static string _506 {
             get {
@@ -5128,7 +5218,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The total of values in packagingMaterialCompositionQuantity may not exceed the value in packagingWeight for the same item ..
+        ///   Looks up a localized string similar to The total of values in &lt;packagingMaterialCompositionQuantity&gt; may not exceed the value in &lt;packagingWeight&gt; for the same item ..
         /// </summary>
         internal static string _507 {
             get {
@@ -5137,7 +5227,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Depth/Length (tradeItemMeasurements/depth) must not be empty and must have a value greater than zero for physical items, i.e., if isTradeItemNonphysical equals &apos;false&apos; or is not used. Use an average value for variable measure items..
+        ///   Looks up a localized string similar to &lt;length&gt; &lt;depth&gt; must not be empty and must have a value greater than zero for physical items, i.e., if &lt;isTradeItemNonphysical&gt; equals &apos;FALSE&apos; or is not used. Use an average value for variable measure items..
         /// </summary>
         internal static string _510 {
             get {
@@ -5146,7 +5236,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Height (tradeItemMeasurements/height) must not be empty and must have a value greater than zero for physical items, i.e., if isTradeItemNonphysical equals &apos;false&apos; or is not used. Use an average value for variable measure items..
+        ///   Looks up a localized string similar to Height &lt;height&gt; must not be empty and must have a value greater than zero for physical items, i.e., if &lt;isTradeItemNonphysical&gt; equals &apos;FALSE&apos; or is not used. Use an average value for variable measure items..
         /// </summary>
         internal static string _511 {
             get {
@@ -5155,7 +5245,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Width (tradeItemMeasurements/width) must not be empty and must have a value greater than zero for physical items, i.e., if isTradeItemNonphysical equals &apos;false&apos; or is not used. Use an average value for variable measure items..
+        ///   Looks up a localized string similar to Width &lt;width&gt; must not be empty and must have a value greater than zero for physical items, i.e., if &lt;isTradeItemNonphysical&gt; equals &apos;FALSE&apos; or is not used. Use an average value for variable measure items..
         /// </summary>
         internal static string _512 {
             get {
@@ -5164,7 +5254,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Negative values are not allowed for Gross Weight.
+        ///   Looks up a localized string similar to Negative values are not allowed for Gross Weight..
         /// </summary>
         internal static string _515 {
             get {
@@ -5173,7 +5263,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zero or negative values are not allowed for Net Weight where Net Weight is Provided.
+        ///   Looks up a localized string similar to Zero or negative values are not allowed for Net Weight where Net Weight is Provided..
         /// </summary>
         internal static string _516 {
             get {
@@ -5182,7 +5272,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If (Audio Visual Media Product Description Module or Publication Title Rating Module or Audio Visual Media Content Information Module) are used and gpcCategoryCode is equal to &apos;10001137&apos; then audioVisualMediaProductTitle , genreTypeCodeReference , titleRatingCodeReference/Code, titleRatingCodeReference/codeListAgencyCode  and gameFormatCode shall be used..
+        ///   Looks up a localized string similar to If (Audio Visual Media Product Description Module or Publication Title Rating Module or Audio Visual Media Content Information Module) are used and &lt;gpcCategoryCode&gt; is equal to &apos;10001137&apos; then &lt;audioVisualMediaProductTitle&gt; , &lt;genreTypeCodeReference&gt; , &lt;titleRatingCodeReference&gt;/Code, &lt;codeListAgencyCode&gt; and &lt;gameFormatCode&gt; shall be used..
         /// </summary>
         internal static string _517 {
             get {
@@ -5191,7 +5281,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If  targetMarketCountryCode is equal to &apos;752&apos; (Sweden) layerHeight must have the same value as one of the values in width, depth or height of the child item..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; is equal to &apos;752&apos; (Sweden) &lt;layerHeight&gt; must have the same value as one of the values in width, depth or height of the child item..
         /// </summary>
         internal static string _519 {
             get {
@@ -5200,7 +5290,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If  targetMarketCountryCode equals &apos;752&apos; (Sweden) priceBasisQuantity may be specified with the following units of measures: kilogram, gram , metre, millimetre, millilitre, litre, square metre, cubic metres,piece..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals &apos;752&apos; (Sweden) &lt;priceBasisQuantity&gt; may be specified with the following units of measures: kilogram, gram , metre, millimetre, millilitre, litre, square metre, cubic metres,piece..
         /// </summary>
         internal static string _520 {
             get {
@@ -5209,7 +5299,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If  targetMarketCountryCode is equal to &apos;752&apos; (Sweden), additionalTradeItemIdentificationValue (&apos;SUPPLIER_ASSIGNED&apos;, &apos;DISTRIBUTOR_ASSIGNED&apos;) may not have the same value on more than one Trade Item in the same item hierarchy. This rule applies when isTradeItemAnOrderableUnit is equal to &apos;true&apos;..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; is equal to &apos;752&apos; (Sweden), &lt;additionalTradeItemIdentificationValue&gt; (&apos;SUPPLIER_ASSIGNED&apos;, &apos;DISTRIBUTOR_ASSIGNED&apos;) may not have the same value on more than one Trade Item in the same item hierarchy. This rule applies when &lt;isTradeItemAnOrderableUnit&gt; is equal to &apos;TRUE&apos;..
         /// </summary>
         internal static string _521 {
             get {
@@ -5218,7 +5308,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If dataCarrierTypeCode equals (&apos;EAN_13&apos;, &apos;UPC_A&apos; or &apos;UPC_E&apos;) then first digit of gtin shall equal &apos;0&apos;..
+        ///   Looks up a localized string similar to If &lt;dataCarrierTypeCode&gt; equals (&apos;EAN_13&apos;, &apos;UPC_A&apos; or &apos;UPC_E&apos;) then first digit of gtin shall equal &apos;0&apos;..
         /// </summary>
         internal static string _523 {
             get {
@@ -5227,7 +5317,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, Net Content (netContent) is mandatory on consumer units (Consumer Unit Indicator (isTradeItemAConsumerUnit) equals to &apos;true&apos;)..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, Net Content &lt;netContent&gt; is mandatory on consumer units (Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals to &apos;TRUE&apos;)..
         /// </summary>
         internal static string _524 {
             get {
@@ -5236,7 +5326,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If provided, Ordering Lead Time must be greater than zero.
+        ///   Looks up a localized string similar to If provided, &lt;orderingLeadTime&gt; must be greater than zero..
         /// </summary>
         internal static string _526 {
             get {
@@ -5245,7 +5335,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If Target Market is &apos;036&apos; (Australia) and taxTypeCode is equal to &apos;WET&apos; (Wine Equalisation Tax), then percentageOfAlcoholByVolume must be populated.
+        ///   Looks up a localized string similar to If Target Market is &apos;036&apos; (Australia) and &lt;taxTypeCode&gt; is equal to &apos;WET&apos; (Wine Equalisation Tax), then &lt;percentageOfAlcoholByVolume&gt; must be populated..
         /// </summary>
         internal static string _528 {
             get {
@@ -5254,7 +5344,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Number of Units per Layer in a Non-GTIN Pallet (quantityOfTradeItemsPerPalletLayer) is used, then Number of Layers per Non-GTIN Pallet (quantityOfLayersPerPallet) must be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Number of Units per Layer in a Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; is used, then Number of Layers per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; must be used..
         /// </summary>
         internal static string _530 {
             get {
@@ -5263,7 +5353,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to functionalName may not contain the same text as brandName or descriptiveSizeDimension when IsTradeItemAConsumerUnit is equal to &apos;true&apos;..
+        ///   Looks up a localized string similar to &lt;functionalName&gt; may not contain the same text as &lt;brandName&gt; or &lt;descriptiveSizeDimension&gt; when IsTradeItemAConsumerUnit is equal to &apos;TRUE&apos;..
         /// </summary>
         internal static string _531 {
             get {
@@ -5272,7 +5362,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to dutyfeeTaxCategoryCode was not used..
+        ///   Looks up a localized string similar to &lt;dutyfeeTaxCategoryCode&gt; was not used..
         /// </summary>
         internal static string _533 {
             get {
@@ -5281,7 +5371,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If populated, minimumTradeItemLifespanFromTimeOfArrival must be greater than zero..
+        ///   Looks up a localized string similar to If populated, &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; must be greater than zero..
         /// </summary>
         internal static string _536 {
             get {
@@ -5290,7 +5380,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If populated, minimumTradeItemLifespanFromTimeOfProduction must be greater than zero..
+        ///   Looks up a localized string similar to If populated, &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; must be greater than zero..
         /// </summary>
         internal static string _537 {
             get {
@@ -5299,7 +5389,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value in grossWeight shall be greater than or equal to value in netContent if this is given as weight. Allowance shall be made for different units of measure..
+        ///   Looks up a localized string similar to Value in &lt;grossWeight&gt; shall be greater than or equal to value in &lt;netContent&gt; if this is given as weight. Allowance shall be made for different units of measure..
         /// </summary>
         internal static string _539 {
             get {
@@ -5308,7 +5398,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value in quantityofNextLowerLevelTradeItem may not exceed 2 when the pallet type is any type of full size pallet and the child item&apos;s pallet type is any type of half size pallet. Full size pallets are:  ISO 1 Pallet (code 11).
+        ///   Looks up a localized string similar to Value in &lt;quantityofNextLowerLevelTradeItem&gt; may not exceed 2 when the pallet type is any type of full size pallet and the child item&apos;s pallet type is any type of half size pallet. Full size pallets are: ISO 1 Pallet (code 11).
         /// </summary>
         internal static string _540 {
             get {
@@ -5317,7 +5407,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {insert_attribute_name} contains an invalid value. Used code {insert_incorrect_value} is not included in the relevant external code list”..
+        ///   Looks up a localized string similar to {insert_attribute_name} contains an invalid value. Used code {insert_incorrect_value} is not included in the relevant external code list&apos;..
         /// </summary>
         internal static string _541 {
             get {
@@ -5326,7 +5416,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {insert_attribute_name} contains an invalid value. Used code {insert_incorrect_value} is not included in the relevant GS1 code list”..
+        ///   Looks up a localized string similar to {insert_attribute_name} contains an invalid value. Used code {insert_incorrect_value} is not included in the relevant GS1 code list&apos;..
         /// </summary>
         internal static string _542 {
             get {
@@ -5335,7 +5425,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If individualUnitMinimum and/or individualUnitMaximum are populated, then  isTradeItemABaseUnit must be &apos;true&apos;.
+        ///   Looks up a localized string similar to If &lt;individualUnitMinimum&gt; and/or &lt;individualUnitMaximum&gt; are populated, then &lt;isTradeItemABaseUnit&gt; must be &apos;TRUE&apos;..
         /// </summary>
         internal static string _543 {
             get {
@@ -5344,7 +5434,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If isTradeItemABaseUnit is equal to &apos;false&apos;, then individualUnitMinimum and/or individualUnitMaximum should never be populated..
+        ///   Looks up a localized string similar to If &lt;isTradeItemABaseUnit&gt; is equal to &apos;FALSE&apos;, then &lt;individualUnitMinimum&gt; and/or &lt;individualUnitMaximum&gt; should never be populated..
         /// </summary>
         internal static string _544 {
             get {
@@ -5353,7 +5443,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gross Weight (tradeItemWeight/grossWeight) must not be empty and must have a value greater than zero for physical items, i.e., if isTradeItemNonphysical equals &apos;false&apos; or is not used..
+        ///   Looks up a localized string similar to Gross Weight &lt;grossWeight&gt; must not be empty and must have a value greater than zero for physical items, i.e., if &lt;isTradeItemNonphysical&gt; equals &apos;FALSE&apos; or is not used..
         /// </summary>
         internal static string _549 {
             get {
@@ -5362,7 +5452,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The GTIN&apos;s Gross Weight (grossWeight) shall be greater than 96% of the sum of the GTIN&apos;s Packaging Weight (packagingWeight) and the Gross Weight (grossWeight) of all its next lower-level child items. .
+        ///   Looks up a localized string similar to The GTIN&apos;s Gross Weight &lt;grossWeight&gt; shall be greater than 96% of the sum of the GTIN&apos;s Packaging Weight &lt;packagingWeight&gt; and the Gross Weight &lt;grossWeight&gt; of all its next lower-level child items. .
         /// </summary>
         internal static string _550 {
             get {
@@ -5371,7 +5461,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptorCode is &apos;TRANSPORT_LOAD&apos;, and the item has a parent, then the tradeItemUnitDescriptorCode of the parent item can only be &apos;TRANSPORT_LOAD&apos;..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptorCode&gt; is &apos;TRANSPORT_LOAD&apos;, and the item has a parent, then the &lt;tradeItemUnitDescriptorCode&gt; of the parent item can only be &apos;TRANSPORT_LOAD&apos;..
         /// </summary>
         internal static string _554 {
             get {
@@ -5380,7 +5470,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptorCode is &apos;PALLET&apos;, and the item has a parent, then the tradeItemUnitDescriptorCode of the parent item can only be &apos;TRANSPORT_LOAD&apos; or &apos;PALLET&apos;..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptorCode&gt; is &apos;PALLET&apos;, and the item has a parent, then the &lt;tradeItemUnitDescriptorCode&gt; of the parent item can only be &apos;TRANSPORT_LOAD&apos; or &apos;PALLET&apos;..
         /// </summary>
         internal static string _555 {
             get {
@@ -5389,7 +5479,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptor is &apos;PALLET&apos;, and the item has a children, then the tradeItemUnitDescriptorCode of the children can never be &apos;TRANSPORT_LOAD&apos;..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptor&gt; is &apos;PALLET&apos;, and the item has a children, then the &lt;tradeItemUnitDescriptorCode&gt; of the children can never be &apos;TRANSPORT_LOAD&apos;..
         /// </summary>
         internal static string _557 {
             get {
@@ -5398,7 +5488,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptor is &apos;CASE&apos;, and the item has a parent, then the tradeItemUnitDescriptorCode of the parent item can never be &apos;BASE_UNIT_OR_EACH&apos; or &apos;PACK_OR_INNER_PACK.&apos;.
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptor&gt; is &apos;CASE&apos;, and the item has a parent, then the &lt;tradeItemUnitDescriptorCode&gt; of the parent item can never be &apos;BASE_UNIT_OR_EACH&apos; or &apos;PACK_OR_INNER_PACK.&apos;..
         /// </summary>
         internal static string _558 {
             get {
@@ -5407,7 +5497,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to f tradeItemUnitDescriptor is &apos;CASE&apos; and the item has a children, then the tradeItemUnitDescriptorCode of the children can never be &apos;TRANSPORT_LOAD&apos;, &apos;MIXED_MODULE&apos; or &apos;PALLET&apos;..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptor&gt; is &apos;CASE&apos; and the item has a children, then the &lt;tradeItemUnitDescriptorCode&gt; of the children can never be &apos;TRANSPORT_LOAD&apos;, &apos;MIXED_MODULE&apos; or &apos;PALLET&apos;..
         /// </summary>
         internal static string _559 {
             get {
@@ -5416,7 +5506,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If tradeItemUnitDescriptor is &apos;PACK_OR_INNERPACK&apos; and the item has a parent, then the tradeItemUnitDescriptorCode of the parent item can never be &apos;BASE_UNIT_OR_EACH&apos;..
+        ///   Looks up a localized string similar to If &lt;tradeItemUnitDescriptor&gt; is &apos;PACK_OR_INNERPACK&apos; and the item has a parent, then the &lt;tradeItemUnitDescriptorCode&gt; of the parent item can never be &apos;BASE_UNIT_OR_EACH&apos;..
         /// </summary>
         internal static string _560 {
             get {
@@ -5425,7 +5515,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  If tradeItemUnitDescriptor is &apos;PACK_OR_INNERPACK&apos;, and the item has (a) child(ren), then the tradeItemUnitDescriptorCode of the children can never be &apos;TRANSPORT_LOAD&apos;, &apos;PALLET&apos;, &apos;MIXED_MODULE&apos;, &apos;DISPLAY_SHIPPER&apos; or &apos;CASE&apos;..
+        ///   Looks up a localized string similar to  If &lt;tradeItemUnitDescriptor&gt; is &apos;PACK_OR_INNERPACK&apos;, and the item has (a) child(ren), then the &lt;tradeItemUnitDescriptorCode&gt; of the children can never be &apos;TRANSPORT_LOAD&apos;, &apos;PALLET&apos;, &apos;MIXED_MODULE&apos;, &apos;DISPLAY_SHIPPER&apos; or &apos;CASE&apos;..
         /// </summary>
         internal static string _561 {
             get {
@@ -5434,7 +5524,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to stackingFactor is mandatory for Despatch Units in target market &apos;752&apos; (Sweden)..
+        ///   Looks up a localized string similar to &lt;stackingFactor&gt; is mandatory for Despatch Units in target market &apos;752&apos; (Sweden)..
         /// </summary>
         internal static string _565 {
             get {
@@ -5443,7 +5533,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If populated, one iteration has to be in Swedish for functionalName for TM &apos;752&apos; (Sweden)..
+        ///   Looks up a localized string similar to If populated, one iteration has to be in Swedish for &lt;functionalName&gt; for TM &apos;752&apos; (Sweden)..
         /// </summary>
         internal static string _566 {
             get {
@@ -5452,7 +5542,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For this target market &lt;targetMarketCountryCode&gt;, fileFormatName is mandatory, if uniformResourceIdentifier is used and referencedFileTypeCode equals the value &apos;PRODUCT_IMAGE&apos;..
+        ///   Looks up a localized string similar to For this target market &lt;&lt;targetMarketCountryCode&gt;&gt;, &lt;fileFormatName&gt; is mandatory, if &lt;uniformResourceIdentifier&gt; is used and &lt;referencedFileTypeCode&gt; equals the value &apos;PRODUCT_IMAGE&apos;..
         /// </summary>
         internal static string _569 {
             get {
@@ -5461,7 +5551,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fileName is mandatory if uniformResourceIdentifier is used and typeOf Information contains the value &apos;PRODUCT_IMAGE&apos; unless  targetMarketCountryCode equals 756 (Switzerland), 276 (Germany), 040 (Austria), 528 (Netherlands)..
+        ///   Looks up a localized string similar to &lt;fileName&gt; is mandatory if &lt;uniformResourceIdentifier&gt; is used and &lt;typeOfInformation&gt; contains the value &apos;PRODUCT_IMAGE&apos; unless &lt;targetMarketCountryCode&gt; equals 756 (Switzerland), 276 (Germany), 040 (Austria), 528 (Netherlands)..
         /// </summary>
         internal static string _570 {
             get {
@@ -5470,7 +5560,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The dutyFeeTaxAgencyCode must be &apos;9SE&apos; if target market is &apos;752&apos; (Sweden)..
+        ///   Looks up a localized string similar to The &lt;dutyFeeTaxAgencyCode&gt; must be &apos;9SE&apos; if target market is &apos;752&apos; (Sweden)..
         /// </summary>
         internal static string _571 {
             get {
@@ -5479,7 +5569,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to lastChangeDateTime for a trade item may not be a date in the future..
+        ///   Looks up a localized string similar to &lt;lastChangeDateTime&gt; for a trade item may not be a date in the future..
         /// </summary>
         internal static string _572 {
             get {
@@ -5488,7 +5578,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt;, if Global Product Category Code (gpcCategoryCode) is not in GPC Segment &apos;51000000&apos; (Healthcare) and Consumer Unit Indicator (isTradeItemAConsumerUnit) equals &apos;true&apos;, then GTIN (Global Trade Item Number) &lt;tradeItem/gtin&gt; must start with &apos;0&apos;..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, if Global Product Category Code &lt;gpcCategoryCode&gt; is not in GPC Segment &apos;51000000&apos; (Healthcare) and Consumer Unit Indicator &lt;isTradeItemAConsumerUnit&gt; equals &apos;TRUE&apos;, then GTIN (Global Trade Item Number) &lt;gtin&gt;&gt; must start with &apos;0&apos;..
         /// </summary>
         internal static string _575 {
             get {
@@ -5497,7 +5587,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If isNonGTINLogisticUnitPackedIrregularly is equal to &apos;false&apos; then value in quantityOfTradeItemsPerPallet shall be equal to value in quantityOfLayersPerPallet multiplied by value in quantityOfTradeItemsPerPalletLayer.
+        ///   Looks up a localized string similar to If &lt;isNonGTINLogisticUnitPackedIrregularly&gt; is equal to &apos;FALSE&apos; then value in &lt;quantityOfTradeItemsPerPallet&gt; shall be equal to value in &lt;quantityOfLayersPerPallet&gt; multiplied by value in &lt;quantityOfTradeItemsPerPalletLayer&gt;.
         /// </summary>
         internal static string _576 {
             get {
@@ -5506,7 +5596,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to importClassificationTypeCode and importClassificationValue are used in pairs. If one is populated the other is required..
+        ///   Looks up a localized string similar to &lt;importClassificationTypeCode&gt; and &lt;importClassificationValue&gt; are used in pairs. If one is populated the other is required..
         /// </summary>
         internal static string _583 {
             get {
@@ -5515,7 +5605,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to importClassificationTypeCode and importClassificationValue are used in pairs. If one is populated the other is required..
+        ///   Looks up a localized string similar to &lt;importClassificationTypeCode&gt; and &lt;importClassificationValue&gt; are used in pairs. If one is populated the other is required..
         /// </summary>
         internal static string _584 {
             get {
@@ -5524,7 +5614,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If quantityOfLayersPerPallet is greater than zero, then quantityOfTradeItemsPerPalletLayer shall be greater than zero for this target market..
+        ///   Looks up a localized string similar to If &lt;quantityOfLayersPerPallet&gt; is greater than zero, then &lt;quantityOfTradeItemsPerPalletLayer&gt; shall be greater than zero for this target market..
         /// </summary>
         internal static string _585 {
             get {
@@ -5533,7 +5623,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarket equals &apos;840&apos; (US) and growingMethodCode equals &apos;ORGANIC&apos; then organicClaimAgency and organicTradeItemCode MUST not be empty..
+        ///   Looks up a localized string similar to If &lt;targetMarket&gt; equals &apos;840&apos; (US) and &lt;growingMethodCode&gt; equals &apos;ORGANIC&apos; then &lt;organicClaimAgency&gt; and &lt;organicTradeItemCode&gt; MUST not be empty..
         /// </summary>
         internal static string _586 {
             get {
@@ -5542,7 +5632,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tradeItemDescription is missing. The long description (tradeItemDescription) is mandatory for &lt;&lt;targetMarketCountryCode Name&gt;&gt;..
+        ///   Looks up a localized string similar to &lt;tradeItemDescription&gt; is missing. The long description &lt;tradeItemDescription&gt; is mandatory for &lt;&lt;&lt;targetMarketCountryCode&gt; Name&gt;&gt;..
         /// </summary>
         internal static string _590 {
             get {
@@ -5551,7 +5641,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to platformTypeCode is missing. If targetMarketCountryCode does not equal (&apos;036&apos; (Australia) or &apos;554&apos; (New Zealand)  or 752 (Sweden)) it is mandatory to specify the pallet type (platformTypeCode) when tradeItemUnitDescriptor is equal to &apos;PALLET&apos; or ‘MIXED_MODULE’.
+        ///   Looks up a localized string similar to &lt;platformTypeCode&gt; is missing. If &lt;targetMarketCountryCode&gt; does not equal (&apos;036&apos; (Australia) or &apos;554&apos; (New Zealand) or 752 (Sweden)) it is mandatory to specify the pallet type &lt;platformTypeCode&gt; when &lt;tradeItemUnitDescriptor&gt; is equal to &apos;PALLET&apos; or &apos;MIXED_MODULE&apos;..
         /// </summary>
         internal static string _594 {
             get {
@@ -5560,7 +5650,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For target market &apos;250&apos; (France), the country of origin is required for all base units (tradeItemUnitDescriptorCode equals &apos;BASE_UNIT_OR_EACH&apos;)..
+        ///   Looks up a localized string similar to For target market &apos;250&apos; (France), the country of origin is required for all base units &lt;tradeItemUnitDescriptorCode&gt; equals &apos;BASE_UNIT_OR_EACH&apos;..
         /// </summary>
         internal static string _598 {
             get {
@@ -5569,7 +5659,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When target market code equals &apos;250&apos; (France) the agency maintaining the list of taxes is GS1 France. (dutyFeeTaxAgencyCode = &apos;65&apos;)..
+        ///   Looks up a localized string similar to When target market code equals &apos;250&apos; (France) the agency maintaining the list of taxes is GS1 France. (&lt;dutyFeeTaxAgencyCode&gt; = &apos;65&apos;)..
         /// </summary>
         internal static string _603 {
             get {
@@ -5578,7 +5668,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The  free quantity (freeQuantityOfProduct) in a promotional offer shall not exceed the Content net (netContent), when expressed in the same measurementUnitCode..
+        ///   Looks up a localized string similar to The free quantity &lt;freeQuantityOfProduct&gt; in a promotional offer shall not exceed the Content net &lt;netContent&gt;, when expressed in the same &lt;measurementUnitCode&gt;..
         /// </summary>
         internal static string _613 {
             get {
@@ -5587,7 +5677,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If the net drained weight is populated (drainedWeight) the net weight must be less than or equal to its net weight (netWeight)..
+        ///   Looks up a localized string similar to If the net drained weight is populated &lt;drainedWeight&gt; the net weight must be less than or equal to its net weight &lt;netWeight&gt;..
         /// </summary>
         internal static string _616 {
             get {
@@ -5596,7 +5686,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If a trade item has a child trade item   (childTradeItem/tradeItemIdentification), the amount associated with this child (childTradeItem/tradeItemIdentification) shall be informed and be greater than 0..
+        ///   Looks up a localized string similar to If a trade item has a child trade item  &lt;tradeItemIdentification&gt;, the amount associated with this child &lt;tradeItemIdentification&gt; shall be informed and be greater than 0..
         /// </summary>
         internal static string _617 {
             get {
@@ -5605,7 +5695,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If target Market equals &apos;250&apos; (France)), consumer units for alcoholic beverages (Cls &apos;50202200&apos; , except Brick &apos;10000142&apos;) shall have a dutyFeeTaxTypeCode equal to &apos;3001000002541&apos; (Rights on pre-mixes), &apos;3001000002244&apos; (Tax on cider), &apos;3001000002312&apos; (Rights of alcohol) or &apos;3001000002329&apos;..
+        ///   Looks up a localized string similar to If target Market equals &apos;250&apos; (France)), consumer units for alcoholic beverages (Cls &apos;50202200&apos; , except Brick &apos;10000142&apos;) shall have a &lt;dutyFeeTaxTypeCode&gt; equal to &apos;3001000002541&apos; (Rights on pre-mixes), &apos;3001000002244&apos; (Tax on cider), &apos;3001000002312&apos; (Rights of alcohol) or &apos;3001000002329&apos;..
         /// </summary>
         internal static string _618 {
             get {
@@ -5614,7 +5704,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If targetMarketCountryCode equals &apos;372&apos; (Ireland) and if isTradeItemABaseUnit equals &apos;true&apos; and ((gpcCategoryCode is in Class (&apos;50202200&apos; or &apos;50211500&apos;) and does not equal (&apos;10000142&apos;, &apos;10000143&apos;, &apos;10000303&apos; or &apos;10000584&apos;)) then at least one iteration of AdditionalTradeItemClassification shall have a value with additionalTradeItemClassificationSystemCode equal to &apos;57&apos;(REV)..
+        ///   Looks up a localized string similar to If &lt;targetMarketCountryCode&gt; equals &apos;372&apos; (Ireland) and if &lt;isTradeItemABaseUnit&gt; equals &apos;TRUE&apos; and ((&lt;gpcCategoryCode&gt; is in Class (&apos;50202200&apos; or &apos;50211500&apos;) and does not equal (&apos;10000142&apos;, &apos;10000143&apos;, &apos;10000303&apos; or &apos;10000584&apos;)) then at least one iteration of AdditionalTradeItemClassification shall have a value with &lt;additionalTradeItemClassificationSystemCode&gt; equal to &apos;57&apos;(REV)..
         /// </summary>
         internal static string _631 {
             get {
@@ -5623,7 +5713,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IF depositValueEffectiveDate is populated then returnablePackageDepositIdentification or returnablePackageDepositAmount MUST be populated..
+        ///   Looks up a localized string similar to If &lt;depositValueEffectiveDate&gt; is populated then &lt;returnablePackageDepositIdentification&gt; or &lt;returnablePackageDepositAmount&gt; MUST be populated..
         /// </summary>
         internal static string _632 {
             get {
@@ -5632,7 +5722,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Country Of Sale Code (targetMarketCountryCode) &lt;targetMarketCountryCode Country name&gt; and Consumer Product Variant Start Date/Time (consumerProductVariantStartEffectiveDateTime) is used, then Consumer Product Variant Description (consumerProductVariantDescription) shall be used..
+        ///   Looks up a localized string similar to For Country of Sale Code &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Consumer Product Variant Start &lt;Time&gt; &lt;consumerProductVariantStartEffectiveDateTime&gt; is used, then Consumer Product Variant Description &lt;consumerProductVariantDescription&gt; shall be used..
         /// </summary>
         internal static string _633 {
             get {
@@ -5641,7 +5731,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to returnableAssetCapacityContent is missing. .
+        ///   Looks up a localized string similar to &lt;returnableAssetCapacityContent&gt; is missing. .
         /// </summary>
         internal static string _634 {
             get {
@@ -5650,7 +5740,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to discontinuedDateTime shall not be older than effectiveDateTime minus six months..
+        ///   Looks up a localized string similar to &lt;discontinuedDateTime&gt; shall not be older than &lt;effectiveDateTime&gt; minus six months..
         /// </summary>
         internal static string _635 {
             get {
@@ -5686,7 +5776,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dependent Proprietary Trade Item (&apos;&apos;DEPENDENT_PROPRIETARY&apos;) shall not equal TradeItem/tradeItemIdentification..
+        ///   Looks up a localized string similar to Dependent Proprietary Trade Item (&apos;&apos;DEPENDENT_PROPRIETARY&apos;) shall not equal &lt;tradeItemIdentification&gt;..
         /// </summary>
         internal static string _639 {
             get {
@@ -5713,7 +5803,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If the Trade Item is a consumer unit, and the target market country code is &apos;840&apos; (US), the type of bar code [dataCarrierTypeCode] is mandatory.
+        ///   Looks up a localized string similar to If the Trade Item is a consumer unit, and the target market country code is &apos;840&apos; (US), the type of bar code &lt;dataCarrierTypeCode&gt; is mandatory..
         /// </summary>
         internal static string _642 {
             get {
@@ -5722,7 +5812,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A parent item with a tradeItemUnitDescriptorCode of BASE_UNIT_OR_EACH may not contain a child item..
+        ///   Looks up a localized string similar to A parent item with a &lt;tradeItemUnitDescriptorCode&gt; of &apos;BASE_UNIT_OR_EACH&apos; may not contain a child item..
         /// </summary>
         internal static string _96 {
             get {
@@ -5731,7 +5821,7 @@ namespace Evebury.Gdsn.Gs1.R3.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If net weight is populated on both parent and child items, then net weight of the parent shall be greater than or equal to the  sum of the net weight of all the children except when special item code = &quot;DYNAMIC_ASSORTMENT&quot;. .
+        ///   Looks up a localized string similar to If &lt;netWeight&gt; is populated on both parent and child items, then &lt;netWeight&gt; of the parent shall be greater than or equal to the sum of the &lt;netWeight&gt; of all the children except when special item code = &apos;DYNAMIC_ASSORTMENT&apos;. .
         /// </summary>
         internal static string _98 {
             get {

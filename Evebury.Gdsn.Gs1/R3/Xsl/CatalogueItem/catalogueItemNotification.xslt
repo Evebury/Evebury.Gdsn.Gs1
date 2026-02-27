@@ -18,6 +18,7 @@
 	<xsl:include href="modules/batteryInformationModule.xslt"/>
 	<xsl:include href="modules/certificationInformationModule.xslt"/>
 	<xsl:include href="modules/childNutritionInformationModule.xslt"/>
+	<xsl:include href="modules/copyrightInformationModule.xslt"/>
 	<xsl:include href="modules/dairyFishMeatPoultryItemModule.xslt"/>
 	<xsl:include href="modules/dangerousSubstanceInformationModule.xslt"/>
 	<xsl:include href="modules/deliveryPurchasingInformationModule.xslt"/>
@@ -103,6 +104,12 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
+						<xsl:when test="$name = 'nonPromotionalTradeItem'">
+							<xsl:value-of select="concat($name, '[gtin = ', $quote, gtin, $quote, ']')"/>
+						</xsl:when>
+						<xsl:when test="$name = 'referencedTradeItem'">
+							<xsl:value-of select="concat($name, '[gtin = ', $quote, gtin, $quote, ']')"/>
+						</xsl:when>
 						<xsl:otherwise>
 							<xsl:value-of select="name()"/>
 						</xsl:otherwise>
@@ -150,10 +157,26 @@
 
 	<xsl:template match="transaction">
 		<xsl:apply-templates select="gs1:BeginTransaction(transactionIdentification/entityIdentification)"/>
-		<xsl:apply-templates select="documentCommand/cin:catalogueItemNotification/catalogueItem" mode="hierarchical">
-			<xsl:with-param name="command" select="documentCommand/documentCommandHeader/@type"/>
-		</xsl:apply-templates>
+		<xsl:apply-templates select="documentCommand"/>
 		<xsl:apply-templates select="gs1:EndTransaction()"/>
+	</xsl:template>
+
+	<xsl:template match="documentCommand">
+		<xsl:if test="count(cin:catalogueItemNotification) &gt; 100">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="495" />
+			</xsl:apply-templates>
+		</xsl:if>
+		<xsl:apply-templates select="cin:catalogueItemNotification">
+			<xsl:with-param name="command" select="documentCommandHeader/@type"/>
+		</xsl:apply-templates>
+	</xsl:template>
+
+	<xsl:template match="cin:catalogueItemNotification">
+		<xsl:param name="command"/>
+		<xsl:apply-templates select="catalogueItem" mode="hierarchical">
+			<xsl:with-param name="command" select="$command"/>
+		</xsl:apply-templates>
 	</xsl:template>
 
 	<xsl:template match="catalogueItem" mode="hierarchical">
@@ -266,6 +289,16 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r300">
+		<!--Rule 300: EntityIdentification/PartyIdentification/gln shall equal dataSource, contentOwner and informationProvider and shall be the same for all levels of trade item hierarchy.-->
+		<xsl:variable name="informationProvider" select="tradeItem/informationProviderOfTradeItem/gln"/>
+		<xsl:if test=".//tradeItem/informationProviderOfTradeItem[gln != $informationProvider]">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="300" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
 	<xsl:template match="*" mode="r312">
 		<!--Rule 312: If isReturnableAssetEmpty does not equal “true” or is not used for any item in a Catalogue Item Notification Message then isTradeItemAnOrderableUnit must be equal to 'true' for at least one item in a Catalogue Item Notification Message.-->
 		<xsl:if test="count(.//tradeItem[isTradeItemAnOrderableUnit = 'true']) = 0">
@@ -310,6 +343,17 @@
 		<xsl:if test="isTradeItemABaseUnit != 'false' and nextLowerLevelTradeItemInformation/childTradeItem[gtin != '']">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="383"/>
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r398">
+		<!--Rule 398: If gpcCategorycode is used, then its value shall be in the list of official GPC bricks as published by GS1 and currently adopted in production by GDSN.-->
+		<xsl:variable name="brick" select="/gDSNTradeItemClassification/gpcCategoryCode" />
+		<xsl:if test="$brick != '' and gs1:InvalidBrick($brick)">
+			<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="398" />
 			</xsl:apply-templates>
 		</xsl:if>
 	</xsl:template>
@@ -1965,6 +2009,83 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="gtin">
+		<!--Rule 471: If data type is equal to  gtin then attribute value must be a  valid GTIN-8, GTIN-12, GTIN-13 or GTIN-14 number.-->
+		<xsl:variable name="length" select="string-length(gtin)"/>
+		<xsl:choose>
+			<xsl:when test="$length = 0"/>
+			<xsl:when test="$length = 14">
+				<xsl:if test="gs1:InvalidGTIN(gtin, 14)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="471" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="$length = 13">
+				<xsl:if test="gs1:InvalidGTIN(gtin, 13)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="471" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="$length = 12">
+				<xsl:if test="gs1:InvalidGTIN(gtin, 12)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="471" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="$length = 8">
+				<xsl:if test="gs1:InvalidGTIN(gtin, 8)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="471" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="471" />
+				</xsl:apply-templates>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="*" mode="gln">
+		<!--Rule 448: If attribute datatype equals gln then it must be a 13 digit number and have a valid check digit.-->
+		<xsl:variable name="gln">
+			<xsl:choose>
+				<xsl:when test="gln">
+					<xsl:value-of select="gln"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="$gln = ''"/>
+			<xsl:otherwise>
+				<xsl:if test="gs1:InvalidGLN($gln)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="448" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template match="*" mode="languageSpecificPartyName">
+		<!--Rule 1723: There shall be at most one value of languageSpecificPartyName for each language.-->
+		<xsl:variable name="parent" select="."/>
+		<xsl:for-each select="languageSpecificPartyName">
+			<xsl:variable name="value" select="@languageCode"/>
+			<xsl:if test="count($parent/languageSpecificPartyName[@languageCode = $value]) &gt; 1">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1723" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
 
 	<xsl:template match="*" mode="r2069">
 		<xsl:param name="targetMarket"/>
@@ -1997,6 +2118,7 @@
 		apply rules that evaluate the total hierarchy here. these will only be executed once 
 		make sure that the rule is recursive if required
 		-->
+		<xsl:apply-templates select="." mode="r300"/>
 		<xsl:apply-templates select="." mode="r312"/>
 		<xsl:apply-templates select="." mode="r521">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
@@ -2010,6 +2132,9 @@
 		<xsl:apply-templates select="." mode="r1759">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+		<xsl:apply-templates select="dataRecipient" mode="gln"/>
+		<xsl:apply-templates select="sourceDataPool" mode="gln"/>
+	
 	</xsl:template>
 
 	<xsl:template match="tradeItem" mode="instance_rules">
@@ -2032,6 +2157,7 @@
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r382"/>
 		<xsl:apply-templates select="." mode="r383"/>
+		<xsl:apply-templates select="." mode="r398"/>
 		<xsl:apply-templates select="." mode="r454"/>
 		<!-- Rule 455 == Rule 454: ChildTradeItem/gtin must not equal TradeItem/gtin -->
 		<xsl:apply-templates select="." mode="r469">
@@ -2201,6 +2327,20 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
+		<xsl:apply-templates select="." mode="gtin"/>
+		<xsl:apply-templates select="referencedTradeItem" mode="gtin"/>
+		<xsl:apply-templates select="nextLowerLevelTradeItemInformation/childTradeItem" mode="gtin"/>
+		<xsl:apply-templates select="brandOwner" mode="gln"/>
+		<xsl:apply-templates select="informationProviderOfTradeItem" mode="gln"/>
+		<xsl:apply-templates select="manufacturerOfTradeItem" mode="gln"/>
+		<xsl:apply-templates select="partyInRole" mode="gln"/>
+		<xsl:apply-templates select="tradeItemContactInformation" mode="gln"/>
+
+		<xsl:apply-templates select="brandOwner" mode="languageSpecificPartyName"/>
+		<xsl:apply-templates select="informationProviderOfTradeItem" mode="languageSpecificPartyName"/>
+		<xsl:apply-templates select="manufacturerOfTradeItem" mode="languageSpecificPartyName"/>
+		<xsl:apply-templates select="partyInRole" mode="languageSpecificPartyName"/>
+		
 		<xsl:apply-templates select="." mode="r2069">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>

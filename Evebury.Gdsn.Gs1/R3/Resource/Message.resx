@@ -2010,4 +2010,34 @@
   <data name="102078" xml:space="preserve">
     <value>For Country of Sale Code (&lt;targetMarketCountryCode&gt;) &lt;&lt;targetMarketCountryCode&gt; Country name&gt; and Customs Classification Value (&lt;importClassificationValue&gt;) &lt;&lt;importClassificationValue&gt; value&gt;, attribute Regulation Type Code (&lt;regulationTypeCode&gt;) must equal 'DEFORESTATION_REGULATION' and Regulation Compliance Indicator (&lt;isTradeItemRegulationCompliant&gt;) must equal 'TRUE' or 'NOT_APPLICABLE' in the same iteration.​</value>
   </data>
+  <data name="300" xml:space="preserve">
+    <value>&lt;gln&gt; shall equal &lt;dataSource&gt;, &lt;contentOwner&gt; and &lt;informationProvider&gt; and shall be the same for all levels of trade item hierarchy.</value>
+  </data>
+  <data name="392" xml:space="preserve">
+    <value>If &lt;incotermCodeLocation&gt; is not empty then &lt;incotermCode&gt; must not be empty.</value>
+  </data>
+  <data name="398" xml:space="preserve">
+    <value>If &lt;gpcCategoryCode&gt; is used, then its value shall be in the list of official GPC bricks as published by GS1 and currently adopted in production by GDSN.</value>
+  </data>
+  <data name="447" xml:space="preserve">
+    <value>If attribute datatype is equal to &lt;gtin&gt; then it must have a valid check digit.</value>
+  </data>
+  <data name="448" xml:space="preserve">
+    <value>If attribute datatype equals &lt;gln&gt; then it must be a 13 digit number and have a valid check digit.</value>
+  </data>
+  <data name="471" xml:space="preserve">
+    <value>If data type is equal to &lt;gtin&gt; then attribute value must be a valid GTIN-8, GTIN-12, GTIN-13 or GTIN-14 number.</value>
+  </data>
+  <data name="495" xml:space="preserve">
+    <value>There must be at most 100 Documents per transaction.</value>
+  </data>
+  <data name="1024" xml:space="preserve">
+    <value>GRAI must have a valid check digit.</value>
+  </data>
+  <data name="1612" xml:space="preserve">
+    <value>Code value 'D_A' (Development Assistance) and '001' (GLOBAL MARKET) shall only be used for &lt;targetMarketCountryCode&gt;.</value>
+  </data>
+  <data name="1723" xml:space="preserve">
+    <value>There shall be at most one value of &lt;languageSpecificPartyName&gt; for each language.</value>
+  </data>
 </root>

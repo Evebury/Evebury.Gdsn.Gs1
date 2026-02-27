@@ -288,6 +288,12 @@ namespace Evebury.Gdsn.Gs1.Xsl
             return false;
         }
 
+        public bool InvalidBrick(string brick)
+        {
+            BrickPath path = GetBrickPath(brick);
+            return path.Class == null;
+        }
+
         public bool IsInClass(string brick, string @class) 
         {
             BrickPath path = GetBrickPath(brick);
@@ -316,6 +322,11 @@ namespace Evebury.Gdsn.Gs1.Xsl
             return path;
         }
 
+        public static bool InvalidGLN(string gln) 
+        {
+            return InvalidGTIN(gln, 13);
+        }
+
         public static bool InvalidGTIN(string gtin, int length) 
         {
             if(string.IsNullOrEmpty(gtin)) return true;
@@ -326,7 +337,7 @@ namespace Evebury.Gdsn.Gs1.Xsl
             {
                 char @char = gtin[i];
                 if (!char.IsDigit(@char)) return true;
-                digits.Add(@char);
+                digits.Add(Convert.ToInt16($"{@char}"));
             }
             int sum = digits.Take(digits.Count - 1).Reverse().Select((t, i) => t * ((i % 2) > 0 ? 1 : 3)).Sum();
             int lastDigit = (sum % 10 > 0) ? 10 - sum % 10 : 0;

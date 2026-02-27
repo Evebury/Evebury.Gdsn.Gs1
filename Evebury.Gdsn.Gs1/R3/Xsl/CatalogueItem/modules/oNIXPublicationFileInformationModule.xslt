@@ -19,8 +19,13 @@
 
 	<xsl:template match="oNIXPublicationFileInformation" mode="oNIXPublicationFileInformationModule">
 
+		<xsl:apply-templates select="oNIXContributor/partyIdentification" mode="gln"/>
+		<xsl:apply-templates select="oNIXPublicationCollectionInformation/oNIXContributor/partyIdentification" mode="gln"/>
+		<xsl:apply-templates select="oNIXAdditionalPublicationDescriptionInformation/textAuthor/partyIdentification" mode="gln"/>
+		
 		<!--Rule 1217: There must be at most one iteration of publisherName -->
 		<xsl:for-each select="oNIXPublisher">
+			<xsl:apply-templates select="partyIdentification" mode="gln"/>
 			<xsl:variable name="publisher" select="."/>
 			<xsl:for-each select="publisherName">
 				<xsl:variable name="value" select="."/>

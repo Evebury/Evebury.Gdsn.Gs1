@@ -104,6 +104,15 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
+		<!--Rule 398: If gpcCategorycode is used, then its value shall be in the list of official GPC bricks as published by GS1 and currently adopted in production by GDSN.-->
+		<xsl:variable name="brick" select="gpcCategoryCode" />
+		<xsl:if test="$brick != '' and gs1:InvalidBrick($brick)">
+			<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="398" />
+			</xsl:apply-templates>
+		</xsl:if>
+
 		<!--Rule 1550: There shall be at most 25 iterations of Class GDSNTradeItemClassificationAttribute per iteration of ComponentInformation/gpcCategoryCode.-->
 		<xsl:if test="count(gDSNTradeItemClassificationAttribute) &gt; 25">
 			<xsl:apply-templates select="." mode="error">

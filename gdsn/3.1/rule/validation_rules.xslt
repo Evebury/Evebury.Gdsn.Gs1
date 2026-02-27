@@ -16,7 +16,7 @@
 				<xsl:sort select="@Id" data-type="number"/>
 				<xsl:apply-templates select="."/>
 			</xsl:for-each>-->
-			<xsl:apply-templates select="/Rules/Rule[XPath[contains(@Path, 'catalogueItemPublicationMessage')]]"/>
+			<xsl:apply-templates select="/Rules/Rule[@Name != $type][XPath[contains(@Path, 'catalogueItemNotificationMessage')]]"/>
 		</xsl:element>
 	</xsl:template>
 

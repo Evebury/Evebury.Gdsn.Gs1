@@ -19,6 +19,8 @@
 	<xsl:template match="deliveryPurchasingInformation" mode="deliveryPurchasingInformationModule">
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
+
+		<xsl:apply-templates select="incotermInformation" mode="deliveryPurchasingInformationModule"/>
 		
 		<!--Rule 341: If a start dateTime and its corresponding end dateTime are not empty then the start date SHALL be less than or equal to corresponding end date. -->
 		<xsl:if test="gs1:InvalidDateTimeSpan(consumerFirstAvailabilityDateTime, consumerEndAvailabilityDateTime)">
@@ -93,6 +95,13 @@
 	
 	</xsl:template>
 
-
+	<xsl:template match="incotermInformation" mode="deliveryPurchasingInformationModule">
+		<!--Rule 392: If incotermCodeLocation is not empty then incotermCode must not be empty.-->
+		<xsl:if test="incotermCodeLocation != '' and incotermCode =''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="392" />
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
 
 </xsl:stylesheet>

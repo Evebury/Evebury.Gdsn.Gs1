@@ -61,6 +61,8 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
+		<xsl:apply-templates select="." mode="gtin"/>
+
 		<xsl:for-each select="additionalTradeItemIdentification">
 			<xsl:choose>
 				<xsl:when test="@additionalTradeItemIdentificationTypeCode = 'GTIN_13'">

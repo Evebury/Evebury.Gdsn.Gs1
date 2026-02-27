@@ -17,7 +17,7 @@
 
 	<xsl:template match="dietTypeInformation" mode="dietInformationModule">
 		<xsl:param name="targetMarket"/>
-		<xsl:apply-templates select="dietCertification/certification" mode="dietInformationModule">
+		<xsl:apply-templates select="dietCertification" mode="dietInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<!--Rule 1705: If dietTypeCode equals ’PESCATARIAN’ and dietTypeSubcode is used, then dietTypeSubcode SHALL be a value in (‘PESCA’, ‘LACTO_OVO_PESCA’, 'LACTO_PESCA’).-->
@@ -95,6 +95,14 @@
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="dietCertification" mode="dietInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="certificationOrganisationIdentifier" mode="gln"/>
+		<xsl:apply-templates select="certification" mode="dietInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 	</xsl:template>
 
 	<xsl:template match="certification" mode="dietInformationModule">

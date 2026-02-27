@@ -18,6 +18,10 @@
 	<xsl:template match="foodAndBeverageIngredient" mode="foodAndBeverageIngredientModule">
 		<xsl:param name="targetMarket"/>
 		<xsl:apply-templates select="ingredientPlaceOfActivity" mode="foodAndBeverageIngredientModule"/>
+
+		<xsl:apply-templates select="ingredientParty" mode="gln"/>
+		<xsl:apply-templates select="ingredientParty" mode="languageSpecificPartyName"/>
+		
 		<!--Rule 1177:If targetMarketCountryCode does not equal <Geographic> and there is more than one iteration of ingredientSequence, then ingredientSequence and ingredientName must not be empty.-->
 		<xsl:if test="$targetMarket != '562'">
 			<xsl:if test="ingredientSequence = '' or ingredientName = ''">

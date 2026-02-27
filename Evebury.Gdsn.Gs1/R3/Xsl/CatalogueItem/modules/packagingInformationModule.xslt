@@ -20,6 +20,8 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
+		<xsl:apply-templates select="packagingOwnerIdentification" mode="gln"/>
+		
 		<!--Rule 506: If targetMarketCountryCode equals <Geographic> and packagingMaterialCompositionQuantity is used then in at least one iteration of packagingMaterialCompositionQuantity the related packagingMaterialCompositionQuantity/@measurementUnitCode SHALL equal 'KGM' or 'GRM'.-->
 		<xsl:if test="contains('056, 203, 246, 442, 528, 752', $targetMarket)">
 			<xsl:if test="packagingMaterial/packagingMaterialCompositionQuantity[text() != '']">
@@ -428,6 +430,9 @@
 
 	<xsl:template match="returnableAsset" mode="packagingInformationModule">
 		<xsl:param name="targetMarket"/>
+
+		<xsl:apply-templates select="returnableAssetOwnerId" mode="gln"/>
+		
 		<!--Rule 634: If targetMarketCountryCode is equal to  ('040' (Austria) or '276' (Germany)) and isReturnableAssetEmpty = 'true' then returnableAssetCapacityContent shall not be empty.-->
 		<xsl:if test="$targetMarket = '040' or $targetMarket = '276'">
 			<xsl:if test="isReturnableAssetEmpty = 'true'">
@@ -458,7 +463,13 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
-		
+
+		<!--Rule 1024: GRAI must have a valid check digit.-->
+		<xsl:if test="grai != '' and gs1:InvalidGTIN(grai, string-length(grai))">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1024" />
+			</xsl:apply-templates>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="r507">

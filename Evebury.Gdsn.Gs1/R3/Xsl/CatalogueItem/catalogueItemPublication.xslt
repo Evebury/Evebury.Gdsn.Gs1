@@ -94,34 +94,34 @@
 			<xsl:when test="$length = 14">
 				<xsl:if test="gs1:InvalidGTIN(gtin, 14)">
 					<xsl:apply-templates select="." mode="error">
-						<xsl:with-param name="id" select="447" />
+						<xsl:with-param name="id" select="471" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:when>
 			<xsl:when test="$length = 13">
 				<xsl:if test="gs1:InvalidGTIN(gtin, 13)">
 					<xsl:apply-templates select="." mode="error">
-						<xsl:with-param name="id" select="447" />
+						<xsl:with-param name="id" select="471" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:when>
 			<xsl:when test="$length = 12">
 				<xsl:if test="gs1:InvalidGTIN(gtin, 12)">
 					<xsl:apply-templates select="." mode="error">
-						<xsl:with-param name="id" select="447" />
+						<xsl:with-param name="id" select="471" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:when>
 			<xsl:when test="$length = 8">
 				<xsl:if test="gs1:InvalidGTIN(gtin, 8)">
 					<xsl:apply-templates select="." mode="error">
-						<xsl:with-param name="id" select="447" />
+						<xsl:with-param name="id" select="471" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:apply-templates select="." mode="error">
-					<xsl:with-param name="id" select="447" />
+					<xsl:with-param name="id" select="471" />
 				</xsl:apply-templates>
 			</xsl:otherwise>
 		</xsl:choose>

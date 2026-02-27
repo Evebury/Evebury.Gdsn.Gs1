@@ -2010,4 +2010,34 @@
   <data name="102078" xml:space="preserve">
     <value>Pour le code du pays de vente (&lt;targetMarketCountryCode&gt;) &lt;&lt;targetMarketCountryCode&gt; Pays nom&gt; et Customs Classification Value (&lt;importClassificationValue&gt;) &lt;&lt;importClassificationValue&gt; valeur&gt;, attribut Regulation Type Code (&lt;regulationTypeCode&gt;) doit être égal à 'DEFORESTATION_REGULATION' et Regulation Compliance Indicator (&lt;isTradeItemRegulationCompliant&gt;) doit être égal à 'TRUE' ou 'NOT_APPLICABLE' dans le même itération.​</value>
   </data>
+  <data name="300" xml:space="preserve">
+    <value>&lt;gln&gt; doit être égal à &lt;dataSource&gt;, &lt;contentOwner&gt; et &lt;informationProvider&gt; et doit être le même pour tous les niveaux de la hiérarchie des articles commerciaux.</value>
+  </data>
+  <data name="392" xml:space="preserve">
+    <value>Si &lt;incotermCodeLocation&gt; n'est pas vide alors &lt;incotermCode&gt; ne doit pas être vide.</value>
+  </data>
+  <data name="398" xml:space="preserve">
+    <value>Si &lt;gpcCategoryCode&gt; est utilisé, alors sa valeur doit être dans la liste des GPC bricks officiels tels que publiés par GS1 et actuellement adoptés en production par GDSN.</value>
+  </data>
+  <data name="447" xml:space="preserve">
+    <value>Si le type de données de l'attribut est égal à &lt;gtin&gt;, alors il doit avoir un chiffre de contrôle valide.</value>
+  </data>
+  <data name="448" xml:space="preserve">
+    <value>Si le type de données de l'attribut est égal à &lt;gln&gt;, alors il doit être un nombre de 13 chiffres et avoir un chiffre de contrôle valide.</value>
+  </data>
+  <data name="471" xml:space="preserve">
+    <value>Si le type de données est égal à &lt;gtin&gt;, alors la valeur de l'attribut doit être un numéro GTIN-8, GTIN-12, GTIN-13 ou GTIN-14 valide.</value>
+  </data>
+  <data name="495" xml:space="preserve">
+    <value>Il doit y avoir au maximum 100 documents par transaction.</value>
+  </data>
+  <data name="1024" xml:space="preserve">
+    <value>GRAI doit avoir un chiffre de contrôle valide.</value>
+  </data>
+  <data name="1612" xml:space="preserve">
+    <value>La valeur de code 'D_A' (Development Assistance) et '001' (GLOBAL MARKET) ne doit être utilisée que pour &lt;targetMarketCountryCode&gt;.</value>
+  </data>
+  <data name="1723" xml:space="preserve">
+    <value>Il doit y avoir au maximum une valeur de &lt;languageSpecificPartyName&gt; pour chaque langue.</value>
+  </data>
 </root>

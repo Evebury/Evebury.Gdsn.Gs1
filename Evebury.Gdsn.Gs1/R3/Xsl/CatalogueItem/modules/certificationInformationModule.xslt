@@ -9,10 +9,19 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="certificationInformation/certification" mode="certificationInformationModule">
+		<xsl:apply-templates select="certificationInformation" mode="certificationInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
+	</xsl:template>
+
+	<xsl:template match="certificationInformation" mode="certificationInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="certification" mode="certificationInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		
+		<xsl:apply-templates select="certificationOrganisationIdentifier" mode="gln"/>
 	</xsl:template>
 
 	<xsl:template match="certification" mode="certificationInformationModule">
