@@ -19,7 +19,7 @@
 	<xsl:template match="tradeItemDescriptionInformation" mode="tradeItemDescriptionModule">
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
-		
+
 		<!--Rule 464: If TargetMarket/targetMarketCountryCode is equal to ('036' (Australia) or '554' (New Zealand)) then the codeDescription of tradeItemGroupIdentificationCodeReference must be equal for all Items with the the same tradeItemGroupIdentificationCodeReference.-->
 		<xsl:if test="contains('036, 554', $targetMarket)">
 			<xsl:for-each select="tradeItemGroupIdentificationCodeReference">
@@ -31,18 +31,6 @@
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:for-each>
-		</xsl:if>
-
-		<!--Rule 566: If targetMarketCountryCode is equal to '752' (Sweden) and functionalName is not empty then exactly one iteration of functionalName must have a languageCode equal to 'sv'.-->
-		<xsl:if test="$targetMarket = '752'">
-			<xsl:choose>
-				<xsl:when test="functionalName[text() != '' and @languageCode = 'sv']"/>
-				<xsl:otherwise>
-					<xsl:apply-templates select="." mode="error">
-						<xsl:with-param name="id" select="566" />
-					</xsl:apply-templates>
-				</xsl:otherwise>
-			</xsl:choose>
 		</xsl:if>
 
 		<!--Rule 1063: brandName must not be empty.-->
@@ -94,7 +82,58 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+
 	
+		<xsl:if test="$targetMarket = '246'">
+			<!--Rule 1898: If targetMarketCountryCode equals <Geographic> and tradeItemDescription is used, then at least one iteration of tradeItemDescription/@languageCode SHALL equal to 'fi' (Finnish), 'sv' (Swedish) and 'en' (English).-->
+			<xsl:if test="tradeItemDescription">
+				<xsl:choose>
+					<xsl:when test="tradeItemDescription[@languageCode = 'fi'] != '' and tradeItemDescription[@languageCode = 'sv'] != '' and tradeItemDescription[@languageCode = 'en'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1898" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+			<!--Rule 1899: If targetMarketCountryCode equals <Geographic> and descriptionShort is used, then at least one iteration of descriptionShort/@languageCode SHALL equal to 'fi' (Finnish), 'sv' (Swedish) and 'en' (English).-->
+			<xsl:if test="descriptionShort">
+				<xsl:choose>
+					<xsl:when test="descriptionShort[@languageCode = 'fi'] != '' and descriptionShort[@languageCode = 'sv'] != '' and descriptionShort[@languageCode = 'en'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1899" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+			<!--Rule 1909: If targetMarketCountryCode equals <Geographic> and functionalName is used, then one iteration of functionalName/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
+			<xsl:if test="functionalName">
+				<xsl:choose>
+					<xsl:when test="functionalName[@languageCode = 'fi'] != '' and functionalName[@languageCode = 'sv'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1909" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1910: If targetMarketCountryCode equals <Geographic> and tradeItemDescription is used, then at least one iteration of tradeItemDescription/@languageCode SHALL equal to 'it' (Italian).-->
+		<xsl:if test="$targetMarket = '380'">
+			<xsl:if test="tradeItemDescription">
+				<xsl:choose>
+					<xsl:when test="tradeItemDescription[@languageCode = 'it'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1910" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 </xsl:stylesheet>

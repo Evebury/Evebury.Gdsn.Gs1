@@ -106,7 +106,6 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
-
 	</xsl:template>
 
 	<xsl:template match="hazardousInformationDetail" mode="transportationHazardousClassificationModule">

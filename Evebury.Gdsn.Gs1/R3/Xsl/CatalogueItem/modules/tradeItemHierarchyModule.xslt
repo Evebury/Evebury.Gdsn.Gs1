@@ -20,7 +20,7 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:if test="isTradeItemPackedIrregularly = 'false'">
+		<xsl:if test="isTradeItemPackedIrregularly = 'FALSE'">
 
 			<xsl:variable name="total" select="$tradeItem/nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem"/>
 
@@ -158,7 +158,7 @@
 
 		<!--Rule 1740: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals 'PALLET' and (isTradeItemPackedIrregularly equals 'FALSE' or is not used) then quantityOfCompleteLayersContainedInATradeItem SHALL be greater than 0 (zero).-->
 		<xsl:if test="contains('056, 203, 246, 380, 442, 528', $targetMarket)">
-			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode = 'PALLET' and $tradeItem/isTradeItemPackedIrregularly != 'true'">
+			<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode = 'PALLET' and (isTradeItemPackedIrregularly = 'FALSE' or isTradeItemPackedIrregularly = '')">
 				<xsl:if test="quantityOfCompleteLayersContainedInATradeItem = '' or quantityOfCompleteLayersContainedInATradeItem &lt;= 0">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1740" />
@@ -177,6 +177,62 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1921: If targetMarketCountryCode equals <Geographic> and (isTradeItemPackedIrregularly equals 'FALSE' or is not used) and quantityOfCompleteLayersContainedInATradeItem is used and quantityOfTradeItemsContainedInACompleteLayer is used then totalQuantityOfNextLowerLevelTradeItem SHALL equal quantityOfCompleteLayersContainedInATradeItem multiplied by quantityOfTradeItemsContainedInACompleteLayer.-->
+		<xsl:if test="contains('380, 124, 840', $targetMarket)">
+			<xsl:if test="(isTradeItemPackedIrregularly = 'FALSE' or isTradeItemPackedIrregularly = '') and quantityOfCompleteLayersContainedInATradeItem != '' and quantityOfTradeItemsContainedInACompleteLayer != ''">
+				<xsl:variable name="quantity" select="$tradeItem/nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem"/>
+				<xsl:if test="$quantity = '' or ($quantity != quantityOfCompleteLayersContainedInATradeItem * quantityOfTradeItemsContainedInACompleteLayer)">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1921" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+
+		<xsl:if test="isTradeItemPackedIrregularly = 'FALSE' or isTradeItemPackedIrregularly = ''">
+
+			<xsl:if test="$targetMarket  = '380'">
+
+				<!--Rule 1925: If targetMarketCountryCode equals <Geographic> and (isNonGTINLogisticsUnitPackedIrregularly equals 'FALSE' or is not used) and quantityOfLayersPerPallet is used then quantityOfTradeItemsPerPalletLayer SHALL be used.-->
+				<xsl:if test="quantityOfLayersPerPallet != '' and quantityOfTradeItemsPerPalletLayer = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1925" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+				<!--Rule 1926: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals 'PALLET' and (isTradeItemPackedIrregularly equals 'FALSE' or is not used) then quantityOfTradeItemsContainedInACompleteLayer SHALL be greater than 0 (zero).-->
+				<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode  = 'PALLET'">
+					<xsl:if test="quantityOfTradeItemsContainedInACompleteLayer = '' or quantityOfTradeItemsContainedInACompleteLayer &lt;= 0">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1926" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+				
+				
+			</xsl:if>
+
+		</xsl:if>
+
+
+		<xsl:if test="isNonGTINLogisticsUnitPackedIrregularly = 'FALSE' or isNonGTINLogisticsUnitPackedIrregularly = ''">
+
+			<!--Rule 1928: If targetMarketCountryCode equals <Geographic> and (isNonGTINLogisticsUnitPackedIrregularly equals 'FALSE' or is not used) and quantityOfLayersPerPallet is used and quantityOfTradeItemsPerPalletLayer is used then quantityOfTradeItemsPerPallet SHALL equal quantityOfLayersPerPallet multiplied by quantityOfTradeItemsPerPalletLayer.-->
+			<xsl:if test="contains('380, 124, 840', $targetMarket)">
+				<xsl:if test="quantityOfLayersPerPallet != '' and quantityOfTradeItemsPerPalletLayer != ''">
+					<xsl:if test="quantityOfTradeItemsPerPallet != quantityOfLayersPerPallet * quantityOfTradeItemsPerPalletLayer">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1928" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:if>
+			
+		</xsl:if>
+		
+
 	</xsl:template>
 
 </xsl:stylesheet>

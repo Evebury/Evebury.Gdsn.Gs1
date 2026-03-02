@@ -129,7 +129,15 @@
 			
 		</xsl:if>
 
-
+		<!--Rule 1919: If orderingLeadTime is used then orderingLeadTime/@measurementUnitCode SHALL equal 'DAY'.-->
+		<xsl:for-each select="distributionDetails">
+			<xsl:if test="orderingLeadTime != '' and orderingLeadTime/@measurementUnitCode != 'DAY'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1919" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+		
 
 	</xsl:template>
 

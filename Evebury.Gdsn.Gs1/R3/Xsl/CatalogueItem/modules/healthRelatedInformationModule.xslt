@@ -9,13 +9,30 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="healthRelatedInformation" mode="healthRelatedInformationModule"/>
+		<xsl:apply-templates select="healthRelatedInformation" mode="healthRelatedInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="healthRelatedInformation" mode="healthRelatedInformationModule">
+		<xsl:param name="targetMarket"/>
 		<xsl:apply-templates select="nutritionalProgram" mode="healthRelatedInformationModule"/>
 		<xsl:apply-templates select="compulsoryAdditionalInformation" mode="healthRelatedInformationModule"/>
+
+		<!--Rule 1908: If targetMarketCountryCode equals <Geographic> and compulsoryAdditiveLabelInformation is used, then one iteration of compulsoryAdditiveLabelInformation/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
+		<xsl:if test="$targetMarket = '246'">
+			<xsl:if test="compulsoryAdditiveLabelInformation">
+				<xsl:choose>
+					<xsl:when test="compulsoryAdditiveLabelInformation[@languageCode = 'fi'] != '' and compulsoryAdditiveLabelInformation[@languageCode = 'sv'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1908" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 

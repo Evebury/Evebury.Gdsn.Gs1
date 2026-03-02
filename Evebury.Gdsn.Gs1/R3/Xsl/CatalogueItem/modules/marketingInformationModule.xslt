@@ -49,6 +49,20 @@
 			</xsl:if>
 		</xsl:if>
 
+		<!--Rule 1907: If targetMarketCountryCode equals <Geographic> and shortTradeItemMarketingMessage is used, then at least one iteration of shortTradeItemMarketingMessage/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
+		<xsl:if test="$targetMarket = '246'">
+			<xsl:if test="shortTradeItemMarketingMessage">
+				<xsl:choose>
+					<xsl:when test="shortTradeItemMarketingMessage[@languageCode = 'fi'] != '' and shortTradeItemMarketingMessage[@languageCode = 'sv'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1907" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 

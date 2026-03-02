@@ -173,6 +173,16 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] consumerInstructionsModule {
+            get {
+                object obj = ResourceManager.GetObject("consumerInstructionsModule", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] copyrightInformationModule {
             get {
                 object obj = ResourceManager.GetObject("copyrightInformationModule", resourceCulture);

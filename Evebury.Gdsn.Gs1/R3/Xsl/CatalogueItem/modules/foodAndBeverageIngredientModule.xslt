@@ -13,6 +13,20 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 
+		<!--Rule 1900: If targetMarketCountryCode equals <Geographic> and ingredientStatement is used, then at least one iteration of ingredientStatement/@languageCcode SHALL equal to 'fi' (Finnish) and 'sv' (Swedish).-->
+		<xsl:if test="$targetMarket = '246'">
+			<xsl:if test="ingredientStatement">
+				<xsl:choose>
+					<xsl:when test="ingredientStatement[@languageCode = 'fi'] != '' and ingredientStatement[@languageCode = 'sv'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1900" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="foodAndBeverageIngredient" mode="foodAndBeverageIngredientModule">
@@ -21,7 +35,7 @@
 
 		<xsl:apply-templates select="ingredientParty" mode="gln"/>
 		<xsl:apply-templates select="ingredientParty" mode="languageSpecificPartyName"/>
-		
+
 		<!--Rule 1177:If targetMarketCountryCode does not equal <Geographic> and there is more than one iteration of ingredientSequence, then ingredientSequence and ingredientName must not be empty.-->
 		<xsl:if test="$targetMarket != '562'">
 			<xsl:if test="ingredientSequence = '' or ingredientName = ''">
@@ -60,7 +74,7 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
-		
+
 	</xsl:template>
 
 	<xsl:template match="ingredientPlaceOfActivity" mode="foodAndBeverageIngredientModule">

@@ -37,14 +37,14 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
-		
+
 		<xsl:apply-templates select="physicalChemicalPropertyInformation" mode="safetyDataSheetModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="referencedFileInformation" mode="safetyDataSheetModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
-		
+
 	</xsl:template>
 
 	<xsl:template match="referencedFileInformation" mode="safetyDataSheetModule">
@@ -115,7 +115,7 @@
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:if>
-			
+
 		</xsl:for-each>
 		<xsl:for-each select="pHInformation">
 			<xsl:if test="gs1:InvalidRange(minimumPH,maximumPH)">

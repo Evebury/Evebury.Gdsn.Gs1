@@ -60,6 +60,17 @@
 			</xsl:if>
 		</xsl:if>
 
+		<!--Rule 1927: If targetMarketCountryCode equals <Geographic> and  nonGTINLogisticsUnitInformation/depth is used and nonGTINLogisticsUnitInformation/width is used then nonGTINLogisticsUnitInformation/depth must be greater than or equal to nonGTINLogisticsUnitInformation/width.-->
+		<xsl:if test="$targetMarket  = '380'">
+			<xsl:if test="depth != '' and width != ''">
+				<xsl:if test="width &gt; depth">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1927" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 </xsl:stylesheet>

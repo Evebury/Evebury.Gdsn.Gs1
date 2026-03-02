@@ -18,6 +18,7 @@
 	<xsl:include href="modules/batteryInformationModule.xslt"/>
 	<xsl:include href="modules/certificationInformationModule.xslt"/>
 	<xsl:include href="modules/childNutritionInformationModule.xslt"/>
+	<xsl:include href="modules/consumerInstructionsModule.xslt"/>
 	<xsl:include href="modules/copyrightInformationModule.xslt"/>
 	<xsl:include href="modules/dairyFishMeatPoultryItemModule.xslt"/>
 	<xsl:include href="modules/dangerousSubstanceInformationModule.xslt"/>
@@ -2350,6 +2351,68 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1917">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1917: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode does not equal ('PALLET ' or 'MIXED_MODULE') then packagingTypeCode SHALL be used.-->
+		<xsl:if test="$targetMarket = '203' or $targetMarket  = '703'">
+			<xsl:if test="tradeItemUnitDescriptorCode != 'PALLET' and tradeItemUnitDescriptorCode != 'MIXED_MODULE'">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/packagingTypeCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1917" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1918">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1918: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and isTradeItemAConsumerUnit equals 'false' then netContent SHALL be used.-->
+		<xsl:if test="$targetMarket = '203' or $targetMarket  = '703'">
+			<xsl:if test="isTradeItemABaseUnit  = 'true' and isTradeItemAConsumerUnit  = 'false'">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/netContent = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1918" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1922">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1922: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' then dutyFeeTaxTypeCode SHALL be used.-->
+		<xsl:if test="$targetMarket  = '380' and isTradeItemAConsumerUnit = 'true'">
+			<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTaxTypeCode = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1922" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1937">
+		<xsl:param name="targetMarket"/>
+		<xsl:if test="$targetMarket = '756'">
+			<!--Rule 1937: There must be one iteration for language 'German, French and Italian'.-->
+			<xsl:choose>
+				<xsl:when test="@languageCode">
+					<xsl:variable name="name" select="name()"/>
+					<xsl:if test="count(../*[name() = $name and @languageCode = 'de']) &lt; 1 or count(../*[name() = $name and @languageCode = 'fr']) &lt; 1 or count(../*[name() = $name and @languageCode = 'it']) &lt; 1">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1937" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:apply-templates select="*" mode="r1937">
+						<xsl:with-param name="targetMarket" select="$targetMarket"/>
+					</xsl:apply-templates>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
+
 
 
 	<xsl:template match="*" mode="gtin">
@@ -2715,6 +2778,18 @@
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1896"/>
 		<xsl:apply-templates select="." mode="r1901">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1917">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1918">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1922">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1937">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 

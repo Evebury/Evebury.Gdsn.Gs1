@@ -11,6 +11,20 @@
 
 		<xsl:apply-templates select="nonfoodIngredient" mode="nonfoodIngredientModule"/>
 
+		<!--Rule 1906: If targetMarketCountryCode equals <Geographic> and nonFoodIngredientStatement is used, then at least one iteration of nonFoodIngredientStatement/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
+		<xsl:if test="$targetMarket = '246'">
+			<xsl:if test="nonFoodIngredientStatement">
+				<xsl:choose>
+					<xsl:when test="nonFoodIngredientStatement[@languageCode = 'fi'] != '' and nonFoodIngredientStatement[@languageCode = 'sv'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1906" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="nonfoodIngredient" mode="nonfoodIngredientModule">

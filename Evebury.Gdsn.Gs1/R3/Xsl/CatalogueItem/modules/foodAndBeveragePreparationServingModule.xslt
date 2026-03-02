@@ -83,6 +83,33 @@
 				<xsl:with-param name="id" select="1866" />
 			</xsl:apply-templates>
 		</xsl:if>
+
+	
+		<xsl:if test="$targetMarket = '246'">
+			<!--Rule 1904: If targetMarketCountryCode equals <Geographic> and preparationInstructions is used, then one iteration of preparationInstructions/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
+			<xsl:if test="preparationInstructions">
+				<xsl:choose>
+					<xsl:when test="preparationInstructions[@languageCode = 'fi'] != '' and preparationInstructions[@languageCode = 'sv'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1904" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+			<!--Rule 1905: If targetMarketCountryCode equals <Geographic> and servingSuggestion is used, then one iteration of servingSuggestion/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
+			<xsl:if test="servingSuggestion">
+				<xsl:choose>
+					<xsl:when test="servingSuggestion[@languageCode = 'fi'] != '' and servingSuggestion[@languageCode = 'sv'] != ''"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1905" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 </xsl:stylesheet>
