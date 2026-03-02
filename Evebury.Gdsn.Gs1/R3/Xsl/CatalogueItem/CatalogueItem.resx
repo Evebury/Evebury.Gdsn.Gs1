@@ -211,6 +211,9 @@
   <data name="oNIXPublicationFileInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\oNIXPublicationFileInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="organismClassificationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>modules\organismClassificationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="packagingInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\packagingInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

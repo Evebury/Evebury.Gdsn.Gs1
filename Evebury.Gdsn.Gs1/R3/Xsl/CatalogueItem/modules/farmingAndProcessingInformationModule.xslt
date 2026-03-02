@@ -25,11 +25,12 @@
 
 		<xsl:variable name="isEU" select="contains('008, 051, 031, 112, 056, 070, 100, 191, 196, 203, 208, 233, 246, 250, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 724, 752, 792, 795, 826, 804, 860', $targetMarket)"/>
 
-		<!--Rule 1569: If targetMarketCountryCode equals EU
+
+		<xsl:if test="$isEU">
+			<!--Rule 1569: If targetMarketCountryCode equals EU
 and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC families ('50100000', '50250000', '50260000', '50270000', '50290000', '50310000', '50320000', '50350000', '50360000', '50370000' or '50380000') and tradeItemFarmingAndProcessing/growingMethodCode equals 'ORGANIC' then tradeItemOrganicInformation/organicClaim/organicClaimAgencyCode SHALL be used.-->
 
-		<xsl:if test="tradeItemFarmingAndProcessing[growingMethodCode = 'ORGANIC']">
-			<xsl:if test="$isEU">
+			<xsl:if test="tradeItemFarmingAndProcessing[growingMethodCode = 'ORGANIC']">
 				<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
 				<xsl:if test="gs1:IsInFamily($brick, '50100000, 50250000, 50260000, 50270000, 50290000, 50310000, 50320000, 50350000, 50360000, 50370000, 50380000')">
 					<xsl:if test="tradeItemOrganicInformation/organicClaim/organicClaimAgencyCode = ''">
@@ -40,10 +41,9 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 					</xsl:if>
 				</xsl:if>
 			</xsl:if>
-		</xsl:if>
 
-		<!--Rule 1570: If targetMarketCountryCode equals EU and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC families ('50100000', '50250000', '50260000', '50270000', '50290000', '50310000', '50320000', '50350000', '50360000', '50370000' or '50380000') and tradeItemFarmingAndProcessing/growingMethodCode is used, then tradeItemFarmingAndProcessing/growingMethodCode SHALL equal ('CONVENTIONAL', 'FIELD_GROWN', 'GREENHOUSE', 'HYDROPONIC', 'INTEGRATED_PEST_MANAGEMENT', 'ORGANIC', 'SHADE_GROWN', or 'WILD').-->
-		<xsl:if test="$isEU">
+			<!--Rule 1570: If targetMarketCountryCode equals EU and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC families ('50100000', '50250000', '50260000', '50270000', '50290000', '50310000', '50320000', '50350000', '50360000', '50370000' or '50380000') and tradeItemFarmingAndProcessing/growingMethodCode is used, then tradeItemFarmingAndProcessing/growingMethodCode SHALL equal ('CONVENTIONAL', 'FIELD_GROWN', 'GREENHOUSE', 'HYDROPONIC', 'INTEGRATED_PEST_MANAGEMENT', 'ORGANIC', 'SHADE_GROWN', or 'WILD').-->
+
 			<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
 			<xsl:if test="gs1:IsInFamily($brick, '50100000, 50250000, 50260000, 50270000, 50290000, 50310000, 50320000, 50350000, 50360000, 50370000, 50380000')">
 				<xsl:for-each select="tradeItemFarmingAndProcessing/growingMethodCode">
@@ -65,12 +65,8 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 					</xsl:choose>
 				</xsl:for-each>
 			</xsl:if>
-			
-		</xsl:if>
 
-		<!--Rule 1617: If targetMarketCountryCode equals EU, and GPC Brick belongs to the GPC families ('50100000', '50250000', '50260000', '50270000', '50290000', '50310000', '50320000', '50350000', '50360000', '50370000' or '50380000') and growingMethodCode  equals 'ORGANIC' then farmingAndProcessingInformationModule/tradeItemOrganicInformation/organicClaim/organicTradeItemCode SHALL be used.-->
-		<xsl:if test="$isEU">
-			<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
+			<!--Rule 1617: If targetMarketCountryCode equals EU, and GPC Brick belongs to the GPC families ('50100000', '50250000', '50260000', '50270000', '50290000', '50310000', '50320000', '50350000', '50360000', '50370000' or '50380000') and growingMethodCode  equals 'ORGANIC' then farmingAndProcessingInformationModule/tradeItemOrganicInformation/organicClaim/organicTradeItemCode SHALL be used.-->
 			<xsl:if test="gs1:IsInFamily($brick, '50100000, 50250000, 50260000, 50270000, 50290000, 50310000, 50320000, 50350000, 50360000, 50370000, 50380000')">
 				<xsl:if test="tradeItemFarmingAndProcessing[growingMethodCode = 'ORGANIC']">
 					<xsl:if test="tradeItemOrganicInformation/organicClaim/organicTradeItemCode = ''">
@@ -80,6 +76,13 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 						</xsl:apply-templates>
 					</xsl:if>
 				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 1874: If targetMarketCountryCode equals <Geographic> then organicTradeItemCode SHALL NOT equal '1'.-->
+			<xsl:if test="organicClaim[organicTradeItemCode = '1']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1874" />
+				</xsl:apply-templates>
 			</xsl:if>
 
 		</xsl:if>

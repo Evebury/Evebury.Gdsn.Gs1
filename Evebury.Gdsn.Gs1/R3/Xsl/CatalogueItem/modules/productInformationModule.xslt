@@ -9,8 +9,22 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="productInformationDetail/claimDetail" mode="productInformationModule"/>
+		<xsl:apply-templates select="productInformationDetail" mode="productInformationModule"/>
 
+	</xsl:template>
+
+	<xsl:template match="productInformationDetail" mode="productInformationModule">
+		<xsl:apply-templates select="claimDetail" mode="productInformationModule"/>
+		<xsl:apply-templates select="tobaccoCannabisInformation" mode="productInformationModule"/>
+
+		<!--Rule 1870: minimumTerpeneContent and maximumTerpeneContent, if one value is used the other should be used as well-->
+		<xsl:for-each select="terpeneInformation">
+			<xsl:if test="(minimumTerpeneContent != '' or maximumTerpeneContent !='') and (minimumTerpeneContent = '' or maximumTerpeneContent ='')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1869" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template match="claimDetail" mode="productInformationModule">
@@ -21,5 +35,18 @@
 			</xsl:apply-templates>
 		</xsl:if>
 	</xsl:template>
+
+	<xsl:template match="tobaccoCannabisInformation" mode="productInformationModule">
+		<!--Rule 1869: cannabinoidMinimumRangeValue and cannabinoidMaximumRangeValue, if one value is used the other should be used as well-->
+		<xsl:for-each select="cannabinoidContentInformation">
+			<xsl:if test="(cannabinoidMinimumRangeValue != '' or cannabinoidMaximumRangeValue !='') and (cannabinoidMinimumRangeValue = '' or cannabinoidMaximumRangeValue ='')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1869" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+
+
 
 </xsl:stylesheet>

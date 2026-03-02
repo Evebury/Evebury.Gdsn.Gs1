@@ -21,7 +21,7 @@
 		<xsl:param name="tradeItem"/>
 
 		<xsl:apply-templates select="incotermInformation" mode="deliveryPurchasingInformationModule"/>
-		
+
 		<!--Rule 341: If a start dateTime and its corresponding end dateTime are not empty then the start date SHALL be less than or equal to corresponding end date. -->
 		<xsl:if test="gs1:InvalidDateTimeSpan(consumerFirstAvailabilityDateTime, consumerEndAvailabilityDateTime)">
 			<xsl:apply-templates select="." mode="error">
@@ -93,21 +93,44 @@
 			</xsl:if>
 		</xsl:if>
 
-		<!--Rule 1856: If targetMarketCountryCode equals <Geographic> and (endAvailabilityDateTime and ChildItem..endAvailabilityDateTime) are used, then ChildItem..endAvailabilityDateTime SHALL be equal to or after endAvailabilityDateTime.-->
-		<xsl:if test="$targetMarket = '250' and endAvailabilityDateTime != ''">
-			<xsl:variable name="endAvailabilityDateTime" select="endAvailabilityDateTime"/>
-			<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
-				<xsl:variable name="date" select="./tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/endAvailabilityDateTime"/>
-				<xsl:if test="$date != ''">
-					<xsl:if test="gs1:InvalidDateTimeSpan($endAvailabilityDateTime, $date)">
-						<xsl:apply-templates select="." mode="error">
-							<xsl:with-param name="id" select="1856" />
-						</xsl:apply-templates>
+
+		<xsl:if test="$targetMarket = '250'">
+
+			<!--Rule 1856: If targetMarketCountryCode equals <Geographic> and (endAvailabilityDateTime and ChildItem..endAvailabilityDateTime) are used, then ChildItem..endAvailabilityDateTime SHALL be equal to or after endAvailabilityDateTime.-->
+			<xsl:if test="endAvailabilityDateTime != ''">
+				<xsl:variable name="endAvailabilityDateTime" select="endAvailabilityDateTime"/>
+				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
+					<xsl:variable name="date" select="./tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/endAvailabilityDateTime"/>
+					<xsl:if test="$date != ''">
+						<xsl:if test="gs1:InvalidDateTimeSpan($endAvailabilityDateTime, $date)">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1856" />
+							</xsl:apply-templates>
+						</xsl:if>
 					</xsl:if>
-				</xsl:if>
-			</xsl:for-each>
+				</xsl:for-each>
+			</xsl:if>
+
+			<!--Rule 1894: If targetMarketCountryCode equals <Geographic> and (startAvailabilityDateTime and ChildItem..startAvailabilityDateTime) are used, then ChildItem..startAvailabilityDateTime SHALL be before or equal to startAvailabilityDateTime.-->
+			<xsl:if test="startAvailabilityDateTime != ''">
+				<xsl:variable name="startAvailabilityDateTime" select="startAvailabilityDateTime"/>
+				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
+					<xsl:variable name="date" select="./tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/startAvailabilityDateTime"/>
+					<xsl:if test="$date != ''">
+						<xsl:if test="gs1:InvalidDateTimeSpan($date, $startAvailabilityDateTime)">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1894" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:if>
+				</xsl:for-each>
+			</xsl:if>
+			
+			
 		</xsl:if>
-	
+
+
+
 	</xsl:template>
 
 	<xsl:template match="incotermInformation" mode="deliveryPurchasingInformationModule">

@@ -20,8 +20,16 @@
 				<xsl:with-param name="id" select="362"/>
 			</xsl:apply-templates>
 		</xsl:if>
-		
-		
+
+
+		<!--Rule 1911: If there is more than one iteration of dangerousHazardousLabel, then dangerousHazardousLabelSequenceNumber SHALL be used.-->
+		<xsl:if test="count(dangerousHazardousLabel) &gt; 1">
+			<xsl:if test="dangerousHazardousLabel[dangerousHazardousLabelSequenceNumber  = '']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1911" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 
 	</xsl:template>
 

@@ -54,17 +54,70 @@
 			</xsl:choose>
 		</xsl:for-each>
 
-		<!--Rule 1859: If targetMarketCountryCode equals <Geographic> and ChildItem..isTradeItemAPromotionalUnit equals 'true', then isTradeItemAPromotionalUnit SHALL equal 'true'.-->
-		<xsl:if test="$targetMarket = '250' and isTradeItemAPromotionalUnit != 'true'">
-			<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
-				<xsl:if test="./tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:promotional_item_information:xsd:3' and local-name()='promotionalItemInformationModule']/isTradeItemAPromotionalUnit = 'true'">
+		<xsl:if test="$targetMarket = '250'">
+
+			<xsl:if test="isTradeItemAPromotionalUnit != 'true'">
+
+				<!--Rule 1859: If targetMarketCountryCode equals <Geographic> and ChildItem..isTradeItemAPromotionalUnit equals 'true', then isTradeItemAPromotionalUnit SHALL equal 'true'.-->
+				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
+					<xsl:if test="./tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:promotional_item_information:xsd:3' and local-name()='promotionalItemInformationModule']/isTradeItemAPromotionalUnit = 'true'">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1859" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:for-each>
+
+				<!--Rule 1863: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and isTradeItemAPromotionalUnit equals 'true', then promotionTypeCode and nonPromotionalTradeItem/gtin SHALL be used.-->
+				<xsl:if test="promotionTypeCode = '' or nonPromotionalTradeItem/gtin  = ''">
 					<xsl:apply-templates select="." mode="error">
-						<xsl:with-param name="id" select="1859" />
+						<xsl:with-param name="id" select="1863" />
 					</xsl:apply-templates>
 				</xsl:if>
-			</xsl:for-each>
-		</xsl:if>
 
+
+
+			</xsl:if>
+
+			<!--Rule 1864: If targetMarketCountryCode equals <Geographic> and promotionTypeCode is used, then isTradeItemAPromotionalUnit SHALL equal 'true'.-->
+			<xsl:if test="isTradeItemAPromotionalUnit != 'true' and promotionTypeCode != ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1864" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+			<!--Rule 1878: If targetMarketCountryCode equals <Geographic> and freeQuantityOfProduct is used, then freeQuantityOfProduct/@measurementUnitCode SHALL be equal to one instance of netContent/@measurementUnitCode.-->
+			<xsl:variable name="module" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements"/>
+			<xsl:for-each select="freeQuantityOfProduct">
+				<xsl:variable name="unit" select="@measurementUnitCode"/>
+				<xsl:choose>
+					<xsl:when test="$module/netContent[@measurementUnitCode = $unit]"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1878" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:for-each>
+
+			<!--Rule 1879: If targetMarketCountryCode equals <Geographic> and promotionTypeCode equals 'MULTI_PACK_AND_COMBINATION_PACK', then isTradeItemABaseUnit SHALL NOT equal 'true'.-->
+			<xsl:if test="promotionTypeCode = 'MULTI_PACK_AND_COMBINATION_PACK'">
+				<xsl:if test="$tradeItem/isTradeItemABaseUnit = 'true'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1879" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 1880: If targetMarketCountryCode equals <Geographic> and freeQuantityOfNextLowerLevelTradeItem is used, then tradeItemUnitDescriptorCode SHALL equal 'PACK_OR_INNER_PACK', quantityOfChildren SHALL be greater than 1 and promotionTypeCode SHALL equal 'MULTI_PACK_AND_COMBINATION_PACK'.-->
+			<xsl:if test="freeQuantityOfNextLowerLevelTradeItem">
+				<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode != 'PACK_OR_INNER_PACK' or promotionTypeCode != 'MULTI_PACK_AND_COMBINATION_PACK' or $tradeItem/nextLowerLevelTradeItemInformation/quantityOfChildren &lt;= 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1880" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="nonPromotionalTradeItem" mode="promotionalItemInformationModule">

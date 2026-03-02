@@ -49,6 +49,17 @@
 				<xsl:with-param name="id" select="1281" />
 			</xsl:apply-templates>
 		</xsl:if>
+
+		<xsl:variable name="isEU" select="contains('008, 051, 031, 112, 056, 070, 100, 191, 196, 203, 208, 233, 246, 250, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 724, 752, 792, 795, 826, 804, 860', $targetMarket)"/>
+
+		<xsl:if test="$isEU">
+			<!--Rule 1874: If targetMarketCountryCode equals <Geographic> then organicTradeItemCode SHALL NOT equal '1'.-->
+			<xsl:if test="ingredientOrganicInformation/organicClaim[organicTradeItemCode = '1']">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1874" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		
 	</xsl:template>
 

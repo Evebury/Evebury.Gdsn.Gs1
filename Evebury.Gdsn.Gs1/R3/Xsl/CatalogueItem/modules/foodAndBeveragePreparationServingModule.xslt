@@ -77,8 +77,12 @@
 			</xsl:if>
 		</xsl:for-each>
 
-	
-
+		<!--Rule 1866: If targetMarketCountryCode equals <Geographic> and preparationInstructions is used then preparationTypeCode SHALL be used.-->
+		<xsl:if test="preparationTypeCode ='' and preparationInstructions != '' and contains('752, 756, 040', $targetMarket)">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1866" />
+			</xsl:apply-templates>
+		</xsl:if>
 	</xsl:template>
 
 </xsl:stylesheet>

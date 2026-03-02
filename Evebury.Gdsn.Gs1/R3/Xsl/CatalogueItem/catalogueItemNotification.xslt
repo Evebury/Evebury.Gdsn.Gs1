@@ -37,6 +37,7 @@
 	<xsl:include href="modules/nonGTINLogisticsUnitInformationModule.xslt"/>
 	<xsl:include href="modules/nutritionalInformationModule.xslt"/>
 	<xsl:include href="modules/oNIXPublicationFileInformationModule.xslt"/>
+	<xsl:include href="modules/organismClassificationModule.xslt"/>
 	<xsl:include href="modules/packagingInformationModule.xslt"/>
 	<xsl:include href="modules/packagingMarkingModule.xslt"/>
 	<xsl:include href="modules/placeOfItemActivityModule.xslt"/>
@@ -2189,7 +2190,167 @@
 			</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
-	
+
+	<xsl:template match="*" mode="r1867">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1867: (Warning) If targetMarketCountryCode equals <Geographic> and additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode equals 'SUPPLIER_ASSIGNED', then additionalTradeItemIdentification SHALL be less than or equal to 35 characters.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:for-each select="additionalTradeItemIdentification[@additionalTradeItemIdentificationTypeCode = 'SUPPLIER_ASSIGNED']">
+				<xsl:if test="string-length(additionalTradeItemIdentification) &gt; 35">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1867" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1875">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1875: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals 'PACK_OR_INNER_PACK' and isTradeItemAConsumerUnit equals 'true', then totalQuantityOfNextLowerLevelTradeItem SHALL be greater than 1.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test="isTradeItemAConsumerUnit = 'true' and tradeItemUnitDescriptorCode = 'PACK_OR_INNER_PACK'">
+				<xsl:if test="nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem != '' and nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem &lt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1875" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1877">
+		<xsl:param name="targetMarket" />
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test="tradeItemUnitDescriptorCode = 'DISPLAY_SHIPPER' or tradeItemUnitDescriptorCode = 'MIXED_MODULE'">
+
+				<!--Rule 1877: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals ('DISPLAY_SHIPPER' or 'MIXED_MODULE') and quantityOfChildren is greater than 1, then tradeItem/gtin SHALL start with '0'.-->
+				<xsl:if test="nextLowerLevelTradeItemInformation/quantityOfChildren &gt; 1">
+					<xsl:if test="substring(gtin,1,1) != '0'">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1877" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+
+				<!--Rule 1890: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals 'PALLET' or 'MIXED_MODULE', then quantityOfTradeItemsContainedInACompleteLayer SHALL be greater than 0.-->
+				<xsl:variable name="quantityOfTradeItems" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy/quantityOfTradeItemsContainedInACompleteLayer"/>
+				<xsl:if test="$quantityOfTradeItems = '' or $quantityOfTradeItems &lt;= 0">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1890" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+				<!--Rule 1891: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals 'PALLET' or 'MIXED_MODULE', then platformTermsAndConditionsCode SHALL be used.-->
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_information:xsd:3' and local-name()='packagingInformationModule']/packaging/platformTermsAndConditionsCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1891" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1883">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1883: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals 'PACK_OR_INNER_PACK' and isTradeItemAConsumerUnit equals 'true', then totalQuantityOfNextLowerLevelTradeItem SHALL be greater than 1.-->
+		<xsl:if test="$targetMarket = '250'">
+			<xsl:if test="tradeItemUnitDescriptorCode = 'PACK_OR_INNER_PACK' and isTradeItemAConsumerUnit = 'true'">
+				<xsl:if test="nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem = '' or nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem &lt;= 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1883" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1892">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1892: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode is in GPC Segment '50000000' and isTradeItemAConsumerUnit equals 'true', then netWeight SHALL be used.-->
+		<xsl:if test="$targetMarket = '250' and isTradeItemAConsumerUnit = 'true'">
+			<xsl:variable name="brick" select="gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="gs1:IsInSegment($brick, '50000000')">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/netWeight = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1892" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1895">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1895: If targetMarketCountryCode equals <Geographic> and referencedTradeItem/gtin is used, then referencedTradeItem/gtin SHALL be unique across all iterations where referencedTradeItemTypeCode equals ('DEPENDENT_PROPRIETARY', 'EQUIVALENT', 'PRIMARY_ALTERNATIVE', 'REPLACED', 'REPLACED_BY', 'SUBSTITUTED' or 'SUBSTITUTED_BY').-->
+		<xsl:if test="$targetMarket = '203'">
+			<xsl:variable name="parent" select="."/>
+			<xsl:for-each select="referencedTradeItem">
+				<xsl:variable name="gtin" select="gtin"/>
+				<xsl:if test="$gtin != '' and count($parent/referencedTradeItem[gtin=$gtin]) &gt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1895" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1896">
+		<!--Rule 1896: If referencedTradeItem/gtin is used, then referencedTradeItem/gtin SHALL be unique across all iterations where referencedTradeItemTypeCode equals ('REPLACED' or 'REPLACED_BY').-->
+		<!--Rule 1897: If referencedTradeItem/gtin is used, then referencedTradeItem/gtin SHALL be unique across all iterations where referencedTradeItemTypeCode equals ('SUBSTITUTED' or 'SUBSTITUTED_BY').-->
+		<xsl:variable name="parent" select="."/>
+		<xsl:for-each select="referencedTradeItem">
+			<xsl:variable name="gtin" select="gtin"/>
+			<xsl:if test="$gtin != ''">
+				<xsl:choose>
+					<xsl:when test="referencedTradeItemTypeCode = 'REPLACED'">
+						<xsl:if test="count($parent/referencedTradeItem[referencedTradeItemTypeCode = 'REPLACED' and gtin=$gtin]) &gt; 1">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1896" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:when>
+					<xsl:when test="referencedTradeItemTypeCode = 'REPLACED_BY'">
+						<xsl:if test="count($parent/referencedTradeItem[referencedTradeItemTypeCode = 'REPLACED_BY' and gtin=$gtin]) &gt; 1">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1896" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:when>
+					<xsl:when test="referencedTradeItemTypeCode = 'SUBSTITUTED'">
+						<xsl:if test="count($parent/referencedTradeItem[referencedTradeItemTypeCode = 'SUBSTITUTED' and gtin=$gtin]) &gt; 1">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1897" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:when>
+					<xsl:when test="referencedTradeItemTypeCode = 'SUBSTITUTED_BY'">
+						<xsl:if test="count($parent/referencedTradeItem[referencedTradeItemTypeCode = 'SUBSTITUTED_BY' and gtin=$gtin]) &gt; 1">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1897" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:when>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1901">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1901: If targetMarketCountryCode equals <Geographic>, then descriptionShort SHALL be used.-->
+		<xsl:if test="$targetMarket = '246'">
+			<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/descriptionShort = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1901" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
+
 
 	<xsl:template match="*" mode="gtin">
 		<!--Rule 471: If data type is equal to  gtin then attribute value must be a  valid GTIN-8, GTIN-12, GTIN-13 or GTIN-14 number.-->
@@ -2534,6 +2695,28 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1862"/>
+		<xsl:apply-templates select="." mode="r1867">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1875">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1877">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1883">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1892">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1895">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1896"/>
+		<xsl:apply-templates select="." mode="r1901">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 		<xsl:apply-templates select="." mode="gtin"/>
 		<xsl:apply-templates select="referencedTradeItem" mode="gtin"/>
@@ -2552,6 +2735,8 @@
 		<xsl:apply-templates select="." mode="r2069">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+
+
 
 	</xsl:template>
 </xsl:stylesheet>

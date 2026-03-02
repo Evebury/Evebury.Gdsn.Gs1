@@ -365,6 +365,15 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1868: packagingClaimTypeCode and packagingClaimElementCode should be both used if one is used.-->
+		<xsl:for-each select="packagingClaims">
+			<xsl:if test="(packagingClaimElementCode != '' or packagingClaimTypeCode !='') and (packagingClaimElementCode = '' or packagingClaimTypeCode ='')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1868" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:for-each>
 		
 	</xsl:template>
 

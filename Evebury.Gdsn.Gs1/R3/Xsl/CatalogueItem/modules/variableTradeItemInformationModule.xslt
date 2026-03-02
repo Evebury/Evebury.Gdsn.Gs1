@@ -9,16 +9,30 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="variableTradeItemInformation" mode="variableTradeItemInformationModule"/>
+		<xsl:apply-templates select="variableTradeItemInformation" mode="variableTradeItemInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="variableTradeItemInformation" mode="variableTradeItemInformationModule">
+		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
 		<!--Rule 362: If a minimum and corresponding maximum are not empty then the minimum SHALL be less than or equal to the corresponding maximum.-->
 		<xsl:if test="gs1:InvalidRange(variableWeightRangeMinimum,variableWeightRangeMaximum)">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="362"/>
 			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1893: If targetMarketCountryCode equals <Geographic> and isTradeItemAnInvoiceUnit equals 'true' and isTradeItemAVariableUnit equals 'true', then sellingUnitOfMeasure SHALL be used.-->
+		<xsl:if test="$targetMarket = '250' and isTradeItemAVariableUnit = 'true'">
+			<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/sellingUnitOfMeasure = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1893" />
+				</xsl:apply-templates>
+			</xsl:if>
 		</xsl:if>
 		
 	</xsl:template>
