@@ -17,7 +17,9 @@
 
 	<xsl:template match="healthRelatedInformation" mode="healthRelatedInformationModule">
 		<xsl:param name="targetMarket"/>
-		<xsl:apply-templates select="nutritionalProgram" mode="healthRelatedInformationModule"/>
+		<xsl:apply-templates select="nutritionalProgram" mode="healthRelatedInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 		<xsl:apply-templates select="compulsoryAdditionalInformation" mode="healthRelatedInformationModule"/>
 
 		<!--Rule 1908: If targetMarketCountryCode equals <Geographic> and compulsoryAdditiveLabelInformation is used, then one iteration of compulsoryAdditiveLabelInformation/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
@@ -33,6 +35,8 @@
 				</xsl:choose>
 			</xsl:if>
 		</xsl:if>
+
+
 	</xsl:template>
 
 
@@ -46,6 +50,7 @@
 	</xsl:template>
 	
 	<xsl:template match="nutritionalProgram" mode="healthRelatedInformationModule">
+		<xsl:param name="targetMarket"/>
 		<xsl:apply-templates select="nutritionalProgramIngredients" mode="healthRelatedInformationModule"/>
 
 		<!--Rule 1698: If nutritionalProgramCode equals '8' (Nutri-Score) and nutritionalProgramStatusCode does not equal 'NOT_REGISTERED' then nutritionalScore SHALL be used and nutritionalScore SHALL equal ('A', 'B', 'C', 'D', 'E' or 'EXEMPT').-->
@@ -72,6 +77,20 @@
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1799" />
 				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<!--Rule 1941: If targetMarketCountryCode equals <Geographic> and multiple iterations of nutritionalProgramCode equal '8' then nutritionalProgramDetail SHALL be used in each corresponding iteration.-->
+		<xsl:if test="$targetMarket = '756'">
+			<xsl:if test="nutritionalProgramCode = '8'">
+				<xsl:choose>
+					<xsl:when test="nutritionalProgramDetail"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1941" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:if>
 		</xsl:if>
 

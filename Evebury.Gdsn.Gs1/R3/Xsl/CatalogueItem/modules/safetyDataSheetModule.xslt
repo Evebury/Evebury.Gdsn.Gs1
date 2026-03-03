@@ -44,6 +44,11 @@
 		<xsl:apply-templates select="referencedFileInformation" mode="safetyDataSheetModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+		<xsl:apply-templates select="gHSDetail" mode="safetyDataSheetModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+
+
 
 	</xsl:template>
 
@@ -139,6 +144,32 @@
 			</xsl:if>
 		</xsl:if>
 
+	</xsl:template>
+
+	<xsl:template match="gHSDetail" mode="safetyDataSheetModule">
+		<xsl:param name="targetMarket"/>
+		<!--Rule 1961: If targetMarketCountryCode equals <Geographic> and hazardStatementsCode equals 'EUH208' then hazardStatementsDescription SHALL be used.-->
+		<xsl:if test="contains('203, 756, 040, 703', $targetMarket)">
+			<xsl:for-each select="hazardStatement">
+			<xsl:if test="hazardStatementsCode  = 'EUH208' and hazardStatementsDescription = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1961" />
+				</xsl:apply-templates>
+			</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+
+		<!--Rule 1962: If targetMarketCountryCode equals <Geographic> and precautionaryStatementsCode equals ('P221', 'P230', 'P231', 'P231+P232', 'P241', 'P250', 'P264', 'P264+P265', 'P301', 'P301+P310', 'P301+P310+P330+P331', 'P301+P312', 'P302', 'P302+P352', 'P303', 'P303+P361+P353+P310', 'P304', 'P304+P310', 'P304+P312', 'P304+P340+P312', 'P305', 'P305+P351+P338+P310', 'P306', 'P307+P311', 'P308', 'P308+P311', 'P310', 'P311', 'P312', 'P320', 'P321', 'P332', 'P333', 'P337', 'P342', 'P342+P311', 'P352', 'P370', 'P370+P378', 'P370+P380+P375+[P378]', 'P371', 'P378', 'P401', 'P406', 'P411', 'P411+P235', 'P413', 'P422', 'P501' or 'P503') then precautionaryStatementsDescription SHALL be used.-->
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<xsl:for-each select="precautionaryStatement">
+				<xsl:if test="contains('P221, P230, P231, P231+P232, P241, P250, P264, P264+P265, P301, P301+P310, P301+P310+P330+P331, P301+P312, P302, P302+P352, P303, P303+P361+P353+P310, P304, P304+P310, P304+P312, P304+P340+P312, P305, P305+P351+P338+P310, P306, P307+P311, P308, P308+P311, P310, P311, P312, P320, P321, P332, P333, P337, P342, P342+P311, P352, P370, P370+P378, P370+P380+P375+[P378], P371, P378, P401, P406, P411, P411+P235, P413, P422, P501, P503', precautionaryStatementsCode) and precautionaryStatementsDescription = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1962" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+		
 	</xsl:template>
 
 </xsl:stylesheet>

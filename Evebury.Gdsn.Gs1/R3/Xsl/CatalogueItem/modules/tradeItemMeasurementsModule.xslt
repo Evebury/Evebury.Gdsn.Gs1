@@ -363,6 +363,56 @@
 				<xsl:with-param name="id" select="1775" />
 			</xsl:apply-templates>
 		</xsl:if>
+
+
+		<xsl:if test="$targetMarket  = '756'">
+			<xsl:for-each select="tradeItemNesting">
+
+				<!--Rule 1949: If targetMarketCountryCode equals <Geographic> and nestingIncrement is used then at least one of nestingTypeCode or nestingDirectionCode SHALL be used.-->
+				<xsl:if test="nestingIncrement != '' and nestingTypeCode ='' and nestingDirectionCode =''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1949" />
+					</xsl:apply-templates>
+				</xsl:if>
+
+				<!--Rule 1950: If targetMarketCountryCode equals <Geographic> and (nestingTypeCode or nestingDirectionCode is used) then nestingIncrement SHALL be used.-->
+				<xsl:if test="nestingIncrement = '' and (nestingTypeCode !='' or nestingDirectionCode !='')">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1950" />
+					</xsl:apply-templates>
+				</xsl:if>
+				
+			</xsl:for-each>
+
+			<!--Rule 1957: If targetMarketCountryCode equals <Geographic> and quantityOfChildren is greater than 1 and netContent is used then netContent/@measurementUnitCode SHALL equal 'H87' (Piece).-->
+			<xsl:if test="$tradeItem/nextLowerLevelTradeItemInformation/quantityOfChildren &gt; 1">
+				<xsl:if test="netContent != '' and netContent/@measurementUnitCode != 'H87'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1957" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 1958: If targetMarketCountryCode equals <Geographic> and quantityOfChildren is greater than 1 and netContent is used then netContent SHALL equal totalQuantityOfNextLowerLevelTradeItem.-->
+			<xsl:if test="$tradeItem/nextLowerLevelTradeItemInformation/quantityOfChildren &gt; 1">
+				<xsl:if test="netContent != '' and netContent != $tradeItem/nextLowerLevelTradeItemInformation/quantityOfChildren">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1958" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 1967: If targetMarketCountryCode equals <Geographic> and pegHoleNumber is used then pegHoleTypeCode SHALL be used.-->
+			<xsl:for-each select="pegMeasurements">
+				<xsl:if test="pegHoleNumber != '' and pegHoleTypeCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1967" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+			
+		</xsl:if>
+		
 		
 	</xsl:template>
 

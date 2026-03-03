@@ -44,6 +44,16 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+		<!--Rule 1943: If targetMarketCountryCode equals <Geographic> and regulationTypeCode equals 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant equals 'TRUE' then regulationLevelCodeReference and regulatoryActComplianceLevelCode SHALL be used.-->
+		<xsl:if test="$targetMarket = '756'">
+			<xsl:if test="regulationTypeCode = 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant = 'TRUE'">
+				<xsl:if test="regulatoryActComplianceLevelCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1943" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="permitIdentification" mode="regulatedTradeItemModule">

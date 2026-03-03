@@ -24,6 +24,18 @@
 		<xsl:apply-templates select="fishReportingInformation" mode="dairyFishMeatPoultryItemModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+
+		<!--Rule 1939: If targetMarketCountryCode equals <Geographic> and fatPercentageInDryMatter is used then fatInMilkContent SHALL NOT be used.-->
+		<xsl:if test="$targetMarket = '756'">
+			<xsl:if test="cheeseInformation[fatPercentageInDryMatter != '']">
+				<xsl:if test="fatInMilkContent != ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1939" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+		
 	</xsl:template>
 
 	<xsl:template match="fishReportingInformation" mode="dairyFishMeatPoultryItemModule">
@@ -104,6 +116,16 @@
 				<xsl:with-param name="id" select="1034" />
 			</xsl:apply-templates>
 		</xsl:if>
+
+		<!--Rule 1948: If targetMarketCountryCode equals <Geographic> and fatPercentageInDryMatterMeasurementPrecisionCode is used then fatPercentageInDryMatter SHALL be used.-->
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<xsl:if test="fatPercentageInDryMatterMeasurementPrecisionCode != '' and fatPercentageInDryMatter = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1948" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		
 	</xsl:template>
 
 </xsl:stylesheet>

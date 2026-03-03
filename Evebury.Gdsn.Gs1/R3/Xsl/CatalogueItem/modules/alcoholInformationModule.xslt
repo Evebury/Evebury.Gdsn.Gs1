@@ -34,8 +34,16 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
-		
-		
+
+		<!--Rule 1951: If targetMarketCountryCode equals <Geographic> and percentageOfAlcoholByVolumeMeasurementPrecisionCode is used then percentageOfAlcoholByVolume SHALL be used.-->
+		<xsl:if test="$targetMarket = '756'">
+			<xsl:if test="percentageOfAlcoholByVolumeMeasurementPrecisionCode != '' and percentageOfAlcoholByVolume = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1951" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 </xsl:stylesheet>

@@ -40,6 +40,15 @@
 				<xsl:with-param name="id" select="1777" />
 			</xsl:apply-templates>
 		</xsl:if>
+
+		<!--Rule 1954: If targetMarketCountryCode equals <Geographic> and numberOfServingsPerPackageMeasurementPrecisionCode is used then numberOfServingsPerPackageMeasurementPrecisionCode SHALL equal 'APPROXIMATELY'.-->
+		<xsl:if test="$targetMarket = '756'">
+			<xsl:if test="numberOfServingsPerPackageMeasurementPrecisionCode != '' and numberOfServingsPerPackageMeasurementPrecisionCode != 'APPROXIMATELY'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1954" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		
 	</xsl:template>
 

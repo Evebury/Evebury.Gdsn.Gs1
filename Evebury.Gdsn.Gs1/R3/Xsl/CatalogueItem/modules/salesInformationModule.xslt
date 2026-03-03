@@ -88,6 +88,18 @@
 			</xsl:if>
 		</xsl:for-each>
 
+		<!--Rule 1965: If targetMarketCountryCode equals <Geographic> and cataloguePrice/tradeItemPrice is used then cataloguePrice/priceBasisQuantity SHALL be used and cataloguePrice/priceEffectiveStartDate SHALL be used.-->
+		<xsl:if test="$targetMarket  = '756'">
+			<xsl:for-each select="cataloguePrice">
+				<xsl:if test="tradeItemPrice != '' and (priceBasisQuantity = '' or priceEffectiveStartDate = '')">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1965" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+		
+
 	</xsl:template>
 
 	<xsl:template match="salesInformation" mode="salesInformationModule">
@@ -297,6 +309,63 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 			</xsl:if>
 
 		</xsl:if>
+
+
+		<xsl:if test="$targetMarket = '756'">
+			<xsl:for-each select=".//priceBasisQuantity">
+
+				<!--Rule 1944: If targetMarketCountryCode equals <Geographic> and priceBasisQuantity is used then priceBasisQuantity/@measurementUnitCode SHALL equal ('H87', 'KGM', 'LTR' or 'MTR').-->
+				<xsl:choose>
+					<xsl:when test="@measurementUnitCode  = 'H87'"/>
+					<xsl:when test="@measurementUnitCode  = 'KGM'"/>
+					<xsl:when test="@measurementUnitCode  = 'LTR'"/>
+					<xsl:when test="@measurementUnitCode  = 'MTR'"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1944" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+
+				<!--Rule 1945: If targetMarketCountryCode equals <Geographic> and priceBasisQuantity is used then priceBasisQuantity SHALL equal 1, 10, 100 or 1000.-->
+				<xsl:choose>
+					<xsl:when test=". = '1'"/>
+					<xsl:when test=". = '10'"/>
+					<xsl:when test=". = '100'"/>
+					<xsl:when test=". = '1000'"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1945" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+
+			</xsl:for-each>
+
+			<!--Rule 1953: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and brandDistributionTradeItemTypeCode equals 'CUSTOM_LABEL' then brandDistributionTradeItemTypeCode SHALL equal 'CUSTOM_LABEL' on all levels of the trade item hierarchy.-->
+			<xsl:if test="brandDistributionTradeItemTypeCode = 'CUSTOM_LABEL'">
+				<xsl:variable name="child" select="tradeItem/../catalogueItemChildItemLink/tradeItem/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation"/>
+				<xsl:if test="$child and $child[brandDistributionTradeItemTypeCode != 'CUSTOM_LABEL']">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1953" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 1956: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and brandDistributionTradeItemTypeCode equals 'PRIVATE_LABEL' then brandDistributionTradeItemTypeCode SHALL equal 'PRIVATE_LABEL' on all levels of the trade item hierarchy.-->
+			<xsl:if test="brandDistributionTradeItemTypeCode = 'PRIVATE_LABEL'">
+				<xsl:variable name="child" select="tradeItem/../catalogueItemChildItemLink/tradeItem/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation"/>
+				<xsl:if test="$child and $child[brandDistributionTradeItemTypeCode != 'PRIVATE_LABEL']">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1956" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
+	
 
 	</xsl:template>
 

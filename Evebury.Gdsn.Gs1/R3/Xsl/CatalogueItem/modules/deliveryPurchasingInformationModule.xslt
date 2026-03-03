@@ -137,6 +137,15 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
+
+		<xsl:if test="$targetMarket = '756'">
+			<!--Rule 1966: If targetMarketCountryCode equals <Geographic> and orderQuantityMinimum is used then isTradeItemAnOrderableUnit SHALL equal 'true'.-->
+			<xsl:if test="orderQuantityMinimum != '' and $tradeItem/isTradeItemAnOrderableUnit != 'true'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1966" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		
 
 	</xsl:template>

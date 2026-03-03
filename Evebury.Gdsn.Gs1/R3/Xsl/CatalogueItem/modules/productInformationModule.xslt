@@ -9,12 +9,17 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="productInformationDetail" mode="productInformationModule"/>
+		<xsl:apply-templates select="productInformationDetail" mode="productInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="productInformationDetail" mode="productInformationModule">
-		<xsl:apply-templates select="claimDetail" mode="productInformationModule"/>
+		<xsl:param name="targetMarket"/>
+		<xsl:apply-templates select="claimDetail" mode="productInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 		<xsl:apply-templates select="tobaccoCannabisInformation" mode="productInformationModule"/>
 
 		<!--Rule 1870: minimumTerpeneContent and maximumTerpeneContent, if one value is used the other should be used as well-->
@@ -28,11 +33,20 @@
 	</xsl:template>
 
 	<xsl:template match="claimDetail" mode="productInformationModule">
+		<xsl:param name="targetMarket"/>
 		<!--Rule 1236: If claimElementCode is used then claimTypeCode SHALL be used.-->
 		<xsl:if test="claimElementCode != '' and claimTypeCode = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1236" />
 			</xsl:apply-templates>
+		</xsl:if>
+		<!--Rule 1947: If targetMarketCountryCode equals <Geographic> and claimMarkedOnPackage is used then claimTypeCode SHALL be used.-->
+		<xsl:if test="$targetMarket = '756'">
+			<xsl:if test="claimMarkedOnPackage != '' and claimTypeCode  = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1947" />
+				</xsl:apply-templates>
+			</xsl:if>
 		</xsl:if>
 	</xsl:template>
 

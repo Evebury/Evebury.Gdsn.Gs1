@@ -2413,6 +2413,45 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r1963">
+		<xsl:param name="targetMarket" />
+
+		<xsl:if test="$targetMarket  = '250' or $targetMarket = '756'">
+
+			<!--Rule 1963: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode equals '10000159' (Beer) and isTradeItemABaseUnit equals 'true' then degreeOfOriginalWort SHALL be used.-->
+			<xsl:if test="isTradeItemABaseUnit = 'true'">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/degreeOfOriginalWort = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1963" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 1964: If targetMarketCountryCode equals <Geographic> and (brandOwner/gln is used or brandOwner/partyName is used) then brandOwner/gln SHALL be used and brandOwner/partyName SHALL be used.-->
+			<xsl:if test="(brandOwner/gln != '' or brandOwner/partyName != '') and (brandOwner/gln = '' or brandOwner/partyName = '')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1964" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r1971">
+		<xsl:param name="targetMarket" />
+		<!--Rule 1971: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals ('PALLET' or 'MIXED_MODULE') then isTradeItemADespatchUnit SHALL equal 'true'.-->
+		<xsl:if test="$targetMarket  = '756' or $targetMarket = '040'">
+			<xsl:if test="tradeItemUnitDescriptorCode = 'PALLET' or tradeItemUnitDescriptorCode = 'MIXED_MODULE'">
+				<xsl:if test="isTradeItemADespatchUnit != 'true'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1971" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+
 
 
 	<xsl:template match="*" mode="gtin">
@@ -2790,6 +2829,12 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1937">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1963">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r1971">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 

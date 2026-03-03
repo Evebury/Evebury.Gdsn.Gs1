@@ -9,13 +9,16 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="tradeItemLifespan" mode="tradeItemLifespanModule"/>
+		<xsl:apply-templates select="tradeItemLifespan" mode="tradeItemLifespanModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	
 
 	</xsl:template>
 
 	<xsl:template match="tradeItemLifespan" mode="tradeItemLifespanModule">
+		<xsl:param name="targetMarket"/>
 		<!--Rule 314: If minimumTradeItemLifespanFromTimeOfProduction is not empty and minimumTradeItemLifespanFromTimeOfArrival is not empty then minimumTradeItemLifespanFromTimeOfProduction must be greater than or equal to minimumTradeItemLifespanFromTimeOfArrival.-->
 		<xsl:if test="gs1:InvalidRange(minimumTradeItemLifespanFromTimeOfArrival, minimumTradeItemLifespanFromTimeOfProduction)">
 			<xsl:apply-templates select="." mode="error">
@@ -35,6 +38,21 @@
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="537" />
 			</xsl:apply-templates>
+		</xsl:if>
+
+		<!--Rule 1952: If targetMarketCountryCode equals <Geographic> and itemPeriodSafeToUseAfterOpening is used then itemPeriodSafeToUseAfterOpening/@timeMeasurementUnitCode SHALL equal 'ANN' or 'MON'.-->
+		<xsl:if test="contains('203, 752, 756, 040, 703', $targetMarket)">
+			<xsl:for-each select="itemPeriodSafeToUseAfterOpening">
+				<xsl:choose>
+					<xsl:when test="@timeMeasurementUnitCode = 'ANN'"/>
+					<xsl:when test="@timeMeasurementUnitCode = 'MON'"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1952" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:for-each>
 		</xsl:if>
 		
 		
