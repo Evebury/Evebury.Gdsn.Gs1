@@ -22,6 +22,17 @@
 		</xsl:apply-templates>
 		
 		<xsl:apply-templates select="certificationOrganisationIdentifier" mode="gln"/>
+
+		<xsl:if test="$targetMarket ='756'">
+			<!--Rule 1992: If targetMarketCountryCode equals <Geographic> and certificationStandard is used and certificationAgency equals 'Additional_Label_Information' then certificationValue SHALL be used.-->
+			<xsl:if test="certificationStandard != '' and certificationAgency = 'ADDITIONAL_LABEL_INFORMATION'">
+				<xsl:if test="certification and certification[certificationValue = '']">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1992" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+			</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="certification" mode="certificationInformationModule">

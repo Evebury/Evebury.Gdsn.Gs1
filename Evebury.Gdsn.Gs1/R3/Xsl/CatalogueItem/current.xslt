@@ -19,7 +19,16 @@
 			<xsl:apply-templates select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation"/>
 			<xsl:apply-templates select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation"/>
 			<xsl:apply-templates select="nextLowerLevelTradeItemInformation"/>
+			<xsl:apply-templates select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:allergen_information:xsd:3' and local-name()='allergenInformationModule']/allergenInformationModule"/>
 		</tradeItem>
+	</xsl:template>
+
+	<xsl:template match="allergenInformationModule">
+		<allergenInformationModule>
+			<xsl:for-each select="allergenRelatedInformation/allergen">
+				<allergen code="{allergenTypeCode}" level="{levelOfContainmentCode}"/>
+			</xsl:for-each>
+		</allergenInformationModule>
 	</xsl:template>
 
 	<xsl:template match="nextLowerLevelTradeItemInformation">

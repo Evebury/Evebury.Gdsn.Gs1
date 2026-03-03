@@ -35,6 +35,15 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+		<xsl:if test="$targetMarket ='756'">
+			<!--Rule 1991: If targetMarketCountryCode equals <Geographic> and (sizeCode is used or sizeSystemCode is used) then sizeCode SHALL be used and sizeSystemCode SHALL be used.-->
+			<xsl:if test="(sizeTypeCode != '' or sizeSystemCode != '') and (sizeTypeCode = '' or sizeSystemCode = '')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1991" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		
 	</xsl:template>
 

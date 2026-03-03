@@ -27,6 +27,17 @@
 			</xsl:if>
 		</xsl:if>
 
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 2012: If targetMarketCountryCode equals <Geographic> and additiveInformation/levelOfContainmentCode is used then additiveInformation/levelOfContainmentCode SHALL equal 'CONTAINS'.-->
+			<xsl:for-each select="additiveInformation">
+				<xsl:if test="levelOfContainmentCode != '' and levelOfContainmentCode != 'CONTAINS'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="2012" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="foodAndBeverageIngredient" mode="foodAndBeverageIngredientModule">

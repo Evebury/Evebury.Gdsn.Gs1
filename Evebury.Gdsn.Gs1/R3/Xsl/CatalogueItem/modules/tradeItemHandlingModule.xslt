@@ -48,6 +48,16 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+		<xsl:if test="$targetMarket ='756' or $targetMarket ='040'">
+			<!--Rule 1990: If targetMarketCountryCode equals <Geographic> then handlingInstructionsCodeReference codes '11' and '12' SHALL NOT be used for the same trade item.-->
+			<xsl:if test="handlingInstructionsCodeReference = '11' and handlingInstructionsCodeReference = '12'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1990" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		
 	</xsl:template>
 
 	<xsl:template match="tradeItemStacking" mode="tradeItemHandlingModule">

@@ -57,8 +57,9 @@
 			</xsl:if>
 		</xsl:if>
 
-		<!--Rule 1976: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and isPriceOnPack equals 'true' then suggestedRetailPrice/tradeItemPrice SHALL be used.-->
+		
 		<xsl:if test="$targetMarket= '756'">
+			<!--Rule 1976: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and isPriceOnPack equals 'true' then suggestedRetailPrice/tradeItemPrice SHALL be used.-->
 			<xsl:if test="isPriceOnPack  = 'true' and $tradeItem/isTradeItemABaseUnit = 'true'">
 				<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/tradeItemPriceInformation/suggestedRetailPrice/tradeItemPrice = ''">
 					<xsl:apply-templates select="." mode="error">
@@ -66,6 +67,26 @@
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:if>
+
+			<!--Rule 2002: If targetMarketCountryCode equals <Geographic> and tradeItemDateOnPackagingTypeCode is used and tradeItemDateOnPackagingTypeCode is not in ('NO_DATE_MARKED', 'DISPLAY_UNTIL_DATE', 'FREEZING_DATE', 'PACKAGING_DATE', 'PRODUCTION_DATE') then minimumTradeItemLifespanFromTimeOfArrival SHALL be used or minimumTradeItemLifespanFromTimeOfProduction SHALL be used.-->
+			<xsl:variable name="code" select="packagingDate/tradeItemDateOnPackagingTypeCode"/>
+			<xsl:choose>
+				<xsl:when test="$code = ''"/>
+				<xsl:when test="$code = 'NO_DATE_MARKED'"/>
+				<xsl:when test="$code = 'DISPLAY_UNTIL_DATE'"/>
+				<xsl:when test="$code = 'FREEZING_DATE'"/>
+				<xsl:when test="$code = 'PACKAGING_DATE'"/>
+				<xsl:when test="$code = 'PRODUCTION_DATE'"/>
+				<xsl:otherwise>
+					<xsl:variable name="mod" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_lifespan:xsd:3' and local-name()='tradeItemLifespanModule']/tradeItemLifespan"/>
+					<xsl:if test="$mod/minimumTradeItemLifespanFromTimeOfArrival = '' or $mod/minimumTradeItemLifespanFromTimeOfProduction = ''">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="2002" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+
 		</xsl:if>
 		
 	</xsl:template>

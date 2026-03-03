@@ -59,6 +59,31 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+
+		<xsl:if test="$targetMarket ='756' or $targetMarket ='040'">
+			<!--Rule 1989: If targetMarketCountryCode equals <Geographic> and referencedFileTypeCode is used then uniformResourceIdentifier SHALL be used.-->
+			<xsl:if test="referencedFileTypeCode != '' and uniformResourceIdentifier = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1989" />
+				</xsl:apply-templates>
+			</xsl:if>
+			<!--Rule 2014: If targetMarketCountryCode equals <Geographic> and fileSize is used then fileSize/@measurementUnitCode SHALL equal ('2P', '4L', 'AD', 'E34' or 'E35').-->
+			<xsl:for-each select="referencedFileDetail/fileSize">
+				<xsl:choose>
+					<xsl:when test=". = ''"/>
+					<xsl:when test=". = '2P'"/>
+					<xsl:when test=". = '4L'"/>
+					<xsl:when test=". = 'AD'"/>
+					<xsl:when test=". = 'E34'"/>
+					<xsl:when test=". = 'E35'"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="2014" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:for-each>
+		</xsl:if>
 	</xsl:template>
 
 

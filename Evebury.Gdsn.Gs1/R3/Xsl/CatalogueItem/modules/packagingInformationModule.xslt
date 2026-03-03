@@ -472,6 +472,22 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+		<xsl:if test="$targetMarket = '756' and $targetMarket = '040'">
+			<!--Rule 2015: If targetMarketCountryCode equals <Geographic> and packagingMaterialCompositionQuantity is used then packagingMaterialCompositionQuantity/@measurementUnitCode SHALL equal ('CMK', 'DMK', 'GRM', 'KGM', 'MGM', 'MMK', 'MTK' or 'TNE').-->
+			<xsl:if test="packagingMaterialCompositionQuantity != ''">
+				<xsl:choose>
+					<xsl:when test="contains('CMK, DMK, GRM, KGM, MGM,MMK,MTK, TNE', packagingMaterialCompositionQuantity/@measurementUnitCode)"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="2015" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+			
+		</xsl:if>
+
 		
 	</xsl:template>
 

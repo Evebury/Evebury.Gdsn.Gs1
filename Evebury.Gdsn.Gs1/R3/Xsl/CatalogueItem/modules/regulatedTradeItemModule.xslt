@@ -44,8 +44,10 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
-		<!--Rule 1943: If targetMarketCountryCode equals <Geographic> and regulationTypeCode equals 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant equals 'TRUE' then regulationLevelCodeReference and regulatoryActComplianceLevelCode SHALL be used.-->
+		
 		<xsl:if test="$targetMarket = '756'">
+
+			<!--Rule 1943: If targetMarketCountryCode equals <Geographic> and regulationTypeCode equals 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant equals 'TRUE' then regulationLevelCodeReference and regulatoryActComplianceLevelCode SHALL be used.-->
 			<xsl:if test="regulationTypeCode = 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant = 'TRUE'">
 				<xsl:if test="regulatoryActComplianceLevelCode = ''">
 					<xsl:apply-templates select="." mode="error">
@@ -53,7 +55,34 @@
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:if>
+
+			<!--Rule 2011: If targetMarketCountryCode equals <Geographic> and (regulationLevelCodeReference is used or regulatoryActComplianceLevelCode is used) then regulationTypeCode SHALL equal 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant SHALL equal 'TRUE'.-->
+			<xsl:if test="regulationLevelCodeReference != '' or regulatoryActComplianceLevelCode != ''">
+				<xsl:if test="regulationTypeCode != 'EXPLOSIVES_PRECURSORS_REGISTRATION' or isTradeItemRegulationCompliant != 'TRUE'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="2011" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+			
+			
 		</xsl:if>
+
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 2003: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and regulatoryAct equals 'GHS' and corresponding regulatoryPermitIdentification equals 'TRUE' then gHSSymbolDescriptionCode SHALL be used and hazardStatementsCode SHALL be used and precautionaryStatementsCode SHALL be used.-->
+			<xsl:if test="$tradeItem/isTradeItemABaseUnit = 'true' and regulatoryAct = 'GHS'">
+				<xsl:if test="isTradeItemRegulationCompliant = 'TRUE'">
+					<xsl:for-each select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:safety_data_sheet:xsd:3' and local-name()='safetyDataSheetModule']/safetyDataSheetInformation/gHSDetail">
+						<xsl:if test="precautionaryStatement/precautionaryStatementsCode = '' or hazardStatement/hazardStatementsCode = '' or gHSSymbolDescriptionCode = ''">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="2003" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:for-each>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="permitIdentification" mode="regulatedTradeItemModule">

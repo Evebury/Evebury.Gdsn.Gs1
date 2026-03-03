@@ -11,6 +11,7 @@
 
 		<xsl:apply-templates select="transportationClassification/regulatedTransportationMode/hazardousInformationHeader" mode="transportationHazardousClassificationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 		<xsl:apply-templates select="transportationClassification" mode="transportationHazardousClassificationModule"/>
@@ -30,11 +31,12 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
-		
+
 	</xsl:template>
 
 	<xsl:template match="hazardousInformationHeader" mode="transportationHazardousClassificationModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
 
 		<xsl:apply-templates select="hazardousInformationDetail" mode="transportationHazardousClassificationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
@@ -106,6 +108,46 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+
+		<xsl:if test="$targetMarket ='756' or $targetMarket ='040'">
+			<!--Rule 1994: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and (dangerousGoodsRegulationAgency is used or dangerousGoodsRegulationCode is used) then dangerousGoodsRegulationCode SHALL be used and dangerousGoodsRegulationAgency SHALL equal 'ADR'.-->
+			<xsl:if test="$tradeItem/isTradeItemABaseUnit = 'true'">
+				<xsl:if test="(dangerousGoodsRegulationAgency != '' or  dangerousGoodsRegulationCode !='') and (dangerousGoodsRegulationAgency = '' or  dangerousGoodsRegulationCode ='')">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1994" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+			<!--Rule 1995: If targetMarketCountryCode equals <Geographic> and dangerousGoodsRegulationCode is used then dangerousGoodsRegulationCode SHALL equal ('ZCG' or 'ZNA').-->
+			<xsl:if test="dangerousGoodsRegulationCode and dangerousGoodsRegulationCode != 'ZCG' and dangerousGoodsRegulationCode != 'ZNA'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1995" />
+				</xsl:apply-templates>
+			</xsl:if>
+			<!--Rule 1996: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and dangerousGoodsRegulationCode equals 'ZCG' then classOfDangerousGoods SHALL be used and dangerousGoodsClassificationCode SHALL be used and unitedNationsDangerousGoodsNumber SHALL be used and dangerousGoodsHazardousCode SHALL be used and dangerousGoodsPackingGroup SHALL be used and dangerousGoodsTechnicalName SHALL be used.-->
+			<xsl:if test="dangerousGoodsRegulationCode = 'ZCG' and $tradeItem/isTradeItemABaseUnit = 'true'">
+				<xsl:for-each select="hazardousInformationDetail">
+					<xsl:if test="classOfDangerousGoods = '' or dangerousGoodsClassificationCode = '' or unitedNationsDangerousGoodsNumber ='' or dangerousGoodsHazardousCode ='' or dangerousGoodsPackingGroup = '' or dangerousGoodsTechnicalName = ''">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1996" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:for-each>
+			</xsl:if>
+			
+			<!--Rule 1997: If targetMarketCountryCode equals <Geographic> and (classOfDangerousGoods is used or dangerousGoodsClassificationCode is used or unitedNationsDangerousGoodsNumber is used or dangerousGoodsHazardousCode is used or dangerousGoodsPackingGroup is used or dangerousGoodsTechnicalName is used or netMassOfExplosives is used or dangerousGoodsSpecialProvisions is used or aDRTunnelRestrictionCode is used or hazardousMaterialAdditionalInformation is used) then isTradeItemABaseUnit SHALL equal 'true' and dangerousGoodsRegulationCode SHALL equal 'ZCG'.-->
+			<xsl:if test="hazardousInformationDetail/*[text() != '']">
+				<xsl:if test="dangerousGoodsRegulationCode != 'ZCG' or $tradeItem/isTradeItemABaseUnit != 'true'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1997" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+			
+		</xsl:if>
+		
+		
 	</xsl:template>
 
 	<xsl:template match="hazardousInformationDetail" mode="transportationHazardousClassificationModule">
@@ -121,9 +163,26 @@
 							<xsl:with-param name="id" select="1851" />
 						</xsl:apply-templates>
 					</xsl:otherwise>
-			</xsl:choose>
+				</xsl:choose>
 			</xsl:if>
 		</xsl:if>
+
+		<xsl:if test="contains('756, 203, 040, 703', $targetMarket)">
+			<!--Rule 1998: If targetMarketCountryCode equals <Geographic> and classOfDangerousGoods equals '1' then netMassOfExplosives SHALL be used.-->
+			<xsl:if test="classOfDangerousGoods = '1' and netMassOfExplosives = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1998" />
+				</xsl:apply-templates>
+			</xsl:if>
+			<!--Rule 1999: If targetMarketCountryCode equals <Geographic> and netMassOfExplosives is used then classOfDangerousGoods SHALL equal '1'.-->
+			<xsl:if test="classOfDangerousGoods != '1' and netMassOfExplosives != ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1999" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+		
+		
 	</xsl:template>
 
 

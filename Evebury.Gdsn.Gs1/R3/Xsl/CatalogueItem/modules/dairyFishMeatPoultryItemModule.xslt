@@ -117,11 +117,20 @@
 			</xsl:apply-templates>
 		</xsl:if>
 
-		<!--Rule 1948: If targetMarketCountryCode equals <Geographic> and fatPercentageInDryMatterMeasurementPrecisionCode is used then fatPercentageInDryMatter SHALL be used.-->
+		
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+
+			<!--Rule 1948: If targetMarketCountryCode equals <Geographic> and fatPercentageInDryMatterMeasurementPrecisionCode is used then fatPercentageInDryMatter SHALL be used.-->
 			<xsl:if test="fatPercentageInDryMatterMeasurementPrecisionCode != '' and fatPercentageInDryMatter = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1948" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+			<!--Rule 2013: If targetMarketCountryCode equals <Geographic> and fatPercentageInDryMatterMeasurementPrecisionCode is used then fatPercentageInDryMatterMeasurementPrecisionCode SHALL equal 'GREATER_THAN_OR_EQUAL'.-->
+			<xsl:if test="fatPercentageInDryMatterMeasurementPrecisionCode != '' and fatPercentageInDryMatterMeasurementPrecisionCode != 'GREATER_THAN_OR_EQUAL'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2013" />
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>

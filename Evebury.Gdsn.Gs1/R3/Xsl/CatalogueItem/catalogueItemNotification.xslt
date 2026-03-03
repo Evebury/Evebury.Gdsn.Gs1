@@ -41,6 +41,7 @@
 	<xsl:include href="modules/organismClassificationModule.xslt"/>
 	<xsl:include href="modules/packagingInformationModule.xslt"/>
 	<xsl:include href="modules/packagingMarkingModule.xslt"/>
+	<xsl:include href="modules/physicalResourceUsageInformationModule.xslt"/>
 	<xsl:include href="modules/placeOfItemActivityModule.xslt"/>
 	<xsl:include href="modules/plumbingHVACPipeInformationModule.xslt"/>
 	<xsl:include href="modules/productFormulationStatementModule.xslt"/>
@@ -635,6 +636,42 @@
 						<xsl:with-param name="id" select="485"/>
 					</xsl:apply-templates>
 				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 1807: If targetMarketCountryCode equals '752' (Sweden) and (preliminaryItemStatusCode is not used or equals 'FINAL’) and allergen/levelOfContainmentCode equals 'CONTAINS' or 'MAY_CONTAIN' and Document Command equals 'CHANGE_BY_REFRESH' then corresponding values for allergenTypeCode SHALL NOT be added or removed.-->
+			<xsl:if test="$targetMarket = '752' and (preliminaryItemStatusCode = '' or preliminaryItemStatusCode = 'FINAL') and $command != 'CHANGE_BY_REFRESH'">
+				<xsl:variable name="root" select="."/>
+				<xsl:variable name="mod" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:allergen_information:xsd:3' and local-name()='allergenInformationModule']/allergenRelatedInformation"/>
+				<xsl:for-each select="$tradeItem/allergenInformationModule/allergen">
+					<xsl:variable name="code" select="@code"/>
+					<xsl:variable name="level" select="@level"/>
+					<xsl:if test="$level = 'CONTAINS' or $level = 'MAY_CONTAIN'">
+						<xsl:variable name="allergen" select="$mod/allergen[allergenTypeCode = $code and levelOfContainmentCode = $level]"/>
+						<xsl:choose>
+							<xsl:when test="$allergen"/>
+							<xsl:otherwise>
+								<xsl:apply-templates select="$root" mode="error">
+									<xsl:with-param name="id" select="1807" />
+								</xsl:apply-templates>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:if>
+				</xsl:for-each>
+				<xsl:for-each select="$mod/allergen">
+					<xsl:variable name="code" select="allergenTypeCode"/>
+					<xsl:variable name="level" select="levelOfContainmentCode"/>
+					<xsl:if test="$level = 'CONTAINS' or $level = 'MAY_CONTAIN'">
+						<xsl:variable name="allergen" select="$tradeItem/allergen[@code = $code and @level = $level]"/>
+						<xsl:choose>
+							<xsl:when test="$allergen"/>
+							<xsl:otherwise>
+								<xsl:apply-templates select="$root" mode="error">
+									<xsl:with-param name="id" select="1807" />
+								</xsl:apply-templates>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:if>
+				</xsl:for-each>
 			</xsl:if>
 		</xsl:if>
 	</xsl:template>
@@ -2468,10 +2505,82 @@
 						<xsl:with-param name="id" select="1983" />
 					</xsl:apply-templates>
 				</xsl:if>
-			
-			
+
+
 			</xsl:if>
 
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r2000">
+		<xsl:param name="targetMarket" />
+
+		<xsl:if test="$targetMarket = '756'">
+
+			<xsl:variable name="zcg" select=".//tradeItem[isTradeItemABaseUnit = 'true']/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader[dangerousGoodsRegulationCode = 'ZCG']"/>
+
+			<!--Rule 2000: If targetMarketCountryCode equals <Geographic> and dangerousGoodsLimitedQuantitiesCode is used then dangerousGoodsRegulationCode SHALL equal 'ZCG' on at least one trade item in the hierarchy where isTradeItemABaseUnit equals 'true'.-->
+			<xsl:if test=".//*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader/dangerousGoodsLimitedQuantitiesCode != ''">
+				<xsl:choose>
+					<xsl:when test="$zcg"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="2000" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+
+			</xsl:if>
+
+			<!--Rule 2001: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and dangerousGoodsRegulationCode equals 'ZCG' then dangerousGoodsLimitedQuantitiesCode SHALL be used and dangerousGoodsLimitedQuantitiesCode SHALL be used on all its parent levels of the trade item hierarchy.-->
+			<xsl:if test="$zcg">
+				<xsl:if test=".//*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader/dangerousGoodsLimitedQuantitiesCode = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="2001" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="*" mode="r2004">
+		<xsl:param name="targetMarket" />
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 2004: If targetMarketCountryCode equals <Geographic> and (gHSSymbolDescriptionCode is used or gHSSignalWordsCode is used or dangerousSubstanceWasteCode/enumerationValueInformation/enumerationValue is used or dangerousSubstancePhaseOfMatterCode is used or dangerousSubstanceGasDensity is used or dangerousSubstancesWaterSolubilityCode is used or chemicalIngredientIdentification is used) then one iteration of regulatoryAct SHALL equal 'GHS' and corresponding regulatoryPermitIdentification SHALL equal 'TRUE'.-->
+			<xsl:variable name="safety">
+				<xsl:variable name="mod" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:safety_data_sheet:xsd:3' and local-name()='safetyDataSheetModule']/safetyDataSheetInformation"/>
+				<xsl:choose>
+					<xsl:when test="$mod[gHSDetail/gHSSymbolDescriptionCode != ''] or $mod[gHSDetail/gHSSignalWordsCode != '']">
+						<xsl:value-of select="1"/>
+					</xsl:when>
+				</xsl:choose>
+			</xsl:variable>
+			<xsl:variable name="dangerous">
+				<xsl:variable name="mod" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:dangerous_substance_information:xsd:3' and local-name()='dangerousSubstanceInformationModule']/dangerousSubstanceInformation/dangerousSubstanceProperties"/>
+				<xsl:choose>
+					<xsl:when test="$mod[dangerousSubstancePhaseOfMatterCode != ''] or $mod[dangerousSubstanceGasDensity != ''] or $mod[dangerousSubstancesWaterSolubilityCode != ''] or $mod[dangerousSubstanceWasteCode/enumerationValueInformation/enumerationValue]">
+						<xsl:value-of select="1"/>
+					</xsl:when>
+				</xsl:choose>
+			</xsl:variable>
+			<xsl:variable name="ingredient">
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:safety_data_sheet:xsd:3' and local-name()='safetyDataSheetModule']/safetyDataSheetInformation/chemicalInformation/chemicalIngredient/chemicalIngredientIdentification != ''">
+					<xsl:value-of select="1"/>
+				</xsl:if>
+			</xsl:variable>
+			<xsl:if test="$safety = 1 or $dangerous = 1 or $ingredient =  1">
+				<xsl:variable name="regu" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:regulated_trade_item:xsd:3' and local-name()='regulatedTradeItemModule']/regulatoryInformation[regulatoryAct = 'GHS']"/>
+				<xsl:choose>
+					<xsl:when test="$regu and $regu[isTradeItemRegulationCompliant = 'TRUE']"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="2004" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+			
 		</xsl:if>
 	</xsl:template>
 
@@ -2603,6 +2712,9 @@
 		<xsl:apply-templates select="." mode="r1789"/>
 		<xsl:apply-templates select="." mode="r1790"/>
 		<xsl:apply-templates select="." mode="r1830">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r2000">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="dataRecipient" mode="gln"/>
@@ -2858,6 +2970,9 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r1971">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r2004">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 

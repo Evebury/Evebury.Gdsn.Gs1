@@ -9,11 +9,14 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="tradeItem"/>
 
-		<xsl:apply-templates select="dangerousSubstanceInformation/dangerousSubstanceProperties" mode="dangerousSubstanceInformationModule"/>
+		<xsl:apply-templates select="dangerousSubstanceInformation/dangerousSubstanceProperties" mode="dangerousSubstanceInformationModule">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="dangerousSubstanceProperties" mode="dangerousSubstanceInformationModule">
+		<xsl:param name="targetMarket"/>
 		<!--Rule 362: If a minimum and corresponding maximum are not empty then the minimum SHALL be less than or equal to the corresponding maximum.-->
 		<xsl:if test="gs1:InvalidRange(flammableSubstanceMinimumPercent,flammableSubstanceMaximumPercent)">
 			<xsl:apply-templates select="." mode="error">
@@ -27,6 +30,32 @@
 			<xsl:if test="dangerousHazardousLabel[dangerousHazardousLabelSequenceNumber  = '']">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1911" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 2005: If targetMarketCountryCode equals <Geographic> and dangerousSubstanceWasteCode/enumerationValueInformation/enumerationValue is used then corresponding dangerousSubstanceWasteCode/externalAgencyName SHALL equal 'EU'. -->
+			<xsl:if test="dangerousSubstanceWasteCode[enumerationValueInformation/enumerationValue]">
+				<xsl:if test="dangerousSubstanceWasteCode[enumerationValueInformation/enumerationValue]/dangerousSubstanceWasteCode != 'EU'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="2005" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+			<!--Rule 2009: If targetMarketCountryCode equals <Geographic> and (dangerousSubstanceName is used or flammableSubstanceMinimumPercent is used or flammableSubstanceMaximumPercent is used) then dangerousSubstanceName SHALL be used and flammableSubstanceMinimumPercent SHALL be used and flammableSubstanceMaximumPercent SHALL be used.-->
+			<xsl:if test="(dangerousSubstanceName != '' or flammableSubstanceMinimumPercent != '' or flammableSubstanceMaximumPercent != '') and (dangerousSubstanceName = '' or flammableSubstanceMinimumPercent = '' or flammableSubstanceMaximumPercent = '')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2009" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<xsl:if test="$targetMarket = '756'">
+			<!--Rule 2016: If targetMarketCountryCode equals <Geographic> and dangerousSubstanceGasDensity is used then dangerousSubstanceGasDensity/@measurementUnitCode SHALL equal ('23' or 'GL').-->
+			<xsl:if test="dangerousSubstanceGasDensity != '' and dangerousSubstanceGasDensity/@measurementUnitCode !='23' and dangerousSubstanceGasDensity/@measurementUnitCode !='GL'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2016" />
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
