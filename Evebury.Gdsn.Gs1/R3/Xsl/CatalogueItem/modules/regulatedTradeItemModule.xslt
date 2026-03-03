@@ -81,6 +81,17 @@
 					</xsl:for-each>
 				</xsl:if>
 			</xsl:if>
+
+			<!--Rule 2020: If targetMarketCountryCode equals <Geographic> and regulatoryAgency equals 'UN' and regulatoryAct equals 'GHS' then the corresponding regulatoryPermitIdentification SHALL equal ('TRUE' or 'FALSE').-->
+			<xsl:if test="regulatoryAgency = 'UN' or regulatoryAct = 'GHS'">
+				<xsl:if test="isTradeItemRegulationCompliant != 'FALSE' and isTradeItemRegulationCompliant != 'TRUE'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="2020" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+			
+			
 		</xsl:if>
 
 	</xsl:template>

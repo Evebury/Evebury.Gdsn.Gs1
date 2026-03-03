@@ -11,28 +11,50 @@
 
 		<xsl:apply-templates select="certificationInformation" mode="certificationInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
 	</xsl:template>
 
 	<xsl:template match="certificationInformation" mode="certificationInformationModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
+		
 		<xsl:apply-templates select="certification" mode="certificationInformationModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
-		
+
 		<xsl:apply-templates select="certificationOrganisationIdentifier" mode="gln"/>
 
 		<xsl:if test="$targetMarket ='756'">
-			<!--Rule 1992: If targetMarketCountryCode equals <Geographic> and certificationStandard is used and certificationAgency equals 'Additional_Label_Information' then certificationValue SHALL be used.-->
+
+			
 			<xsl:if test="certificationStandard != '' and certificationAgency = 'ADDITIONAL_LABEL_INFORMATION'">
+				<!--Rule 1992: If targetMarketCountryCode equals <Geographic> and certificationStandard is used and certificationAgency equals 'Additional_Label_Information' then certificationValue SHALL be used.-->
 				<xsl:if test="certification and certification[certificationValue = '']">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1992" />
 					</xsl:apply-templates>
 				</xsl:if>
+				<!--Rule 101993: If targetMarketCountryCode equals <Geographic> and certificationIdentification is used and certificationAgency equals 'Additional_Label_Information' then certificationIdentification SHALL equal a code value used for (packagingMarkedLabelAccreditationCode or localPackagingMarkedLabelAccreditationCodeReference).-->
+				<xsl:variable name="mod" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:packaging_marking:xsd:3' and local-name()='packagingMarkingModule']/packagingMarking"/>
+				
+				<xsl:for-each select="certification[certificationIdentification != '']">
+					<xsl:variable name="code" select="certificationIdentification"/>
+					<xsl:choose>
+						<xsl:when test="$mod[packagingMarkedLabelAccreditationCode  = $code]"/>
+						<xsl:when test="$mod[localPackagingMarkedLabelAccreditationCodeReference  = $code]"/>
+						<xsl:otherwise>
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="101993" />
+							</xsl:apply-templates>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:for-each>
+				
 			</xsl:if>
-			</xsl:if>
+			
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="certification" mode="certificationInformationModule">

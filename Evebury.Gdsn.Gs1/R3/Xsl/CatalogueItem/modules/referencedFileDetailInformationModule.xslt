@@ -83,6 +83,27 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:for-each>
+			
+			<!--Rule 101973: If targetMarketCountryCode equals <Geographic> and referencedFileTypeCode equals 'PRODUCT_IMAGE' then uniformResourceIdentifier SHALL begin with ('http://' or 'https://').-->
+			<xsl:if test="referencedFileTypeCode = 'PRODUCT_IMAGE'">
+				<xsl:choose>
+					<xsl:when test="starts-with(uniformResourceIdentifier , 'http://') or starts-with(uniformResourceIdentifier , 'https://') "/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="101973" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
+		<xsl:if test="$targetMarket ='756'">
+			<!--Rule 101972: If targetMarketCountryCode equals <Geographic> and referencedFileTypeCode equals ('SAFETY_DATA_SHEET', 'DOP_SHEET' or 'DECLARATION_OF_CONFORMITY') then fileLanguageCode SHALL be used.-->
+			<xsl:if test="contains('SAFETY_DATA_SHEET, DOP_SHEET, DECLARATION_OF_CONFORMITY', referencedFileTypeCode) and fileLanguageCode = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="101972" />
+				</xsl:apply-templates>
+			</xsl:if>
 		</xsl:if>
 	</xsl:template>
 

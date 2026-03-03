@@ -25,6 +25,13 @@
 			</xsl:apply-templates>
 		</xsl:if>
 
+		<!--Rule 2075: If initialManufacturerSterilisationCode and/or manufacturerSpecifiedAcceptableResterilisationCode is used then initialManufacturerSterilisationCode and/or manufacturerSpecifiedAcceptableResterilisationCode SHALL NOT equal 'NO_STERILISATION_REQUIRED'.-->
+		<xsl:if test="tradeItemSterilityInformation[manufacturerSpecifiedAcceptableResterilisationCode = 'NO_STERILISATION_REQUIRED'] or tradeItemSterilityInformation[initialSterilisationPriorToUseCode = 'NO_STERILISATION_REQUIRED']">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="2075" />
+			</xsl:apply-templates>
+		</xsl:if>
+
 	</xsl:template>
 
 </xsl:stylesheet>

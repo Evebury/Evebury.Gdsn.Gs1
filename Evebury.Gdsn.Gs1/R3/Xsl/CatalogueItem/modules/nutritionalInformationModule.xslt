@@ -356,7 +356,40 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
-		
+
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 2026: If targetMarketCountryCode equals <Geographic> and nutrientTypeCode is used then nutrientBasisQuantity SHALL be used in the parent NutrientHeader class.-->
+			<xsl:if test="nutrientDetail[nutrientTypeCode != '']">
+				<xsl:if test="nutrientBasisQuantity = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="2026" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 2032: If targetMarketCountryCode equals <Geographic> and nutrientBasisQuantity is used then (nutrientBasisQuantity and nutrientBasisQuantity/@measurementUnitCode) SHALL equal (100 'GRM', 100 'MLT', 1 'LTR' or 1 'PTN').-->
+			<xsl:choose>
+				<xsl:when test="nutrientBasisQuantity = ''"/>
+				<xsl:when test="nutrientBasisQuantity = '100' and nutrientBasisQuantity/@measurementUnitCode ='GRM'"/>
+				<xsl:when test="nutrientBasisQuantity = '100' and nutrientBasisQuantity/@measurementUnitCode ='MLT'"/>
+				<xsl:when test="nutrientBasisQuantity = '1' and nutrientBasisQuantity/@measurementUnitCode ='LTR'"/>
+				<xsl:when test="nutrientBasisQuantity = '1' and nutrientBasisQuantity/@measurementUnitCode ='PTN'"/>
+				<xsl:otherwise>
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="2032" />
+					</xsl:apply-templates>
+				</xsl:otherwise>
+
+			</xsl:choose>
+
+			<!--Rule 2036: If targetMarketCountryCode equals <Geographic> and preparationStateCode is used then preparationStateCode SHALL equal ('PREPARED' or 'UNPREPARED').-->
+			<xsl:if test="preparationStateCode != '' and preparationStateCode != 'PREPARED' and preparationStateCode != 'UNPREPARED'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2036" />
+				</xsl:apply-templates>
+			</xsl:if>
+			
+		</xsl:if>		
 		
 	</xsl:template>
 

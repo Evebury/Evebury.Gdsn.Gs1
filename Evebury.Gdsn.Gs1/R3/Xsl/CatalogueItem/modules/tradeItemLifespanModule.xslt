@@ -11,14 +11,16 @@
 
 		<xsl:apply-templates select="tradeItemLifespan" mode="tradeItemLifespanModule">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
 
-	
+
 
 	</xsl:template>
 
 	<xsl:template match="tradeItemLifespan" mode="tradeItemLifespanModule">
 		<xsl:param name="targetMarket"/>
+		<xsl:param name="tradeItem"/>
 		<!--Rule 314: If minimumTradeItemLifespanFromTimeOfProduction is not empty and minimumTradeItemLifespanFromTimeOfArrival is not empty then minimumTradeItemLifespanFromTimeOfProduction must be greater than or equal to minimumTradeItemLifespanFromTimeOfArrival.-->
 		<xsl:if test="gs1:InvalidRange(minimumTradeItemLifespanFromTimeOfArrival, minimumTradeItemLifespanFromTimeOfProduction)">
 			<xsl:apply-templates select="." mode="error">
@@ -54,8 +56,39 @@
 				</xsl:choose>
 			</xsl:for-each>
 		</xsl:if>
-		
-		
+
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 101959: If targetMarketCountryCode equals <Geographic> and minimumTradeItemLifespanFromTimeOfArrival is used then it SHALL NOT be greater than the smallest minimumTradeItemLifespanFromTimeOfArrival of all child items.-->
+			<xsl:if test="minimumTradeItemLifespanFromTimeOfArrival != ''">
+				<xsl:variable name="endAvailabilityDateTime" select="minimumTradeItemLifespanFromTimeOfArrival"/>
+				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
+					<xsl:variable name="date" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_lifespan:xsd:3' and local-name()='tradeItemLifespanModule']/tradeItemLifespan/minimumTradeItemLifespanFromTimeOfArrival"/>
+					<xsl:if test="$date != ''">
+						<xsl:if test="gs1:InvalidDateTimeSpan($endAvailabilityDateTime, $date)">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="1856" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:if>
+				</xsl:for-each>
+			</xsl:if>
+			<!--Rule 101960: If targetMarketCountryCode equals <Geographic> and minimumTradeItemLifespanFromTimeOfProduction is used then it SHALL NOT be greater than the smallest minimumTradeItemLifespanFromTimeOfProduction of all child items.-->
+			<xsl:if test="minimumTradeItemLifespanFromTimeOfProduction != ''">
+				<xsl:variable name="endAvailabilityDateTime" select="minimumTradeItemLifespanFromTimeOfProduction"/>
+				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
+					<xsl:variable name="date" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_lifespan:xsd:3' and local-name()='tradeItemLifespanModule']/tradeItemLifespan/minimumTradeItemLifespanFromTimeOfProduction"/>
+					<xsl:if test="$date != ''">
+						<xsl:if test="gs1:InvalidDateTimeSpan($endAvailabilityDateTime, $date)">
+							<xsl:apply-templates select="." mode="error">
+								<xsl:with-param name="id" select="101960" />
+							</xsl:apply-templates>
+						</xsl:if>
+					</xsl:if>
+				</xsl:for-each>
+			</xsl:if>
+		</xsl:if>
+
+
 	</xsl:template>
 
 </xsl:stylesheet>

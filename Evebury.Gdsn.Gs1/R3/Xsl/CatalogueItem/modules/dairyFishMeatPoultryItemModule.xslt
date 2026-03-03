@@ -133,6 +133,19 @@
 					<xsl:with-param name="id" select="2013" />
 				</xsl:apply-templates>
 			</xsl:if>
+
+			<!--Rule 2029: If targetMarketCountryCode equals <Geographic> and ripeningTimePeriod is used then ripeningTimePeriod/@measurementUnitCode SHALL equal ('ANN', 'DAY', 'HUR', 'MIN', 'MON', 'SEC' or 'WEE').-->
+			<xsl:if test="ripeningTimePeriod != ''">
+				<xsl:choose>
+					<xsl:when test="contains('ANN, DAY, HUR, MIN, MON, SEC, WEE', ripeningTimePeriod/@measurementUnitCode)"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="2029" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+				
+			</xsl:if>
 		</xsl:if>
 		
 	</xsl:template>

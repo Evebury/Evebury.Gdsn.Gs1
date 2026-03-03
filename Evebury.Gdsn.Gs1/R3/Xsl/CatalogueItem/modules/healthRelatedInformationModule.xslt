@@ -36,6 +36,17 @@
 			</xsl:if>
 		</xsl:if>
 
+		<xsl:if test="$targetMarket = '756'">
+			<!--Rule 101940: If targetMarketCountryCode equals <Geographic> and in one iteration of nutritionalProgram class (nutritionalProgramCode equals '8' and nutritionalScore equals 'EXEMPT') then there SHALL be only one iteration of nutritionalProgramCode equal to '8'.-->
+			<xsl:if test="nutritionalProgram[nutritionalProgramCode = '8' and nutritionalScore = 'EXEMPT']">
+				<xsl:if test="count(nutritionalProgram[nutritionalProgramCode = '8']) &gt; 1">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="101940" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+
 
 	</xsl:template>
 
@@ -80,8 +91,10 @@
 			</xsl:if>
 		</xsl:if>
 
-		<!--Rule 1941: If targetMarketCountryCode equals <Geographic> and multiple iterations of nutritionalProgramCode equal '8' then nutritionalProgramDetail SHALL be used in each corresponding iteration.-->
+	
 		<xsl:if test="$targetMarket = '756'">
+
+			<!--Rule 1941: If targetMarketCountryCode equals <Geographic> and multiple iterations of nutritionalProgramCode equal '8' then nutritionalProgramDetail SHALL be used in each corresponding iteration.-->
 			<xsl:if test="nutritionalProgramCode = '8'">
 				<xsl:choose>
 					<xsl:when test="nutritionalProgramDetail"/>
@@ -92,6 +105,7 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:if>
+			
 		</xsl:if>
 
 	</xsl:template>

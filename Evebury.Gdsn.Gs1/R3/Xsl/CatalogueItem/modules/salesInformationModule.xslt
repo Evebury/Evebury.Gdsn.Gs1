@@ -373,6 +373,13 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:if>
+
+			<!--Rule 2019: If targetMarketCountryCode equals <Geographic> and isBasePriceDeclarationRelevant is used then isBasePriceDeclarationRelevant SHALL equal ('TRUE' or 'FALSE').-->
+			<xsl:if test="isBasePriceDeclarationRelevant != '' and isBasePriceDeclarationRelevant != 'TRUE' and isBasePriceDeclarationRelevant != 'FALSE'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2019" />
+				</xsl:apply-templates>
+			</xsl:if>
 		</xsl:if>
 
 	

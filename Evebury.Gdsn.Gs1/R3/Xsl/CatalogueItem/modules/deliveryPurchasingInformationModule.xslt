@@ -100,7 +100,7 @@
 			<xsl:if test="endAvailabilityDateTime != ''">
 				<xsl:variable name="endAvailabilityDateTime" select="endAvailabilityDateTime"/>
 				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
-					<xsl:variable name="date" select="./tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/endAvailabilityDateTime"/>
+					<xsl:variable name="date" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/endAvailabilityDateTime"/>
 					<xsl:if test="$date != ''">
 						<xsl:if test="gs1:InvalidDateTimeSpan($endAvailabilityDateTime, $date)">
 							<xsl:apply-templates select="." mode="error">

@@ -102,8 +102,10 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 
 		</xsl:if>
 
-		<!--Rule 1955: If targetMarketCountryCode equals <Geographic> and geneticallyModifiedDeclarationCode is used then it SHALL equal ('CONTAINS', 'FREE_FROM' or 'MAY_CONTAIN').-->
+		
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+
+			<!--Rule 1955: If targetMarketCountryCode equals <Geographic> and geneticallyModifiedDeclarationCode is used then it SHALL equal ('CONTAINS', 'FREE_FROM' or 'MAY_CONTAIN').-->
 			<xsl:if test="geneticallyModifiedDeclarationCode != ''">
 				<xsl:choose>
 					<xsl:when test="geneticallyModifiedDeclarationCode = 'CONTAINS'"/>
@@ -116,6 +118,33 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:if>
+
+			<!--Rule 2037: If targetMarketCountryCode equals <Geographic> and organicTradeItemCode is used and organicTradeItemCode is equal to ('2' or '6') then organicCertificationIdentification SHALL be used.-->
+			<xsl:if test="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '2']">
+				<xsl:if test="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '2']/organicCertification/organicCertificationIdentification = ''">
+					<xsl:apply-templates select="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '2']" mode="error">
+						<xsl:with-param name="id" select="2037" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+			<xsl:if test="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '6']">
+				<xsl:if test="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '6']/organicCertification/organicCertificationIdentification = ''">
+					<xsl:apply-templates select="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '6']" mode="error">
+						<xsl:with-param name="id" select="2037" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 2038: If targetMarketCountryCode equals <Geographic> and organicCertificationIdentification is used then organicTradeItemCode SHALL equal ('2' or '6').-->
+			<xsl:for-each select="tradeItemOrganicInformation/organicClaim">
+				<xsl:if test="organicCertification/organicCertificationIdentification != ''">
+					<xsl:if test="organicTradeItemCode != '2' and organicTradeItemCode != '6'">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="2038" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:for-each>
 		</xsl:if>
 
 	</xsl:template>

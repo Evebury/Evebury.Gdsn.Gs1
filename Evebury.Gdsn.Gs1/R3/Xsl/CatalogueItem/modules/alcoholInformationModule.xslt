@@ -35,13 +35,23 @@
 			</xsl:if>
 		</xsl:if>
 
-		<!--Rule 1951: If targetMarketCountryCode equals <Geographic> and percentageOfAlcoholByVolumeMeasurementPrecisionCode is used then percentageOfAlcoholByVolume SHALL be used.-->
+		
 		<xsl:if test="$targetMarket = '756'">
+
+			<!--Rule 1951: If targetMarketCountryCode equals <Geographic> and percentageOfAlcoholByVolumeMeasurementPrecisionCode is used then percentageOfAlcoholByVolume SHALL be used.-->
 			<xsl:if test="percentageOfAlcoholByVolumeMeasurementPrecisionCode != '' and percentageOfAlcoholByVolume = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1951" />
 				</xsl:apply-templates>
 			</xsl:if>
+
+			<!--Rule 2024: If targetMarketCountryCode equals <Geographic> and percentageOfAlcoholByVolumeMeasurementPrecisionCode is used then percentageOfAlcoholByVolumeMeasurementPrecisionCode SHALL equal 'LESS_THAN'.-->
+			<xsl:if test="percentageOfAlcoholByVolumeMeasurementPrecisionCode != '' and percentageOfAlcoholByVolumeMeasurementPrecisionCode != 'LESS_THAN'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2024" />
+				</xsl:apply-templates>
+			</xsl:if>
+			
 		</xsl:if>
 
 	</xsl:template>

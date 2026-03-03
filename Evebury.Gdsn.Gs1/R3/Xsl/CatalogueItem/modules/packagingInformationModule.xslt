@@ -485,6 +485,17 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:if>
+
+			<!--Rule 2039: If targetMarketCountryCode equals <Geographic> and packagingMaterial/packagingRawMaterialInformation/packagingRawMaterialContentPercentage is used and packagingMaterial/packagingRawMaterialInformation/packagingRawMaterialCode equals 'RECYCLED' then packagingMaterial/packagingMaterialCompositionQuantity SHALL be used.-->
+			<xsl:if test="packagingMaterialCompositionQuantity = ''">
+			<xsl:for-each select="packagingRawMaterialInformation">
+				<xsl:if test="packagingRawMaterialContentPercentage != '' and packagingRawMaterialCode = 'RECYCLED'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="2039" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+			</xsl:if>
 			
 		</xsl:if>
 

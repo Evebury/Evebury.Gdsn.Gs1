@@ -64,6 +64,16 @@
 				</xsl:if>
 			</xsl:otherwise>
 		</xsl:choose>
+
+		<xsl:if test="$targetMarket = '756'">
+			<!--Rule 2023: If targetMarketCountryCode equals <Geographic> and areBatteriesBuiltIn is used then areBatteriesBuiltIn SHALL equal ('TRUE' or 'FALSE').-->
+			<xsl:if test="areBatteriesBuiltIn != '' and areBatteriesBuiltIn != 'FALSE' and areBatteriesBuiltIn != 'TRUE'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2023" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 	<xsl:template match="batteryMaterials" mode="batteryInformationModule">

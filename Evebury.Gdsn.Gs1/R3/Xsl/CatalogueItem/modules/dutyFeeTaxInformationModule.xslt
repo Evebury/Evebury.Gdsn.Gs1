@@ -123,9 +123,11 @@
 			
 		</xsl:if>
 
-		<!--Rule 1920: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and dutyFeeTaxTypeCode equals ('VAT' or 'IVA') then dutyFeeTaxRate SHALL be used.-->
+	
 		<xsl:if test="$targetMarket = '380'">
 			<xsl:if test="dutyFeeTaxTypeCode  = 'VAT' or dutyFeeTaxTypeCode = 'IVA'">
+
+				<!--Rule 1920: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and dutyFeeTaxTypeCode equals ('VAT' or 'IVA') then dutyFeeTaxRate SHALL be used.-->
 				<xsl:if test="$tradeItem/isTradeItemAConsumerUnit =  'true'">
 					<xsl:if test="dutyFeeTax[dutyFeeTaxRate = '']">
 						<xsl:apply-templates select="." mode="error">
@@ -133,8 +135,16 @@
 						</xsl:apply-templates>
 					</xsl:if>
 				</xsl:if>
+
+				<!--Rule 101923: If targetMarketCountryCode equals <Geographic> and dutyFeeTaxTypeCode equals ('VAT' or 'IVA') and dutyFeeTaxRate equals 0 (zero) then dutyFeeTaxCategoryCode SHALL equal 'ZERO' or 'EXEMPT'.-->
+				<xsl:if test="dutyFeeTax/dutyFeeTaxRate = 0 and dutyFeeTax/dutyFeeTaxCategoryCode != 'ZERO' and dutyFeeTax/dutyFeeTaxCategoryCode != 'EXEMPT'">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="101923" />
+					</xsl:apply-templates>
+				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+
 
 	</xsl:template>
 

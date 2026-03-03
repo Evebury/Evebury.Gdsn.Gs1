@@ -60,7 +60,7 @@
 
 				<!--Rule 1859: If targetMarketCountryCode equals <Geographic> and ChildItem..isTradeItemAPromotionalUnit equals 'true', then isTradeItemAPromotionalUnit SHALL equal 'true'.-->
 				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
-					<xsl:if test="./tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:promotional_item_information:xsd:3' and local-name()='promotionalItemInformationModule']/isTradeItemAPromotionalUnit = 'true'">
+					<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:promotional_item_information:xsd:3' and local-name()='promotionalItemInformationModule']/isTradeItemAPromotionalUnit = 'true'">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1859" />
 						</xsl:apply-templates>

@@ -40,11 +40,20 @@
 				<xsl:with-param name="id" select="1236" />
 			</xsl:apply-templates>
 		</xsl:if>
-		<!--Rule 1947: If targetMarketCountryCode equals <Geographic> and claimMarkedOnPackage is used then claimTypeCode SHALL be used.-->
+	
 		<xsl:if test="$targetMarket = '756'">
+
+			<!--Rule 1947: If targetMarketCountryCode equals <Geographic> and claimMarkedOnPackage is used then claimTypeCode SHALL be used.-->
 			<xsl:if test="claimMarkedOnPackage != '' and claimTypeCode  = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1947" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+			<!--Rule 2022: If targetMarketCountryCode equals <Geographic> and claimMarkedOnPackage is used then claimMarkedOnPackage SHALL equal ('TRUE' or 'FALSE').-->
+			<xsl:if test="claimMarkedOnPackage != '' and claimMarkedOnPackage != 'FALSE' and claimMarkedOnPackage != 'TRUE'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2022" />
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>

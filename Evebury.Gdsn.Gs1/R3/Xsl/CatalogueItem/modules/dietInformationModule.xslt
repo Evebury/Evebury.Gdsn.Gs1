@@ -96,14 +96,23 @@
 			</xsl:choose>
 		</xsl:if>
 
-		<!--Rule 1946: If targetMarketCountryCode equals <Geographic> and dietTypeSubcode equals ('LACTO', 'LACTO_OVO' or 'OVO') then dietTypeCode SHALL equal 'VEGETARIAN'.-->
+	
 		<xsl:if test="$targetMarket = '756'">
+
+			<!--Rule 1946: If targetMarketCountryCode equals <Geographic> and dietTypeSubcode equals ('LACTO', 'LACTO_OVO' or 'OVO') then dietTypeCode SHALL equal 'VEGETARIAN'.-->
 			<xsl:if test="dietTypeSubcode = 'LACTO' or dietTypeSubcode = 'LACTO_OVO' or dietTypeSubcode = 'OVO'">
 				<xsl:if test="dietTypeCode != 'VEGETARIAN'">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1946" />
 					</xsl:apply-templates>
 				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 2021: If targetMarketCountryCode equals <Geographic> and isDietTypeMarkedOnPackage is used then isDietTypeMarkedOnPackage SHALL equal ('TRUE' or 'FALSE').-->
+			<xsl:if test="isDietTypeMarkedOnPackage != '' and isDietTypeMarkedOnPackage != 'FALSE' and isDietTypeMarkedOnPackage != 'TRUE'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2021" />
+				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
 		

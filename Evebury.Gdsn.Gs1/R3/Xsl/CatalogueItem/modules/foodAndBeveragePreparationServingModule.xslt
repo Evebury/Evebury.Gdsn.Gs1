@@ -139,6 +139,30 @@
 			</xsl:if>
 		</xsl:if>
 
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 2033: If targetMarketCountryCode equals <Geographic> and preparationTypeCode is used and preparationTypeCode is not equal to ('READY_TO_DRINK' or 'READY_TO_EAT') then preparationInstructions SHALL be used.-->
+			<xsl:if test="preparationTypeCode != 'READY_TO_DRINK' and preparationTypeCode != 'READY_TO_EAT' and preparationInstructions = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2033" />
+				</xsl:apply-templates>
+			</xsl:if>
+			<!--Rule 2034: If targetMarketCountryCode equals <Geographic> and preparationTypeCode is used then preparationTypeCode SHALL NOT equal ('PREPARED' or 'UNPREPARED').-->
+			<xsl:if test="preparationTypeCode = 'PREPARED' or preparationTypeCode = 'UNPREPARED'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2034" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
+		<xsl:if test="$targetMarket = '756'">
+			<!--Rule 2035: If targetMarketCountryCode equals <Geographic> and productYieldVariationPercentage is used then productYield SHALL be used.-->
+			<xsl:if test="productYieldVariationPercentage != '' and productYield =''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="2035" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
+
 	</xsl:template>
 
 </xsl:stylesheet>
