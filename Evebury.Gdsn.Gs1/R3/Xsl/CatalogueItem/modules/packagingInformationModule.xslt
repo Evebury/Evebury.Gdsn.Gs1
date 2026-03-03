@@ -374,7 +374,30 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
-		
+
+		<xsl:if test="$targetMarket = '756' and $targetMarket = '040'">
+
+			<!--Rule 1984: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode does not equal ('PALLET' or 'MIXED_MODULE') and isTradeItemADespatchUnit equals 'true' and (platformTypeCode is used and does not equal '98') then platformTermsAndConditionsCode SHALL be used in every iteration where platformTypeCode is used and quantityOfTradeItemsPerPallet SHALL be used and quantityOfLayersPerPallet SHALL be used and logisticsUnitStackingFactor SHALL be used and nonGTINLogisticsUnitInformation/grossWeight SHALL be used and nonGTINLogisticsUnitInformation/height SHALL be used and nonGTINLogisticsUnitInformation/depth SHALL be used and nonGTINLogisticsUnitInformation/width SHALL be used.-->
+			<xsl:if test="platformTypeCode != '' and platformTypeCode != '98'">
+				<xsl:if test="$tradeItem/isTradeItemADespatchUnit = 'true' and $tradeItem/tradeItemUnitDescriptorCode != 'PALLET' and $tradeItem/tradeItemUnitDescriptorCode != 'MIXED_MODULE'">
+					<xsl:variable name="mod1" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy"/>
+					<xsl:variable name="mod2" select="tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:nongtin_logistics_unit_information:xsd:3' and local-name()='nonGTINLogisticsUnitInformationModule']/nonGTINLogisticsUnitInformation"/>
+					<xsl:if test="platformTermsAndConditionsCode = '' or $mod1/quantityOfTradeItemsPerPallet = '' or $mod1/quantityOfLayersPerPallet = '' or $mod2/logisticsUnitStackingFactor = '' or $mod2/grossWeight = '' or $mod2/height = '' or $mod2/depth = '' or $mod2/width = ''">
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1984" />
+						</xsl:apply-templates>
+					</xsl:if>
+				</xsl:if>
+			</xsl:if>
+
+			<!--Rule 1985: If targetMarketCountryCode equals <Geographic> and platformTypeCode is used then isTradeItemADespatchUnit SHALL equal 'true'.-->
+			<xsl:if test="platformTypeCode != '' and $tradeItem/isTradeItemADespatchUnit != 'true'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1985" />
+				</xsl:apply-templates>
+			</xsl:if>
+			
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="packagingInformationModule_france_pallet">

@@ -2440,15 +2440,38 @@
 
 	<xsl:template match="*" mode="r1971">
 		<xsl:param name="targetMarket" />
-		<!--Rule 1971: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals ('PALLET' or 'MIXED_MODULE') then isTradeItemADespatchUnit SHALL equal 'true'.-->
+
 		<xsl:if test="$targetMarket  = '756' or $targetMarket = '040'">
+
 			<xsl:if test="tradeItemUnitDescriptorCode = 'PALLET' or tradeItemUnitDescriptorCode = 'MIXED_MODULE'">
+
+				<!--Rule 1971: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals ('PALLET' or 'MIXED_MODULE') then isTradeItemADespatchUnit SHALL equal 'true'.-->
 				<xsl:if test="isTradeItemADespatchUnit != 'true'">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1971" />
 					</xsl:apply-templates>
 				</xsl:if>
+
+				<!--Rule 1982: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals ('PALLET' or 'MIXED_MODULE') then one iteration of TradeItemStacking class SHALL have stackingFactorTypeCode equal to 'STORAGE_UNSPECIFIED'.-->
+				<xsl:choose>
+					<xsl:when test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_handling:xsd:3' and local-name()='tradeItemHandlingModule']/tradeItemHandlingInformation/tradeItemStacking[stackingFactor = 'STORAGE_UNSPECIFIED']"/>
+					<xsl:otherwise>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="1982" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+
+				<!--Rule 1983: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode equals ('PALLET' or 'MIXED_MODULE') then quantityOfCompleteLayersContainedInATradeItem SHALL be used.-->
+				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy/quantityOfCompleteLayersContainedInATradeItem = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1983" />
+					</xsl:apply-templates>
+				</xsl:if>
+			
+			
 			</xsl:if>
+
 		</xsl:if>
 	</xsl:template>
 

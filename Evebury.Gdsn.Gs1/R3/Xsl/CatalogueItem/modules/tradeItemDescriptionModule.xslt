@@ -134,6 +134,18 @@
 			</xsl:if>
 		</xsl:if>
 
+		<xsl:if test="$targetMarket = '756'">
+
+			<!--Rule 1987: If targetMarketCountryCode equals <Geographic> and tradeItemGroupIdentificationCodeReference is used then tradeItemGroupIdentificationCodeReference/@codeDescription SHALL be used.-->
+			<xsl:for-each select="tradeItemGroupIdentificationCodeReference">
+				<xsl:if test="@codeDescription = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1987" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+
 	</xsl:template>
 
 </xsl:stylesheet>

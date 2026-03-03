@@ -57,6 +57,14 @@
 				</xsl:if>
 			</xsl:if>
 		</xsl:if>
+		<!--Rule 1978: If targetMarketCountryCode equals <Geographic> and statisticalReportingMeasurement is used then importClassificationValue SHALL be used.-->
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<xsl:if test="statisticalReportingMeasurement != '' and importClassificationValue= ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1978" />
+				</xsl:apply-templates>
+			</xsl:if>
+		</xsl:if>
 		
 		
 	</xsl:template>

@@ -34,6 +34,25 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+	
+		<xsl:if test="$targetMarket = '756'">
+
+			<!--Rule 1974: If targetMarketCountryCode equals <Geographic> and (variableWeightRangeMinimum is used or variableWeightRangeMaximum is used) then variableWeightRangeMinimum SHALL be used and variableWeightRangeMaximum SHALL be used.-->
+			<xsl:if test="(variableWeightRangeMinimum != '' or variableWeightRangeMaximum != '') and (variableWeightRangeMinimum = '' or variableWeightRangeMaximum = '')">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1974" />
+				</xsl:apply-templates>
+			</xsl:if>
+
+			<!--Rule 1975: If targetMarketCountryCode equals <Geographic> and (variableWeightAllowableDeviationPercentage is used or variableWeightRangeMinimum is used or variableWeightRangeMaximum is used) then isTradeItemAVariableUnit SHALL equal 'true'.-->
+			<xsl:if test="(variableWeightRangeMinimum != '' or variableWeightRangeMaximum != '') and isTradeItemAVariableUnit != 'true'">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1975" />
+				</xsl:apply-templates>
+			</xsl:if>
+			
+		</xsl:if>
 		
 	</xsl:template>
 

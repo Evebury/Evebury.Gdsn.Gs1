@@ -56,6 +56,18 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
+
+		<!--Rule 1976: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and isPriceOnPack equals 'true' then suggestedRetailPrice/tradeItemPrice SHALL be used.-->
+		<xsl:if test="$targetMarket= '756'">
+			<xsl:if test="isPriceOnPack  = 'true' and $tradeItem/isTradeItemABaseUnit = 'true'">
+				<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/tradeItemPriceInformation/suggestedRetailPrice/tradeItemPrice = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1976" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:if>
+		</xsl:if>
+		
 	</xsl:template>
 
 	<xsl:template match="consumerWarningInformation" mode="packagingMarkingModule">

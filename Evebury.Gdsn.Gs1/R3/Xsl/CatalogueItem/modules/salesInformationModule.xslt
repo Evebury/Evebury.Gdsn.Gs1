@@ -88,12 +88,22 @@
 			</xsl:if>
 		</xsl:for-each>
 
-		<!--Rule 1965: If targetMarketCountryCode equals <Geographic> and cataloguePrice/tradeItemPrice is used then cataloguePrice/priceBasisQuantity SHALL be used and cataloguePrice/priceEffectiveStartDate SHALL be used.-->
+		
 		<xsl:if test="$targetMarket  = '756'">
+
+			<!--Rule 1965: If targetMarketCountryCode equals <Geographic> and cataloguePrice/tradeItemPrice is used then cataloguePrice/priceBasisQuantity SHALL be used and cataloguePrice/priceEffectiveStartDate SHALL be used.-->
 			<xsl:for-each select="cataloguePrice">
 				<xsl:if test="tradeItemPrice != '' and (priceBasisQuantity = '' or priceEffectiveStartDate = '')">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1965" />
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+			<!--Rule 1977: If targetMarketCountryCode equals <Geographic> and suggestedRetailPrice/tradeItemPrice is used then suggestedRetailPrice/priceEffectiveStartDate SHALL be used.-->
+			<xsl:for-each select="suggestedRetailPrice">
+				<xsl:if test="tradeItemPrice != '' and priceEffectiveStartDate = ''">
+					<xsl:apply-templates select="." mode="error">
+						<xsl:with-param name="id" select="1977" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:for-each>

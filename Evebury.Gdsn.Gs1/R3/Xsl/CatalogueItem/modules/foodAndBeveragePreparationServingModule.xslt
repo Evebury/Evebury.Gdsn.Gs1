@@ -41,13 +41,33 @@
 			</xsl:apply-templates>
 		</xsl:if>
 
-		<!--Rule 1954: If targetMarketCountryCode equals <Geographic> and numberOfServingsPerPackageMeasurementPrecisionCode is used then numberOfServingsPerPackageMeasurementPrecisionCode SHALL equal 'APPROXIMATELY'.-->
+	
 		<xsl:if test="$targetMarket = '756'">
+
+			<!--Rule 1954: If targetMarketCountryCode equals <Geographic> and numberOfServingsPerPackageMeasurementPrecisionCode is used then numberOfServingsPerPackageMeasurementPrecisionCode SHALL equal 'APPROXIMATELY'.-->
 			<xsl:if test="numberOfServingsPerPackageMeasurementPrecisionCode != '' and numberOfServingsPerPackageMeasurementPrecisionCode != 'APPROXIMATELY'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1954" />
 				</xsl:apply-templates>
 			</xsl:if>
+
+			<!--Rule 1979: If targetMarketCountryCode equals <Geographic> and numberOfServingsPerPackageMeasurementPrecisionCode is used then numberOfServingsPerPackage SHALL be used.-->
+			<xsl:if test="numberOfServingsPerPackageMeasurementPrecisionCode != '' and numberOfServingsPerPackage = ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1979" />
+				</xsl:apply-templates>
+			</xsl:if>
+			
+		</xsl:if>
+
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
+			<!--Rule 1980: If targetMarketCountryCode equals <Geographic> and numberOfServingsPerPackage is used then numberOfServingsRangeDescription SHALL NOT be used.-->
+			<xsl:if test="numberOfServingsPerPackage != '' and numberOfServingsRangeDescription != ''">
+				<xsl:apply-templates select="." mode="error">
+					<xsl:with-param name="id" select="1980" />
+				</xsl:apply-templates>
+			</xsl:if>
+			
 		</xsl:if>
 		
 	</xsl:template>
