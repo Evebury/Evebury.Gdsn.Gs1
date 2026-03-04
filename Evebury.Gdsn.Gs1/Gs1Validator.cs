@@ -232,13 +232,18 @@ namespace Evebury.Gdsn.Gs1
 
             if (key == MessageKey.CatalogueItemNotification3)
             {
-                _auxiliary.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.current));
+                _auxiliary.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.previous));
                 _rules.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.CatalogueItem.ResourceManager));
                 return true;
             }
             else if (key == MessageKey.CatalogueItemPublication3) 
             {
                 _rules.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.catalogueItemPublication));
+                return true;
+            }
+            else if (key == MessageKey.CatalogueItemHierarchicalWithdrawal3)
+            {
+                _rules.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.catalogueItemHierarchicalWithdrawal));
                 return true;
             }
             return false;

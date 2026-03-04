@@ -63,6 +63,16 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] catalogueItemHierarchicalWithdrawal {
+            get {
+                object obj = ResourceManager.GetObject("catalogueItemHierarchicalWithdrawal", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] catalogueItemPublication {
             get {
                 object obj = ResourceManager.GetObject("catalogueItemPublication", resourceCulture);
@@ -73,9 +83,9 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] current {
+        internal static byte[] gs1Response {
             get {
-                object obj = ResourceManager.GetObject("current", resourceCulture);
+                object obj = ResourceManager.GetObject("gs1Response", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -83,9 +93,9 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] gs1Response {
+        internal static byte[] previous {
             get {
-                object obj = ResourceManager.GetObject("gs1Response", resourceCulture);
+                object obj = ResourceManager.GetObject("previous", resourceCulture);
                 return ((byte[])(obj));
             }
         }

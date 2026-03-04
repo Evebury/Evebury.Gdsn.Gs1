@@ -66,8 +66,8 @@
 	<xsl:include href="modules/warrantyInformationModule.xslt"/>
 
 	<!-- region auxiliary -->
-	<xsl:include href="measurementUnit.xslt"/>
-	<xsl:include href="components.xslt"/>
+	<xsl:include href="cin/measurementUnit.xslt"/>
+	<xsl:include href="cin/components.xslt"/>
 
 	<xsl:variable name="quote">
 		<xsl:text>'</xsl:text>

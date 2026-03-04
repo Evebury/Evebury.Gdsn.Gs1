@@ -105,7 +105,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="R3\Xsl\CatalogueItem\components.xslt">
+	  <None Update="R3\Xsl\CatalogueItem\cin\components.xslt">
 	    <SubType>Designer</SubType>
 	  </None>
 	</ItemGroup>
