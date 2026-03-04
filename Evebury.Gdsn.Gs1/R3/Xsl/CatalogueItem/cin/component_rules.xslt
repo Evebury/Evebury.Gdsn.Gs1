@@ -12,7 +12,6 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
-	
 	</xsl:template>
 
 	<xsl:template match="tradeItemInformation" mode="components">
@@ -32,11 +31,11 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 			<xsl:with-param name="tradeItem" select="$tradeItem"/>
 		</xsl:apply-templates>
-		
+
 		<xsl:variable name="root" select="."/>
-		
+
 		<!--Rule 1607: All iterations of componentNumber shall be unique within this tradeItem-->
-		
+
 		<xsl:for-each select="componentInformation/componentNumber">
 			<xsl:variable name="value" select="."/>
 			<xsl:if test="count($root/componentInformation[componentNumber = $value]) &gt; 1">
@@ -55,8 +54,8 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:for-each>
-		
-		
+
+
 		<xsl:variable name="specialItemCode" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:marketing_information:xsd:3' and local-name()='marketingInformationModule']/marketingInformation/specialItemCode"/>
 
 		<xsl:if test="$specialItemCode != 'DYNAMIC_ASSORTMENT'">
@@ -89,15 +88,15 @@
 				</xsl:apply-templates>
 			</xsl:if>
 		</xsl:if>
-		
+
 		<!--Rule 1609: If componentInformation is used, then totalNumberOfComponents shall equal the number of iterations of class componentInformation.-->
 		<xsl:if test="totalNumberOfComponents != count(componentInformation)">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1609" />
 			</xsl:apply-templates>
 		</xsl:if>
-		
-		
+
+
 	</xsl:template>
 
 	<xsl:template match="componentInformation" mode="components">
@@ -119,7 +118,7 @@
 				<xsl:with-param name="id" select="1550" />
 			</xsl:apply-templates>
 		</xsl:if>
-		
+
 		<xsl:apply-templates select="extension/*" mode="module">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 			<xsl:with-param name="tradeItem" select="$tradeItem"/>
@@ -161,8 +160,8 @@
 				</xsl:if>
 			</xsl:when>
 		</xsl:choose>
-		
-		
+
+
 	</xsl:template>
 
 </xsl:stylesheet>

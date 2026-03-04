@@ -66,8 +66,10 @@
 	<xsl:include href="modules/warrantyInformationModule.xslt"/>
 
 	<!-- region auxiliary -->
+	<xsl:include href="cin/component_rules.xslt"/>
+	<xsl:include href="cin/hierarchy_rules.xslt"/>
 	<xsl:include href="cin/measurementUnit.xslt"/>
-	<xsl:include href="cin/components.xslt"/>
+
 
 	<xsl:variable name="quote">
 		<xsl:text>'</xsl:text>
@@ -190,6 +192,7 @@
 
 		<xsl:variable name="informationProvider" select="tradeItem/informationProviderOfTradeItem/gln"/>
 		<xsl:variable name="targetMarket" select="tradeItem/targetMarket/targetMarketCountryCode"/>
+		<xsl:variable name="isEU" select="contains('008, 051, 031, 040, 112, 056, 070, 100, 191, 196, 203, 208, 233, 246, 250, 276, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 756, 792, 795, 826, 804, 860', $targetMarket)"/>
 
 		<xsl:apply-templates select="gs1:BeginSequence()"/>
 		<xsl:apply-templates select="gs1:AddSequenceEventDataWithLabel($EVENT_DATA_INFORMATION_PROVIDER, $informationProvider, tradeItem/informationProviderOfTradeItem/partyName)"/>
@@ -203,12 +206,14 @@
 		<xsl:if test="$sequence = 1">
 			<xsl:apply-templates select="." mode="hierarchy_rules">
 				<xsl:with-param name="targetMarket" select="$targetMarket"/>
+				<xsl:with-param name="isEU" select="$isEU"/>
 				<xsl:with-param name="informationProvider" select="$informationProvider"/>
 			</xsl:apply-templates>
 		</xsl:if>
 
 		<xsl:apply-templates select="tradeItem" mode="instance_rules">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+			<xsl:with-param name="isEU" select="$isEU"/>
 			<xsl:with-param name="informationProvider" select="$informationProvider"/>
 			<xsl:with-param name="command" select="$command"/>
 		</xsl:apply-templates>
@@ -291,25 +296,6 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:if>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match="*" mode="r300">
-		<!--Rule 300: EntityIdentification/PartyIdentification/gln shall equal dataSource, contentOwner and informationProvider and shall be the same for all levels of trade item hierarchy.-->
-		<xsl:variable name="informationProvider" select="tradeItem/informationProviderOfTradeItem/gln"/>
-		<xsl:if test=".//tradeItem/informationProviderOfTradeItem[gln != $informationProvider]">
-			<xsl:apply-templates select="." mode="error">
-				<xsl:with-param name="id" select="300" />
-			</xsl:apply-templates>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match="*" mode="r312">
-		<!--Rule 312: If isReturnableAssetEmpty does not equal “true” or is not used for any item in a Catalogue Item Notification Message then isTradeItemAnOrderableUnit must be equal to 'true' for at least one item in a Catalogue Item Notification Message.-->
-		<xsl:if test="count(.//tradeItem[isTradeItemAnOrderableUnit = 'true']) = 0">
-			<xsl:apply-templates select="." mode="error">
-				<xsl:with-param name="id" select="312"/>
-			</xsl:apply-templates>
 		</xsl:if>
 	</xsl:template>
 
@@ -755,27 +741,6 @@
 			</xsl:if>
 		</xsl:if>
 
-	</xsl:template>
-
-	<xsl:template match="*" mode="r521">
-		<xsl:param name="targetMarket" />
-		<!--Rule 521: If targetMarketCountryCode is equal to '752' (Sweden) and isTradeItemOrderable is equal to 'true'  and additionalTradeItemIdentificationTypeCode  is equal to ('SUPPLIER_ASSIGNED' or 'DISTRIBUTOR_ASSIGNED') then associated additionalTradeItemIdentification must be unique within hierarchy.-->
-		<xsl:if test="$targetMarket = '752'">
-			<xsl:variable name="root" select="."/>
-			<xsl:for-each select="$root//tradeItem[isTradeItemAnOrderableUnit = 'true']">
-				<xsl:for-each select="additionalTradeItemIdentification">
-					<xsl:if test="@additionalTradeItemIdentificationTypeCode = 'SUPPLIER_ASSIGNED' or @additionalTradeItemIdentificationTypeCode = 'DISTRIBUTOR_ASSIGNED'">
-						<xsl:variable name="code" select="."
-						/>
-						<xsl:if test="count($root//tradeItem/additionalTradeItemIdentification[text() = $code]) &gt; 1">
-							<xsl:apply-templates select="." mode="error">
-								<xsl:with-param name="id" select="521" />
-							</xsl:apply-templates>
-						</xsl:if>
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:for-each>
-		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="*" mode="r524">
@@ -1575,23 +1540,6 @@
 		</xsl:for-each>
 	</xsl:template>
 
-	<xsl:template match="*" mode="r1092">
-		<xsl:param name="targetMarket" />
-		<!--Rule 1092: If targetMarketCountryCode equals <Geographic> and (isTradeItemNonphysical equals 'false' or is not used) and (isTradeItemAService equals 'false' or is not used) and (one iteration of tradeItemTradeChannelCode equals to ('CASH_AND_CARRY', 'CONSIGNMENT', 'CONVENIENCE', 'DRUG_STORE', 'FOOD_SERVICE', 'GROCERY',  'ONLINE' or 'UNSPECIFIED') or tradeItemTradeChannelCode is not used) then isTradeItemADespatchUnit SHALL equal 'true' for at least one trade item in the item hierarchy.-->
-		<xsl:if test="$targetMarket = '250'">
-			<xsl:variable name="tradeItems" select=".//tradeItem"/>
-			<xsl:if test="not($tradeItems[isTradeItemNonphysical != 'true' and isTradeItemAService !='true'])">
-				<xsl:if test="$tradeItems[tradeItemTradeChannelCode= 'CASH_AND_CARRY' or tradeItemTradeChannelCode= 'CONSIGNMENT' or tradeItemTradeChannelCode= 'CONVENIENCE' or tradeItemTradeChannelCode= 'DRUG_STORE' or tradeItemTradeChannelCode= 'FOOD_SERVICE' or tradeItemTradeChannelCode= 'GROCERY' or tradeItemTradeChannelCode= 'ONLINE' or tradeItemTradeChannelCode= 'UNSPECIFIED']">
-					<xsl:if test="count($tradeItems[isTradeItemADespatchUnit = 'true'])  = 0">
-						<xsl:apply-templates select="." mode="error">
-							<xsl:with-param name="id" select="1092" />
-						</xsl:apply-templates>
-					</xsl:if>
-				</xsl:if>
-			</xsl:if>
-		</xsl:if>
-	</xsl:template>
-
 	<xsl:template match="*" mode="r1160">
 		<xsl:param name="targetMarket" />
 		<!--Rule 1160: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and isTradeItemAConsumerUnit equals 'TRUE' then descriptionShort shall be used.-->
@@ -1970,24 +1918,6 @@
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template match="*" mode="r1720">
-		<xsl:param name="targetMarket" />
-		<xsl:if test="contains('036, 554, 250, 752', $targetMarket)">
-			<!--Rule 1720: If targetMarketCountryCode equals <Geographic> then isTradeItemAnInvoiceUnit SHALL equal 'true' for at least one trade item in the hierarchy.-->
-			<xsl:if test="count(.//tradeItem[isTradeItemAnInvoiceUnit = 'true']) = 0">
-				<xsl:apply-templates select="." mode="error">
-					<xsl:with-param name="id" select="1720" />
-				</xsl:apply-templates>
-			</xsl:if>
-			<!--Rule 1721: If targetMarketCountryCode equals <Geographic> then isTradeItemAnInvoiceUnit SHALL be used.-->
-			<xsl:if test="count(.//tradeItem[isTradeItemAnInvoiceUnit = '']) &gt; 0">
-				<xsl:apply-templates select="." mode="error">
-					<xsl:with-param name="id" select="1721" />
-				</xsl:apply-templates>
-			</xsl:if>
-		</xsl:if>
-	</xsl:template>
-
 	<xsl:template match="*" mode="r1722">
 		<!--Rule 1722: If additionalTradeItemClassificationSystemCode equals '85' then additionalTradeItemClassificationCodeValue SHALL equal (‘EU_CLASS_I’, ‘EU_CLASS_IIA’, ‘EU_CLASS_IIB’, ‘EU_CLASS_III’, ‘IVDD_ANNEX_II_LIST_A’, ‘IVDD_ANNEX_II_LIST_B’, ‘IVDD_DEVICES_SELF_TESTING’, ‘IVDD_GENERAL’, or 'AIMDD')-->
 		<xsl:variable name="class" select="gDSNTradeItemClassification/additionalTradeItemClassification[additionalTradeItemClassificationSystemCode = '85']"/>
@@ -2018,53 +1948,6 @@
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:if>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match="*" mode="r1759">
-		<xsl:param name="targetMarket" />
-		<xsl:if test="contains('008, 051, 031, 040, 112, 056, 070, 100, 191, 196, 203, 208, 233, 246, 250, 276, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 756, 792, 795, 826, 804, 860', $targetMarket)">
-			<xsl:choose>
-				<xsl:when test=".//tradeItem[isTradeItemABaseUnit != 'true']/nextLowerLevelTradeItemInformation[quantityOfChildren != 1]"/>
-				<xsl:otherwise>
-					<!--Rule 1759: If targetMarketCountryCode  equals <Geographic> and quantityOfChildren equals '1' on every level of the item hierarchy (except for the level where isTradeItemABaseUnit equals 'true’) and percentageOfAlcoholByVolume is used, then percentageOfAlcoholByVolume SHALL equal the same value in all levels of the item hierarchy where percentageOfAlcoholByVolume is used.-->
-					<xsl:variable name="percentageOfAlcoholByVolume" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume"/>
-					<xsl:if test="$percentageOfAlcoholByVolume != ''">
-						<xsl:if test=".//tradeItem[isTradeItemABaseUnit != 'true']/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume != $percentageOfAlcoholByVolume">
-							<xsl:apply-templates select="." mode="error">
-								<xsl:with-param name="id" select="1759" />
-							</xsl:apply-templates>
-						</xsl:if>
-					</xsl:if>
-					<!--Rule 1760: If targetMarketCountryCode equals <geographic> and quantityOfChildren equals 1 on each level of the item hierarchy (except for the level where isTradeItemABaseUnit equals 'true’) and degreeOfOriginalWort is used, then degreeOfOriginalWort SHALL equal the same value in all levels of the item hierarchy where degreeOfOriginalWort is used.-->
-					<xsl:variable name="degreeOfOriginalWort" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/degreeOfOriginalWort"/>
-					<xsl:if test="$degreeOfOriginalWort != ''">
-						<xsl:if test=".//tradeItem[isTradeItemABaseUnit != 'true']/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/degreeOfOriginalWort != $degreeOfOriginalWort">
-							<xsl:apply-templates select="." mode="error">
-								<xsl:with-param name="id" select="1760" />
-							</xsl:apply-templates>
-						</xsl:if>
-					</xsl:if>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match="*" mode="r1789">
-		<!--Rule 1789: If isTradeItemUDIDILevel=‘true’, then isTradeItemUDIDILevel SHALL equal ‘false’ or not used for all other tradeItem/gtin within the same hierarchy.-->
-		<xsl:if test="count(.//tradeItem[isTradeItemUDIDILevel = 'true']) &gt; 1">
-			<xsl:apply-templates select="." mode="error">
-				<xsl:with-param name="id" select="1789" />
-			</xsl:apply-templates>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match="*" mode="r1790">
-		<!--Rule 1790: If isTradeItemUnitOfUse =‘true’, then isTradeItemUnitOfUse SHALL equal ‘false’ or not used for all other tradeItem/gtin within the same hierarchy.-->
-		<xsl:if test="count(.//tradeItem[isTradeItemUnitOfUse = 'true']) &gt; 1">
-			<xsl:apply-templates select="." mode="error">
-				<xsl:with-param name="id" select="1790" />
-			</xsl:apply-templates>
 		</xsl:if>
 	</xsl:template>
 
@@ -2105,26 +1988,6 @@
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:if>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match="*" mode="r1830">
-		<xsl:param name="targetMarket" />
-		<!--Rule 1830: If targetMarketCountryCode equals '752' (Sweden) and (quantityOfChildren equals '1' or is not used) on all levels of the trade item hierarchy,  then dutyFeeTaxRate, where used, SHALL equal the same value.-->
-		<xsl:if test="$targetMarket = '752'">
-			<xsl:choose>
-				<xsl:when test=".//tradeItem/nextLowerLevelTradeItemInformation[quantityOfChildren != '' and quantityOfChildren != 1]"/>
-				<xsl:otherwise>
-					<xsl:variable name="dutyFeeTaxRate" select=".//tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax[dutyFeeTaxRate != '']/dutyFeeTaxRate[1]"/>
-					<xsl:if test="$dutyFeeTaxRate != ''">
-						<xsl:if test=".//tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax[dutyFeeTaxRate != '' and dutyFeeTaxRate != $dutyFeeTaxRate]">
-							<xsl:apply-templates select="." mode="error">
-								<xsl:with-param name="id" select="1830" />
-							</xsl:apply-templates>
-						</xsl:if>
-					</xsl:if>
-				</xsl:otherwise>
-			</xsl:choose>
 		</xsl:if>
 	</xsl:template>
 
@@ -2268,7 +2131,7 @@
 				<!--Rule 2070: If targetMarketCountryCode equals <Geographic> and (gpcCategoryCode is in GPC Class '50202200' and gpcCategoryCode does not equal ('10000142', '10000143', '10008042') and isTradeItemABaseUnit equals 'true' then percentageOfAlcoholByVolume SHALL be used.-->
 				<xsl:if test="gs1:IsInClass($brick, '50202200') and $brick != '10000142'  and $brick != '10000143' and $brick != '10008042'">
 					<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume = ''">
-						<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>											 
+						<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="2070" />
 						</xsl:apply-templates>
@@ -2511,7 +2374,7 @@
 
 	<xsl:template match="*" mode="r1922">
 		<xsl:param name="targetMarket" />
-		
+
 		<xsl:if test="$targetMarket  = '380' and isTradeItemAConsumerUnit = 'true'">
 
 			<!--Rule 1922: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' then dutyFeeTaxTypeCode SHALL be used.-->
@@ -2618,62 +2481,6 @@
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template match="*" mode="r2000">
-		<xsl:param name="targetMarket" />
-
-		<xsl:if test="$targetMarket = '756'">
-
-			<xsl:variable name="brick" select="gDSNTradeItemClassification/gpcCategoryCode"/>
-			
-			<xsl:variable name="zcg" select=".//tradeItem[isTradeItemABaseUnit = 'true']/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader[dangerousGoodsRegulationCode = 'ZCG']"/>
-
-			<!--Rule 2000: If targetMarketCountryCode equals <Geographic> and dangerousGoodsLimitedQuantitiesCode is used then dangerousGoodsRegulationCode SHALL equal 'ZCG' on at least one trade item in the hierarchy where isTradeItemABaseUnit equals 'true'.-->
-			<xsl:if test=".//*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader/dangerousGoodsLimitedQuantitiesCode != ''">
-				<xsl:choose>
-					<xsl:when test="$zcg"/>
-					<xsl:otherwise>
-						<xsl:apply-templates select="." mode="error">
-							<xsl:with-param name="id" select="2000" />
-						</xsl:apply-templates>
-					</xsl:otherwise>
-				</xsl:choose>
-
-			</xsl:if>
-
-			<!--Rule 2001: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and dangerousGoodsRegulationCode equals 'ZCG' then dangerousGoodsLimitedQuantitiesCode SHALL be used and dangerousGoodsLimitedQuantitiesCode SHALL be used on all its parent levels of the trade item hierarchy.-->
-			<xsl:if test="$zcg">
-				<xsl:if test=".//*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader/dangerousGoodsLimitedQuantitiesCode = ''">
-					<xsl:apply-templates select="." mode="error">
-						<xsl:with-param name="id" select="2001" />
-					</xsl:apply-templates>
-				</xsl:if>
-			</xsl:if>
-
-			<!--Rule 102010: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode is equal to ('10001678', '10001676', '10001680', '10000775', '10000669', '10000533', '10000534', '10000360', '10000778', '10000333', '10000361', '10000345', '10000346', '10000348', '10000834', '10000536', '10000383', '10003874', '10002501', '10005657', '10002462', '10005687', '10005198', '10000531', '10000746', '10000441', '10000423', '10000440', '10006234', '10000443', '10000426', '10000696', '10000697', '10000427', '10000703', '10005266', '10002423', '10003234', '10003221', '10004110', '10005168', '10005192', '10006378', '10005232', '10001685', '10001684', '10008397' or '10005233') then one iteration of regulationTypeCode SHALL equal 'EXPLOSIVES_PRECURSORS_REGISTRATION' and corresponding isTradeItemRegulationCompliant SHALL equal ('TRUE' or 'NOT_APPLICABLE').-->
-			<xsl:if test="contains('10001678, 10001676, 10001680, 10000775, 10000669, 10000533, 10000534, 10000360, 10000778, 10000333, 10000361, 10000345, 10000346, 10000348, 10000834, 10000536, 10000383, 10003874, 10002501, 10005657, 10002462, 10005687, 10005198, 10000531, 10000746, 10000441, 10000423, 10000440, 10006234, 10000443, 10000426, 10000696, 10000697, 10000427, 10000703, 10005266, 10002423, 10003234, 10003221, 10004110, 10005168, 10005192, 10006378, 10005232, 10001685, 10001684, 10008397, 10005233', $brick)">
-				<xsl:variable name="mod" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:regulated_trade_item:xsd:3' and local-name()='regulatedTradeItemModule']/regulatoryInformation"/>
-				<xsl:choose>
-					<xsl:when test="$mod[regulationTypeCode = 'EXPLOSIVES_PRECURSORS_REGISTRATION']">
-						<xsl:choose>
-							<xsl:when test="$mod[regulationTypeCode = 'EXPLOSIVES_PRECURSORS_REGISTRATION' and (isTradeItemRegulationCompliant  = 'TRUE' or isTradeItemRegulationCompliant  = 'NOT_APPLICABLE')]"/>
-							<xsl:otherwise>
-								<xsl:apply-templates select="." mode="error">
-									<xsl:with-param name="id" select="102010" />
-								</xsl:apply-templates>
-							</xsl:otherwise>
-						</xsl:choose>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:apply-templates select="." mode="error">
-							<xsl:with-param name="id" select="102010" />
-						</xsl:apply-templates>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:if>
-
-		</xsl:if>
-	</xsl:template>
-
 	<xsl:template match="*" mode="r2004">
 		<xsl:param name="targetMarket" />
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
@@ -2748,22 +2555,21 @@
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template match="*" mode="r2066">
-		<xsl:param name="targetMarket" />
-		<!--Rule 2066: If targetMarketCountryCode equals <Geographic> and .../@currencycode is used then at least one iteration of .../@currencycode SHALL equal 'EUR'.-->
+	<xsl:template match="*" mode="r2069">
+		<xsl:param name="targetMarket"/>
 		<xsl:if test="$targetMarket = '250'">
+			<!--Rule 2069: There must be one iteration for language 'French'.-->
 			<xsl:choose>
-				<xsl:when test="@currencyCode">
+				<xsl:when test="@languageCode">
 					<xsl:variable name="name" select="name()"/>
-					<xsl:if test="count(../*[name() = $name and @currencyCode = 'EUR']) = 0">
-						<xsl:apply-templates select="gs1:AddEventData($EVENT_DATA_MEASUREMENT_UNIT, 'EUR')"/>
+					<xsl:if test="count(../*[name() = $name and @languageCode = 'fr']) &lt; 1">
 						<xsl:apply-templates select="." mode="error">
-							<xsl:with-param name="id" select="2066" />
+							<xsl:with-param name="id" select="2069" />
 						</xsl:apply-templates>
 					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:apply-templates select="*" mode="r2066">
+					<xsl:apply-templates select="*" mode="r2069">
 						<xsl:with-param name="targetMarket" select="$targetMarket"/>
 					</xsl:apply-templates>
 				</xsl:otherwise>
@@ -2771,6 +2577,36 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template match="*" mode="r102010">
+		<xsl:param name="targetMarket" />
+		<!--Rule 102010: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode is equal to ('10001678', '10001676', '10001680', '10000775', '10000669', '10000533', '10000534', '10000360', '10000778', '10000333', '10000361', '10000345', '10000346', '10000348', '10000834', '10000536', '10000383', '10003874', '10002501', '10005657', '10002462', '10005687', '10005198', '10000531', '10000746', '10000441', '10000423', '10000440', '10006234', '10000443', '10000426', '10000696', '10000697', '10000427', '10000703', '10005266', '10002423', '10003234', '10003221', '10004110', '10005168', '10005192', '10006378', '10005232', '10001685', '10001684', '10008397' or '10005233') then one iteration of regulationTypeCode SHALL equal 'EXPLOSIVES_PRECURSORS_REGISTRATION' and corresponding isTradeItemRegulationCompliant SHALL equal ('TRUE' or 'NOT_APPLICABLE').-->
+		<xsl:if test="$targetMarket = '756'">
+
+			<xsl:variable name="brick" select="gDSNTradeItemClassification/gpcCategoryCode"/>
+			<xsl:if test="contains('10001678, 10001676, 10001680, 10000775, 10000669, 10000533, 10000534, 10000360, 10000778, 10000333, 10000361, 10000345, 10000346, 10000348, 10000834, 10000536, 10000383, 10003874, 10002501, 10005657, 10002462, 10005687, 10005198, 10000531, 10000746, 10000441, 10000423, 10000440, 10006234, 10000443, 10000426, 10000696, 10000697, 10000427, 10000703, 10005266, 10002423, 10003234, 10003221, 10004110, 10005168, 10005192, 10006378, 10005232, 10001685, 10001684, 10008397, 10005233', $brick)">
+				<xsl:variable name="mod" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:regulated_trade_item:xsd:3' and local-name()='regulatedTradeItemModule']/regulatoryInformation"/>
+				<xsl:choose>
+					<xsl:when test="$mod[regulationTypeCode = 'EXPLOSIVES_PRECURSORS_REGISTRATION']">
+						<xsl:choose>
+							<xsl:when test="$mod[regulationTypeCode = 'EXPLOSIVES_PRECURSORS_REGISTRATION' and (isTradeItemRegulationCompliant  = 'TRUE' or isTradeItemRegulationCompliant  = 'NOT_APPLICABLE')]"/>
+							<xsl:otherwise>
+								<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+								<xsl:apply-templates select="." mode="error">
+									<xsl:with-param name="id" select="102010" />
+								</xsl:apply-templates>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
+						<xsl:apply-templates select="." mode="error">
+							<xsl:with-param name="id" select="102010" />
+						</xsl:apply-templates>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
 
 
 	<xsl:template match="*" mode="gtin">
@@ -2851,66 +2687,8 @@
 		</xsl:for-each>
 	</xsl:template>
 
-	<xsl:template match="*" mode="r2069">
-		<xsl:param name="targetMarket"/>
-		<xsl:if test="$targetMarket = '250'">
-			<!--Rule 2069: There must be one iteration for language 'French'.-->
-			<xsl:choose>
-				<xsl:when test="@languageCode">
-					<xsl:variable name="name" select="name()"/>
-					<xsl:if test="count(../*[name() = $name and @languageCode = 'fr']) &lt; 1">
-						<xsl:apply-templates select="." mode="error">
-							<xsl:with-param name="id" select="2069" />
-						</xsl:apply-templates>
-					</xsl:if>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:apply-templates select="*" mode="r2069">
-						<xsl:with-param name="targetMarket" select="$targetMarket"/>
-					</xsl:apply-templates>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:if>
-	</xsl:template>
-
 	<!-- endregion validation rules -->
 
-	<xsl:template match="catalogueItem" mode="hierarchy_rules">
-		<xsl:param name="targetMarket"/>
-		<xsl:param name="informationProvider"/>
-		<!--
-		apply rules that evaluate the total hierarchy here. these will only be executed once 
-		make sure that the rule is recursive if required
-		-->
-		<xsl:apply-templates select="." mode="r300"/>
-		<xsl:apply-templates select="." mode="r312"/>
-		<xsl:apply-templates select="." mode="r521">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-		<xsl:apply-templates select="." mode="r1092">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-		<xsl:apply-templates select="." mode="r1720">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-		<xsl:apply-templates select="." mode="r1759">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-		<xsl:apply-templates select="." mode="r1789"/>
-		<xsl:apply-templates select="." mode="r1790"/>
-		<xsl:apply-templates select="." mode="r1830">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-		<xsl:apply-templates select="." mode="r2000">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-		<xsl:apply-templates select="." mode="r2066">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-		<xsl:apply-templates select="dataRecipient" mode="gln"/>
-		<xsl:apply-templates select="sourceDataPool" mode="gln"/>
-
-	</xsl:template>
 
 	<xsl:template match="tradeItem" mode="instance_rules">
 		<xsl:param name="targetMarket"/>
@@ -2953,9 +2731,6 @@
 		<xsl:apply-templates select="." mode="r511"/>
 		<xsl:apply-templates select="." mode="r512"/>
 		<xsl:apply-templates select="." mode="r517">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-		<xsl:apply-templates select="." mode="r521">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<xsl:apply-templates select="." mode="r524">
@@ -3165,6 +2940,12 @@
 		<xsl:apply-templates select="." mode="r2004">
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r2069">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
+		<xsl:apply-templates select="." mode="r102010">
+			<xsl:with-param name="targetMarket" select="$targetMarket"/>
+		</xsl:apply-templates>
 
 		<xsl:apply-templates select="." mode="gtin"/>
 		<xsl:apply-templates select="referencedTradeItem" mode="gtin"/>
@@ -3179,12 +2960,6 @@
 		<xsl:apply-templates select="informationProviderOfTradeItem" mode="languageSpecificPartyName"/>
 		<xsl:apply-templates select="manufacturerOfTradeItem" mode="languageSpecificPartyName"/>
 		<xsl:apply-templates select="partyInRole" mode="languageSpecificPartyName"/>
-
-		<xsl:apply-templates select="." mode="r2069">
-			<xsl:with-param name="targetMarket" select="$targetMarket"/>
-		</xsl:apply-templates>
-
-
 
 	</xsl:template>
 </xsl:stylesheet>

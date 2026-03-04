@@ -163,9 +163,9 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] components {
+        internal static byte[] component_rules {
             get {
-                object obj = ResourceManager.GetObject("components", resourceCulture);
+                object obj = ResourceManager.GetObject("component_rules", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -286,6 +286,16 @@ namespace Evebury.Gdsn.Gs1.R3.Xsl.CatalogueItem {
         internal static byte[] healthRelatedInformationModule {
             get {
                 object obj = ResourceManager.GetObject("healthRelatedInformationModule", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] hierarchy_rules {
+            get {
+                object obj = ResourceManager.GetObject("hierarchy_rules", resourceCulture);
                 return ((byte[])(obj));
             }
         }

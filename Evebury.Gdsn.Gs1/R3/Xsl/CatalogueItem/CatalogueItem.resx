@@ -148,8 +148,8 @@
   <data name="childNutritionInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\childNutritionInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="components" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>cin\components.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="component_rules" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cin\component_rules.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="consumerInstructionsModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\consumerInstructionsModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -186,6 +186,9 @@
   </data>
   <data name="healthRelatedInformationModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\healthRelatedInformationModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hierarchy_rules" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cin\hierarchy_rules.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lightingDeviceModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\lightingDeviceModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
