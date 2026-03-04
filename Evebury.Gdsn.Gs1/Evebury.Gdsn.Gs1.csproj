@@ -108,6 +108,9 @@
 	  <None Update="R3\Xsl\CatalogueItem\cin\component_rules.xslt">
 	    <SubType>Designer</SubType>
 	  </None>
+	  <None Update="R3\Xsl\CatalogueItem\cin\item_rules.xslt">
+	    <SubType>Designer</SubType>
+	  </None>
 	  <None Update="R3\Xsl\CatalogueItem\cin\hierarchy_rules.xslt">
 	    <SubType>Designer</SubType>
 	  </None>

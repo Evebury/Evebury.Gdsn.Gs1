@@ -6,12 +6,20 @@
 	<xsl:output method="xml" indent="yes"/>
 
 	<xsl:template match="catalogueItem" mode="hierarchy_rules">
+		<xsl:param name="command"/>
 		<xsl:param name="targetMarket"/>
 		<xsl:param name="informationProvider"/>
 		<xsl:param name="isEU"/>
 
 		<xsl:apply-templates select="dataRecipient" mode="gln"/>
 		<xsl:apply-templates select="sourceDataPool" mode="gln"/>
+
+		<!--Rule 203: dataRecipient must not be empty.-->
+		<xsl:if test="dataRecipient = ''">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="203"/>
+			</xsl:apply-templates>
+		</xsl:if>
 
 		<xsl:variable name="tradeItems" select=".//tradeItem"/>
 
@@ -33,6 +41,13 @@
 				</xsl:if>
 			</xsl:otherwise>
 		</xsl:choose>
+
+		<!--Rule 1458: Catalogue Item Notification message shall not be sent using  transaction/documentCommand/documentCommandHeader/@type equal to 'DELETE'.-->
+		<xsl:if test="$command = 'DELETE'">
+			<xsl:apply-templates select="." mode="error">
+				<xsl:with-param name="id" select="1458" />
+			</xsl:apply-templates>
+		</xsl:if>
 
 		<!--Rule 1789: If isTradeItemUDIDILevel=‘true’, then isTradeItemUDIDILevel SHALL equal ‘false’ or not used for all other tradeItem/gtin within the same hierarchy.-->
 		<xsl:if test="count($tradeItems[isTradeItemUDIDILevel = 'true']) &gt; 1">

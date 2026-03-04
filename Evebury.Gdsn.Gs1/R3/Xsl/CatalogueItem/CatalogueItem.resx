@@ -190,6 +190,9 @@
   <data name="hierarchy_rules" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>cin\hierarchy_rules.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="item_rules" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cin\item_rules.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lightingDeviceModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>modules\lightingDeviceModule.xslt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
