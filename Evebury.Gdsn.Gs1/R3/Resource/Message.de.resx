@@ -142,7 +142,7 @@
     <value>&lt;minimumTradeItemLifespanFromTimeOfProduction&gt; muss sein größer als oder gleich &lt;minimumTradeItemLifespanFromTimeOfArrival&gt;.</value>
   </data>
   <data name="325" xml:space="preserve">
-    <value>Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; ist nicht verwendet. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, dieses Attribut ist erforderlich für alle Artikel auf der lowest Ebene von der Hierarchie für Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; &lt;&lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;&gt;.</value>
+    <value>Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; ist nicht verwendet. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, dieses Attribut ist erforderlich für alle Artikel auf der lowest Ebene von der Hierarchie für Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; &lt;&lt;gpcCategoryCode&gt;&gt; &lt;gpcCategoryName&gt;.</value>
   </data>
   <data name="339" xml:space="preserve">
     <value>Wenn &lt;dangerousGoodsRegulationCode&gt; ist gleich 'ADR' und &lt;dangerousGoodsPackingGroup&gt; ist nicht leer dann &lt;dangerousGoodsPackingGroup&gt; muss gleich sein ('NA','I', 'II' oder 'III').</value>
@@ -193,7 +193,7 @@
     <value>Zero oder negativ Werte sind nicht erlaubt für Packaging Material Composition Quantity wobei angegeben.</value>
   </data>
   <data name="469" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, GTIN (Globale Handelsartikelnummer) starting mit '002', '004', '02' sind nicht erlaubt.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, GTIN (Globale Handelsartikelnummer) starting mit '002', '004', '02' sind nicht erlaubt.</value>
   </data>
   <data name="472" xml:space="preserve">
     <value>Für jeder GTIN (Globale Handelsartikelnummer) von der Contained Produkt.</value>
@@ -208,19 +208,19 @@
     <value>Der Zielmarkt Land Code und &lt;targetMarketSubdivisionCode&gt; wenn befüllt, wird be consistent für alle GTINs innerhalb ein given Hierarchie.</value>
   </data>
   <data name="477" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, der Maßeinheit für &lt;attribute&gt; muss sein angegeben in degrees Celsius.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, der Maßeinheit für &lt;attribute&gt; muss sein angegeben in degrees Celsius.</value>
   </data>
   <data name="478" xml:space="preserve">
     <value>Wenn &lt;nestingIncrement&gt; ist befüllt it muss sein größer als null(0).</value>
   </data>
   <data name="479" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Stacking Factor &lt;stackingFactor&gt; muss sein kleiner als 100.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Stacking Factor &lt;stackingFactor&gt; muss sein kleiner als 100.</value>
   </data>
   <data name="480" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Stacking Factor für non-GTIN Pallet &lt;logisticsUnitStackingFactor&gt; muss sein kleiner als 100.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Stacking Factor für non-GTIN Pallet &lt;logisticsUnitStackingFactor&gt; muss sein kleiner als 100.</value>
   </data>
   <data name="481" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Anzahl von Layers pro non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; muss sein kleiner als 999.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Anzahl von Layers pro non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; muss sein kleiner als 999.</value>
   </data>
   <data name="483" xml:space="preserve">
     <value>&lt;endAvailabilityDateTime&gt; muss sein later than oder gleich today auf erste population.</value>
@@ -253,10 +253,10 @@
     <value>Maximum Anzahl von Iterationen von GDSNTradeItemClassificationAttributeType is 25.</value>
   </data>
   <data name="506" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens ein Wert von Packaging Material Quantity &lt;packagingMaterialCompositionQuantity&gt; muss haben gram (GRM) oder kilogram (KGM) definiert als der Maßeinheit.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens ein Wert von Packaging Material Quantity &lt;packagingMaterialCompositionQuantity&gt; muss haben gram (GRM) oder kilogram (KGM) definiert als der Maßeinheit.</value>
   </data>
   <data name="507" xml:space="preserve">
-    <value>Der gesamt von Werte in &lt;packagingMaterialCompositionQuantity&gt; darf nicht überschreiten der Wert in &lt;packagingWeight&gt; für der gleiche Artikel .</value>
+    <value>Der gesamt von Werte in &lt;packagingMaterialCompositionQuantity&gt; darf nicht überschreiten der Wert in &lt;packagingWeight&gt; für der gleiche Artikel.</value>
   </data>
   <data name="510" xml:space="preserve">
     <value>&lt;length&gt; &lt;depth&gt; darf nicht leer sein und muss haben einen Wert größer als null für physical Artikel, i.e., if &lt;isTradeItemNonphysical&gt; ist gleich 'FALSE' oder ist nicht verwendet. Use an average Wert für variable measure Artikel.</value>
@@ -274,13 +274,13 @@
     <value>Zero oder negativ Werte sind nicht erlaubt für Nettogewicht wobei Nettogewicht is Provided.</value>
   </data>
   <data name="517" xml:space="preserve">
-    <value>Wenn (Audio Visual Media Produkt Beschreibung Module oder Publication Title Rating Module oder Audio Visual Media Content Information Module) sind verwendet und &lt;gpcCategoryCode&gt; is gleich '10001137' dann &lt;audioVisualMediaProductTitle&gt; , &lt;genreTypeCodeReference&gt; , &lt;titleRatingCodeReference&gt;/Code, &lt;codeListAgencyCode&gt; und &lt;gameFormatCode&gt; muss verwendet werden.</value>
+    <value>Wenn (Audio Visual Media Produkt Beschreibung Module oder Publication Title Rating Module oder Audio Visual Media Content Information Module) sind verwendet und &lt;gpcCategoryCode&gt; is gleich '10001137' dann &lt;audioVisualMediaProductTitle&gt;, &lt;genreTypeCodeReference&gt;, &lt;titleRatingCodeReference&gt;/Code, &lt;codeListAgencyCode&gt; und &lt;gameFormatCode&gt; muss verwendet werden.</value>
   </data>
   <data name="519" xml:space="preserve">
     <value>Wenn &lt;targetMarketCountryCode&gt; is gleich '752' (Sweden) &lt;layerHeight&gt; muss haben der gleiche Wert als one von der Werte in Breite, Tiefe oder Höhe von der untergeordneter Artikel.</value>
   </data>
   <data name="520" xml:space="preserve">
-    <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich '752' (Sweden) &lt;priceBasisQuantity&gt; kann sein angegeben mit der folgende Einheiten von measures: kilogram, gram , metre, millimetre, millilitre, litre, square metre, cubic metres,piece.</value>
+    <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich '752' (Sweden) &lt;priceBasisQuantity&gt; kann sein angegeben mit der folgende Einheiten von measures: kilogram, gram, metre, millimetre, millilitre, litre, square metre, cubic metres,piece.</value>
   </data>
   <data name="521" xml:space="preserve">
     <value>Wenn &lt;targetMarketCountryCode&gt; is gleich '752' (Sweden), &lt;additionalTradeItemIdentificationValue&gt; ('SUPPLIER_ASSIGNED', 'DISTRIBUTOR_ASSIGNED') darf nicht haben der gleiche Wert auf mehr als ein Handelsartikel in der gleiche Artikel Hierarchie. This Regel gilt wenn &lt;isTradeItemAnOrderableUnit&gt; is gleich 'TRUE'.</value>
@@ -289,7 +289,7 @@
     <value>Wenn &lt;dataCarrierTypeCode&gt; ist gleich ('EAN_13', 'UPC_A' oder 'UPC_E') dann erste digit von gtin muss gleich sein '0'.</value>
   </data>
   <data name="524" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Net Content &lt;netContent&gt; ist obligatorisch auf Verbrauchereinheiten (Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich zu 'TRUE').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Net Content &lt;netContent&gt; ist obligatorisch auf Verbrauchereinheiten (Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich zu 'TRUE').</value>
   </data>
   <data name="526" xml:space="preserve">
     <value>Wenn angegeben, &lt;orderingLeadTime&gt; muss sein größer als null.</value>
@@ -298,7 +298,7 @@
     <value>Wenn Zielmarkt is '036' (Australia) und &lt;taxTypeCode&gt; is gleich 'WET' (Wine Equalisation Tax), dann &lt;percentageOfAlcoholByVolume&gt; muss befüllt sein.</value>
   </data>
   <data name="530" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Anzahl von Einheiten pro Layer in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; is verwendet, dann Anzahl von Layers pro Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Anzahl von Einheiten pro Layer in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; is verwendet, dann Anzahl von Layers pro Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; muss verwendet werden.</value>
   </data>
   <data name="531" xml:space="preserve">
     <value>&lt;functionalName&gt; darf nicht enthalten der gleiche text als &lt;brandName&gt; oder &lt;descriptiveSizeDimension&gt; wenn IsTradeItemAConsumerUnit is gleich 'TRUE'.</value>
@@ -376,7 +376,7 @@
     <value>&lt;lastChangeDateTime&gt; für ein Handelsartikel darf nicht be ein Datum in der future.</value>
   </data>
   <data name="575" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist nicht in GPC Segment '51000000' (Healthcare) und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt;&gt; must start mit '0'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist nicht in GPC Segment '51000000' (Healthcare) und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; must start mit '0'.</value>
   </data>
   <data name="576" xml:space="preserve">
     <value>Wenn &lt;isNonGTINLogisticUnitPackedIrregularly&gt; is gleich 'FALSE' dann Wert in &lt;quantityOfTradeItemsPerPallet&gt; muss sein gleich Wert in &lt;quantityOfLayersPerPallet&gt; multiplied von Wert in &lt;quantityOfTradeItemsPerPalletLayer&gt;</value>
@@ -394,7 +394,7 @@
     <value>Wenn &lt;targetMarket&gt; ist gleich '840' (US) und &lt;growingMethodCode&gt; ist gleich 'ORGANIC' dann &lt;organicClaimAgency&gt; und &lt;organicTradeItemCode&gt; MUST nicht leer sein.</value>
   </data>
   <data name="590" xml:space="preserve">
-    <value>&lt;tradeItemDescription&gt; is missing. Der long Beschreibung &lt;tradeItemDescription&gt; ist obligatorisch für &lt;&lt;&lt;targetMarketCountryCode&gt; Name&gt;&gt;.</value>
+    <value>&lt;tradeItemDescription&gt; is missing. Der long Beschreibung &lt;tradeItemDescription&gt; ist obligatorisch für &lt;targetMarketCountryCode&gt;.</value>
   </data>
   <data name="594" xml:space="preserve">
     <value>&lt;platformTypeCode&gt; is missing. Wenn &lt;targetMarketCountryCode&gt; ist nicht gleich ('036' (Australia) oder '554' (New Zealand) oder 752 (Sweden)) it ist obligatorisch zu angeben der Palette Typ &lt;platformTypeCode&gt; wenn &lt;tradeItemUnitDescriptor&gt; is gleich 'PALLET' oder 'MIXED_MODULE'.</value>
@@ -415,7 +415,7 @@
     <value>Wenn ein Handelsartikel hat ein child Handelsartikel &lt;tradeItemIdentification&gt;, der amount associated mit dieses child &lt;tradeItemIdentification&gt; muss sein informed und be größer als 0.</value>
   </data>
   <data name="618" xml:space="preserve">
-    <value>Wenn Zielmarkt ist gleich '250' (France)), Verbrauchereinheiten für alkoholische Getränke (Cls '50202200' , außer Brick '10000142') muss haben ein &lt;dutyFeeTaxTypeCode&gt; gleich '3001000002541' (Rights auf pre-mixes), '3001000002244' (Tax auf cider), '3001000002312' (Rights von alcohol) oder '3001000002329'.</value>
+    <value>Wenn Zielmarkt ist gleich '250' (France), Verbrauchereinheiten für alkoholische Getränke (Cls '50202200', außer Brick '10000142') muss haben ein &lt;dutyFeeTaxTypeCode&gt; gleich '3001000002541' (Rights auf pre-mixes), '3001000002244' (Tax auf cider), '3001000002312' (Rights von alcohol) oder '3001000002329'.</value>
   </data>
   <data name="631" xml:space="preserve">
     <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich '372' (Ireland) und if &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE' und ((&lt;gpcCategoryCode&gt; is in Klasse ('50202200' oder '50211500') und ist nicht gleich ('10000142', '10000143', '10000303' oder '10000584')) dann mindestens eine Iteration von AdditionalTradeItemClassification muss haben einen Wert mit &lt;additionalTradeItemClassificationSystemCode&gt; gleich '57'(REV).</value>
@@ -424,7 +424,7 @@
     <value>Wenn &lt;depositValueEffectiveDate&gt; ist befüllt dann &lt;returnablePackageDepositIdentification&gt; oder &lt;returnablePackageDepositAmount&gt; MUST be befüllt.</value>
   </data>
   <data name="633" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Consumer Produkt Variant Start &lt;Time&gt; &lt;consumerProductVariantStartEffectiveDateTime&gt; is verwendet, dann Consumer Produkt Variant Beschreibung &lt;consumerProductVariantDescription&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Consumer Produkt Variant Start &lt;Time&gt; &lt;consumerProductVariantStartEffectiveDateTime&gt; is verwendet, dann Consumer Produkt Variant Beschreibung &lt;consumerProductVariantDescription&gt; muss verwendet werden.</value>
   </data>
   <data name="634" xml:space="preserve">
     <value>&lt;returnableAssetCapacityContent&gt; is missing.</value>
@@ -481,7 +481,7 @@
     <value>&lt;targetMarket&gt; für ein untergeordneter Artikel kann nicht sein mehr specific than für der parent. Example: Wenn übergeordneter Artikel &lt;targetmarketCountryCode&gt; is gleich '840' dann untergeordneter Artikel cannot haben ein &lt;targetMarketSubdivisonCode&gt;.</value>
   </data>
   <data name="1025" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; dann &lt;packagingMaterialTypeCode&gt; und &lt;packagingMaterialCompositionQuantity&gt; sind verwendet in pairs. I.e. if one ist befüllt der anderer one muss befüllt sein, auch.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; dann &lt;packagingMaterialTypeCode&gt; und &lt;packagingMaterialCompositionQuantity&gt; sind verwendet in pairs. I.e. if one ist befüllt der anderer one muss befüllt sein, auch.</value>
   </data>
   <data name="1026" xml:space="preserve">
     <value>Der Einheit von Measure verwendet für der Handelsartikel Höhe &lt;height&gt; muss sein from gleiche measuring system (e.g. metric) across whole Hierarchie.</value>
@@ -508,7 +508,7 @@
     <value>Wenn &lt;fatPercentageInDryMatter&gt; ist nicht leer dann Wert muss sein größer als oder gleich 0 und kleiner als oder gleich 100.00.</value>
   </data>
   <data name="1038" xml:space="preserve">
-    <value>&lt;discontinuedDateTime&gt; und &lt;cancelledDateTime&gt; darf nicht verwendet werden simultaneously .</value>
+    <value>&lt;discontinuedDateTime&gt; und &lt;cancelledDateTime&gt; darf nicht verwendet werden simultaneously.</value>
   </data>
   <data name="1039" xml:space="preserve">
     <value>Wenn &lt;additionalTradeItemIdentificationTypeCode&gt; ist gleich 'GTIN_13' dann associated &lt;additionalTradeItemIdentification&gt; Wert muss haben 13 digits und muss haben ein gültig check digit.</value>
@@ -583,16 +583,16 @@
     <value>&lt;partyRoleCode&gt; ist obligatorisch in &lt;tradeItem&gt;/PartyInRole Klasse.</value>
   </data>
   <data name="1090" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Produkt Yield &lt;productYield&gt; is verwendet, dann Preparation Typ Code &lt;preparationTypeCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Produkt Yield &lt;productYield&gt; is verwendet, dann Preparation Typ Code &lt;preparationTypeCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1091" xml:space="preserve">
     <value>Wenn &lt;productYield&gt; ist nicht leer dann &lt;productYieldTypeCode&gt; darf nicht leer sein.</value>
   </data>
   <data name="1092" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Nonphysical Einheit Indicator &lt;isTradeItemNonphysical&gt; ist gleich 'FALSE' oder ist nicht verwendet, und Service Indicator &lt;isTradeItemAService&gt; ist gleich 'FALSE' oder ist nicht verwendet, und eine Iteration von Trade Channel Code &lt;tradeItemTradeChannelCode&gt; ist gleich zu ('CASH_AND_CARRY', 'CONSIGNMENT', 'CONVENIENCE', 'DRUG_STORE', 'FOOD_SERVICE', 'GROCERY', 'ONLINE' oder 'UNSPECIFIED') oder Trade Channel Code ist nicht verwendet, dann Despatch Einheit Indicator &lt;isTradeItemADespatchUnit&gt; muss gleich sein 'TRUE' für mindestens ein GTIN (Globale Handelsartikelnummer) in der Hierarchie.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Nonphysical Einheit Indicator &lt;isTradeItemNonphysical&gt; ist gleich 'FALSE' oder ist nicht verwendet, und Service Indicator &lt;isTradeItemAService&gt; ist gleich 'FALSE' oder ist nicht verwendet, und eine Iteration von Trade Channel Code &lt;tradeItemTradeChannelCode&gt; ist gleich zu ('CASH_AND_CARRY', 'CONSIGNMENT', 'CONVENIENCE', 'DRUG_STORE', 'FOOD_SERVICE', 'GROCERY', 'ONLINE' oder 'UNSPECIFIED') oder Trade Channel Code ist nicht verwendet, dann Despatch Einheit Indicator &lt;isTradeItemADespatchUnit&gt; muss gleich sein 'TRUE' für mindestens ein GTIN (Globale Handelsartikelnummer) in der Hierarchie.</value>
   </data>
   <data name="1093" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und für der gleiche Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; der range von &lt;dutyFeeTaxEffectiveStartDateTime&gt; und &lt;dutyFeeTaxEffectiveEndDateTime&gt; SHALL NOT overlap.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und für der gleiche Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; der range von &lt;dutyFeeTaxEffectiveStartDateTime&gt; und &lt;dutyFeeTaxEffectiveEndDateTime&gt; SHALL NOT overlap.</value>
   </data>
   <data name="1102" xml:space="preserve">
     <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich ('249' (France) oder '250' (France)) und &lt;gpcCategoryCode&gt; ist gleich '10000424' und &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE' dann mindestens eine Iteration von &lt;priceComparisonContentTypeCode&gt; muss gleich sein 'PER_KILOGRAM' oder 'PER_LITRE'.</value>
@@ -601,7 +601,7 @@
     <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich '250' (France) und &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE' und if &lt;priceComparisonContentTypeCode&gt; ist gleich 'PER_PIECE' dann &lt;priceComparisonMeasurement&gt; muss sein an Integer.</value>
   </data>
   <data name="1105" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if &lt;priceComparisonMeasurement&gt; is verwendet, dann &lt;priceComparisonMeasurement&gt; muss sein größer als 0.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if &lt;priceComparisonMeasurement&gt; is verwendet, dann &lt;priceComparisonMeasurement&gt; muss sein größer als 0.</value>
   </data>
   <data name="1107" xml:space="preserve">
     <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich ('249' (France) oder '250' (France)) und &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' und &lt;platformTypeCode&gt; ist gleich '10', dann Tiefe muss sein zwischen und including ('800 MMT' oder '31.50 IN') und ('1600 MMT' oder '63 IN') und Breite muss sein zwischen und including (' '600 MMT' oder '23.62 IN') und ('1200 MMT' oder '47.24 IN').</value>
@@ -682,7 +682,7 @@
     <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich ('249' (France) oder '250' (France)) und &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' und &lt;platformTypeCode&gt; ist gleich '12', dann &lt;depth&gt; muss sein zwischen und including ('1200 MMT' oder '47.24 IN') und ('2400 MMT' oder '94.48 IN'), und &lt;width&gt; muss sein zwischen und including ('1000 MMT' oder '39.37 IN') und ('2000 MMT' oder '78.74 IN').</value>
   </data>
   <data name="1141" xml:space="preserve">
-    <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich ('249' (France) oder '250' (France)) und &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' und &lt;platformTypeCode&gt; ist gleich '11',</value>
+    <value>Wenn &lt;targetMarketCountryCode&gt; ist gleich ('249' (France) oder '250' (France)) und &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' und &lt;platformTypeCode&gt; ist gleich '11'</value>
   </data>
   <data name="1160" xml:space="preserve">
     <value>&lt;descriptionShort&gt; is missing. Wenn &lt;targetMarketCountryCode&gt; ist gleich ('249' (France) oder '250' (France)) und &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE' dann &lt;descriptionShort&gt; muss verwendet werden.</value>
@@ -742,7 +742,7 @@
     <value>Wenn &lt;tradeItemUnitDescriptorCode&gt; is gleich 'MIXED_MODULE' und übergeordneter Artikel exists dann übergeordneter Artikel &lt;tradeItemUnitDescriptorCode&gt; muss gleich sein 'TRANSPORT_LOAD', 'PALLET', oder 'MIXED_MODULE'.</value>
   </data>
   <data name="1278" xml:space="preserve">
-    <value>Wenn &lt;tradeItemUnitDescriptorCode&gt; is gleich 'MIXED_MODULE' dann untergeordneter Artikel &lt;tradeItemUnitDescriptorCode&gt; darf nicht gleich sein 'TRANSPORT_LOAD' .</value>
+    <value>Wenn &lt;tradeItemUnitDescriptorCode&gt; is gleich 'MIXED_MODULE' dann untergeordneter Artikel &lt;tradeItemUnitDescriptorCode&gt; darf nicht gleich sein 'TRANSPORT_LOAD'.</value>
   </data>
   <data name="1279" xml:space="preserve">
     <value>Wenn &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'DISPLAY_SHIPPER' dann übergeordneter Artikel &lt;tradeItemUnitDescriptorCode&gt; darf nicht gleich sein 'BASE_UNIT_OR_EACH' oder 'PACK_OR_INNER_PACK'.</value>
@@ -847,7 +847,7 @@
     <value>Für Zielmarkt '840' (United States), beide &lt;creditableIngredientTypeCode&gt; und.</value>
   </data>
   <data name="1345" xml:space="preserve">
-    <value>Für Zielmarkt '840' (United States),</value>
+    <value>Für Zielmarkt '840' (United States)</value>
   </data>
   <data name="1346" xml:space="preserve">
     <value>&lt;creditableAmount&gt; is missing. Für Zielmarkt '840' (United States) &lt;creditableAmount&gt; muss verwendet werden wenn &lt;creditableIngredientDescription&gt; is verwendet.</value>
@@ -892,7 +892,7 @@
     <value>Es muss one Iteration für Sprache 'Swedish'.</value>
   </data>
   <data name="1440" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Nutritional Preparation Code &lt;preparationStateCode&gt; is verwendet, dann Nutrient Code &lt;nutrientTypeCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Nutritional Preparation Code &lt;preparationStateCode&gt; is verwendet, dann Nutrient Code &lt;nutrientTypeCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1445" xml:space="preserve">
     <value>Nutrient Quantity &lt;quantityContained&gt; oder Daily Nutrient Value Percentage &lt;dailyValueIntakePercent&gt; is missing. Wenn Nutrient Code &lt;nutrientTypeCode&gt; is verwendet, dann Nutrient Quantity &lt;quantityContained&gt; oder Daily Nutrient Value Percentage &lt;dailyValueIntakePercent&gt; muss verwendet werden.</value>
@@ -913,7 +913,7 @@
     <value>&lt;consumerWarningTypeCode&gt; is missing.</value>
   </data>
   <data name="1548" xml:space="preserve">
-    <value>&lt;flashPointTemperature&gt; , oder &lt;flashPointTemperatureLowerValue&gt; oder &lt;flashPointTemperatureUpperValue&gt; is/sind missing.</value>
+    <value>&lt;flashPointTemperature&gt;, oder &lt;flashPointTemperatureLowerValue&gt; oder &lt;flashPointTemperatureUpperValue&gt; is/sind missing.</value>
   </data>
   <data name="1550" xml:space="preserve">
     <value>Too many Iterationen von Klasse GDSNTradeItemClassificationAttributeType.</value>
@@ -937,13 +937,13 @@
     <value>Organic Claim Agency Code &lt;organicClaimAgencyCode&gt; is missing.</value>
   </data>
   <data name="1570" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, der Growing Method Code &lt;growingMethodCode&gt; &lt;&lt;growingMethodCode&gt;&gt; ist nicht anwendbar zu fresh fruits und vegetables für Global Produkt Kategorie Code &lt;gpcCategoryCode&gt;: &lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, der Growing Method Code &lt;growingMethodCode&gt; &lt;&lt;growingMethodCode&gt;&gt; ist nicht anwendbar zu fresh fruits und vegetables für Global Produkt Kategorie Code &lt;gpcCategoryCode&gt;: &lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;.</value>
   </data>
   <data name="1585" xml:space="preserve">
     <value>Keine Iteration von &lt;catchMethodCode&gt; is ein numerisch Code.</value>
   </data>
   <data name="1601" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Net Content &lt;netContent&gt; ist obligatorisch auf Verbrauchereinheiten (Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich zu 'TRUE').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Net Content &lt;netContent&gt; ist obligatorisch auf Verbrauchereinheiten (Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich zu 'TRUE').</value>
   </data>
   <data name="1604" xml:space="preserve">
     <value>&lt;numberOfPiecesInSet&gt; und/oder &lt;totalNumberOfComponents&gt; is/sind nicht verwendet.</value>
@@ -985,25 +985,25 @@
     <value>Same &lt;feedType&gt; exists multiple times für der gleiche Handelsartikel.</value>
   </data>
   <data name="1641" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Nutrient Quantity &lt;quantityContained&gt; von starch ('STARCH') muss sein kleiner als oder gleich der Nutrient Quantity &lt;quantityContained&gt; von carbohydrates ('CHOAVL').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Nutrient Quantity &lt;quantityContained&gt; von starch ('STARCH') muss sein kleiner als oder gleich der Nutrient Quantity &lt;quantityContained&gt; von carbohydrates ('CHOAVL').</value>
   </data>
   <data name="1642" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Nutrient Quantity &lt;quantityContained&gt; von polyols (Carbohydrates von welcher multiple alcohols) ('POLYL') muss sein kleiner als oder gleich der Nutrient Quantity &lt;quantityContained&gt; von carbohydrates ('CHOAVL').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Nutrient Quantity &lt;quantityContained&gt; von polyols (Carbohydrates von welcher multiple alcohols) ('POLYL') muss sein kleiner als oder gleich der Nutrient Quantity &lt;quantityContained&gt; von carbohydrates ('CHOAVL').</value>
   </data>
   <data name="1643" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Nutrient Quantity &lt;quantityContained&gt; von gesamt saturated fatty acids ('FASAT') muss sein kleiner als oder gleich der Nutrient Quantity &lt;quantityContained&gt; von gesamt fat ('FAT').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Nutrient Quantity &lt;quantityContained&gt; von gesamt saturated fatty acids ('FASAT') muss sein kleiner als oder gleich der Nutrient Quantity &lt;quantityContained&gt; von gesamt fat ('FAT').</value>
   </data>
   <data name="1644" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Nutrient Quantity &lt;quantityContained&gt; von gesamt monounsaturated-cis fatty acids ('FAMSCIS') muss sein smaller than oder gleich der Nutrient Quantity &lt;quantityContained&gt; von gesamt fat ('FAT').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Nutrient Quantity &lt;quantityContained&gt; von gesamt monounsaturated-cis fatty acids ('FAMSCIS') muss sein smaller than oder gleich der Nutrient Quantity &lt;quantityContained&gt; von gesamt fat ('FAT').</value>
   </data>
   <data name="1645" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Nutrient Quantity &lt;quantityContained&gt; von gesamt polyunsaturated-cis fatty acids ('FAPUCIS') muss sein smaller than oder gleich der Nutrient Quantity &lt;quantityContained&gt; von gesamt fat ('FAT').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Nutrient Quantity &lt;quantityContained&gt; von gesamt polyunsaturated-cis fatty acids ('FAPUCIS') muss sein smaller than oder gleich der Nutrient Quantity &lt;quantityContained&gt; von gesamt fat ('FAT').</value>
   </data>
   <data name="1646" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; muss nur be verwendet für GTIN identified Paletten.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; muss nur be verwendet für GTIN identified Paletten.</value>
   </data>
   <data name="1647" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; muss nur be verwendet für GTIN identified Paletten.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; muss nur be verwendet für GTIN identified Paletten.</value>
   </data>
   <data name="1648" xml:space="preserve">
     <value>Attribute &lt;quantityOfTradeItemsPerPalletLayer&gt; muss nur be verwendet für non-GTIN logistic Einheiten.</value>
@@ -1015,7 +1015,7 @@
     <value>Attribute &lt;quantityOfLayersPerPallet&gt; muss nur be verwendet für non-GTIN logistic Einheiten.</value>
   </data>
   <data name="1651" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET', dann kein Attribute in &lt;nonGTINLogisticsUnitInformation&gt; Klasse muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET', dann kein Attribute in &lt;nonGTINLogisticsUnitInformation&gt; Klasse muss verwendet werden.</value>
   </data>
   <data name="1652" xml:space="preserve">
     <value>Wenn &lt;temperatureQualifierCode&gt; ist gleich 'STORAGE_HANDLING', dann &lt;maximumTemperature&gt; SHALL be verwendet für jeder context anderer than 'DP007' oder 'DP008'.</value>
@@ -1024,7 +1024,7 @@
     <value>Wenn &lt;temperatureQualifierCode&gt; ist gleich 'STORAGE_HANDLING', dann &lt;minimumTemperature&gt; SHALL be verwendet für jeder context anderer than 'DP007' oder 'DP008'.</value>
   </data>
   <data name="1654" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Daily Nutrient Value Percentage &lt;dailyValueIntakePercent&gt; is verwendet für jeder von der 7 main Nährstoffe listed in Article 30 (1) von EU Regulation 1169/2011 (energy (ENER-), fat (FAT), saturates (FASAT), carbohydrate (CHOAVL), sugars (SUGAR-), protein (PRO-), salt (SALTEQ)), dann Daily Intake Reference &lt;dailyValueIntakeReference&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Daily Nutrient Value Percentage &lt;dailyValueIntakePercent&gt; is verwendet für jeder von der 7 main Nährstoffe listed in Article 30 (1) von EU Regulation 1169/2011 (energy (ENER-), fat (FAT), saturates (FASAT), carbohydrate (CHOAVL), sugars (SUGAR-), protein (PRO-), salt (SALTEQ)), dann Daily Intake Reference &lt;dailyValueIntakeReference&gt; muss verwendet werden.</value>
   </data>
   <data name="1655" xml:space="preserve">
     <value>According zu der GS1 Messung Regeln, Tiefe muss sein größer als oder gleich Breite wenn Handelsartikel ist nicht ein consumer (POS) Einheit.</value>
@@ -1045,13 +1045,13 @@
     <value>Wenn multiple Verpackung marked label accreditation Codes sind angegeben, they SHALL be unterschiedlich.</value>
   </data>
   <data name="1662" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich = 'TRUE' und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; = '10000159' (Beer), dann Degree Von Original Wort &lt;degreeOfOriginalWort&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich = 'TRUE' und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; = '10000159' (Beer), dann Degree Von Original Wort &lt;degreeOfOriginalWort&gt; muss verwendet werden.</value>
   </data>
   <data name="1663" xml:space="preserve">
     <value>Wenn &lt;numberOfServingsPerPackage&gt; is verwendet, it SHALL be größer als null.</value>
   </data>
   <data name="1665" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Nutrient Quantity &lt;quantityContained&gt; von sugars ('SUGAR-') muss sein kleiner als oder gleich der Nutrient Quantity &lt;quantityContained&gt; von carbohydrates ('CHOAVL').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Nutrient Quantity &lt;quantityContained&gt; von sugars ('SUGAR-') muss sein kleiner als oder gleich der Nutrient Quantity &lt;quantityContained&gt; von carbohydrates ('CHOAVL').</value>
   </data>
   <data name="1669" xml:space="preserve">
     <value>&lt;componentIdentification&gt; muss sein ein gültig GTIN-14 if der &lt;identificationSchemeAgencyCode&gt; ist gleich 'GTIN_14'.</value>
@@ -1102,7 +1102,7 @@
     <value>Bei least one instance von import classification Typ Code muss verwendet werden mit Code 'INTRASTAT' für target markets Belgium, Netherlands und Luxembourg.</value>
   </data>
   <data name="1693" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Customs Classification Typ Code &lt;importClassificationTypeCode&gt; ist gleich 'INTRASTAT', dann Customs Classification Value &lt;importClassificationValue&gt; muss haben exactly 8 digits.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Customs Classification Typ Code &lt;importClassificationTypeCode&gt; ist gleich 'INTRASTAT', dann Customs Classification Value &lt;importClassificationValue&gt; muss haben exactly 8 digits.</value>
   </data>
   <data name="1694" xml:space="preserve">
     <value>Wenn Attribut XY (jeder Attribut von Klasse &lt;microbiologicalInformation&gt;) ist angegeben, therefore &lt;microbiologicalOrganismCode&gt; SHALL be befüllt.</value>
@@ -1138,7 +1138,7 @@
     <value>Der &lt;dietTypeSubcodeCode&gt; ist nicht gültig für ein Vegetarian diet.</value>
   </data>
   <data name="1707" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, der &lt;dietTypeSubCode&gt; &lt;&lt;dietTypeSubCode&gt;&gt; ist nicht gültig für ein Vegetarian diet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, der &lt;dietTypeSubCode&gt; &lt;&lt;dietTypeSubCode&gt;&gt; ist nicht gültig für ein Vegetarian diet.</value>
   </data>
   <data name="1708" xml:space="preserve">
     <value>Der &lt;dietTypeSubcodeCode&gt; ist nicht gültig für ein Kosher diet.</value>
@@ -1153,13 +1153,13 @@
     <value>Für der French Zielmarkt, der Wert 'UNSPECIFIED' ist nicht accepted für {specifiy der Attribut} using der NonBinaryLogicEnumeration Daten Typ.</value>
   </data>
   <data name="1717" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Nutrient Detail sub-Klasse is verwendet, dann Nutrient Code &lt;nutrientTypeCode&gt; muss sein eindeutig innerhalb der gleiche Nutrient Header Klasse.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Nutrient Detail sub-Klasse is verwendet, dann Nutrient Code &lt;nutrientTypeCode&gt; muss sein eindeutig innerhalb der gleiche Nutrient Header Klasse.</value>
   </data>
   <data name="1718" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, der FAO catch zones 27 (Atlantic, Northeast) und 37 (Mediterranean und Black Sea) sind nicht gültig, please verwenden der sub areas oder divisions für diese zones.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, der FAO catch zones 27 (Atlantic, Northeast) und 37 (Mediterranean und Black Sea) sind nicht gültig, please verwenden der sub areas oder divisions für diese zones.</value>
   </data>
   <data name="1719" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, der FAO catch zones 27 (Atlantic, Northeast) und 37 (Mediterranean und Black Sea) sind nicht gültig, please verwenden der sub areas oder divisions für diese zones.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, der FAO catch zones 27 (Atlantic, Northeast) und 37 (Mediterranean und Black Sea) sind nicht gültig, please verwenden der sub areas oder divisions für diese zones.</value>
   </data>
   <data name="1720" xml:space="preserve">
     <value>One oder mehr von der GTINs in jeder Hierarchie muss sein marked als an INVOICE UNIT.</value>
@@ -1171,25 +1171,25 @@
     <value>&lt;additionalTradeItemClassificationCodeValue&gt; is incorrect. Für &lt;additionalTradeItemClassificationSystemCode&gt; '85' muss sein one von diese Werte ('EU_CLASS_I', 'EU_CLASS_IIA', 'EU_CLASS_IIB', 'EU_CLASS_III', 'IVDD_ANNEX_II_LIST_A', 'IVDD_ANNEX_II_LIST_B', 'IVDD_DEVICES_SELF_TESTING', 'IVDD_GENERAL', 'AIMDD')</value>
   </data>
   <data name="1739" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if jeder von der folgende Attribute ist angegeben, dann alle three muss angegeben werden: Nutrient Code &lt;nutrientTypeCode&gt;, Nutrient Quantity &lt;quantityContained&gt;, Nutrient Value Precision Code &lt;measurementPrecisionCode&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if jeder von der folgende Attribute ist angegeben, dann alle three muss angegeben werden: Nutrient Code &lt;nutrientTypeCode&gt;, Nutrient Quantity &lt;quantityContained&gt;, Nutrient Value Precision Code &lt;measurementPrecisionCode&gt;.</value>
   </data>
   <data name="1740" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' und Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; ist gleich 'FALSE' oder ist nicht verwendet, dann Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; muss verwendet werden und größer als null.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' und Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; ist gleich 'FALSE' oder ist nicht verwendet, dann Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; muss verwendet werden und größer als null.</value>
   </data>
   <data name="1741" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if batteries sind erforderlich für der Handelsartikel (&lt;areBatteriesRequired&gt; = 'TRUE'), dann &lt;areBatteriesIncluded&gt; muss angegeben werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if batteries sind erforderlich für der Handelsartikel (&lt;areBatteriesRequired&gt; = 'TRUE'), dann &lt;areBatteriesIncluded&gt; muss angegeben werden.</value>
   </data>
   <data name="1742" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if jeder von der Attribute from Klasse Packaging ist angegeben, dann Attribut &lt;packagingTypeCode&gt; muss angegeben werden (in jeder Iteration von der Klasse).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if jeder von der Attribute from Klasse Packaging ist angegeben, dann Attribut &lt;packagingTypeCode&gt; muss angegeben werden (in jeder Iteration von der Klasse).</value>
   </data>
   <data name="1743" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if jeder von der folgende Attribute ist angegeben, dann &lt;platformTypeCode&gt; muss angegeben werden: &lt;quantityOfTradeItemsPerPallet&gt;, &lt;quantityOfLayersPerPallet&gt; oder &lt;quantityOfTradeItemsPerPalletLayer&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if jeder von der folgende Attribute ist angegeben, dann &lt;platformTypeCode&gt; muss angegeben werden: &lt;quantityOfTradeItemsPerPallet&gt;, &lt;quantityOfLayersPerPallet&gt; oder &lt;quantityOfTradeItemsPerPalletLayer&gt;.</value>
   </data>
   <data name="1744" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist gleich &lt;&lt;gpcCategoryCode&gt;&gt; &lt;&lt;gpcCategoryName&gt;&gt;, Regulated Produkt Name &lt;regulatedProductName&gt; muss angegeben werden für alle Verbrauchereinheiten (&lt;isTradeItemAConsumerUnit&gt; ist gleich zu 'TRUE'). Wenn der Produkt hat ein legal exception und does nicht haben ein Regulated Produkt Name, please provide ein copy von Produkt Typ Beschreibung &lt;functionalName&gt; als der Regulated Produkt Name.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist gleich &lt;&lt;gpcCategoryCode&gt;&gt; &lt;&lt;gpcCategoryName&gt;&gt;, Regulated Produkt Name &lt;regulatedProductName&gt; muss angegeben werden für alle Verbrauchereinheiten (&lt;isTradeItemAConsumerUnit&gt; ist gleich zu 'TRUE'). Wenn der Produkt hat ein legal exception und does nicht haben ein Regulated Produkt Name, please provide ein copy von Produkt Typ Beschreibung &lt;functionalName&gt; als der Regulated Produkt Name.</value>
   </data>
   <data name="1745" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Stacking Factor Typ Code &lt;stackingFactorTypeCode&gt; und Stacking Factor &lt;stackingFactor&gt; muss verwendet werden together in der gleiche Iteration.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Stacking Factor Typ Code &lt;stackingFactorTypeCode&gt; und Stacking Factor &lt;stackingFactor&gt; muss verwendet werden together in der gleiche Iteration.</value>
   </data>
   <data name="1748" xml:space="preserve">
     <value>Zero Suppressed GTINs angegeben als ein GS1 Trade Key muss begin mit a '0'.</value>
@@ -1201,10 +1201,10 @@
     <value>Multiple Werte für &lt;bitternessOfBeerMeasurement&gt; für jeder Messung sind nicht erlaubt.</value>
   </data>
   <data name="1753" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Nutritional Preparation Code &lt;preparationStateCode&gt; muss gleich sein 'PREPARED' oder 'UNPREPARED'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Nutritional Preparation Code &lt;preparationStateCode&gt; muss gleich sein 'PREPARED' oder 'UNPREPARED'.</value>
   </data>
   <data name="1754" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; Nutrient Value Precision Code &lt;measurementPrecisionCode&gt; muss sein 'APPROXIMATELY' oder 'LESS_THAN'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; Nutrient Value Precision Code &lt;measurementPrecisionCode&gt; muss sein 'APPROXIMATELY' oder 'LESS_THAN'.</value>
   </data>
   <data name="1755" xml:space="preserve">
     <value>Der Wert für Ebene von containment Code ist nicht gültig; der erlaubt Werte sind 'CONTAINS', 'FREE_FROM', 'MAY_CONTAIN' für der Zielmarkt.</value>
@@ -1258,7 +1258,7 @@
     <value>Der amount von Nährstofftypcode 'NA' multiplied von 2.5 darf nicht deviate mehr als 10% from der amount von Nährstofftypcode SALTEQ mit identical Maßeinheit im Falle von Verbrauchereinheiten und ein &lt;measurementPrecisionCode&gt; nicht gleich 'LESS_THAN' für Zielmarkt Netherlands.</value>
   </data>
   <data name="1772" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; is in GPC Segment '92000000' (&lt;Haulage&gt; Containers), dann Packaging Marked Returnable Indicator &lt;isPackagingMarkedReturnable&gt; darf nicht sein 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; is in GPC Segment '92000000' (&lt;Haulage&gt; Containers), dann Packaging Marked Returnable Indicator &lt;isPackagingMarkedReturnable&gt; darf nicht sein 'TRUE'.</value>
   </data>
   <data name="1773" xml:space="preserve">
     <value>Ist Verpackung marked returnable muss befüllt sein für der Zielmarkt im Falle von packed fresh fruits und vegetables.</value>
@@ -1318,7 +1318,7 @@
     <value>&lt;nutritionalScore&gt; darf nicht verwendet werden, if &lt;nutritionalProgramCode&gt; ist gleich '8' (Nutri-Score) und &lt;nutritionalProgramStatusCode&gt; ist gleich 'NOT_REGISTERED'.</value>
   </data>
   <data name="1800" xml:space="preserve">
-    <value>Invalid Messung Einheit für &lt;alcoholicBeverageSugarContent&gt;: &lt;&lt;alcoholicBeverageSugarContent&gt;/@&lt;measurementUnitCode&gt;&gt;. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, &lt;alcoholicBeverageSugarContent&gt; muss haben 'GL' (gram pro litre) als der Messung Einheit.</value>
+    <value>Invalid Messung Einheit für &lt;alcoholicBeverageSugarContent&gt;: &lt;alcoholicBeverageSugarContent/@measurementUnitCode&gt;. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, &lt;alcoholicBeverageSugarContent&gt; muss haben 'GL' (gram pro litre) als der Messung Einheit.</value>
   </data>
   <data name="1801" xml:space="preserve">
     <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;'&lt;targetMarketCountryCode&gt; Land Name&gt;, eine Iteration von Feeding Instructions &lt;feedingInstructions&gt; muss sein supplied in Swedish.</value>
@@ -1330,13 +1330,13 @@
     <value>One oder beide von &lt;targetConsumerMinimumUsage&gt; oder &lt;targetConsumerMaximumUsage&gt; is missing. You must supply one oder beide von diese Attribute if you verwenden &lt;targetConsumerUsageTypeCode&gt;.</value>
   </data>
   <data name="1804" xml:space="preserve">
-    <value>Missing Consumer Sales Condition Code &lt;consumerSalesConditionCode&gt;. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, der Consumer Sales Condition Code ist erforderlich für tobacco products.</value>
+    <value>Missing Consumer Sales Condition Code &lt;consumerSalesConditionCode&gt;. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, der Consumer Sales Condition Code ist erforderlich für tobacco products.</value>
   </data>
   <data name="1806" xml:space="preserve">
     <value>&lt;tradeItemMarketingMessage&gt; is missing. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;'&lt;targetMarketCountryCode&gt; Land Name&gt;, it ist nicht permitted zu verwenden &lt;shortTradeItemMarketingMessage&gt; ohne auch using &lt;tradeItemMarketingMessage&gt;.</value>
   </data>
   <data name="1807" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, it ist nicht permitted zu add oder remove Werte in Allergen Typ Code &lt;allergenTypeCode&gt; using a 'CHANGE_BY_REFRESH' Document Command. Changes zu allergens require ein new GTIN.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, it ist nicht permitted zu add oder remove Werte in Allergen Typ Code &lt;allergenTypeCode&gt; using a 'CHANGE_BY_REFRESH' Document Command. Changes zu allergens require ein new GTIN.</value>
   </data>
   <data name="1808" xml:space="preserve">
     <value>&lt;packagingRawMaterialCode&gt; is missing. Wenn &lt;packagingRawMaterialContentPercentage&gt; is verwendet, &lt;packagingRawMaterialCode&gt; must auch be verwendet.</value>
@@ -1345,10 +1345,10 @@
     <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;'&lt;targetMarketCountryCode&gt; Land Name&gt;, &lt;sizeTypeCode&gt; oder &lt;sizeDimension&gt; is missing. Wenn one is verwendet, der anderer muss verwendet werden.</value>
   </data>
   <data name="1810" xml:space="preserve">
-    <value>Invalid meaurement Einheit für &lt;colourTemperature&gt;: &lt;&lt;colourTemperature&gt;/@&lt;measurementUnitCode&gt;&gt;. &lt;colourTemperature&gt; muss haben 'KEL' (Kelvin) als der Messung Einheit.</value>
+    <value>Invalid meaurement Einheit für &lt;colourTemperature&gt;: &lt;colourTemperature/@measurementUnitCode&gt;. &lt;colourTemperature&gt; muss haben 'KEL' (Kelvin) als der Messung Einheit.</value>
   </data>
   <data name="1811" xml:space="preserve">
-    <value>Invalid Meaurement Einheit für &lt;lightOutput&gt;: &lt;&lt;lightOutput&gt;/@&lt;measurementUnitCode&gt;&gt;. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, &lt;lightOutput&gt; muss haben 'B60' (Lumens pro square metre) oder 'LUX' (Lux) als der Messung Einheit.</value>
+    <value>Invalid Meaurement Einheit für &lt;lightOutput&gt;: &lt;lightOutput/@measurementUnitCode&gt;. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, &lt;lightOutput&gt; muss haben 'B60' (Lumens pro square metre) oder 'LUX' (Lux) als der Messung Einheit.</value>
   </data>
   <data name="1812" xml:space="preserve">
     <value>Nutrient Basis &lt;nutrientBasisQuantity&gt; und Nutrient Basis Typ Code &lt;nutrientBasisQuantityTypeCode&gt; is missing. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;'&lt;targetMarketCountryCode&gt; Land Name&gt;, if Nutrient Code &lt;nutrientTypeCode&gt; is verwendet dann beide Nutrient Basis &lt;nutrientBasisQuantity&gt; und Nutrient Basis Typ Code &lt;nutrientBasisQuantityTypeCode&gt; must auch be verwendet.</value>
@@ -1363,19 +1363,19 @@
     <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;'&lt;targetMarketCountryCode&gt; Land Name&gt;, eine Iteration von Feed Additive Statement &lt;feedAdditiveStatement&gt; muss sein supplied in Swedish.</value>
   </data>
   <data name="1819" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und der gleiche Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; kann nicht sein repeated ohne having ein corresponding start Datum (&lt;dutyFeeTaxEffectiveStartDateTime&gt; ).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und der gleiche Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; kann nicht sein repeated ohne having ein corresponding start Datum (&lt;dutyFeeTaxEffectiveStartDateTime&gt; ).</value>
   </data>
   <data name="1820" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und der gleiche Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; kann nicht sein repeated ohne having ein corresponding end Datum &lt;dutyFeeTaxEffectiveEndDateTime&gt; außer für der letzte instance.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und der gleiche Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; kann nicht sein repeated ohne having ein corresponding end Datum &lt;dutyFeeTaxEffectiveEndDateTime&gt; außer für der letzte instance.</value>
   </data>
   <data name="1821" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Customs Classification Typ Code &lt;importClassificationTypeCode&gt; ist gleich 'CUSTOMS_TARIFF_NUMBER' dann der corresponding Customs Classification Value &lt;importClassificationValue&gt; muss haben einen Wert 8 zu 13 numerisch Zeichen long.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Customs Classification Typ Code &lt;importClassificationTypeCode&gt; ist gleich 'CUSTOMS_TARIFF_NUMBER' dann der corresponding Customs Classification Value &lt;importClassificationValue&gt; muss haben einen Wert 8 zu 13 numerisch Zeichen long.</value>
   </data>
   <data name="1823" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Pallet Typ Code &lt;platformTypeCode&gt; is verwendet, it ist obligatorisch zu provide ein gültig Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; für ein Palette.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Pallet Typ Code &lt;platformTypeCode&gt; is verwendet, it ist obligatorisch zu provide ein gültig Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; für ein Palette.</value>
   </data>
   <data name="1830" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, ungültig verwenden von &lt;dutyFeeTaxRate&gt;. Values cannot differ across der Handelsartikel Hierarchie wenn verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, ungültig verwenden von &lt;dutyFeeTaxRate&gt;. Values cannot differ across der Handelsartikel Hierarchie wenn verwendet.</value>
   </data>
   <data name="1834" xml:space="preserve">
     <value>Wenn GTIN für Point von Sale &lt;gs1TradeItemIdentificationKeyValue&gt; oder GTIN für Point von Sale Typ Code &lt;gs1TradeItemIdentificationKeyCode&gt; is verwendet, dann beide muss verwendet werden.</value>
@@ -1405,19 +1405,19 @@
     <value>Wenn Fish Production Method Code &lt;productionMethodForFishAndSeafoodCode&gt; ist gleich 'INLAND_FISHERY', dann Catch Area Code &lt;catchAreaCode&gt; &lt;&lt;catchAreaCode&gt;&gt; SHALL be one von der inland water Codes ('01', '02', '03', '04', '05', '06', '07, oder '08').</value>
   </data>
   <data name="1847" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, &lt;priceComparisonMeasurement&gt; SHALL be angegeben mit der folgende Einheiten von measures: kilogram, litre oder piece.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, &lt;priceComparisonMeasurement&gt; SHALL be angegeben mit der folgende Einheiten von measures: kilogram, litre oder piece.</value>
   </data>
   <data name="1848" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, beide &lt;seasonalAvailabilityEndDateTime&gt; und &lt;seasonalAvailabilityStartDateTime&gt; SHALL be verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, beide &lt;seasonalAvailabilityEndDateTime&gt; und &lt;seasonalAvailabilityStartDateTime&gt; SHALL be verwendet.</value>
   </data>
   <data name="1849" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Price Comparison Quantity &lt;priceComparisonMeasurement&gt; ist erforderlich für Lebensmittel Produkt(s).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Price Comparison Quantity &lt;priceComparisonMeasurement&gt; ist erforderlich für Lebensmittel Produkt(s).</value>
   </data>
   <data name="1850" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Handelsartikel Trade Channel Code &lt;tradeItemTradeChannelCode&gt; SHALL be verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Handelsartikel Trade Channel Code &lt;tradeItemTradeChannelCode&gt; SHALL be verwendet.</value>
   </data>
   <data name="1851" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Net Mass von Explosives SHALL be angegeben mit der Maßeinheit von kilogram (KGM).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Net Mass von Explosives SHALL be angegeben mit der Maßeinheit von kilogram (KGM).</value>
   </data>
   <data name="1852" xml:space="preserve">
     <value>Für &lt;initialSterilisationPriorToUseCode&gt; &lt;&lt;initialSterilisationPriorToUseCode&gt;&gt; und/oder &lt;manufacturerSpecifiedAcceptableResterilisationCode&gt; &lt;&lt;manufacturerSpecifiedAcceptableResterilisationCode&gt;&gt; darf nicht gleich sein NOT_STERILISED und is invalidly verwendet.</value>
@@ -1429,40 +1429,40 @@
     <value>Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; darf nicht leer sein.</value>
   </data>
   <data name="1856" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, dann GTIN (Globale Handelsartikelnummer) von der Contained Produkt &lt;ChildItem..gtin&gt; End Availability &lt;Time&gt; &lt;endAvailabiltyDateTime&gt; &lt;ChildItem..&lt;endAvailabiltyDateTime&gt;&gt; SHALL be equal oder after der GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; End Availability &lt;Time&gt; &lt;endAvailabiltyDateTime&gt; &lt;&lt;endAvailabiltyDateTime&gt;&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, dann GTIN (Globale Handelsartikelnummer) von der Contained Produkt &lt;ChildItem..gtin&gt; End Availability &lt;Time&gt; &lt;endAvailabiltyDateTime&gt; &lt;ChildItem..&lt;endAvailabiltyDateTime&gt; SHALL be equal oder after der GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; End Availability &lt;Time&gt; &lt;endAvailabiltyDateTime&gt; &lt;&lt;endAvailabiltyDateTime&gt;&gt;.</value>
   </data>
   <data name="1857" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Variable Einheit Indicator &lt;isTradeItemAVariableUnit&gt; ist gleich 'FALSE', dann Additional Produkt Identification Typ Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) SHALL NOT equal 'PLU'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Variable Einheit Indicator &lt;isTradeItemAVariableUnit&gt; ist gleich 'FALSE', dann Additional Produkt Identification Typ Code &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; SHALL NOT equal 'PLU'.</value>
   </data>
   <data name="1858" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Party Role Code &lt;partyRoleCode&gt; ist gleich &lt;partyRoleCode&gt;&gt;, dann Party In Role GLN (Global Location Number) &lt;gln&gt; und Party In Role Name &lt;partyName&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Party Role Code &lt;partyRoleCode&gt; ist gleich &lt;partyRoleCode&gt;, dann Party In Role GLN (Global Location Number) &lt;gln&gt; und Party In Role Name &lt;partyName&gt; muss verwendet werden.</value>
   </data>
   <data name="1859" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und GTIN (Globale Handelsartikelnummer) von der Contained Produkt &lt;ChildItem..gtin&gt; Promotional Einheit Indicator &lt;isTradeItemAPromotionalUnit&gt; ist gleich 'TRUE', dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; Promotional Einheit Indicator &lt;isTradeItemAPromotionalUnit&gt; muss gleich sein 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und GTIN (Globale Handelsartikelnummer) von der Contained Produkt &lt;ChildItem..gtin&gt; Promotional Einheit Indicator &lt;isTradeItemAPromotionalUnit&gt; ist gleich 'TRUE', dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; Promotional Einheit Indicator &lt;isTradeItemAPromotionalUnit&gt; muss gleich sein 'TRUE'.</value>
   </data>
   <data name="1860" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann Tax Amount &lt;dutyFeeTaxAmount&gt; muss sein größer als 0 (null).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann Tax Amount &lt;dutyFeeTaxAmount&gt; muss sein größer als 0 (null).</value>
   </data>
   <data name="1861" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Despatch Einheit Indicator &lt;isTradeItemADespatchUnit&gt; ist gleich 'TRUE', dann Packaging Typ Code &lt;packagingTypeCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Despatch Einheit Indicator &lt;isTradeItemADespatchUnit&gt; ist gleich 'TRUE', dann Packaging Typ Code &lt;packagingTypeCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1862" xml:space="preserve">
     <value>Wenn Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; ist gleich 'SUBSTITUTED', dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; und Referenziert GTIN &lt;gtin&gt; muss sein unterschiedlich.</value>
   </data>
   <data name="1863" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE' und Promotional Einheit Indicator &lt;isTradeItemAPromotionalUnit&gt; ist gleich 'TRUE', dann Promotion Typ Code &lt;promotionTypeCode&gt; und Non Promotional Handelsartikel GTIN &lt;gtin&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE' und Promotional Einheit Indicator &lt;isTradeItemAPromotionalUnit&gt; ist gleich 'TRUE', dann Promotion Typ Code &lt;promotionTypeCode&gt; und Non Promotional Handelsartikel GTIN &lt;gtin&gt; muss verwendet werden.</value>
   </data>
   <data name="1864" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Promotion Typ Code &lt;promotionTypeCode&gt; is verwendet, dann Promotional Einheit Indicator &lt;isTradeItemAPromotionalUnit&gt; muss gleich sein 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Promotion Typ Code &lt;promotionTypeCode&gt; is verwendet, dann Promotional Einheit Indicator &lt;isTradeItemAPromotionalUnit&gt; muss gleich sein 'TRUE'.</value>
   </data>
   <data name="1865" xml:space="preserve">
     <value>genus is missing für dieses Handelsartikel. Wenn species is verwendet, genus must auch be verwendet.</value>
   </data>
   <data name="1866" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Preparation Instructions &lt;preparationInstructions&gt; is verwendet, dann Preparation Typ Code &lt;preparationTypeCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Preparation Instructions &lt;preparationInstructions&gt; is verwendet, dann Preparation Typ Code &lt;preparationTypeCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1867" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, und Additional Produkt Identification Typ Code &lt;additionalTradeItemIdentificationTypeCode&gt; ist gleich 'SUPPLIER_ASSIGNED', dann der maximal Länge von Additional Produkt Identification &lt;additionnalTradeItemIdentification&gt; muss sein 35 Zeichen.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, und Additional Produkt Identification Typ Code &lt;additionalTradeItemIdentificationTypeCode&gt; ist gleich 'SUPPLIER_ASSIGNED', dann der maximal Länge von Additional Produkt Identification &lt;additionnalTradeItemIdentification&gt; muss sein 35 Zeichen.</value>
   </data>
   <data name="1868" xml:space="preserve">
     <value>&lt;packagingClaimTypeCode&gt; und &lt;packagingClaimElementCode&gt;, beide sollte sein verwendet if one uses jeder von them.</value>
@@ -1477,457 +1477,457 @@
     <value>Code '1' (100% Organic) ist nicht erlaubt in Organic Ebene Code &lt;organicTradeItemCode&gt; für Verkaufsland Code &lt;&lt;targetMarketCountryCode&gt; Code Name&gt;. Please verwenden Code '2' (Organic) instead.</value>
   </data>
   <data name="1875" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PACK_OR_INNER_PACK' und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann Gesamt Count von Alle Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; muss sein größer als 1.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PACK_OR_INNER_PACK' und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann Gesamt Count von Alle Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; muss sein größer als 1.</value>
   </data>
   <data name="1876" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', und Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; ist gleich '3001000002312' (Droits d'accises sur les alcools/alcohol tax), dann Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; muss sein größer als 0 (null).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', und Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; ist gleich '3001000002312' (Droits d'accises sur les alcools/alcohol tax), dann Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; muss sein größer als 0 (null).</value>
   </data>
   <data name="1877" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'DISPLAY_SHIPPER' oder 'MIXED_MODULE' und Anzahl von Different Products &lt;quantityOfChildren&gt; is größer als 1, dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; muss start mit '0'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'DISPLAY_SHIPPER' oder 'MIXED_MODULE' und Anzahl von Different Products &lt;quantityOfChildren&gt; is größer als 1, dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; muss start mit '0'.</value>
   </data>
   <data name="1878" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Free Quantity Von Produkt &lt;freeQuantityOfQuantity&gt; is verwendet, dann Free Quantity Von Produkt Einheit Von Measure (&lt;freeQuantityOfProduct&gt;@&lt;measurementUnitCode&gt;) muss sein gleich one instance von Net Content Einheit Von Measure (&lt;netContent&gt;@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Free Quantity Von Produkt &lt;freeQuantityOfQuantity&gt; is verwendet, dann Free Quantity Von Produkt Einheit Von Measure &lt;freeQuantityOfProduct/@measurementUnitCode&gt; muss sein gleich one instance von Net Content Einheit Von Measure &lt;netContent/@measurementUnitCode&gt;.</value>
   </data>
   <data name="1879" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Promotion Typ Code &lt;promotionTypeCode&gt; ist gleich 'MULTI_PACK_AND_COMBINATION_PACK', dann Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; darf nicht gleich sein 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Promotion Typ Code &lt;promotionTypeCode&gt; ist gleich 'MULTI_PACK_AND_COMBINATION_PACK', dann Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; darf nicht gleich sein 'TRUE'.</value>
   </data>
   <data name="1880" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Free Quantity Von Next Lower Ebene Handelsartikel &lt;freeQuantityOfNextLowerLevelTradeItem&gt; is verwendet, dann Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; muss gleich sein 'PACK_OR_INNER_PACK', Anzahl von Different Products &lt;quantityOfChildren&gt; muss sein größer als 1 und Promotion Typ Code &lt;promotionTypeCode&gt; muss gleich sein 'MULTI_PACK_AND_COMBINATION_PACK'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Free Quantity Von Next Lower Ebene Handelsartikel &lt;freeQuantityOfNextLowerLevelTradeItem&gt; is verwendet, dann Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; muss gleich sein 'PACK_OR_INNER_PACK', Anzahl von Different Products &lt;quantityOfChildren&gt; muss sein größer als 1 und Promotion Typ Code &lt;promotionTypeCode&gt; muss gleich sein 'MULTI_PACK_AND_COMBINATION_PACK'.</value>
   </data>
   <data name="1881" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann mindestens eine Iteration von Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; muss sein one von der VAT tax Codes ('S', '1G', '2G', '3G', 'H' oder 'E').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann mindestens eine Iteration von Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; muss sein one von der VAT tax Codes ('S', '1G', '2G', '3G', 'H' oder 'E').</value>
   </data>
   <data name="1882" xml:space="preserve">
     <value>Code '1' (100% Organic) ist nicht erlaubt in Organic Ebene Code &lt;organicTradeItemCode&gt; für Verkaufsland Code &lt;&lt;targetMarketCountryCode&gt; Code Name&gt;. Please verwenden Code '2' (Organic) instead.</value>
   </data>
   <data name="1883" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PACK_OR_INNER_PACK' und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann Gesamt Count von Alle Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; muss sein größer als 1.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PACK_OR_INNER_PACK' und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann Gesamt Count von Alle Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; muss sein größer als 1.</value>
   </data>
   <data name="1884" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', und Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; ist gleich '3001000002312' (Droits d'accises sur les alcools/alcohol tax), dann Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; muss sein größer als 0 (null).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', und Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; ist gleich '3001000002312' (Droits d'accises sur les alcools/alcohol tax), dann Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; muss sein größer als 0 (null).</value>
   </data>
   <data name="1885" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'DISPLAY_SHIPPER' oder 'MIXED_MODULE' und Anzahl von Different Products &lt;quantityOfChildren&gt; is größer als 1, dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; muss start mit '0'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'DISPLAY_SHIPPER' oder 'MIXED_MODULE' und Anzahl von Different Products &lt;quantityOfChildren&gt; is größer als 1, dann GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; muss start mit '0'.</value>
   </data>
   <data name="1886" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Free Quantity Von Produkt &lt;freeQuantityOfQuantity&gt; is verwendet, dann Free Quantity Von Produkt Einheit Von Measure (&lt;freeQuantityOfProduct&gt;@&lt;measurementUnitCode&gt;) muss sein gleich one instance von Net Content Einheit Von Measure (&lt;netContent&gt;@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Free Quantity Von Produkt &lt;freeQuantityOfQuantity&gt; is verwendet, dann Free Quantity Von Produkt Einheit Von Measure &lt;freeQuantityOfProduct/@measurementUnitCode&gt; muss sein gleich one instance von Net Content Einheit Von Measure &lt;netContent/@measurementUnitCode&gt;.</value>
   </data>
   <data name="1887" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Promotion Typ Code &lt;promotionTypeCode&gt; ist gleich 'MULTI_PACK_AND_COMBINATION_PACK', dann Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; darf nicht gleich sein 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Promotion Typ Code &lt;promotionTypeCode&gt; ist gleich 'MULTI_PACK_AND_COMBINATION_PACK', dann Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; darf nicht gleich sein 'TRUE'.</value>
   </data>
   <data name="1888" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Free Quantity Von Next Lower Ebene Handelsartikel &lt;freeQuantityOfNextLowerLevelTradeItem&gt; is verwendet, dann Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; muss gleich sein 'PACK_OR_INNER_PACK', Anzahl von Different Products &lt;quantityOfChildren&gt; muss sein größer als 1 und Promotion Typ Code &lt;promotionTypeCode&gt; muss gleich sein 'MULTI_PACK_AND_COMBINATION_PACK'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Free Quantity Von Next Lower Ebene Handelsartikel &lt;freeQuantityOfNextLowerLevelTradeItem&gt; is verwendet, dann Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; muss gleich sein 'PACK_OR_INNER_PACK', Anzahl von Different Products &lt;quantityOfChildren&gt; muss sein größer als 1 und Promotion Typ Code &lt;promotionTypeCode&gt; muss gleich sein 'MULTI_PACK_AND_COMBINATION_PACK'.</value>
   </data>
   <data name="1889" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann mindestens eine Iteration von Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; muss sein one von der VAT tax Codes ('S', '1G', '2G', '3G', 'H' oder 'E').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann mindestens eine Iteration von Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; muss sein one von der VAT tax Codes ('S', '1G', '2G', '3G', 'H' oder 'E').</value>
   </data>
   <data name="1890" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE', dann Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; muss sein größer als 0.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE', dann Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; muss sein größer als 0.</value>
   </data>
   <data name="1891" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE', Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE', Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1892" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; is in GPC Segment '50000000' &lt;Beverage&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', Nettogewicht &lt;netWeight&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; is in GPC Segment '50000000' &lt;Beverage&gt; und Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', Nettogewicht &lt;netWeight&gt; muss verwendet werden.</value>
   </data>
   <data name="1893" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Invoice Einheit Indicator &lt;isTradeItemAnInvoiceUnit&gt; ist gleich 'TRUE' und Variable Einheit indicator &lt;isTradeItemAVariableUnit&gt; ist gleich 'TRUE', Selling Einheit Von Measure &lt;sellingUnitOfMeasure&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Invoice Einheit Indicator &lt;isTradeItemAnInvoiceUnit&gt; ist gleich 'TRUE' und Variable Einheit indicator &lt;isTradeItemAVariableUnit&gt; ist gleich 'TRUE', Selling Einheit Von Measure &lt;sellingUnitOfMeasure&gt; muss verwendet werden.</value>
   </data>
   <data name="1894" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, der Start Availability &lt;Time&gt; &lt;startAvailabiltyDateTime&gt; &lt;ChildItem..&lt;startAvailabiltyDateTime&gt;&gt; von der contained Produkt &lt;ChildItem..gtin&gt; muss sein before oder gleich der Start Availability &lt;Time&gt; &lt;&lt;startAvailabiltyDateTime&gt;&gt; von der Produkt.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, der Start Availability &lt;Time&gt; &lt;startAvailabiltyDateTime&gt; &lt;ChildItem..&lt;startAvailabiltyDateTime&gt; von der contained Produkt &lt;ChildItem..gtin&gt; muss sein before oder gleich der Start Availability &lt;Time&gt; &lt;&lt;startAvailabiltyDateTime&gt;&gt; von der Produkt.</value>
   </data>
   <data name="1895" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;.</value>
   </data>
   <data name="1896" xml:space="preserve">
-    <value>Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
+    <value>Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
   </data>
   <data name="1897" xml:space="preserve">
-    <value>Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
+    <value>Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
   </data>
   <data name="1898" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Produkt Beschreibung &lt;tradeItemDescription&gt; muss sein in Finnish, Swedish und English.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Produkt Beschreibung &lt;tradeItemDescription&gt; muss sein in Finnish, Swedish und English.</value>
   </data>
   <data name="1899" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Short Produkt Name &lt;descriptionShort&gt; muss sein in Finnish, Swedish und English.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Short Produkt Name &lt;descriptionShort&gt; muss sein in Finnish, Swedish und English.</value>
   </data>
   <data name="1900" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Ingredient Statement &lt;ingredientStatement&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Ingredient Statement &lt;ingredientStatement&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1901" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Short Produkt Name &lt;descriptionShort&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Short Produkt Name &lt;descriptionShort&gt; muss verwendet werden.</value>
   </data>
   <data name="1902" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Consumer Storage Instructions &lt;consumerStorageInstructions&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Consumer Storage Instructions &lt;consumerStorageInstructions&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1903" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Consumer Usage Instructions &lt;consumerUsageInstructions&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Consumer Usage Instructions &lt;consumerUsageInstructions&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1904" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Preparation Instructions &lt;preparationInstructions&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Preparation Instructions &lt;preparationInstructions&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1905" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Serving Suggestion &lt;servingSuggestion&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Serving Suggestion &lt;servingSuggestion&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1906" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Non-Lebensmittel Ingredient Statement &lt;nonFoodIngredientStatement&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Non-Lebensmittel Ingredient Statement &lt;nonFoodIngredientStatement&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1907" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Short Produkt Marketing Message &lt;shortTradeItemMarketingMessage&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Short Produkt Marketing Message &lt;shortTradeItemMarketingMessage&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1908" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Additional Legal Produkt Information &lt;compulsoryAdditiveLabelInformation&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Additional Legal Produkt Information &lt;compulsoryAdditiveLabelInformation&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1909" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Produkt Typ Beschreibung &lt;functionalName&gt; muss sein in Finnish und Swedish.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Produkt Typ Beschreibung &lt;functionalName&gt; muss sein in Finnish und Swedish.</value>
   </data>
   <data name="1910" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Produkt Beschreibung &lt;tradeItemDescription&gt; muss sein in Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Produkt Beschreibung &lt;tradeItemDescription&gt; muss sein in Italian.</value>
   </data>
   <data name="1911" xml:space="preserve">
     <value>Wenn mehr als ein Dangerous Hazardous Label Number &lt;dangerousHazardousLabelNumber&gt; ist angegeben, Dangerous Hazardous Label Sequence Number &lt;dangerousHazardousLabelSequenceNumber&gt; muss verwendet werden.</value>
   </data>
   <data name="1914" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;.</value>
   </data>
   <data name="1915" xml:space="preserve">
-    <value>Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
+    <value>Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
   </data>
   <data name="1916" xml:space="preserve">
-    <value>Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt;&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
+    <value>Referenziert GTIN &lt;gtin&gt; &lt;gtin&gt; muss sein eindeutig. It darf nicht sein repeated für Referenziert GTIN Typ Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; und &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
   </data>
   <data name="1917" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Packaging Typ Code &lt;packagingTypeCode&gt; SHALL be verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Packaging Typ Code &lt;packagingTypeCode&gt; SHALL be verwendet.</value>
   </data>
   <data name="1918" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Net Content &lt;netContent&gt; ist obligatorisch auf Basiseinheiten (Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich zu 'TRUE').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Net Content &lt;netContent&gt; ist obligatorisch auf Basiseinheiten (Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich zu 'TRUE').</value>
   </data>
   <data name="1919" xml:space="preserve">
-    <value>Invalid Messung Einheit für Ordering Lead Time &lt;orderingLeadTime&gt;: &lt;&lt;orderingLeadTime&gt;/@&lt;measurementUnitCode&gt;&gt;. Ordering Lead Time muss haben 'DAY' als der Messung Einheit.</value>
+    <value>Invalid Messung Einheit für Ordering Lead Time &lt;orderingLeadTime&gt;: &lt;orderingLeadTime/@measurementUnitCode&gt;. Ordering Lead Time muss haben 'DAY' als der Messung Einheit.</value>
   </data>
   <data name="1920" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE' und Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; ist gleich ('VAT' oder 'IVA'), dann Tax Percentage &lt;dutyFeeTaxRate&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE' und Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; ist gleich ('VAT' oder 'IVA'), dann Tax Percentage &lt;dutyFeeTaxRate&gt; muss verwendet werden.</value>
   </data>
   <data name="1921" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; ist gleich 'FALSE' oder ist nicht verwendet, dann Gesamt Count von Alle Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; muss sein gleich Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; multiplied von Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; ist gleich 'FALSE' oder ist nicht verwendet, dann Gesamt Count von Alle Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt; muss sein gleich Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; multiplied von Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt;.</value>
   </data>
   <data name="1922" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1925" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Anzahl von Layers pro Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; is verwendet, dann Anzahl von Einheiten pro Layer in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Anzahl von Layers pro Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; is verwendet, dann Anzahl von Einheiten pro Layer in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; muss verwendet werden.</value>
   </data>
   <data name="1926" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' und Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; ist gleich 'FALSE' oder ist nicht verwendet, dann Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; muss verwendet werden und größer als 0 (null).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' und Irregularly Configured Pallet Indicator &lt;isTradeItemPackedIrregularly&gt; ist gleich 'FALSE' oder ist nicht verwendet, dann Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; muss verwendet werden und größer als 0 (null).</value>
   </data>
   <data name="1927" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Non-GTIN Logistic Einheit &lt;Length&gt; &lt;depth&gt; muss sein größer als oder gleich Non-GTIN Logistic Einheit Breite &lt;width&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Non-GTIN Logistic Einheit &lt;Length&gt; &lt;depth&gt; muss sein größer als oder gleich Non-GTIN Logistic Einheit Breite &lt;width&gt;.</value>
   </data>
   <data name="1928" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Irregularly Configured Non-GTIN Pallet Indicator &lt;isNonGTINLogisticsUnitPackedIrregularly&gt; ist gleich 'FALSE' oder ist nicht verwendet, dann Count von This Specific Artikel in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt; muss gleich sein Anzahl von Layers pro Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; multiplied von Anzahl von Einheiten pro Layer in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Irregularly Configured Non-GTIN Pallet Indicator &lt;isNonGTINLogisticsUnitPackedIrregularly&gt; ist gleich 'FALSE' oder ist nicht verwendet, dann Count von This Specific Artikel in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt; muss gleich sein Anzahl von Layers pro Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; multiplied von Anzahl von Einheiten pro Layer in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;.</value>
   </data>
   <data name="1929" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE', dann mindestens eine Iteration von Short Produkt Name &lt;descriptionShort&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE', dann mindestens eine Iteration von Short Produkt Name &lt;descriptionShort&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1930" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE' oder Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann mindestens eine Iteration von Produkt Beschreibung &lt;tradeItemDescription&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE' oder Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; ist gleich 'TRUE', dann mindestens eine Iteration von Produkt Beschreibung &lt;tradeItemDescription&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1931" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Produkt Typ Beschreibung &lt;functionalName&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Produkt Typ Beschreibung &lt;functionalName&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1932" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Hazardous Statements Beschreibung &lt;hazardStatementsDescription&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Hazardous Statements Beschreibung &lt;hazardStatementsDescription&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1933" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Precautionary Statement Beschreibung &lt;precautionaryStatementsDescription&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Precautionary Statement Beschreibung &lt;precautionaryStatementsDescription&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1934" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Preparation Instructions &lt;preparationInstructions&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Preparation Instructions &lt;preparationInstructions&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1935" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Hazardous Material Additional Information &lt;hazardousMaterialAdditionalInformation&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Hazardous Material Additional Information &lt;hazardousMaterialAdditionalInformation&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1936" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Dangerous Goods Technical Name &lt;dangerousGoodsTechnicalName&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Dangerous Goods Technical Name &lt;dangerousGoodsTechnicalName&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1937" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Produkt Characteristic Value als ein Beschreibung &lt;productCharacteristicValueDescription&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Produkt Characteristic Value als ein Beschreibung &lt;productCharacteristicValueDescription&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1938" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Serving Suggestion &lt;servingSuggestion&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Serving Suggestion &lt;servingSuggestion&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1939" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Percent von Fat in Cheese &lt;fatPercentageInDryMatter&gt; und Percent von Milk Fat in Dairy &lt;fatInMilkContent&gt; darf nicht verwendet werden bei der gleiche time.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Percent von Fat in Cheese &lt;fatPercentageInDryMatter&gt; und Percent von Milk Fat in Dairy &lt;fatInMilkContent&gt; darf nicht verwendet werden bei der gleiche time.</value>
   </data>
   <data name="1941" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if multiple Iterationen von Nutritional Program Code &lt;nutritionalProgramCode&gt; equal '8' (Nutri-Score), dann Nutritional Program Detail &lt;nutritionalProgramDetail&gt; muss verwendet werden in jeder corresponding Iteration.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if multiple Iterationen von Nutritional Program Code &lt;nutritionalProgramCode&gt; equal '8' (Nutri-Score), dann Nutritional Program Detail &lt;nutritionalProgramDetail&gt; muss verwendet werden in jeder corresponding Iteration.</value>
   </data>
   <data name="1942" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Nutritional Program Code &lt;nutritionalProgramCode&gt; ist gleich '8' (Nutri-Score) und Nutritional Program Detail &lt;nutritionalProgramDetail&gt; is verwendet, dann mindestens eine Iteration von Nutritional Program Detail muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Nutritional Program Code &lt;nutritionalProgramCode&gt; ist gleich '8' (Nutri-Score) und Nutritional Program Detail &lt;nutritionalProgramDetail&gt; is verwendet, dann mindestens eine Iteration von Nutritional Program Detail muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="1943" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Regulation Typ Code &lt;regulationTypeCode&gt; ist gleich 'EXPLOSIVES_PRECURSORS_REGISTRATION' und Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; ist gleich 'TRUE', dann Regulation Ebene Code Reference &lt;regulationLevelCodeReference&gt; und Regulatory Act Compliance Ebene Code &lt;regulatoryActComplianceLevelCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Regulation Typ Code &lt;regulationTypeCode&gt; ist gleich 'EXPLOSIVES_PRECURSORS_REGISTRATION' und Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; ist gleich 'TRUE', dann Regulation Ebene Code Reference &lt;regulationLevelCodeReference&gt; und Regulatory Act Compliance Ebene Code &lt;regulatoryActComplianceLevelCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1944" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'H87', 'KGM', 'LTR' oder 'MTR' sind erlaubt für Price Basis Quantity UoM (&lt;priceBasisQuantity&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'H87', 'KGM', 'LTR' oder 'MTR' sind erlaubt für Price Basis Quantity UoM &lt;priceBasisQuantity/@measurementUnitCode&gt;.</value>
   </data>
   <data name="1945" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Werte 1, 10, 100 oder 1000 sind erlaubt für Price Basis Quantity &lt;priceBasisQuantity&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Werte 1, 10, 100 oder 1000 sind erlaubt für Price Basis Quantity &lt;priceBasisQuantity&gt;.</value>
   </data>
   <data name="1946" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Diet Typ Subcode &lt;dietTypeSubcode&gt; &lt;&lt;dietTypeSubcode&gt; Wert&gt; is nur erlaubt if Dietary Regime Code &lt;dietTypeCode&gt; is 'VEGETARIAN'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Diet Typ Subcode &lt;dietTypeSubcode&gt; &lt;&lt;dietTypeSubcode&gt; Wert&gt; is nur erlaubt if Dietary Regime Code &lt;dietTypeCode&gt; is 'VEGETARIAN'.</value>
   </data>
   <data name="1947" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Claim Marked auf Package &lt;claimMarkedOnPackage&gt; is nur erlaubt if Claim Typ Code &lt;claimTypeCode&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Claim Marked auf Package &lt;claimMarkedOnPackage&gt; is nur erlaubt if Claim Typ Code &lt;claimTypeCode&gt; is verwendet.</value>
   </data>
   <data name="1948" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt; is nur erlaubt if Percent von Fat in Cheese &lt;fatPercentageInDryMatter&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt; is nur erlaubt if Percent von Fat in Cheese &lt;fatPercentageInDryMatter&gt; is verwendet.</value>
   </data>
   <data name="1949" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Nesting Increment &lt;nestingIncrement&gt; is verwendet, dann mindestens ein von der two Attribute Nesting Typ Code &lt;nestingTypeCode&gt; oder Nesting Direction Code &lt;nestingDirectionCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Nesting Increment &lt;nestingIncrement&gt; is verwendet, dann mindestens ein von der two Attribute Nesting Typ Code &lt;nestingTypeCode&gt; oder Nesting Direction Code &lt;nestingDirectionCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1950" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Nesting Typ Code &lt;nestingTypeCode&gt; und Nesting Direction Code &lt;nestingDirectionCode&gt; sind nur erlaubt if Nesting Increment &lt;nestingIncrement&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Nesting Typ Code &lt;nestingTypeCode&gt; und Nesting Direction Code &lt;nestingDirectionCode&gt; sind nur erlaubt if Nesting Increment &lt;nestingIncrement&gt; is verwendet.</value>
   </data>
   <data name="1951" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Percentage Von Alcohol Von Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt; is nur erlaubt if Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Percentage Von Alcohol Von Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt; is nur erlaubt if Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; is verwendet.</value>
   </data>
   <data name="1952" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'ANN' (Year) oder 'MON' (Month) sind erlaubt für Usage Period After Opening UoM (&lt;itemPeriodSafeToUseAfterOpening&gt;/@&lt;timeMeasurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'ANN' (Year) oder 'MON' (Month) sind erlaubt für Usage Period After Opening UoM &lt;itemPeriodSafeToUseAfterOpening/@timeMeasurementUnitCode&gt;.</value>
   </data>
   <data name="1953" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE' und Marke Distribution Handelsartikel Typ Code &lt;brandDistributionTradeItemTypeCode&gt; ist gleich 'CUSTOM_LABEL', dann Marke Distribution Handelsartikel Typ Code muss gleich sein 'CUSTOM_LABEL' auf alle levels von der Handelsartikel Hierarchie.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE' und Marke Distribution Handelsartikel Typ Code &lt;brandDistributionTradeItemTypeCode&gt; ist gleich 'CUSTOM_LABEL', dann Marke Distribution Handelsartikel Typ Code muss gleich sein 'CUSTOM_LABEL' auf alle levels von der Handelsartikel Hierarchie.</value>
   </data>
   <data name="1954" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Servings Per Produkt Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; is verwendet, dann 'APPROXIMATELY' is der nur erlaubt Code.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Servings Per Produkt Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; is verwendet, dann 'APPROXIMATELY' is der nur erlaubt Code.</value>
   </data>
   <data name="1955" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Genetically Modified Declaration Code &lt;geneticallyModifiedDeclarationCode&gt; is verwendet, dann 'CONTAINS', 'FREE_FROM' oder 'MAY_CONTAIN' sind der nur erlaubt Codes.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Genetically Modified Declaration Code &lt;geneticallyModifiedDeclarationCode&gt; is verwendet, dann 'CONTAINS', 'FREE_FROM' oder 'MAY_CONTAIN' sind der nur erlaubt Codes.</value>
   </data>
   <data name="1956" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE' und Marke Distribution Handelsartikel Typ Code &lt;brandDistributionTradeItemTypeCode&gt; ist gleich 'PRIVATE_LABEL', dann Marke Distribution Handelsartikel Typ Code muss gleich sein 'PRIVATE_LABEL' auf alle levels von der Handelsartikel Hierarchie.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE' und Marke Distribution Handelsartikel Typ Code &lt;brandDistributionTradeItemTypeCode&gt; ist gleich 'PRIVATE_LABEL', dann Marke Distribution Handelsartikel Typ Code muss gleich sein 'PRIVATE_LABEL' auf alle levels von der Handelsartikel Hierarchie.</value>
   </data>
   <data name="1957" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if der Handelsartikel is ein complex Handelsartikel, i.e., Anzahl von Different Products &lt;quantityOfChildren&gt; is größer als 1, dann der complex Handelsartikel's Net Content UOM (&lt;netContent&gt;/@&lt;measurementUnitCode&gt;) muss gleich sein 'H87' (Piece).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if der Handelsartikel is ein complex Handelsartikel, i.e., Anzahl von Different Products &lt;quantityOfChildren&gt; is größer als 1, dann der complex Handelsartikel's Net Content UOM &lt;netContent/@measurementUnitCode&gt; muss gleich sein 'H87' (Piece).</value>
   </data>
   <data name="1958" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if der Handelsartikel is ein complex Handelsartikel, i.e., Anzahl von Different Products &lt;quantityOfChildren&gt; is größer als 1, dann der Net Content &lt;netContent&gt; muss gleich sein der Gesamt Count von Alle Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if der Handelsartikel is ein complex Handelsartikel, i.e., Anzahl von Different Products &lt;quantityOfChildren&gt; is größer als 1, dann der Net Content &lt;netContent&gt; muss gleich sein der Gesamt Count von Alle Products &lt;totalQuantityOfNextLowerLevelTradeItem&gt;.</value>
   </data>
   <data name="1961" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Hazardous Statements Code &lt;hazardStatementsCode&gt; ist gleich 'EUH208', dann Hazardous Statements Beschreibung &lt;hazardStatementsDescription&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Hazardous Statements Code &lt;hazardStatementsCode&gt; ist gleich 'EUH208', dann Hazardous Statements Beschreibung &lt;hazardStatementsDescription&gt; muss verwendet werden.</value>
   </data>
   <data name="1962" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Precautionary Statements Code &lt;precautionaryStatementsCode&gt; ist gleich &lt;&lt;precautionaryStatementsCode&gt; Code&gt;, dann Precautionary Statement Beschreibung &lt;precautionaryStatementsDescription&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Precautionary Statements Code &lt;precautionaryStatementsCode&gt; ist gleich &lt;&lt;precautionaryStatementsCode&gt; Code&gt;, dann Precautionary Statement Beschreibung &lt;precautionaryStatementsDescription&gt; muss verwendet werden.</value>
   </data>
   <data name="1963" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist gleich '10000159' (Beer) und Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE', dann Degree Von Original Wort &lt;degreeOfOriginalWort&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist gleich '10000159' (Beer) und Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE', dann Degree Von Original Wort &lt;degreeOfOriginalWort&gt; muss verwendet werden.</value>
   </data>
   <data name="1964" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, beide Marke Owner GLN &lt;gln&gt; und Marke Owner Name &lt;partyName&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, beide Marke Owner GLN &lt;gln&gt; und Marke Owner Name &lt;partyName&gt; muss verwendet werden.</value>
   </data>
   <data name="1965" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Catalogue Price &lt;tradeItemPrice&gt; is verwendet, dann Catalogue Price Basis Quantity &lt;priceBasisQuantity&gt; und Catalogue Price Effective Start Datum &lt;priceEffectiveStartDate&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Catalogue Price &lt;tradeItemPrice&gt; is verwendet, dann Catalogue Price Basis Quantity &lt;priceBasisQuantity&gt; und Catalogue Price Effective Start Datum &lt;priceEffectiveStartDate&gt; muss verwendet werden.</value>
   </data>
   <data name="1966" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Minimum Orderable Quantity &lt;orderQuantityMinimum&gt; is nur erlaubt if Orderable Einheit Indicator &lt;isTradeItemAnOrderableUnit&gt; ist gleich 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Minimum Orderable Quantity &lt;orderQuantityMinimum&gt; is nur erlaubt if Orderable Einheit Indicator &lt;isTradeItemAnOrderableUnit&gt; ist gleich 'TRUE'.</value>
   </data>
   <data name="1967" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Peg Hole Number &lt;pegHoleNumber&gt; is verwendet, dann Peg Hole Typ Code &lt;pegHoleTypeCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Peg Hole Number &lt;pegHoleNumber&gt; is verwendet, dann Peg Hole Typ Code &lt;pegHoleTypeCode&gt; muss verwendet werden.</value>
   </data>
   <data name="1968" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; is nur erlaubt if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Anzahl von Einheiten pro Layer in ein GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; is nur erlaubt if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE'.</value>
   </data>
   <data name="1969" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Anzahl von Einheiten pro Layer in ein non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; is nur erlaubt if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; is NOT gleich 'PALLET' oder 'MIXED_MODULE', und Shipping Einheit Indicator &lt;isTradeItemADespatchUnit&gt; ist gleich 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Anzahl von Einheiten pro Layer in ein non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; is nur erlaubt if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; is NOT gleich 'PALLET' oder 'MIXED_MODULE', und Shipping Einheit Indicator &lt;isTradeItemADespatchUnit&gt; ist gleich 'TRUE'.</value>
   </data>
   <data name="1971" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE', dann Shipping Einheit Indicator &lt;isTradeItemADespatchUnit&gt; muss gleich sein 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE', dann Shipping Einheit Indicator &lt;isTradeItemADespatchUnit&gt; muss gleich sein 'TRUE'.</value>
   </data>
   <data name="1974" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, beide Variable Weight Range Minimum &lt;variableWeightRangeMinimum&gt; und Variable Weight Range Maximum &lt;variableWeightRangeMaximum&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, beide Variable Weight Range Minimum &lt;variableWeightRangeMinimum&gt; und Variable Weight Range Maximum &lt;variableWeightRangeMaximum&gt; muss verwendet werden.</value>
   </data>
   <data name="1975" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Variable Weight Allowable Deviation Percentage &lt;variableWeightAllowableDeviationPercentage&gt;, Variable Weight Range Minimum &lt;variableWeightRangeMinimum&gt; und Variable Weight Range Maximum &lt;variableWeightRangeMaximum&gt; sind nur erlaubt if Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; ist gleich 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Variable Weight Allowable Deviation Percentage &lt;variableWeightAllowableDeviationPercentage&gt;, Variable Weight Range Minimum &lt;variableWeightRangeMinimum&gt; und Variable Weight Range Maximum &lt;variableWeightRangeMaximum&gt; sind nur erlaubt if Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; ist gleich 'TRUE'.</value>
   </data>
   <data name="1976" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Retail Price is Marked auf der Produkt Indicator &lt;isPriceOnPack&gt; ist gleich 'TRUE' für ein Basiseinheit, dann Suggested Retail Price &lt;tradeItemPrice&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Retail Price is Marked auf der Produkt Indicator &lt;isPriceOnPack&gt; ist gleich 'TRUE' für ein Basiseinheit, dann Suggested Retail Price &lt;tradeItemPrice&gt; muss verwendet werden.</value>
   </data>
   <data name="1977" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Suggested Retail Price &lt;tradeItemPrice&gt; is verwendet, dann Suggested Retail Price Effective Start Datum &lt;priceEffectiveStartDate&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Suggested Retail Price &lt;tradeItemPrice&gt; is verwendet, dann Suggested Retail Price Effective Start Datum &lt;priceEffectiveStartDate&gt; muss verwendet werden.</value>
   </data>
   <data name="1978" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Statistical Reporting Measurement &lt;statisticalReportingMeasurement&gt; is nur erlaubt if Customs Classification Value &lt;importClassificationValue&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Statistical Reporting Measurement &lt;statisticalReportingMeasurement&gt; is nur erlaubt if Customs Classification Value &lt;importClassificationValue&gt; is verwendet.</value>
   </data>
   <data name="1979" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Servings Per Produkt Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; is nur erlaubt if Servings Per Produkt &lt;numberOfServingsPerPackage&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Servings Per Produkt Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; is nur erlaubt if Servings Per Produkt &lt;numberOfServingsPerPackage&gt; is verwendet.</value>
   </data>
   <data name="1980" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Servings Per Produkt &lt;numberOfServingsPerPackage&gt; und Range von der Anzahl von Servings &lt;numberOfServingsRangeDescription&gt; darf nicht verwendet werden together.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Servings Per Produkt &lt;numberOfServingsPerPackage&gt; und Range von der Anzahl von Servings &lt;numberOfServingsRangeDescription&gt; darf nicht verwendet werden together.</value>
   </data>
   <data name="1981" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Microbiological Organism Code &lt;microbiologicalOrganismCode&gt; is verwendet, dann Microbiological Organism Maximum Value &lt;microbiologicalOrganismMaximumValue&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Microbiological Organism Code &lt;microbiologicalOrganismCode&gt; is verwendet, dann Microbiological Organism Maximum Value &lt;microbiologicalOrganismMaximumValue&gt; muss verwendet werden.</value>
   </data>
   <data name="1982" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if der Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE'), dann Storage Stacking Factor (&lt;stackingFactorTypeCode&gt; gleich 'STORAGE_UNSPECIFIED') muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if der Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE'), dann Storage Stacking Factor (&lt;stackingFactorTypeCode&gt; gleich 'STORAGE_UNSPECIFIED') muss verwendet werden.</value>
   </data>
   <data name="1983" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if der Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE'), dann Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if der Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE'), dann Anzahl von Layers pro GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; muss verwendet werden.</value>
   </data>
   <data name="1984" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if der Handelsartikel ist nicht ein Palette oder mixed module, but it is ein Despatch Einheit und ein Pallet Typ Code &lt;platformTypeCode&gt; is angegeben, dann der corresponding Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; und non-GTIN Palette Information muss angegeben werden. Some non-GTIN Palette Information is missing: &lt;Attribute name(s)&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if der Handelsartikel ist nicht ein Palette oder mixed module, but it is ein Despatch Einheit und ein Pallet Typ Code &lt;platformTypeCode&gt; is angegeben, dann der corresponding Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; und non-GTIN Palette Information muss angegeben werden. Some non-GTIN Palette Information is missing: &lt;Attribute name(s)&gt;.</value>
   </data>
   <data name="1985" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Pallet Typ Code &lt;platformTypeCode&gt; is nur erlaubt if Shipping Einheit Indicator &lt;isTradeItemADespatchUnit&gt; ist gleich 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Pallet Typ Code &lt;platformTypeCode&gt; is nur erlaubt if Shipping Einheit Indicator &lt;isTradeItemADespatchUnit&gt; ist gleich 'TRUE'.</value>
   </data>
   <data name="1987" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Group Identification Code &lt;tradeItemGroupIdentificationCodeReference&gt; is verwendet, dann der corresponding Code Beschreibung (&lt;tradeItemGroupIdentificationCodeReference&gt;/@&lt;codeDescription&gt;) muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Group Identification Code &lt;tradeItemGroupIdentificationCodeReference&gt; is verwendet, dann der corresponding Code Beschreibung &lt;tradeItemGroupIdentificationCodeReference/@codeDescription&gt; muss verwendet werden.</value>
   </data>
   <data name="1988" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Physical Resource Typ Code &lt;physicalResourceTypeCode&gt; ist gleich 'ELECTRICITY', dann Physical Resource Usage Rating Scale Code &lt;physicalResourceUsageRatingScaleCodeReference&gt; mit &lt;physicalResourceUsageRatingScaleCodeReference&gt;/@&lt;codeListName&gt; equal 'EU_EnergyEfficiencyScale' is nur erlaubt if der corresponding Physical Resource Usage Rating Classification Code &lt;physicalResourceUsageClassificationCodeReference&gt; [= Efficiency Klasse] is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Physical Resource Typ Code &lt;physicalResourceTypeCode&gt; ist gleich 'ELECTRICITY', dann Physical Resource Usage Rating Scale Code &lt;physicalResourceUsageRatingScaleCodeReference&gt; mit &lt;physicalResourceUsageRatingScaleCodeReference&gt;/@&lt;codeListName&gt; equal 'EU_EnergyEfficiencyScale' is nur erlaubt if der corresponding Physical Resource Usage Rating Classification Code &lt;physicalResourceUsageClassificationCodeReference&gt; [= Efficiency Klasse] is verwendet.</value>
   </data>
   <data name="1989" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Digital Asset Typ Code &lt;referencedFileTypeCode&gt; is verwendet, dann Digital Asset Link &lt;uniformResourceIdentifier&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Digital Asset Typ Code &lt;referencedFileTypeCode&gt; is verwendet, dann Digital Asset Link &lt;uniformResourceIdentifier&gt; muss verwendet werden.</value>
   </data>
   <data name="1990" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Produkt Handling Code &lt;handlingInstructionsCodeReference&gt; Codes '11' (Refrigeration required) und '12' (Refrigeration nicht required) darf nicht verwendet werden für der gleiche Handelsartikel.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Produkt Handling Code &lt;handlingInstructionsCodeReference&gt; Codes '11' (Refrigeration required) und '12' (Refrigeration nicht required) darf nicht verwendet werden für der gleiche Handelsartikel.</value>
   </data>
   <data name="1991" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Size Code &lt;sizeCode&gt; und Size System Code &lt;sizeSystemCode&gt; muss verwendet werden together.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Size Code &lt;sizeCode&gt; und Size System Code &lt;sizeSystemCode&gt; muss verwendet werden together.</value>
   </data>
   <data name="1992" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Certification Standard &lt;certificationStandard&gt; is verwendet und Certification Agency &lt;certificationAgency&gt; ist gleich 'Additional_Label_Information', dann Certification Value &lt;certificationValue&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Certification Standard &lt;certificationStandard&gt; is verwendet und Certification Agency &lt;certificationAgency&gt; ist gleich 'Additional_Label_Information', dann Certification Value &lt;certificationValue&gt; muss verwendet werden.</value>
   </data>
   <data name="1994" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Dangerous Goods Regulation Agency &lt;dangerousGoodsRegulationAgency&gt; und Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; kann nur sein verwendet together und Dangerous Goods Regulation Agency &lt;dangerousGoodsRegulationAgency&gt; muss gleich sein 'ADR'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Dangerous Goods Regulation Agency &lt;dangerousGoodsRegulationAgency&gt; und Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; kann nur sein verwendet together und Dangerous Goods Regulation Agency &lt;dangerousGoodsRegulationAgency&gt; muss gleich sein 'ADR'.</value>
   </data>
   <data name="1995" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; is verwendet, nur der Codes 'ZCG' (Contains Dangerous Goods) oder 'ZNA' (Artikel ist nicht ein gefährlich good nor enthält gefährlich good(s)) sind erlaubt.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; is verwendet, nur der Codes 'ZCG' (Contains Dangerous Goods) oder 'ZNA' (Artikel ist nicht ein gefährlich good nor enthält gefährlich good(s)) sind erlaubt.</value>
   </data>
   <data name="1996" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Handelsartikel enthält Gefahrgut (&lt;dangerousGoodsRegulationCode&gt; ist gleich 'ZCG'), anderer Gefahrgut Information muss verwendet werden für Basiseinheit: &lt;Attribute name&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Handelsartikel enthält Gefahrgut (&lt;dangerousGoodsRegulationCode&gt; ist gleich 'ZCG'), anderer Gefahrgut Information muss verwendet werden für Basiseinheit: &lt;Attribute name&gt;.</value>
   </data>
   <data name="1997" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, dieses/diese Attribut/s &lt;Attribute name&gt; belong/s zu der Gefahrgut Information und is/sind nur erlaubt für der Basiseinheit (&lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE') und if Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; ist gleich 'ZCG' (Contains Dangerous Goods).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, dieses/diese Attribut/s &lt;Attribute name&gt; belong/s zu der Gefahrgut Information und is/sind nur erlaubt für der Basiseinheit (&lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE') und if Dangerous Goods Regulation Code &lt;dangerousGoodsRegulationCode&gt; ist gleich 'ZCG' (Contains Dangerous Goods).</value>
   </data>
   <data name="1998" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Dangerous Goods Classification &lt;classOfDangerousGoods&gt; ist gleich '1' (Explosive substances und articles), dann Net Explosive Mass &lt;netMassOfExplosives&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Dangerous Goods Classification &lt;classOfDangerousGoods&gt; ist gleich '1' (Explosive substances und articles), dann Net Explosive Mass &lt;netMassOfExplosives&gt; muss verwendet werden.</value>
   </data>
   <data name="1999" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Net Explosive Mass &lt;netMassOfExplosives&gt; is nur erlaubt if Dangerous Goods Classification &lt;classOfDangerousGoods&gt; ist gleich '1' (Explosive substances und articles).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Net Explosive Mass &lt;netMassOfExplosives&gt; is nur erlaubt if Dangerous Goods Classification &lt;classOfDangerousGoods&gt; ist gleich '1' (Explosive substances und articles).</value>
   </data>
   <data name="2000" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Dangerous Goods Limited Quantities Code &lt;dangerousGoodsLimitedQuantitiesCode&gt; is nur erlaubt if mindestens ein von der contained base Artikel enthält Gefahrgut (&lt;dangerousGoodsRegulationCode&gt; ist gleich 'ZCG').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Dangerous Goods Limited Quantities Code &lt;dangerousGoodsLimitedQuantitiesCode&gt; is nur erlaubt if mindestens ein von der contained base Artikel enthält Gefahrgut (&lt;dangerousGoodsRegulationCode&gt; ist gleich 'ZCG').</value>
   </data>
   <data name="2001" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if der Basiseinheit Handelsartikel enthält Gefahrgut (&lt;dangerousGoodsRegulationCode&gt; ist gleich 'ZCG'), dann Dangerous Goods Limited Quantities Code &lt;dangerousGoodsLimitedQuantitiesCode&gt; muss verwendet werden auf der Basiseinheit Handelsartikel und auf alle its parent levels von der Handelsartikel Hierarchie.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if der Basiseinheit Handelsartikel enthält Gefahrgut (&lt;dangerousGoodsRegulationCode&gt; ist gleich 'ZCG'), dann Dangerous Goods Limited Quantities Code &lt;dangerousGoodsLimitedQuantitiesCode&gt; muss verwendet werden auf der Basiseinheit Handelsartikel und auf alle its parent levels von der Handelsartikel Hierarchie.</value>
   </data>
   <data name="2002" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Packaging Datum Typ Code &lt;tradeItemDateOnPackagingTypeCode&gt; is verwendet und nicht gleich ('NO_DATE_MARKED', 'DISPLAY_UNTIL_DATE', 'FREEZING_DATE', 'PACKAGING_DATE' oder 'PRODUCTION_DATE'), dann Minimum Days von Shelf Life bei Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; und/oder Minimum Days von Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Packaging Datum Typ Code &lt;tradeItemDateOnPackagingTypeCode&gt; is verwendet und nicht gleich ('NO_DATE_MARKED', 'DISPLAY_UNTIL_DATE', 'FREEZING_DATE', 'PACKAGING_DATE' oder 'PRODUCTION_DATE'), dann Minimum Days von Shelf Life bei Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; und/oder Minimum Days von Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; muss verwendet werden.</value>
   </data>
   <data name="2003" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Regulatory Act &lt;regulatoryAct&gt; ist gleich 'GHS' und Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt; ist gleich 'TRUE', dann anderer GHS Information muss verwendet werden für der Basiseinheit: &lt;Attribute name&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Regulatory Act &lt;regulatoryAct&gt; ist gleich 'GHS' und Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt; ist gleich 'TRUE', dann anderer GHS Information muss verwendet werden für der Basiseinheit: &lt;Attribute name&gt;.</value>
   </data>
   <data name="2004" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Attribut/s &lt;Attribute name&gt; belong/s zu der GHS Information und is/sind nur erlaubt if Regulatory Act &lt;regulatoryAct&gt; ist gleich 'GHS' und Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt; ist gleich 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Attribut/s &lt;Attribute name&gt; belong/s zu der GHS Information und is/sind nur erlaubt if Regulatory Act &lt;regulatoryAct&gt; ist gleich 'GHS' und Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt; ist gleich 'TRUE'.</value>
   </data>
   <data name="2005" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Dangerous Substance Waste Code &lt;enumerationValue&gt; is nur erlaubt if der corresponding agency &lt;externalAgencyName&gt; ist gleich 'EU'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Dangerous Substance Waste Code &lt;enumerationValue&gt; is nur erlaubt if der corresponding agency &lt;externalAgencyName&gt; ist gleich 'EU'.</value>
   </data>
   <data name="2006" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Chemical Ingredient Identification [Unique Formula Identifier (UFI)] &lt;chemicalIngredientIdentification&gt; muss verwendet werden together und Chemical Ingredient Scheme &lt;chemicalIngredientScheme&gt; muss gleich sein 'UFI'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Chemical Ingredient Identification [Unique Formula Identifier (UFI)] &lt;chemicalIngredientIdentification&gt; muss verwendet werden together und Chemical Ingredient Scheme &lt;chemicalIngredientScheme&gt; muss gleich sein 'UFI'.</value>
   </data>
   <data name="2007" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Hazardous Statements Beschreibung &lt;hazardStatementsDescription&gt; is nur erlaubt if Hazardous Statements Code &lt;hazardStatementsCode&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Hazardous Statements Beschreibung &lt;hazardStatementsDescription&gt; is nur erlaubt if Hazardous Statements Code &lt;hazardStatementsCode&gt; is verwendet.</value>
   </data>
   <data name="2008" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Precautionary Statement Beschreibung &lt;precautionaryStatementsDescription&gt; is nur erlaubt if Precautionary Statements Code &lt;precautionaryStatementsCode&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Precautionary Statement Beschreibung &lt;precautionaryStatementsDescription&gt; is nur erlaubt if Precautionary Statements Code &lt;precautionaryStatementsCode&gt; is verwendet.</value>
   </data>
   <data name="2009" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Dangerous Substance Name &lt;dangerousSubstanceName&gt;, Flammable Substance Minimum Percent &lt;flammableSubstanceMinimumPercent&gt; und Flammable Substance Maximum Percent &lt;flammableSubstanceMaximumPercent&gt; kann nur sein verwendet together.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Dangerous Substance Name &lt;dangerousSubstanceName&gt;, Flammable Substance Minimum Percent &lt;flammableSubstanceMinimumPercent&gt; und Flammable Substance Maximum Percent &lt;flammableSubstanceMaximumPercent&gt; kann nur sein verwendet together.</value>
   </data>
   <data name="2011" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Regulation Ebene Code Reference &lt;regulationLevelCodeReference&gt; und Regulatory Act Compliance Ebene Code &lt;regulatoryActComplianceLevelCode&gt; sind nur erlaubt if Regulation Typ Code &lt;regulationTypeCode&gt; ist gleich 'EXPLOSIVES_PRECURSORS_REGISTRATION' und Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; ist gleich 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Regulation Ebene Code Reference &lt;regulationLevelCodeReference&gt; und Regulatory Act Compliance Ebene Code &lt;regulatoryActComplianceLevelCode&gt; sind nur erlaubt if Regulation Typ Code &lt;regulationTypeCode&gt; ist gleich 'EXPLOSIVES_PRECURSORS_REGISTRATION' und Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; ist gleich 'TRUE'.</value>
   </data>
   <data name="2012" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Code 'CONTAINS' ist erlaubt für Additive Containment Code &lt;levelOfContainmentCode&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Code 'CONTAINS' ist erlaubt für Additive Containment Code &lt;levelOfContainmentCode&gt;.</value>
   </data>
   <data name="2013" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Code 'GREATER_THAN_OR_EQUAL' ist erlaubt für Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Code 'GREATER_THAN_OR_EQUAL' ist erlaubt für Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt;.</value>
   </data>
   <data name="2014" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes '2P' (Kilobyte), '4L' (Megabyte), 'AD' (Byte), 'E34' (Gigabyte) oder 'E35' (Terabyte) sind erlaubt für File Size UoM (&lt;fileSize&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes '2P' (Kilobyte), '4L' (Megabyte), 'AD' (Byte), 'E34' (Gigabyte) oder 'E35' (Terabyte) sind erlaubt für File Size UoM &lt;fileSize/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2015" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'CMK' (Square centimetre), 'DMK' (Square decimetre), 'GRM' (Gram), 'KGM' (Kilogram), 'MGM' (Milligram), 'MMK' (Square millimetre), 'MTK' (Square metre) oder 'TNE' (Tonne) sind erlaubt für Packaging Material Quantity UoM (&lt;packagingMaterialCompositionQuantity&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'CMK' (Square centimetre), 'DMK' (Square decimetre), 'GRM' (Gram), 'KGM' (Kilogram), 'MGM' (Milligram), 'MMK' (Square millimetre), 'MTK' (Square metre) oder 'TNE' (Tonne) sind erlaubt für Packaging Material Quantity UoM &lt;packagingMaterialCompositionQuantity/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2016" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes '23' (Grams Per Cubic Centimetre) oder 'GL' (Gram Per Litre) sind erlaubt für Dangerous Substance Gas Density UoM (&lt;dangerousSubstanceGasDensity&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes '23' (Grams Per Cubic Centimetre) oder 'GL' (Gram Per Litre) sind erlaubt für Dangerous Substance Gas Density UoM &lt;dangerousSubstanceGasDensity/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2017" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'CONTAINS' oder 'MAY_CONTAIN' sind erlaubt für Allergen Containment Code (allergen/&lt;levelOfContainmentCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'CONTAINS' oder 'MAY_CONTAIN' sind erlaubt für Allergen Containment Code (allergen/&lt;levelOfContainmentCode&gt;).</value>
   </data>
   <data name="2018" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Produkt Activity Typ Code &lt;productActivityTypeCode&gt; ist gleich 'LAST_PROCESSING', dann Codes '097' (EUROPEAN UNION) und 'NON_EU' sind nicht erlaubt für der corresponding Land Code &lt;countryCode&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Produkt Activity Typ Code &lt;productActivityTypeCode&gt; ist gleich 'LAST_PROCESSING', dann Codes '097' (EUROPEAN UNION) und 'NON_EU' sind nicht erlaubt für der corresponding Land Code &lt;countryCode&gt;.</value>
   </data>
   <data name="2019" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Ist Base Price Declaration Relevant &lt;isBasePriceDeclarationRelevant&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Ist Base Price Declaration Relevant &lt;isBasePriceDeclarationRelevant&gt;.</value>
   </data>
   <data name="2020" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Regulatory Agency &lt;regulatoryAgency&gt; ist gleich 'UN' und Regulatory Act &lt;regulatoryAct&gt; ist gleich 'GHS' nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Regulatory Agency &lt;regulatoryAgency&gt; ist gleich 'UN' und Regulatory Act &lt;regulatoryAct&gt; ist gleich 'GHS' nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Regulatory Permit Identification &lt;regulatoryPermitIdentification&gt;.</value>
   </data>
   <data name="2021" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Ist Diet Typ Marked auf Package &lt;isDietTypeMarkedOnPackage&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Ist Diet Typ Marked auf Package &lt;isDietTypeMarkedOnPackage&gt;.</value>
   </data>
   <data name="2022" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Claim Marked auf Package &lt;claimMarkedOnPackage&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Claim Marked auf Package &lt;claimMarkedOnPackage&gt;.</value>
   </data>
   <data name="2023" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Batteries Built In Indicator &lt;areBatteriesBuiltIn&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'TRUE' oder 'FALSE' sind erlaubt für Batteries Built In Indicator &lt;areBatteriesBuiltIn&gt;.</value>
   </data>
   <data name="2024" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Code 'LESS_THAN' ist erlaubt für Percentage von Alcohol von Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Code 'LESS_THAN' ist erlaubt für Percentage von Alcohol von Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt;.</value>
   </data>
   <data name="2025" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Customs Classification Typ Code &lt;importClassificationTypeCode&gt; ist gleich 'CUSTOMS_TARIFF_NUMBER', dann Customs Classification Value &lt;importClassificationValue&gt; muss haben exactly 11 digits.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Customs Classification Typ Code &lt;importClassificationTypeCode&gt; ist gleich 'CUSTOMS_TARIFF_NUMBER', dann Customs Classification Value &lt;importClassificationValue&gt; muss haben exactly 11 digits.</value>
   </data>
   <data name="2026" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Nutrient Code &lt;nutrientTypeCode&gt; is verwendet, dann Nutrient Basis &lt;nutrientBasisQuantity&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Nutrient Code &lt;nutrientTypeCode&gt; is verwendet, dann Nutrient Basis &lt;nutrientBasisQuantity&gt; muss verwendet werden.</value>
   </data>
   <data name="2027" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Customs Classification Typ Code &lt;importClassificationTypeCode&gt; ist gleich 'TARIF_INTEGRE_DE_LA_COMMUNAUTE', dann Customs Classification Value &lt;importClassificationValue&gt; muss haben exactly 10 digits.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Customs Classification Typ Code &lt;importClassificationTypeCode&gt; ist gleich 'TARIF_INTEGRE_DE_LA_COMMUNAUTE', dann Customs Classification Value &lt;importClassificationValue&gt; muss haben exactly 10 digits.</value>
   </data>
   <data name="2028" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Code 'H87' (Piece) ist erlaubt für Statistical Reporting Measurement UoM (&lt;statisticalReportingMeasurement&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Code 'H87' (Piece) ist erlaubt für Statistical Reporting Measurement UoM &lt;statisticalReportingMeasurement/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2029" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'ANN' (Year), 'DAY' (Days), 'HUR' (Hour), 'MIN' (Minute), 'MON' (Month), 'SEC' (Second) oder 'WEE' (Week) sind erlaubt für Ripening Time Period UoM (&lt;ripeningTimePeriod&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'ANN' (Year), 'DAY' (Days), 'HUR' (Hour), 'MIN' (Minute), 'MON' (Month), 'SEC' (Second) oder 'WEE' (Week) sind erlaubt für Ripening Time Period UoM &lt;ripeningTimePeriod/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2031" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Daily Intake Reference &lt;dailyValueIntakeReference&gt; muss angegeben werden in German, French oder Italian.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Daily Intake Reference &lt;dailyValueIntakeReference&gt; muss angegeben werden in German, French oder Italian.</value>
   </data>
   <data name="2032" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur '100 Gram', '100 Millilitre', '1 Litre' oder '1 Portion' sind erlaubt für Nutrient Basis &lt;nutrientBasisQuantity&gt; und Nutrient Basis UoM (&lt;nutrientBasisQuantity&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur '100 Gram', '100 Millilitre', '1 Litre' oder '1 Portion' sind erlaubt für Nutrient Basis &lt;nutrientBasisQuantity&gt; und Nutrient Basis UoM &lt;nutrientBasisQuantity/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2033" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Preparation Typ Code &lt;preparationTypeCode&gt; ist nicht gleich 'READY_TO_DRINK' oder 'READY_TO_EAT', dann Preparation Instructions &lt;preparationInstructions&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Preparation Typ Code &lt;preparationTypeCode&gt; ist nicht gleich 'READY_TO_DRINK' oder 'READY_TO_EAT', dann Preparation Instructions &lt;preparationInstructions&gt; muss verwendet werden.</value>
   </data>
   <data name="2034" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Preparation Typ Code &lt;preparationTypeCode&gt; darf nicht gleich sein 'PREPARED' oder 'UNPREPARED'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Preparation Typ Code &lt;preparationTypeCode&gt; darf nicht gleich sein 'PREPARED' oder 'UNPREPARED'.</value>
   </data>
   <data name="2035" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Produkt Yield Variation Percentage &lt;productYieldVariationPercentage&gt; is nur erlaubt if Produkt Yield &lt;productYield&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Produkt Yield Variation Percentage &lt;productYieldVariationPercentage&gt; is nur erlaubt if Produkt Yield &lt;productYield&gt; is verwendet.</value>
   </data>
   <data name="2036" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, nur der Codes 'PREPARED' oder 'UNPREPARED' sind erlaubt für Nutritional Preparation Code &lt;preparationStateCode&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, nur der Codes 'PREPARED' oder 'UNPREPARED' sind erlaubt für Nutritional Preparation Code &lt;preparationStateCode&gt;.</value>
   </data>
   <data name="2037" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Organic Ebene Code &lt;organicTradeItemCode&gt; is gleich '2' (Organic) oder '6' (In conversion from non-organic zu organic), dann Organic Certification Identification &lt;organicCertificationIdentification&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Organic Ebene Code &lt;organicTradeItemCode&gt; is gleich '2' (Organic) oder '6' (In conversion from non-organic zu organic), dann Organic Certification Identification &lt;organicCertificationIdentification&gt; muss verwendet werden.</value>
   </data>
   <data name="2038" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, Organic Certification Identification &lt;organicCertificationIdentification&gt; is nur erlaubt if Organic Ebene Code &lt;organicTradeItemCode&gt; is gleich '2' (Organic) oder '6' (In conversion from non-organic zu organic).</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, Organic Certification Identification &lt;organicCertificationIdentification&gt; is nur erlaubt if Organic Ebene Code &lt;organicTradeItemCode&gt; is gleich '2' (Organic) oder '6' (In conversion from non-organic zu organic).</value>
   </data>
   <data name="2039" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if &lt;packagingRawMaterialCode&gt; ist gleich 'RECYCLED' dann Packaging Raw Material Content Percentage &lt;packagingRawMaterialContentPercentage&gt; is nur erlaubt if Packaging Material Composition Quantity &lt;packagingMaterialCompositionQuantity&gt; is verwendet.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if &lt;packagingRawMaterialCode&gt; ist gleich 'RECYCLED' dann Packaging Raw Material Content Percentage &lt;packagingRawMaterialContentPercentage&gt; is nur erlaubt if Packaging Material Composition Quantity &lt;packagingMaterialCompositionQuantity&gt; is verwendet.</value>
   </data>
   <data name="2043" xml:space="preserve">
     <value>Multiple Werte für &lt;foodValueBasis&gt; für jeder Attribut sind nicht erlaubt.</value>
@@ -1936,79 +1936,79 @@
     <value>Multiple Werte für &lt;foodValuePerTradeItem&gt; für jeder Attribut sind nicht erlaubt.</value>
   </data>
   <data name="2062" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Additional Produkt Identification Typ Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) ist gleich 'PLU', dann associated Additional Produkt Identification &lt;additionalTradeItemIdentification&gt; Wert SHALL begin mit ('02' , '22' , '24' , '26' , '28' , '21' , '23' , '25' , '27 oder '29').</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Additional Produkt Identification Typ Code &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; ist gleich 'PLU', dann associated Additional Produkt Identification &lt;additionalTradeItemIdentification&gt; Wert SHALL begin mit ('02', '22', '24', '26', '28', '21', '23', '25', '27 oder '29').</value>
   </data>
   <data name="2063" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Additional Produkt Identification Typ Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) ist gleich 'PLU', dann Variable Einheit Indicator &lt;isTradeItemAVariableUnit&gt; SHALL equal 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Additional Produkt Identification Typ Code &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; ist gleich 'PLU', dann Variable Einheit Indicator &lt;isTradeItemAVariableUnit&gt; SHALL equal 'TRUE'.</value>
   </data>
   <data name="2064" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Variable Einheit Indicator &lt;isTradeItemAVariableUnit&gt; ist gleich 'TRUE', dann one Additional Produkt Identification Typ Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) SHALL equal 'PLU'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Variable Einheit Indicator &lt;isTradeItemAVariableUnit&gt; ist gleich 'TRUE', dann one Additional Produkt Identification Typ Code &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; SHALL equal 'PLU'.</value>
   </data>
   <data name="2065" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Additional Produkt Identification Typ Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) ist gleich 'PLU', dann associated Additional Produkt Identification &lt;additionalTradeItemIdentification&gt; Wert SHALL haben exactly 7 digits.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Additional Produkt Identification Typ Code &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; ist gleich 'PLU', dann associated Additional Produkt Identification &lt;additionalTradeItemIdentification&gt; Wert SHALL haben exactly 7 digits.</value>
   </data>
   <data name="2066" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Currency Code (.../@currencycode) is verwendet, dann mindestens eine Iteration von .../@currencycode SHALL equal 'EUR'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Currency Code (.../@currencycode) is verwendet, dann mindestens eine Iteration von.../@currencycode SHALL equal 'EUR'.</value>
   </data>
   <data name="2067" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Display Ready Packaging &lt;hasDisplayReadyPackaging&gt; ist gleich 'TRUE', dann Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; SHALL equal 'FALSE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Display Ready Packaging &lt;hasDisplayReadyPackaging&gt; ist gleich 'TRUE', dann Consumer Einheit Indicator &lt;isTradeItemAConsumerUnit&gt; SHALL equal 'FALSE'.</value>
   </data>
   <data name="2069" xml:space="preserve">
     <value>Es muss one Iteration für Sprache 'French'.</value>
   </data>
   <data name="2070" xml:space="preserve">
-    <value>Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; ist nicht verwendet. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;,</value>
+    <value>Alcohol Percentage &lt;percentageOfAlcoholByVolume&gt; ist nicht verwendet. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;</value>
   </data>
   <data name="2072" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Shipping Einheit Indicator &lt;isTradeItemADespatchUnit&gt; ist gleich 'TRUE' und GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; begins mit '9', dann Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; muss gleich sein 'TRUE' auf der lowest Ebene von der Hierarchie wobei Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Shipping Einheit Indicator &lt;isTradeItemADespatchUnit&gt; ist gleich 'TRUE' und GTIN (Globale Handelsartikelnummer) &lt;gtin&gt; begins mit '9', dann Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; muss gleich sein 'TRUE' auf der lowest Ebene von der Hierarchie wobei Base Einheit Indicator &lt;isTradeItemABaseUnit&gt; ist gleich 'TRUE'.</value>
   </data>
   <data name="2075" xml:space="preserve">
     <value>Initial Manufacturer Sterilisation Code &lt;initialManufacturerSterilisationCode&gt; und/oder Manufacturer Specified Acceptable Resterilisation Code &lt;manufacturerSpecifiedAcceptableResterilisationCode&gt; darf nicht gleich sein 'NO_STERILISATION_REQUIRED' und is invalidly verwendet.</value>
   </data>
   <data name="101923" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; ist gleich ('VAT' oder 'IVA') und Tax Percentage &lt;dutyFeeTaxRate&gt; ist gleich 0 (null), dann Tax Kategorie Code &lt;dutyFeeTaxCategoryCode&gt; muss sein 'ZERO' oder 'EXEMPT'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Tax Typ Code &lt;dutyFeeTaxTypeCode&gt; ist gleich ('VAT' oder 'IVA') und Tax Percentage &lt;dutyFeeTaxRate&gt; ist gleich 0 (null), dann Tax Kategorie Code &lt;dutyFeeTaxCategoryCode&gt; muss sein 'ZERO' oder 'EXEMPT'.</value>
   </data>
   <data name="101924" xml:space="preserve">
-    <value>You sind providing Information auf Non-GTIN Pallet. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if jeder von der folgende Attribute ist angegeben, dann alle muss angegeben werden: Non-GTIN Logistic Einheit &lt;Length&gt; &lt;depth&gt;, Non-GTIN Logistic Einheit Breite &lt;width&gt;, Non-GTIN Logistic Einheit Höhe &lt;height&gt;, Non-GTIN Logistic Einheit Bruttogewicht &lt;grossWeight&gt;, Anzahl von Layers pro Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt;, Anzahl von Einheiten pro Layer in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;, Count von This Specific Artikel in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt;.</value>
+    <value>You sind providing Information auf Non-GTIN Pallet. Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if jeder von der folgende Attribute ist angegeben, dann alle muss angegeben werden: Non-GTIN Logistic Einheit &lt;Length&gt; &lt;depth&gt;, Non-GTIN Logistic Einheit Breite &lt;width&gt;, Non-GTIN Logistic Einheit Höhe &lt;height&gt;, Non-GTIN Logistic Einheit Bruttogewicht &lt;grossWeight&gt;, Anzahl von Layers pro Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt;, Anzahl von Einheiten pro Layer in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;, Count von This Specific Artikel in ein Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt;.</value>
   </data>
   <data name="101940" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if es gibt eine Iteration von der Nutritional Klasse wobei Nutritional Program Code &lt;nutritionalProgramCode&gt; ist gleich '8' (Nutri-Score) und Nutritional Score &lt;nutritionalScore&gt; ist gleich 'EXEMPT', dann kein anderer Iteration von Nutritional Program Code &lt;nutritionalProgramCode&gt; gleich '8' (Nutri-Score) ist erlaubt.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if es gibt eine Iteration von der Nutritional Klasse wobei Nutritional Program Code &lt;nutritionalProgramCode&gt; ist gleich '8' (Nutri-Score) und Nutritional Score &lt;nutritionalScore&gt; ist gleich 'EXEMPT', dann kein anderer Iteration von Nutritional Program Code &lt;nutritionalProgramCode&gt; gleich '8' (Nutri-Score) ist erlaubt.</value>
   </data>
   <data name="101959" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Minimum Days von Shelf Life bei Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; is verwendet, dann it darf nicht sein größer als Minimum Days von Shelf Life bei Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; von jeder von its untergeordnete Artikel.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Minimum Days von Shelf Life bei Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; is verwendet, dann it darf nicht sein größer als Minimum Days von Shelf Life bei Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; von jeder von its untergeordnete Artikel.</value>
   </data>
   <data name="101960" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Minimum Days von Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; is verwendet, dann it darf nicht sein größer als Minimum Days von Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; von jeder von its untergeordnete Artikel.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Minimum Days von Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; is verwendet, dann it darf nicht sein größer als Minimum Days von Shelf Life from Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; von jeder von its untergeordnete Artikel.</value>
   </data>
   <data name="101970" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist gleich &lt;&lt;gpcCategoryCode&gt; GPC Kategorie Name&gt;, dann one von der Fruit And Vegetables Grade Von Goods Codes ('EXTRA', 'I', 'II' oder 'NONE') muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist gleich &lt;&lt;gpcCategoryCode&gt; GPC Kategorie Name&gt;, dann one von der Fruit And Vegetables Grade Von Goods Codes ('EXTRA', 'I', 'II' oder 'NONE') muss verwendet werden.</value>
   </data>
   <data name="101972" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Digital Asset Typ Code &lt;referencedFileTypeCode&gt; is gleich 'SAFETY_DATA_SHEET', 'DOP_SHEET' oder 'DECLARATION_OF_CONFORMITY', dann File Sprache Code &lt;fileLanguageCode&gt; muss verwendet werden.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Digital Asset Typ Code &lt;referencedFileTypeCode&gt; is gleich 'SAFETY_DATA_SHEET', 'DOP_SHEET' oder 'DECLARATION_OF_CONFORMITY', dann File Sprache Code &lt;fileLanguageCode&gt; muss verwendet werden.</value>
   </data>
   <data name="101973" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Digital Asset Typ Code &lt;referencedFileTypeCode&gt; ist gleich 'PRODUCT_IMAGE', dann Digital Asset Link &lt;uniformResourceIdentifier&gt; must begin mit 'http://' oder 'https://'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Digital Asset Typ Code &lt;referencedFileTypeCode&gt; ist gleich 'PRODUCT_IMAGE', dann Digital Asset Link &lt;uniformResourceIdentifier&gt; must begin mit 'http://' oder 'https://'.</value>
   </data>
   <data name="101986" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE', dann untergeordneter Artikel's Pallet Typ Code &lt;platformTypeCode&gt; darf nicht verwendet werden es sei denn untergeordneter Artikel Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE', dann untergeordneter Artikel's Pallet Typ Code &lt;platformTypeCode&gt; darf nicht verwendet werden es sei denn untergeordneter Artikel Produkt Hierarchy Ebene Code &lt;tradeItemUnitDescriptorCode&gt; ist gleich 'PALLET' oder 'MIXED_MODULE'.</value>
   </data>
   <data name="101993" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Additional Label Information is verwendet, dann Certification Identification &lt;certificationIdentification&gt; muss gleich sein ein Code verwendet für Third Party Accreditation Symbol auf Produkt Package Code &lt;packagingMarkedLabelAccreditationCode&gt; oder Local Packaging Marked Label Accreditation Code &lt;localPackagingMarkedLabelAccreditationCodeReference&gt;.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Additional Label Information is verwendet, dann Certification Identification &lt;certificationIdentification&gt; muss gleich sein ein Code verwendet für Third Party Accreditation Symbol auf Produkt Package Code &lt;packagingMarkedLabelAccreditationCode&gt; oder Local Packaging Marked Label Accreditation Code &lt;localPackagingMarkedLabelAccreditationCodeReference&gt;.</value>
   </data>
   <data name="102010" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist gleich &lt;&lt;gpcCategoryCode&gt; GPC Kategorie Name&gt;, dann &lt;regulationTypeCode&gt; muss gleich sein 'EXPLOSIVES_PRECURSORS_REGISTRATION' und Regulation Compliance Indicator muss gleich sein 'TRUE' oder 'NOT_APPLICABLE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Global Produkt Kategorie Code &lt;gpcCategoryCode&gt; ist gleich &lt;&lt;gpcCategoryCode&gt; GPC Kategorie Name&gt;, dann &lt;regulationTypeCode&gt; muss gleich sein 'EXPLOSIVES_PRECURSORS_REGISTRATION' und Regulation Compliance Indicator muss gleich sein 'TRUE' oder 'NOT_APPLICABLE'.</value>
   </data>
   <data name="102068" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, if Display Ready Packaging &lt;hasDisplayReadyPackaging&gt; ist gleich 'TRUE', dann Despatch Einheit Indicator &lt;isTradeItemADespatchUnit&gt; SHALL equal 'TRUE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, if Display Ready Packaging &lt;hasDisplayReadyPackaging&gt; ist gleich 'TRUE', dann Despatch Einheit Indicator &lt;isTradeItemADespatchUnit&gt; SHALL equal 'TRUE'.</value>
   </data>
   <data name="102071" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt;, mindestens eine Iteration von Customs Classification Typ Code &lt;importClassificationTypeCode&gt; muss gleich sein 'INTRASTAT' oder 'TARIF_INTEGRE_DE_LA_COMMUNAUTE'.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt;, mindestens eine Iteration von Customs Classification Typ Code &lt;importClassificationTypeCode&gt; muss gleich sein 'INTRASTAT' oder 'TARIF_INTEGRE_DE_LA_COMMUNAUTE'.</value>
   </data>
   <data name="102077" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Customs Classification Value &lt;importClassificationValue&gt; &lt;&lt;importClassificationValue&gt; Wert&gt;, Attribut Regulation Typ Code &lt;regulationTypeCode&gt; muss gleich sein 'DEFORESTATION_REGULATION' und Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; muss gleich sein 'TRUE' in der gleiche Iteration.</value>
+    <value>Für den Ländercode des Verkaufslandes &lt;targetMarketCountryCode&gt; und Customs Classification Value &lt;importClassificationValue&gt; &lt;&lt;importClassificationValue&gt; Wert&gt;, Attribut Regulation Typ Code &lt;regulationTypeCode&gt; muss gleich sein 'DEFORESTATION_REGULATION' und Regulation Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; muss gleich sein 'TRUE' in der gleiche Iteration.</value>
   </data>
   <data name="102078" xml:space="preserve">
-    <value>Für den Ländercode des Verkaufslandes (&lt;targetMarketCountryCode&gt;) &lt;&lt;targetMarketCountryCode&gt; Land Name&gt; und Customs Classification Value (&lt;importClassificationValue&gt;) &lt;&lt;importClassificationValue&gt; Wert&gt;, Attribut Regulation Typ Code (&lt;regulationTypeCode&gt;) muss gleich sein 'DEFORESTATION_REGULATION' und Regulation Compliance Indicator (&lt;isTradeItemRegulationCompliant&gt;) muss gleich sein 'TRUE' oder 'NOT_APPLICABLE' in der gleiche Iteration.​</value>
+    <value>Für den Ländercode des Verkaufslandes (&lt;targetMarketCountryCode&gt;) und Customs Classification Value (&lt;importClassificationValue&gt;) &lt;&lt;importClassificationValue&gt; Wert&gt;, Attribut Regulation Typ Code (&lt;regulationTypeCode&gt;) muss gleich sein 'DEFORESTATION_REGULATION' und Regulation Compliance Indicator (&lt;isTradeItemRegulationCompliant&gt;) muss gleich sein 'TRUE' oder 'NOT_APPLICABLE' in der gleiche Iteration.</value>
   </data>
   <data name="300" xml:space="preserve">
     <value>&lt;gln&gt; muss gleich sein &lt;dataSource&gt;, &lt;contentOwner&gt; und &lt;informationProvider&gt; und muss gleich sein für alle Ebenen der Handelseinheiits-Hierarchie.</value>

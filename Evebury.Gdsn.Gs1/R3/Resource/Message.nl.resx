@@ -142,7 +142,7 @@
     <value>&lt;minimumTradeItemLifespanFromTimeOfProduction&gt; moet groter zijn dan of gelijk zijn aan &lt;minimumTradeItemLifespanFromTimeOfArrival&gt;.</value>
   </data>
   <data name="325" xml:space="preserve">
-    <value>Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; wordt niet gebruikt. Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is dit attribuut verplicht voor alle artikelen op het laagste niveau van de hiërarchie voor Globale productcategoriecode &lt;gpcCategoryCode&gt; &lt;&lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;&gt;.</value>
+    <value>Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; wordt niet gebruikt. Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is dit attribuut verplicht voor alle artikelen op het laagste niveau van de hiërarchie voor Globale productcategoriecode &lt;gpcCategoryCode&gt; &lt;&lt;gpcCategoryCode&gt;&gt; &lt;gpcCategoryName&gt;.</value>
   </data>
   <data name="339" xml:space="preserve">
     <value>Als &lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ADR' en &lt;dangerousGoodsPackingGroup&gt; niet leeg is, dan moet &lt;dangerousGoodsPackingGroup&gt; gelijk zijn aan ('NA','I', 'II' of 'III').</value>
@@ -193,7 +193,7 @@
     <value>Nul of negatieve waarden zijn niet toegestaan voor Verpakking Materiaal Samenstelling Hoeveelheid indien opgegeven.</value>
   </data>
   <data name="469" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, GTIN (Global Trade Item Number) beginnend met '002', '004', '02' zijn niet toegestaan.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, GTIN (Global Trade Item Number) beginnend met '002', '004', '02' zijn niet toegestaan.</value>
   </data>
   <data name="472" xml:space="preserve">
     <value>Voor elk GTIN (Global Trade Item Number) van het ingesloten product.</value>
@@ -208,19 +208,19 @@
     <value>De Doelmarkt-landcode en &lt;targetMarketSubdivisionCode&gt;, wanneer ingevuld, moeten consistent zijn voor alle GTIN's binnen een bepaalde hiërarchie.</value>
   </data>
   <data name="477" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, de meeteenheid voor &lt;attribute&gt; moet worden opgegeven in graden Celsius.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, de meeteenheid voor &lt;attribute&gt; moet worden opgegeven in graden Celsius.</value>
   </data>
   <data name="478" xml:space="preserve">
     <value>Als &lt;nestingIncrement&gt; is ingevuld, moet het groter zijn dan nul (0).</value>
   </data>
   <data name="479" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet de Stapelfactor &lt;stackingFactor&gt; kleiner zijn dan 100.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet de Stapelfactor &lt;stackingFactor&gt; kleiner zijn dan 100.</value>
   </data>
   <data name="480" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet de Stapelfactor voor non-GTIN Pallet &lt;logisticsUnitStackingFactor&gt; kleiner zijn dan 100.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet de Stapelfactor voor non-GTIN Pallet &lt;logisticsUnitStackingFactor&gt; kleiner zijn dan 100.</value>
   </data>
   <data name="481" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet het aantal lagen per non-GTIN pallet &lt;quantityOfLayersPerPallet&gt; kleiner zijn dan 999.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet het aantal lagen per non-GTIN pallet &lt;quantityOfLayersPerPallet&gt; kleiner zijn dan 999.</value>
   </data>
   <data name="483" xml:space="preserve">
     <value>&lt;endAvailabilityDateTime&gt; moet later of gelijk zijn aan vandaag bij eerste aanlevering.</value>
@@ -253,7 +253,7 @@
     <value>Het maximum aantal iteraties van GDSNTradeItemClassificationAttributeType is 25.</value>
   </data>
   <data name="506" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één waarde van Verpakking Materiaal Hoeveelheid &lt;packagingMaterialCompositionQuantity&gt; gram (GRM) of kilogram (KGM) hebben als meeteenheid.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één waarde van Verpakking Materiaal Hoeveelheid &lt;packagingMaterialCompositionQuantity&gt; gram (GRM) of kilogram (KGM) hebben als meeteenheid.</value>
   </data>
   <data name="507" xml:space="preserve">
     <value>Het totaal van waarden in &lt;packagingMaterialCompositionQuantity&gt; mag niet groter zijn dan de waarde in &lt;packagingWeight&gt; voor hetzelfde artikel.</value>
@@ -289,7 +289,7 @@
     <value>Als &lt;dataCarrierTypeCode&gt; gelijk is aan ('EAN_13', 'UPC_A' of 'UPC_E'), dan moet het eerste cijfer van de gtin gelijk zijn aan '0'.</value>
   </data>
   <data name="524" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Nettoinhoud &lt;netContent&gt; is verplicht op consumenteneenheden (Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk aan 'TRUE').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Nettoinhoud &lt;netContent&gt; is verplicht op consumenteneenheden (Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk aan 'TRUE').</value>
   </data>
   <data name="526" xml:space="preserve">
     <value>Indien opgegeven, moet &lt;orderingLeadTime&gt; groter zijn dan nul.</value>
@@ -298,7 +298,7 @@
     <value>Als doelmarkt gelijk is aan '036' (Australia) en &lt;taxTypeCode&gt; gelijk is aan 'WET' (Wine Equalisation Tax), dan moet &lt;percentageOfAlcoholByVolume&gt; ingevuld zijn.</value>
   </data>
   <data name="530" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Aantal Eenheden per Laag in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; wordt gebruikt, dan moet Aantal Lagen per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Aantal Eenheden per Laag in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; wordt gebruikt, dan moet Aantal Lagen per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; worden gebruikt.</value>
   </data>
   <data name="531" xml:space="preserve">
     <value>&lt;functionalName&gt; mag niet dezelfde tekst bevatten als &lt;brandName&gt; of &lt;descriptiveSizeDimension&gt; wanneer IsTradeItemAConsumerUnit gelijk is aan 'TRUE'.</value>
@@ -376,7 +376,7 @@
     <value>&lt;lastChangeDateTime&gt; voor een handelsartikel mag geen datum in de toekomst zijn.</value>
   </data>
   <data name="575" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Globale productcategoriecode &lt;gpcCategoryCode&gt; niet in GPC Segment '51000000' (Healthcare) valt en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet GTIN (Global Trade Item Number) &lt;gtin&gt;&gt; beginnen met '0'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Globale productcategoriecode &lt;gpcCategoryCode&gt; niet in GPC Segment '51000000' (Healthcare) valt en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet GTIN (Global Trade Item Number) &lt;gtin&gt; beginnen met '0'.</value>
   </data>
   <data name="576" xml:space="preserve">
     <value>Als &lt;isNonGTINLogisticUnitPackedIrregularly&gt; gelijk is aan 'FALSE', dan moet de waarde in &lt;quantityOfTradeItemsPerPallet&gt; gelijk zijn aan de waarde in &lt;quantityOfLayersPerPallet&gt; vermenigvuldigd met de waarde in &lt;quantityOfTradeItemsPerPalletLayer&gt;</value>
@@ -394,7 +394,7 @@
     <value>Als &lt;targetMarket&gt; gelijk is aan '840' (US) en &lt;growingMethodCode&gt; gelijk is aan 'ORGANIC', dan mogen &lt;organicClaimAgency&gt; en &lt;organicTradeItemCode&gt; niet leeg zijn.</value>
   </data>
   <data name="590" xml:space="preserve">
-    <value>&lt;tradeItemDescription&gt; ontbreekt. De lange omschrijving &lt;tradeItemDescription&gt; is verplicht voor &lt;&lt;&lt;targetMarketCountryCode&gt; Name&gt;&gt;.</value>
+    <value>&lt;tradeItemDescription&gt; ontbreekt. De lange omschrijving &lt;tradeItemDescription&gt; is verplicht voor &lt;targetMarketCountryCode&gt;.</value>
   </data>
   <data name="594" xml:space="preserve">
     <value>&lt;platformTypeCode&gt; ontbreekt. Als &lt;targetMarketCountryCode&gt; niet gelijk is aan ('036' (Australia) of '554' (New Zealand) of 752 (Sweden)), dan is het verplicht het pallettype &lt;platformTypeCode&gt; op te geven wanneer &lt;tradeItemUnitDescriptor&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE'.</value>
@@ -424,7 +424,7 @@
     <value>Als &lt;depositValueEffectiveDate&gt; is ingevuld, dan MOET &lt;returnablePackageDepositIdentification&gt; of &lt;returnablePackageDepositAmount&gt; worden ingevuld.</value>
   </data>
   <data name="633" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Consumer Product Variant Start &lt;Time&gt; &lt;consumerProductVariantStartEffectiveDateTime&gt; wordt gebruikt, dan moet Consumer Product Variant Omschrijving &lt;consumerProductVariantDescription&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Consumer Product Variant Start &lt;Time&gt; &lt;consumerProductVariantStartEffectiveDateTime&gt; wordt gebruikt, dan moet Consumer Product Variant Omschrijving &lt;consumerProductVariantDescription&gt; worden gebruikt.</value>
   </data>
   <data name="634" xml:space="preserve">
     <value>&lt;returnableAssetCapacityContent&gt; ontbreekt.</value>
@@ -481,7 +481,7 @@
     <value>&lt;targetMarket&gt; voor een onderliggend artikel kan niet specifieker zijn dan voor het bovenliggende artikel. Bijvoorbeeld: Als het bovenliggende artikel &lt;targetmarketCountryCode&gt; gelijk is aan '840', dan mag het onderliggende artikel geen &lt;targetMarketSubdivisonCode&gt; hebben.</value>
   </data>
   <data name="1025" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, worden &lt;packagingMaterialTypeCode&gt; en &lt;packagingMaterialCompositionQuantity&gt; in paren gebruikt. D.w.z. als één is ingevuld, moet de andere ook ingevuld zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, worden &lt;packagingMaterialTypeCode&gt; en &lt;packagingMaterialCompositionQuantity&gt; in paren gebruikt. D.w.z. als één is ingevuld, moet de andere ook ingevuld zijn.</value>
   </data>
   <data name="1026" xml:space="preserve">
     <value>De meeteenheid gebruikt voor de Hoogte &lt;height&gt; van het handelsartikel moet van hetzelfde meetstelsel zijn (bijv. metrisch) voor de hele hiërarchie.</value>
@@ -583,16 +583,16 @@
     <value>&lt;partyRoleCode&gt; is verplicht in de &lt;tradeItem&gt;/PartyInRole class.</value>
   </data>
   <data name="1090" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Product Yield &lt;productYield&gt; wordt gebruikt, dan moet Code Type Bereiding &lt;preparationTypeCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Product Yield &lt;productYield&gt; wordt gebruikt, dan moet Code Type Bereiding &lt;preparationTypeCode&gt; worden gebruikt.</value>
   </data>
   <data name="1091" xml:space="preserve">
     <value>Als &lt;productYield&gt; niet leeg is, mag &lt;productYieldTypeCode&gt; niet leeg zijn.</value>
   </data>
   <data name="1092" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Niet-fysieke-eenheid-indicator &lt;isTradeItemNonphysical&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, en Service Indicator &lt;isTradeItemAService&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, en één iteratie van Trade Channel Code &lt;tradeItemTradeChannelCode&gt; gelijk is aan ('CASH_AND_CARRY', 'CONSIGNMENT', 'CONVENIENCE', 'DRUG_STORE', 'FOOD_SERVICE', 'GROCERY', 'ONLINE' of 'UNSPECIFIED') of Trade Channel Code niet wordt gebruikt, dan moet Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk zijn aan 'TRUE' voor ten minste één GTIN in de hiërarchie.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Niet-fysieke-eenheid-indicator &lt;isTradeItemNonphysical&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, en Service Indicator &lt;isTradeItemAService&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, en één iteratie van Trade Channel Code &lt;tradeItemTradeChannelCode&gt; gelijk is aan ('CASH_AND_CARRY', 'CONSIGNMENT', 'CONVENIENCE', 'DRUG_STORE', 'FOOD_SERVICE', 'GROCERY', 'ONLINE' of 'UNSPECIFIED') of Trade Channel Code niet wordt gebruikt, dan moet Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk zijn aan 'TRUE' voor ten minste één GTIN in de hiërarchie.</value>
   </data>
   <data name="1093" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en voor dezelfde Tax Type Code &lt;dutyFeeTaxTypeCode&gt; mogen de bereiken van &lt;dutyFeeTaxEffectiveStartDateTime&gt; en &lt;dutyFeeTaxEffectiveEndDateTime&gt; NIET overlappen.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en voor dezelfde Tax Type Code &lt;dutyFeeTaxTypeCode&gt; mogen de bereiken van &lt;dutyFeeTaxEffectiveStartDateTime&gt; en &lt;dutyFeeTaxEffectiveEndDateTime&gt; NIET overlappen.</value>
   </data>
   <data name="1102" xml:space="preserve">
     <value>Als &lt;targetMarketCountryCode&gt; gelijk is aan ('249' (France) of '250' (France)) en &lt;gpcCategoryCode&gt; gelijk is aan '10000424' en &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van &lt;priceComparisonContentTypeCode&gt; gelijk zijn aan 'PER_KILOGRAM' of 'PER_LITRE'.</value>
@@ -601,7 +601,7 @@
     <value>Als &lt;targetMarketCountryCode&gt; gelijk is aan '250' (France) en &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE' en als &lt;priceComparisonContentTypeCode&gt; gelijk is aan 'PER_PIECE', dan moet &lt;priceComparisonMeasurement&gt; een geheel getal zijn.</value>
   </data>
   <data name="1105" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als &lt;priceComparisonMeasurement&gt; wordt gebruikt, dan moet &lt;priceComparisonMeasurement&gt; groter zijn dan 0.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als &lt;priceComparisonMeasurement&gt; wordt gebruikt, dan moet &lt;priceComparisonMeasurement&gt; groter zijn dan 0.</value>
   </data>
   <data name="1107" xml:space="preserve">
     <value>Als &lt;targetMarketCountryCode&gt; gelijk is aan ('249' (France) of '250' (France)) en &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' en &lt;platformTypeCode&gt; gelijk is aan '10', dan moet de diepte liggen tussen en inclusief ('800 MMT' of '31.50 IN') en ('1600 MMT' of '63 IN') en moet de breedte liggen tussen en inclusief ('600 MMT' of '23.62 IN') en ('1200 MMT' of '47.24 IN').</value>
@@ -682,7 +682,7 @@
     <value>Als &lt;targetMarketCountryCode&gt; gelijk is aan ('249' (France) of '250' (France)) en &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' en &lt;platformTypeCode&gt; gelijk is aan '12', dan moet &lt;depth&gt; liggen tussen en inclusief ('1200 MMT' of '47.24 IN') en ('2400 MMT' of '94.48 IN'), en moet &lt;width&gt; liggen tussen en inclusief ('1000 MMT' of '39.37 IN') en ('2000 MMT' of '78.74 IN').</value>
   </data>
   <data name="1141" xml:space="preserve">
-    <value>Als &lt;targetMarketCountryCode&gt; gelijk is aan ('249' (France) of '250' (France)) en &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' en &lt;platformTypeCode&gt; gelijk is aan '11',</value>
+    <value>Als &lt;targetMarketCountryCode&gt; gelijk is aan ('249' (France) of '250' (France)) en &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' en &lt;platformTypeCode&gt; gelijk is aan '11'</value>
   </data>
   <data name="1160" xml:space="preserve">
     <value>&lt;descriptionShort&gt; ontbreekt. Als &lt;targetMarketCountryCode&gt; gelijk is aan ('249' (France) of '250' (France)) en &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet &lt;descriptionShort&gt; worden gebruikt.</value>
@@ -847,7 +847,7 @@
     <value>Voor doelmarkt '840' (United States), beide &lt;creditableIngredientTypeCode&gt; en.</value>
   </data>
   <data name="1345" xml:space="preserve">
-    <value>Voor doelmarkt '840' (United States),</value>
+    <value>Voor doelmarkt '840' (United States)</value>
   </data>
   <data name="1346" xml:space="preserve">
     <value>&lt;creditableAmount&gt; ontbreekt. Voor doelmarkt '840' (United States) moet &lt;creditableAmount&gt; worden gebruikt wanneer &lt;creditableIngredientDescription&gt; wordt gebruikt.</value>
@@ -892,7 +892,7 @@
     <value>Er mag ten hoogste één iteratie zijn van de taal 'Zweeds'.</value>
   </data>
   <data name="1440" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Nutritional Preparation Code &lt;preparationStateCode&gt; wordt gebruikt, dan moet Nutrient Code &lt;nutrientTypeCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Nutritional Preparation Code &lt;preparationStateCode&gt; wordt gebruikt, dan moet Nutrient Code &lt;nutrientTypeCode&gt; worden gebruikt.</value>
   </data>
   <data name="1445" xml:space="preserve">
     <value>Voedingsstofhoeveelheid &lt;quantityContained&gt; of Dagelijks voedingsstofwaarde-percentage &lt;dailyValueIntakePercent&gt; ontbreekt. Als Voedingsstofcode &lt;nutrientTypeCode&gt; wordt gebruikt, dan moet Voedingsstofhoeveelheid &lt;quantityContained&gt; of Dagelijks voedingsstofwaarde-percentage &lt;dailyValueIntakePercent&gt; worden gebruikt.</value>
@@ -937,13 +937,13 @@
     <value>Organic Claim Agency Code &lt;organicClaimAgencyCode&gt; ontbreekt.</value>
   </data>
   <data name="1570" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, de Teeltmethode Code &lt;growingMethodCode&gt; &lt;&lt;growingMethodCode&gt;&gt; is niet van toepassing op vers fruit en groenten voor Globale productcategoriecode &lt;gpcCategoryCode&gt;: &lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, de Teeltmethode Code &lt;growingMethodCode&gt; &lt;&lt;growingMethodCode&gt;&gt; is niet van toepassing op vers fruit en groenten voor Globale productcategoriecode &lt;gpcCategoryCode&gt;: &lt;gpcCategoryCode&gt; &lt;gpcCategoryName&gt;.</value>
   </data>
   <data name="1585" xml:space="preserve">
     <value>Geen iteratie van &lt;catchMethodCode&gt; is een numerieke code.</value>
   </data>
   <data name="1601" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Nettoinhoud &lt;netContent&gt; is verplicht op consumenteneenheden (Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk aan 'TRUE').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Nettoinhoud &lt;netContent&gt; is verplicht op consumenteneenheden (Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk aan 'TRUE').</value>
   </data>
   <data name="1604" xml:space="preserve">
     <value>&lt;numberOfPiecesInSet&gt; en/of &lt;totalNumberOfComponents&gt; wordt/worden niet gebruikt.</value>
@@ -985,25 +985,25 @@
     <value>Dezelfde &lt;feedType&gt; bestaat meerdere keren voor hetzelfde handelsartikel.</value>
   </data>
   <data name="1641" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van starch ('STARCH') moet kleiner zijn dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van carbohydrates ('CHOAVL').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van starch ('STARCH') moet kleiner zijn dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van carbohydrates ('CHOAVL').</value>
   </data>
   <data name="1642" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van polyols (Carbohydrates of which multiple alcohols) ('POLYL') moet kleiner zijn dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van carbohydrates ('CHOAVL').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van polyols (Carbohydrates of which multiple alcohols) ('POLYL') moet kleiner zijn dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van carbohydrates ('CHOAVL').</value>
   </data>
   <data name="1643" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van total saturated fatty acids ('FASAT') moet kleiner zijn dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van total fat ('FAT').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van total saturated fatty acids ('FASAT') moet kleiner zijn dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van total fat ('FAT').</value>
   </data>
   <data name="1644" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van total monounsaturated-cis fatty acids ('FAMSCIS') moet kleiner dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van total fat ('FAT').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van total monounsaturated-cis fatty acids ('FAMSCIS') moet kleiner dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van total fat ('FAT').</value>
   </data>
   <data name="1645" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van total polyunsaturated-cis fatty acids ('FAPUCIS') moet kleiner dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van total fat ('FAT').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van total polyunsaturated-cis fatty acids ('FAPUCIS') moet kleiner dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van total fat ('FAT').</value>
   </data>
   <data name="1646" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; mag alleen worden gebruikt voor GTIN-geïdentificeerde pallets.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; mag alleen worden gebruikt voor GTIN-geïdentificeerde pallets.</value>
   </data>
   <data name="1647" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; mag alleen worden gebruikt voor GTIN-geïdentificeerde pallets.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; mag alleen worden gebruikt voor GTIN-geïdentificeerde pallets.</value>
   </data>
   <data name="1648" xml:space="preserve">
     <value>Attribuut &lt;quantityOfTradeItemsPerPalletLayer&gt; mag alleen worden gebruikt voor non-GTIN logistieke eenheden.</value>
@@ -1015,7 +1015,7 @@
     <value>Attribuut &lt;quantityOfLayersPerPallet&gt; mag alleen worden gebruikt voor non-GTIN logistieke eenheden.</value>
   </data>
   <data name="1651" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET', dan mogen geen attributen in de &lt;nonGTINLogisticsUnitInformation&gt; class worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET', dan mogen geen attributen in de &lt;nonGTINLogisticsUnitInformation&gt; class worden gebruikt.</value>
   </data>
   <data name="1652" xml:space="preserve">
     <value>Als &lt;temperatureQualifierCode&gt; gelijk is aan 'STORAGE_HANDLING', dan moet &lt;maximumTemperature&gt; worden gebruikt voor elke context anders dan 'DP007' of 'DP008'.</value>
@@ -1024,7 +1024,7 @@
     <value>Als &lt;temperatureQualifierCode&gt; gelijk is aan 'STORAGE_HANDLING', dan moet &lt;minimumTemperature&gt; worden gebruikt voor elke context anders dan 'DP007' of 'DP008'.</value>
   </data>
   <data name="1654" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Dagelijks voedingsstofwaarde-percentage &lt;dailyValueIntakePercent&gt; wordt gebruikt voor elk van de 7 hoofdnutriënten vermeld in Artikel 30 (1) van EU Verordening 1169/2011 (energy (ENER-), fat (FAT), saturates (FASAT), carbohydrate (CHOAVL), sugars (SUGAR-), protein (PRO-), salt (SALTEQ)), dan moet Daily Intake Reference &lt;dailyValueIntakeReference&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Dagelijks voedingsstofwaarde-percentage &lt;dailyValueIntakePercent&gt; wordt gebruikt voor elk van de 7 hoofdnutriënten vermeld in Artikel 30 (1) van EU Verordening 1169/2011 (energy (ENER-), fat (FAT), saturates (FASAT), carbohydrate (CHOAVL), sugars (SUGAR-), protein (PRO-), salt (SALTEQ)), dan moet Daily Intake Reference &lt;dailyValueIntakeReference&gt; worden gebruikt.</value>
   </data>
   <data name="1655" xml:space="preserve">
     <value>Volgens de GS1-meetregels moet de diepte groter zijn dan of gelijk zijn aan de breedte wanneer het handelsartikel geen consumenteneenheid (POS) is.</value>
@@ -1045,13 +1045,13 @@
     <value>Als meerdere verpakking marked label accreditation codes zijn opgegeven, moeten ze verschillend zijn.</value>
   </data>
   <data name="1662" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk aan 'TRUE' en Globale productcategoriecode &lt;gpcCategoryCode&gt; = '10000159' (Beer), dan moet Degree Of Original Wort &lt;degreeOfOriginalWort&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk aan 'TRUE' en Globale productcategoriecode &lt;gpcCategoryCode&gt; = '10000159' (Beer), dan moet Degree Of Original Wort &lt;degreeOfOriginalWort&gt; worden gebruikt.</value>
   </data>
   <data name="1663" xml:space="preserve">
     <value>Als &lt;numberOfServingsPerPackage&gt; wordt gebruikt, moet het groter zijn dan nul.</value>
   </data>
   <data name="1665" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van sugars ('SUGAR-') moet kleiner zijn dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van carbohydrates ('CHOAVL').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt; van sugars ('SUGAR-') moet kleiner zijn dan of gelijk zijn aan de Voedingsstofhoeveelheid &lt;quantityContained&gt; van carbohydrates ('CHOAVL').</value>
   </data>
   <data name="1669" xml:space="preserve">
     <value>&lt;componentIdentification&gt; moet een geldig GTIN-14 zijn als de &lt;identificationSchemeAgencyCode&gt; gelijk is aan 'GTIN_14'.</value>
@@ -1102,7 +1102,7 @@
     <value>Ten minste één instantie van import classificatie type code moet worden gebruikt met code 'INTRASTAT' voor doelmarkten Belgium, Netherlands en Luxembourg.</value>
   </data>
   <data name="1693" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk is aan 'INTRASTAT', dan moet Douane Classificatie Waarde &lt;importClassificationValue&gt; exact 8 cijfers hebben.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk is aan 'INTRASTAT', dan moet Douane Classificatie Waarde &lt;importClassificationValue&gt; exact 8 cijfers hebben.</value>
   </data>
   <data name="1694" xml:space="preserve">
     <value>Als attribuut XY (elk attribuut van class &lt;microbiologicalInformation&gt;) is opgegeven, dan moet &lt;microbiologicalOrganismCode&gt; worden ingevuld.</value>
@@ -1138,7 +1138,7 @@
     <value>De &lt;dietTypeSubcodeCode&gt; is niet geldig voor een Vegetarian dieet.</value>
   </data>
   <data name="1707" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, de &lt;dietTypeSubCode&gt; &lt;&lt;dietTypeSubCode&gt;&gt; is niet geldig voor een Vegetarian dieet.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, de &lt;dietTypeSubCode&gt; &lt;&lt;dietTypeSubCode&gt;&gt; is niet geldig voor een Vegetarian dieet.</value>
   </data>
   <data name="1708" xml:space="preserve">
     <value>De &lt;dietTypeSubcodeCode&gt; is niet geldig voor een Kosher dieet.</value>
@@ -1153,13 +1153,13 @@
     <value>Voor de Franse doelmarkt is de waarde 'UNSPECIFIED' niet toegestaan voor {specifiy the attribute} met het NonBinaryLogicEnumeration gegevenstype.</value>
   </data>
   <data name="1717" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als de Nutrient Detail sub-class wordt gebruikt, dan moet Nutrient Code &lt;nutrientTypeCode&gt; uniek zijn binnen dezelfde Nutrient Header class.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als de Nutrient Detail sub-class wordt gebruikt, dan moet Nutrient Code &lt;nutrientTypeCode&gt; uniek zijn binnen dezelfde Nutrient Header class.</value>
   </data>
   <data name="1718" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, de FAO vangstgebieden 27 (Atlantic, Northeast) en 37 (Mediterranean en Black Sea) zijn niet geldig; gebruik de subgebieden of divisies voor deze zones.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, de FAO vangstgebieden 27 (Atlantic, Northeast) en 37 (Mediterranean en Black Sea) zijn niet geldig; gebruik de subgebieden of divisies voor deze zones.</value>
   </data>
   <data name="1719" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, de FAO vangstgebieden 27 (Atlantic, Northeast) en 37 (Mediterranean en Black Sea) zijn niet geldig; gebruik de subgebieden of divisies voor deze zones.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, de FAO vangstgebieden 27 (Atlantic, Northeast) en 37 (Mediterranean en Black Sea) zijn niet geldig; gebruik de subgebieden of divisies voor deze zones.</value>
   </data>
   <data name="1720" xml:space="preserve">
     <value>Één of meer van de GTIN's in elke hiërarchie moet zijn gemarkeerd als INVOICE UNIT.</value>
@@ -1171,25 +1171,25 @@
     <value>&lt;additionalTradeItemClassificationCodeValue&gt; is onjuist. Voor &lt;additionalTradeItemClassificationSystemCode&gt; '85' moet een van deze waarden worden gebruikt ('EU_CLASS_I', 'EU_CLASS_IIA', 'EU_CLASS_IIB', 'EU_CLASS_III', 'IVDD_ANNEX_II_LIST_A', 'IVDD_ANNEX_II_LIST_B', 'IVDD_DEVICES_SELF_TESTING', 'IVDD_GENERAL', 'AIMDD')</value>
   </data>
   <data name="1739" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als elk van de volgende attributen is opgegeven, dan moeten alle drie worden opgegeven: Voedingsstofcode &lt;nutrientTypeCode&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt;, Voedingsstofwaarde-precisiecode &lt;measurementPrecisionCode&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als elk van de volgende attributen is opgegeven, dan moeten alle drie worden opgegeven: Voedingsstofcode &lt;nutrientTypeCode&gt;, Voedingsstofhoeveelheid &lt;quantityContained&gt;, Voedingsstofwaarde-precisiecode &lt;measurementPrecisionCode&gt;.</value>
   </data>
   <data name="1740" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' en Onregelmatig Geconfigureerde Pallet-indicator &lt;isTradeItemPackedIrregularly&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, dan moet Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; worden gebruikt en groter zijn dan nul.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' en Onregelmatig Geconfigureerde Pallet-indicator &lt;isTradeItemPackedIrregularly&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, dan moet Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; worden gebruikt en groter zijn dan nul.</value>
   </data>
   <data name="1741" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als batterijen verplicht zijn voor het handelsartikel (&lt;areBatteriesRequired&gt; = 'TRUE'), dan moet &lt;areBatteriesIncluded&gt; worden opgegeven.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als batterijen verplicht zijn voor het handelsartikel (&lt;areBatteriesRequired&gt; = 'TRUE'), dan moet &lt;areBatteriesIncluded&gt; worden opgegeven.</value>
   </data>
   <data name="1742" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als elk van de attributen van class Verpakking is opgegeven, dan moet attribuut &lt;packagingTypeCode&gt; worden opgegeven (in elke iteratie van de class).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als elk van de attributen van class Verpakking is opgegeven, dan moet attribuut &lt;packagingTypeCode&gt; worden opgegeven (in elke iteratie van de class).</value>
   </data>
   <data name="1743" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als elk van de volgende attributen is opgegeven, dan moet &lt;platformTypeCode&gt; worden opgegeven: &lt;quantityOfTradeItemsPerPallet&gt;, &lt;quantityOfLayersPerPallet&gt; of &lt;quantityOfTradeItemsPerPalletLayer&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als elk van de volgende attributen is opgegeven, dan moet &lt;platformTypeCode&gt; worden opgegeven: &lt;quantityOfTradeItemsPerPallet&gt;, &lt;quantityOfLayersPerPallet&gt; of &lt;quantityOfTradeItemsPerPalletLayer&gt;.</value>
   </data>
   <data name="1744" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en Globale productcategoriecode &lt;gpcCategoryCode&gt; gelijk aan &lt;&lt;gpcCategoryCode&gt;&gt; &lt;&lt;gpcCategoryName&gt;&gt;, moet Regulated Product Name &lt;regulatedProductName&gt; worden opgegeven voor alle consumenteneenheden (&lt;isTradeItemAConsumerUnit&gt; gelijk aan 'TRUE'). Als het product een juridische uitzondering heeft en geen Regulated Product Name heeft, geef dan een kopie van Product Type Omschrijving &lt;functionalName&gt; als de Regulated Product Name.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en Globale productcategoriecode &lt;gpcCategoryCode&gt; gelijk aan &lt;&lt;gpcCategoryCode&gt;&gt; &lt;&lt;gpcCategoryName&gt;&gt;, moet Regulated Product Name &lt;regulatedProductName&gt; worden opgegeven voor alle consumenteneenheden (&lt;isTradeItemAConsumerUnit&gt; gelijk aan 'TRUE'). Als het product een juridische uitzondering heeft en geen Regulated Product Name heeft, geef dan een kopie van Product Type Omschrijving &lt;functionalName&gt; als de Regulated Product Name.</value>
   </data>
   <data name="1745" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; Country name&gt;, moeten Stapelfactor Type Code &lt;stackingFactorTypeCode&gt; en Stapelfactor &lt;stackingFactor&gt; samen worden gebruikt in dezelfde iteraties.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moeten Stapelfactor Type Code &lt;stackingFactorTypeCode&gt; en Stapelfactor &lt;stackingFactor&gt; samen worden gebruikt in dezelfde iteraties.</value>
   </data>
   <data name="1748" xml:space="preserve">
     <value>Nul-onderdrukte GTIN's opgegeven als een GS1 Trade Key moeten beginnen met een '0'.</value>
@@ -1201,10 +1201,10 @@
     <value>Meerdere waarden voor &lt;bitternessOfBeerMeasurement&gt; per meting zijn niet toegestaan.</value>
   </data>
   <data name="1753" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Nutritional Preparation Code &lt;preparationStateCode&gt; gelijk zijn aan 'PREPARED' of 'UNPREPARED'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Nutritional Preparation Code &lt;preparationStateCode&gt; gelijk zijn aan 'PREPARED' of 'UNPREPARED'.</value>
   </data>
   <data name="1754" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; moet Voedingsstofwaarde-precisiecode &lt;measurementPrecisionCode&gt; 'APPROXIMATELY' of 'LESS_THAN' zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; moet Voedingsstofwaarde-precisiecode &lt;measurementPrecisionCode&gt; 'APPROXIMATELY' of 'LESS_THAN' zijn.</value>
   </data>
   <data name="1755" xml:space="preserve">
     <value>De waarde voor het containment-niveau code is niet geldig; de toegestane waarden zijn 'CONTAINS', 'FREE_FROM', 'MAY_CONTAIN' voor de doelmarkt.</value>
@@ -1258,7 +1258,7 @@
     <value>Het bedrag van voedingsstoffencode 'NA' vermenigvuldigd met 2.5 mag niet meer dan 10% afwijken van het bedrag van voedingsstoffencode SALTEQ met identieke meeteenheid in het geval van consumenteneenheden en een &lt;measurementPrecisionCode&gt; niet gelijk aan 'LESS_THAN' voor doelmarkt Netherlands.</value>
   </data>
   <data name="1772" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Globale productcategoriecode &lt;gpcCategoryCode&gt; in GPC Segment '92000000' (&lt;Haulage&gt; Containers) valt, dan mag Verpakking Marked Returnable Indicator &lt;isPackagingMarkedReturnable&gt; niet 'TRUE' zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Globale productcategoriecode &lt;gpcCategoryCode&gt; in GPC Segment '92000000' (&lt;Haulage&gt; Containers) valt, dan mag Verpakking Marked Returnable Indicator &lt;isPackagingMarkedReturnable&gt; niet 'TRUE' zijn.</value>
   </data>
   <data name="1773" xml:space="preserve">
     <value>Is verpakking marked returnable moet worden ingevuld voor de doelmarkt in het geval van verpakt vers fruit en groenten.</value>
@@ -1318,64 +1318,64 @@
     <value>&lt;nutritionalScore&gt; mag niet worden gebruikt als &lt;nutritionalProgramCode&gt; gelijk is aan '8' (Nutri-Score) en &lt;nutritionalProgramStatusCode&gt; gelijk is aan 'NOT_REGISTERED'.</value>
   </data>
   <data name="1800" xml:space="preserve">
-    <value>Ongeldige meeteenheid voor &lt;alcoholicBeverageSugarContent&gt;: &lt;&lt;alcoholicBeverageSugarContent&gt;/@&lt;measurementUnitCode&gt;&gt;. Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet &lt;alcoholicBeverageSugarContent&gt; 'GL' (gram per litre) hebben als meeteenheid.</value>
+    <value>Ongeldige meeteenheid voor &lt;alcoholicBeverageSugarContent&gt;: &lt;alcoholicBeverageSugarContent/@measurementUnitCode&gt;. Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet &lt;alcoholicBeverageSugarContent&gt; 'GL' (gram per litre) hebben als meeteenheid.</value>
   </data>
   <data name="1801" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet één iteratie van Feeding Instructions &lt;feedingInstructions&gt; worden aangeleverd in het Zweeds.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet één iteratie van Feeding Instructions &lt;feedingInstructions&gt; worden aangeleverd in het Zweeds.</value>
   </data>
   <data name="1802" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, ongeldig gebruik van &lt;aDRDangerousGoodsLimitedQuantitiesCode&gt;. &lt;aDRDangerousGoodsLimitedQuantitiesCode&gt; is vervallen. Gebruik in plaats daarvan Gevaarlijke-goederencode voor beperkte hoeveelheden &lt;dangerousGoodsLimitedQuantitiesCode&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, ongeldig gebruik van &lt;aDRDangerousGoodsLimitedQuantitiesCode&gt;. &lt;aDRDangerousGoodsLimitedQuantitiesCode&gt; is vervallen. Gebruik in plaats daarvan Gevaarlijke-goederencode voor beperkte hoeveelheden &lt;dangerousGoodsLimitedQuantitiesCode&gt;.</value>
   </data>
   <data name="1803" xml:space="preserve">
     <value>Één van beide &lt;targetConsumerMinimumUsage&gt; of &lt;targetConsumerMaximumUsage&gt; ontbreekt. U moet één van beide attributen opgeven als u &lt;targetConsumerUsageTypeCode&gt; gebruikt.</value>
   </data>
   <data name="1804" xml:space="preserve">
-    <value>Consumer Sales Condition Code &lt;consumerSalesConditionCode&gt; ontbreekt. Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is de Consumer Sales Condition Code verplicht voor tabaksproducten.</value>
+    <value>Consumer Sales Condition Code &lt;consumerSalesConditionCode&gt; ontbreekt. Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is de Consumer Sales Condition Code verplicht voor tabaksproducten.</value>
   </data>
   <data name="1806" xml:space="preserve">
-    <value>&lt;tradeItemMarketingMessage&gt; ontbreekt. Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is het niet toegestaan om &lt;shortTradeItemMarketingMessage&gt; te gebruiken zonder ook &lt;tradeItemMarketingMessage&gt; te gebruiken.</value>
+    <value>&lt;tradeItemMarketingMessage&gt; ontbreekt. Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is het niet toegestaan om &lt;shortTradeItemMarketingMessage&gt; te gebruiken zonder ook &lt;tradeItemMarketingMessage&gt; te gebruiken.</value>
   </data>
   <data name="1807" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is het niet toegestaan om waarden toe te voegen of te verwijderen in Allergen Type Code &lt;allergenTypeCode&gt; met een 'CHANGE_BY_REFRESH' Document Command. Wijzigingen in allergenen vereisen een nieuwe GTIN.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is het niet toegestaan om waarden toe te voegen of te verwijderen in Allergen Type Code &lt;allergenTypeCode&gt; met een 'CHANGE_BY_REFRESH' Document Command. Wijzigingen in allergenen vereisen een nieuwe GTIN.</value>
   </data>
   <data name="1808" xml:space="preserve">
     <value>&lt;packagingRawMaterialCode&gt; ontbreekt. Als &lt;packagingRawMaterialContentPercentage&gt; wordt gebruikt, moet &lt;packagingRawMaterialCode&gt; ook worden gebruikt.</value>
   </data>
   <data name="1809" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, &lt;sizeTypeCode&gt; of &lt;sizeDimension&gt; ontbreekt. Als één wordt gebruikt, moet de andere ook worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, &lt;sizeTypeCode&gt; of &lt;sizeDimension&gt; ontbreekt. Als één wordt gebruikt, moet de andere ook worden gebruikt.</value>
   </data>
   <data name="1810" xml:space="preserve">
-    <value>Ongeldige meeteenheid voor &lt;colourTemperature&gt;: &lt;&lt;colourTemperature&gt;/@&lt;measurementUnitCode&gt;&gt;. &lt;colourTemperature&gt; moet 'KEL' (Kelvin) hebben als meeteenheid.</value>
+    <value>Ongeldige meeteenheid voor &lt;colourTemperature&gt;: &lt;colourTemperature/@measurementUnitCode&gt;. &lt;colourTemperature&gt; moet 'KEL' (Kelvin) hebben als meeteenheid.</value>
   </data>
   <data name="1811" xml:space="preserve">
-    <value>Ongeldige meeteenheid voor &lt;lightOutput&gt;: &lt;&lt;lightOutput&gt;/@&lt;measurementUnitCode&gt;&gt;. Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet &lt;lightOutput&gt; 'B60' (Lumens per square metre) of 'LUX' (Lux) hebben als meeteenheid.</value>
+    <value>Ongeldige meeteenheid voor &lt;lightOutput&gt;: &lt;lightOutput/@measurementUnitCode&gt;. Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet &lt;lightOutput&gt; 'B60' (Lumens per square metre) of 'LUX' (Lux) hebben als meeteenheid.</value>
   </data>
   <data name="1812" xml:space="preserve">
-    <value>Nutrient Basis &lt;nutrientBasisQuantity&gt; en Nutrient Basis Type Code &lt;nutrientBasisQuantityTypeCode&gt; ontbreken. Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Nutrient Code &lt;nutrientTypeCode&gt; wordt gebruikt, moeten zowel Nutrient Basis &lt;nutrientBasisQuantity&gt; als Nutrient Basis Type Code &lt;nutrientBasisQuantityTypeCode&gt; ook worden gebruikt.</value>
+    <value>Nutrient Basis &lt;nutrientBasisQuantity&gt; en Nutrient Basis Type Code &lt;nutrientBasisQuantityTypeCode&gt; ontbreken. Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Nutrient Code &lt;nutrientTypeCode&gt; wordt gebruikt, moeten zowel Nutrient Basis &lt;nutrientBasisQuantity&gt; als Nutrient Basis Type Code &lt;nutrientBasisQuantityTypeCode&gt; ook worden gebruikt.</value>
   </data>
   <data name="1813" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet één iteratie van Feed Samenstelling Vermeldingen &lt;feedCompositionStatement&gt; worden aangeleverd in het Zweeds.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet één iteratie van Feed Samenstelling Vermeldingen &lt;feedCompositionStatement&gt; worden aangeleverd in het Zweeds.</value>
   </data>
   <data name="1814" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet één iteratie van Feed Analytical Constituents Vermeldingen &lt;feedAnalyticalConstituentsStatement&gt; worden aangeleverd in het Zweeds.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet één iteratie van Feed Analytical Constituents Vermeldingen &lt;feedAnalyticalConstituentsStatement&gt; worden aangeleverd in het Zweeds.</value>
   </data>
   <data name="1815" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet één iteratie van Feed Additive Vermeldingen &lt;feedAdditiveStatement&gt; worden aangeleverd in het Zweeds.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet één iteratie van Feed Additive Vermeldingen &lt;feedAdditiveStatement&gt; worden aangeleverd in het Zweeds.</value>
   </data>
   <data name="1819" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en dezelfde Tax Type Code &lt;dutyFeeTaxTypeCode&gt; kan niet worden herhaald zonder een bijbehorende begindatum (&lt;dutyFeeTaxEffectiveStartDateTime&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en dezelfde Tax Type Code &lt;dutyFeeTaxTypeCode&gt; kan niet worden herhaald zonder een bijbehorende begindatum (&lt;dutyFeeTaxEffectiveStartDateTime&gt;).</value>
   </data>
   <data name="1820" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en dezelfde Tax Type Code &lt;dutyFeeTaxTypeCode&gt; kan niet worden herhaald zonder een bijbehorende einddatum &lt;dutyFeeTaxEffectiveEndDateTime&gt;, tenzij voor de laatste instantie.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en dezelfde Tax Type Code &lt;dutyFeeTaxTypeCode&gt; kan niet worden herhaald zonder een bijbehorende einddatum &lt;dutyFeeTaxEffectiveEndDateTime&gt;, tenzij voor de laatste instantie.</value>
   </data>
   <data name="1821" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk is aan 'CUSTOMS_TARIFF_NUMBER', dan moet de bijbehorende Douane Classificatie Waarde &lt;importClassificationValue&gt; een waarde hebben van 8 tot 13 numerieke tekens lang.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk is aan 'CUSTOMS_TARIFF_NUMBER', dan moet de bijbehorende Douane Classificatie Waarde &lt;importClassificationValue&gt; een waarde hebben van 8 tot 13 numerieke tekens lang.</value>
   </data>
   <data name="1823" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Pallet Type Code &lt;platformTypeCode&gt; wordt gebruikt, is het verplicht een geldig Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; op te geven voor een pallet.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Pallet Type Code &lt;platformTypeCode&gt; wordt gebruikt, is het verplicht een geldig Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; op te geven voor een pallet.</value>
   </data>
   <data name="1830" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, ongeldig gebruik van &lt;dutyFeeTaxRate&gt;. Waarden mogen niet verschillen over de handelsartikelhiërarchie wanneer gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, ongeldig gebruik van &lt;dutyFeeTaxRate&gt;. Waarden mogen niet verschillen over de handelsartikelhiërarchie wanneer gebruikt.</value>
   </data>
   <data name="1834" xml:space="preserve">
     <value>Als GTIN voor Point of Sale &lt;gs1TradeItemIdentificationKeyValue&gt; of GTIN voor Point of Sale Type Code &lt;gs1TradeItemIdentificationKeyCode&gt; wordt gebruikt, dan moeten beide worden gebruikt.</value>
@@ -1405,19 +1405,19 @@
     <value>Als Fish Production Method Code &lt;productionMethodForFishAndSeafoodCode&gt; gelijk is aan 'INLAND_FISHERY', dan moet Catch Area Code &lt;catchAreaCode&gt; &lt;&lt;catchAreaCode&gt;&gt; één van de binnenwateren codes zijn ('01', '02', '03', '04', '05', '06', '07' of '08').</value>
   </data>
   <data name="1847" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet &lt;priceComparisonMeasurement&gt; worden opgegeven met de volgende meeteenheden: kilogram, litre of piece.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet &lt;priceComparisonMeasurement&gt; worden opgegeven met de volgende meeteenheden: kilogram, litre of piece.</value>
   </data>
   <data name="1848" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moeten zowel &lt;seasonalAvailabilityEndDateTime&gt; als &lt;seasonalAvailabilityStartDateTime&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moeten zowel &lt;seasonalAvailabilityEndDateTime&gt; als &lt;seasonalAvailabilityStartDateTime&gt; worden gebruikt.</value>
   </data>
   <data name="1849" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Price Comparison Hoeveelheid &lt;priceComparisonMeasurement&gt; verplicht voor voedingsproduct(en).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Price Comparison Hoeveelheid &lt;priceComparisonMeasurement&gt; verplicht voor voedingsproduct(en).</value>
   </data>
   <data name="1850" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Handelsartikel Trade Channel Code &lt;tradeItemTradeChannelCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Handelsartikel Trade Channel Code &lt;tradeItemTradeChannelCode&gt; worden gebruikt.</value>
   </data>
   <data name="1851" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Net Mass of Explosives worden opgegeven met de meeteenheid kilogram (KGM).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Net Mass of Explosives worden opgegeven met de meeteenheid kilogram (KGM).</value>
   </data>
   <data name="1852" xml:space="preserve">
     <value>Voor &lt;initialSterilisationPriorToUseCode&gt; &lt;&lt;initialSterilisationPriorToUseCode&gt;&gt; en/of &lt;manufacturerSpecifiedAcceptableResterilisationCode&gt; &lt;&lt;manufacturerSpecifiedAcceptableResterilisationCode&gt;&gt; mag niet gelijk zijn aan NOT_STERILISED en wordt ongeldig gebruikt.</value>
@@ -1429,40 +1429,40 @@
     <value>Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; mag niet leeg zijn.</value>
   </data>
   <data name="1856" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, dan moet de GTIN (Global Trade Item Number) van het ingesloten product &lt;ChildItem..gtin&gt; End Beschikbaarheid &lt;Time&gt; &lt;endAvailabiltyDateTime&gt; gelijk zijn aan of later zijn dan de GTIN (Global Trade Item Number) &lt;gtin&gt; End Beschikbaarheid &lt;Time&gt; &lt;endAvailabiltyDateTime&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, dan moet de GTIN (Global Trade Item Number) van het ingesloten product &lt;ChildItem..gtin&gt; End Beschikbaarheid &lt;Time&gt; &lt;endAvailabiltyDateTime&gt; gelijk zijn aan of later zijn dan de GTIN (Global Trade Item Number) &lt;gtin&gt; End Beschikbaarheid &lt;Time&gt; &lt;endAvailabiltyDateTime&gt;.</value>
   </data>
   <data name="1857" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Variabele-eenheid-indicator &lt;isTradeItemAVariableUnit&gt; gelijk is aan 'FALSE', dan mag Aanvullende productidentificatie-typecode (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) NIET gelijk zijn aan 'PLU'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Variabele-eenheid-indicator &lt;isTradeItemAVariableUnit&gt; gelijk is aan 'FALSE', dan mag Aanvullende productidentificatie-typecode &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; NIET gelijk zijn aan 'PLU'.</value>
   </data>
   <data name="1858" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Party Role Code &lt;partyRoleCode&gt; gelijk is aan &lt;partyRoleCode&gt;&gt;, dan moeten Party In Role GLN (Global Location Number) &lt;gln&gt; en Party In Role naam &lt;partyName&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Party Role Code &lt;partyRoleCode&gt; gelijk is aan &lt;partyRoleCode&gt;, dan moeten Party In Role GLN (Global Location Number) &lt;gln&gt; en Party In Role naam &lt;partyName&gt; worden gebruikt.</value>
   </data>
   <data name="1859" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als de GTIN (Global Trade Item Number) van het ingesloten product &lt;ChildItem..gtin&gt; Promotionele-eenheid-indicator &lt;isTradeItemAPromotionalUnit&gt; gelijk is aan 'TRUE', dan moet GTIN (Global Trade Item Number) &lt;gtin&gt; Promotionele-eenheid-indicator &lt;isTradeItemAPromotionalUnit&gt; gelijk zijn aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als de GTIN (Global Trade Item Number) van het ingesloten product &lt;ChildItem..gtin&gt; Promotionele-eenheid-indicator &lt;isTradeItemAPromotionalUnit&gt; gelijk is aan 'TRUE', dan moet GTIN (Global Trade Item Number) &lt;gtin&gt; Promotionele-eenheid-indicator &lt;isTradeItemAPromotionalUnit&gt; gelijk zijn aan 'TRUE'.</value>
   </data>
   <data name="1860" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet Tax Bedrag &lt;dutyFeeTaxAmount&gt; groter zijn dan 0 (nul).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet Tax Bedrag &lt;dutyFeeTaxAmount&gt; groter zijn dan 0 (nul).</value>
   </data>
   <data name="1861" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk is aan 'TRUE', dan moet Verpakking Type Code &lt;packagingTypeCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk is aan 'TRUE', dan moet Verpakking Type Code &lt;packagingTypeCode&gt; worden gebruikt.</value>
   </data>
   <data name="1862" xml:space="preserve">
     <value>Als Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; gelijk is aan 'SUBSTITUTED', dan moeten GTIN (Global Trade Item Number) &lt;gtin&gt; en Gerefereerd GTIN &lt;gtin&gt; verschillend zijn.</value>
   </data>
   <data name="1863" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE' en Promotionele-eenheid-indicator &lt;isTradeItemAPromotionalUnit&gt; gelijk is aan 'TRUE', dan moeten Promotion Type Code &lt;promotionTypeCode&gt; en Niet-promotioneel handelsartikel GTIN &lt;gtin&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE' en Promotionele-eenheid-indicator &lt;isTradeItemAPromotionalUnit&gt; gelijk is aan 'TRUE', dan moeten Promotion Type Code &lt;promotionTypeCode&gt; en Niet-promotioneel handelsartikel GTIN &lt;gtin&gt; worden gebruikt.</value>
   </data>
   <data name="1864" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Promotion Type Code &lt;promotionTypeCode&gt; wordt gebruikt, dan moet Promotionele-eenheid-indicator &lt;isTradeItemAPromotionalUnit&gt; gelijk zijn aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Promotion Type Code &lt;promotionTypeCode&gt; wordt gebruikt, dan moet Promotionele-eenheid-indicator &lt;isTradeItemAPromotionalUnit&gt; gelijk zijn aan 'TRUE'.</value>
   </data>
   <data name="1865" xml:space="preserve">
     <value>Genus ontbreekt voor dit handelsartikel. Wanneer species wordt gebruikt, moet genus ook worden gebruikt.</value>
   </data>
   <data name="1866" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Preparation Instructions &lt;preparationInstructions&gt; wordt gebruikt, dan moet Preparation Type Code &lt;preparationTypeCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Preparation Instructions &lt;preparationInstructions&gt; wordt gebruikt, dan moet Preparation Type Code &lt;preparationTypeCode&gt; worden gebruikt.</value>
   </data>
   <data name="1867" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, en als Additional Product Identificatie Type Code &lt;additionalTradeItemIdentificationTypeCode&gt; gelijk is aan 'SUPPLIER_ASSIGNED', dan moet de maximale lengte van Additional Product Identificatie &lt;additionnalTradeItemIdentification&gt; 35 tekens zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, en als Additional Product Identificatie Type Code &lt;additionalTradeItemIdentificationTypeCode&gt; gelijk is aan 'SUPPLIER_ASSIGNED', dan moet de maximale lengte van Additional Product Identificatie &lt;additionnalTradeItemIdentification&gt; 35 tekens zijn.</value>
   </data>
   <data name="1868" xml:space="preserve">
     <value>&lt;packagingClaimTypeCode&gt; en &lt;packagingClaimElementCode&gt; moeten beide worden gebruikt als men een van beide gebruikt.</value>
@@ -1477,67 +1477,67 @@
     <value>Code '1' (100% Organic) is niet toegestaan in Organic Niveau Code &lt;organicTradeItemCode&gt; voor verkooplandcode &lt;&lt;targetMarketCountryCode&gt; Code naam&gt;. Gebruik code '2' (Organic) in plaats hiervan.</value>
   </data>
   <data name="1875" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PACK_OR_INNER_PACK' en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet Totaal Aantal Producten &lt;totalQuantityOfNextLowerLevelTradeItem&gt; groter zijn dan 1.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PACK_OR_INNER_PACK' en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet Totaal Aantal Producten &lt;totalQuantityOfNextLowerLevelTradeItem&gt; groter zijn dan 1.</value>
   </data>
   <data name="1876" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', en Tax Type Code &lt;dutyFeeTaxTypeCode&gt; gelijk is aan '3001000002312' (Droits d'accises sur les alcools/alcohol tax), dan moet Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; groter zijn dan 0 (nul).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', en Tax Type Code &lt;dutyFeeTaxTypeCode&gt; gelijk is aan '3001000002312' (Droits d'accises sur les alcools/alcohol tax), dan moet Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; groter zijn dan 0 (nul).</value>
   </data>
   <data name="1877" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'DISPLAY_SHIPPER' of 'MIXED_MODULE' en Aantal verschillende producten &lt;quantityOfChildren&gt; groter is dan 1, dan moet GTIN (Global Trade Item Number) &lt;gtin&gt; beginnen met '0'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'DISPLAY_SHIPPER' of 'MIXED_MODULE' en Aantal verschillende producten &lt;quantityOfChildren&gt; groter is dan 1, dan moet GTIN (Global Trade Item Number) &lt;gtin&gt; beginnen met '0'.</value>
   </data>
   <data name="1878" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Free Hoeveelheid Of Product &lt;freeQuantityOfQuantity&gt; wordt gebruikt, dan moet Free Hoeveelheid Of Product meeteenheid (&lt;freeQuantityOfProduct&gt;@&lt;measurementUnitCode&gt;) gelijk zijn aan één instantie van Nettoinhoud meeteenheid (&lt;netContent&gt;@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Free Hoeveelheid Of Product &lt;freeQuantityOfQuantity&gt; wordt gebruikt, dan moet Free Hoeveelheid Of Product meeteenheid &lt;freeQuantityOfProduct/@measurementUnitCode&gt; gelijk zijn aan één instantie van Nettoinhoud meeteenheid &lt;netContent/@measurementUnitCode&gt;.</value>
   </data>
   <data name="1879" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Promotion Type Code &lt;promotionTypeCode&gt; gelijk is aan 'MULTI_PACK_AND_COMBINATION_PACK', dan mag Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; niet gelijk zijn aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Promotion Type Code &lt;promotionTypeCode&gt; gelijk is aan 'MULTI_PACK_AND_COMBINATION_PACK', dan mag Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; niet gelijk zijn aan 'TRUE'.</value>
   </data>
   <data name="1880" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Gratis hoeveelheid van volgend lager niveau handelsartikel &lt;freeQuantityOfNextLowerLevelTradeItem&gt; wordt gebruikt, dan moet Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk zijn aan 'PACK_OR_INNER_PACK', moet Aantal verschillende producten &lt;quantityOfChildren&gt; groter zijn dan 1 en moet Promotion Type Code &lt;promotionTypeCode&gt; gelijk zijn aan 'MULTI_PACK_AND_COMBINATION_PACK'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Gratis hoeveelheid van volgend lager niveau handelsartikel &lt;freeQuantityOfNextLowerLevelTradeItem&gt; wordt gebruikt, dan moet Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk zijn aan 'PACK_OR_INNER_PACK', moet Aantal verschillende producten &lt;quantityOfChildren&gt; groter zijn dan 1 en moet Promotion Type Code &lt;promotionTypeCode&gt; gelijk zijn aan 'MULTI_PACK_AND_COMBINATION_PACK'.</value>
   </data>
   <data name="1881" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van Tax Type Code &lt;dutyFeeTaxTypeCode&gt; één van de BTW-codes zijn ('S', '1G', '2G', '3G', 'H' of 'E').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van Tax Type Code &lt;dutyFeeTaxTypeCode&gt; één van de BTW-codes zijn ('S', '1G', '2G', '3G', 'H' of 'E').</value>
   </data>
   <data name="1882" xml:space="preserve">
     <value>Code '1' (100% Organic) is niet toegestaan in Organic Niveau Code &lt;organicTradeItemCode&gt; voor verkooplandcode &lt;&lt;targetMarketCountryCode&gt; Code naam&gt;. Gebruik code '2' (Organic) in plaats hiervan.</value>
   </data>
   <data name="1883" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PACK_OR_INNER_PACK' en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet Totaal Aantal Producten &lt;totalQuantityOfNextLowerLevelTradeItem&gt; groter zijn dan 1.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PACK_OR_INNER_PACK' en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet Totaal Aantal Producten &lt;totalQuantityOfNextLowerLevelTradeItem&gt; groter zijn dan 1.</value>
   </data>
   <data name="1884" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', en Tax Type Code &lt;dutyFeeTaxTypeCode&gt; gelijk is aan '3001000002312' (Droits d'accises sur les alcools/alcohol tax), dan moet Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; groter zijn dan 0 (nul).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', en Tax Type Code &lt;dutyFeeTaxTypeCode&gt; gelijk is aan '3001000002312' (Droits d'accises sur les alcools/alcohol tax), dan moet Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; groter zijn dan 0 (nul).</value>
   </data>
   <data name="1885" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'DISPLAY_SHIPPER' of 'MIXED_MODULE' en Aantal verschillende producten &lt;quantityOfChildren&gt; groter is dan 1, dan moet GTIN (Global Trade Item Number) &lt;gtin&gt; beginnen met '0'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'DISPLAY_SHIPPER' of 'MIXED_MODULE' en Aantal verschillende producten &lt;quantityOfChildren&gt; groter is dan 1, dan moet GTIN (Global Trade Item Number) &lt;gtin&gt; beginnen met '0'.</value>
   </data>
   <data name="1886" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Free Hoeveelheid Of Product &lt;freeQuantityOfQuantity&gt; wordt gebruikt, dan moet Free Hoeveelheid Of Product meeteenheid (&lt;freeQuantityOfProduct&gt;@&lt;measurementUnitCode&gt;) gelijk zijn aan één instantie van Nettoinhoud meeteenheid (&lt;netContent&gt;@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Free Hoeveelheid Of Product &lt;freeQuantityOfQuantity&gt; wordt gebruikt, dan moet Free Hoeveelheid Of Product meeteenheid &lt;freeQuantityOfProduct/@measurementUnitCode&gt; gelijk zijn aan één instantie van Nettoinhoud meeteenheid &lt;netContent/@measurementUnitCode&gt;.</value>
   </data>
   <data name="1887" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Promotion Type Code &lt;promotionTypeCode&gt; gelijk is aan 'MULTI_PACK_AND_COMBINATION_PACK', dan mag Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; niet gelijk zijn aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Promotion Type Code &lt;promotionTypeCode&gt; gelijk is aan 'MULTI_PACK_AND_COMBINATION_PACK', dan mag Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; niet gelijk zijn aan 'TRUE'.</value>
   </data>
   <data name="1888" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Gratis hoeveelheid van volgend lager niveau handelsartikel &lt;freeQuantityOfNextLowerLevelTradeItem&gt; wordt gebruikt, dan moet Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk zijn aan 'PACK_OR_INNER_PACK', moet Aantal verschillende producten &lt;quantityOfChildren&gt; groter zijn dan 1 en moet Promotion Type Code &lt;promotionTypeCode&gt; gelijk zijn aan 'MULTI_PACK_AND_COMBINATION_PACK'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Gratis hoeveelheid van volgend lager niveau handelsartikel &lt;freeQuantityOfNextLowerLevelTradeItem&gt; wordt gebruikt, dan moet Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk zijn aan 'PACK_OR_INNER_PACK', moet Aantal verschillende producten &lt;quantityOfChildren&gt; groter zijn dan 1 en moet Promotion Type Code &lt;promotionTypeCode&gt; gelijk zijn aan 'MULTI_PACK_AND_COMBINATION_PACK'.</value>
   </data>
   <data name="1889" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van Tax Type Code &lt;dutyFeeTaxTypeCode&gt; één van de BTW-codes zijn ('S', '1G', '2G', '3G', 'H' of 'E').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van Tax Type Code &lt;dutyFeeTaxTypeCode&gt; één van de BTW-codes zijn ('S', '1G', '2G', '3G', 'H' of 'E').</value>
   </data>
   <data name="1890" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan moet Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; groter zijn dan 0.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan moet Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; groter zijn dan 0.</value>
   </data>
   <data name="1891" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', moet Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', moet Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; worden gebruikt.</value>
   </data>
   <data name="1892" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Globale productcategoriecode &lt;gpcCategoryCode&gt; in GPC Segment '50000000' &lt;Beverage&gt; valt en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', moet Nettogewicht &lt;netWeight&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Globale productcategoriecode &lt;gpcCategoryCode&gt; in GPC Segment '50000000' &lt;Beverage&gt; valt en Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', moet Nettogewicht &lt;netWeight&gt; worden gebruikt.</value>
   </data>
   <data name="1893" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Factuureenheid-indicator &lt;isTradeItemAnInvoiceUnit&gt; gelijk is aan 'TRUE' en Variabele-eenheid-indicator &lt;isTradeItemAVariableUnit&gt; gelijk is aan 'TRUE', moet Verkoopmeeteenheid &lt;sellingUnitOfMeasure&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Factuureenheid-indicator &lt;isTradeItemAnInvoiceUnit&gt; gelijk is aan 'TRUE' en Variabele-eenheid-indicator &lt;isTradeItemAVariableUnit&gt; gelijk is aan 'TRUE', moet Verkoopmeeteenheid &lt;sellingUnitOfMeasure&gt; worden gebruikt.</value>
   </data>
   <data name="1894" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet de Start Beschikbaarheid &lt;Time&gt; &lt;startAvailabiltyDateTime&gt; van het bevat product &lt;ChildItem..gtin&gt; voor of gelijk zijn aan de Start Beschikbaarheid &lt;Time&gt; &lt;&lt;startAvailabiltyDateTime&gt;&gt; van het product.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet de Start Beschikbaarheid &lt;Time&gt; &lt;startAvailabiltyDateTime&gt; van het bevat product &lt;ChildItem..gtin&gt; voor of gelijk zijn aan de Start Beschikbaarheid &lt;Time&gt; &lt;&lt;startAvailabiltyDateTime&gt;&gt; van het product.</value>
   </data>
   <data name="1895" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Gerefereerd GTIN &lt;gtin&gt; uniek zijn. Het mag niet worden herhaald voor Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; en &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Gerefereerd GTIN &lt;gtin&gt; uniek zijn. Het mag niet worden herhaald voor Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; en &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;.</value>
   </data>
   <data name="1896" xml:space="preserve">
     <value>Gerefereerd GTIN &lt;gtin&gt; moet uniek zijn. Het mag niet worden herhaald voor Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; en &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
@@ -1546,49 +1546,49 @@
     <value>Gerefereerd GTIN &lt;gtin&gt; moet uniek zijn. Het mag niet worden herhaald voor Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; en &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
   </data>
   <data name="1898" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Product Omschrijving &lt;tradeItemDescription&gt; in het Fins, Zweeds en Engels zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Product Omschrijving &lt;tradeItemDescription&gt; in het Fins, Zweeds en Engels zijn.</value>
   </data>
   <data name="1899" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Short Product Name &lt;descriptionShort&gt; in het Fins, Zweeds en Engels zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Short Product Name &lt;descriptionShort&gt; in het Fins, Zweeds en Engels zijn.</value>
   </data>
   <data name="1900" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Ingredient Vermeldingen &lt;ingredientStatement&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Ingredient Vermeldingen &lt;ingredientStatement&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1901" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Short Product Name &lt;descriptionShort&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Short Product Name &lt;descriptionShort&gt; worden gebruikt.</value>
   </data>
   <data name="1902" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Consumer Storage Instructions &lt;consumerStorageInstructions&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Consumer Storage Instructions &lt;consumerStorageInstructions&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1903" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Consumer Usage Instructions &lt;consumerUsageInstructions&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Consumer Usage Instructions &lt;consumerUsageInstructions&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1904" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Preparation Instructions &lt;preparationInstructions&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Preparation Instructions &lt;preparationInstructions&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1905" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Serving Suggestion &lt;servingSuggestion&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Serving Suggestion &lt;servingSuggestion&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1906" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Non-Food Ingredient Vermeldingen &lt;nonFoodIngredientStatement&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Non-Food Ingredient Vermeldingen &lt;nonFoodIngredientStatement&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1907" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Short Product Marketing bericht &lt;shortTradeItemMarketingMessage&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Short Product Marketing bericht &lt;shortTradeItemMarketingMessage&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1908" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Additional Legal Product Information &lt;compulsoryAdditiveLabelInformation&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Additional Legal Product Information &lt;compulsoryAdditiveLabelInformation&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1909" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Product Type Omschrijving &lt;functionalName&gt; in het Fins en Zweeds zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Product Type Omschrijving &lt;functionalName&gt; in het Fins en Zweeds zijn.</value>
   </data>
   <data name="1910" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Product Omschrijving &lt;tradeItemDescription&gt; in het Italiaans zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Product Omschrijving &lt;tradeItemDescription&gt; in het Italiaans zijn.</value>
   </data>
   <data name="1911" xml:space="preserve">
     <value>Wanneer meer dan één Gevaarlijk-labelnummer &lt;dangerousHazardousLabelNumber&gt; is opgegeven, moet Gevaarlijk-label-volgordenummer &lt;dangerousHazardousLabelSequenceNumber&gt; worden gebruikt.</value>
   </data>
   <data name="1914" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Gerefereerd GTIN &lt;gtin&gt; uniek zijn. Het mag niet worden herhaald voor Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; en &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Gerefereerd GTIN &lt;gtin&gt; uniek zijn. Het mag niet worden herhaald voor Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; en &lt;&lt;referencedTradeItemTypeCode&gt; #n&gt;.</value>
   </data>
   <data name="1915" xml:space="preserve">
     <value>Gerefereerd GTIN &lt;gtin&gt; moet uniek zijn. Het mag niet worden herhaald voor Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; en &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
@@ -1597,337 +1597,337 @@
     <value>Gerefereerd GTIN &lt;gtin&gt; moet uniek zijn. Het mag niet worden herhaald voor Gerefereerd GTIN Type Code &lt;referencedTradeItemTypeCode&gt; &lt;&lt;referencedTradeItemTypeCode&gt; #1&gt; en &lt;&lt;referencedTradeItemTypeCode&gt; #2&gt;.</value>
   </data>
   <data name="1917" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Verpakking Type Code &lt;packagingTypeCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Verpakking Type Code &lt;packagingTypeCode&gt; worden gebruikt.</value>
   </data>
   <data name="1918" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Nettoinhoud &lt;netContent&gt; verplicht op basiseenheden (Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk aan 'TRUE').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Nettoinhoud &lt;netContent&gt; verplicht op basiseenheden (Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk aan 'TRUE').</value>
   </data>
   <data name="1919" xml:space="preserve">
-    <value>Ongeldige meeteenheid voor Ordering Lead Time &lt;orderingLeadTime&gt;: &lt;&lt;orderingLeadTime&gt;/@&lt;measurementUnitCode&gt;&gt;. Ordering Lead Time moet 'DAY' hebben als meeteenheid.</value>
+    <value>Ongeldige meeteenheid voor Ordering Lead Time &lt;orderingLeadTime&gt;: &lt;orderingLeadTime/@measurementUnitCode&gt;. Ordering Lead Time moet 'DAY' hebben als meeteenheid.</value>
   </data>
   <data name="1920" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE' en Tax Type Code &lt;dutyFeeTaxTypeCode&gt; gelijk is aan ('VAT' of 'IVA'), dan moet Tax Percentage &lt;dutyFeeTaxRate&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE' en Tax Type Code &lt;dutyFeeTaxTypeCode&gt; gelijk is aan ('VAT' of 'IVA'), dan moet Tax Percentage &lt;dutyFeeTaxRate&gt; worden gebruikt.</value>
   </data>
   <data name="1921" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Onregelmatig Geconfigureerde Pallet-indicator &lt;isTradeItemPackedIrregularly&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, dan moet Totaal Aantal Producten &lt;totalQuantityOfNextLowerLevelTradeItem&gt; gelijk zijn aan Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; vermenigvuldigd met Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Onregelmatig Geconfigureerde Pallet-indicator &lt;isTradeItemPackedIrregularly&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, dan moet Totaal Aantal Producten &lt;totalQuantityOfNextLowerLevelTradeItem&gt; gelijk zijn aan Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; vermenigvuldigd met Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt;.</value>
   </data>
   <data name="1922" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet Tax Type Code &lt;dutyFeeTaxTypeCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet Tax Type Code &lt;dutyFeeTaxTypeCode&gt; worden gebruikt.</value>
   </data>
   <data name="1925" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Aantal Lagen per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; wordt gebruikt, dan moet Aantal Eenheden per Laag in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Aantal Lagen per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; wordt gebruikt, dan moet Aantal Eenheden per Laag in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; worden gebruikt.</value>
   </data>
   <data name="1926" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' en Onregelmatig Geconfigureerde Pallet-indicator &lt;isTradeItemPackedIrregularly&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, dan moet Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; worden gebruikt en groter zijn dan 0 (nul).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' en Onregelmatig Geconfigureerde Pallet-indicator &lt;isTradeItemPackedIrregularly&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, dan moet Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; worden gebruikt en groter zijn dan 0 (nul).</value>
   </data>
   <data name="1927" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet Non-GTIN Logistic Eenheid &lt;Length&gt; &lt;depth&gt; groter zijn dan of gelijk zijn aan Non-GTIN Logistic Eenheid Breedte &lt;width&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet Non-GTIN Logistic Eenheid &lt;Length&gt; &lt;depth&gt; groter zijn dan of gelijk zijn aan Non-GTIN Logistic Eenheid Breedte &lt;width&gt;.</value>
   </data>
   <data name="1928" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Irregularly Configured Non-GTIN Pallet Indicator &lt;isNonGTINLogisticsUnitPackedIrregularly&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, dan moet Count of This Specific Artikel in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt; gelijk zijn aan Aantal Lagen per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; vermenigvuldigd met Aantal Eenheden per Laag in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Irregularly Configured Non-GTIN Pallet Indicator &lt;isNonGTINLogisticsUnitPackedIrregularly&gt; gelijk is aan 'FALSE' of niet wordt gebruikt, dan moet Count of This Specific Artikel in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt; gelijk zijn aan Aantal Lagen per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt; vermenigvuldigd met Aantal Eenheden per Laag in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;.</value>
   </data>
   <data name="1929" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van Short Product Name &lt;descriptionShort&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van Short Product Name &lt;descriptionShort&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1930" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE' of Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van Product Omschrijving &lt;tradeItemDescription&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE' of Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk is aan 'TRUE', dan moet ten minste één iteratie van Product Omschrijving &lt;tradeItemDescription&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1931" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Product Type Omschrijving &lt;functionalName&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Product Type Omschrijving &lt;functionalName&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1932" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Gevaarsaanduidingsomschrijving &lt;hazardStatementsDescription&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Gevaarsaanduidingsomschrijving &lt;hazardStatementsDescription&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1933" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Voorzorgsmaatregelomschrijving &lt;precautionaryStatementsDescription&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Voorzorgsmaatregelomschrijving &lt;precautionaryStatementsDescription&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1934" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Preparation Instructions &lt;preparationInstructions&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Preparation Instructions &lt;preparationInstructions&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1935" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Aanvullende informatie gevaarlijke materialen &lt;hazardousMaterialAdditionalInformation&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Aanvullende informatie gevaarlijke materialen &lt;hazardousMaterialAdditionalInformation&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1936" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Technische naam gevaarlijke goederen &lt;dangerousGoodsTechnicalName&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Technische naam gevaarlijke goederen &lt;dangerousGoodsTechnicalName&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1937" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Product Characteristic Waarde als Omschrijving &lt;productCharacteristicValueDescription&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Product Characteristic Waarde als Omschrijving &lt;productCharacteristicValueDescription&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1938" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Serving Suggestion &lt;servingSuggestion&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Serving Suggestion &lt;servingSuggestion&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1939" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, mogen Procent of Fat in Cheese &lt;fatPercentageInDryMatter&gt; en Procent of Milk Fat in Dairy &lt;fatInMilkContent&gt; niet gelijktijdig worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, mogen Procent of Fat in Cheese &lt;fatPercentageInDryMatter&gt; en Procent of Milk Fat in Dairy &lt;fatInMilkContent&gt; niet gelijktijdig worden gebruikt.</value>
   </data>
   <data name="1941" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als meerdere iteraties van Nutritional Program Code &lt;nutritionalProgramCode&gt; gelijk zijn aan '8' (Nutri-Score), dan moet Nutritional Program Detail &lt;nutritionalProgramDetail&gt; worden gebruikt in elke bijbehorende iteratie.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als meerdere iteraties van Nutritional Program Code &lt;nutritionalProgramCode&gt; gelijk zijn aan '8' (Nutri-Score), dan moet Nutritional Program Detail &lt;nutritionalProgramDetail&gt; worden gebruikt in elke bijbehorende iteratie.</value>
   </data>
   <data name="1942" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Nutritional Program Code &lt;nutritionalProgramCode&gt; gelijk is aan '8' (Nutri-Score) en Nutritional Program Detail &lt;nutritionalProgramDetail&gt; wordt gebruikt, dan moet ten minste één iteratie van Nutritional Program Detail worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Nutritional Program Code &lt;nutritionalProgramCode&gt; gelijk is aan '8' (Nutri-Score) en Nutritional Program Detail &lt;nutritionalProgramDetail&gt; wordt gebruikt, dan moet ten minste één iteratie van Nutritional Program Detail worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="1943" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Regelgeving Type Code &lt;regulationTypeCode&gt; gelijk is aan 'EXPLOSIVES_PRECURSORS_REGISTRATION' en Regelgeving Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; gelijk is aan 'TRUE', dan moeten Regelgeving Niveau Code Reference &lt;regulationLevelCodeReference&gt; en Regulatory Act Compliance Niveau Code &lt;regulatoryActComplianceLevelCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Regelgeving Type Code &lt;regulationTypeCode&gt; gelijk is aan 'EXPLOSIVES_PRECURSORS_REGISTRATION' en Regelgeving Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; gelijk is aan 'TRUE', dan moeten Regelgeving Niveau Code Reference &lt;regulationLevelCodeReference&gt; en Regulatory Act Compliance Niveau Code &lt;regulatoryActComplianceLevelCode&gt; worden gebruikt.</value>
   </data>
   <data name="1944" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'H87', 'KGM', 'LTR' of 'MTR' toegestaan voor Price Basis Hoeveelheid UoM (&lt;priceBasisQuantity&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'H87', 'KGM', 'LTR' of 'MTR' toegestaan voor Price Basis Hoeveelheid UoM &lt;priceBasisQuantity/@measurementUnitCode&gt;.</value>
   </data>
   <data name="1945" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de waarden 1, 10, 100 of 1000 toegestaan voor Price Basis Hoeveelheid &lt;priceBasisQuantity&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de waarden 1, 10, 100 of 1000 toegestaan voor Price Basis Hoeveelheid &lt;priceBasisQuantity&gt;.</value>
   </data>
   <data name="1946" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Dieet Type Subcode &lt;dietTypeSubcode&gt; &lt;&lt;dietTypeSubcode&gt; waarde&gt; alleen toegestaan als Dietary Regime Code &lt;dietTypeCode&gt; gelijk is aan 'VEGETARIAN'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Dieet Type Subcode &lt;dietTypeSubcode&gt; &lt;&lt;dietTypeSubcode&gt; waarde&gt; alleen toegestaan als Dietary Regime Code &lt;dietTypeCode&gt; gelijk is aan 'VEGETARIAN'.</value>
   </data>
   <data name="1947" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Claim Marked op Package &lt;claimMarkedOnPackage&gt; alleen toegestaan als Claim Type Code &lt;claimTypeCode&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Claim Marked op Package &lt;claimMarkedOnPackage&gt; alleen toegestaan als Claim Type Code &lt;claimTypeCode&gt; wordt gebruikt.</value>
   </data>
   <data name="1948" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt; alleen toegestaan als Procent of Fat in Cheese &lt;fatPercentageInDryMatter&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt; alleen toegestaan als Procent of Fat in Cheese &lt;fatPercentageInDryMatter&gt; wordt gebruikt.</value>
   </data>
   <data name="1949" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Nesting Increment &lt;nestingIncrement&gt; wordt gebruikt, dan moet ten minste één van de twee attributen Nesting Type Code &lt;nestingTypeCode&gt; of Nesting Direction Code &lt;nestingDirectionCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Nesting Increment &lt;nestingIncrement&gt; wordt gebruikt, dan moet ten minste één van de twee attributen Nesting Type Code &lt;nestingTypeCode&gt; of Nesting Direction Code &lt;nestingDirectionCode&gt; worden gebruikt.</value>
   </data>
   <data name="1950" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn Nesting Type Code &lt;nestingTypeCode&gt; en Nesting Direction Code &lt;nestingDirectionCode&gt; alleen toegestaan als Nesting Increment &lt;nestingIncrement&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn Nesting Type Code &lt;nestingTypeCode&gt; en Nesting Direction Code &lt;nestingDirectionCode&gt; alleen toegestaan als Nesting Increment &lt;nestingIncrement&gt; wordt gebruikt.</value>
   </data>
   <data name="1951" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Percentage Of Alcohol By Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt; alleen toegestaan als Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Percentage Of Alcohol By Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt; alleen toegestaan als Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; wordt gebruikt.</value>
   </data>
   <data name="1952" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'ANN' (Year) of 'MON' (Month) toegestaan voor Usage Period After Opening UoM (&lt;itemPeriodSafeToUseAfterOpening&gt;/@&lt;timeMeasurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'ANN' (Year) of 'MON' (Month) toegestaan voor Usage Period After Opening UoM &lt;itemPeriodSafeToUseAfterOpening/@timeMeasurementUnitCode&gt;.</value>
   </data>
   <data name="1953" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE' en Merkdistributie-handelsartikeltypecode &lt;brandDistributionTradeItemTypeCode&gt; gelijk is aan 'CUSTOM_LABEL', dan moet Merkdistributie-handelsartikeltypecode gelijk zijn aan 'CUSTOM_LABEL' op alle niveaus van de handelsartikelhiërarchie.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE' en Merkdistributie-handelsartikeltypecode &lt;brandDistributionTradeItemTypeCode&gt; gelijk is aan 'CUSTOM_LABEL', dan moet Merkdistributie-handelsartikeltypecode gelijk zijn aan 'CUSTOM_LABEL' op alle niveaus van de handelsartikelhiërarchie.</value>
   </data>
   <data name="1954" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Servings Per Product Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; wordt gebruikt, dan is 'APPROXIMATELY' de enige toegestane code.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Servings Per Product Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; wordt gebruikt, dan is 'APPROXIMATELY' de enige toegestane code.</value>
   </data>
   <data name="1955" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Genetically Modified Declaration Code &lt;geneticallyModifiedDeclarationCode&gt; wordt gebruikt, dan zijn 'CONTAINS', 'FREE_FROM' of 'MAY_CONTAIN' de enige toegestane codes.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Genetically Modified Declaration Code &lt;geneticallyModifiedDeclarationCode&gt; wordt gebruikt, dan zijn 'CONTAINS', 'FREE_FROM' of 'MAY_CONTAIN' de enige toegestane codes.</value>
   </data>
   <data name="1956" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE' en Merkdistributie-handelsartikeltypecode &lt;brandDistributionTradeItemTypeCode&gt; gelijk is aan 'PRIVATE_LABEL', dan moet Merkdistributie-handelsartikeltypecode gelijk zijn aan 'PRIVATE_LABEL' op alle niveaus van de handelsartikelhiërarchie.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE' en Merkdistributie-handelsartikeltypecode &lt;brandDistributionTradeItemTypeCode&gt; gelijk is aan 'PRIVATE_LABEL', dan moet Merkdistributie-handelsartikeltypecode gelijk zijn aan 'PRIVATE_LABEL' op alle niveaus van de handelsartikelhiërarchie.</value>
   </data>
   <data name="1957" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als het handelsartikel een complex handelsartikel is, d.w.z. Aantal of Different Products &lt;quantityOfChildren&gt; groter is dan 1, dan moet de Nettoinhoud UOM (&lt;netContent&gt;/@&lt;measurementUnitCode&gt;) van het complexe handelsartikel gelijk zijn aan 'H87' (Piece).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als het handelsartikel een complex handelsartikel is, d.w.z. Aantal of Different Products &lt;quantityOfChildren&gt; groter is dan 1, dan moet de Nettoinhoud UOM &lt;netContent/@measurementUnitCode&gt; van het complexe handelsartikel gelijk zijn aan 'H87' (Piece).</value>
   </data>
   <data name="1958" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als het handelsartikel een complex handelsartikel is, d.w.z. Aantal Verschillende Producten &lt;quantityOfChildren&gt; groter is dan 1, dan moet de Nettoinhoud &lt;netContent&gt; gelijk zijn aan Totaal Aantal Producten &lt;totalQuantityOfNextLowerLevelTradeItem&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als het handelsartikel een complex handelsartikel is, d.w.z. Aantal Verschillende Producten &lt;quantityOfChildren&gt; groter is dan 1, dan moet de Nettoinhoud &lt;netContent&gt; gelijk zijn aan Totaal Aantal Producten &lt;totalQuantityOfNextLowerLevelTradeItem&gt;.</value>
   </data>
   <data name="1961" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Gevaarsaanduidingscode &lt;hazardStatementsCode&gt; gelijk is aan 'EUH208', dan moet Gevaarsaanduidingsomschrijving &lt;hazardStatementsDescription&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Gevaarsaanduidingscode &lt;hazardStatementsCode&gt; gelijk is aan 'EUH208', dan moet Gevaarsaanduidingsomschrijving &lt;hazardStatementsDescription&gt; worden gebruikt.</value>
   </data>
   <data name="1962" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Voorzorgsmaatregelcode &lt;precautionaryStatementsCode&gt; gelijk is aan &lt;&lt;precautionaryStatementsCode&gt; Code&gt;, dan moet Voorzorgsmaatregelomschrijving &lt;precautionaryStatementsDescription&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Voorzorgsmaatregelcode &lt;precautionaryStatementsCode&gt; gelijk is aan &lt;&lt;precautionaryStatementsCode&gt; Code&gt;, dan moet Voorzorgsmaatregelomschrijving &lt;precautionaryStatementsDescription&gt; worden gebruikt.</value>
   </data>
   <data name="1963" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Globale productcategoriecode &lt;gpcCategoryCode&gt; gelijk is aan '10000159' (Beer) en Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE', dan moet Degree Of Original Wort &lt;degreeOfOriginalWort&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Globale productcategoriecode &lt;gpcCategoryCode&gt; gelijk is aan '10000159' (Beer) en Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE', dan moet Degree Of Original Wort &lt;degreeOfOriginalWort&gt; worden gebruikt.</value>
   </data>
   <data name="1964" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moeten zowel Merkeigenaar GLN &lt;gln&gt; als Merkeigenaar naam &lt;partyName&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moeten zowel Merkeigenaar GLN &lt;gln&gt; als Merkeigenaar naam &lt;partyName&gt; worden gebruikt.</value>
   </data>
   <data name="1965" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Catalogue Price &lt;tradeItemPrice&gt; wordt gebruikt, dan moeten Catalogue Price Basis Hoeveelheid &lt;priceBasisQuantity&gt; en Catalogue Price Effective Start Datum &lt;priceEffectiveStartDate&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Catalogue Price &lt;tradeItemPrice&gt; wordt gebruikt, dan moeten Catalogue Price Basis Hoeveelheid &lt;priceBasisQuantity&gt; en Catalogue Price Effective Start Datum &lt;priceEffectiveStartDate&gt; worden gebruikt.</value>
   </data>
   <data name="1966" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Minimum Orderable Hoeveelheid &lt;orderQuantityMinimum&gt; alleen toegestaan als Orderable Eenheid Indicator &lt;isTradeItemAnOrderableUnit&gt; gelijk is aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Minimum Orderable Hoeveelheid &lt;orderQuantityMinimum&gt; alleen toegestaan als Orderable Eenheid Indicator &lt;isTradeItemAnOrderableUnit&gt; gelijk is aan 'TRUE'.</value>
   </data>
   <data name="1967" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Peg Hole Aantal &lt;pegHoleNumber&gt; wordt gebruikt, dan moet Peg Hole Type Code &lt;pegHoleTypeCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Peg Hole Aantal &lt;pegHoleNumber&gt; wordt gebruikt, dan moet Peg Hole Type Code &lt;pegHoleTypeCode&gt; worden gebruikt.</value>
   </data>
   <data name="1968" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; alleen toegestaan als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Aantal Eenheden per Laag in een GTIN &lt;quantityOfTradeItemsContainedInACompleteLayer&gt; alleen toegestaan als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE'.</value>
   </data>
   <data name="1969" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Aantal Eenheden per Laag in een non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; alleen toegestaan als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; NIET gelijk is aan 'PALLET' of 'MIXED_MODULE', en Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk is aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Aantal Eenheden per Laag in een non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt; alleen toegestaan als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; NIET gelijk is aan 'PALLET' of 'MIXED_MODULE', en Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk is aan 'TRUE'.</value>
   </data>
   <data name="1971" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan moet Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk zijn aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan moet Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk zijn aan 'TRUE'.</value>
   </data>
   <data name="1974" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moeten zowel Variable Gewicht Range Minimum &lt;variableWeightRangeMinimum&gt; als Variable Gewicht Range Maximum &lt;variableWeightRangeMaximum&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moeten zowel Variable Gewicht Range Minimum &lt;variableWeightRangeMinimum&gt; als Variable Gewicht Range Maximum &lt;variableWeightRangeMaximum&gt; worden gebruikt.</value>
   </data>
   <data name="1975" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn Variable Gewicht Allowable Deviation Percentage &lt;variableWeightAllowableDeviationPercentage&gt;, Variable Gewicht Range Minimum &lt;variableWeightRangeMinimum&gt; en Variable Gewicht Range Maximum &lt;variableWeightRangeMaximum&gt; alleen toegestaan als Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; gelijk is aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn Variable Gewicht Allowable Deviation Percentage &lt;variableWeightAllowableDeviationPercentage&gt;, Variable Gewicht Range Minimum &lt;variableWeightRangeMinimum&gt; en Variable Gewicht Range Maximum &lt;variableWeightRangeMaximum&gt; alleen toegestaan als Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; gelijk is aan 'TRUE'.</value>
   </data>
   <data name="1976" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Retail Price is Marked op de Product Indicator &lt;isPriceOnPack&gt; gelijk is aan 'TRUE' voor een basiseenheid, dan moet Suggested Retail Price &lt;tradeItemPrice&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Retail Price is Marked op de Product Indicator &lt;isPriceOnPack&gt; gelijk is aan 'TRUE' voor een basiseenheid, dan moet Suggested Retail Price &lt;tradeItemPrice&gt; worden gebruikt.</value>
   </data>
   <data name="1977" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Suggested Retail Price &lt;tradeItemPrice&gt; wordt gebruikt, dan moet Suggested Retail Price Effective Start Datum &lt;priceEffectiveStartDate&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Suggested Retail Price &lt;tradeItemPrice&gt; wordt gebruikt, dan moet Suggested Retail Price Effective Start Datum &lt;priceEffectiveStartDate&gt; worden gebruikt.</value>
   </data>
   <data name="1978" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Statistical Reporting Measurement &lt;statisticalReportingMeasurement&gt; alleen toegestaan als Douane Classificatie Waarde &lt;importClassificationValue&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Statistical Reporting Measurement &lt;statisticalReportingMeasurement&gt; alleen toegestaan als Douane Classificatie Waarde &lt;importClassificationValue&gt; wordt gebruikt.</value>
   </data>
   <data name="1979" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Servings Per Product Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; alleen toegestaan als Servings Per Product &lt;numberOfServingsPerPackage&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Servings Per Product Precision Code &lt;numberOfServingsPerPackageMeasurementPrecisionCode&gt; alleen toegestaan als Servings Per Product &lt;numberOfServingsPerPackage&gt; wordt gebruikt.</value>
   </data>
   <data name="1980" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, mogen Servings Per Product &lt;numberOfServingsPerPackage&gt; en Range of de Aantal of Servings &lt;numberOfServingsRangeDescription&gt; niet samen worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, mogen Servings Per Product &lt;numberOfServingsPerPackage&gt; en Range of de Aantal of Servings &lt;numberOfServingsRangeDescription&gt; niet samen worden gebruikt.</value>
   </data>
   <data name="1981" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Microbiological Organism Code &lt;microbiologicalOrganismCode&gt; wordt gebruikt, dan moet Microbiological Organism Maximum Waarde &lt;microbiologicalOrganismMaximumValue&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Microbiological Organism Code &lt;microbiologicalOrganismCode&gt; wordt gebruikt, dan moet Microbiological Organism Maximum Waarde &lt;microbiologicalOrganismMaximumValue&gt; worden gebruikt.</value>
   </data>
   <data name="1982" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als de Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan moet Opslagstapelfactor (&lt;stackingFactorTypeCode&gt; gelijk aan 'STORAGE_UNSPECIFIED') worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als de Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan moet Opslagstapelfactor (&lt;stackingFactorTypeCode&gt; gelijk aan 'STORAGE_UNSPECIFIED') worden gebruikt.</value>
   </data>
   <data name="1983" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als de Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan moet Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als de Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan moet Aantal Lagen per GTIN &lt;quantityOfCompleteLayersContainedInATradeItem&gt; worden gebruikt.</value>
   </data>
   <data name="1984" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als het handelsartikel geen pallet of mixed module is maar wel een Despatch Eenheid is en een Pallet Type Code &lt;platformTypeCode&gt; is opgegeven, dan moeten de bijbehorende Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; en non-GTIN pallet informatie worden opgegeven. Sommige non-GTIN pallet informatie ontbreekt: &lt;Attribute name(s)&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als het handelsartikel geen pallet of mixed module is maar wel een Despatch Eenheid is en een Pallet Type Code &lt;platformTypeCode&gt; is opgegeven, dan moeten de bijbehorende Pallet Disposition Code &lt;platformTermsAndConditionsCode&gt; en non-GTIN pallet informatie worden opgegeven. Sommige non-GTIN pallet informatie ontbreekt: &lt;Attribute name(s)&gt;.</value>
   </data>
   <data name="1985" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Pallet Type Code &lt;platformTypeCode&gt; alleen toegestaan als Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk is aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Pallet Type Code &lt;platformTypeCode&gt; alleen toegestaan als Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk is aan 'TRUE'.</value>
   </data>
   <data name="1987" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Group Identificatie Code &lt;tradeItemGroupIdentificationCodeReference&gt; wordt gebruikt, dan moet de bijbehorende code omschrijving (&lt;tradeItemGroupIdentificationCodeReference&gt;/@&lt;codeDescription&gt;) worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Group Identificatie Code &lt;tradeItemGroupIdentificationCodeReference&gt; wordt gebruikt, dan moet de bijbehorende code omschrijving &lt;tradeItemGroupIdentificationCodeReference/@codeDescription&gt; worden gebruikt.</value>
   </data>
   <data name="1988" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Fysieke-broncode &lt;physicalResourceTypeCode&gt; gelijk is aan 'ELECTRICITY', dan is Fysieke-brongebruiksbeoordelingsschaalcode &lt;physicalResourceUsageRatingScaleCodeReference&gt; met &lt;physicalResourceUsageRatingScaleCodeReference&gt;/@&lt;codeListName&gt; gelijk aan 'EU_EnergyEfficiencyScale' alleen toegestaan als de bijbehorende Fysieke-brongebruiksbeoordelingsclassificatiecode &lt;physicalResourceUsageClassificationCodeReference&gt; [= Efficiency class] wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Fysieke-broncode &lt;physicalResourceTypeCode&gt; gelijk is aan 'ELECTRICITY', dan is Fysieke-brongebruiksbeoordelingsschaalcode &lt;physicalResourceUsageRatingScaleCodeReference&gt; met &lt;physicalResourceUsageRatingScaleCodeReference&gt;/@&lt;codeListName&gt; gelijk aan 'EU_EnergyEfficiencyScale' alleen toegestaan als de bijbehorende Fysieke-brongebruiksbeoordelingsclassificatiecode &lt;physicalResourceUsageClassificationCodeReference&gt; [= Efficiency class] wordt gebruikt.</value>
   </data>
   <data name="1989" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Digital Asset Type Code &lt;referencedFileTypeCode&gt; wordt gebruikt, dan moet Digital Asset Link &lt;uniformResourceIdentifier&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Digital Asset Type Code &lt;referencedFileTypeCode&gt; wordt gebruikt, dan moet Digital Asset Link &lt;uniformResourceIdentifier&gt; worden gebruikt.</value>
   </data>
   <data name="1990" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, mogen Product Handling Code &lt;handlingInstructionsCodeReference&gt; codes '11' (Refrigeration required) en '12' (Refrigeration niet required) niet worden gebruikt voor hetzelfde handelsartikel.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, mogen Product Handling Code &lt;handlingInstructionsCodeReference&gt; codes '11' (Refrigeration required) en '12' (Refrigeration niet required) niet worden gebruikt voor hetzelfde handelsartikel.</value>
   </data>
   <data name="1991" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moeten Size Code &lt;sizeCode&gt; en Size System Code &lt;sizeSystemCode&gt; samen worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moeten Size Code &lt;sizeCode&gt; en Size System Code &lt;sizeSystemCode&gt; samen worden gebruikt.</value>
   </data>
   <data name="1992" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Certification Standard &lt;certificationStandard&gt; wordt gebruikt en Certification Agency &lt;certificationAgency&gt; gelijk is aan 'Additional_Label_Information', dan moet Certification Waarde &lt;certificationValue&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Certification Standard &lt;certificationStandard&gt; wordt gebruikt en Certification Agency &lt;certificationAgency&gt; gelijk is aan 'Additional_Label_Information', dan moet Certification Waarde &lt;certificationValue&gt; worden gebruikt.</value>
   </data>
   <data name="1994" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, mogen Gevaarlijke-goederenregelgevingsinstantie &lt;dangerousGoodsRegulationAgency&gt; en Gevaarlijke-goederenregelgevingscode &lt;dangerousGoodsRegulationCode&gt; alleen samen worden gebruikt en moet Gevaarlijke-goederenregelgevingsinstantie &lt;dangerousGoodsRegulationAgency&gt; gelijk zijn aan 'ADR'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, mogen Gevaarlijke-goederenregelgevingsinstantie &lt;dangerousGoodsRegulationAgency&gt; en Gevaarlijke-goederenregelgevingscode &lt;dangerousGoodsRegulationCode&gt; alleen samen worden gebruikt en moet Gevaarlijke-goederenregelgevingsinstantie &lt;dangerousGoodsRegulationAgency&gt; gelijk zijn aan 'ADR'.</value>
   </data>
   <data name="1995" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Gevaarlijke-goederenregelgevingscode &lt;dangerousGoodsRegulationCode&gt; wordt gebruikt, zijn alleen de codes 'ZCG' (Bevat gevaarlijke goederen) of 'ZNA' (Artikel is geen gevaarlijk goed en bevat geen gevaarlijke goederen) toegestaan.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Gevaarlijke-goederenregelgevingscode &lt;dangerousGoodsRegulationCode&gt; wordt gebruikt, zijn alleen de codes 'ZCG' (Bevat gevaarlijke goederen) of 'ZNA' (Artikel is geen gevaarlijk goed en bevat geen gevaarlijke goederen) toegestaan.</value>
   </data>
   <data name="1996" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als het handelsartikel gevaarlijke goederen bevat (&lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ZCG'), moet andere gevaarlijke goederen informatie worden gebruikt voor de basiseenheid: &lt;Attribute name&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als het handelsartikel gevaarlijke goederen bevat (&lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ZCG'), moet andere gevaarlijke goederen informatie worden gebruikt voor de basiseenheid: &lt;Attribute name&gt;.</value>
   </data>
   <data name="1997" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, dit/deze attribuut/en &lt;Attribute name&gt; behoort/behoren tot de gevaarlijke goederen informatie en is/zijn alleen toegestaan voor de basiseenheid (&lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE') en als Gevaarlijke-goederenregelgevingscode &lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ZCG' (Bevat gevaarlijke goederen).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, dit/deze attribuut/en &lt;Attribute name&gt; behoort/behoren tot de gevaarlijke goederen informatie en is/zijn alleen toegestaan voor de basiseenheid (&lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE') en als Gevaarlijke-goederenregelgevingscode &lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ZCG' (Bevat gevaarlijke goederen).</value>
   </data>
   <data name="1998" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Gevaarlijke-goederenclassificatie &lt;classOfDangerousGoods&gt; gelijk is aan '1' (Explosive substances en articles), dan moet Net Explosive Mass &lt;netMassOfExplosives&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Gevaarlijke-goederenclassificatie &lt;classOfDangerousGoods&gt; gelijk is aan '1' (Explosive substances en articles), dan moet Net Explosive Mass &lt;netMassOfExplosives&gt; worden gebruikt.</value>
   </data>
   <data name="1999" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Net Explosive Mass &lt;netMassOfExplosives&gt; alleen toegestaan als Gevaarlijke-goederenclassificatie &lt;classOfDangerousGoods&gt; gelijk is aan '1' (Explosive substances en articles).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Net Explosive Mass &lt;netMassOfExplosives&gt; alleen toegestaan als Gevaarlijke-goederenclassificatie &lt;classOfDangerousGoods&gt; gelijk is aan '1' (Explosive substances en articles).</value>
   </data>
   <data name="2000" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Gevaarlijke-goederencode voor beperkte hoeveelheden &lt;dangerousGoodsLimitedQuantitiesCode&gt; alleen toegestaan als ten minste één van de bevatte basiseenheden gevaarlijke goederen bevat (&lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ZCG').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Gevaarlijke-goederencode voor beperkte hoeveelheden &lt;dangerousGoodsLimitedQuantitiesCode&gt; alleen toegestaan als ten minste één van de bevatte basiseenheden gevaarlijke goederen bevat (&lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ZCG').</value>
   </data>
   <data name="2001" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als de basiseenheid handelsartikel gevaarlijke goederen bevat (&lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ZCG'), dan moet Gevaarlijke-goederencode voor beperkte hoeveelheden &lt;dangerousGoodsLimitedQuantitiesCode&gt; worden gebruikt op de basiseenheid en op alle bovenliggende niveaus van de handelsartikelhiërarchie.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als de basiseenheid handelsartikel gevaarlijke goederen bevat (&lt;dangerousGoodsRegulationCode&gt; gelijk is aan 'ZCG'), dan moet Gevaarlijke-goederencode voor beperkte hoeveelheden &lt;dangerousGoodsLimitedQuantitiesCode&gt; worden gebruikt op de basiseenheid en op alle bovenliggende niveaus van de handelsartikelhiërarchie.</value>
   </data>
   <data name="2002" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Verpakking Datum Type Code &lt;tradeItemDateOnPackagingTypeCode&gt; wordt gebruikt en niet gelijk is aan ('NO_DATE_MARKED', 'DISPLAY_UNTIL_DATE', 'FREEZING_DATE', 'PACKAGING_DATE' of 'PRODUCTION_DATE'), dan moeten Minimum Days of Shelf Life bij Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; en/of Minimum Days of Shelf Life van Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Verpakking Datum Type Code &lt;tradeItemDateOnPackagingTypeCode&gt; wordt gebruikt en niet gelijk is aan ('NO_DATE_MARKED', 'DISPLAY_UNTIL_DATE', 'FREEZING_DATE', 'PACKAGING_DATE' of 'PRODUCTION_DATE'), dan moeten Minimum Days of Shelf Life bij Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; en/of Minimum Days of Shelf Life van Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; worden gebruikt.</value>
   </data>
   <data name="2003" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Regulatory Act &lt;regulatoryAct&gt; gelijk is aan 'GHS' en Regulatory Permit Identificatie &lt;regulatoryPermitIdentification&gt; gelijk is aan 'TRUE', dan moet andere GHS informatie worden gebruikt voor de basiseenheid: &lt;Attribute name&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Regulatory Act &lt;regulatoryAct&gt; gelijk is aan 'GHS' en Regulatory Permit Identificatie &lt;regulatoryPermitIdentification&gt; gelijk is aan 'TRUE', dan moet andere GHS informatie worden gebruikt voor de basiseenheid: &lt;Attribute name&gt;.</value>
   </data>
   <data name="2004" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, attribuut/en &lt;Attribute name&gt; behoort/behoren tot de GHS informatie en is/zijn alleen toegestaan als Regulatory Act &lt;regulatoryAct&gt; gelijk is aan 'GHS' en Regulatory Permit Identificatie &lt;regulatoryPermitIdentification&gt; gelijk is aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, attribuut/en &lt;Attribute name&gt; behoort/behoren tot de GHS informatie en is/zijn alleen toegestaan als Regulatory Act &lt;regulatoryAct&gt; gelijk is aan 'GHS' en Regulatory Permit Identificatie &lt;regulatoryPermitIdentification&gt; gelijk is aan 'TRUE'.</value>
   </data>
   <data name="2005" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Dangerous Substance Waste Code &lt;enumerationValue&gt; alleen toegestaan als de bijbehorende agency &lt;externalAgencyName&gt; gelijk is aan 'EU'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Dangerous Substance Waste Code &lt;enumerationValue&gt; alleen toegestaan als de bijbehorende agency &lt;externalAgencyName&gt; gelijk is aan 'EU'.</value>
   </data>
   <data name="2006" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moeten Chemical Ingredient Identificatie [Unique Formula Identificatie (UFI)] &lt;chemicalIngredientIdentification&gt; samen worden gebruikt en moet Chemical Ingredient Scheme &lt;chemicalIngredientScheme&gt; gelijk zijn aan 'UFI'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moeten Chemical Ingredient Identificatie [Unique Formula Identificatie (UFI)] &lt;chemicalIngredientIdentification&gt; samen worden gebruikt en moet Chemical Ingredient Scheme &lt;chemicalIngredientScheme&gt; gelijk zijn aan 'UFI'.</value>
   </data>
   <data name="2007" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Gevaarsaanduidingsomschrijving &lt;hazardStatementsDescription&gt; alleen toegestaan als Gevaarsaanduidingscode &lt;hazardStatementsCode&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Gevaarsaanduidingsomschrijving &lt;hazardStatementsDescription&gt; alleen toegestaan als Gevaarsaanduidingscode &lt;hazardStatementsCode&gt; wordt gebruikt.</value>
   </data>
   <data name="2008" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Voorzorgsmaatregelomschrijving &lt;precautionaryStatementsDescription&gt; alleen toegestaan als Voorzorgsmaatregelcode &lt;precautionaryStatementsCode&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Voorzorgsmaatregelomschrijving &lt;precautionaryStatementsDescription&gt; alleen toegestaan als Voorzorgsmaatregelcode &lt;precautionaryStatementsCode&gt; wordt gebruikt.</value>
   </data>
   <data name="2009" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, mogen Dangerous Substance Name &lt;dangerousSubstanceName&gt;, Flammable Substance Minimum Procent &lt;flammableSubstanceMinimumPercent&gt; en Flammable Substance Maximum Procent &lt;flammableSubstanceMaximumPercent&gt; alleen samen worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, mogen Dangerous Substance Name &lt;dangerousSubstanceName&gt;, Flammable Substance Minimum Procent &lt;flammableSubstanceMinimumPercent&gt; en Flammable Substance Maximum Procent &lt;flammableSubstanceMaximumPercent&gt; alleen samen worden gebruikt.</value>
   </data>
   <data name="2011" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn Regelgeving Niveau Code Reference &lt;regulationLevelCodeReference&gt; en Regulatory Act Compliance Niveau Code &lt;regulatoryActComplianceLevelCode&gt; alleen toegestaan als Regelgeving Type Code &lt;regulationTypeCode&gt; gelijk is aan 'EXPLOSIVES_PRECURSORS_REGISTRATION' en Regelgeving Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; gelijk is aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn Regelgeving Niveau Code Reference &lt;regulationLevelCodeReference&gt; en Regulatory Act Compliance Niveau Code &lt;regulatoryActComplianceLevelCode&gt; alleen toegestaan als Regelgeving Type Code &lt;regulationTypeCode&gt; gelijk is aan 'EXPLOSIVES_PRECURSORS_REGISTRATION' en Regelgeving Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; gelijk is aan 'TRUE'.</value>
   </data>
   <data name="2012" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is alleen de code 'CONTAINS' toegestaan voor Additive Containment Code &lt;levelOfContainmentCode&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is alleen de code 'CONTAINS' toegestaan voor Additive Containment Code &lt;levelOfContainmentCode&gt;.</value>
   </data>
   <data name="2013" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is alleen de code 'GREATER_THAN_OR_EQUAL' toegestaan voor Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is alleen de code 'GREATER_THAN_OR_EQUAL' toegestaan voor Fat Percentage in Dry Matter Measurement Precision Code &lt;fatPercentageInDryMatterMeasurementPrecisionCode&gt;.</value>
   </data>
   <data name="2014" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes '2P' (Kilobyte), '4L' (Megabyte), 'AD' (Byte), 'E34' (Gigabyte) of 'E35' (Terabyte) toegestaan voor File Size UoM (&lt;fileSize&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes '2P' (Kilobyte), '4L' (Megabyte), 'AD' (Byte), 'E34' (Gigabyte) of 'E35' (Terabyte) toegestaan voor File Size UoM &lt;fileSize/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2015" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'CMK' (Square centimetre), 'DMK' (Square decimetre), 'GRM' (Gram), 'KGM' (Kilogram), 'MGM' (Milligram), 'MMK' (Square millimetre), 'MTK' (Square metre) of 'TNE' (Tonne) toegestaan voor Verpakking Materiaal Hoeveelheid UoM (&lt;packagingMaterialCompositionQuantity&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'CMK' (Square centimetre), 'DMK' (Square decimetre), 'GRM' (Gram), 'KGM' (Kilogram), 'MGM' (Milligram), 'MMK' (Square millimetre), 'MTK' (Square metre) of 'TNE' (Tonne) toegestaan voor Verpakking Materiaal Hoeveelheid UoM &lt;packagingMaterialCompositionQuantity/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2016" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes '23' (Grams Per Cubic Centimetre) of 'GL' (Gram Per Litre) toegestaan voor Dangerous Substance Gas Density UoM (&lt;dangerousSubstanceGasDensity&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes '23' (Grams Per Cubic Centimetre) of 'GL' (Gram Per Litre) toegestaan voor Dangerous Substance Gas Density UoM &lt;dangerousSubstanceGasDensity/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2017" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'CONTAINS' of 'MAY_CONTAIN' toegestaan voor Allergen Containment Code (allergen/&lt;levelOfContainmentCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'CONTAINS' of 'MAY_CONTAIN' toegestaan voor Allergen Containment Code (allergen/&lt;levelOfContainmentCode&gt;).</value>
   </data>
   <data name="2018" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Product Activity Type Code &lt;productActivityTypeCode&gt; gelijk is aan 'LAST_PROCESSING', dan zijn codes '097' (EUROPEAN UNION) en 'NON_EU' niet toegestaan voor de bijbehorende Land Code &lt;countryCode&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Product Activity Type Code &lt;productActivityTypeCode&gt; gelijk is aan 'LAST_PROCESSING', dan zijn codes '097' (EUROPEAN UNION) en 'NON_EU' niet toegestaan voor de bijbehorende Land Code &lt;countryCode&gt;.</value>
   </data>
   <data name="2019" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Is Base Price Declaration Relevant &lt;isBasePriceDeclarationRelevant&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Is Base Price Declaration Relevant &lt;isBasePriceDeclarationRelevant&gt;.</value>
   </data>
   <data name="2020" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Regulatory Agency &lt;regulatoryAgency&gt; gelijk is aan 'UN' en Regulatory Act &lt;regulatoryAct&gt; gelijk is aan 'GHS', zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Regulatory Permit Identificatie &lt;regulatoryPermitIdentification&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Regulatory Agency &lt;regulatoryAgency&gt; gelijk is aan 'UN' en Regulatory Act &lt;regulatoryAct&gt; gelijk is aan 'GHS', zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Regulatory Permit Identificatie &lt;regulatoryPermitIdentification&gt;.</value>
   </data>
   <data name="2021" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Is Dieet Type Marked op Package &lt;isDietTypeMarkedOnPackage&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Is Dieet Type Marked op Package &lt;isDietTypeMarkedOnPackage&gt;.</value>
   </data>
   <data name="2022" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Claim Marked op Package &lt;claimMarkedOnPackage&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Claim Marked op Package &lt;claimMarkedOnPackage&gt;.</value>
   </data>
   <data name="2023" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Batteries Built In Indicator &lt;areBatteriesBuiltIn&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'TRUE' of 'FALSE' toegestaan voor Batteries Built In Indicator &lt;areBatteriesBuiltIn&gt;.</value>
   </data>
   <data name="2024" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is alleen de code 'LESS_THAN' toegestaan voor Percentage of Alcohol door Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is alleen de code 'LESS_THAN' toegestaan voor Percentage of Alcohol door Volume Measurement Precision Code &lt;percentageOfAlcoholByVolumeMeasurementPrecisionCode&gt;.</value>
   </data>
   <data name="2025" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk is aan 'CUSTOMS_TARIFF_NUMBER', dan moet Douane Classificatie Waarde &lt;importClassificationValue&gt; exact 11 cijfers hebben.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk is aan 'CUSTOMS_TARIFF_NUMBER', dan moet Douane Classificatie Waarde &lt;importClassificationValue&gt; exact 11 cijfers hebben.</value>
   </data>
   <data name="2026" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Nutrient Code &lt;nutrientTypeCode&gt; wordt gebruikt, dan moet Nutrient Basis &lt;nutrientBasisQuantity&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Nutrient Code &lt;nutrientTypeCode&gt; wordt gebruikt, dan moet Nutrient Basis &lt;nutrientBasisQuantity&gt; worden gebruikt.</value>
   </data>
   <data name="2027" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk is aan 'TARIF_INTEGRE_DE_LA_COMMUNAUTE', dan moet Douane Classificatie Waarde &lt;importClassificationValue&gt; exact 10 cijfers hebben.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk is aan 'TARIF_INTEGRE_DE_LA_COMMUNAUTE', dan moet Douane Classificatie Waarde &lt;importClassificationValue&gt; exact 10 cijfers hebben.</value>
   </data>
   <data name="2028" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is alleen de code 'H87' (Piece) toegestaan voor Statistical Reporting Measurement UoM (&lt;statisticalReportingMeasurement&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is alleen de code 'H87' (Piece) toegestaan voor Statistical Reporting Measurement UoM &lt;statisticalReportingMeasurement/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2029" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'ANN' (Year), 'DAY' (Days), 'HUR' (Hour), 'MIN' (Minute), 'MON' (Month), 'SEC' (Second) of 'WEE' (Week) toegestaan voor Ripening Time Period UoM (&lt;ripeningTimePeriod&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'ANN' (Year), 'DAY' (Days), 'HUR' (Hour), 'MIN' (Minute), 'MON' (Month), 'SEC' (Second) of 'WEE' (Week) toegestaan voor Ripening Time Period UoM &lt;ripeningTimePeriod/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2031" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Daily Intake Reference &lt;dailyValueIntakeReference&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Daily Intake Reference &lt;dailyValueIntakeReference&gt; worden opgegeven in het Duits, Frans of Italiaans.</value>
   </data>
   <data name="2032" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen '100 Gram', '100 Millilitre', '1 Litre' of '1 Portion' toegestaan voor Nutrient Basis &lt;nutrientBasisQuantity&gt; en Nutrient Basis UoM (&lt;nutrientBasisQuantity&gt;/@&lt;measurementUnitCode&gt;).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen '100 Gram', '100 Millilitre', '1 Litre' of '1 Portion' toegestaan voor Nutrient Basis &lt;nutrientBasisQuantity&gt; en Nutrient Basis UoM &lt;nutrientBasisQuantity/@measurementUnitCode&gt;.</value>
   </data>
   <data name="2033" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Preparation Type Code &lt;preparationTypeCode&gt; niet gelijk is aan 'READY_TO_DRINK' of 'READY_TO_EAT', dan moet Preparation Instructions &lt;preparationInstructions&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Preparation Type Code &lt;preparationTypeCode&gt; niet gelijk is aan 'READY_TO_DRINK' of 'READY_TO_EAT', dan moet Preparation Instructions &lt;preparationInstructions&gt; worden gebruikt.</value>
   </data>
   <data name="2034" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, mag Preparation Type Code &lt;preparationTypeCode&gt; niet gelijk zijn aan 'PREPARED' of 'UNPREPARED'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, mag Preparation Type Code &lt;preparationTypeCode&gt; niet gelijk zijn aan 'PREPARED' of 'UNPREPARED'.</value>
   </data>
   <data name="2035" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Product Yield Variation Percentage &lt;productYieldVariationPercentage&gt; alleen toegestaan als Product Yield &lt;productYield&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Product Yield Variation Percentage &lt;productYieldVariationPercentage&gt; alleen toegestaan als Product Yield &lt;productYield&gt; wordt gebruikt.</value>
   </data>
   <data name="2036" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, zijn alleen de codes 'PREPARED' of 'UNPREPARED' toegestaan voor Nutritional Preparation Code &lt;preparationStateCode&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, zijn alleen de codes 'PREPARED' of 'UNPREPARED' toegestaan voor Nutritional Preparation Code &lt;preparationStateCode&gt;.</value>
   </data>
   <data name="2037" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Organic Niveau Code &lt;organicTradeItemCode&gt; gelijk is aan '2' (Organic) of '6' (In conversion van non-organic naar organic), dan moet Organic Certification Identificatie &lt;organicCertificationIdentification&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Organic Niveau Code &lt;organicTradeItemCode&gt; gelijk is aan '2' (Organic) of '6' (In conversion van non-organic naar organic), dan moet Organic Certification Identificatie &lt;organicCertificationIdentification&gt; worden gebruikt.</value>
   </data>
   <data name="2038" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, is Organic Certification Identificatie &lt;organicCertificationIdentification&gt; alleen toegestaan als Organic Niveau Code &lt;organicTradeItemCode&gt; gelijk is aan '2' (Organic) of '6' (In conversion van non-organic naar organic).</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, is Organic Certification Identificatie &lt;organicCertificationIdentification&gt; alleen toegestaan als Organic Niveau Code &lt;organicTradeItemCode&gt; gelijk is aan '2' (Organic) of '6' (In conversion van non-organic naar organic).</value>
   </data>
   <data name="2039" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als &lt;packagingRawMaterialCode&gt; gelijk is aan 'RECYCLED', dan is Verpakking Raw Materiaal Content Percentage &lt;packagingRawMaterialContentPercentage&gt; alleen toegestaan als Verpakking Materiaal Samenstelling Hoeveelheid &lt;packagingMaterialCompositionQuantity&gt; wordt gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als &lt;packagingRawMaterialCode&gt; gelijk is aan 'RECYCLED', dan is Verpakking Raw Materiaal Content Percentage &lt;packagingRawMaterialContentPercentage&gt; alleen toegestaan als Verpakking Materiaal Samenstelling Hoeveelheid &lt;packagingMaterialCompositionQuantity&gt; wordt gebruikt.</value>
   </data>
   <data name="2043" xml:space="preserve">
     <value>Meerdere waarden voor &lt;foodValueBasis&gt; per attribuut zijn niet toegestaan.</value>
@@ -1936,79 +1936,79 @@
     <value>Meerdere waarden voor &lt;foodValuePerTradeItem&gt; per attribuut zijn niet toegestaan.</value>
   </data>
   <data name="2062" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Additional Product Identificatie Type Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) gelijk is aan 'PLU', dan moet de bijbehorende Additional Product Identificatie &lt;additionalTradeItemIdentification&gt; waarde beginnen met ('02', '22', '24', '26', '28', '21', '23', '25', '27' of '29').</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Additional Product Identificatie Type Code &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; gelijk is aan 'PLU', dan moet de bijbehorende Additional Product Identificatie &lt;additionalTradeItemIdentification&gt; waarde beginnen met ('02', '22', '24', '26', '28', '21', '23', '25', '27' of '29').</value>
   </data>
   <data name="2063" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Aanvullende productidentificatie-typecode (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) gelijk is aan 'PLU', dan moet Variabele-eenheid-indicator &lt;isTradeItemAVariableUnit&gt; gelijk zijn aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Aanvullende productidentificatie-typecode &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; gelijk is aan 'PLU', dan moet Variabele-eenheid-indicator &lt;isTradeItemAVariableUnit&gt; gelijk zijn aan 'TRUE'.</value>
   </data>
   <data name="2064" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Variabele-eenheid-indicator &lt;isTradeItemAVariableUnit&gt; gelijk is aan 'TRUE', dan moet één Aanvullende productidentificatie-typecode (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) gelijk zijn aan 'PLU'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Variabele-eenheid-indicator &lt;isTradeItemAVariableUnit&gt; gelijk is aan 'TRUE', dan moet één Aanvullende productidentificatie-typecode &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; gelijk zijn aan 'PLU'.</value>
   </data>
   <data name="2065" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Additional Product Identificatie Type Code (&lt;additionalTradeItemIdentification&gt;/@&lt;additionalTradeItemIdentificationTypeCode&gt;) gelijk is aan 'PLU', dan moet de bijbehorende Additional Product Identificatie &lt;additionalTradeItemIdentification&gt; waarde exact 7 cijfers hebben.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Additional Product Identificatie Type Code &lt;additionalTradeItemIdentification/@additionalTradeItemIdentificationTypeCode&gt; gelijk is aan 'PLU', dan moet de bijbehorende Additional Product Identificatie &lt;additionalTradeItemIdentification&gt; waarde exact 7 cijfers hebben.</value>
   </data>
   <data name="2066" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Currency Code (.../@currencycode) wordt gebruikt, dan moet ten minste één iteratie van .../@currencycode gelijk zijn aan 'EUR'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Currency Code (.../@currencycode) wordt gebruikt, dan moet ten minste één iteratie van.../@currencycode gelijk zijn aan 'EUR'.</value>
   </data>
   <data name="2067" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Display Ready Verpakking &lt;hasDisplayReadyPackaging&gt; gelijk is aan 'TRUE', dan moet Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk zijn aan 'FALSE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Display Ready Verpakking &lt;hasDisplayReadyPackaging&gt; gelijk is aan 'TRUE', dan moet Consumenteneenheid-indicator &lt;isTradeItemAConsumerUnit&gt; gelijk zijn aan 'FALSE'.</value>
   </data>
   <data name="2069" xml:space="preserve">
     <value>Er mag ten hoogste één iteratie zijn van de taal 'Frans'.</value>
   </data>
   <data name="2070" xml:space="preserve">
-    <value>Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; wordt niet gebruikt. Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;,</value>
+    <value>Alcoholpercentage &lt;percentageOfAlcoholByVolume&gt; wordt niet gebruikt. Voor verkooplandcode &lt;targetMarketCountryCode&gt;</value>
   </data>
   <data name="2072" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk is aan 'TRUE' en GTIN (Global Trade Item Number) &lt;gtin&gt; begint met '9', dan moet Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; gelijk zijn aan 'TRUE' op het laagste niveau van de hiërarchie waarbij Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk is aan 'TRUE' en GTIN (Global Trade Item Number) &lt;gtin&gt; begint met '9', dan moet Variable Measure Indicator &lt;isTradeItemAVariableUnit&gt; gelijk zijn aan 'TRUE' op het laagste niveau van de hiërarchie waarbij Basiseenheid Indicator &lt;isTradeItemABaseUnit&gt; gelijk is aan 'TRUE'.</value>
   </data>
   <data name="2075" xml:space="preserve">
     <value>Initial Manufacturer Sterilisation Code &lt;initialManufacturerSterilisationCode&gt; en/of Manufacturer Specified Acceptable Resterilisation Code &lt;manufacturerSpecifiedAcceptableResterilisationCode&gt; mag niet gelijk zijn aan 'NO_STERILISATION_REQUIRED' en wordt ongeldig gebruikt.</value>
   </data>
   <data name="101923" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Tax Type Code &lt;dutyFeeTaxTypeCode&gt; gelijk is aan ('VAT' of 'IVA') en Tax Percentage &lt;dutyFeeTaxRate&gt; gelijk is aan 0 (nul), dan moet Tax Categorie Code &lt;dutyFeeTaxCategoryCode&gt; 'ZERO' of 'EXEMPT' zijn.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Tax Type Code &lt;dutyFeeTaxTypeCode&gt; gelijk is aan ('VAT' of 'IVA') en Tax Percentage &lt;dutyFeeTaxRate&gt; gelijk is aan 0 (nul), dan moet Tax Categorie Code &lt;dutyFeeTaxCategoryCode&gt; 'ZERO' of 'EXEMPT' zijn.</value>
   </data>
   <data name="101924" xml:space="preserve">
-    <value>U verstrekt informatie over een Non-GTIN Pallet. Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als elk van de volgende attributen is opgegeven, dan moeten alle worden opgegeven: Non-GTIN Logistic Eenheid &lt;Length&gt; &lt;depth&gt;, Non-GTIN Logistic Eenheid Breedte &lt;width&gt;, Non-GTIN Logistic Eenheid Hoogte &lt;height&gt;, Non-GTIN Logistic Eenheid Brutogewicht &lt;grossWeight&gt;, Aantal Lagen per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt;, Aantal Eenheden per Laag in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;, Count of This Specific Artikel in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt;.</value>
+    <value>U verstrekt informatie over een Non-GTIN Pallet. Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als elk van de volgende attributen is opgegeven, dan moeten alle worden opgegeven: Non-GTIN Logistic Eenheid &lt;Length&gt; &lt;depth&gt;, Non-GTIN Logistic Eenheid Breedte &lt;width&gt;, Non-GTIN Logistic Eenheid Hoogte &lt;height&gt;, Non-GTIN Logistic Eenheid Brutogewicht &lt;grossWeight&gt;, Aantal Lagen per Non-GTIN Pallet &lt;quantityOfLayersPerPallet&gt;, Aantal Eenheden per Laag in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPalletLayer&gt;, Count of This Specific Artikel in een Non-GTIN Pallet &lt;quantityOfTradeItemsPerPallet&gt;.</value>
   </data>
   <data name="101940" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als er één iteratie is van de Nutritional Class waarbij Nutritional Program Code &lt;nutritionalProgramCode&gt; gelijk is aan '8' (Nutri-Score) en Nutritional Score &lt;nutritionalScore&gt; gelijk is aan 'EXEMPT', dan is geen andere iteratie van Nutritional Program Code &lt;nutritionalProgramCode&gt; gelijk aan '8' (Nutri-Score) toegestaan.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als er één iteratie is van de Nutritional Class waarbij Nutritional Program Code &lt;nutritionalProgramCode&gt; gelijk is aan '8' (Nutri-Score) en Nutritional Score &lt;nutritionalScore&gt; gelijk is aan 'EXEMPT', dan is geen andere iteratie van Nutritional Program Code &lt;nutritionalProgramCode&gt; gelijk aan '8' (Nutri-Score) toegestaan.</value>
   </data>
   <data name="101959" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Minimum Days of Shelf Life bij Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; wordt gebruikt, dan mag het niet groter zijn dan Minimum Days of Shelf Life bij Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; van elk van zijn onderliggende artikelen.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Minimum Days of Shelf Life bij Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; wordt gebruikt, dan mag het niet groter zijn dan Minimum Days of Shelf Life bij Arrival &lt;minimumTradeItemLifespanFromTimeOfArrival&gt; van elk van zijn onderliggende artikelen.</value>
   </data>
   <data name="101960" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Minimum Days of Shelf Life van Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; wordt gebruikt, dan mag het niet groter zijn dan Minimum Days of Shelf Life van Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; van elk van zijn onderliggende artikelen.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Minimum Days of Shelf Life van Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; wordt gebruikt, dan mag het niet groter zijn dan Minimum Days of Shelf Life van Production &lt;minimumTradeItemLifespanFromTimeOfProduction&gt; van elk van zijn onderliggende artikelen.</value>
   </data>
   <data name="101970" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Globale productcategoriecode &lt;gpcCategoryCode&gt; gelijk is aan &lt;&lt;gpcCategoryCode&gt; GPC Categorie Name&gt;, dan moet een van de Fruit And Vegetables Grade Of Goods Codes ('EXTRA', 'I', 'II' of 'NONE') worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Globale productcategoriecode &lt;gpcCategoryCode&gt; gelijk is aan &lt;&lt;gpcCategoryCode&gt; GPC Categorie Name&gt;, dan moet een van de Fruit And Vegetables Grade Of Goods Codes ('EXTRA', 'I', 'II' of 'NONE') worden gebruikt.</value>
   </data>
   <data name="101972" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Digital Asset Type Code &lt;referencedFileTypeCode&gt; gelijk is aan 'SAFETY_DATA_SHEET', 'DOP_SHEET' of 'DECLARATION_OF_CONFORMITY', dan moet File Language Code &lt;fileLanguageCode&gt; worden gebruikt.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Digital Asset Type Code &lt;referencedFileTypeCode&gt; gelijk is aan 'SAFETY_DATA_SHEET', 'DOP_SHEET' of 'DECLARATION_OF_CONFORMITY', dan moet File Language Code &lt;fileLanguageCode&gt; worden gebruikt.</value>
   </data>
   <data name="101973" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Digital Asset Type Code &lt;referencedFileTypeCode&gt; gelijk is aan 'PRODUCT_IMAGE', dan moet Digital Asset Link &lt;uniformResourceIdentifier&gt; beginnen met 'http://' of 'https://'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Digital Asset Type Code &lt;referencedFileTypeCode&gt; gelijk is aan 'PRODUCT_IMAGE', dan moet Digital Asset Link &lt;uniformResourceIdentifier&gt; beginnen met 'http://' of 'https://'.</value>
   </data>
   <data name="101986" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan mag de Pallet Type Code &lt;platformTypeCode&gt; van het onderliggende artikel niet worden gebruikt, tenzij de Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; van het onderliggende artikel gelijk is aan 'PALLET' of 'MIXED_MODULE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; gelijk is aan 'PALLET' of 'MIXED_MODULE', dan mag de Pallet Type Code &lt;platformTypeCode&gt; van het onderliggende artikel niet worden gebruikt, tenzij de Producthiërarchieniveaucode &lt;tradeItemUnitDescriptorCode&gt; van het onderliggende artikel gelijk is aan 'PALLET' of 'MIXED_MODULE'.</value>
   </data>
   <data name="101993" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Additional Label Information wordt gebruikt, dan moet Certification Identificatie &lt;certificationIdentification&gt; gelijk zijn aan een code gebruikt voor Third Party Accreditation Symbol op Product Package Code &lt;packagingMarkedLabelAccreditationCode&gt; of Local Verpakking Marked Label Accreditation Code &lt;localPackagingMarkedLabelAccreditationCodeReference&gt;.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Additional Label Information wordt gebruikt, dan moet Certification Identificatie &lt;certificationIdentification&gt; gelijk zijn aan een code gebruikt voor Third Party Accreditation Symbol op Product Package Code &lt;packagingMarkedLabelAccreditationCode&gt; of Local Verpakking Marked Label Accreditation Code &lt;localPackagingMarkedLabelAccreditationCodeReference&gt;.</value>
   </data>
   <data name="102010" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en als Globale productcategoriecode &lt;gpcCategoryCode&gt; gelijk is aan &lt;&lt;gpcCategoryCode&gt; GPC Categorie Name&gt;, dan moet &lt;regulationTypeCode&gt; gelijk zijn aan 'EXPLOSIVES_PRECURSORS_REGISTRATION' en moet Regelgeving Compliance Indicator gelijk zijn aan 'TRUE' of 'NOT_APPLICABLE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en als Globale productcategoriecode &lt;gpcCategoryCode&gt; gelijk is aan &lt;&lt;gpcCategoryCode&gt; GPC Categorie Name&gt;, dan moet &lt;regulationTypeCode&gt; gelijk zijn aan 'EXPLOSIVES_PRECURSORS_REGISTRATION' en moet Regelgeving Compliance Indicator gelijk zijn aan 'TRUE' of 'NOT_APPLICABLE'.</value>
   </data>
   <data name="102068" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, als Displayklare verpakking &lt;hasDisplayReadyPackaging&gt; gelijk is aan 'TRUE', dan moet Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk zijn aan 'TRUE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, als Displayklare verpakking &lt;hasDisplayReadyPackaging&gt; gelijk is aan 'TRUE', dan moet Verzendingseenheid-indicator &lt;isTradeItemADespatchUnit&gt; gelijk zijn aan 'TRUE'.</value>
   </data>
   <data name="102071" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt;, moet ten minste één iteratie van Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk zijn aan 'INTRASTAT' of 'TARIF_INTEGRE_DE_LA_COMMUNAUTE'.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt;, moet ten minste één iteratie van Douane Classificatie Type Code &lt;importClassificationTypeCode&gt; gelijk zijn aan 'INTRASTAT' of 'TARIF_INTEGRE_DE_LA_COMMUNAUTE'.</value>
   </data>
   <data name="102077" xml:space="preserve">
-    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en Douane Classificatie Waarde &lt;importClassificationValue&gt; &lt;&lt;importClassificationValue&gt; waarde&gt;, moet attribuut Regelgeving Type Code &lt;regulationTypeCode&gt; gelijk zijn aan 'DEFORESTATION_REGULATION' en moet Regelgeving Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; gelijk zijn aan 'TRUE' in dezelfde iteraties.</value>
+    <value>Voor verkooplandcode &lt;targetMarketCountryCode&gt; en Douane Classificatie Waarde &lt;importClassificationValue&gt; &lt;&lt;importClassificationValue&gt; waarde&gt;, moet attribuut Regelgeving Type Code &lt;regulationTypeCode&gt; gelijk zijn aan 'DEFORESTATION_REGULATION' en moet Regelgeving Compliance Indicator &lt;isTradeItemRegulationCompliant&gt; gelijk zijn aan 'TRUE' in dezelfde iteraties.</value>
   </data>
   <data name="102078" xml:space="preserve">
-    <value>Voor verkooplandcode (&lt;targetMarketCountryCode&gt;) &lt;&lt;targetMarketCountryCode&gt; landnaam&gt; en Douane Classificatie Waarde (&lt;importClassificationValue&gt;) &lt;&lt;importClassificationValue&gt; waarde&gt;, moet attribuut Regelgeving Type Code (&lt;regulationTypeCode&gt;) gelijk zijn aan 'DEFORESTATION_REGULATION' en moet Regelgeving Compliance Indicator (&lt;isTradeItemRegulationCompliant&gt;) gelijk zijn aan 'TRUE' of 'NOT_APPLICABLE' in dezelfde iteraties.</value>
+    <value>Voor verkooplandcode (&lt;targetMarketCountryCode&gt;) en Douane Classificatie Waarde (&lt;importClassificationValue&gt;) &lt;&lt;importClassificationValue&gt; waarde&gt;, moet attribuut Regelgeving Type Code (&lt;regulationTypeCode&gt;) gelijk zijn aan 'DEFORESTATION_REGULATION' en moet Regelgeving Compliance Indicator (&lt;isTradeItemRegulationCompliant&gt;) gelijk zijn aan 'TRUE' of 'NOT_APPLICABLE' in dezelfde iteraties.</value>
   </data>
   <data name="300" xml:space="preserve">
     <value>&lt;gln&gt; moet gelijk zijn aan &lt;dataSource&gt;, &lt;contentOwner&gt; en &lt;informationProvider&gt; en moet hetzelfde zijn voor alle niveaus van de handelseenheidshiërarchie.</value>
