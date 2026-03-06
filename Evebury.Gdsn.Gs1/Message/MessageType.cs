@@ -1,8 +1,17 @@
 ﻿namespace Evebury.Gdsn.Gs1.Message
 {
-    internal enum MessageType
+    /// <summary>
+    /// Message (group) type
+    /// </summary>
+    public enum MessageType
     {
-        NotDefined,
+        /// <summary>
+        /// Not Implemented
+        /// </summary>
+        NotImplemented,
+        /// <summary>
+        /// All Catalogue Item Messages
+        /// </summary>
         CatalogueItem,
     }
 }

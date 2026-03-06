@@ -37,40 +37,20 @@ namespace Evebury.Gdsn.Gs1
             ArgumentNullException.ThrowIfNull(message);
 
             MessageKey key = MessageKey.GetKey(message);
-            Response response;
-
-            if (IsDefinedSchema(key))
-            {
-                response = await ApplySchema(key, message);
-                if (response.Status == StatusType.ERROR) return response;
-            }
-            else
-            {
-                //schema should be defined for all gs1 message keys
-                throw new MessageException(key);
-            }
-
-            if (previous != null)
-            {
-                Response compare = Equals(message, previous);
-                //return if Ok this indicates both messages are equal
-                if (compare.Status == StatusType.OK)
-                {
-                    return compare;
-                }
-            }
-
-            //do not throw message exception rules do not apply to all message types
-            if (IsDefinedRuleSet(key))
-            {
-                response = await ApplyRules(key, message, previous);
-            }
-
-            return response;
+            return await Validate(key, message, previous);
         }
 
 
-        internal async Task<Response> Validate(MessageKey key, XmlDocument message, XmlDocument previous)
+        /// <summary>
+        /// Validates a Gs1 message. Will first apply the schema then do a compare and finally apply any applicable business rule.
+        /// If any step fails a direct error response is returned
+        /// </summary>
+        /// <param name="key">the message key</param>
+        /// <param name="message">The gs1 message</param>
+        /// <param name="previous">Optional previously succesfully send message to the gs1 api</param>
+        /// <returns cref="Response"></returns>
+        /// <exception cref="MessageException"></exception>
+        public async Task<Response> Validate(MessageKey key, XmlDocument message, XmlDocument previous)
         {
             Response response;
 
@@ -118,7 +98,7 @@ namespace Evebury.Gdsn.Gs1
 
         private bool IsDefinedSchema(MessageKey key)
         {
-            if (key.Type == MessageType.NotDefined) return false;
+            if (key.Type == MessageType.NotImplemented) return false;
 
             //set index key to message type there is one schema for all messages of said type
             MessageKey index = new()

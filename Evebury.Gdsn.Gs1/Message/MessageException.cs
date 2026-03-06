@@ -8,7 +8,11 @@ namespace Evebury.Gdsn.Gs1.Message
     /// </summary>
     public class MessageException : Exception
     {
-        internal MessageException(MessageKey key) :base($"Message is not defined for current operation: {key.Message} {key.NamespaceUri}")
+        /// <summary>
+        /// ctor
+        /// </summary>
+        /// <param name="key"></param>
+        public MessageException(MessageKey key) :base($"Message is not defined for current operation: {key.Message} {key.NamespaceUri}")
         { 
         }
     }
