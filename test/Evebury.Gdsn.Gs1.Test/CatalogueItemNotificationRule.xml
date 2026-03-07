@@ -43,7 +43,7 @@
                 <isReload>false</isReload>
                 <catalogueItem>
                     <dataRecipient>9712345678912</dataRecipient>
-                    <sourceDataPool>8712224199904</sourceDataPool>
+                    <sourceDataPool>7712345678944</sourceDataPool>
                     <catalogueItemState>
                         <catalogueItemStateCode>REGISTERED</catalogueItemStateCode>
                     </catalogueItemState>
@@ -57,11 +57,12 @@
                         <isTradeItemAnOrderableUnit>true</isTradeItemAnOrderableUnit>
                         <tradeItemUnitDescriptorCode>BASE_UNIT_OR_EACH</tradeItemUnitDescriptorCode>
                         <informationProviderOfTradeItem>
-                            <gln>8712224199904</gln>
+                            <gln>6612345678944</gln>
 							<partyName>Food Service Distributor</partyName>
+                            <partyRoleCode>INFORMATION_PROVIDER</partyRoleCode>
                         </informationProviderOfTradeItem>
                         <manufacturerOfTradeItem>
-                            <gln>8712224199904</gln>
+                            <gln>6612345678944</gln>
 							<partyName>Camp</partyName>
                         </manufacturerOfTradeItem>
                         <gdsnTradeItemClassification>

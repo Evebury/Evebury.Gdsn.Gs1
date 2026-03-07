@@ -1,5 +1,5 @@
 <Solution>
-  <Folder Name="/Test/">
+  <Folder Name="/tests/">
     <Project Path="test/Evebury.Gdsn.Gs1.Test/Evebury.Gdsn.Gs1.Test.csproj" />
   </Folder>
   <Project Path="Evebury.Gdsn.Gs1/Evebury.Gdsn.Gs1.csproj" />
