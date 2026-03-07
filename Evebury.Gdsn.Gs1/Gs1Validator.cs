@@ -52,6 +52,8 @@ namespace Evebury.Gdsn.Gs1
         /// <exception cref="MessageException"></exception>
         public async Task<Response> Validate(MessageKey key, XmlDocument message, XmlDocument previous)
         {
+            ArgumentNullException.ThrowIfNull(message);
+
             Response response = await ApplySchema(key, message);
             if (response.Status == StatusType.ERROR) return response;
 
