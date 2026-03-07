@@ -180,8 +180,8 @@ namespace Evebury.Gdsn.Gs1
         private static List<XPath> GetXPaths(MessageKey key)
         {
             List<XPath> xpaths = [];
-            xpaths.Add(new XPath($"/gs1:{key.Message}/sh:StandardBusinessDocumentHeader/CreationDateAndTime"));
-            xpaths.Add(new XPath($"/gs1:{key.Message}/sh:StandardBusinessDocumentHeader/InstanceIdentifier"));
+            xpaths.Add(new XPath($"/gs1:{key.Message}/sh:StandardBusinessDocumentHeader/sh:DocumentIdentification/sh:CreationDateAndTime"));
+            xpaths.Add(new XPath($"/gs1:{key.Message}/sh:StandardBusinessDocumentHeader/sh:DocumentIdentification/sh:InstanceIdentifier"));
             xpaths.Add(new XPath($"/gs1:{key.Message}/transaction/transactionIdentification/entityIdentification"));
             xpaths.Add(new XPath($"/gs1:{key.Message}/transaction/documentCommand/documentCommandHeader/documentCommandIdentification/entityIdentification"));
             xpaths.Add(new XPath($"/gs1:{key.Message}/transaction/documentCommand/gs1:{key.Element}/creationDateTime"));

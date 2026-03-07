@@ -23,7 +23,7 @@
             </contentOwner>
         </transactionIdentification>
         <documentCommand>
-            <documentCommandHeader type="CHANGE_BY_REFRESH">
+            <documentCommandHeader type="ADD">
                 <documentCommandIdentification>
                     <entityIdentification>20051101</entityIdentification>
                     <contentOwner>
@@ -43,7 +43,7 @@
                 <isReload>false</isReload>
                 <catalogueItem>
                     <dataRecipient>9712345678912</dataRecipient>
-                    <sourceDataPool>7712345678944</sourceDataPool>
+                    <sourceDataPool>8712224199904</sourceDataPool>
                     <catalogueItemState>
                         <catalogueItemStateCode>REGISTERED</catalogueItemStateCode>
                     </catalogueItemState>
@@ -57,12 +57,11 @@
                         <isTradeItemAnOrderableUnit>true</isTradeItemAnOrderableUnit>
                         <tradeItemUnitDescriptorCode>BASE_UNIT_OR_EACH</tradeItemUnitDescriptorCode>
                         <informationProviderOfTradeItem>
-                            <gln>6612345678944</gln>
+                            <gln>8712224199904</gln>
 							<partyName>Food Service Distributor</partyName>
-                            <partyRoleCode>INFORMATION_PROVIDER</partyRoleCode>
                         </informationProviderOfTradeItem>
                         <manufacturerOfTradeItem>
-                            <gln>6612345678944</gln>
+                            <gln>8712224199904</gln>
 							<partyName>Camp</partyName>
                         </manufacturerOfTradeItem>
                         <gdsnTradeItemClassification>
@@ -203,7 +202,7 @@
 										<depth measurementUnitCode="CMT">30</depth>
 										<diameter measurementUnitCode="CMT">15</diameter>
 										<height measurementUnitCode="CMT">20</height>
-										<netContent measurementUnitCode="GRM">30</netContent>
+										<netContent measurementUnitCode="GRM">3</netContent>
 										<width measurementUnitCode="CMT">50</width>
 									</tradeItemMeasurements>
 								</trade_item_measurements:tradeItemMeasurementsModule>

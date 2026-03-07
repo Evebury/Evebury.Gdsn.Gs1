@@ -23,7 +23,7 @@
             </contentOwner>
         </transactionIdentification>
         <documentCommand>
-            <documentCommandHeader type="ADD">
+            <documentCommandHeader type="CHANGE_BY_REFRESH">
                 <documentCommandIdentification>
                     <entityIdentification>20051101</entityIdentification>
                     <contentOwner>

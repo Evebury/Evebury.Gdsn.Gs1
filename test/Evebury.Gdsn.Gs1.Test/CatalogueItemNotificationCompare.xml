@@ -12,7 +12,7 @@
 	       <sh:TypeVersion>3.1</sh:TypeVersion>
 	       <sh:InstanceIdentifier>20051101</sh:InstanceIdentifier>
 	      <sh:Type>catalogueItemNotification</sh:Type>
-	       <sh:CreationDateAndTime>2011-03-11T11:00:00.000-05:00</sh:CreationDateAndTime>
+	       <sh:CreationDateAndTime>2026-03-11T11:00:00.000-05:00</sh:CreationDateAndTime>
 	    </sh:DocumentIdentification>
 	</sh:StandardBusinessDocumentHeader>
     <transaction>
@@ -32,7 +32,7 @@
                 </documentCommandIdentification>
             </documentCommandHeader>
             <catalogue_item_notification:catalogueItemNotification>
-                <creationDateTime>2011-03-11T11:00:00.000-05:00</creationDateTime>
+                <creationDateTime>2026-03-11T11:00:00.000-05:00</creationDateTime>
                 <documentStatusCode>ORIGINAL</documentStatusCode>
                 <catalogueItemNotificationIdentification>
                     <entityIdentification>20051101</entityIdentification>
@@ -43,7 +43,7 @@
                 <isReload>false</isReload>
                 <catalogueItem>
                     <dataRecipient>9712345678912</dataRecipient>
-                    <sourceDataPool>7712345678944</sourceDataPool>
+                    <sourceDataPool>8712224199904</sourceDataPool>
                     <catalogueItemState>
                         <catalogueItemStateCode>REGISTERED</catalogueItemStateCode>
                     </catalogueItemState>
@@ -57,12 +57,11 @@
                         <isTradeItemAnOrderableUnit>true</isTradeItemAnOrderableUnit>
                         <tradeItemUnitDescriptorCode>BASE_UNIT_OR_EACH</tradeItemUnitDescriptorCode>
                         <informationProviderOfTradeItem>
-                            <gln>6612345678944</gln>
+                            <gln>8712224199904</gln>
 							<partyName>Food Service Distributor</partyName>
-                            <partyRoleCode>INFORMATION_PROVIDER</partyRoleCode>
                         </informationProviderOfTradeItem>
                         <manufacturerOfTradeItem>
-                            <gln>6612345678944</gln>
+                            <gln>8712224199904</gln>
 							<partyName>Camp</partyName>
                         </manufacturerOfTradeItem>
                         <gdsnTradeItemClassification>

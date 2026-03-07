@@ -254,6 +254,7 @@
 		<xsl:param name="command"/>
 		<xsl:variable name="gtin" select="gtin"/>
 		<xsl:variable name="tradeItem" select="msxsl:node-set($current)/*/tradeItem[@informationProvider = $informationProvider and @market = $targetMarket and @gtin=$gtin]"/>
+		
 		<xsl:if test="$tradeItem">
 			<!--Rule 483: On first population endAvailabilityDateTime shall be later than or equal to today.-->
 			<xsl:variable name="date" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/endAvailabilityDateTime"/>
@@ -271,7 +272,7 @@
 				</xsl:apply-templates>
 			</xsl:if>
 
-			<xsl:if test="preliminaryItemStatusCode != 'PRELIMINARY' and $command = 'CHANGE_BY_REFRESH'">
+			<xsl:if test="(not(preliminaryItemStatusCode) or preliminaryItemStatusCode != 'PRELIMINARY') and $command = 'CHANGE_BY_REFRESH'">
 				<xsl:variable name="module" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements"/>
 
 				<xsl:variable name="netContent">
