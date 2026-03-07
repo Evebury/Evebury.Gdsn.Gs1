@@ -52,34 +52,28 @@ namespace Evebury.Gdsn.Gs1
         /// <exception cref="MessageException"></exception>
         public async Task<Response> Validate(MessageKey key, XmlDocument message, XmlDocument previous)
         {
-            Response response;
-
-            if (IsDefinedSchema(key))
-            {
-                response = await ApplySchema(key, message);
-                if (response.Status == StatusType.ERROR) return response;
-            }
-            else
-            {
-                //schema should be defined for all implemented message keys
-                throw new MessageException(key);
-            }
+            Response response = await ApplySchema(key, message);
+            if (response.Status == StatusType.ERROR) return response;
 
             if (previous != null)
             {
-                Response compare = Equals(message, previous);
+                Response compare = Compare(message, previous);
                 //return if Ok this indicates both messages are equal
                 if (compare.Status == StatusType.OK) return compare;
             }
 
             //do not throw message exception rules do not apply to all message types
-            if (IsDefinedRuleSet(key))
+            XslDocument rules = LoadRules(key);
+            if (rules != null)
             {
-                response = await ApplyRules(key, message, previous);
+                response = await ApplyRules(key, rules, message, previous);
             }
 
             return response;
         }
+
+
+        #region schema
 
         /// <summary>
         /// Applies a schema to the specified message
@@ -92,14 +86,20 @@ namespace Evebury.Gdsn.Gs1
         {
             ArgumentNullException.ThrowIfNull(message);
             MessageKey key = MessageKey.GetKey(message);
-            if (!IsDefinedSchema(key)) throw new MessageException(key);
             return ApplySchema(key, message);
         }
 
-        private bool IsDefinedSchema(MessageKey key)
+        private async Task<Response> ApplySchema(MessageKey key, XmlDocument message)
         {
-            if (key.Type == MessageType.NotImplemented) return false;
+            XmlSchemaSet schema = LoadSchema(key) ?? throw new MessageException(key);
+            XmlSchemaValidator validator = new();
+            XmlSchemaValidatorResult result = await validator.Validate(message, schema);
+            return Response.GetResponse(result);
+        }
 
+        private XmlSchemaSet LoadSchema(MessageKey key) 
+        {
+            if (key.Type == MessageType.NotImplemented) return null;
             //set index key to message type there is one schema for all messages of said type
             MessageKey index = new()
             {
@@ -107,30 +107,25 @@ namespace Evebury.Gdsn.Gs1
                 Version = key.Version,
             };
 
-            if (_schemas.TryGetValue(index, out _)) return true;
+            if (_schemas.TryGetValue(index, out XmlSchemaSet schema)) return schema;
             switch (key.Version)
             {
                 case 3:
                     {
-                        XmlSchemaSet schema = XmlSchemaSet.Load(R3.Schema.CatalogueItem.Resource.ResourceManager);
+                        schema = XmlSchemaSet.Load(R3.Schema.CatalogueItem.Resource.ResourceManager);
                         _schemas.Add(index, schema);
-                        return true;
+                        return schema;
                     }
                 default:
                     {
-                        return false;
+                        return null;
                     }
             }
         }
 
-        private async Task<Response> ApplySchema(MessageKey key, XmlDocument message)
-        {
-            _schemas.TryGetValue(key, out XmlSchemaSet schema);
-            XmlSchemaValidator validator = new();
-            XmlSchemaValidatorResult result = await validator.Validate(message, schema);
-            return Response.GetResponse(result);
-        }
+        #endregion
 
+        #region compare
 
         /// <summary>
         /// Compares two Gs1 messages
@@ -139,10 +134,10 @@ namespace Evebury.Gdsn.Gs1
         /// <param name="previous">Gs1 message if null returns false</param>
         /// <returns cref="Response">status set OK on equals otherwise ERROR</returns>
         /// <exception cref="ArgumentNullException">if message is null</exception>
-        public static Response Equals(XmlDocument message, XmlDocument previous)
+        public static Response Compare(XmlDocument message, XmlDocument previous)
         {
             ArgumentNullException.ThrowIfNull(message);
-    
+
             if (previous == null) return Response.GetResponse(false);
 
 
@@ -187,7 +182,9 @@ namespace Evebury.Gdsn.Gs1
             return xpaths;
         }
 
+        #endregion
 
+        #region rules
 
         /// <summary>
         /// Applies rules to the specified message
@@ -201,49 +198,25 @@ namespace Evebury.Gdsn.Gs1
         {
             ArgumentNullException.ThrowIfNull(message);
             MessageKey key = MessageKey.GetKey(message);
-            if (!IsDefinedRuleSet(key)) throw new MessageException(key);
-            return ApplyRules(key, message, previous);
+            XslDocument xsl = LoadRules(key) ?? throw new MessageException(key);
+            return ApplyRules(key, xsl, message, previous);
 
         }
 
-        private bool IsDefinedRuleSet(MessageKey key)
+        private async Task<Response> ApplyRules(MessageKey key, XslDocument xsl, XmlDocument message, XmlDocument previous)
         {
-            if (_rules.TryGetValue(key, out _)) return true;
 
-            if (key == MessageKey.CatalogueItemNotification3)
-            {
-                _auxiliary.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.previous));
-                _rules.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.CatalogueItem.ResourceManager));
-                return true;
-            }
-            else if (key == MessageKey.CatalogueItemPublication3) 
-            {
-                _rules.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.catalogueItemPublication));
-                return true;
-            }
-            else if (key == MessageKey.CatalogueItemHierarchicalWithdrawal3)
-            {
-                _rules.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.catalogueItemHierarchicalWithdrawal));
-                return true;
-            }
-            return false;
-        }
-
-        private async Task<Response> ApplyRules(MessageKey key, XmlDocument message, XmlDocument previous)
-        {
-            XslDocument xsl;
             List<XslParameter> parameters = [];
 
             if (previous != null)
             {
-                _auxiliary.TryGetValue(key, out xsl);
-                parameters = [];
-                XmlDocument current = await xsl.Transform(previous);
-                parameters.Add(new("current", current));
-
+                if(_auxiliary.TryGetValue(key, out XslDocument aux))
+                { 
+                    parameters = [];
+                    XmlDocument current = await aux.Transform(previous);
+                    parameters.Add(new("current", current));
+                }
             }
-
-            _rules.TryGetValue(key, out xsl);
 
             XmlDocument xml = await xsl.Transform(message, parameters, [_extension]);
             Response response = await XmlSerializer.Deserialize<Response>(xml);
@@ -252,34 +225,90 @@ namespace Evebury.Gdsn.Gs1
         }
 
 
+        private XslDocument LoadRules(MessageKey key) 
+        {
+            if (_rules.TryGetValue(key, out XslDocument xsl)) return xsl;
+
+            if (key == MessageKey.CatalogueItemNotification3)
+            {
+                _auxiliary.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.previous));
+                xsl = XslDocument.Load(R3.Xsl.CatalogueItem.CatalogueItem.ResourceManager);
+                _rules.Add(key, xsl);
+                return xsl;
+            }
+            else if (key == MessageKey.CatalogueItemPublication3)
+            {
+                xsl = XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.catalogueItemPublication);
+                _rules.Add(key, xsl);
+                return xsl;
+            }
+            else if (key == MessageKey.CatalogueItemHierarchicalWithdrawal3)
+            {
+                xsl = XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.catalogueItemHierarchicalWithdrawal);
+                _rules.Add(key, xsl);
+                return xsl;
+            }
+            return null;
+        }
+
+        #endregion
+
+        #region gs1 response
+
         /// <summary>
         /// Converts a gS1ResponseMessage to a Response
         /// </summary>
         /// <param name="gs1ResponseMessage">the gs1 response message</param>
+        /// <param name="applySchema">if true applies schema to gS1ResponseMessage</param>
         /// <returns cref="Response"></returns>
         /// <exception cref="MessageException">if not defined</exception>
         /// <exception cref="ArgumentNullException">if gs1ResponseMessage is null</exception>
-        public async Task<Response> ConvertGs1Response(XmlDocument gs1ResponseMessage)
+        public async Task<Response> ConvertGs1Response(XmlDocument gs1ResponseMessage, bool applySchema = false)
         {
             ArgumentNullException.ThrowIfNull(gs1ResponseMessage);
             MessageKey key = MessageKey.GetKey(gs1ResponseMessage);
-            if (!IsDefinedResponse(key)) throw new MessageException(key);
-
-            _auxiliary.TryGetValue(key, out XslDocument xsl);
-            XmlDocument response = await xsl.Transform(gs1ResponseMessage, null, [_extension]);
-            return await XmlSerializer.Deserialize<Response>(response);
+            return await ConvertGs1Response(key, gs1ResponseMessage, applySchema);
         }
 
-        private bool IsDefinedResponse(MessageKey key)
+        /// <summary>
+        /// Converts a gS1ResponseMessage to a Response
+        /// </summary>
+        /// <param name="key">the message key</param>
+        /// <param name="gs1ResponseMessage">the gs1 response message</param>
+        /// <param name="applySchema">if true applies schema to gS1ResponseMessage</param>
+        /// <returns cref="Response"></returns>
+        /// <exception cref="MessageException">if not defined</exception>
+        /// <exception cref="ArgumentNullException">if gs1ResponseMessage is null</exception>
+        public async Task<Response> ConvertGs1Response(MessageKey key, XmlDocument gs1ResponseMessage, bool applySchema = false)
         {
-            if (_auxiliary.TryGetValue(key, out _)) return true;
+            ArgumentNullException.ThrowIfNull(gs1ResponseMessage);
+            if (key != MessageKey.Gs1Response3) throw new MessageException(key);
+
+            if (applySchema)
+            {
+                Response response = await ApplySchema(key, gs1ResponseMessage);
+                if (response.Status == StatusType.ERROR) return response;
+            }
+
+            XslDocument xsl = LoadGs1Response(key);
+            XmlDocument responseXml = await xsl.Transform(gs1ResponseMessage, null, [_extension]);
+            return await XmlSerializer.Deserialize<Response>(responseXml);
+        }
+
+        private XslDocument LoadGs1Response(MessageKey key)
+        {
+            if (_auxiliary.TryGetValue(key, out XslDocument xsl)) return xsl;
+
             if (key == MessageKey.Gs1Response3)
             {
-                _auxiliary.Add(key, XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.gs1Response));
-                return true;
+                xsl = XslDocument.Load(R3.Xsl.CatalogueItem.XslResource.gs1Response);
+                _auxiliary.Add(key, xsl);
+                return xsl;
             }
-            return false;
+            return null;
         }
+
+        #endregion
 
         /// <summary>
         /// Clears all buffers
