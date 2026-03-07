@@ -108,19 +108,25 @@ namespace Evebury.Gdsn.Gs1
             };
 
             if (_schemas.TryGetValue(index, out XmlSchemaSet schema)) return schema;
-            switch (key.Version)
+
+            switch (index.Type) 
             {
-                case 3:
+                case MessageType.CatalogueItem: 
                     {
-                        schema = XmlSchemaSet.Load(R3.Schema.CatalogueItem.Resource.ResourceManager);
-                        _schemas.Add(index, schema);
-                        return schema;
-                    }
-                default:
-                    {
-                        return null;
+                        switch (index.Version)
+                        {
+                            case 3:
+                                {
+                                    schema = XmlSchemaSet.Load(R3.Schema.CatalogueItem.Resource.ResourceManager);
+                                    _schemas.Add(index, schema);
+                                    return schema;
+                                }
+                        }
+                        break;
                     }
             }
+
+            return null;
         }
 
         #endregion
@@ -208,7 +214,7 @@ namespace Evebury.Gdsn.Gs1
 
             List<XslParameter> parameters = [];
 
-            if (previous != null)
+            if (previous != null && key == MessageKey.CatalogueItemNotification3)
             {
                 if(_auxiliary.TryGetValue(key, out XslDocument aux))
                 { 
