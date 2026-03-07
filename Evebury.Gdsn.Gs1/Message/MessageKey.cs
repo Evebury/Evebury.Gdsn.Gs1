@@ -121,7 +121,7 @@ namespace Evebury.Gdsn.Gs1.Message
 
         public readonly bool Equals(MessageKey other)
         {
-            return Message == other.Message && NamespaceUri == other.NamespaceUri && Version == other.Version && Type == other.Type;
+            return string.Equals(Message, other.Message, StringComparison.OrdinalIgnoreCase) && string.Equals(NamespaceUri, other.NamespaceUri, StringComparison.OrdinalIgnoreCase) && Version == other.Version && Type == other.Type;
         }
 
         public override readonly bool Equals(object obj)
