@@ -67,22 +67,15 @@ namespace Evebury.Gdsn.Gs1
             StringBuilder sb = new();
             sb.Append("<div class=\"gs1_reponse\">");
             sb.Append("<div class=\"gs1_response_header\">");
-            sb.Append("<div class=\"gs1_response_label\">");
-            sb.Append(resource.GetString(nameof(Response), cultureInfo));
+            sb.Append("<div class=\"header\">");
+            sb.Append(resource.GetString("response", cultureInfo));
             sb.Append("</div>");
-            sb.Append("<div class=\"gs1_response_id\">");
-            sb.Append(Id);
-            sb.Append("</div>");
-            sb.Append("<div class=\"gs1_response_time\">");
-            sb.Append(TimeStamp.ToString(dateTimeFormat, cultureInfo));
-            sb.Append("</div>");
+            WriteRow(sb, resource.GetString("id", cultureInfo), Id);
+            WriteRow(sb, resource.GetString("date", cultureInfo), TimeStamp.ToString(dateTimeFormat, cultureInfo));
             string status = Status.ToString().ToLowerInvariant();
-            sb.Append($"<div class=\"gs1_response_status {status}\">");
-            sb.Append("<span class=\"gs1_response_status_label\">");
-            sb.Append(resource.GetString(status, cultureInfo));
-            sb.Append("</span>");
+            WriteRow(sb, resource.GetString(status, cultureInfo), status);
             sb.Append("</div>");
-            sb.Append("</div>");
+
             if (Transactions != null)
             {
                 foreach (Transaction transaction in Transactions)
@@ -90,25 +83,18 @@ namespace Evebury.Gdsn.Gs1
                     sb.Append("<div class=\"gs1_transaction\">");
 
                     sb.Append("<div class=\"gs1_transaction_header\">");
-
-                    sb.Append("<div class=\"gs1_transaction_label\">");
-                    sb.Append(resource.GetString(nameof(Transaction), cultureInfo));
+                    sb.Append("<div class=\"header\">");
+                    sb.Append(resource.GetString("transaction", cultureInfo));
                     sb.Append("</div>");
-                    sb.Append("<div class=\"gs1_transaction_id\">");
-                    sb.Append(transaction.Id);
-                    sb.Append("</div>");
+                    WriteRow(sb, resource.GetString("id", cultureInfo), transaction.Id);
                     status = transaction.Status.ToString().ToLowerInvariant();
-                    sb.Append($"<div class=\"gs1_transaction_status {status}\">");
-                    sb.Append("<span class=\"gs1_transaction_status_label\">");
-                    sb.Append(resource.GetString(status, cultureInfo));
-                    sb.Append("</span>");
-                    sb.Append("</div>");
-
+                    WriteRow(sb, resource.GetString(status, cultureInfo), status);
                     sb.Append("</div>");
 
 
                     if (transaction.Events != null)
                     {
+                        sb.Append("<div class=\"gs1_events\">");
                         foreach (Event @event in transaction.Events)
                         {
                             sb.Append("<div class=\"gs1_event\">");
@@ -135,21 +121,15 @@ namespace Evebury.Gdsn.Gs1
                                 sb.Append("<div class=\"gs1_event_data\">");
                                 foreach (EventData data in @event.Data)
                                 {
-                                    sb.Append("<div class=\"gs1_event_data_row\">");
-                                    sb.Append("<div class=\"gs1_event_data_key\">");
-                                    if (data.Label != null) sb.Append(data.Label);
-                                    else sb.Append(data.Key);
-                                    sb.Append("</div>");
-                                    sb.Append("<div class=\"gs1_event_data_value\">");
-                                    sb.Append(data.Value);
-                                    sb.Append("</div>");
-                                    sb.Append("</div>");
+                                    string key = data.Label != null ? data.Label : data.Key;
+                                    WriteRow(sb, key, data.Value);
                                 }
                                 sb.Append("</div>");
                             }
 
                             sb.Append("</div>");
                         }
+                        sb.Append("</div>");
                     }
 
                     sb.Append("</div>");
@@ -159,12 +139,25 @@ namespace Evebury.Gdsn.Gs1
             return sb.ToString();
         }
 
- 
+        private static void WriteRow(StringBuilder sb, string key, string value)
+        {
+            sb.Append("<div class=\"row\">");
+            sb.Append("<span class=\"key\">");
+            sb.Append(key);
+            sb.Append("</span>");
+            sb.Append("<span class=\"colon\">:</span>");
+            sb.Append("<span class=\"value\">");
+            sb.Append(value);
+            sb.Append("</span>");
+            sb.Append("</div>");
+        }
+
+
         /// <summary>
         /// Localizes this Response for the specified culture
         /// </summary>
         /// <param name="cultureInfo"></param>
-        public void Localize(CultureInfo cultureInfo) 
+        public void Localize(CultureInfo cultureInfo)
         {
             if (_version == 0) return;
 

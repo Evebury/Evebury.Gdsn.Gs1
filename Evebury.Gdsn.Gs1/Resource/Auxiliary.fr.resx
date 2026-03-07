@@ -126,11 +126,17 @@
   <data name="catalogue_item" xml:space="preserve">
     <value>Article du catalogue</value>
   </data>
+  <data name="date" xml:space="preserve">
+    <value>Date</value>
+  </data>
   <data name="error" xml:space="preserve">
     <value>Erreur</value>
   </data>
   <data name="gtin" xml:space="preserve">
     <value>GTIN</value>
+  </data>
+  <data name="id" xml:space="preserve">
+    <value>Id</value>
   </data>
   <data name="info" xml:space="preserve">
     <value>Information</value>
@@ -156,13 +162,16 @@
   <data name="rejected" xml:space="preserve">
     <value>Rejeté</value>
   </data>
-  <data name="Response" xml:space="preserve">
+  <data name="response" xml:space="preserve">
     <value>Réponse GS1</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Statut</value>
   </data>
   <data name="trade_partner" xml:space="preserve">
     <value>Partenaire commercial</value>
   </data>
-  <data name="Transaction" xml:space="preserve">
+  <data name="transaction" xml:space="preserve">
     <value>Transaction</value>
   </data>
   <data name="unit" xml:space="preserve">

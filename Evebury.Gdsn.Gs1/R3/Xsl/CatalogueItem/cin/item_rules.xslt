@@ -1343,7 +1343,7 @@
 		<!--Rule 1079: If TradeItem/informationProviderOfTradeItem/gln is used then TradeItem/informationProviderOfTradeItem/partyRoleCode shall be empty.-->
 		<xsl:if test="informationProviderOfTradeItem/gln != ''">
 			<xsl:if test="informationProviderOfTradeItem[partyRoleCode != '']">
-				<xsl:apply-templates select="." mode="error">
+				<xsl:apply-templates select="informationProviderOfTradeItem" mode="error">
 					<xsl:with-param name="id" select="1079" />
 				</xsl:apply-templates>
 			</xsl:if>

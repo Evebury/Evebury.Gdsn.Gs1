@@ -88,6 +88,15 @@ namespace Evebury.Gdsn.Gs1.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        internal static string date {
+            get {
+                return ResourceManager.GetString("date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string error {
@@ -102,6 +111,15 @@ namespace Evebury.Gdsn.Gs1.Resource {
         internal static string gtin {
             get {
                 return ResourceManager.GetString("gtin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        internal static string id {
+            get {
+                return ResourceManager.GetString("id", resourceCulture);
             }
         }
         
@@ -180,9 +198,18 @@ namespace Evebury.Gdsn.Gs1.Resource {
         /// <summary>
         ///   Looks up a localized string similar to GS1 response.
         /// </summary>
-        internal static string Response {
+        internal static string response {
             get {
-                return ResourceManager.GetString("Response", resourceCulture);
+                return ResourceManager.GetString("response", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        internal static string status {
+            get {
+                return ResourceManager.GetString("status", resourceCulture);
             }
         }
         
@@ -198,9 +225,9 @@ namespace Evebury.Gdsn.Gs1.Resource {
         /// <summary>
         ///   Looks up a localized string similar to Transaction.
         /// </summary>
-        internal static string Transaction {
+        internal static string transaction {
             get {
-                return ResourceManager.GetString("Transaction", resourceCulture);
+                return ResourceManager.GetString("transaction", resourceCulture);
             }
         }
         

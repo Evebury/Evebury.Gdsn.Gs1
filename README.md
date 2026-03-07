@@ -74,7 +74,7 @@ Console.WriteLine(response.Status == StatusType.OK);
 	<Transactions>
 		<Transaction Id="[id]" Status="REJECTED">
 			<Events>
-				<Event Level="ERROR" Id="1289" Message="Als &lt;targetMarketCountryCode&gt; niet gelijk is aan (036 (Australië), 554 (Nieuw-Zeeland)) en als &lt;firstShipDateTime&gt; kleiner dan of gelijk is aan de huidige datum, dan mag &lt;preliminaryItemStatusCode&gt; niet gelijk zijn aan 'PRELIMINARY'.">
+				<Event Level="ERROR" Id="1289" Message="Als 'targetMarketCountryCode' niet gelijk is aan (036 (Australië), 554 (Nieuw-Zeeland)) en als 'firstShipDateTime' kleiner dan of gelijk is aan de huidige datum, dan mag 'preliminaryItemStatusCode' niet gelijk zijn aan 'PRELIMINARY'.">
 					<Data Key="information_provider" Value="[information provider] ([gln])" Label="Informatieprovider" />
 					<Data Key="market" Value="Duitsland (276)" Label="Markt" />
 					<Data Key="trade_partner" Value="[tradepartner] ([gln])" Label="Klant" />
