@@ -25,9 +25,9 @@
 		</xsl:if>
 		<!--Rule 569: If targetMarketCountryCode does not equal ('756' (Switzerland), '276' (Germany), '040' (Austria), '528' (Netherlands), '056' (Belgium), '442' (Luxembourg), 203 (Czech Republic), or '250' (France)) and uniformResourceIdentifier is used and referencedFileTypeCode equals 'PRODUCT_IMAGE' then fileFormatName SHALL be used.-->
 		<xsl:if test="not(contains('756, 276, 040, 528, 056, 442, 203, 250', $targetMarket))">
-			<xsl:if test="uniformResourceIdentifier != '' and referencedFileTypeCode = 'PRODUCT_IMAGE'">
+			<xsl:if test="string(uniformResourceIdentifier) != '' and referencedFileTypeCode = 'PRODUCT_IMAGE'">
 				<xsl:choose>
-					<xsl:when test="fileFormatName != ''"/>
+					<xsl:when test="string(fileFormatName) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="569" />
@@ -38,9 +38,9 @@
 		</xsl:if>
 		<!--Rule 570: If uniformResourceIdentifier is used and referencedFileTypeCode equals  'PRODUCT_IMAGE' and targetMarketCountryCode does not equal  756 (Switzerland), 276 (Germany), 040 (Austria), 528 (Netherlands) then fileName shall be used.-->
 		<xsl:if test="not(contains('756, 276, 040, 528', $targetMarket))">
-			<xsl:if test="uniformResourceIdentifier != '' and referencedFileTypeCode = 'PRODUCT_IMAGE'">
+			<xsl:if test="string(uniformResourceIdentifier) != '' and referencedFileTypeCode = 'PRODUCT_IMAGE'">
 				<xsl:choose>
-					<xsl:when test="fileName != ''"/>
+					<xsl:when test="string(fileName) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="570" />
@@ -50,9 +50,9 @@
 			</xsl:if>
 		</xsl:if>
 		<!--Rule 1611: If targetMarketCountryCode equals ‘250’ (France)) and uniformResourceIdentifier is used, and referencedFileTypeCode equals (‘VIDEO’ or ‘360_DEGREE_IMAGE’ or ‘MOBILE_DEVICE_IMAGE’ or ‘OUT_OF_PACKAGE_IMAGE’ or ‘PRODUCT_IMAGE’ or ‘PRODUCT_LABEL_IMAGE’ or ‘TRADE_ITEM_IMAGE_WITH_DIMENSIONS’)  then fileEffectiveStartDateTime shall  be used.-->
-		<xsl:if test="$targetMarket ='250' and uniformResourceIdentifier != ''">
+		<xsl:if test="$targetMarket ='250' and string(uniformResourceIdentifier) != ''">
 			<xsl:if test="referencedFileTypeCode = 'VIDEO' or referencedFileTypeCode = '360_DEGREE_IMAGE' or referencedFileTypeCode = 'MOBILE_DEVICE_IMAGE' or referencedFileTypeCode = 'OUT_OF_PACKAGE_IMAGE' or referencedFileTypeCode = 'PRODUCT_IMAGE'or referencedFileTypeCode = 'PRODUCT_LABEL_IMAGE' or referencedFileTypeCode = 'TRADE_ITEM_IMAGE_WITH_DIMENSIONS'">
-				<xsl:if test="fileEffectiveStartDateTime = ''">
+				<xsl:if test="string(fileEffectiveStartDateTime) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1611" />
 					</xsl:apply-templates>
@@ -62,7 +62,7 @@
 
 		<xsl:if test="$targetMarket ='756' or $targetMarket ='040'">
 			<!--Rule 1989: If targetMarketCountryCode equals <Geographic> and referencedFileTypeCode is used then uniformResourceIdentifier SHALL be used.-->
-			<xsl:if test="referencedFileTypeCode != '' and uniformResourceIdentifier = ''">
+			<xsl:if test="string(referencedFileTypeCode) != '' and string(uniformResourceIdentifier) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1989" />
 				</xsl:apply-templates>
@@ -99,7 +99,7 @@
 
 		<xsl:if test="$targetMarket ='756'">
 			<!--Rule 101972: If targetMarketCountryCode equals <Geographic> and referencedFileTypeCode equals ('SAFETY_DATA_SHEET', 'DOP_SHEET' or 'DECLARATION_OF_CONFORMITY') then fileLanguageCode SHALL be used.-->
-			<xsl:if test="contains('SAFETY_DATA_SHEET, DOP_SHEET, DECLARATION_OF_CONFORMITY', referencedFileTypeCode) and fileLanguageCode = ''">
+			<xsl:if test="contains('SAFETY_DATA_SHEET, DOP_SHEET, DECLARATION_OF_CONFORMITY', referencedFileTypeCode) and string(fileLanguageCode) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="101972" />
 				</xsl:apply-templates>

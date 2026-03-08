@@ -22,7 +22,7 @@
 
 			<!--Rule 1988: If targetMarketCountryCode equals <Geographic> and physicalResourceTypeCode equals 'ELECTRICITY' and physicalResourceUsageRatingScaleCodeReference is used and physicalResourceUsageRatingScaleCodeReference/@codeListName equals 'EU_EnergyEfficiencyScale' then physicalResourceUsageClassificationCodeReference SHALL be used in the same iteration.-->
 			<xsl:if test="physicalResourceTypeCode = 'ELECTRICITY' and physicalResourceUsageRatingScaleCodeReference[@codeListName = 'EU_EnergyEfficiencyScale']">
-				<xsl:if test="physicalResourceUsageClassificationCodeReference =''">
+				<xsl:if test="string(physicalResourceUsageClassificationCodeReference) =''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1988" />
 					</xsl:apply-templates>

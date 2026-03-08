@@ -7,6 +7,8 @@ namespace Evebury.Gdsn.Gs1.R3.Gpc
     {
         public static BrickPath GetBrickPath(string brick) 
         {
+            if (string.IsNullOrEmpty(brick)) return new BrickPath();
+
             XmlDocument xml = new();
             using (MemoryStream stream = new(Resource.Gpc.gpc)) 
             {

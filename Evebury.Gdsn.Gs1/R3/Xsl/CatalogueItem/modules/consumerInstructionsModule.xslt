@@ -22,7 +22,7 @@
 			<!--Rule 1902: If targetMarketCountryCode equals <Geographic> and consumerStorageInstructions is used, then at least one iteration of consumerStorageInstructions/@languageCode SHALL equal to 'fi' (Finnish) and 'sv' (Swedish).-->
 			<xsl:if test="consumerStorageInstructions">
 				<xsl:choose>
-					<xsl:when test="consumerStorageInstructions[@languageCode = 'fi'] != '' and consumerStorageInstructions[@languageCode = 'sv'] != ''"/>
+					<xsl:when test="string(consumerStorageInstructions[@languageCode = 'fi']) != '' and string(consumerStorageInstructions[@languageCode = 'sv']) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1902" />
@@ -33,7 +33,7 @@
 			<!--Rule 1903: If targetMarketCountryCode equals <Geographic> and consumerUsageInstructions is used, then at least one iteration of consumerUsageInstructions/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
 			<xsl:if test="consumerUsageInstructions">
 				<xsl:choose>
-					<xsl:when test="consumerUsageInstructions[@languageCode = 'fi'] != '' and consumerUsageInstructions[@languageCode = 'sv'] != ''"/>
+					<xsl:when test="string(consumerUsageInstructions[@languageCode = 'fi']) != '' and string(consumerUsageInstructions[@languageCode = 'sv']) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1903" />

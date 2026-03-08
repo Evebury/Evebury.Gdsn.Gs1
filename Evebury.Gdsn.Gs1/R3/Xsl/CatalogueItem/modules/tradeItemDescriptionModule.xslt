@@ -34,13 +34,13 @@
 		</xsl:if>
 
 		<!--Rule 1063: brandName must not be empty.-->
-		<xsl:if test="brandNameInformation/brandName = ''">
+		<xsl:if test="string(brandNameInformation/brandName) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1063" />
 			</xsl:apply-templates>
 		</xsl:if>
 		<!--Rule 1065: functionalName SHALL be used.-->
-		<xsl:if test="functionalName = ''">
+		<xsl:if test="string(functionalName) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1065" />
 			</xsl:apply-templates>
@@ -60,7 +60,7 @@
 
 		<!--Rule 1762: If targetMarketCountryCode equals '528' (the Netherlands) and regulatedProductName is used and gpcCategoryCode equals '10005786, then there SHALL be at least one instance of provenanceStatement with languageCode equal to 'nl'.-->
 		<xsl:if test="$targetMarket = '528'">
-			<xsl:if test="regulatedProductName != ''">
+			<xsl:if test="string(regulatedProductName) != ''">
 				<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
 				<xsl:if test="$brick = '10005786'">
 					<xsl:choose>
@@ -88,7 +88,7 @@
 			<!--Rule 1898: If targetMarketCountryCode equals <Geographic> and tradeItemDescription is used, then at least one iteration of tradeItemDescription/@languageCode SHALL equal to 'fi' (Finnish), 'sv' (Swedish) and 'en' (English).-->
 			<xsl:if test="tradeItemDescription">
 				<xsl:choose>
-					<xsl:when test="tradeItemDescription[@languageCode = 'fi'] != '' and tradeItemDescription[@languageCode = 'sv'] != '' and tradeItemDescription[@languageCode = 'en'] != ''"/>
+					<xsl:when test="string(tradeItemDescription[@languageCode = 'fi']) != '' and string(tradeItemDescription[@languageCode = 'sv']) != '' and string(tradeItemDescription[@languageCode = 'en']) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1898" />
@@ -99,7 +99,7 @@
 			<!--Rule 1899: If targetMarketCountryCode equals <Geographic> and descriptionShort is used, then at least one iteration of descriptionShort/@languageCode SHALL equal to 'fi' (Finnish), 'sv' (Swedish) and 'en' (English).-->
 			<xsl:if test="descriptionShort">
 				<xsl:choose>
-					<xsl:when test="descriptionShort[@languageCode = 'fi'] != '' and descriptionShort[@languageCode = 'sv'] != '' and descriptionShort[@languageCode = 'en'] != ''"/>
+					<xsl:when test="string(descriptionShort[@languageCode = 'fi']) != '' and string(descriptionShort[@languageCode = 'sv']) != '' and string(descriptionShort[@languageCode = 'en']) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1899" />
@@ -110,7 +110,7 @@
 			<!--Rule 1909: If targetMarketCountryCode equals <Geographic> and functionalName is used, then one iteration of functionalName/@languageCode SHALL be equal to 'fi' (Finnish) and 'sv' (Swedish).-->
 			<xsl:if test="functionalName">
 				<xsl:choose>
-					<xsl:when test="functionalName[@languageCode = 'fi'] != '' and functionalName[@languageCode = 'sv'] != ''"/>
+					<xsl:when test="string(functionalName[@languageCode = 'fi']) != '' and string(functionalName[@languageCode = 'sv'] )!= ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1909" />
@@ -124,7 +124,7 @@
 		<xsl:if test="$targetMarket = '380'">
 			<xsl:if test="tradeItemDescription">
 				<xsl:choose>
-					<xsl:when test="tradeItemDescription[@languageCode = 'it'] != ''"/>
+					<xsl:when test="string(tradeItemDescription[@languageCode = 'it']) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1910" />
@@ -138,7 +138,7 @@
 
 			<!--Rule 1987: If targetMarketCountryCode equals <Geographic> and tradeItemGroupIdentificationCodeReference is used then tradeItemGroupIdentificationCodeReference/@codeDescription SHALL be used.-->
 			<xsl:for-each select="tradeItemGroupIdentificationCodeReference">
-				<xsl:if test="@codeDescription = ''">
+				<xsl:if test="string(@codeDescription) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1987" />
 					</xsl:apply-templates>

@@ -29,14 +29,14 @@
 		</xsl:if>
 
 		<!--Rule 536: If minimumTradeItemLifespanFromTimeOfArrival is not empty then value must be greater than 0.-->
-		<xsl:if test="minimumTradeItemLifespanFromTimeOfArrival != '' and minimumTradeItemLifespanFromTimeOfArrival &lt;= 0">
+		<xsl:if test="string(minimumTradeItemLifespanFromTimeOfArrival) != '' and minimumTradeItemLifespanFromTimeOfArrival &lt;= 0">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="536" />
 			</xsl:apply-templates>
 		</xsl:if>
 
 		<!--Rule 537: If minimumTradeItemLifespanFromTimeOfProduction is not empty then value must be greater than 0.-->
-		<xsl:if test="minimumTradeItemLifespanFromTimeOfProduction != '' and minimumTradeItemLifespanFromTimeOfProduction &lt;= 0">
+		<xsl:if test="string(minimumTradeItemLifespanFromTimeOfProduction) != '' and minimumTradeItemLifespanFromTimeOfProduction &lt;= 0">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="537" />
 			</xsl:apply-templates>
@@ -59,11 +59,11 @@
 
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
 			<!--Rule 101959: If targetMarketCountryCode equals <Geographic> and minimumTradeItemLifespanFromTimeOfArrival is used then it SHALL NOT be greater than the smallest minimumTradeItemLifespanFromTimeOfArrival of all child items.-->
-			<xsl:if test="minimumTradeItemLifespanFromTimeOfArrival != ''">
+			<xsl:if test="string(minimumTradeItemLifespanFromTimeOfArrival) != ''">
 				<xsl:variable name="endAvailabilityDateTime" select="minimumTradeItemLifespanFromTimeOfArrival"/>
 				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
 					<xsl:variable name="date" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_lifespan:xsd:3' and local-name()='tradeItemLifespanModule']/tradeItemLifespan/minimumTradeItemLifespanFromTimeOfArrival"/>
-					<xsl:if test="$date != ''">
+					<xsl:if test="string($date) != ''">
 						<xsl:if test="gs1:InvalidDateTimeSpan($endAvailabilityDateTime, $date)">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1856" />
@@ -77,7 +77,7 @@
 				<xsl:variable name="endAvailabilityDateTime" select="minimumTradeItemLifespanFromTimeOfProduction"/>
 				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
 					<xsl:variable name="date" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_lifespan:xsd:3' and local-name()='tradeItemLifespanModule']/tradeItemLifespan/minimumTradeItemLifespanFromTimeOfProduction"/>
-					<xsl:if test="$date != ''">
+					<xsl:if test="string($date) != ''">
 						<xsl:if test="gs1:InvalidDateTimeSpan($endAvailabilityDateTime, $date)">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="101960" />

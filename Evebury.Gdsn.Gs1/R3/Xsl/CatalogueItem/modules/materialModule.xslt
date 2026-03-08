@@ -16,8 +16,8 @@
 	<xsl:template match="material" mode="materialModule">
 		<xsl:apply-templates select="materialComposition" mode="materialModule"/>
 		<!--Rule 1308: If Material/materialAgencyCode is used then Material/MaterialComposition/materialCode SHALL be used.-->
-		<xsl:if test="materialAgencyCode != ''">
-			<xsl:if test="materialComposition[materialCode = '']">
+		<xsl:if test="string(materialAgencyCode) != ''">
+			<xsl:if test="materialComposition[string(materialCode) = '']">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1308" />
 				</xsl:apply-templates>
@@ -25,8 +25,8 @@
 		</xsl:if>
 
 		<!--Rule 1309: if Material/materialAgencyCode and Material/MaterialComposition/materialCode are used then Material/MaterialComposition/materialPercentage shall be used.-->
-		<xsl:if test="materialAgencyCode != '' and materialComposition[materialCode != '']">
-			<xsl:if test="materialComposition[materialPercentage = '']">
+		<xsl:if test="string(materialAgencyCode) != '' and materialComposition[string(materialCode) != '']">
+			<xsl:if test="materialComposition[string(materialPercentage) = '']">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1308" />
 				</xsl:apply-templates>

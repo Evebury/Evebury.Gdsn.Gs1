@@ -15,7 +15,7 @@
 		<xsl:if test="$targetMarket = '246'">
 			<xsl:if test="nonFoodIngredientStatement">
 				<xsl:choose>
-					<xsl:when test="nonFoodIngredientStatement[@languageCode = 'fi'] != '' and nonFoodIngredientStatement[@languageCode = 'sv'] != ''"/>
+					<xsl:when test="string(nonFoodIngredientStatement[@languageCode = 'fi']) != '' and string(nonFoodIngredientStatement[@languageCode = 'sv']) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1906" />
@@ -29,7 +29,7 @@
 
 	<xsl:template match="nonfoodIngredient" mode="nonfoodIngredientModule">
 		<!--Rule 1305: If isIngredientGeneric is not empty, then ingredientStength must not be empty.-->
-		<xsl:if test="isIngredientGeneric != '' and ingredientStrength[ingredientStrength = '']">
+		<xsl:if test="string(isIngredientGeneric) != '' and ingredientStrength[string(ingredientStrength) = '']">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1305" />
 			</xsl:apply-templates>

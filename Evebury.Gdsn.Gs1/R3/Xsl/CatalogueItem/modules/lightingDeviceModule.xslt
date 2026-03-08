@@ -21,7 +21,7 @@
 	<xsl:template match="lightBulbInformation" mode="lightingDeviceModule">
 		<xsl:param name="targetMarket"/>
 		<!--Rule 1810: If colourTemperature is used then associated @measurementUnitCode SHALL equal 'KEL' (Kelvin).-->
-		<xsl:if test="colourTemperature != '' and colourTemperature/@temperatureMeasurementUnitCode != 'KEL'">
+		<xsl:if test="string(colourTemperature) != '' and string(colourTemperature/@temperatureMeasurementUnitCode) != 'KEL'">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1810" />
 			</xsl:apply-templates>

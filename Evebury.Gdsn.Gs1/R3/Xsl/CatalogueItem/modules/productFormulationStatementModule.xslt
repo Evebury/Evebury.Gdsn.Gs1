@@ -27,7 +27,7 @@
 		<xsl:if test="$targetMarket = '840'">
 
 			<!--Rule 1343: If targetMarketCountryCode equals '840' (United States) and productFormulationStatementRegulatoryBodyCode is used, then totalPortionWeightAsPurchased shall be used. -->
-			<xsl:if test="productFormulationStatementRegulatoryBodyCode != '' and productFormulationStatement/totalPortionWeightAsPurchased  = ''">
+			<xsl:if test="string(productFormulationStatementRegulatoryBodyCode) != '' and string(productFormulationStatement/totalPortionWeightAsPurchased)  = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1343" />
 				</xsl:apply-templates>
@@ -56,7 +56,7 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:if test="$targetMarket = '840'">
 			<!--Rule 1345: If targetMarketCountryCode equals '840' (united States) and creditableIngredientTypeCode is used, then creditableIngredientDescription shall be used.-->
-			<xsl:if test="creditableIngredientTypeCode != '' and creditableIngredientDetails/creditableIngredientDescription  = ''">
+			<xsl:if test="string(creditableIngredientTypeCode) != '' and string(creditableIngredientDetails/creditableIngredientDescription)  = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1345" />
 				</xsl:apply-templates>
@@ -65,14 +65,14 @@
 
 			<xsl:for-each select="creditableIngredientDetails">
 				<!--Rule 1346: If targetMarketCountryCode equals '840' (United States) and creditableIngredientDescription is used, then creditableAmount shall be used.-->
-				<xsl:if test="creditableIngredientDescription != '' and creditableAmount = ''">
+				<xsl:if test="string(creditableIngredientDescription) != '' and string(creditableAmount) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1346" />
 					</xsl:apply-templates>
 				</xsl:if>
 				<!--Rule 1347: If targetMarketCountryCode equals '840' (United States) and  vegetableSubgroupCode is used, then totalVegetableSubgroupAmount shall be used.-->
 				<xsl:for-each select="creditableVegetable">
-					<xsl:if test="vegetableSubgroupCode != '' and totalVegetableSubgroupAmount = ''">
+					<xsl:if test="string(vegetableSubgroupCode) != '' and string(totalVegetableSubgroupAmount) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1347" />
 						</xsl:apply-templates>
@@ -81,25 +81,25 @@
 				
 				<xsl:for-each select="creditableGrainsInformation">
 					<!--Rule 1348: If targetMarketCountryCode equals '840' (United States) and doesTradeItemContainNoncreditableGrains is used, then doesTradeItemMeetWholeGrainRichCriteria, and creditableGrainGroupCode shall be used.-->
-					<xsl:if test="doesTradeItemContainNoncreditableGrains != '' and (doesTradeItemMeetWholeGrainRichCriteria = '' or creditableGrain/creditableGrainGroupCode = '')">
+					<xsl:if test="string(doesTradeItemContainNoncreditableGrains) != '' and (string(doesTradeItemMeetWholeGrainRichCriteria) = '' or string(creditableGrain/creditableGrainGroupCode) = '')">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1348" />
 						</xsl:apply-templates>
 					</xsl:if>
 					<!--Rule 1349: If targetMarketCountryCode equals '840' (United States) and doesTradeItemMeetWholeGrainRichCriteria is used, then doesTradeItemContainNoncreditableGrains, and creditableGrainGroupCode shall be used.-->
-					<xsl:if test="doesTradeItemMeetWholeGrainRichCriteria != '' and (doesTradeItemContainNoncreditableGrains = '' or creditableGrain/creditableGrainGroupCode = '')">
+					<xsl:if test="string(doesTradeItemMeetWholeGrainRichCriteria) != '' and (string(doesTradeItemContainNoncreditableGrains) = '' or string(creditableGrain/creditableGrainGroupCode) = '')">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1349" />
 						</xsl:apply-templates>
 					</xsl:if>
 					<!--Rule 1350: If targetMarketCountryCode equals '840' (United States) and  creditableGrainGroupCode is used, then doesTradeItemContainNoncreditableGrains, and doesTradeItemMeetWholeGrainRichCriteria shall be used.-->
-					<xsl:if test="creditableGrain/creditableGrainGroupCode != '' and (doesTradeItemContainNoncreditableGrains = '' or doesTradeItemMeetWholeGrainRichCriteria = '')">
+					<xsl:if test="string(creditableGrain/creditableGrainGroupCode) != '' and (string(doesTradeItemContainNoncreditableGrains) = '' or string(doesTradeItemMeetWholeGrainRichCriteria) = '')">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1350" />
 						</xsl:apply-templates>
 					</xsl:if>
 					<!--Rule 1351: If targetMarketCountryCode equals '840' (United States) and  doesTradeItemContainNoncreditableGrains is TRUE, then nonCreditableGrainAmount shall be used.-->
-					<xsl:if test="doesTradeItemContainNoncreditableGrains  = 'true' and noncreditableGrain/noncreditableGrainAmount = ''">
+					<xsl:if test="doesTradeItemContainNoncreditableGrains = 'true' and string(noncreditableGrain/noncreditableGrainAmount) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1351" />
 						</xsl:apply-templates>

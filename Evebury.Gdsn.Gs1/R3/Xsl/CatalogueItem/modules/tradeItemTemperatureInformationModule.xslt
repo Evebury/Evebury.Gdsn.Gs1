@@ -54,8 +54,8 @@
 		</xsl:if>
 
 		<!--Rule 1058: If any attribute of the TradeItemTemperatureInformation class other than temperatureTypeQualifierCode is not empty then temperatureTypeQualifierCode must not be empty.-->
-		<xsl:if test="temperatureTypeQualifierCode = ''">
-			<xsl:if test="*[text() != '' and name() != 'temperatureTypeQualifierCode']">
+		<xsl:if test="string(temperatureQualifierCode) = ''">
+			<xsl:if test="*[text() != '' and name() != 'temperatureQualifierCode']">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1058" />
 				</xsl:apply-templates>
@@ -81,7 +81,7 @@
 		</xsl:if>
 
 		<!--Rule 1837: If temperatureQualifierCode is used, then at least one other attribute in the TradeItemTemperatureInformation class SHALL be used.-->
-		<xsl:if test="temperatureQualifierCode != ''">
+		<xsl:if test="string(temperatureQualifierCode) != ''">
 			<xsl:if test="count(*[name() != 'temperatureQualifierCode']) = 0">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1837" />

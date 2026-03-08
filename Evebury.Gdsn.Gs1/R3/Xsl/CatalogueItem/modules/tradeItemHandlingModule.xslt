@@ -37,12 +37,12 @@
 		<!--Rule 1703: IF targetMarketCountryCode equals '752' (Sweden) and HandlingInstructionsCodeReference equals ‘OTC’ (Temperature Control), then temperatureQualifierCode SHALL be used and equal  ('STORAGE_HANDLING' or 'TRANSPORTATION') AND maximumTemperature and minimumTemperature SHALL be used per temperatureQualifierCode.-->
 		<xsl:if test="$targetMarket = '752' and HandlingInstructionsCodeReference = 'OTC'">
 			<xsl:variable name="module" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_temperature_information:xsd:3' and local-name()='tradeItemTemperatureInformationModule']/tradeItemTemperatureInformation"/>
-			<xsl:if test="$module[temperatureQualifierCode = 'STORAGE_HANDLING']/minimumTemperature ='' or $module[temperatureQualifierCode = 'STORAGE_HANDLING']/maximumTemperature =''">
+			<xsl:if test="string($module[temperatureQualifierCode = 'STORAGE_HANDLING']/minimumTemperature) ='' or string($module[temperatureQualifierCode = 'STORAGE_HANDLING']/maximumTemperature) =''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1703" />
 				</xsl:apply-templates>
 			</xsl:if>
-			<xsl:if test="$module[temperatureQualifierCode = 'TRANSPORTATION']/minimumTemperature ='' or $module[temperatureQualifierCode = 'TRANSPORTATION']/maximumTemperature =''">
+			<xsl:if test="string($module[temperatureQualifierCode = 'TRANSPORTATION']/minimumTemperature) ='' or string($module[temperatureQualifierCode = 'TRANSPORTATION']/maximumTemperature) =''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1703" />
 				</xsl:apply-templates>
@@ -65,7 +65,7 @@
 
 		<!--Rule 479: If targetMarketCountryCode equals <Geographic> then stackingFactor SHALL be less than 100.-->
 		<xsl:if test="contains('056, 442, 528', $targetMarket)">
-			<xsl:if test="stackingFactor != '' and stackingFactor &gt; 100">
+			<xsl:if test="string(stackingFactor) != '' and stackingFactor &gt; 100">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="479"/>
 				</xsl:apply-templates>
@@ -73,7 +73,7 @@
 		</xsl:if>
 
 		<!--Rule 1324: If stackingFactor is not empty, it must equal or be greater than '1'-->
-		<xsl:if test="stackingFactor != '' and stackingFactor &lt; 1">
+		<xsl:if test="string(stackingFactor) != '' and stackingFactor &lt; 1">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1324"/>
 			</xsl:apply-templates>
@@ -81,8 +81,8 @@
 
 		<!--Rule 1745: If targetMarketCountryCode equals <Geographic> then for each iteration of TradeItemStacking class if (stackingFactorTypeCode is used or stackingFactor is used) then stackingFactorTypeCode SHALL be used and stackingFactor SHALL be used.-->
 		<xsl:if test="contains('040, 056, 246, 442, 528, 756', $targetMarket)">
-			<xsl:if test="stackingFactor != '' or stackingFactorTypeCode != ''">
-				<xsl:if test="stackingFactor = '' or stackingFactorTypeCode = ''">
+			<xsl:if test="string(stackingFactor) != '' or string(stackingFactorTypeCode) != ''">
+				<xsl:if test="string(stackingFactor) = '' or string(stackingFactorTypeCode) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1745" />
 					</xsl:apply-templates>

@@ -27,7 +27,7 @@
 		</xsl:if>
 
 		<!--Rule 1780: If targetMarketCountryCode equals '528' (Netherlands) and if preparationStateCode is used and isTradeItemAConsumerUnit equals 'true', then regulatedProductName (with languageCode 'nl') SHALL be used.-->
-		<xsl:if test="$targetMarket = '528' and $tradeItem/isTradeItemAConsumerUnit = 'true' and nutrientHeader[preparationStateCode != '']">
+		<xsl:if test="$targetMarket = '528' and $tradeItem/isTradeItemAConsumerUnit = 'true' and nutrientHeader[string(preparationStateCode) != '']">
 			<xsl:choose>
 				<xsl:when test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/regulatedProductName[@languageCode  = 'nl']"/>
 				<xsl:otherwise>
@@ -48,8 +48,8 @@
 		</xsl:apply-templates>
 		<!--Rule 1440: If targetMarketCountryCode equals <Geographic> and preparationStateCode is used then at least 1 iteration of nutrientTypeCode SHALL be used.-->
 		<xsl:if test="contains('752, 246, 756', $targetMarket)">
-			<xsl:if test="preparationStateCode != ''">
-				<xsl:if test="count(nutrientDetail[nutrientTypeCode != '']) = 0">
+			<xsl:if test="string(preparationStateCode) != ''">
+				<xsl:if test="count(nutrientDetail[string(nutrientTypeCode) != '']) = 0">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1440" />
 					</xsl:apply-templates>
@@ -69,8 +69,8 @@
 			<xsl:variable name="sugarmin" select="nutrientDetail[nutrientTypeCode = 'SUGAR-']"/>
 
 			<!--Rule 1641: If targetMarketCountryCode equals <Geographic> for the same nutrientBasisQuantity or servingSize and one instance of nutrientTypeCode equals 'STARCH' and quantityContained is used and another instance of nutrientTypeCode equals 'CHOAVL' and quantityContained is used then quantityContained for nutrientTypeCode 'STARCH' SHALL be less than or equal to quantityContained for nutrientTypeCode 'CHOAVL'.-->
-			<xsl:if test="$starch and $starch/quantityContained != ''">
-				<xsl:if test="$choavl and $choavl/quantityContained != ''">
+			<xsl:if test="$starch and string($starch/quantityContained) != ''">
+				<xsl:if test="$choavl and string($choavl/quantityContained) != ''">
 					<xsl:variable name="v1">
 						<xsl:apply-templates select="$starch/quantityContained" mode="measurementUnit"/>
 					</xsl:variable>
@@ -85,8 +85,8 @@
 				</xsl:if>
 			</xsl:if>
 			<!--Rule 1642: If targetMarketCountryCode equals <Geographic> for the same nutrientBasisQuantity or servingSize and one instance of nutrientTypeCode equals 'POLYL' and quantityContained is used and another instance of nutrientTypeCode equals 'CHOAVL' and quantityContained is used then quantityContained for nutrientTypeCode 'POLYL' SHALL be less than or equal to quantityContained for nutrientTypeCode 'CHOAVL'..-->
-			<xsl:if test="$polyl and $polyl/quantityContained != ''">
-				<xsl:if test="$choavl and $choavl/quantityContained != ''">
+			<xsl:if test="$polyl and string($polyl/quantityContained) != ''">
+				<xsl:if test="$choavl and string($choavl/quantityContained) != ''">
 					<xsl:variable name="v1">
 						<xsl:apply-templates select="$polyl/quantityContained" mode="measurementUnit"/>
 					</xsl:variable>
@@ -101,8 +101,8 @@
 				</xsl:if>
 			</xsl:if>
 			<!--Rule 1643: If targetMarketCountryCode equals <Geographic> for the same nutrientBasisQuantity or servingSize and one instance of nutrientTypeCode equals 'FASAT' and quantityContained is used and another instance of nutrientTypeCode equals 'FAT' and quantityContained is used then quantityContained for nutrientTypeCode 'FASAT' SHALL be less than or equal to quantityContained for nutrientTypeCode 'FAT'.-->
-			<xsl:if test="$fasat and $fasat/quantityContained != ''">
-				<xsl:if test="$fat and $fat/quantityContained != ''">
+			<xsl:if test="$fasat and string($fasat/quantityContained) != ''">
+				<xsl:if test="$fat and string($fat/quantityContained) != ''">
 					<xsl:variable name="v1">
 						<xsl:apply-templates select="$fasat/quantityContained" mode="measurementUnit"/>
 					</xsl:variable>
@@ -117,8 +117,8 @@
 				</xsl:if>
 			</xsl:if>
 			<!--Rule 1644: If targetMarketCountryCode equals <Geographic> for the same nutrientBasisQuantity or servingSize and one instance of nutrientTypeCode equals 'FAMSCIS' and quantityContained is used and another instance of nutrientTypeCode equals 'FAT' and quantityContained is used then quantityContained for nutrientTypeCode 'FAMSCIS' SHALL be less than or equal to quantityContained for nutrientTypeCode 'FAT'.-->
-			<xsl:if test="$famcis and $famcis/quantityContained != ''">
-				<xsl:if test="$fat and $fat/quantityContained != ''">
+			<xsl:if test="$famcis and string($famcis/quantityContained) != ''">
+				<xsl:if test="$fat and string($fat/quantityContained) != ''">
 					<xsl:variable name="v1">
 						<xsl:apply-templates select="$famcis/quantityContained" mode="measurementUnit"/>
 					</xsl:variable>
@@ -133,8 +133,8 @@
 				</xsl:if>
 			</xsl:if>
 			<!--Rule 1645: If targetMarketCountryCode equals <Geographic> for the same nutrientBasisQuantity or servingSize and one instance of nutrientTypeCode equals 'FAPUCIS' and quantityContained is used and another instance of nutrientTypeCode equals 'FAT' and quantityContained is used then quantityContained for nutrientTypeCode 'FAPUCIS' SHALL be less than or equal to quantityContained for nutrientTypeCode 'FAT'.-->
-			<xsl:if test="$fapucis and $fapucis/quantityContained != ''">
-				<xsl:if test="$fat and $fat/quantityContained != ''">
+			<xsl:if test="$fapucis and string($fapucis/quantityContained) != ''">
+				<xsl:if test="$fat and string($fat/quantityContained) != ''">
 					<xsl:variable name="v1">
 						<xsl:apply-templates select="$fapucis/quantityContained" mode="measurementUnit"/>
 					</xsl:variable>
@@ -150,8 +150,8 @@
 			</xsl:if>
 
 			<!--Rule 1665: If targetMarketCountryCode equals <Geographic> for the same nutrientBasisQuantity or servingSize and one instance of nutrientTypeCode equals 'SUGAR-' and quantityContained is used and another instance of nutrientTypeCode equals 'CHOAVL' and quantityContained is used then quantityContained for nutrientTypeCode 'SUGAR-' SHALL be less than or equal to quantityContained for nutrientTypeCode 'CHOAVL'.-->
-			<xsl:if test="$sugarmin and $sugarmin/quantityContained != ''">
-				<xsl:if test="$choavl and $choavl/quantityContained != ''">
+			<xsl:if test="$sugarmin and string($sugarmin/quantityContained) != ''">
+				<xsl:if test="$choavl and string($choavl/quantityContained) != ''">
 					<xsl:variable name="v1">
 						<xsl:apply-templates select="$sugarmin/quantityContained" mode="measurementUnit"/>
 					</xsl:variable>
@@ -172,30 +172,30 @@
 		<xsl:if test="contains('040, 056, 203, 276, 380, 442, 528, 752, 756, 826', $targetMarket)">
 			<xsl:variable name="used">
 				<xsl:choose>
-					<xsl:when test="nutrientDetail[nutrientTypeCode = 'ENER-']/dailyValueIntakePercent != ''">
+					<xsl:when test="string(nutrientDetail[nutrientTypeCode = 'ENER-']/dailyValueIntakePercent) != ''">
 						<xsl:value-of select="1"/>
 					</xsl:when>
-					<xsl:when test="nutrientDetail[nutrientTypeCode = 'FAT']/dailyValueIntakePercent != ''">
+					<xsl:when test="string(nutrientDetail[nutrientTypeCode = 'FAT']/dailyValueIntakePercent) != ''">
 						<xsl:value-of select="1"/>
 					</xsl:when>
-					<xsl:when test="nutrientDetail[nutrientTypeCode = 'FASAT']/dailyValueIntakePercent != ''">
+					<xsl:when test="string(nutrientDetail[nutrientTypeCode = 'FASAT']/dailyValueIntakePercent) != ''">
 						<xsl:value-of select="1"/>
 					</xsl:when>
-					<xsl:when test="nutrientDetail[nutrientTypeCode = 'CHOAVL']/dailyValueIntakePercent != ''">
+					<xsl:when test="string(nutrientDetail[nutrientTypeCode = 'CHOAVL']/dailyValueIntakePercent) != ''">
 						<xsl:value-of select="1"/>
 					</xsl:when>
-					<xsl:when test="nutrientDetail[nutrientTypeCode = 'SUGAR-']/dailyValueIntakePercent != ''">
+					<xsl:when test="string(nutrientDetail[nutrientTypeCode = 'SUGAR-']/dailyValueIntakePercent) != ''">
 						<xsl:value-of select="1"/>
 					</xsl:when>
-					<xsl:when test="nutrientDetail[nutrientTypeCode = 'PRO-']/dailyValueIntakePercent != ''">
+					<xsl:when test="string(nutrientDetail[nutrientTypeCode = 'PRO-']/dailyValueIntakePercent) != ''">
 						<xsl:value-of select="1"/>
 					</xsl:when>
-					<xsl:when test="nutrientDetail[nutrientTypeCode = 'SALTEQ']/dailyValueIntakePercent != ''">
+					<xsl:when test="string(nutrientDetail[nutrientTypeCode = 'SALTEQ']/dailyValueIntakePercent) != ''">
 						<xsl:value-of select="1"/>
 					</xsl:when>
 				</xsl:choose>
 			</xsl:variable>
-			<xsl:if test="$used = 1 and dailyValueIntakeReference = ''">
+			<xsl:if test="$used = 1 and string(dailyValueIntakeReference) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1654" />
 				</xsl:apply-templates>
@@ -348,8 +348,8 @@
 
 		<!--Rule 1812: If targetMarketCountryCode equals '752' (Sweden) and nutrientTypeCode is used then nutrientBasisQuantity and nutrientBasisQuantityTypeCode SHALL be used within the same NutrientHeader class.-->
 		<xsl:if test="$targetMarket = '752'">
-			<xsl:if test="nutrientDetail[nutrientTypeCode != '']">
-				<xsl:if test="nutrientBasisQuantity = '' or nutrientBasisQuantityTypeCode = ''">
+			<xsl:if test="nutrientDetail/nutrientTypeCode">
+				<xsl:if test="string(nutrientBasisQuantity) = '' or string(nutrientBasisQuantityTypeCode) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1812" />
 					</xsl:apply-templates>
@@ -359,8 +359,8 @@
 
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
 			<!--Rule 2026: If targetMarketCountryCode equals <Geographic> and nutrientTypeCode is used then nutrientBasisQuantity SHALL be used in the parent NutrientHeader class.-->
-			<xsl:if test="nutrientDetail[nutrientTypeCode != '']">
-				<xsl:if test="nutrientBasisQuantity = ''">
+			<xsl:if test="nutrientDetail/nutrientTypeCode">
+				<xsl:if test="string(nutrientBasisQuantity) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="2026" />
 					</xsl:apply-templates>
@@ -369,7 +369,7 @@
 
 			<!--Rule 2032: If targetMarketCountryCode equals <Geographic> and nutrientBasisQuantity is used then (nutrientBasisQuantity and nutrientBasisQuantity/@measurementUnitCode) SHALL equal (100 'GRM', 100 'MLT', 1 'LTR' or 1 'PTN').-->
 			<xsl:choose>
-				<xsl:when test="nutrientBasisQuantity = ''"/>
+				<xsl:when test="string(nutrientBasisQuantity) = ''"/>
 				<xsl:when test="nutrientBasisQuantity = '100' and nutrientBasisQuantity/@measurementUnitCode ='GRM'"/>
 				<xsl:when test="nutrientBasisQuantity = '100' and nutrientBasisQuantity/@measurementUnitCode ='MLT'"/>
 				<xsl:when test="nutrientBasisQuantity = '1' and nutrientBasisQuantity/@measurementUnitCode ='LTR'"/>
@@ -383,7 +383,7 @@
 			</xsl:choose>
 
 			<!--Rule 2036: If targetMarketCountryCode equals <Geographic> and preparationStateCode is used then preparationStateCode SHALL equal ('PREPARED' or 'UNPREPARED').-->
-			<xsl:if test="preparationStateCode != '' and preparationStateCode != 'PREPARED' and preparationStateCode != 'UNPREPARED'">
+			<xsl:if test="string(preparationStateCode) != '' and preparationStateCode != 'PREPARED' and preparationStateCode != 'UNPREPARED'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2036" />
 				</xsl:apply-templates>
@@ -396,7 +396,7 @@
 	<xsl:template match="nutrientDetail" mode="nutritionalInformationModule">
 		<xsl:param name="targetMarket"/>
 		<!--Rule 1445: If nutrientTypeCode is used and measurementPrecisionCode does not equal ('ABSENCE', 'NOT_DETECTED', 'NOT_SIGNIFICANT_SOURCE_OF', 'TRACE', 'UNDETECTABLE') then at least quantityContained or dailyValueIntakePercent SHALL be used.-->
-		<xsl:if test="nutrientTypeCode != ''">
+		<xsl:if test="string(nutrientTypeCode) != ''">
 			<xsl:choose>
 				<xsl:when test="measurementPrecisionCode = 'ABSENCE'"/>
 				<xsl:when test="measurementPrecisionCode = 'NOT_DETECTED'"/>
@@ -404,7 +404,7 @@
 				<xsl:when test="measurementPrecisionCode = 'TRACE'"/>
 				<xsl:when test="measurementPrecisionCode = 'UNDETECTABLE'"/>
 				<xsl:otherwise>
-					<xsl:if test="quantityContained = '' and dailyValueIntakePercent = ''">
+					<xsl:if test="string(quantityContained) = '' and string(dailyValueIntakePercent) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1445" />
 						</xsl:apply-templates>
@@ -415,8 +415,8 @@
 
 		<!--Rule 1739: If targetMarketCountryCode equals <Geographic> and (nutrientTypeCode, quantityContained, or measurementPrecisionCode) is used then (nutrientTypeCode, quantityContained and measurementPrecisionCode) SHALL be used.-->
 		<xsl:if test="contains('040, 056, 203, 246, 250, 380, 442, 528, 703, 705, 752', $targetMarket)">
-			<xsl:if test="nutrientTypeCode != '' or quantityContained != '' or measurementPrecisionCode != ''">
-				<xsl:if test="nutrientTypeCode = '' or quantityContained = '' or measurementPrecisionCode = ''">
+			<xsl:if test="string(nutrientTypeCode) != '' or string(quantityContained) != '' or string(measurementPrecisionCode) != ''">
+				<xsl:if test="string(nutrientTypeCode) = '' or string(quantityContained) = '' or string(measurementPrecisionCode) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1739" />
 					</xsl:apply-templates>
@@ -427,7 +427,7 @@
 
 		<xsl:if test="contains('008, 051, 031, 040, 112, 056, 070, 100, 191, 196, 203, 233, 246, 250, 268, 300, 348, 352, 372, 376, 380, 398, 417, 428, 440, 442, 807, 498, 499, 528, 578, 616, 620, 642, 643, 688, 703, 705, 752, 756, 792, 795, 826, 804, 860', $targetMarket)">
 			<!--Rule 1754: If targetMarketCountryCode equals <Geographic> and nutrientDetail/measurementPrecisionCode is used, then nutrientDetail/measurementPrecisionCode SHALL equal 'APPROXIMATELY' or 'LESS_THAN'.-->
-			<xsl:if test="measurementPrecisionCode != '' and measurementPrecisionCode != 'APPROXIMATELY' and measurementPrecisionCode != 'LESS_THAN'">
+			<xsl:if test="string(measurementPrecisionCode) != '' and measurementPrecisionCode != 'APPROXIMATELY' and measurementPrecisionCode != 'LESS_THAN'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1754" />
 				</xsl:apply-templates>
@@ -446,7 +446,7 @@
 			</xsl:if>
 
 			<!--Rule 1763: If targetMarketCountryCode equals <geographic> and nutrientTypeCode is used, then quantityContained SHALL be used.-->
-			<xsl:if test="nutrientTypeCode != '' and quantityContained = ''">
+			<xsl:if test="string(nutrientTypeCode) != '' and string(quantityContained) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1763" />
 				</xsl:apply-templates>
@@ -456,37 +456,37 @@
 			<xsl:variable name="base" select="../nutrientBasisQuantity"/>
 			<xsl:if test="($base = 100 and $base/@measurementUnitCode = 'GRM') or ($base = 100 and $base/@measurementUnitCode = 'MLT') or ($base = 1000 and $base/@measurementUnitCode = 'MLT') or ($base = 1 and $base/@measurementUnitCode = 'LTR')">
 				<xsl:choose>
-					<xsl:when test="nutrientTypeCode  = 'FAT' and dailyValueIntakeReference = ''">
+					<xsl:when test="nutrientTypeCode  = 'FAT' and string(dailyValueIntakeReference) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1764" />
 						</xsl:apply-templates>
 					</xsl:when>
-					<xsl:when test="nutrientTypeCode  = 'FASAT' and dailyValueIntakeReference = ''">
+					<xsl:when test="nutrientTypeCode  = 'FASAT' and string(dailyValueIntakeReference) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1764" />
 						</xsl:apply-templates>
 					</xsl:when>
-					<xsl:when test="nutrientTypeCode  = 'ENER-' and dailyValueIntakeReference = ''">
+					<xsl:when test="nutrientTypeCode  = 'ENER-' and string(dailyValueIntakeReference) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1764" />
 						</xsl:apply-templates>
 					</xsl:when>
-					<xsl:when test="nutrientTypeCode  = 'CHOAVL' and dailyValueIntakeReference = ''">
+					<xsl:when test="nutrientTypeCode  = 'CHOAVL' and string(dailyValueIntakeReference) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1764" />
 						</xsl:apply-templates>
 					</xsl:when>
-					<xsl:when test="nutrientTypeCode  = 'PRO-' and dailyValueIntakeReference = ''">
+					<xsl:when test="nutrientTypeCode  = 'PRO-' and string(dailyValueIntakeReference) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1764" />
 						</xsl:apply-templates>
 					</xsl:when>
-					<xsl:when test="nutrientTypeCode  = 'SUGAR-' and dailyValueIntakeReference = ''">
+					<xsl:when test="nutrientTypeCode  = 'SUGAR-' and string(dailyValueIntakeReference) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1764" />
 						</xsl:apply-templates>
 					</xsl:when>
-					<xsl:when test="nutrientTypeCode  = 'SALTEQ' and dailyValueIntakeReference = ''">
+					<xsl:when test="nutrientTypeCode  = 'SALTEQ' and string(dailyValueIntakeReference) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1764" />
 						</xsl:apply-templates>
@@ -507,7 +507,7 @@
 		</xsl:if>
 
 		<!--Rule 1758: If dailyValueIntakePercent is used, then the value of dailyValueIntakePercent SHALL equal greater than or equal to 0 (zero).-->
-		<xsl:if test="dailyValueIntakePercent != '' and dailyValueIntakePercent &lt; 0">
+		<xsl:if test="string(dailyValueIntakePercent) != '' and dailyValueIntakePercent &lt; 0">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1758" />
 			</xsl:apply-templates>

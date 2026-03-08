@@ -38,7 +38,7 @@
 		</xsl:if>
 
 		<!--Rule 507: If packagingMaterialCompositionQuantity and packagingWeight are not empty then the sum of all instances of  packagingMaterialCompositionQuantity for the trade item must be less than or equal to packagingWeight.-->
-		<xsl:if test="packagingWeight != '' and packagingMaterial/packagingMaterialCompositionQuantity[text() != '']">
+		<xsl:if test="string(packagingWeight) != '' and packagingMaterial/packagingMaterialCompositionQuantity[text() != '']">
 			<xsl:variable name="packagingWeight">
 				<xsl:apply-templates select="packagingWeight" mode="measurementUnit"/>
 			</xsl:variable>
@@ -246,9 +246,9 @@
 
 
 		<!--Rule 1166: If (PackagingDimension/packagingDepth or PackagingDimension/packagingWidth are used) and (platformTypeCode is not used or equal to '98' or packagingTypeCode does not equal to 'PX'('Pallet')) then PackagingDimension/packagingHeight SHALL be used.-->
-		<xsl:if test="packagingDimension/packagingDepth != '' or packagingDimension/packagingWidth != ''">
-			<xsl:if test="platformTypeCode = '' or platformTypeCode = '98' or packagingTypeCode != 'PX'">
-				<xsl:if test="packagingDimension/packagingHeight = ''">
+		<xsl:if test="string(packagingDimension/packagingDepth) != '' or string(packagingDimension/packagingWidth) != ''">
+			<xsl:if test="string(platformTypeCode) = '' or platformTypeCode = '98' or packagingTypeCode != 'PX'">
+				<xsl:if test="string(packagingDimension/packagingHeight) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1166" />
 					</xsl:apply-templates>
@@ -290,7 +290,7 @@
 		</xsl:for-each>
 
 		<!--Rule 1293: If Packaging class or sub-classes are not empty then packagingTypeCode or platformTypeCode SHALL be used-->
-		<xsl:if test="packagingTypeCode  = '' and platformTypeCode = ''">
+		<xsl:if test="string(packagingTypeCode)  = '' and string(platformTypeCode) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1293" />
 			</xsl:apply-templates>
@@ -298,7 +298,7 @@
 
 		<!--Rule 1310: If packagingFunctioncode is equal to "TAMPER_EVIDENT" then"packagingTypeCode must not be empty.-->
 		<xsl:if test="packagingFunctionCode  = 'TAMPER_EVIDENT'">
-			<xsl:if test="packagingTypeCode = ''">
+			<xsl:if test="string(packagingTypeCode) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1310" />
 				</xsl:apply-templates>
@@ -306,8 +306,8 @@
 		</xsl:if>
 
 		<!--Rule 1312: If platformTermsAndConditionsCode is used then platformTypeCode SHALL be used and SHALL NOT equal to '98'.-->
-		<xsl:if test="platformTermsAndConditionsCode  != ''">
-			<xsl:if test="platformTypeCode = '' or platformTypeCode  = '98'">
+		<xsl:if test="string(platformTermsAndConditionsCode)  != ''">
+			<xsl:if test="string(platformTypeCode) = '' or platformTypeCode  = '98'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1312" />
 				</xsl:apply-templates>
@@ -321,7 +321,7 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<!--Rule 1742: If targetMarketCountryCode equals <Geographic> and Packaging class or sub-classes are used then packagingTypeCode SHALL be used in each iteration of the Packaging class.-->
-		<xsl:if test="packagingTypeCode  = ''">
+		<xsl:if test="string(packagingTypeCode)  = ''">
 			<xsl:if test="contains('056, 208, 246, 250, 442, 528', $targetMarket)">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1742" />
@@ -330,7 +330,7 @@
 		</xsl:if>
 
 		<!--Rule 1773: If targetMarketCountryCode equals '528' (Netherlands) and the value of gpcCategoryCode equals one of the bricks in GPC families ('50250000', '50260000' or '50350000') and packagingTypeCode is not equal to 'X11' or 'NE', then isPackagingMarkedReturnable SHALL be used.-->
-		<xsl:if test="$targetMarket  = '528' and isPackagingMarkedReturnable = ''">
+		<xsl:if test="$targetMarket  = '528' and string(isPackagingMarkedReturnable) = ''">
 			<xsl:choose>
 				<xsl:when test="packagingTypeCode = 'X11'"/>
 				<xsl:when test="packagingTypeCode = 'NE'"/>
@@ -348,7 +348,7 @@
 
 		<!--Rule 1776: If packagingTypeCode equals 'NE', then drainedWeight SHALL NOT be used.-->
 		<xsl:if test="packagingTypeCode = 'NE'">
-			<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/drainedWeight != ''">
+			<xsl:if test="string($tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight/drainedWeight) != ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1776" />
 				</xsl:apply-templates>
@@ -356,9 +356,9 @@
 		</xsl:if>
 
 		<!--Rule 1823: If targetMarketCountryCode equals '250' (France) and isTradeItemADespatchUnit equals 'true' and (isTradeItemPackedIrregularly equals 'FALSE' or is not used) and platformTypeCode is used, then quantityOfCompleteLayersContainedInATradeItem SHALL be greater than 0.-->
-		<xsl:if test="platformTypeCode != '' and $targetMarket='250' and $tradeItem/isTradeItemADespatchUnit = 'true'">
+		<xsl:if test="string(platformTypeCode) != '' and $targetMarket='250' and $tradeItem/isTradeItemADespatchUnit = 'true'">
 			<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy/isTradeItemPackedIrregularly != 'true'">
-				<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy/quantityOfCompleteLayersContainedInATradeItem = ''">
+				<xsl:if test="string($tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy/quantityOfCompleteLayersContainedInATradeItem) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1823" />
 					</xsl:apply-templates>
@@ -368,7 +368,7 @@
 
 		<!--Rule 1868: packagingClaimTypeCode and packagingClaimElementCode should be both used if one is used.-->
 		<xsl:for-each select="packagingClaims">
-			<xsl:if test="(packagingClaimElementCode != '' or packagingClaimTypeCode !='') and (packagingClaimElementCode = '' or packagingClaimTypeCode ='')">
+			<xsl:if test="(string(packagingClaimElementCode) != '' or string(packagingClaimTypeCode) !='') and (string(packagingClaimElementCode) = '' or string(packagingClaimTypeCode) ='')">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1868" />
 				</xsl:apply-templates>
@@ -378,11 +378,11 @@
 		<xsl:if test="$targetMarket = '756' and $targetMarket = '040'">
 
 			<!--Rule 1984: If targetMarketCountryCode equals <Geographic> and tradeItemUnitDescriptorCode does not equal ('PALLET' or 'MIXED_MODULE') and isTradeItemADespatchUnit equals 'true' and (platformTypeCode is used and does not equal '98') then platformTermsAndConditionsCode SHALL be used in every iteration where platformTypeCode is used and quantityOfTradeItemsPerPallet SHALL be used and quantityOfLayersPerPallet SHALL be used and logisticsUnitStackingFactor SHALL be used and nonGTINLogisticsUnitInformation/grossWeight SHALL be used and nonGTINLogisticsUnitInformation/height SHALL be used and nonGTINLogisticsUnitInformation/depth SHALL be used and nonGTINLogisticsUnitInformation/width SHALL be used.-->
-			<xsl:if test="platformTypeCode != '' and platformTypeCode != '98'">
+			<xsl:if test="string(platformTypeCode) != '' and platformTypeCode != '98'">
 				<xsl:if test="$tradeItem/isTradeItemADespatchUnit = 'true' and $tradeItem/tradeItemUnitDescriptorCode != 'PALLET' and $tradeItem/tradeItemUnitDescriptorCode != 'MIXED_MODULE'">
 					<xsl:variable name="mod1" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_hierarchy:xsd:3' and local-name()='tradeItemHierarchyModule']/tradeItemHierarchy"/>
 					<xsl:variable name="mod2" select="tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:nongtin_logistics_unit_information:xsd:3' and local-name()='nonGTINLogisticsUnitInformationModule']/nonGTINLogisticsUnitInformation"/>
-					<xsl:if test="platformTermsAndConditionsCode = '' or $mod1/quantityOfTradeItemsPerPallet = '' or $mod1/quantityOfLayersPerPallet = '' or $mod2/logisticsUnitStackingFactor = '' or $mod2/grossWeight = '' or $mod2/height = '' or $mod2/depth = '' or $mod2/width = ''">
+					<xsl:if test="string(platformTermsAndConditionsCode) = '' or string($mod1/quantityOfTradeItemsPerPallet) = '' or string($mod1/quantityOfLayersPerPallet) = '' or string($mod2/logisticsUnitStackingFactor) = '' or string($mod2/grossWeight) = '' or string($mod2/height) = '' or string($mod2/depth) = '' or string($mod2/width) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1984" />
 						</xsl:apply-templates>
@@ -391,7 +391,7 @@
 			</xsl:if>
 
 			<!--Rule 1985: If targetMarketCountryCode equals <Geographic> and platformTypeCode is used then isTradeItemADespatchUnit SHALL equal 'true'.-->
-			<xsl:if test="platformTypeCode != '' and $tradeItem/isTradeItemADespatchUnit != 'true'">
+			<xsl:if test="string(platformTypeCode) != '' and string($tradeItem/isTradeItemADespatchUnit) != 'true'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1985" />
 				</xsl:apply-templates>
@@ -408,7 +408,7 @@
 		<xsl:param name="maxWidth"/>
 		<xsl:param name="error"/>
 		<xsl:choose>
-			<xsl:when test="$module/depth = '' or $module/width = ''">
+			<xsl:when test="string($module/depth) = '' or string($module/width) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="$error" />
 				</xsl:apply-templates>
@@ -434,7 +434,7 @@
 		<xsl:apply-templates select=".//packagingRawMaterialInformation" mode="packagingInformationModule"/>
 		
 		<!--Rule 466: If packagingMaterialCompositionQuantity is not empty then value must be greater than 0.-->
-		<xsl:if test="packagingMaterialCompositionQuantity != '' and packagingMaterialCompositionQuantity &lt;= 0">
+		<xsl:if test="string(packagingMaterialCompositionQuantity) != '' and packagingMaterialCompositionQuantity &lt;= 0">
 			<xsl:apply-templates select="packagingMaterialCompositionQuantity" mode="error">
 				<xsl:with-param name="id" select="466"/>
 			</xsl:apply-templates>
@@ -442,7 +442,7 @@
 
 		<!--Rule 1025: If targetMarketCountryCode equals <Geographic> and packagingMaterial/packagingMaterialTypeCode is used then packagingMaterial/packagingMaterialCompositionQuantity SHALL be used.-->
 		<xsl:if test="contains('752, 203, 246, 703', $targetMarket)">
-			<xsl:if test="packagingMaterialTypeCode != '' and packagingMaterialCompositionQuantity =''">
+			<xsl:if test="string(packagingMaterialTypeCode) != '' and string(packagingMaterialCompositionQuantity) =''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1025" />
 				</xsl:apply-templates>
@@ -457,7 +457,7 @@
 			<xsl:when test="packagingMaterialTypeCode = 'PAPER_PAPERBOARD'"/>
 			<xsl:when test="packagingMaterialTypeCode = 'OTHER'"/>
 			<xsl:otherwise>
-				<xsl:if test="compositeMaterialDetail != ''">
+				<xsl:if test="string(compositeMaterialDetail) != ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1057" />
 					</xsl:apply-templates>
@@ -465,7 +465,7 @@
 			</xsl:otherwise>
 		</xsl:choose>
 		<!--Rule 1714: If packagingLabellingCoveragePercentage is used then the value SHALL be greater than or equal to 0 and less than or equal to 100-->
-		<xsl:if test="packagingLabellingCoveragePercentage != ''">
+		<xsl:if test="string(packagingLabellingCoveragePercentage) != ''">
 			<xsl:if test="packagingLabellingCoveragePercentage &lt; 0 or packagingLabellingCoveragePercentage &gt; 100">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1714" />
@@ -475,7 +475,7 @@
 
 		<xsl:if test="$targetMarket = '756' and $targetMarket = '040'">
 			<!--Rule 2015: If targetMarketCountryCode equals <Geographic> and packagingMaterialCompositionQuantity is used then packagingMaterialCompositionQuantity/@measurementUnitCode SHALL equal ('CMK', 'DMK', 'GRM', 'KGM', 'MGM', 'MMK', 'MTK' or 'TNE').-->
-			<xsl:if test="packagingMaterialCompositionQuantity != ''">
+			<xsl:if test="string(packagingMaterialCompositionQuantity) != ''">
 				<xsl:choose>
 					<xsl:when test="contains('CMK, DMK, GRM, KGM, MGM,MMK,MTK, TNE', packagingMaterialCompositionQuantity/@measurementUnitCode)"/>
 					<xsl:otherwise>
@@ -487,9 +487,9 @@
 			</xsl:if>
 
 			<!--Rule 2039: If targetMarketCountryCode equals <Geographic> and packagingMaterial/packagingRawMaterialInformation/packagingRawMaterialContentPercentage is used and packagingMaterial/packagingRawMaterialInformation/packagingRawMaterialCode equals 'RECYCLED' then packagingMaterial/packagingMaterialCompositionQuantity SHALL be used.-->
-			<xsl:if test="packagingMaterialCompositionQuantity = ''">
+			<xsl:if test="string(packagingMaterialCompositionQuantity) = ''">
 			<xsl:for-each select="packagingRawMaterialInformation">
-				<xsl:if test="packagingRawMaterialContentPercentage != '' and packagingRawMaterialCode = 'RECYCLED'">
+				<xsl:if test="string(packagingRawMaterialContentPercentage) != '' and packagingRawMaterialCode = 'RECYCLED'">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="2039" />
 					</xsl:apply-templates>
@@ -504,7 +504,7 @@
 
 	<xsl:template match="packagingRawMaterialInformation" mode="packagingInformationModule">
 		
-		<xsl:if test="packagingRawMaterialContentPercentage != ''">
+		<xsl:if test="string(packagingRawMaterialContentPercentage) != ''">
 
 			<!--Rule 1713: If packagingRawMaterialContentPercentage is used then the value SHALL be greater than or equal to 0 and less than or equal to 100-->
 			<xsl:if test="packagingRawMaterialContentPercentage &lt; 0 or packagingRawMaterialContentPercentage &gt; 100">
@@ -514,7 +514,7 @@
 			</xsl:if>
 
 			<!--Rule 1808: If packagingRawMaterialContentPercentage is used then packagingRawMaterialCode SHALL be used. -->
-			<xsl:if test="packagingRawMaterialCode  = ''">
+			<xsl:if test="string(packagingRawMaterialCode)  = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1808" />
 				</xsl:apply-templates>

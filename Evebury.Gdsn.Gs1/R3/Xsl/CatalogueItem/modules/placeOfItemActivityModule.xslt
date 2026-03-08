@@ -26,13 +26,13 @@
 		<xsl:param name="tradeItem"/>
 
 		<!--Rule 583: If importClassificationTypeCode is not empty then importClassificationValue must not be empty.-->
-		<xsl:if test="importClassificationTypeCode != '' and importClassificationValue = ''">
+		<xsl:if test="string(importClassificationTypeCode) != '' and string(importClassificationValue) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="583" />
 			</xsl:apply-templates>
 		</xsl:if>
 		<!--Rule 584: If importClassificationValue  is not empty then  importClassificationTypeCode must not be empty.-->
-		<xsl:if test="importClassificationValue != '' and importClassificationTypeCode = ''">
+		<xsl:if test="string(importClassificationValue) != '' and string(importClassificationTypeCode) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="584" />
 			</xsl:apply-templates>
@@ -64,14 +64,14 @@
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
 			<!--Rule 1978: If targetMarketCountryCode equals <Geographic> and statisticalReportingMeasurement is used then importClassificationValue SHALL be used.-->
 
-			<xsl:if test="statisticalReportingMeasurement != '' and importClassificationValue= ''">
+			<xsl:if test="string(statisticalReportingMeasurement) != '' and string(importClassificationValue) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1978" />
 				</xsl:apply-templates>
 			</xsl:if>
 
 			<!--Rule 2028: If targetMarketCountryCode equals <Geographic> and statisticalReportingMeasurement is used then statisticalReportingMeasurement/@measurementUnitCode SHALL equal 'H87'.-->
-			<xsl:if test="statisticalReportingMeasurement != '' and statisticalReportingMeasurement/@measurementUnitCode != 'H87'">
+			<xsl:if test="string(statisticalReportingMeasurement) != '' and statisticalReportingMeasurement/@measurementUnitCode != 'H87'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2028" />
 				</xsl:apply-templates>
@@ -125,7 +125,7 @@
 					</xsl:choose>
 				</xsl:if>
 				<!--Rule 102078: If targetMarketCountryCode equals <Geographic> and importClassificationTypeCode equals ('INTRASTAT', 'TARIF_INTEGRE_DE_LA_COMMUNAUTE' or 'CUSTOMS_TARIFF_NUMBER') and importClassificationValue starts with ('0201', '0202', '020610', '020622', '020629', '151321', '151329', '160250', '290545', '291570', '291590', '382311', '382312', '382319', '382370', '4001', '4005', '4006', '4007', '4008', '4010', '4011', '4012', '4013', '4015', '4016', '4017', '4101', '4104', '4107', '4401', '4402', '4403', '4404', '4405', '4406', '4407', '4408', '4409', '4410', '4411', '4412', '4413', '4414', '4415', '4416', '4417', '4418', '4419', '4420', '4421', '47', '48', '49', '9401', '940330', '940340', '940350', '940360', '940391' or '940610') then at least one iteration of regulationTypeCode SHALL equal 'DEFORESTATION_REGULATION' and isTradeItemRegulationCompliant SHALL equal 'TRUE' or 'NOT_APPLICABLE' in the same iteration.​-->
-				<xsl:if test="importClassificationValue != ''">
+				<xsl:if test="string(importClassificationValue) != ''">
 					<xsl:if test="starts-with(importClassificationValue, '0201') or starts-with(importClassificationValue, '0202') or starts-with(importClassificationValue, '020610') or starts-with(importClassificationValue, '020622') or starts-with(importClassificationValue, '020629') or starts-with(importClassificationValue, '151321') or starts-with(importClassificationValue, '151329') or starts-with(importClassificationValue, '160250') or starts-with(importClassificationValue, '290545') or starts-with(importClassificationValue, '291570') or starts-with(importClassificationValue, '291590') or starts-with(importClassificationValue, '382311') or starts-with(importClassificationValue, '382312') or starts-with(importClassificationValue, '382319') or starts-with(importClassificationValue, '382370') or starts-with(importClassificationValue, '4001') or starts-with(importClassificationValue, '4005') or starts-with(importClassificationValue, '4006') or starts-with(importClassificationValue, '4007') or starts-with(importClassificationValue, '4008') or starts-with(importClassificationValue, '4010') or starts-with(importClassificationValue, '4011') or starts-with(importClassificationValue, '4012') or starts-with(importClassificationValue, '4013') or starts-with(importClassificationValue, '4015') or starts-with(importClassificationValue, '4016') or starts-with(importClassificationValue, '4017') or starts-with(importClassificationValue, '4101') or starts-with(importClassificationValue, '4104') or starts-with(importClassificationValue, '4107') or starts-with(importClassificationValue, '4401') or starts-with(importClassificationValue, '4402') or starts-with(importClassificationValue, '4403') or starts-with(importClassificationValue, '4404') or starts-with(importClassificationValue, '4405') or starts-with(importClassificationValue, '4406') or starts-with(importClassificationValue, '4407') or starts-with(importClassificationValue, '4408') or starts-with(importClassificationValue, '4409') or starts-with(importClassificationValue, '4410') or starts-with(importClassificationValue, '4411') or starts-with(importClassificationValue, '4412') or starts-with(importClassificationValue, '4413') or starts-with(importClassificationValue, '4414') or starts-with(importClassificationValue, '4415') or starts-with(importClassificationValue, '4416') or starts-with(importClassificationValue, '4417') or starts-with(importClassificationValue, '4418') or starts-with(importClassificationValue, '4419') or starts-with(importClassificationValue, '4420') or starts-with(importClassificationValue, '4421') or starts-with(importClassificationValue, '47') or starts-with(importClassificationValue, '48') or starts-with(importClassificationValue, '49') or starts-with(importClassificationValue, '9401') or starts-with(importClassificationValue, '940330') or starts-with(importClassificationValue, '940340') or starts-with(importClassificationValue, '940350') or starts-with(importClassificationValue, '940360') or starts-with(importClassificationValue, '940391') or starts-with(importClassificationValue, '940610')">
 						<xsl:variable name="mod" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:regulated_trade_item:xsd:3' and local-name()='regulatedTradeItemModule']/regulatoryInformation"/>
 						<xsl:choose>

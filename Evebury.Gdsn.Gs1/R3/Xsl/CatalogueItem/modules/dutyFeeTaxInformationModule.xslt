@@ -29,7 +29,7 @@
 				<xsl:if test="count($parent/dutyFeeTaxInformation[dutyFeeTaxTypeCode = $value]) &gt; 1">
 					<!--Rule 1819: If targetMarketCountryCode equals ('250' (France)) and more than one instance of dutyFeeTaxInformation class has the same dutyFeeTaxTypeCode, then dutyFeeTaxEffectiveStartDateTime SHALL be used in all instances of the same dutyFeeTaxTypeCode.-->
 					<xsl:for-each select="$parent/dutyFeeTaxInformation[dutyFeeTaxTypeCode = $value]">
-						<xsl:if test="dutyFeeTaxEffectiveStartDateTime = ''">
+						<xsl:if test="string(dutyFeeTaxEffectiveStartDateTime) = ''">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1819" />
 							</xsl:apply-templates>
@@ -37,7 +37,7 @@
 					</xsl:for-each>
 
 					<!--Rule 1820: If targetMarketCountryCode equals ('250' (France)) and more than one instance of dutyFeeTaxInformation class has the same dutyFeeTaxTypeCode, then there SHALL be only 1 instance for the same dutyFeeTaxTypeCode that may have dutyFeeTaxEffectiveEndDateTime not used and in all other instances dutyFeeTaxEffectiveEndDateTime SHALL be used.-->
-					<xsl:if test="count($parent/dutyFeeTaxInformation[dutyFeeTaxTypeCode = $value and dutyFeeTaxEffectiveEndDateTime  = '']) &gt; 1">
+					<xsl:if test="count($parent/dutyFeeTaxInformation[dutyFeeTaxTypeCode = $value and string(dutyFeeTaxEffectiveEndDateTime)  = '']) &gt; 1">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1820" />
 						</xsl:apply-templates>
@@ -66,7 +66,7 @@
 		</xsl:if>
 		<!--Rule 571: If targetMarketCountryCode is equal to '752' (Sweden) and dutyFeeTaxAgencyCode is not empty then dutyFeeTaxAgencyCode must equal '9SE'.-->
 		<xsl:if test="$targetMarket = '752'">
-			<xsl:if test="dutyFeeTaxAgencyCode != '' and dutyFeeTaxAgencyCode != '9SE'">
+			<xsl:if test="string(dutyFeeTaxAgencyCode) != '' and dutyFeeTaxAgencyCode != '9SE'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="571" />
 				</xsl:apply-templates>
@@ -75,7 +75,7 @@
 
 		<!--Rule 1111: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and dutyFeeTaxTypeCode equals '3001000002282' then dutyFeeTaxRate shall be empty and dutyFeeTaxAmount shall be used.-->
 		<xsl:if test="$targetMarket = '249' or $targetMarket = '250'">
-			<xsl:if test="dutyFeeTaxTypeCode = '3001000002282' and (dutyFeeTaxRate !='' or dutyFeeTax[dutyFeeTaxAmount = ''])">
+			<xsl:if test="dutyFeeTaxTypeCode = '3001000002282' and (string(dutyFeeTaxRate) !='' or dutyFeeTax[dutyFeeTaxAmount = ''])">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1111" />
 				</xsl:apply-templates>
@@ -87,7 +87,7 @@
 			<!--Rule 1876: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and dutyFeeTaxTypeCode equals '3001000002312', then percentageOfAlcoholByVolume SHALL be greater than 0.-->
 			<xsl:if test="dutyFeeTaxTypeCode = '3001000002312' and $tradeItem/isTradeItemAConsumerUnit = 'true'">
 				<xsl:variable name="alcohol" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume"/>
-				<xsl:if test="$alcohol  = '' or $alcohol &lt; 1">
+				<xsl:if test="string($alcohol) = '' or $alcohol &lt; 1">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1876" />
 					</xsl:apply-templates>
@@ -114,7 +114,7 @@
 			<!--Rule 1884: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and dutyFeeTaxTypeCode equals '3001000002312', then percentageOfAlcoholByVolume SHALL be greater than 0.-->
 			<xsl:if test="dutyFeeTaxTypeCode = '3001000002312' and $tradeItem/isTradeItemAConsumerUnit = 'true'">
 				<xsl:variable name="alcohol" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation/percentageOfAlcoholByVolume"/>
-				<xsl:if  test="$alcohol = '' or $alcohol &lt;= 0">
+				<xsl:if  test="string($alcohol) = '' or $alcohol &lt;= 0">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1884" />
 					</xsl:apply-templates>
@@ -129,7 +129,7 @@
 
 				<!--Rule 1920: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and dutyFeeTaxTypeCode equals ('VAT' or 'IVA') then dutyFeeTaxRate SHALL be used.-->
 				<xsl:if test="$tradeItem/isTradeItemAConsumerUnit =  'true'">
-					<xsl:if test="dutyFeeTax[dutyFeeTaxRate = '']">
+					<xsl:if test="dutyFeeTax[string(dutyFeeTaxRate) = '']">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1920" />
 						</xsl:apply-templates>
@@ -155,7 +155,7 @@
 		<!--Rule 1860: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and dutyFeeTaxCategoryCode does not equal 'EXEMPT' and dutyFeeTaxAmount is used, then dutyFeeTaxAmount SHALL be greater than 0.-->
 		<xsl:if test="$targetMarket = '250'">
 			<xsl:if test="dutyFeeTaxCategoryCode != 'EXEMPT' and $tradeItem/isTradeItemAConsumerUnit = 'true'">
-				<xsl:if test="dutyFeeTaxAmount != '' and dutyFeeTaxAmount &lt;= 0">
+				<xsl:if test="string(dutyFeeTaxAmount) != '' and dutyFeeTaxAmount &lt;= 0">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1860" />
 					</xsl:apply-templates>

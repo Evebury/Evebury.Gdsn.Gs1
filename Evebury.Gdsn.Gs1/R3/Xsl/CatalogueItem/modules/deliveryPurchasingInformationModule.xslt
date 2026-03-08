@@ -75,7 +75,7 @@
 
 		<!--Rule 526: If orderingLeadTime is not empty, then value must be greater than 0.-->
 		<xsl:for-each select="distributionDetails/orderingLeadTime">
-			<xsl:if test=". != '' and . &lt; 0">
+			<xsl:if test="string(.) != '' and . &lt; 0">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="526" />
 				</xsl:apply-templates>
@@ -97,11 +97,11 @@
 		<xsl:if test="$targetMarket = '250'">
 
 			<!--Rule 1856: If targetMarketCountryCode equals <Geographic> and (endAvailabilityDateTime and ChildItem..endAvailabilityDateTime) are used, then ChildItem..endAvailabilityDateTime SHALL be equal to or after endAvailabilityDateTime.-->
-			<xsl:if test="endAvailabilityDateTime != ''">
+			<xsl:if test="string(endAvailabilityDateTime) != ''">
 				<xsl:variable name="endAvailabilityDateTime" select="endAvailabilityDateTime"/>
 				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
 					<xsl:variable name="date" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/endAvailabilityDateTime"/>
-					<xsl:if test="$date != ''">
+					<xsl:if test="string($date) != ''">
 						<xsl:if test="gs1:InvalidDateTimeSpan($endAvailabilityDateTime, $date)">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1856" />
@@ -112,11 +112,11 @@
 			</xsl:if>
 
 			<!--Rule 1894: If targetMarketCountryCode equals <Geographic> and (startAvailabilityDateTime and ChildItem..startAvailabilityDateTime) are used, then ChildItem..startAvailabilityDateTime SHALL be before or equal to startAvailabilityDateTime.-->
-			<xsl:if test="startAvailabilityDateTime != ''">
+			<xsl:if test="string(startAvailabilityDateTime) != ''">
 				<xsl:variable name="startAvailabilityDateTime" select="startAvailabilityDateTime"/>
 				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
 					<xsl:variable name="date" select="./tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/startAvailabilityDateTime"/>
-					<xsl:if test="$date != ''">
+					<xsl:if test="string($date) != ''">
 						<xsl:if test="gs1:InvalidDateTimeSpan($date, $startAvailabilityDateTime)">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1894" />
@@ -131,7 +131,7 @@
 
 		<!--Rule 1919: If orderingLeadTime is used then orderingLeadTime/@measurementUnitCode SHALL equal 'DAY'.-->
 		<xsl:for-each select="distributionDetails">
-			<xsl:if test="orderingLeadTime != '' and orderingLeadTime/@measurementUnitCode != 'DAY'">
+			<xsl:if test="string(orderingLeadTime) != '' and string(orderingLeadTime/@measurementUnitCode) != 'DAY'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1919" />
 				</xsl:apply-templates>
@@ -140,7 +140,7 @@
 
 		<xsl:if test="$targetMarket = '756'">
 			<!--Rule 1966: If targetMarketCountryCode equals <Geographic> and orderQuantityMinimum is used then isTradeItemAnOrderableUnit SHALL equal 'true'.-->
-			<xsl:if test="orderQuantityMinimum != '' and $tradeItem/isTradeItemAnOrderableUnit != 'true'">
+			<xsl:if test="string(orderQuantityMinimum) != '' and string($tradeItem/isTradeItemAnOrderableUnit) != 'true'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1966" />
 				</xsl:apply-templates>
@@ -152,7 +152,7 @@
 
 	<xsl:template match="incotermInformation" mode="deliveryPurchasingInformationModule">
 		<!--Rule 392: If incotermCodeLocation is not empty then incotermCode must not be empty.-->
-		<xsl:if test="incotermCodeLocation != '' and incotermCode =''">
+		<xsl:if test="string(incotermCodeLocation) != '' and string(incotermCode) =''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="392" />
 			</xsl:apply-templates>

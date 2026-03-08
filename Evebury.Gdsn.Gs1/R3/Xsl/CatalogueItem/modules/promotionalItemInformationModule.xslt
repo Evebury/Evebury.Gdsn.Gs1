@@ -26,8 +26,8 @@
 		</xsl:apply-templates>
 
 		<!--Rule 1320: If (freeQuantityOfNextLowerLevelTradeItem or  freeQuantityOfProduct) is not empty, then istradeItemAConsumerunit must equal "TRUE"-->
-		<xsl:if test="freeQuantityOfNextLowerLevelTradeItem != '' or freeQuantityOfProduct != ''">
-			<xsl:if test="$tradeItem/isTradeItemAconsumerUnit != 'true'">
+		<xsl:if test="string(freeQuantityOfNextLowerLevelTradeItem) != '' or string(freeQuantityOfProduct) != ''">
+			<xsl:if test="string($tradeItem/isTradeItemAConsumerUnit) != 'true'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1320" />
 				</xsl:apply-templates>
@@ -35,7 +35,7 @@
 		</xsl:if>
 
 		<!--Rule 1321: If promotionTypeCode is not empty, then isTradeItemAConsumerUnit must equal "TRUE"-->
-		<xsl:if test="promotionTypeCode != '' and $tradeItem/isTradeItemAconsumerUnit != 'true'">
+		<xsl:if test="string(promotionTypeCode) != '' and string($tradeItem/isTradeItemAConsumerUnit) != 'true'">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1321" />
 			</xsl:apply-templates>
@@ -56,7 +56,7 @@
 
 		<xsl:if test="$targetMarket = '250'">
 
-			<xsl:if test="isTradeItemAPromotionalUnit != 'true'">
+			<xsl:if test="string(isTradeItemAPromotionalUnit) != 'true'">
 
 				<!--Rule 1859: If targetMarketCountryCode equals <Geographic> and ChildItem..isTradeItemAPromotionalUnit equals 'true', then isTradeItemAPromotionalUnit SHALL equal 'true'.-->
 				<xsl:for-each select="$tradeItem/../catalogueItemChildItemLink/catalogueItem/tradeItem">
@@ -68,7 +68,7 @@
 				</xsl:for-each>
 
 				<!--Rule 1863: If targetMarketCountryCode equals <Geographic> and isTradeItemAConsumerUnit equals 'true' and isTradeItemAPromotionalUnit equals 'true', then promotionTypeCode and nonPromotionalTradeItem/gtin SHALL be used.-->
-				<xsl:if test="promotionTypeCode = '' or nonPromotionalTradeItem/gtin  = ''">
+				<xsl:if test="$tradeItem/isTradeItemAConsumerUnit = 'true' and (string(promotionTypeCode) = '' or string(nonPromotionalTradeItem/gtin) = '')">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1863" />
 					</xsl:apply-templates>
@@ -79,7 +79,7 @@
 			</xsl:if>
 
 			<!--Rule 1864: If targetMarketCountryCode equals <Geographic> and promotionTypeCode is used, then isTradeItemAPromotionalUnit SHALL equal 'true'.-->
-			<xsl:if test="isTradeItemAPromotionalUnit != 'true' and promotionTypeCode != ''">
+			<xsl:if test="string(isTradeItemAPromotionalUnit) != 'true' and string(promotionTypeCode) != ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1864" />
 				</xsl:apply-templates>
@@ -110,7 +110,7 @@
 
 			<!--Rule 1880: If targetMarketCountryCode equals <Geographic> and freeQuantityOfNextLowerLevelTradeItem is used, then tradeItemUnitDescriptorCode SHALL equal 'PACK_OR_INNER_PACK', quantityOfChildren SHALL be greater than 1 and promotionTypeCode SHALL equal 'MULTI_PACK_AND_COMBINATION_PACK'.-->
 			<xsl:if test="freeQuantityOfNextLowerLevelTradeItem">
-				<xsl:if test="$tradeItem/tradeItemUnitDescriptorCode != 'PACK_OR_INNER_PACK' or promotionTypeCode != 'MULTI_PACK_AND_COMBINATION_PACK' or $tradeItem/nextLowerLevelTradeItemInformation/quantityOfChildren &lt;= 1">
+				<xsl:if test="string($tradeItem/tradeItemUnitDescriptorCode) != 'PACK_OR_INNER_PACK' or string(promotionTypeCode) != 'MULTI_PACK_AND_COMBINATION_PACK' or $tradeItem/nextLowerLevelTradeItemInformation/quantityOfChildren &lt;= 1">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1880" />
 					</xsl:apply-templates>
@@ -160,7 +160,7 @@
 		</xsl:for-each>
 
 		<!--Rule 1317: If PromotionalItemInformation/nonPromotionalTradeItem/tradeItemIdentification is not empty,  then isTradeItemAconsumerUnit must equal "TRUE" -->
-		<xsl:if test="gtin != '' and $tradeItem/isTradeItemAconsumerUnit != 'true'">
+		<xsl:if test="string(gtin) != '' and string($tradeItem/isTradeItemAConsumerUnit) != 'true'">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1317" />
 			</xsl:apply-templates>

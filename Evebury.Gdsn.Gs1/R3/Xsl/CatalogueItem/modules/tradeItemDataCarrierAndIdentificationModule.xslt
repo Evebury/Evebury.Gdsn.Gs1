@@ -46,7 +46,7 @@
 				</xsl:when>
 				<!--Rule 1748: If gs1TradeItemIdentificationKeyCode is equal to 'ZERO_SUPPRESSED_GTIN', then the first digit of gs1TradeItemIdentificationKeyValue SHALL equal '0'.-->
 				<xsl:when test="gs1TradeItemIdentificationKeyCode  = 'ZERO_SUPPRESSED_GTIN'">
-					<xsl:if test="gs1TradeItemIdentificationKeyValue = '' or substring(gs1TradeItemIdentificationKeyValue,1,1) != '0'">
+					<xsl:if test="string(gs1TradeItemIdentificationKeyValue) = '' or substring(gs1TradeItemIdentificationKeyValue,1,1) != '0'">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1748" />
 						</xsl:apply-templates>
@@ -61,7 +61,7 @@
 		</xsl:for-each>
 
 		<!--Rule 1834: If (gs1TradeItemIdentificationKeyValue is used or gs1TradeItemIdentificationKeyCode is used) then gs1TradeItemIdentificationKeyValue SHALL be used and gs1TradeItemIdentificationKeyCode SHALL be used.-->
-		<xsl:if test="(gs1TradeItemIdentificationKeyValue != '' or gs1TradeItemIdentificationKeyCode != '') and (gs1TradeItemIdentificationKeyValue = '' or gs1TradeItemIdentificationKeyCode = '')">
+		<xsl:if test="(string(gs1TradeItemIdentificationKeyValue) != '' or string(gs1TradeItemIdentificationKeyCode) != '') and (string(gs1TradeItemIdentificationKeyValue) = '' or string(gs1TradeItemIdentificationKeyCode) = '')">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1834" />
 			</xsl:apply-templates>

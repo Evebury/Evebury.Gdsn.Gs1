@@ -15,7 +15,7 @@
 
 		<!--Rule 1741: If targetMarketCountryCode equals <Geographic> and areBatteriesRequired equals 'true' then areBatteriesIncluded SHALL be used.-->
 		<xsl:if test="contains('040, 056, 208, 246, 250, 276, 442, 528, 756', $targetMarket)" >
-			<xsl:if test="areBatteriesRequired  = 'true' and areBatteriesIncluded = ''">
+			<xsl:if test="areBatteriesRequired  = 'true' and string(areBatteriesIncluded) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1741" />
 				</xsl:apply-templates>
@@ -30,25 +30,25 @@
 			<xsl:with-param name="targetMarket" select="$targetMarket"/>
 		</xsl:apply-templates>
 		<!--Rule 1781: If quantityOfBatteriesBuiltIn is used, then quantityOfBatteriesBuiltIn SHALL be greater than 0.-->
-		<xsl:if test="quantityOfBatteriesBuiltIn != '' and quantityOfBatteriesBuiltIn &lt;= 0">
+		<xsl:if test="string(quantityOfBatteriesBuiltIn) != '' and quantityOfBatteriesBuiltIn &lt;= 0">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1781" />
 			</xsl:apply-templates>
 		</xsl:if>
 		<!--Rule 1782: If quantityOfBatteriesIncluded is used then quantityOfBatteriesIncluded SHALL be greater than 0.-->
-		<xsl:if test="quantityOfBatteriesIncluded != '' and quantityOfBatteriesIncluded &lt;= 0">
+		<xsl:if test="string(quantityOfBatteriesIncluded) != '' and quantityOfBatteriesIncluded &lt;= 0">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1782" />
 			</xsl:apply-templates>
 		</xsl:if>
 		<!--Rule 1783: If quantityOfBatteriesRequired is used, then quantityOfBatteriesRequired SHALL be greater than 0.-->
-		<xsl:if test="quantityOfBatteriesRequired != '' and quantityOfBatteriesRequired &lt;= 0">
+		<xsl:if test="string(quantityOfBatteriesRequired) != '' and quantityOfBatteriesRequired &lt;= 0">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1783" />
 			</xsl:apply-templates>
 		</xsl:if>
 		<!--Rule 1784: If batteryWeight is used, then batteryWeight SHALL be greater than 0.-->
-		<xsl:if test="batteryWeight != '' and batteryWeight &lt;= 0">
+		<xsl:if test="string(batteryWeight) != '' and batteryWeight &lt;= 0">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1784" />
 			</xsl:apply-templates>
@@ -57,7 +57,7 @@
 		<xsl:choose>
 			<xsl:when test="contains('203, 208, 250, 840, 104, 430', $targetMarket)"/>
 			<xsl:otherwise>
-				<xsl:if test="batteryWeight != '' and batteryWeight/@measurementUnitCode != 'KGM' and batteryWeight/@measurementUnitCode != 'GRM' and batteryWeight/@measurementUnitCode != 'MGM'">
+				<xsl:if test="string(batteryWeight) != '' and string(batteryWeight/@measurementUnitCode) != 'KGM' and string(batteryWeight/@measurementUnitCode) != 'GRM' and string(batteryWeight/@measurementUnitCode) != 'MGM'">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1785" />
 					</xsl:apply-templates>
@@ -67,7 +67,7 @@
 
 		<xsl:if test="$targetMarket = '756'">
 			<!--Rule 2023: If targetMarketCountryCode equals <Geographic> and areBatteriesBuiltIn is used then areBatteriesBuiltIn SHALL equal ('TRUE' or 'FALSE').-->
-			<xsl:if test="areBatteriesBuiltIn != '' and areBatteriesBuiltIn != 'FALSE' and areBatteriesBuiltIn != 'TRUE'">
+			<xsl:if test="string(areBatteriesBuiltIn) != '' and areBatteriesBuiltIn != 'FALSE' and areBatteriesBuiltIn != 'TRUE'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2023" />
 				</xsl:apply-templates>
@@ -80,7 +80,7 @@
 		<xsl:param name="targetMarket"/>
 		<xsl:apply-templates select="tradeItemMaterialComposition" mode="batteryInformationModule"/>
 		<!--Rule 1553: (if TradeItemMaterial/materialAgencyCode is used then TradeItemMaterial/TradeItemMaterialComposition/materialCode shall be used) and (if TradeItemMaterial/TradeItemMaterialComposition/materialCode is used then TradeItemMaterial/materialAgencyCode shall be used).-->
-		<xsl:if test="(materialAgencyCode != '' and materialCode = '') or (materialAgencyCode = '' and materialCode != '')">
+		<xsl:if test="(string(materialAgencyCode) != '' and string(materialCode) = '') or (string(materialAgencyCode) = '' and string(materialCode) != '')">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1553" />
 			</xsl:apply-templates>
@@ -89,8 +89,8 @@
 		<xsl:choose>
 			<xsl:when test="$targetMarket = '056' or $targetMarket = '442' or $targetMarket = '528'"/>
 			<xsl:otherwise>
-				<xsl:if test="materialAgencyCode != '' and tradeItemMaterialComposition/materialCode !=''">
-					<xsl:if test="tradeItemMaterialComposition/materialPercentage = ''">
+				<xsl:if test="string(materialAgencyCode) != '' and string(tradeItemMaterialComposition/materialCode) !=''">
+					<xsl:if test="string(tradeItemMaterialComposition/materialPercentage) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1554" />
 						</xsl:apply-templates>

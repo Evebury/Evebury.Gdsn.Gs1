@@ -102,7 +102,7 @@
 
 		<!--Rule 1802: If targetMarketCountryCode equals ('208' (Denmark) or 752' (Sweden)) then aDRDangerousGoodsLimitedQuantitiesCode SHALL NOT be used.-->
 		<xsl:if test="$targetMarket= '208' or $targetMarket = '752'">
-			<xsl:if test="aDRDangerousGoodsLimitedQuantitiesCode != ''">
+			<xsl:if test="string(aDRDangerousGoodsLimitedQuantitiesCode) != ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1802" />
 				</xsl:apply-templates>

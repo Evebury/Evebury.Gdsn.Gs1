@@ -25,20 +25,20 @@
 		</xsl:if>
 
 		<!--Rule 491: If maximumHumidityPercentage and minimumHumidityPercentage are used then value shall be greater than, or equal to '0' and less than or equal to '100'.-->
-		<xsl:if test="minimumHumidityPercentage != '' and (minimumHumidityPercentage &lt; 0 or minimumHumidityPercentage &gt; 100)">
+		<xsl:if test="string(minimumHumidityPercentage) != '' and (minimumHumidityPercentage &lt; 0 or minimumHumidityPercentage &gt; 100)">
 			<xsl:apply-templates select="minimumHumidityPercentage" mode="error">
 				<xsl:with-param name="id" select="362"/>
 			</xsl:apply-templates>
 		</xsl:if>
-		<xsl:if test="maximumHumidityPercentage != '' and (maximumHumidityPercentage &lt; 0 or maximumHumidityPercentage &gt; 100)">
+		<xsl:if test="string(maximumHumidityPercentage) != '' and (maximumHumidityPercentage &lt; 0 or maximumHumidityPercentage &gt; 100)">
 			<xsl:apply-templates select="maximumHumidityPercentage" mode="error">
 				<xsl:with-param name="id" select="362"/>
 			</xsl:apply-templates>
 		</xsl:if>
 
 		<!--Rule 1076: If maximumHumidityPercentage and/or minimumHumidityPercentage are not empty then humidityQualifierCode must not be empty.-->
-		<xsl:if test="humidityQualifierCode = ''">
-			<xsl:if test="minimumHumidityPercentage != '' or maximumHumidityPercentage != ''">
+		<xsl:if test="string(humidityQualifierCode) = ''">
+			<xsl:if test="string(minimumHumidityPercentage) != '' or string(maximumHumidityPercentage) != ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1076" />
 				</xsl:apply-templates>
@@ -46,7 +46,7 @@
 		</xsl:if>
 
 		<!--Rule 1838: If humidityQualifierCode is used, then at least one other attribute in the TradeItemHumidityInformation class SHALL be used.-->
-		<xsl:if test="humidityQualifierCode != ''">
+		<xsl:if test="string(humidityQualifierCode) != ''">
 			<xsl:if test="count(*[name() != 'humidityQualifierCode']) = 0">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1838" />

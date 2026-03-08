@@ -26,7 +26,7 @@
 		<!--Rule 1353: If targetMarketCountrycode equals '752' (Sweden) and regulationTypeCode equals 'TRACEABILITY_REGULATION', then regulatoryAct AND regulatoryAgency shall be used.-->
 		<xsl:if test="$targetMarket = '752'">
 			<xsl:if test="regulationTypeCode = 'TRACEABILITY_REGULATION'">
-				<xsl:if test="regulatoryAct  = '' or regulatoryAgency = ''">
+				<xsl:if test="string(regulatoryAct)  = '' or string(regulatoryAgency) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1353" />
 					</xsl:apply-templates>
@@ -37,7 +37,7 @@
 		<!--Rule 1704: If targetMarketCountryCode equals '250' (France) and regulationTypeCode equals 'BIOCIDE_REGULATION', then regulationLevelCodeReference SHALL be populated.-->
 		<xsl:if test="$targetMarket = '250'">
 			<xsl:if test="regulationTypeCode = 'BIOCIDE_REGULATION'">
-				<xsl:if test="regulationLevelCodeReference  = ''">
+				<xsl:if test="string(regulationLevelCodeReference)  = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1704" />
 					</xsl:apply-templates>
@@ -49,7 +49,7 @@
 
 			<!--Rule 1943: If targetMarketCountryCode equals <Geographic> and regulationTypeCode equals 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant equals 'TRUE' then regulationLevelCodeReference and regulatoryActComplianceLevelCode SHALL be used.-->
 			<xsl:if test="regulationTypeCode = 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant = 'TRUE'">
-				<xsl:if test="regulatoryActComplianceLevelCode = ''">
+				<xsl:if test="string(regulatoryActComplianceLevelCode) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1943" />
 					</xsl:apply-templates>
@@ -57,8 +57,8 @@
 			</xsl:if>
 
 			<!--Rule 2011: If targetMarketCountryCode equals <Geographic> and (regulationLevelCodeReference is used or regulatoryActComplianceLevelCode is used) then regulationTypeCode SHALL equal 'EXPLOSIVES_PRECURSORS_REGISTRATION' and isTradeItemRegulationCompliant SHALL equal 'TRUE'.-->
-			<xsl:if test="regulationLevelCodeReference != '' or regulatoryActComplianceLevelCode != ''">
-				<xsl:if test="regulationTypeCode != 'EXPLOSIVES_PRECURSORS_REGISTRATION' or isTradeItemRegulationCompliant != 'TRUE'">
+			<xsl:if test="string(regulationLevelCodeReference) != '' or string(regulatoryActComplianceLevelCode) != ''">
+				<xsl:if test="string(regulationTypeCode) != 'EXPLOSIVES_PRECURSORS_REGISTRATION' or string(isTradeItemRegulationCompliant) != 'TRUE'">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="2011" />
 					</xsl:apply-templates>
@@ -73,7 +73,7 @@
 			<xsl:if test="$tradeItem/isTradeItemABaseUnit = 'true' and regulatoryAct = 'GHS'">
 				<xsl:if test="isTradeItemRegulationCompliant = 'TRUE'">
 					<xsl:for-each select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:safety_data_sheet:xsd:3' and local-name()='safetyDataSheetModule']/safetyDataSheetInformation/gHSDetail">
-						<xsl:if test="precautionaryStatement/precautionaryStatementsCode = '' or hazardStatement/hazardStatementsCode = '' or gHSSymbolDescriptionCode = ''">
+						<xsl:if test="string(precautionaryStatement/precautionaryStatementsCode) = '' or string(hazardStatement/hazardStatementsCode) = '' or string(gHSSymbolDescriptionCode) = ''">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="2003" />
 							</xsl:apply-templates>
@@ -84,7 +84,7 @@
 
 			<!--Rule 2020: If targetMarketCountryCode equals <Geographic> and regulatoryAgency equals 'UN' and regulatoryAct equals 'GHS' then the corresponding regulatoryPermitIdentification SHALL equal ('TRUE' or 'FALSE').-->
 			<xsl:if test="regulatoryAgency = 'UN' or regulatoryAct = 'GHS'">
-				<xsl:if test="isTradeItemRegulationCompliant != 'FALSE' and isTradeItemRegulationCompliant != 'TRUE'">
+				<xsl:if test="string(isTradeItemRegulationCompliant) != 'FALSE' and string(isTradeItemRegulationCompliant) != 'TRUE'">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="2020" />
 					</xsl:apply-templates>
@@ -108,8 +108,8 @@
 
 		<!--Rule 1300: If TargetMarket equals '124' (Canada) and regulatoryPermitIdentification is used, then doesSaleOfTradeItemRequireGovernmentalReporting shall be used.-->
 		<xsl:if test="$targetMarket  = '124'">
-			<xsl:if test="regulatoryPermitIdentification != ''">
-				<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:healthcare_item_information:xsd:3' and local-name()='healthcareItemInformationModule']/healthcareItemInformation/doesSaleOfTradeItemRequireGovernmentalReporting = ''">
+			<xsl:if test="string(regulatoryPermitIdentification) != ''">
+				<xsl:if test="string($tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:healthcare_item_information:xsd:3' and local-name()='healthcareItemInformationModule']/healthcareItemInformation/doesSaleOfTradeItemRequireGovernmentalReporting) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1300" />
 					</xsl:apply-templates>

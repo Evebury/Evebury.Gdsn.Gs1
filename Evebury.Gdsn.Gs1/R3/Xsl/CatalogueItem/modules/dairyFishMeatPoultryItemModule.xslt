@@ -27,7 +27,7 @@
 
 		<!--Rule 1939: If targetMarketCountryCode equals <Geographic> and fatPercentageInDryMatter is used then fatInMilkContent SHALL NOT be used.-->
 		<xsl:if test="$targetMarket = '756'">
-			<xsl:if test="cheeseInformation[fatPercentageInDryMatter != '']">
+			<xsl:if test="cheeseInformation[string(fatPercentageInDryMatter) != '']">
 				<xsl:if test="fatInMilkContent != ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1939" />
@@ -77,14 +77,14 @@
 
 	<xsl:template match="fishCatchInformation" mode="dairyFishMeatPoultryItemModule">
 		<!--Rule 1840: If productionMethodForFishAndSeafoodCode equals 'MARINE_FISHERY' then catchCountryCode SHALL NOT be used.-->
-		<xsl:if test="productionMethodForFishAndSeafoodCode = 'MARINE_FISHERY' and catchCountryCode != ''">
+		<xsl:if test="productionMethodForFishAndSeafoodCode = 'MARINE_FISHERY' and string(catchCountryCode) != ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1840" />
 			</xsl:apply-templates>
 		</xsl:if>
 
 		<!--Rule 1841: If catchCountryCode and catchAreaCode are used then catchAreaCode SHALL equal (’01’, ‘02’, ’03’, ’04’, ’05’, ’06’, ’07, or ’08’).-->
-		<xsl:if test="catchAreaCode != '' and catchCountryCode != ''">
+		<xsl:if test="string(catchAreaCode) != '' and string(catchCountryCode) != ''">
 			<xsl:choose>
 				<xsl:when test="contains('01, 02, 03, 04, 05, 06, 07, 08', catchAreaCode)"/>
 				<xsl:otherwise>
@@ -111,7 +111,7 @@
 	<xsl:template match="cheeseInformation" mode="dairyFishMeatPoultryItemModule">
 		<xsl:param name="targetMarket"/>
 		<!--Rule 1034: If fatPercentageInDryMatter is not empty then value must be greater than or equal to 0 and less than or equal to 100.00.-->
-		<xsl:if test="fatPercentageInDryMatter != '' and (fatPercentageInDryMatter &lt; 0 or fatPercentageInDryMatter &gt; 100)">
+		<xsl:if test="string(fatPercentageInDryMatter) != '' and (fatPercentageInDryMatter &lt; 0 or fatPercentageInDryMatter &gt; 100)">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1034" />
 			</xsl:apply-templates>
@@ -121,21 +121,21 @@
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
 
 			<!--Rule 1948: If targetMarketCountryCode equals <Geographic> and fatPercentageInDryMatterMeasurementPrecisionCode is used then fatPercentageInDryMatter SHALL be used.-->
-			<xsl:if test="fatPercentageInDryMatterMeasurementPrecisionCode != '' and fatPercentageInDryMatter = ''">
+			<xsl:if test="string(fatPercentageInDryMatterMeasurementPrecisionCode) != '' and string(fatPercentageInDryMatter) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1948" />
 				</xsl:apply-templates>
 			</xsl:if>
 
 			<!--Rule 2013: If targetMarketCountryCode equals <Geographic> and fatPercentageInDryMatterMeasurementPrecisionCode is used then fatPercentageInDryMatterMeasurementPrecisionCode SHALL equal 'GREATER_THAN_OR_EQUAL'.-->
-			<xsl:if test="fatPercentageInDryMatterMeasurementPrecisionCode != '' and fatPercentageInDryMatterMeasurementPrecisionCode != 'GREATER_THAN_OR_EQUAL'">
+			<xsl:if test="string(fatPercentageInDryMatterMeasurementPrecisionCode) != '' and string(fatPercentageInDryMatterMeasurementPrecisionCode) != 'GREATER_THAN_OR_EQUAL'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2013" />
 				</xsl:apply-templates>
 			</xsl:if>
 
 			<!--Rule 2029: If targetMarketCountryCode equals <Geographic> and ripeningTimePeriod is used then ripeningTimePeriod/@measurementUnitCode SHALL equal ('ANN', 'DAY', 'HUR', 'MIN', 'MON', 'SEC' or 'WEE').-->
-			<xsl:if test="ripeningTimePeriod != ''">
+			<xsl:if test="string(ripeningTimePeriod) != ''">
 				<xsl:choose>
 					<xsl:when test="contains('ANN, DAY, HUR, MIN, MON, SEC, WEE', ripeningTimePeriod/@measurementUnitCode)"/>
 					<xsl:otherwise>

@@ -24,7 +24,7 @@
 
 		<!--Rule 1870: minimumTerpeneContent and maximumTerpeneContent, if one value is used the other should be used as well-->
 		<xsl:for-each select="terpeneInformation">
-			<xsl:if test="(minimumTerpeneContent != '' or maximumTerpeneContent !='') and (minimumTerpeneContent = '' or maximumTerpeneContent ='')">
+			<xsl:if test="(string(minimumTerpeneContent) != '' or string(maximumTerpeneContent) !='') and (string(minimumTerpeneContent) = '' or string(maximumTerpeneContent) ='')">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1869" />
 				</xsl:apply-templates>
@@ -35,7 +35,7 @@
 	<xsl:template match="claimDetail" mode="productInformationModule">
 		<xsl:param name="targetMarket"/>
 		<!--Rule 1236: If claimElementCode is used then claimTypeCode SHALL be used.-->
-		<xsl:if test="claimElementCode != '' and claimTypeCode = ''">
+		<xsl:if test="string(claimElementCode) != '' and string(claimTypeCode) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1236" />
 			</xsl:apply-templates>
@@ -44,14 +44,14 @@
 		<xsl:if test="$targetMarket = '756'">
 
 			<!--Rule 1947: If targetMarketCountryCode equals <Geographic> and claimMarkedOnPackage is used then claimTypeCode SHALL be used.-->
-			<xsl:if test="claimMarkedOnPackage != '' and claimTypeCode  = ''">
+			<xsl:if test="string(claimMarkedOnPackage) != '' and string(claimTypeCode)  = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1947" />
 				</xsl:apply-templates>
 			</xsl:if>
 
 			<!--Rule 2022: If targetMarketCountryCode equals <Geographic> and claimMarkedOnPackage is used then claimMarkedOnPackage SHALL equal ('TRUE' or 'FALSE').-->
-			<xsl:if test="claimMarkedOnPackage != '' and claimMarkedOnPackage != 'FALSE' and claimMarkedOnPackage != 'TRUE'">
+			<xsl:if test="string(claimMarkedOnPackage) != '' and string(claimMarkedOnPackage) != 'FALSE' and string(claimMarkedOnPackage) != 'TRUE'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2022" />
 				</xsl:apply-templates>
@@ -62,7 +62,7 @@
 	<xsl:template match="tobaccoCannabisInformation" mode="productInformationModule">
 		<!--Rule 1869: cannabinoidMinimumRangeValue and cannabinoidMaximumRangeValue, if one value is used the other should be used as well-->
 		<xsl:for-each select="cannabinoidContentInformation">
-			<xsl:if test="(cannabinoidMinimumRangeValue != '' or cannabinoidMaximumRangeValue !='') and (cannabinoidMinimumRangeValue = '' or cannabinoidMaximumRangeValue ='')">
+			<xsl:if test="(string(cannabinoidMinimumRangeValue) != '' or string(cannabinoidMaximumRangeValue) !='') and (string(cannabinoidMinimumRangeValue) = '' or string(cannabinoidMaximumRangeValue) ='')">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1869" />
 				</xsl:apply-templates>

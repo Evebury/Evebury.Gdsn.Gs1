@@ -7,25 +7,20 @@ namespace Evebury.Gdsn.Gs1.Test
     [TestClass]
     public sealed class CatalogueItemNotification
     {
-        private XmlDocument Message
+
+        private readonly XmlDocument _message;
+
+        public CatalogueItemNotification()
         {
-            get
-            {
-                if (field is null)
-                {
-                    XmlDocument message = new();
-                    message.Load("CatalogueItemNotification.xml");
-                    field = message;
-                }
-                return field;
-            }
+            _message = new();
+            _message.Load("CatalogueItemNotification.xml");
         }
 
         [TestMethod]
         public async Task Validate()
         {
             Gs1Validator validator = new();
-            Response response = await validator.Validate(Message);
+            Response response = await validator.Validate(_message);
             Assert.AreEqual(StatusType.OK, response.Status, "All validations should pass");
         }
 
@@ -56,7 +51,7 @@ namespace Evebury.Gdsn.Gs1.Test
             XmlDocument compare = new();
             compare.Load("CatalogueItemNotificationCompare.xml");
 
-            Response response = Gs1Validator.Compare(Message, compare);
+            Response response = Gs1Validator.Compare(_message, compare);
             Assert.AreEqual(StatusType.OK, response.Status, "Dates will not apply on equality");
         }
 
@@ -96,7 +91,7 @@ namespace Evebury.Gdsn.Gs1.Test
             previous.Load("CatalogueItemNotificationPrevious.xml");
 
             Gs1Validator validator = new();
-            Response response = await validator.Validate(Message, previous);
+            Response response = await validator.Validate(_message, previous);
             Assert.AreEqual(StatusType.ERROR, response.Status, "A validation rule should have be triggered");
         }
 

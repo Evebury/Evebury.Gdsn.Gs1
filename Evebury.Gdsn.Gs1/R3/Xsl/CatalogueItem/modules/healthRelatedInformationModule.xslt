@@ -26,7 +26,7 @@
 		<xsl:if test="$targetMarket = '246'">
 			<xsl:if test="compulsoryAdditiveLabelInformation">
 				<xsl:choose>
-					<xsl:when test="compulsoryAdditiveLabelInformation[@languageCode = 'fi'] != '' and compulsoryAdditiveLabelInformation[@languageCode = 'sv'] != ''"/>
+					<xsl:when test="string(compulsoryAdditiveLabelInformation[@languageCode = 'fi']) != '' and string(compulsoryAdditiveLabelInformation[@languageCode = 'sv']) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1908" />
@@ -53,7 +53,7 @@
 
 	<xsl:template match="compulsoryAdditionalInformation" mode="healthRelatedInformationModule">
 		<!--Rule 1839: If compulsoryAdditionalLabelInformationTypeCode is used, then compulsoryAdditionalLabelInformation SHALL be used.-->
-		<xsl:if test="compulsoryAdditionalLabelInformationTypeCode != '' and compulsoryAdditionalLabelInformation  = ''">
+		<xsl:if test="string(compulsoryAdditionalLabelInformationTypeCode) != '' and string(compulsoryAdditionalLabelInformation)  = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1839" />
 			</xsl:apply-templates>
@@ -84,7 +84,7 @@
 		
 		<!--Rule 1799: If nutritionalProgramCode equals '8' (Nutri-Score) and nutritionalProgramStatusCode equals ‘NOT_REGISTERED’ then nutritionalScore SHALL NOT be used.-->
 		<xsl:if test="nutritionalProgramCode  = '8' and nutritionalProgramStatusCode = 'NOT_REGISTERED'">
-			<xsl:if test="nutritionalScore != ''">
+			<xsl:if test="string(nutritionalScore) != ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1799" />
 				</xsl:apply-templates>

@@ -50,8 +50,8 @@
 
 		<xsl:if test="$targetMarket = '756'">
 			<!--Rule 2006: If targetMarketCountryCode equals <Geographic> and (chemicalIngredientIdentification is used or chemicalIngredientScheme is used) then chemicalIngredientIdentification SHALL be used and chemicalIngredientScheme SHALL equal 'UFI'.-->
-			<xsl:if test="chemicalInformation/chemicalIngredientScheme != '' or chemicalInformation/chemicalIngredient[chemicalIngredientIdentification != '']">
-				<xsl:if test="chemicalInformation/chemicalIngredientScheme != 'UFI' or chemicalInformation/chemicalIngredient[chemicalIngredientIdentification = '']">
+			<xsl:if test="string(chemicalInformation/chemicalIngredientScheme) != '' or chemicalInformation/chemicalIngredient[string(chemicalIngredientIdentification) != '']">
+				<xsl:if test="chemicalInformation/chemicalIngredientScheme != 'UFI' or chemicalInformation/chemicalIngredient[string(chemicalIngredientIdentification) = '']">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="2006" />
 					</xsl:apply-templates>
@@ -72,9 +72,9 @@
 		</xsl:if>
 		<!--Rule 569: If targetMarketCountryCode does not equal ('756' (Switzerland), '276' (Germany), '040' (Austria), '528' (Netherlands), '056' (Belgium), '442' (Luxembourg), 203 (Czech Republic), or '250' (France)) and uniformResourceIdentifier is used and referencedFileTypeCode equals 'PRODUCT_IMAGE' then fileFormatName SHALL be used.-->
 		<xsl:if test="not(contains('756, 276, 040, 528, 056, 442, 203, 250', $targetMarket))">
-			<xsl:if test="uniformResourceIdentifier != '' and referencedFileTypeCode = 'PRODUCT_IMAGE'">
+			<xsl:if test="string(uniformResourceIdentifier) != '' and referencedFileTypeCode = 'PRODUCT_IMAGE'">
 				<xsl:choose>
-					<xsl:when test="fileFormatName != ''"/>
+					<xsl:when test="string(fileFormatName) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="569" />
@@ -85,9 +85,9 @@
 		</xsl:if>
 		<!--Rule 570: If uniformResourceIdentifier is used and referencedFileTypeCode equals  'PRODUCT_IMAGE' and targetMarketCountryCode does not equal  756 (Switzerland), 276 (Germany), 040 (Austria), 528 (Netherlands) then fileName shall be used.-->
 		<xsl:if test="not(contains('756, 276, 040, 528', $targetMarket))">
-			<xsl:if test="uniformResourceIdentifier != '' and referencedFileTypeCode = 'PRODUCT_IMAGE'">
+			<xsl:if test="string(uniformResourceIdentifier) != '' and referencedFileTypeCode = 'PRODUCT_IMAGE'">
 				<xsl:choose>
-					<xsl:when test="fileName != ''"/>
+					<xsl:when test="string(fileName) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="570" />
@@ -97,9 +97,9 @@
 			</xsl:if>
 		</xsl:if>
 		<!--Rule 1611: If targetMarketCountryCode equals ‘250’ (France)) and uniformResourceIdentifier is used, and referencedFileTypeCode equals (‘VIDEO’ or ‘360_DEGREE_IMAGE’ or ‘MOBILE_DEVICE_IMAGE’ or ‘OUT_OF_PACKAGE_IMAGE’ or ‘PRODUCT_IMAGE’ or ‘PRODUCT_LABEL_IMAGE’ or ‘TRADE_ITEM_IMAGE_WITH_DIMENSIONS’)  then fileEffectiveStartDateTime shall  be used.-->
-		<xsl:if test="$targetMarket ='250' and uniformResourceIdentifier != ''">
+		<xsl:if test="$targetMarket ='250' and string(uniformResourceIdentifier) != ''">
 			<xsl:if test="referencedFileTypeCode = 'VIDEO' or referencedFileTypeCode = '360_DEGREE_IMAGE' or referencedFileTypeCode = 'MOBILE_DEVICE_IMAGE' or referencedFileTypeCode = 'OUT_OF_PACKAGE_IMAGE' or referencedFileTypeCode = 'PRODUCT_IMAGE'or referencedFileTypeCode = 'PRODUCT_LABEL_IMAGE' or referencedFileTypeCode = 'TRADE_ITEM_IMAGE_WITH_DIMENSIONS'">
-				<xsl:if test="fileEffectiveStartDateTime = ''">
+				<xsl:if test="string(fileEffectiveStartDateTime) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1611" />
 					</xsl:apply-templates>
@@ -123,8 +123,8 @@
 				</xsl:apply-templates>
 			</xsl:if>
 			<!--Rule 1548: If flashPointDescriptor is used, then at least (flashPointtemperature, or flashPointTemperatureLowerValue or flashPointTemperatureUpperValue) shall be used.-->
-			<xsl:if test="flashPointDescriptor != ''">
-				<xsl:if test="flashPointTemperature = '' and flashPointTemperatureLowerValue = '' and  flashPointTemperatureUpperValue = ''">
+			<xsl:if test="string(flashPointDescriptor) != ''">
+				<xsl:if test="string(flashPointTemperature) = '' and string(flashPointTemperatureLowerValue) = '' and string(flashPointTemperatureUpperValue) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1548" />
 					</xsl:apply-templates>
@@ -161,7 +161,7 @@
 		<!--Rule 1961: If targetMarketCountryCode equals <Geographic> and hazardStatementsCode equals 'EUH208' then hazardStatementsDescription SHALL be used.-->
 		<xsl:if test="contains('203, 756, 040, 703', $targetMarket)">
 			<xsl:for-each select="hazardStatement">
-			<xsl:if test="hazardStatementsCode  = 'EUH208' and hazardStatementsDescription = ''">
+			<xsl:if test="hazardStatementsCode  = 'EUH208' and string(hazardStatementsDescription) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1961" />
 				</xsl:apply-templates>
@@ -174,7 +174,7 @@
 
 			<!--Rule 1962: If targetMarketCountryCode equals <Geographic> and precautionaryStatementsCode equals ('P221', 'P230', 'P231', 'P231+P232', 'P241', 'P250', 'P264', 'P264+P265', 'P301', 'P301+P310', 'P301+P310+P330+P331', 'P301+P312', 'P302', 'P302+P352', 'P303', 'P303+P361+P353+P310', 'P304', 'P304+P310', 'P304+P312', 'P304+P340+P312', 'P305', 'P305+P351+P338+P310', 'P306', 'P307+P311', 'P308', 'P308+P311', 'P310', 'P311', 'P312', 'P320', 'P321', 'P332', 'P333', 'P337', 'P342', 'P342+P311', 'P352', 'P370', 'P370+P378', 'P370+P380+P375+[P378]', 'P371', 'P378', 'P401', 'P406', 'P411', 'P411+P235', 'P413', 'P422', 'P501' or 'P503') then precautionaryStatementsDescription SHALL be used.-->
 			<xsl:for-each select="precautionaryStatement">
-				<xsl:if test="contains('P221, P230, P231, P231+P232, P241, P250, P264, P264+P265, P301, P301+P310, P301+P310+P330+P331, P301+P312, P302, P302+P352, P303, P303+P361+P353+P310, P304, P304+P310, P304+P312, P304+P340+P312, P305, P305+P351+P338+P310, P306, P307+P311, P308, P308+P311, P310, P311, P312, P320, P321, P332, P333, P337, P342, P342+P311, P352, P370, P370+P378, P370+P380+P375+[P378], P371, P378, P401, P406, P411, P411+P235, P413, P422, P501, P503', precautionaryStatementsCode) and precautionaryStatementsDescription = ''">
+				<xsl:if test="contains('P221, P230, P231, P231+P232, P241, P250, P264, P264+P265, P301, P301+P310, P301+P310+P330+P331, P301+P312, P302, P302+P352, P303, P303+P361+P353+P310, P304, P304+P310, P304+P312, P304+P340+P312, P305, P305+P351+P338+P310, P306, P307+P311, P308, P308+P311, P310, P311, P312, P320, P321, P332, P333, P337, P342, P342+P311, P352, P370, P370+P378, P370+P380+P375+[P378], P371, P378, P401, P406, P411, P411+P235, P413, P422, P501, P503', precautionaryStatementsCode) and string(precautionaryStatementsDescription) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1962" />
 					</xsl:apply-templates>
@@ -182,14 +182,14 @@
 			</xsl:for-each>
 
 			<!--Rule 2007: If targetMarketCountryCode equals <Geographic> and hazardStatementsDescription is used then hazardStatementsCode SHALL be used.-->
-			<xsl:if test="hazardStatementsDescription != '' and hazardStatementsCode = ''">
+			<xsl:if test="string(hazardStatementsDescription) != '' and string(hazardStatementsCode) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2007" />
 				</xsl:apply-templates>
 			</xsl:if>
 
 			<!--Rule 2008: If targetMarketCountryCode equals <Geographic> and precautionaryStatementsDescription is used then precautionaryStatementsCode SHALL be used.-->
-			<xsl:if test="precautionaryStatementsDescription != '' and precautionaryStatementsCode = ''">
+			<xsl:if test="string(precautionaryStatementsDescription) != '' and string(precautionaryStatementsCode) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2008" />
 				</xsl:apply-templates>

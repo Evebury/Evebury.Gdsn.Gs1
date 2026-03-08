@@ -18,7 +18,7 @@
 	<xsl:template match="organismClassification" mode="organismClassificationModule">
 		<xsl:param name="targetMarket"/>
 		<!--Rule 1865: If species is used, then genus SHALL be used.-->
-		<xsl:if test="species != '' and genus = ''">
+		<xsl:if test="string(species) != '' and string(genus) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1865" />
 			</xsl:apply-templates>

@@ -72,7 +72,7 @@
 
 		<!--Rule 1082: If cataloguePrice/tradeItemPrice is used then tradeItemPriceTypeCode shall be empty.-->
 		<xsl:for-each select="cataloguePrice">
-			<xsl:if test="tradeItemPrice != '' and tradeItemPriceTypeCode != ''">
+			<xsl:if test="string(tradeItemPrice) != '' and string(tradeItemPriceTypeCode) != ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1082" />
 				</xsl:apply-templates>
@@ -81,7 +81,7 @@
 
 		<!--Rule 1083: If TradeItemPriceInformation/suggestedRetailPrice/tradeItemPrice is used then tradeItemPriceTypeCode shall be empty.-->
 		<xsl:for-each select="suggestedRetailPrice/cataloguePrice">
-			<xsl:if test="tradeItemPrice != '' and tradeItemPriceTypeCode != ''">
+			<xsl:if test="string(tradeItemPrice) != '' and string(tradeItemPriceTypeCode) != ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1083" />
 				</xsl:apply-templates>
@@ -93,7 +93,7 @@
 
 			<!--Rule 1965: If targetMarketCountryCode equals <Geographic> and cataloguePrice/tradeItemPrice is used then cataloguePrice/priceBasisQuantity SHALL be used and cataloguePrice/priceEffectiveStartDate SHALL be used.-->
 			<xsl:for-each select="cataloguePrice">
-				<xsl:if test="tradeItemPrice != '' and (priceBasisQuantity = '' or priceEffectiveStartDate = '')">
+				<xsl:if test="string(tradeItemPrice) != '' and (string(priceBasisQuantity) = '' or string(priceEffectiveStartDate) = '')">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1965" />
 					</xsl:apply-templates>
@@ -101,7 +101,7 @@
 			</xsl:for-each>
 			<!--Rule 1977: If targetMarketCountryCode equals <Geographic> and suggestedRetailPrice/tradeItemPrice is used then suggestedRetailPrice/priceEffectiveStartDate SHALL be used.-->
 			<xsl:for-each select="suggestedRetailPrice">
-				<xsl:if test="tradeItemPrice != '' and priceEffectiveStartDate = ''">
+				<xsl:if test="string(tradeItemPrice) != '' and string(priceEffectiveStartDate) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1977" />
 					</xsl:apply-templates>
@@ -130,7 +130,7 @@
 			</xsl:if>
 
 			<!--Rule 1105: If targetMarketCountryCode equals  ('250' (France) or '246' (Finland)) and priceComparisonMeasurement is used, then priceComparisonMeasurement SHALL be greater than 0.-->
-			<xsl:if test="priceComparisonMeasurement != '' and priceComparisonMeasurement &lt;= 0">
+			<xsl:if test="string(priceComparisonMeasurement) != '' and priceComparisonMeasurement &lt;= 0">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1105" />
 				</xsl:apply-templates>
@@ -146,7 +146,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 						<xsl:when test="$brick = '10000262'"/>
 						<xsl:otherwise>
 							<xsl:choose>
-								<xsl:when test="priceComparisonMeasurement = ''">
+								<xsl:when test="string(priceComparisonMeasurement) = ''">
 									<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
 									<xsl:apply-templates select="." mode="error">
 										<xsl:with-param name="id" select="1110" />
@@ -184,7 +184,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 				<xsl:when test="priceComparisonContentTypeCode = 'PER_KILOGRAM'">
 					<!--Rule 1116: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and priceComparisonContentTypeCode equals 'PER_KILOGRAM' and netWeight is populated, then priceComparisonMeasurement and netWeight shall be equivalent.-->
 					<xsl:choose>
-						<xsl:when test="priceComparisonMeasurement = ''">
+						<xsl:when test="string(priceComparisonMeasurement) = ''">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1116" />
 							</xsl:apply-templates>
@@ -196,7 +196,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 							<xsl:variable name="module" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight"/>
 							<xsl:variable name="weight">
 								<xsl:choose>
-									<xsl:when test="$module/netWeight = ''">
+									<xsl:when test="string($module/netWeight) = ''">
 										<xsl:value-of select="-1"/>
 									</xsl:when>
 									<xsl:otherwise>
@@ -216,7 +216,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 				<xsl:when test="priceComparisonContentTypeCode = 'DRAINED_WEIGHT'">
 					<!--Rule 1117: If targetMarketCountryCode equals ('249' (France) or '250' (France)) and priceComparisonContentTypeCode equals 'DRAINED_WEIGHT' and drainedWeight is populated, then priceComparisonMeasurement and drainedWeight shall be equivalent.-->
 					<xsl:choose>
-						<xsl:when test="priceComparisonMeasurement = ''">
+						<xsl:when test="string(priceComparisonMeasurement) = ''">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1117" />
 							</xsl:apply-templates>
@@ -228,7 +228,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 							<xsl:variable name="module" select="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements/tradeItemWeight"/>
 							<xsl:variable name="weight">
 								<xsl:choose>
-									<xsl:when test="$module/drainedWeight = ''">
+									<xsl:when test="string($module/drainedWeight) = ''">
 										<xsl:value-of select="-1"/>
 									</xsl:when>
 									<xsl:otherwise>
@@ -251,8 +251,8 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 
 		<!--Rule 1162: If targetMarketCountryCode equals '250' (France) or '752' (Sweden) and isTradeItemAConsumerUnit equals 'true' and isTradeItemNonphysical does not equal 'true' then both priceComparisonContentTypeCode and priceComparisonMeasurement SHALL be used.-->
 		<xsl:if test="$targetMarket = '752' or $targetMarket = '250'">
-			<xsl:if test="$tradeItem/isTradeItemAConsumerUnit = 'true' and $tradeItem/isTradeItemNonphysical != 'true'">
-				<xsl:if test="priceComparisonContentTypeCode = '' or priceComparisonMeasurement =''">
+			<xsl:if test="$tradeItem/isTradeItemAConsumerUnit = 'true' and string($tradeItem/isTradeItemNonphysical) != 'true'">
+				<xsl:if test="string(priceComparisonContentTypeCode) = '' or string(priceComparisonMeasurement) =''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1162" />
 					</xsl:apply-templates>
@@ -261,7 +261,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 		</xsl:if>
 
 		<!--Rule 1315: If priceComparisonContentTypeCode is used, then priceComparisonMeasurement shall be used.-->
-		<xsl:if test="priceComparisonContentTypeCode != '' and priceComparisonMeasurement = ''">
+		<xsl:if test="string(priceComparisonContentTypeCode) != '' and string(priceComparisonMeasurement) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="1315" />
 			</xsl:apply-templates>
@@ -283,8 +283,8 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 
 		<!--Rule 1691: If targetMarketCountryCode equals 752 (Sweden) and  (priceComparisonContentTypeCode OR priceComparisonMeasurement is used), then priceComparisonContentTypeCode AND priceComparisonMeasurement SHALL be used.-->
 		<xsl:if test="$targetMarket = '752'">
-			<xsl:if test="priceComparisonContentTypeCode != '' or priceComparisonMeasurement != ''">
-				<xsl:if test="priceComparisonContentTypeCode = '' or priceComparisonMeasurement = ''">
+			<xsl:if test="string(priceComparisonContentTypeCode) != '' or string(priceComparisonMeasurement) != ''">
+				<xsl:if test="string(priceComparisonContentTypeCode) = '' or string(priceComparisonMeasurement) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1691" />
 					</xsl:apply-templates>
@@ -296,7 +296,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 		<xsl:if test="$targetMarket = '246'">
 
 			<!--Rule 1848: If targetMarketCountryCode equals '246' (Finland) and priceComparisonMeasurement is used then at least one iteration of the related priceComparisonMeasurement/@measurementUnitCode SHALL equal 'KGM',  'LTR'  or 'H87’.-->
-			<xsl:if test="priceComparisonMeasurement != ''">
+			<xsl:if test="string(priceComparisonMeasurement) != ''">
 				<xsl:choose>
 					<xsl:when test="priceComparisonMeasurement[@measurementUnitCode  = 'KGM' or @measurementUnitCode  = 'LTR' or @measurementUnitCode  = 'H87']"/>
 					<xsl:otherwise>
@@ -308,7 +308,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 			</xsl:if>
 
 			<!--Rule 1849: If targetMarketCountryCode equals <Geographic> and gpcCategoryCode is in GPC Segment '50000000' (Food/Beverage) and isTradeItemAConsumerUnit equals 'true' then priceComparisonMeasurement SHALL be used.-->
-			<xsl:if test="priceComparisonMeasurement = '' and $tradeItem/isTradeItemAConsumerUnit = 'true'">
+			<xsl:if test="string(priceComparisonMeasurement) = '' and $tradeItem/isTradeItemAConsumerUnit = 'true'">
 				<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
 				<xsl:if test="gs1:IsInSegment($brick, '50000000')">
 					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
@@ -375,7 +375,7 @@ and priceComparisonContentTypeCode equals 'PER_LITRE' then the associated measur
 			</xsl:if>
 
 			<!--Rule 2019: If targetMarketCountryCode equals <Geographic> and isBasePriceDeclarationRelevant is used then isBasePriceDeclarationRelevant SHALL equal ('TRUE' or 'FALSE').-->
-			<xsl:if test="isBasePriceDeclarationRelevant != '' and isBasePriceDeclarationRelevant != 'TRUE' and isBasePriceDeclarationRelevant != 'FALSE'">
+			<xsl:if test="string(isBasePriceDeclarationRelevant) != '' and string(isBasePriceDeclarationRelevant) != 'TRUE' and string(isBasePriceDeclarationRelevant) != 'FALSE'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2019" />
 				</xsl:apply-templates>

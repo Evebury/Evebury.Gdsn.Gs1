@@ -27,7 +27,7 @@
 		<xsl:if test="$targetMarket = '840'">
 			<xsl:if test="growingMethodCode = 'ORGANIC'">
 				<xsl:for-each select="tradeItemOrganicInformation/organicClaim">
-					<xsl:if test="organicClaimAgencyCode = '' or organicTradeItemCode = ''">
+					<xsl:if test="string(organicClaimAgencyCode) = '' or string(organicTradeItemCode) = ''">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="586" />
 						</xsl:apply-templates>
@@ -49,7 +49,7 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 			<xsl:if test="growingMethodCode = 'ORGANIC'">
 				<xsl:variable name="brick" select="$tradeItem/gDSNTradeItemClassification/gpcCategoryCode"/>
 				<xsl:if test="gs1:IsInFamily($brick, '50100000, 50250000, 50260000, 50270000, 50290000, 50310000, 50320000, 50350000, 50360000, 50370000, 50380000')">
-					<xsl:if test="tradeItemOrganicInformation/organicClaim/organicClaimAgencyCode = ''">
+					<xsl:if test="string(tradeItemOrganicInformation/organicClaim/organicClaimAgencyCode) = ''">
 						<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1569" />
@@ -82,7 +82,7 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 				</xsl:for-each>
 
 				<!--Rule 1617: If targetMarketCountryCode equals EU, and GPC Brick belongs to the GPC families ('50100000', '50250000', '50260000', '50270000', '50290000', '50310000', '50320000', '50350000', '50360000', '50370000' or '50380000') and growingMethodCode  equals 'ORGANIC' then farmingAndProcessingInformationModule/tradeItemOrganicInformation/organicClaim/organicTradeItemCode SHALL be used.-->
-				<xsl:if test="tradeItemOrganicInformation/organicClaim/organicTradeItemCode = ''">
+				<xsl:if test="string(tradeItemOrganicInformation/organicClaim/organicTradeItemCode) = ''">
 					<xsl:apply-templates select="gs1:AddEventData('brick', $brick)"/>
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1617" />
@@ -106,7 +106,7 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
 
 			<!--Rule 1955: If targetMarketCountryCode equals <Geographic> and geneticallyModifiedDeclarationCode is used then it SHALL equal ('CONTAINS', 'FREE_FROM' or 'MAY_CONTAIN').-->
-			<xsl:if test="geneticallyModifiedDeclarationCode != ''">
+			<xsl:if test="string(geneticallyModifiedDeclarationCode) != ''">
 				<xsl:choose>
 					<xsl:when test="geneticallyModifiedDeclarationCode = 'CONTAINS'"/>
 					<xsl:when test="geneticallyModifiedDeclarationCode = 'FREE_FROM'"/>
@@ -121,14 +121,14 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 
 			<!--Rule 2037: If targetMarketCountryCode equals <Geographic> and organicTradeItemCode is used and organicTradeItemCode is equal to ('2' or '6') then organicCertificationIdentification SHALL be used.-->
 			<xsl:if test="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '2']">
-				<xsl:if test="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '2']/organicCertification/organicCertificationIdentification = ''">
+				<xsl:if test="string(tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '2']/organicCertification/organicCertificationIdentification) = ''">
 					<xsl:apply-templates select="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '2']" mode="error">
 						<xsl:with-param name="id" select="2037" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:if>
 			<xsl:if test="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '6']">
-				<xsl:if test="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '6']/organicCertification/organicCertificationIdentification = ''">
+				<xsl:if test="string(tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '6']/organicCertification/organicCertificationIdentification) = ''">
 					<xsl:apply-templates select="tradeItemOrganicInformation/organicClaim[organicTradeItemCode = '6']" mode="error">
 						<xsl:with-param name="id" select="2037" />
 					</xsl:apply-templates>
@@ -137,8 +137,8 @@ and GDSNTradeItemClassification/gpcCategoryCode belongs to any of the GPC famili
 
 			<!--Rule 2038: If targetMarketCountryCode equals <Geographic> and organicCertificationIdentification is used then organicTradeItemCode SHALL equal ('2' or '6').-->
 			<xsl:for-each select="tradeItemOrganicInformation/organicClaim">
-				<xsl:if test="organicCertification/organicCertificationIdentification != ''">
-					<xsl:if test="organicTradeItemCode != '2' and organicTradeItemCode != '6'">
+				<xsl:if test="string(organicCertification/organicCertificationIdentification) != ''">
+					<xsl:if test="string(organicTradeItemCode) != '2' and string(organicTradeItemCode) != '6'">
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="2038" />
 						</xsl:apply-templates>

@@ -17,7 +17,7 @@
 		<xsl:if test="$targetMarket = '246'">
 			<xsl:if test="ingredientStatement">
 				<xsl:choose>
-					<xsl:when test="ingredientStatement[@languageCode = 'fi'] != '' and ingredientStatement[@languageCode = 'sv'] != ''"/>
+					<xsl:when test="string(ingredientStatement[@languageCode = 'fi']) != '' and string(ingredientStatement[@languageCode = 'sv']) != ''"/>
 					<xsl:otherwise>
 						<xsl:apply-templates select="." mode="error">
 							<xsl:with-param name="id" select="1900" />
@@ -30,7 +30,7 @@
 		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
 			<!--Rule 2012: If targetMarketCountryCode equals <Geographic> and additiveInformation/levelOfContainmentCode is used then additiveInformation/levelOfContainmentCode SHALL equal 'CONTAINS'.-->
 			<xsl:for-each select="additiveInformation">
-				<xsl:if test="levelOfContainmentCode != '' and levelOfContainmentCode != 'CONTAINS'">
+				<xsl:if test="string(levelOfContainmentCode) != '' and levelOfContainmentCode != 'CONTAINS'">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="2012" />
 					</xsl:apply-templates>
@@ -49,7 +49,7 @@
 
 		<!--Rule 1177:If targetMarketCountryCode does not equal <Geographic> and there is more than one iteration of ingredientSequence, then ingredientSequence and ingredientName must not be empty.-->
 		<xsl:if test="$targetMarket != '562'">
-			<xsl:if test="ingredientSequence = '' or ingredientName = ''">
+			<xsl:if test="string(ingredientSequence) = '' or string(ingredientName) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1177" />
 				</xsl:apply-templates>
@@ -60,7 +60,7 @@
 		<xsl:choose>
 			<xsl:when test="contains('056, 203, 442, 528', $targetMarket)"/>
 			<xsl:otherwise>
-				<xsl:if test="ingredientName = '' and  grapeVarietycode = ''">
+				<xsl:if test="string(ingredientName) = '' and  string(grapeVarietycode) = ''">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="1275" />
 					</xsl:apply-templates>

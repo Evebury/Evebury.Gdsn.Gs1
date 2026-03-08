@@ -28,7 +28,7 @@
 
 		<!--Rule 1893: If targetMarketCountryCode equals <Geographic> and isTradeItemAnInvoiceUnit equals 'true' and isTradeItemAVariableUnit equals 'true', then sellingUnitOfMeasure SHALL be used.-->
 		<xsl:if test="$targetMarket = '250' and isTradeItemAVariableUnit = 'true'">
-			<xsl:if test="$tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/sellingUnitOfMeasure = ''">
+			<xsl:if test="string($tradeItem/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:sales_information:xsd:3' and local-name()='salesInformationModule']/salesInformation/sellingUnitOfMeasure) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1893" />
 				</xsl:apply-templates>
@@ -39,14 +39,14 @@
 		<xsl:if test="$targetMarket = '756'">
 
 			<!--Rule 1974: If targetMarketCountryCode equals <Geographic> and (variableWeightRangeMinimum is used or variableWeightRangeMaximum is used) then variableWeightRangeMinimum SHALL be used and variableWeightRangeMaximum SHALL be used.-->
-			<xsl:if test="(variableWeightRangeMinimum != '' or variableWeightRangeMaximum != '') and (variableWeightRangeMinimum = '' or variableWeightRangeMaximum = '')">
+			<xsl:if test="(string(variableWeightRangeMinimum) != '' or string(variableWeightRangeMaximum) != '') and (string(variableWeightRangeMinimum) = '' or string(variableWeightRangeMaximum) = '')">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1974" />
 				</xsl:apply-templates>
 			</xsl:if>
 
 			<!--Rule 1975: If targetMarketCountryCode equals <Geographic> and (variableWeightAllowableDeviationPercentage is used or variableWeightRangeMinimum is used or variableWeightRangeMaximum is used) then isTradeItemAVariableUnit SHALL equal 'true'.-->
-			<xsl:if test="(variableWeightRangeMinimum != '' or variableWeightRangeMaximum != '') and isTradeItemAVariableUnit != 'true'">
+			<xsl:if test="(string(variableWeightRangeMinimum) != '' or string(variableWeightRangeMaximum) != '') and string(isTradeItemAVariableUnit) != 'true'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1975" />
 				</xsl:apply-templates>

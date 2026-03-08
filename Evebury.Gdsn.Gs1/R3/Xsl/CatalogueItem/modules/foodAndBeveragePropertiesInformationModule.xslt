@@ -19,7 +19,7 @@
 		<xsl:param name="targetMarket"/>
 		<!--Rule 1694: If any attributes in class microbiologicalInformation is provided, then the attribute microbiologicalOrganismCode must be provided.-->
 		<xsl:if test="*[name() != 'microbiologicalOrganismCode']">
-			<xsl:if test="microbiologicalOrganismCode  =''">
+			<xsl:if test="string(microbiologicalOrganismCode)  =''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1694" />
 				</xsl:apply-templates>
@@ -28,7 +28,7 @@
 
 		<!--Rule 1981: If targetMarketCountryCode equals <Geographic> and microbiologicalOrganismCode is used then microbiologicalOrganismMaximumValue SHALL be used.-->
 		<xsl:if test="$targetMarket  = '756'">
-			<xsl:if test="microbiologicalOrganismCode != '' and microbiologicalOrganismMaximumValue = ''">
+			<xsl:if test="string(microbiologicalOrganismCode) != '' and string(microbiologicalOrganismMaximumValue) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1981" />
 				</xsl:apply-templates>

@@ -66,7 +66,6 @@
 	<xsl:include href="modules/warrantyInformationModule.xslt"/>
 
 	<!-- region auxiliary -->
-	<xsl:include href="cin/component_rules.xslt"/>
 	<xsl:include href="cin/hierarchy_rules.xslt"/>
 	<xsl:include href="cin/item_rules.xslt"/>
 	<xsl:include href="cin/measurementUnit.xslt"/>
@@ -254,11 +253,11 @@
 		<xsl:param name="command"/>
 		<xsl:variable name="gtin" select="gtin"/>
 		<xsl:variable name="tradeItem" select="msxsl:node-set($current)/*/tradeItem[@informationProvider = $informationProvider and @market = $targetMarket and @gtin=$gtin]"/>
-		
+
 		<xsl:if test="$tradeItem">
 			<!--Rule 483: On first population endAvailabilityDateTime shall be later than or equal to today.-->
 			<xsl:variable name="date" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:delivery_purchasing_information:xsd:3' and local-name()='deliveryPurchasingInformationModule']/deliveryPurchasingInformation/endAvailabilityDateTime"/>
-			<xsl:if test="$tradeItem/deliveryPurchasingInformation/endAvailabilityDateTime = ''">
+			<xsl:if test="string($tradeItem/deliveryPurchasingInformation/endAvailabilityDateTime) = ''">
 				<xsl:if test="gs1:InvalidDateTimeSpan(gs1:Today(), $date)">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="483" />
@@ -272,7 +271,7 @@
 				</xsl:apply-templates>
 			</xsl:if>
 
-			<xsl:if test="(not(preliminaryItemStatusCode) or preliminaryItemStatusCode != 'PRELIMINARY') and $command = 'CHANGE_BY_REFRESH'">
+			<xsl:if test="string(preliminaryItemStatusCode) != 'PRELIMINARY' and $command = 'CHANGE_BY_REFRESH'">
 				<xsl:variable name="module" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_measurements:xsd:3' and local-name()='tradeItemMeasurementsModule']/tradeItemMeasurements"/>
 
 				<xsl:variable name="netContent">
@@ -291,7 +290,7 @@
 				</xsl:if>
 
 				<!--Rule 451: If preliminaryItemStatusCode does not equal 'PRELIMINARY' and the Document Command equals  'CHANGE_BY_REFRESH' then BrandNameInformation/brandName shall not be updated.-->
-				<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/brandNameInformation/brandName != $tradeItem/tradeItemDescriptionInformation/brandName">
+				<xsl:if test="string(tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:trade_item_description:xsd:3' and local-name()='tradeItemDescriptionModule']/tradeItemDescriptionInformation/brandNameInformation/brandName) != string($tradeItem/tradeItemDescriptionInformation/brandName)">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="451"/>
 					</xsl:apply-templates>
@@ -299,7 +298,7 @@
 
 				<!--Rule 452: If preliminaryItemStatusCode does not equal 'PRELIMINARY' then if the Document Command is equal to 'CHANGE_BY_REFRESH' then totalQuantityOfNextLowerLevelTradeItem must not be updated.-->
 
-				<xsl:if test="nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem != $tradeItem/nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem">
+				<xsl:if test="string(nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem) != string($tradeItem/nextLowerLevelTradeItemInformation/totalQuantityOfNextLowerLevelTradeItem)">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="452"/>
 					</xsl:apply-templates>
@@ -463,7 +462,7 @@
 			</xsl:if>
 
 			<!--Rule 1807: If targetMarketCountryCode equals '752' (Sweden) and (preliminaryItemStatusCode is not used or equals 'FINAL’) and allergen/levelOfContainmentCode equals 'CONTAINS' or 'MAY_CONTAIN' and Document Command equals 'CHANGE_BY_REFRESH' then corresponding values for allergenTypeCode SHALL NOT be added or removed.-->
-			<xsl:if test="$targetMarket = '752' and (preliminaryItemStatusCode = '' or preliminaryItemStatusCode = 'FINAL') and $command != 'CHANGE_BY_REFRESH'">
+			<xsl:if test="$targetMarket = '752' and (string(preliminaryItemStatusCode) = '' or preliminaryItemStatusCode = 'FINAL') and $command != 'CHANGE_BY_REFRESH'">
 				<xsl:variable name="root" select="."/>
 				<xsl:variable name="mod" select="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:allergen_information:xsd:3' and local-name()='allergenInformationModule']/allergenRelatedInformation"/>
 				<xsl:for-each select="$tradeItem/allergenInformationModule/allergen">
@@ -509,32 +508,42 @@
 
 	<xsl:template match="*" mode="gtin">
 		<!--Rule 471: If data type is equal to  gtin then attribute value must be a  valid GTIN-8, GTIN-12, GTIN-13 or GTIN-14 number.-->
-		<xsl:variable name="length" select="string-length(gtin)"/>
+		<xsl:variable name="gtin">
+			<xsl:choose>
+				<xsl:when test="gtin">
+					<xsl:value-of select="gtin"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="length" select="string-length($gtin)"/>
 		<xsl:choose>
 			<xsl:when test="$length = 0"/>
 			<xsl:when test="$length = 14">
-				<xsl:if test="gs1:InvalidGTIN(gtin, 14)">
+				<xsl:if test="gs1:InvalidGTIN($gtin, 14)">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="471" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:when>
 			<xsl:when test="$length = 13">
-				<xsl:if test="gs1:InvalidGTIN(gtin, 13)">
+				<xsl:if test="gs1:InvalidGTIN($gtin, 13)">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="471" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:when>
 			<xsl:when test="$length = 12">
-				<xsl:if test="gs1:InvalidGTIN(gtin, 12)">
+				<xsl:if test="gs1:InvalidGTIN($gtin, 12)">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="471" />
 					</xsl:apply-templates>
 				</xsl:if>
 			</xsl:when>
 			<xsl:when test="$length = 8">
-				<xsl:if test="gs1:InvalidGTIN(gtin, 8)">
+				<xsl:if test="gs1:InvalidGTIN($gtin, 8)">
 					<xsl:apply-templates select="." mode="error">
 						<xsl:with-param name="id" select="471" />
 					</xsl:apply-templates>

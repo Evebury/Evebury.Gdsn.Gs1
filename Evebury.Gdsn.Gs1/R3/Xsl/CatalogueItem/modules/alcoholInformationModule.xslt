@@ -27,7 +27,7 @@
 		</xsl:if>
 
 		<!--Rule 1800: If targetMarketCountryCode equals '752' (Sweden) and alcoholicBeverageSugarContent is used then associated alcoholicBeverageSugarContent/@measurementUnitCode SHALL equal 'GL' (gram per litre).-->
-		<xsl:if test="alcoholicBeverageSugarContent != '' and $targetMarket = '752'">
+		<xsl:if test="string(alcoholicBeverageSugarContent) != '' and $targetMarket = '752'">
 			<xsl:if test="alcoholicBeverageSugarContent/@measurementUnitCode != 'GL'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1800" />
@@ -39,14 +39,14 @@
 		<xsl:if test="$targetMarket = '756'">
 
 			<!--Rule 1951: If targetMarketCountryCode equals <Geographic> and percentageOfAlcoholByVolumeMeasurementPrecisionCode is used then percentageOfAlcoholByVolume SHALL be used.-->
-			<xsl:if test="percentageOfAlcoholByVolumeMeasurementPrecisionCode != '' and percentageOfAlcoholByVolume = ''">
+			<xsl:if test="string(percentageOfAlcoholByVolumeMeasurementPrecisionCode) != '' and string(percentageOfAlcoholByVolume) = ''">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1951" />
 				</xsl:apply-templates>
 			</xsl:if>
 
 			<!--Rule 2024: If targetMarketCountryCode equals <Geographic> and percentageOfAlcoholByVolumeMeasurementPrecisionCode is used then percentageOfAlcoholByVolumeMeasurementPrecisionCode SHALL equal 'LESS_THAN'.-->
-			<xsl:if test="percentageOfAlcoholByVolumeMeasurementPrecisionCode != '' and percentageOfAlcoholByVolumeMeasurementPrecisionCode != 'LESS_THAN'">
+			<xsl:if test="string(percentageOfAlcoholByVolumeMeasurementPrecisionCode) != '' and percentageOfAlcoholByVolumeMeasurementPrecisionCode != 'LESS_THAN'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2024" />
 				</xsl:apply-templates>

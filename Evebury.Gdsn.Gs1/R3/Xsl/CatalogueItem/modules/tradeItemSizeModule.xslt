@@ -19,7 +19,7 @@
 		<xsl:param name="targetMarket"/>
 		<!--Rule 1062: If class NonPackagedSizeDimension is used then either descriptiveSizeDimension, sizeDimension or sizeCode shall be used.-->
 		<xsl:choose>
-			<xsl:when test="descriptiveSizeDimension != '' or sizeDimension != '' or sizeTypeCode != ''"/>
+			<xsl:when test="string(descriptiveSizeDimension) != '' or string(sizeDimension) != '' or string(sizeTypeCode) != ''"/>
 			<xsl:otherwise>
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1062" />
@@ -29,7 +29,7 @@
 
 		<!--Rule 1809: If targetMarketCountryCode equals '752' (Sweden) and sizeTypeCode or sizeDimension is used then sizeTypeCode and sizeDimension SHALL be used.-->
 		<xsl:if test="$targetMarket = '752'">
-			<xsl:if test="(sizeTypeCode != '' or sizeDimension != '') and (sizeTypeCode = '' or sizeDimension = '')">
+			<xsl:if test="(string(sizeTypeCode) != '' or string(sizeDimension) != '') and (string(sizeTypeCode) = '' or string(sizeDimension) = '')">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1809" />
 				</xsl:apply-templates>
@@ -38,7 +38,7 @@
 
 		<xsl:if test="$targetMarket ='756'">
 			<!--Rule 1991: If targetMarketCountryCode equals <Geographic> and (sizeCode is used or sizeSystemCode is used) then sizeCode SHALL be used and sizeSystemCode SHALL be used.-->
-			<xsl:if test="(sizeTypeCode != '' or sizeSystemCode != '') and (sizeTypeCode = '' or sizeSystemCode = '')">
+			<xsl:if test="(string(sizeTypeCode) != '' or string(sizeSystemCode) != '') and (string(sizeTypeCode) = '' or string(sizeSystemCode) = '')">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="1991" />
 				</xsl:apply-templates>

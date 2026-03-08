@@ -15,16 +15,17 @@
 		<xsl:apply-templates select="sourceDataPool" mode="gln"/>
 
 		<!--Rule 203: dataRecipient must not be empty.-->
-		<xsl:if test="dataRecipient = ''">
+		<xsl:if test="string(dataRecipient) = ''">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="203"/>
 			</xsl:apply-templates>
 		</xsl:if>
 
+
 		<xsl:variable name="tradeItems" select=".//tradeItem"/>
 
 		<!--Rule 300: EntityIdentification/PartyIdentification/gln shall equal dataSource, contentOwner and informationProvider and shall be the same for all levels of trade item hierarchy.-->
-		<xsl:if test="$tradeItems/informationProviderOfTradeItem[gln != $informationProvider]">
+		<xsl:if test="$tradeItems/informationProviderOfTradeItem[string(gln) != $informationProvider]">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="300" />
 			</xsl:apply-templates>
@@ -68,21 +69,21 @@
 		<xsl:if test="$isEU">
 
 			<xsl:choose>
-				<xsl:when test="$tradeItems/nextLowerLevelTradeItemInformation[quantityOfChildren != '' and quantityOfChildren != 1]"/>
+				<xsl:when test="$tradeItems/nextLowerLevelTradeItemInformation[string(quantityOfChildren) != '' and quantityOfChildren != 1]"/>
 				<xsl:otherwise>
 					<!--Rule 1759: If targetMarketCountryCode  equals <Geographic> and quantityOfChildren equals '1' on every level of the item hierarchy (except for the level where isTradeItemABaseUnit equals 'true’) and percentageOfAlcoholByVolume is used, then percentageOfAlcoholByVolume SHALL equal the same value in all levels of the item hierarchy where percentageOfAlcoholByVolume is used.-->
 					<xsl:variable name="percentageOfAlcoholByVolume" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[percentageOfAlcoholByVolume != ''][1]/percentageOfAlcoholByVolume"/>
 					<xsl:if test="$percentageOfAlcoholByVolume != ''">
-						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[percentageOfAlcoholByVolume != '' and percentageOfAlcoholByVolume != $percentageOfAlcoholByVolume]">
+						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[string(percentageOfAlcoholByVolume) != $percentageOfAlcoholByVolume]">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1759" />
 							</xsl:apply-templates>
 						</xsl:if>
 					</xsl:if>
 					<!--Rule 1760: If targetMarketCountryCode equals <geographic> and quantityOfChildren equals 1 on each level of the item hierarchy (except for the level where isTradeItemABaseUnit equals 'true’) and degreeOfOriginalWort is used, then degreeOfOriginalWort SHALL equal the same value in all levels of the item hierarchy where degreeOfOriginalWort is used.-->
-					<xsl:variable name="degreeOfOriginalWort" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[degreeOfOriginalWort != ''][1]/degreeOfOriginalWort"/>
+					<xsl:variable name="degreeOfOriginalWort" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[string(degreeOfOriginalWort) != ''][1]/degreeOfOriginalWort"/>
 					<xsl:if test="$degreeOfOriginalWort != ''">
-						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[degreeOfOriginalWort != '' and degreeOfOriginalWort != $degreeOfOriginalWort]">
+						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[string(degreeOfOriginalWort) != $degreeOfOriginalWort]">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1760" />
 							</xsl:apply-templates>
@@ -113,11 +114,11 @@
 
 			<!--Rule 1830: If targetMarketCountryCode equals '752' (Sweden) and (quantityOfChildren equals '1' or is not used) on all levels of the trade item hierarchy,  then dutyFeeTaxRate, where used, SHALL equal the same value.-->
 			<xsl:choose>
-				<xsl:when test="$tradeItems/nextLowerLevelTradeItemInformation[quantityOfChildren != '' and quantityOfChildren != 1]"/>
+				<xsl:when test="$tradeItems/nextLowerLevelTradeItemInformation[string(quantityOfChildren) != '' and quantityOfChildren != 1]"/>
 				<xsl:otherwise>
-					<xsl:variable name="dutyFeeTaxRate" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax[dutyFeeTaxRate != ''][1]/dutyFeeTaxRate"/>
+					<xsl:variable name="dutyFeeTaxRate" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax[string(dutyFeeTaxRate) != ''][1]/dutyFeeTaxRate"/>
 					<xsl:if test="$dutyFeeTaxRate != ''">
-						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax[dutyFeeTaxRate != '' and dutyFeeTaxRate != $dutyFeeTaxRate]">
+						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax[string(dutyFeeTaxRate) != '' and dutyFeeTaxRate != $dutyFeeTaxRate]">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1830" />
 							</xsl:apply-templates>
@@ -133,8 +134,8 @@
 
 			<!--Rule 1092: If targetMarketCountryCode equals <Geographic> and (isTradeItemNonphysical equals 'false' or is not used) and (isTradeItemAService equals 'false' or is not used) and (one iteration of tradeItemTradeChannelCode equals to ('CASH_AND_CARRY', 'CONSIGNMENT', 'CONVENIENCE', 'DRUG_STORE', 'FOOD_SERVICE', 'GROCERY',  'ONLINE' or 'UNSPECIFIED') or tradeItemTradeChannelCode is not used) then isTradeItemADespatchUnit SHALL equal 'true' for at least one trade item in the item hierarchy.-->
 			<xsl:for-each select="$tradeItems">
-				<xsl:if test="isTradeItemNonphysical != 'true' and isTradeItemAService !='true'">
-					<xsl:if test="tradeItemTradeChannelCode = '' or tradeItemTradeChannelCode= 'CASH_AND_CARRY' or tradeItemTradeChannelCode= 'CONSIGNMENT' or tradeItemTradeChannelCode= 'CONVENIENCE' or tradeItemTradeChannelCode= 'DRUG_STORE' or tradeItemTradeChannelCode= 'FOOD_SERVICE' or tradeItemTradeChannelCode= 'GROCERY' or tradeItemTradeChannelCode= 'ONLINE' or tradeItemTradeChannelCode= 'UNSPECIFIED'">
+				<xsl:if test="string(isTradeItemNonphysical) != 'true' and string(isTradeItemAService) !='true'">
+					<xsl:if test="string(tradeItemTradeChannelCode) = '' or tradeItemTradeChannelCode= 'CASH_AND_CARRY' or tradeItemTradeChannelCode= 'CONSIGNMENT' or tradeItemTradeChannelCode= 'CONVENIENCE' or tradeItemTradeChannelCode= 'DRUG_STORE' or tradeItemTradeChannelCode= 'FOOD_SERVICE' or tradeItemTradeChannelCode= 'GROCERY' or tradeItemTradeChannelCode= 'ONLINE' or tradeItemTradeChannelCode= 'UNSPECIFIED'">
 						<xsl:if test="count($tradeItems[isTradeItemADespatchUnit = 'true'])  = 0">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1092" />
@@ -169,7 +170,7 @@
 			<xsl:variable name="zcg" select="$tradeItems[isTradeItemABaseUnit = 'true' and tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader/dangerousGoodsRegulationCode = 'ZCG']"/>
 
 			<!--Rule 2000: If targetMarketCountryCode equals <Geographic> and dangerousGoodsLimitedQuantitiesCode is used then dangerousGoodsRegulationCode SHALL equal 'ZCG' on at least one trade item in the hierarchy where isTradeItemABaseUnit equals 'true'.-->
-			<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader[dangerousGoodsLimitedQuantitiesCode != '']">
+			<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader[string(dangerousGoodsLimitedQuantitiesCode) != '']">
 				<xsl:choose>
 					<xsl:when test="$zcg"/>
 					<xsl:otherwise>
@@ -191,7 +192,7 @@
 
 	<xsl:template match="*" mode="r2001">
 		<!--Rule 2001: If targetMarketCountryCode equals <Geographic> and isTradeItemABaseUnit equals 'true' and dangerousGoodsRegulationCode equals 'ZCG' then dangerousGoodsLimitedQuantitiesCode SHALL be used and dangerousGoodsLimitedQuantitiesCode SHALL be used on all its parent levels of the trade item hierarchy.-->
-		<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader/dangerousGoodsLimitedQuantitiesCode = ''">
+		<xsl:if test="tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:transportation_hazardous_classification:xsd:3' and local-name()='transportationHazardousClassificationModule']/transportationClassification/regulatedTransportationMode/hazardousInformationHeader[string(dangerousGoodsLimitedQuantitiesCode) = '']">
 			<xsl:apply-templates select="." mode="error">
 				<xsl:with-param name="id" select="2001" />
 			</xsl:apply-templates>
