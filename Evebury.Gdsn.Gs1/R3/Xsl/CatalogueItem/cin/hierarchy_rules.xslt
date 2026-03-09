@@ -72,8 +72,8 @@
 				<xsl:when test="$tradeItems/nextLowerLevelTradeItemInformation[string(quantityOfChildren) != '' and quantityOfChildren != 1]"/>
 				<xsl:otherwise>
 					<!--Rule 1759: If targetMarketCountryCode  equals <Geographic> and quantityOfChildren equals '1' on every level of the item hierarchy (except for the level where isTradeItemABaseUnit equals 'true’) and percentageOfAlcoholByVolume is used, then percentageOfAlcoholByVolume SHALL equal the same value in all levels of the item hierarchy where percentageOfAlcoholByVolume is used.-->
-					<xsl:variable name="percentageOfAlcoholByVolume" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[percentageOfAlcoholByVolume != ''][1]/percentageOfAlcoholByVolume"/>
-					<xsl:if test="$percentageOfAlcoholByVolume != ''">
+					<xsl:variable name="percentageOfAlcoholByVolume" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[string(percentageOfAlcoholByVolume) != ''][1]/percentageOfAlcoholByVolume"/>
+					<xsl:if test="string($percentageOfAlcoholByVolume) != ''">
 						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[string(percentageOfAlcoholByVolume) != $percentageOfAlcoholByVolume]">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1759" />
@@ -82,7 +82,7 @@
 					</xsl:if>
 					<!--Rule 1760: If targetMarketCountryCode equals <geographic> and quantityOfChildren equals 1 on each level of the item hierarchy (except for the level where isTradeItemABaseUnit equals 'true’) and degreeOfOriginalWort is used, then degreeOfOriginalWort SHALL equal the same value in all levels of the item hierarchy where degreeOfOriginalWort is used.-->
 					<xsl:variable name="degreeOfOriginalWort" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[string(degreeOfOriginalWort) != ''][1]/degreeOfOriginalWort"/>
-					<xsl:if test="$degreeOfOriginalWort != ''">
+					<xsl:if test="string($degreeOfOriginalWort) != ''">
 						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:alcohol_information:xsd:3' and local-name()='alcoholInformationModule']/alcoholInformation[string(degreeOfOriginalWort) != $degreeOfOriginalWort]">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1760" />
@@ -117,7 +117,7 @@
 				<xsl:when test="$tradeItems/nextLowerLevelTradeItemInformation[string(quantityOfChildren) != '' and quantityOfChildren != 1]"/>
 				<xsl:otherwise>
 					<xsl:variable name="dutyFeeTaxRate" select="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax[string(dutyFeeTaxRate) != ''][1]/dutyFeeTaxRate"/>
-					<xsl:if test="$dutyFeeTaxRate != ''">
+					<xsl:if test="string($dutyFeeTaxRate) != ''">
 						<xsl:if test="$tradeItems/tradeItemInformation/extension/*[namespace-uri()='urn:gs1:gdsn:duty_fee_tax_information:xsd:3' and local-name()='dutyFeeTaxInformationModule']/dutyFeeTaxInformation/dutyFeeTax[string(dutyFeeTaxRate) != '' and dutyFeeTaxRate != $dutyFeeTaxRate]">
 							<xsl:apply-templates select="." mode="error">
 								<xsl:with-param name="id" select="1830" />

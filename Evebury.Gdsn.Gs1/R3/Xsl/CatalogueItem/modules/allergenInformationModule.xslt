@@ -53,9 +53,9 @@
 		</xsl:if>
 		
 		
-		<xsl:if test="$targetMarket = '756' and $targetMarket = '040'">
+		<xsl:if test="$targetMarket = '756' or $targetMarket = '040'">
 			<!--Rule 2017: If targetMarketCountryCode equals <Geographic> and allergen/levelOfContainmentCode is used then allergen/levelOfContainmentCode SHALL equal ('CONTAINS' or 'MAY_CONTAIN').-->
-			<xsl:if test="levelOfContainmentCode != '' and levelOfContainmentCode != 'CONTAINS' and levelOfContainmentCode != 'MAY_CONTAIN'">
+			<xsl:if test="string(levelOfContainmentCode) != '' and string(levelOfContainmentCode) != 'CONTAINS' and string(levelOfContainmentCode) != 'MAY_CONTAIN'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2017" />
 				</xsl:apply-templates>

@@ -46,7 +46,7 @@
 			</xsl:if>
 
 			<!--Rule 2024: If targetMarketCountryCode equals <Geographic> and percentageOfAlcoholByVolumeMeasurementPrecisionCode is used then percentageOfAlcoholByVolumeMeasurementPrecisionCode SHALL equal 'LESS_THAN'.-->
-			<xsl:if test="string(percentageOfAlcoholByVolumeMeasurementPrecisionCode) != '' and percentageOfAlcoholByVolumeMeasurementPrecisionCode != 'LESS_THAN'">
+			<xsl:if test="string(percentageOfAlcoholByVolumeMeasurementPrecisionCode) != '' and string(percentageOfAlcoholByVolumeMeasurementPrecisionCode) != 'LESS_THAN'">
 				<xsl:apply-templates select="." mode="error">
 					<xsl:with-param name="id" select="2024" />
 				</xsl:apply-templates>

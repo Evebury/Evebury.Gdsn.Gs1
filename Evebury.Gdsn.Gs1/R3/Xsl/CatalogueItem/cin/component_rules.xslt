@@ -40,8 +40,6 @@
 		</xsl:for-each>
 
 
-
-
 		<xsl:if test="$specialItemCode != 'DYNAMIC_ASSORTMENT'">
 			<!--Rule 1604: If any attribute in class tradeItemComponents or class componentInformation is used, and specialItemcode does not equal 'DYNAMIC_ASSORTMENT' then numberOfPiecesInSet and totalNumberOfComponents shall be used.-->
 			<xsl:if test="string(numberOfPiecesInSet)  = '' or string(totalNumberOfComponents) = ''">
